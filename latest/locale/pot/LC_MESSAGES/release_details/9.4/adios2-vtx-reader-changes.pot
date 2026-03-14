@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:1
+msgid "ADIOS2 VTX reader changes"
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:3
+msgid "Fix cell data with time in ADIOS2 VTX reader"
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:5
+msgid ""
+"The ADIOS2 VTX reader supports cell data. However, the previous "
+"implementation of the reader hard-coded the cell data to be static so that "
+"only the first time step was read. The new implementation checks the time "
+"dimension for cell (and point) fields and will automatically read a field "
+"over time if available."
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:10
+msgid "Fixed ADIOS2 VTX reader error reporting"
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:12
+msgid ""
+"The ADIOS2 VTX reader previously reported errors by throwing exceptions.  "
+"This causes lots of problems with VTK and programs that use it such as "
+"ParaView because exceptions are not expected. They are not caught or "
+"recovered from. Instead, it just causes applications to crash without "
+"warning. The ADIOS2 VTX reader now properly reports errors by calling "
+"`vtkErrorMacro` and returning 0 from its process request."
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:18
+msgid "Add protection for missing arrays in ADIOS2 VTX reader"
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:20
+msgid ""
+"Previously, when the ADIOS2 VTX reader read in most data arrays from the "
+"ADIOS2 file, it would silently leave a null array if that array did not "
+"exist. This opened up the likely consequence of the program later crashing "
+"when the reader attempted to use this array."
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:24
+msgid ""
+"Instead, the reader now reports an error when an array it attempts to read "
+"in is missing. This prevents subsequent problems."
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:27
+msgid "IOADIOS2 VTX reader supports non-MPI builds"
+msgstr ""
+
+#: ../../../release_details/9.4/adios2-vtx-reader-changes.md:29
+msgid "The ADIOS2 VTX reader can now be built with or without MPI enabled."
+msgstr ""

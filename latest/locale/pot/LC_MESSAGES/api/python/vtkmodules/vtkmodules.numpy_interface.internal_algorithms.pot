@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.internal_algorithms`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:18
+msgid ""
+"{py:obj}`_cell_derivatives <vtkmodules.numpy_interface.internal_algorithms."
+"_cell_derivatives>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:22
+msgid ""
+"{py:obj}`_cell_quality <vtkmodules.numpy_interface.internal_algorithms."
+"_cell_quality>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:26
+msgid ""
+"{py:obj}`_matrix_math_filter <vtkmodules.numpy_interface.internal_algorithms."
+"_matrix_math_filter>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:30
+msgid "{py:obj}`abs <vtkmodules.numpy_interface.internal_algorithms.abs>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:227
+msgid "Returns the absolute values of an array of scalars/vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:34
+msgid "{py:obj}`all <vtkmodules.numpy_interface.internal_algorithms.all>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:144
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:168
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:234
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:423
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:465
+msgid "Returns the min value of an array of scalars/vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:38
+msgid "{py:obj}`area <vtkmodules.numpy_interface.internal_algorithms.area>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:241
+msgid "Returns the surface area of each cell in a mesh."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:42
+msgid ""
+"{py:obj}`aspect <vtkmodules.numpy_interface.internal_algorithms.aspect>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:248
+msgid "Returns the aspect ratio of each cell in a mesh."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:46
+msgid ""
+"{py:obj}`aspect_gamma <vtkmodules.numpy_interface.internal_algorithms."
+"aspect_gamma>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:255
+msgid "Returns the aspect ratio gamma of each cell in a mesh."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:50
+msgid ""
+"{py:obj}`condition <vtkmodules.numpy_interface.internal_algorithms."
+"condition>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:262
+msgid "Returns the condition number of each cell in a mesh."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:54
+msgid "{py:obj}`cross <vtkmodules.numpy_interface.internal_algorithms.cross>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:269
+msgid ""
+"Return the cross product for two 3D vectors from two arrays of 3D vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:58
+msgid "{py:obj}`curl <vtkmodules.numpy_interface.internal_algorithms.curl>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:276
+msgid "Returns the curl of an array of 3D vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:62
+msgid ""
+"{py:obj}`divergence <vtkmodules.numpy_interface.internal_algorithms."
+"divergence>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:283
+msgid "Returns the divergence of an array of 3D vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:66
+msgid "{py:obj}`det <vtkmodules.numpy_interface.internal_algorithms.det>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:290
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:297
+msgid "Returns the determinant of an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:70
+msgid ""
+"{py:obj}`determinant <vtkmodules.numpy_interface.internal_algorithms."
+"determinant>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:74
+msgid ""
+"{py:obj}`diagonal <vtkmodules.numpy_interface.internal_algorithms.diagonal>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:304
+msgid "Returns the diagonal length of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:78
+msgid "{py:obj}`dot <vtkmodules.numpy_interface.internal_algorithms.dot>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:311
+msgid ""
+"Returns the dot product of two scalars/vectors of two array of scalars/"
+"vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:82
+msgid ""
+"{py:obj}`eigenvalue <vtkmodules.numpy_interface.internal_algorithms."
+"eigenvalue>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:84
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:318
+msgid "Returns the eigenvalue of an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:86
+msgid ""
+"{py:obj}`eigenvector <vtkmodules.numpy_interface.internal_algorithms."
+"eigenvector>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:325
+msgid "Returns the eigenvector of an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:90
+msgid ""
+"{py:obj}`gradient <vtkmodules.numpy_interface.internal_algorithms.gradient>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:92
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:332
+msgid "Returns the gradient of an array of scalars/vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:94
+msgid "{py:obj}`inv <vtkmodules.numpy_interface.internal_algorithms.inv>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:339
+msgid "Returns the inverse an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:98
+msgid ""
+"{py:obj}`inverse <vtkmodules.numpy_interface.internal_algorithms.inverse>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:346
+msgid "Returns the inverse of an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:102
+msgid ""
+"{py:obj}`jacobian <vtkmodules.numpy_interface.internal_algorithms.jacobian>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:353
+msgid "Returns the jacobian of an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:106
+msgid ""
+"{py:obj}`laplacian <vtkmodules.numpy_interface.internal_algorithms."
+"laplacian>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:108
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:360
+msgid "Returns the jacobian of an array of scalars."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:110
+msgid "{py:obj}`ln <vtkmodules.numpy_interface.internal_algorithms.ln>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:112
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:116
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:367
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:374
+msgid "Returns the natural logarithm of an array of scalars/vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:114
+msgid "{py:obj}`log <vtkmodules.numpy_interface.internal_algorithms.log>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:118
+msgid "{py:obj}`log10 <vtkmodules.numpy_interface.internal_algorithms.log10>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:381
+msgid "Returns the base 10 logarithm of an array of scalars/vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:122
+msgid "{py:obj}`max <vtkmodules.numpy_interface.internal_algorithms.max>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:124
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:388
+msgid "Returns the maximum value of an array of scalars/vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:126
+msgid ""
+"{py:obj}`max_angle <vtkmodules.numpy_interface.internal_algorithms."
+"max_angle>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:128
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:395
+msgid "Returns the maximum angle of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:130
+msgid "{py:obj}`mag <vtkmodules.numpy_interface.internal_algorithms.mag>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:132
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:402
+msgid "Returns the magnigude of an array of scalars/vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:134
+msgid ""
+"{py:obj}`matmul <vtkmodules.numpy_interface.internal_algorithms.matmul>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:136
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:409
+msgid "Return the product of the inputs. Inputs can be vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:138
+msgid "{py:obj}`mean <vtkmodules.numpy_interface.internal_algorithms.mean>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:140
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:180
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:416
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:486
+msgid "Returns the mean value of an array of scalars/vectors/tensors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:142
+msgid "{py:obj}`min <vtkmodules.numpy_interface.internal_algorithms.min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:146
+msgid ""
+"{py:obj}`min_angle <vtkmodules.numpy_interface.internal_algorithms."
+"min_angle>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:148
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:430
+msgid "Returns the minimum angle of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:150
+msgid "{py:obj}`norm <vtkmodules.numpy_interface.internal_algorithms.norm>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:152
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:437
+msgid "Returns the normalized values of an array of scalars/vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:154
+msgid "{py:obj}`shear <vtkmodules.numpy_interface.internal_algorithms.shear>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:156
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:444
+msgid "Returns the shear of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:158
+msgid "{py:obj}`skew <vtkmodules.numpy_interface.internal_algorithms.skew>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:160
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:451
+msgid "Returns the skew of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:162
+msgid ""
+"{py:obj}`strain <vtkmodules.numpy_interface.internal_algorithms.strain>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:164
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:458
+msgid "Returns the strain of an array of 3D vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:166
+msgid "{py:obj}`sum <vtkmodules.numpy_interface.internal_algorithms.sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:170
+msgid ""
+"{py:obj}`surface_normal <vtkmodules.numpy_interface.internal_algorithms."
+"surface_normal>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:172
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:472
+msgid "Returns the surface normal of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:174
+msgid "{py:obj}`trace <vtkmodules.numpy_interface.internal_algorithms.trace>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:176
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:479
+msgid "Returns the trace of an array of 2D square matrices."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:178
+msgid "{py:obj}`var <vtkmodules.numpy_interface.internal_algorithms.var>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:182
+msgid ""
+"{py:obj}`volume <vtkmodules.numpy_interface.internal_algorithms.volume>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:184
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:493
+msgid "Returns the volume of each cell in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:186
+msgid ""
+"{py:obj}`vorticity <vtkmodules.numpy_interface.internal_algorithms."
+"vorticity>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:188
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:500
+msgid "Returns the vorticity/curl of an array of 3D vectors."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:190
+msgid ""
+"{py:obj}`vertex_normal <vtkmodules.numpy_interface.internal_algorithms."
+"vertex_normal>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:192
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/internal_algorithms.py:507
+msgid "Returns the vertex normal of each point in a dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:194
+msgid ""
+"{py:obj}`make_vector <vtkmodules.numpy_interface.internal_algorithms."
+"make_vector>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.md:200
+msgid "API"
+msgstr ""

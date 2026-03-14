@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:1
+msgid "VTK::IOFLUENTCFF"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:3
+msgid "This page describes the Fluent CFF IO functionality."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:5
+msgid "vtkFLUENTCFFReader"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:6
+msgid ""
+"Provide a reader for the FluentCFF file format. Provide the Fluent CFF "
+"Reader (Common Fluid Format)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:9
+msgid ""
+"The reader supports cartesian grid, unstructured grid (poly, tetra, ...), "
+"3D/2D, double and single precision files."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:12
+msgid ""
+"Similarly to the legacy reader (`vtkFLUENTReader`), the Fluent CFF reader "
+"requires two files: the case file (`.cas.h5`) and the data file (`.dat.h5`)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:15
+msgid "The Fluent CFF readers uses the HDF library."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:17
+msgid ""
+"It is worth noting that the Fluent CFF file format is the default format in "
+"the latest Fluent version and that ANSYS no longer uses the legacy binary or "
+"ASCII formats."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:21
+msgid ""
+"Developed by Arthur Piquet and based on the vtkFLUENTReader class from Brian "
+"W. Dotson &"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:22
+msgid "Acknowledgments"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/FLUENTCFF/README.md:24
+msgid ""
+"Developed by Arthur Piquet and based on the `vtkFLUENTReader` class "
+"originally developed from Brian W. Dotson & Terry E. Jordan (Department of "
+"Energy, National Energy Technology Laboratory) and Douglas McCorkle (Iowa "
+"State University)."
+msgstr ""

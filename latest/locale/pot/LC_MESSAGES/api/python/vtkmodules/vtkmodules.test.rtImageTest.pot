@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.md:1
+msgid "{py:mod}`vtkmodules.test.rtImageTest`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.md:18
+msgid "{py:obj}`_GetController <vtkmodules.test.rtImageTest._GetController>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.md:22
+msgid "{py:obj}`main <vtkmodules.test.rtImageTest.main>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/rtImageTest.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/test/rtImageTest.py:41
+msgid ""
+"Run a regression test, and compare the contents of the window against "
+"against a valid image.  This will use arguments from sys.argv to set the "
+"testing options via the vtkTesting class, run the test script, and then call "
+"vtkTesting.RegressionTest() to validate the image.  The return value will "
+"the one provided by vtkTesting.RegressionTest()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.md:28
+msgid "API"
+msgstr ""

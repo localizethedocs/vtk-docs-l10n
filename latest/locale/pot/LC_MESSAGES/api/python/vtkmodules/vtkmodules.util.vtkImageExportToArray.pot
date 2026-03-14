@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:1
+msgid "{py:mod}`vtkmodules.util.vtkImageExportToArray`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:7
+msgid "vtkImageExportToArray - a NumPy front-end to vtkImageExport"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:9
+msgid ""
+"This class converts a VTK image to a numpy array.  The output array will "
+"always have 3 dimensions (or 4, if the image had multiple scalar components)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:13
+msgid ""
+"To use this class, you must have numpy installed (http://numpy.scipy.org)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:15
+msgid "Methods"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:17
+msgid ""
+"SetInputConnection(vtkAlgorithmOutput) -- connect to VTK image pipeline   "
+"SetInputData(vtkImageData) -- set an vtkImageData to export   GetArray() -- "
+"execute pipeline and return a numpy array"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:21
+msgid "Methods from vtkImageExport"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkImageExportToArray.py:23
+msgid "GetDataExtent()   GetDataSpacing()   GetDataOrigin()"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:18
+msgid ""
+"{py:obj}`vtkImageExportToArray <vtkmodules.util.vtkImageExportToArray."
+"vtkImageExportToArray>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:24
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:33
+msgid "Initialization"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:43
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.md:53
+msgid "None"
+msgstr ""

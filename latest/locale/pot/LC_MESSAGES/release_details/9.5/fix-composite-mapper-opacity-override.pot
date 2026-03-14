@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/fix-composite-mapper-opacity-override.md:1
+msgid "Fix vtkCompositePolyDataMapper opacity override"
+msgstr ""
+
+#: ../../../release_details/9.5/fix-composite-mapper-opacity-override.md:3
+msgid ""
+"You can now render opaque blocks in a composite dataset even when the actor "
+"has an opacity < 1.0 by setting the opacity of the block equal to 1.0. "
+"Previously, a bug in vtkActor prevented the overridden block's opacity value "
+"from being considered when the actor was transparent."
+msgstr ""
+
+#: ../../../release_details/9.5/fix-composite-mapper-opacity-override.md:7
+msgid ""
+"![Screenshot showing an opaque block in an actor that is transparent](../"
+"imgs/9.5/fix-composite-mapper-opacity-override.png)"
+msgstr ""
+
+#: ../../../release_details/9.5/fix-composite-mapper-opacity-override.md:7
+msgid "Screenshot showing an opaque block in an actor that is transparent"
+msgstr ""
