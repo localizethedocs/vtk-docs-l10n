@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:1
+msgid "Add spatio-temporal harmonics filter/source"
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:3
+msgid "Filter"
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:5
+msgid ""
+"You can now use a new filter to compute spatio-temporal harmonics on each "
+"point of your input dataset. This avoids some manual computation through the "
+"calculator which would be hard to follow."
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:10
+msgid ""
+"This filter allows you to add multiple harmonics defined by their amplitude, "
+"temporal frequency, wave vector, and phase. The sum of them will be computed "
+"using the sinus function for each point. Note that there is no cosinus in "
+"this function. If no harmonic is specified, values will be null."
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:17
+msgid "Source"
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:19
+msgid ""
+"You can now generate an image data with harmonics data. This new source "
+"allows you to specify the uniform grid extent. It also lets you choose the "
+"harmonics you want, the same way as in the filter (it is embedded). Finally, "
+"it can generate time steps by specifying time values."
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:25
+msgid ""
+"If no harmonic is specified, the source will generate null harmonic values. "
+"You can generate default harmonics with the `ResetHarmonics` function though."
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:29
+msgid ""
+"If no time value is specified, the source will not generate time steps. You "
+"can generate default ones with the reset `ResetTimeStepValues` function "
+"though."
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:33
+msgid "![Default Harmonics Source](../imgs/9.4/harmonics-source.gif)"
+msgstr ""
+
+#: ../../../release_details/9.4/add-harmonics-filter-source.md:33
+msgid "Default Harmonics Source"
+msgstr ""

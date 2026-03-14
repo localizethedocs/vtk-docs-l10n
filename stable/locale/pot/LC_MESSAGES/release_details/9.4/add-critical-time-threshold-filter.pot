@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:1
+msgid "Add the vtkCriticalTime filter"
+msgstr ""
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:3
+msgid ""
+"Given an input that changes over time, the `vtkCriticalTime` filter "
+"generates a new data array containing time step values. These values "
+"correspond to the time at which a specified threshold criterion has been met "
+"for a given point/cell array (at each point/cell respectively)."
+msgstr ""
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:7
+msgid ""
+"To do so, the filter needs to process all available timesteps. The output of "
+"the filter in not temporal."
+msgstr ""
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:9
+msgid ""
+"Like in the `vtkThreshold` filter, the threshold criterion can take three "
+"forms:"
+msgstr ""
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:10
+msgid "greater than a particular value;"
+msgstr ""
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:11
+msgid "less than a particular value;"
+msgstr ""
+
+#: ../../../release_details/9.4/add-critical-time-threshold-filter.md:12
+msgid "between two values."
+msgstr ""

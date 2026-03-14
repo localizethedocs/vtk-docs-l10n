@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../getting_started/using_python.md:1
+msgid "Using Python"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:3
+msgid ""
+"VTK is available on [PyPI](https://pypi.org/) for Windows, macOS and Linux."
+msgstr ""
+
+#: ../../../getting_started/using_python.md:4
+msgid "pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:7
+msgid ""
+"or in a [virtual environment](https://docs.python.org/3/library/venv.html) "
+"if you want to install the package only locally instead of system-wide"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:0
+msgid "Linux"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:14
+#: ../../../getting_started/using_python.md:23
+msgid ""
+"python -m venv ./env\n"
+"source ./env/bin/activate\n"
+"pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:0
+msgid "macOS"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:0
+msgid "Windows"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:31
+msgid "Using `PowerShell`"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:32
+msgid ""
+"python -m venv env\n"
+".\\env\\Activate.ps1\n"
+"pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:38
+msgid "or using `cmd.exe`"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:39
+msgid ""
+"python -m venv env\n"
+".\\env\\activate.bat\n"
+"pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:47
+msgid ""
+"To verify the installation try to import vtk from an interactive python "
+"environment:"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:49
+msgid ""
+">>> import vtk\n"
+">>> print(vtk.__version__)\n"
+"9.2.6\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:55
+msgid ""
+"That's it ! You may now try some of the [tutorials](https://kitware.github."
+"io/vtk-examples/site/Python/#tutorial), [how to guides](https://kitware."
+"github.io/vtk-examples/site/PythonHowTo) or [examples](https://kitware."
+"github.io/vtk-examples/site/Python)."
+msgstr ""
+
+#: ../../../getting_started/using_python.md:60
+msgid ""
+"If you are looking for a higher-level interface to VTK in Python, you may "
+"want to explore using [PyVista](https://docs.pyvista.org) as it exposes VTK "
+"in a \"Pythonic\" manner."
+msgstr ""
+
+#: ../../../getting_started/using_python.md:64
+msgid ""
+"If you are running the script in a Linux/Windows machine without a display "
+"or a GPU, VTK will automatically select an appropriate OpenGL render window "
+"class. Please learn more about how you can influence the render window "
+"selection process in [](/advanced/runtime_settings.md#opengl)"
+msgstr ""

@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-ForEach.md:1
+msgid "Introduce vtkForEach filter"
+msgstr ""
+
+#: ../../../release_details/9.4/add-ForEach.md:3
+msgid ""
+"vtkForEach and vtkEndFor are two newly introduced filters that works in "
+"conjunction.  Their goal is to define a part of the pipeline to repeat. In "
+"this matter, the `vtkForEach` uses a `vtkExecutionRange` to define a ranging "
+"strategy. For now, it uses by default the `vtkTimeRange` range strategy that "
+"loops over timesteps. In the future, other strategies using for examples "
+"blocks of a composite data set may be added. On the other end of the "
+"pipeline, the `vtkEndFor` uses a `vtkExecutionAggregator` to process the "
+"result of each iteration into a resulting dataset. For now, it uses by "
+"default the `vtkAggregateToPartitionedDataSetCollection`, which stores each "
+"result in a separate partition. Other strategies, that would append all data "
+"sets, or generate a temporal one may be added later."
+msgstr ""
+
+#: ../../../release_details/9.4/add-ForEach.md:16
+msgid ""
+"It is not possible to use nested `vtkForEach/vtkEndFor`. Such processing "
+"would require to design a specific range in the current state. Successive "
+"loops are supported."
+msgstr ""

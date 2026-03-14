@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/object_manager.md:1
+msgid "Object manager"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:3
+msgid "Serialization"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:4
+msgid ""
+"You can register objects with a `vtkObjectManager` instance and call "
+"`UpdateStatesFromObjects`, `GetState(identifier)` to obtain a serialized "
+"state of the registered objects and all their dependency objects that are "
+"serializable."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:9
+msgid "Deserialization"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:10
+msgid ""
+"You can register a json state (stringified) with a `vtkObjectManager` "
+"instance and call `UpdateObjectsFromStates`, `GetObjectAtId(identifier)` to "
+"deserialize and retrieve the objects."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:14
+msgid "Blobs"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:15
+msgid ""
+"All `vtkDataArray` are hashed and stored as unique blobs to prevent multiple "
+"copies of the same data within the state. The contents of a data array "
+"within a state are represented with a hash string. You can fetch and "
+"register blobs using `GetBlob` and `RegisterBlob`."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:20
+msgid "Dependencies"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:21
+msgid ""
+"You can retrieve all dependent object identifiers using `vtkObjectManager::"
+"GetAllDependencies(identifier)`"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:24
+msgid "Extensions"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:25
+msgid ""
+"You can also (de)serialize classes in custom VTK modules. Simply pass the "
+"registrar function to `vtkObjectManager::"
+"InitializeExtensionModuleHandler(registrar)` where the `registrar` argument "
+"is of type `vtkSessionObjectManagerRegistrarFunc`. In C/C++, this function "
+"can be accessed from the `vtkModuleNameSerDes.h` header file in your build "
+"directory. In Python, this function is available as an attribute on the "
+"module."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:31
+msgid "Here are examples:"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:33
+msgid ""
+"#include <vtkFooSerDes.h>\n"
+"\n"
+"vtkNew<vtkObjectManager> manager;\n"
+"manager->InitializeExtensionModuleHandler(RegisterClasses_vtkFoo);\n"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:40
+msgid ""
+"from vtkmodules import vtkInteractionWidgets\n"
+"from vtkmodules.vtkSerializationManager import vtkObjectManager\n"
+"object_manager = vtkObjectManager()\n"
+"object_manager.InitializeExtensionModuleHandler(vtkInteractionWidgets."
+"RegisterClasses_vtkInteractionWidgets)\n"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:47
+msgid "Serialization of addon in WASM"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:49
+msgid ""
+"In WASM, you will need to create two directories that resemble this tree. In "
+"this illustration, we wish to (de)serialize classes from the `Bar` and `Foo` "
+"modules in WASM using `vtkRemoteSession` or `vtkStandaloneSession`."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:52
+msgid ""
+"The `WebAssemblyAsync` module is optional. You can leave it out if you are "
+"not interested in having WebGPU support."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:55
+msgid ""
+"- Bar\n"
+" |- ...\n"
+" |- vtk.module\n"
+"- Foo\n"
+" |- ...\n"
+" |- vtk.module\n"
+"- WebAssembly\n"
+" |- vtk.module\n"
+" |- CMakeLists.txt\n"
+"- WebAssemblyAsync\n"
+" |- vtk.module\n"
+" |- CMakeLists.txt\n"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:70
+msgid "Declare your dependencies in `WebAssembly/vtk.module`"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:72
+msgid ""
+"NAME\n"
+"  FooBar::WebAssembly\n"
+"LIBRARY_NAME\n"
+"  fooBarWebAssembly\n"
+"PRIVATE_DEPENDS\n"
+"  VTK::SerializationManager\n"
+"  VTK::WebAssemblySession\n"
+"OPTIONAL_DEPENDS\n"
+"  FooBar::Foo\n"
+"  FooBar::Bar\n"
+"  VTK::RenderingContextOpenGL2\n"
+"  VTK::RenderingOpenGL2\n"
+"  VTK::RenderingUI\n"
+"  VTK::RenderingVolumeOpenGL2\n"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:89
+msgid "Build the module in the `WebAssembly/CMakeLists.txt`"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:91
+msgid ""
+"if (NOT CMAKE_SYSTEM_NAME STREQUAL \"Emscripten\")\n"
+"  message(FATAL_ERROR\n"
+"    \"The VTK::WebAssembly module requires Emscripten compiler.\")\n"
+"endif ()\n"
+"\n"
+"vtk_module_add_serdes_wasm_package(\n"
+"  MODULE FooBar::WebAssembly\n"
+"  OUTPUT_NAME fooBarWebAssembly\n"
+")\n"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:103
+msgid ""
+"Finally, ensure the `WebAssembly/vtk.module` is passed to `vtk_module_build` "
+"in your project's root `CMakeLists.txt`"
+msgstr ""
+
+#: ../../../advanced/object_manager.md:105
+msgid ""
+"If you are interested in WebGPU support, declare your dependencies in "
+"`WebAssemblyAsync/vtk.module` and repeat similar steps as in the non-async "
+"section using the new module names."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:108
+msgid ""
+"NAME\n"
+"  FooBar::WebAssemblyAsync\n"
+"LIBRARY_NAME\n"
+"  fooBarWebAssemblyAsync\n"
+"PRIVATE_DEPENDS\n"
+"  VTK::SerializationManager\n"
+"  VTK::WebAssemblySession\n"
+"OPTIONAL_DEPENDS\n"
+"  FooBar::Foo\n"
+"  FooBar::Bar\n"
+"  VTK::RenderingContextOpenGL2\n"
+"  VTK::RenderingOpenGL2\n"
+"  VTK::RenderingUI\n"
+"  VTK::RenderingVolumeOpenGL2\n"
+"  VTK::RenderingWebGPU\n"
+msgstr ""

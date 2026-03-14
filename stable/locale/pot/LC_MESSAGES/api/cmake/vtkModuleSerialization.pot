@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:6
+msgid "vtkModuleSerialization"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:15
+msgid ""
+"Generate functions that register (de)serialization functions for all classes "
+"in a library. |module-serialization|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:18
+msgid ""
+"vtk_module_generate_library_serdes_registrar(\n"
+"  MODULE             <module>\n"
+"  EXPORT_MACRO_NAME  <export_macro_name>\n"
+"  EXPORT_FILE_NAME   <export_file_name>\n"
+"  REGISTRAR_HEADER   <registrar_header>\n"
+"  REGISTRAR_SOURCE   <registrar_source>\n"
+"  CLASSES            <class>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:28
+msgid ""
+"Declares registrar function for ``MODULE`` in ``REGISTRAR_HEADER`` and "
+"writes implementation of the registrar in ``REGISTRAR_SOURCE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:31
+#: ../../../../../CMake/vtkModuleSerialization.cmake:409
+#: ../../../../../CMake/vtkModuleSerialization.cmake:515
+msgid "``MODULE``: The name of a module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:32
+#: ../../../../../CMake/vtkModuleSerialization.cmake:410
+msgid "``EXPORT_MACRO_NAME``: The name of the export macro for ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:33
+#: ../../../../../CMake/vtkModuleSerialization.cmake:411
+msgid ""
+"``EXPORT_FILE_NAME``: The name of the header file which defines "
+"``EXPORT_MACRO_NAME`` for ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:35
+msgid ""
+"``REGISTRAR_HEADER``: This file will hold the declaration of registrar "
+"function for ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:36
+msgid ""
+"``REGISTRAR_SOURCE``: This file will contain the implementation of registrar "
+"function for ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:37
+msgid ""
+"``CLASSES``: List of classes that will be registered with (de)serializer in "
+"this library."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:109
+msgid ""
+"Generate functions that register (de)serialization handlers for a collection "
+"of modules. |module-serialization|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:112
+msgid ""
+"vtk_module_generate_libraries_serdes_registrar(\n"
+"  REGISTRAR_NAME     <registrar_name>\n"
+"  REGISTRAR_SOURCE   <registrar_source>\n"
+"  [MANDATORY_MODULES  <module>...]\n"
+"  [OPTIONAL_MODULES   <module>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:120
+msgid ""
+"Invokes registrar functions for all modules from ``OPTIONAL_MODULES`` and "
+"``MANDATORY_MODULES``. Code is generated in ``REGISTRAR_SOURCE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:123
+msgid "``REGISTRAR_NAME``: The name of the registrar function."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:124
+msgid ""
+"``REGISTRAR_SOURCE``: This file will contain the implementation of registrar "
+"function which registers handlers for all ``MANDATORY_MODULES`` and "
+"``OPTIONAL_MODULES``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:126
+msgid ""
+"``MANDATORY_MODULES``:  A list of ``PUBLIC`` or ``PRIVATE`` dependencies of "
+"the module which ``REGISTRAR_SOURCE`` is compiled into."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:128
+msgid ""
+"``OPTIONAL_MODULES``: A list of optional dependencies of the module which "
+"``REGISTRAR_SOURCE`` is compiled into."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:190
+msgid ""
+"Generate (de)serialization functions for classes that belong to ``MODULE`` "
+"in ``SERDES_SOURCES``. |module-serialization|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:193
+msgid ""
+"_vtk_module_serdes_generate_sources(\n"
+"  MODULE              <module>\n"
+"  SERIALIZED_CLASSES  <serialized_classes>\n"
+"  SERDES_SOURCES      <serdes_sources>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:200
+msgid ""
+"``MODULE``: Generates serialization sources for all classes in ``MODULE``"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:201
+msgid ""
+"``SERIALIZED_CLASSES``: This variable will contain the list of all classes "
+"that were serialized."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:203
+msgid ""
+"``SERDES_SOURCES``: This variable will contain the list of all sources that "
+"were generated for ``SERIALIZED_CLASSES`` in ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:397
+msgid ""
+"Generate (de)serialization code for all classes in a ``MODULE``. |module-"
+"serialization|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:399
+msgid ""
+"vtk_module_serdes(\n"
+"  MODULE            <module>\n"
+"  EXPORT_MACRO_NAME <export_macro_name>\n"
+"  EXPORT_FILE_NAME  <export_file_name>\n"
+"  REGISTRAR_HEADER  <header>\n"
+"  REGISTRAR_SOURCE  <source>\n"
+"  SERDES_SOURCES    <serdes_sources>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:413
+msgid ""
+"``REGISTRAR_HEADER``: This file will contain declaration of registrar "
+"function for ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:414
+msgid ""
+"``REGISTRAR_SOURCE``: This file will contain implementation of registrar "
+"function for ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:415
+msgid ""
+"``SERDES_SOURCES``: This variable holds the list of generated source files "
+"with vtkWrapSerDes for all classes in ``MODULE``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:496
+msgid ""
+"Adds a WebAssembly package that facilitates deserialization of VTK classes "
+"in a WASM environment for ``MODULE``. |module-wrapping-serdes|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:499
+msgid ""
+"vtk_module_add_serdes_wasm_package(\n"
+"  [ASYNC]\n"
+"  MODULE                <module>\n"
+"  OUTPUT_NAME           <output_name>\n"
+"  [INSTALL_COMPONENT     <install_component>]\n"
+"  [INSTALL_DESTINATION   <install_destination>]\n"
+"  [EXTRA_SOURCES         <extra_sources>...]\n"
+"  [EXTRA_COMPILE_OPTIONS <extra_compile_options>...]\n"
+"  [EXTRA_LINK_OPTIONS    <extra_link_options>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:511
+msgid ""
+"``ASYNC``: If specified, the generated package will be linked with `-"
+"sJSPI=1` flag. The generated package will support asynchronous string-based "
+"method calls. This option is required if ``MODULE`` depends on ``VTK::"
+"RenderingWebGPU`` to support asynchronous webgpu APIs."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:516
+msgid ""
+"``OUTPUT_NAME``: The name of the output file that will be generated. This "
+"file will contain the bindings for the WebAssembly module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:518
+msgid ""
+"``INSTALL_COMPONENT``: Installation component of the install rules created "
+"by this function. Defaults to ``runtime``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:520
+msgid ""
+"``INSTALL_DESTINATION``: The destination directory where the generated "
+"WebAssembly package will be installed. Defaults to ``${CMAKE_INSTALL_BINDIR}"
+"``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:522
+msgid ""
+"``EXTRA_SOURCES``: Additional sources that will be compiled into the "
+"WebAssembly package. This is useful for adding custom JavaScript wrappers or "
+"other C++ sources that are not part of the VTK module but are needed for the "
+"WebAssembly package."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:526
+msgid ""
+"``EXTRA_COMPILE_OPTIONS``: Additional compile options that will be passed to "
+"the WebAssembly package."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleSerialization.cmake:528
+msgid ""
+"``EXTRA_LINK_OPTIONS``: Additional link options that will be passed to the "
+"WebAssembly package."
+msgstr ""

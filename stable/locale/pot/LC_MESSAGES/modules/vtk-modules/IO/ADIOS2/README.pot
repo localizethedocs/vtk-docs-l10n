@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:1
+msgid "VTK::IOADIOS2"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:3
+msgid "Goal"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:5
+msgid ""
+"Provide readers to data produced by the Adaptable Input Output System "
+"version 2, [ADIOS2](https://adios2.readthedocs.io/en/latest/)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:7
+msgid "Currently used on Paraview Application Server Manager development"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:9
+msgid "Extensions:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:11
+msgid ".h = header declaration"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:12
+msgid ".inl = generic inline template implementations"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:13
+msgid ".txx = specialized template implementations"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:14
+msgid ".cxx = implementation"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:16
+msgid "##Public VTK classes:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:18
+msgid ""
+"**vtkADIOS2ImageCoreReader.h/.cxx** : a generic multiblock reader for image "
+"data developed at Kitware Inc. It will use existing arrays to populate "
+"dimension of the image, adding timesteps info, point and cell data "
+"accordingly. No predefined schema is needed. It can work in serial or MPI "
+"mode."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:20
+msgid ""
+"**vtkADIOS2VTXReader .h/.cxx** : multiblock reader for ImageData and "
+"UnstructuredData types using VTK ADIOS2 Readers (VTX) implementation "
+"developed at Oak Ridge National Laboratory (ORNL). Reads bp files/streams "
+"with a vtk.xml attribute schema that uses the [VTK XML file formats schemas]"
+"(https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf). For more "
+"comprehensive documentation refer [to this section in the ADIOS2 User Guide.]"
+"(https://adios2.readthedocs.io/en/latest/ecosystem/visualization.html)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:22
+msgid "**VTX: VTK ADIOS2 READERS**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:24
+msgid ""
+"Developed at Oak Ridge National Laboratory. Reads node (image and "
+"unstructured) and cell (unstructured) centered data."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:26
+msgid ""
+"**common/VTXDataArray .h/.cxx** : wrapper around vtkDataArray with adios2-"
+"related relevant information"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:29
+msgid ""
+"**common/VTXHelper .h/.inl/.txx/.cxx** : collection of helper functions used "
+"privately in *.cxx"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:32
+msgid "**common/VTXTypes.h** : header only types definitions including MACROS"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:35
+msgid ""
+"**VTXSchemaManager** : reusable class that manages a reader that is a "
+"derived type of VTXSchema"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:38
+msgid ""
+"**schema/VTXSchema .h/.txx/.cxx** : abstract base class for supported schema"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:39
+msgid "schema/vtk/VTXvtkBase : Base class for VTK formats"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:40
+msgid "schema/vtk/VTXvtkVTI : ImageData VTK format"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/ADIOS2/README.md:41
+msgid "schema/vtk/VTXvtkVTU : Unstructured VTK format"
+msgstr ""
