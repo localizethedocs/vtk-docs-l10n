@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:1
+msgid ""
+"Add getter and setter functions for the text on the buttons of "
+"vtkCameraOrientationRepresentation"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:3
+msgid ""
+"You can now customize the text displayed on top of the buttons of a "
+"`vtkCameraOrientationRepresentation` using these functions"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:5
+msgid ""
+"vtkCameraOrientationRepresentation::SetXPlusLabelText(const std::string& "
+"label)"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:6
+msgid ""
+"vtkCameraOrientationRepresentation::SetXMinusLabelText(const std::string& "
+"label)"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:7
+msgid ""
+"vtkCameraOrientationRepresentation::SetYPlusLabelText(const std::string& "
+"label)"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:8
+msgid ""
+"vtkCameraOrientationRepresentation::SetYMinusLabelText(const std::string& "
+"label)"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:9
+msgid ""
+"vtkCameraOrientationRepresentation::SetZPlusLabelText(const std::string& "
+"label)"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:10
+msgid ""
+"vtkCameraOrientationRepresentation::SetZMinusLabelText(const std::string& "
+"label)"
+msgstr ""
+
+#: ../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.md:12
+msgid ""
+"These methods follow similar naming convention to the existing getter "
+"methods for the `vtkTextProperty` corresponding to the button labels."
+msgstr ""

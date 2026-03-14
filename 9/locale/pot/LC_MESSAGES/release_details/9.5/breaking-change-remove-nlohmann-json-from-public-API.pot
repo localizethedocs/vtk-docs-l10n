@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.md:1
+msgid "Remove usage of the nlohmannjson library from public facing API"
+msgstr ""
+
+#: ../../../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.md:3
+msgid ""
+"The `nlohmann::json vtkAbstractArray::SerializeValues()` method is now "
+"removed as the public exposure of VTK's vendored `nlohmannjson` library "
+"caused difficulty for downstream projects that link to a different "
+"nlohmannjson."
+msgstr ""
+
+#: ../../../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.md:6
+msgid ""
+"These methods were added in [vtk/vtk!11163](https://gitlab.kitware.com/vtk/"
+"vtk/-/merge_requests/11163) which was released in 9.4. That merge request "
+"has now been reverted. These methods are removed (instead of deprecation) "
+"because deprecation would prevent fixing the problem."
+msgstr ""

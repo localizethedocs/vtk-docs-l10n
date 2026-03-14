@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/build_documentation.md:1
+msgid "Building documentation"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:3
+msgid ""
+"This section outlines how to locally build both the user and developer "
+"guides and the C++ API documentation for VTK."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:6
+msgid "User and developer guides"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:8
+msgid ""
+"VTK's user and developer guides are automatically built and deployed to "
+"https://docs.vtk.org every time the `master` branch is updated by leveraging "
+"the integration with the _Read the Docs_ service."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:12
+#: ../../../advanced/build_documentation.md:153
+msgid "To locally build the documentation:"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:0
+msgid "Without VTK build tree"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:19
+#: ../../../advanced/build_documentation.md:157
+msgid ""
+"[Download](/build_instructions/build.md#obtaining-the-sources) the VTK "
+"sources."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:21
+msgid "Create and activate a virtual environment."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:0
+msgid "Linux/macOS"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:30
+msgid ""
+"cd Documentation/docs\n"
+"\n"
+"python3 -m venv .venv\n"
+"source .venv/bin/activate\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:0
+msgid "Windows"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:42
+msgid ""
+"cd Documentation\\docs\n"
+"\n"
+"py -m venv .venv\n"
+".\\.venv\\Scripts\\activate\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:49
+msgid ""
+"`py -m venv` executes venv using the latest Python interpreter you have "
+"installed. For more details, read the [Python Windows launcher](https://docs."
+"python.org/3/using/windows.html#launcher) docs."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:54
+msgid "Install dependencies using pip."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:63
+msgid "python3 -m pip install -r requirements.txt\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:72
+msgid "py -m pip install -r requirements.txt\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:78
+msgid "Build the documentation as web pages."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:80
+msgid "make html\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:84
+msgid "Open `_build/html/index.html` in a web browser."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:0
+msgid "Linux"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:90
+msgid "xdg-open _build/html/index.html\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:0
+msgid "macOS"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:98
+msgid "open _build/html/index.html\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:108
+msgid "start _build\\html\\index.html\n"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:0
+msgid "With VTK build tree"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:120
+msgid ""
+"In order to successfully build the VTK documentation using the instructions "
+"below, you will need to install the required Python packages."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:123
+msgid ""
+"To ensure that you have the correct dependencies installed in the Python "
+"environment associated with the VTK build tree, please run `pip install -r "
+"Documentation\\docs\\requirements.txt` or `pip install --user -r "
+"Documentation\\docs\\requirements.txt`."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:127
+msgid ""
+"If updating your system installation of Python is not feasible or you prefer "
+"not to do so, we recommend following the `Without VTK build tree` approach "
+"instead."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:131
+msgid ""
+"[Download](/build_instructions/build.md#obtaining-the-sources) VTK sources."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:133
+msgid ""
+"[Configure](/build_instructions/build.md#configure) VTK by setting the "
+"`VTK_BUILD_SPHINX_DOCUMENTATION` option to `ON`."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:136
+msgid "Build the `SphinxDoc` target."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:141
+msgid ""
+"Automatic build of preview documentation each time a merge request is "
+"submitted is not yet supported due to [limitation](https://docs.readthedocs."
+"io/en/stable/guides/pull-requests.html#limitations) of the _Read The Docs_ "
+"service that does not yet support self-hosted GitLab deployment."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:145
+msgid ""
+"Solutions to address this are being discussed in https://github.com/"
+"readthedocs/readthedocs.org/issues/9464."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:148
+msgid "C++ API documentation"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:150
+msgid ""
+"The C++ API documentation is built and uploaded to https://vtk.org/doc/"
+"nightly/html/index.html when the `master` branch is updated."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:155
+msgid "Install Doxygen"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:159
+msgid ""
+"[Configure](/build_instructions/build.md#configure) VTK by setting the "
+"`VTK_BUILD_DOCUMENTATION` option to `ON`."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:161
+msgid "Build the `DoxygenDoc` target."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:163
+msgid "Targets"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:165
+msgid ""
+"After configuring the VTK using CMake, the following targets may be used to "
+"build documentation for VTK:"
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:168
+msgid ""
+"`DoxygenDoc` - build the doxygen documentation from VTK's C++ source files "
+"(`VTK_BUILD_DOCUMENTATION` needs to be `ON` for the target to exist)."
+msgstr ""
+
+#: ../../../advanced/build_documentation.md:170
+msgid ""
+"`SphinxDoc` - build the sphinx documentation for VTK. "
+"(`VTK_BUILD_SPHINX_DOCUMENTATION` needs to be `ON` for the target to exist)."
+msgstr ""

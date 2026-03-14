@@ -1,0 +1,445 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:1
+msgid "VTK::RenderingWebGPU"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:3
+msgid "vtkRenderingWebGPU - WebGPU Backend for Rendering"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:5
+msgid "Description"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:7
+msgid ""
+"This module contains the WebGPU native backend for `RenderingCore`. "
+"Currently, it supports rendering polygonal geometry in different "
+"representations with point/cell scalar-mapped colors."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:9
+msgid ""
+"When both the `RenderingOpenGL2` and `RenderingWebGPU` libraries are linked, "
+"the user must set the `VTK_GRAPHICS_BACKEND` environment variable to either "
+"`WEBGPU` or `OPENGL` in order to activate the intended object factories. In "
+"the future, we plan to enhance the object factory mechanism to accept "
+"command line arguments."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:16
+msgid "Building VTK with Dawn (Highly Experimental)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:18
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:20
+msgid "Git"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:21
+msgid "tools for building VTK"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:23
+msgid ""
+"This module uses Dawn's C++ WebGPU implementation on desktop and the "
+"`emdawnwebgpu` subcomponent for wasm (automatically fetched by emscripten "
+"with `--use-port=emdawnwebgpu` flag)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:25
+msgid "Cloning and Building Dawn"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:27
+msgid ""
+"Dawn should be built at tag [v20250621.085109](https://github.com/google/"
+"dawn/tree/v20250621.085109)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:29
+msgid ""
+"# Clone the repo and checkout the required version\n"
+"git clone https://github.com/google/dawn dawn && cd dawn\n"
+"git checkout v20250621.085109\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:35
+msgid "Build Dawn with `CMake` and `Ninja`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:37
+msgid ""
+"cmake -S . -B out/Debug -GNinja -DDAWN_FETCH_DEPENDENCIES=ON -"
+"DDAWN_ENABLE_INSTALL=ON\n"
+"cmake --build out/Debug\n"
+"cmake --install out/Debug --prefix /path/to/install/dawn\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:43
+msgid "Configuring and Building VTK"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:45
+msgid "When configuring VTK's build for wasm, configure with:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:47
+msgid ""
+"cmake \\\n"
+"-S /path/to/vtk/src \\\n"
+"-B /path/to/vtk/build \\\n"
+"-GNinja \\\n"
+"-DVTK_ENABLE_WEBGPU=ON \\\n"
+"-DVTK_BUILD_TESTING=ON\n"
+"\n"
+"cmake --build\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:58
+msgid "When building on desktop (x86_64/aarch64), configure with:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:60
+msgid ""
+"cmake \\\n"
+"-S /path/to/vtk/src \\\n"
+"-B /path/to/vtk/build \\\n"
+"-GNinja \\\n"
+"-DVTK_ENABLE_WEBGPU=ON \\\n"
+"-DDawn_DIR=/path/to/where/dawn/is/installed/lib/cmake/Dawn \\\n"
+"-DVTK_BUILD_TESTING=ON\n"
+"\n"
+"cmake --build\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:74
+msgid "Running Tests"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:76
+msgid "WebGPU Tests"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:78
+msgid "./bin/vtkRenderingWebGPUCxxTests\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:82
+msgid "Available tests:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:84
+msgid ""
+"0. TestActorFaceCullingProperty\n"
+"1. TestAxesActor\n"
+"2. TestCellScalarMappedColors\n"
+"3. TestCompositePolyDataMapper\n"
+"..\n"
+"..\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:93
+msgid "Rendering Core Tests"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:95
+msgid ""
+"To run the `RenderingCore` tests with `VTK::RenderingWebGPU`, edit `vtk."
+"module` to link unit tests with `TEST_DEPENDS`:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:97
+msgid "Uncomment the module name under `TEST_DEPENDS`."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:98
+msgid "Rebuild and run the tests (only a few pass currently)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:99
+msgid "Set the `VTK_GRAPHICS_BACKEND` environment variable to `WEBGPU`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:101
+msgid ""
+"export VTK_GRAPHICS_BACKEND=WEBGPU\n"
+"./bin/vtkRenderingCoreCxxTests\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:108
+msgid "Features"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:110
+msgid "The following features are currently implemented:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:112
+msgid ""
+"**vtkPolyData Rendering**: Supports point, line, and triangle primitives."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:113
+msgid "**Glyph Rendering**: Supports point, line, and triangle primitives."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:114
+msgid ""
+"**Composite vtkPolyData Rendering**: Supports point, line, and triangle "
+"primitives."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:115
+msgid "**Scalar Mapped Coloring**:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:116
+msgid "Point scalar mapped coloring of surfaces."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:117
+msgid "Cell scalar mapped coloring."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:118
+msgid "**Actor Representations**:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:119
+msgid "`VTK_POINTS`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:120
+msgid "`VTK_WIREFRAME`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:121
+msgid "`VTK_SURFACE`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:122
+msgid "`VTK_SURFACE` with edge visibility"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:123
+msgid "**Lighting**:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:124
+msgid "Based on VTK headlights."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:125
+msgid "Supports point/cell normals."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:126
+msgid "**Rendering Adjustments**:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:127
+msgid "Point size adjustments."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:128
+msgid "Line width adjustments for wireframe and surface with edges."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:129
+msgid "**Rendering Backends**:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:130
+msgid ""
+"`vtkWebAssemblyWebGPURenderWindow`: A reference implementation of "
+"`vtkWebGPURenderWindow` for WebAssembly and desktop."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:131
+msgid ""
+"`vtkXWebGPURenderWindow`: Implementation using X11 for Linux desktop "
+"rendering."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:132
+msgid "**Depth Testing**: Enables correct rendering of 3D objects."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:133
+msgid ""
+"**Selections**: Hardware selector can pick cells, composite datasets and "
+"actors."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:136
+msgid "Compute Shader API"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:138
+msgid ""
+"The compute shader API allows offloading work from the CPU to the GPU using "
+"WebGPU compute shaders."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:140
+msgid ""
+"**User-level information**: [Compute API User Guide](./doc/webgpu-compute-"
+"api-user.md)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:141
+msgid ""
+"**Developer-level information**: [Compute API Developer Guide](./doc/webgpu-"
+"compute-api-dev.md)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:145
+msgid "Future Work"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:147
+msgid ""
+"Since WebGPU is already an abstraction over graphics APIs, this module "
+"avoids creating another level of abstraction. It leverages WebGPU's C++ "
+"flavor for its object-oriented API and RAII. Helper classes in the "
+"`vtkWebGPUInternals...` files ensure cleaner bind group initialization code."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:149
+msgid "Planned improvements include:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:151
+msgid "Volume mappers"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:152
+msgid "Textures"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:153
+msgid "Dual-depth peeling"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:154
+msgid "Advanced lighting"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:155
+msgid ""
+"Platform-native render windows for Windows, macOS, Android, iOS and wayland."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:159
+msgid "References"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:161
+msgid "Here are some valuable resources for learning WebGPU:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:163
+msgid "**[WebGPU Fundamentals](https://webgpufundamentals.org/)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:165
+msgid "Complete introduction to using WebGPU"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:167
+msgid ""
+"**[WebGPU GLTF Case Study](https://toji.github.io/webgpu-gltf-case-study/)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:169
+msgid "Builds an efficient glTF renderer in WebGPU using JavaScript."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:170
+msgid "Discusses various rendering pitfalls and optimizations."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:172
+msgid ""
+"**[WebGPU Native Examples](https://github.com/samdauwe/webgpu-native-"
+"examples/)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:174
+msgid ""
+"A collection of single-file examples demonstrating various WebGPU use cases "
+"in C."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:176
+msgid "**[Learn WebGPU](https://eliemichel.github.io/LearnWebGPU/index.html)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:178
+msgid "Similar to LearnOpenGL and Vulkan tutorials."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:179
+msgid ""
+"Covers window setup, triangle rendering, buffers, textures, and 3D rendering."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:181
+msgid "**[Learn WGPU](https://sotrh.github.io/learn-wgpu/)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:183
+msgid "Beginner-friendly tutorial using wgpu.rs."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:185
+msgid "**[Raw WebGPU](https://alain.xyz/blog/raw-webgpu)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:187
+msgid "Introductory tutorial covering WebGPU concepts using JavaScript."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:189
+msgid ""
+"**[How to Render a WebGPU Triangle (Series)](https://carmencincotti."
+"com/2022-12-19/how-to-render-a-webgpu-triangle-series-part-three-video/)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:191
+msgid "Explains swapchain and image presentation in detail."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:193
+msgid "**[WebGPU Rocks](https://webgpu.rocks/)**"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:195
+msgid "A well-organized WebGPU API and WGSL summary."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/README.md:197
+msgid ""
+"For WGSL specification, refer to: [WGSL Spec](https://www.w3.org/TR/WGSL/)"
+msgstr ""

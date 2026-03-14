@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/build_for_mobile.md:1
+msgid "Cross-compiling for Mobile devices"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:4
+msgid ""
+"For complete build instructions see [here](../build_instructions/build.md)."
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:7
+msgid ""
+"VTK supports mobile devices in its build. These are triggered by a top-level "
+"flag which then exposes some settings for a cross-compiled VTK that is "
+"controlled from the top-level build."
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:11
+msgid "IOS"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:13
+msgid ""
+"iOS builds may be enabled by setting the `VTK_IOS_BUILD` option. The "
+"following settings than affect the iOS build:"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:16
+msgid "`IOS_SIMULATOR_ARCHITECTURES`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:17
+msgid "`IOS_DEVICE_ARCHITECTURES`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:18
+msgid "`IOS_DEPLOYMENT_TARGET`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:19
+msgid "`IOS_EMBED_BITCODE`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:21
+msgid "Android"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:23
+msgid ""
+"Android builds may be enabled by setting the `VTK_ANDROID_BUILD` option. "
+"Android build use a set of defined option in `vtkAndroid.cmake` but user "
+"options can also be added by setting `VTK_ANDROID_USER_OPTIONS`."
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:27
+msgid "The following settings affect the Android build:"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:29
+msgid "`ANDROID_NDK`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:30
+msgid "`ANDROID_NATIVE_API_LEVEL`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:31
+msgid "`ANDROID_ARCH_ABI`"
+msgstr ""
+
+#: ../../../advanced/build_for_mobile.md:33
+msgid ""
+"A typical CMake configuration line would be: `cmake -S /vtk-src -B /vtk-"
+"build  -DANDROID_ARCH_ABI=arm64-v8a -DANDROID_NATIVE_API_LEVEL=34 -"
+"DANDROID_NDK=/path/to/ndk -DCMAKE_BUILD_TYPE=Release -DVTK_ANDROID_BUILD=ON -"
+"DVTK_ANDROID_USER_OPTIONS=\"-DVTK_MODULE_ENABLE_VTK_IOInfovis=NO;-"
+"DVTK_MODULE_ENABLE_VTK_TestingRendering=NO\"`"
+msgstr ""

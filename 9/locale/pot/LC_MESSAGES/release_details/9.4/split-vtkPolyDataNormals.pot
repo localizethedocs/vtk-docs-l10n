@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:1
+msgid "vtkPolyDataNormals: Split into separate classes"
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:3
+msgid ""
+"`vtkPolyDataNormals` used to be a single class that performed, splitting of "
+"strips, orienting polygons, splitting sharp edges, and computing normals. "
+"This class has been split as follows to make it easier to use and understand."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:7
+msgid ""
+"`vtkTriangleFilter` now has an option to `PreservePolys`, so that only "
+"strips can be split."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:8
+msgid "`vtkOrientPolyData` is a new class that orients polygons."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:9
+msgid "`vtkSplitSharpEdgesPolyData` is a new class that splits sharp edges."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:10
+msgid "`vtkPolyDataNormals` now only computes point and cell normals."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:12
+msgid ""
+"The new classes are more efficient and easier to use and read than the old "
+"`vtkPolyDataNormals` class."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:14
+msgid ""
+"Additionally, `vtkAbstractCellLinks` now also have `ShallowCopy` which is "
+"used to copy the cell links to avoid copying/rebuilding them."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:17
+msgid ""
+"Moreover, `vtkStaticCellLinks`'s BuildLinks for `vtkPolyData` has been fixed "
+"and multi-threaded."
+msgstr ""
+
+#: ../../../release_details/9.4/split-vtkPolyDataNormals.md:19
+msgid ""
+"Finally, `vtkPolyData` when `Editable` is Off, `vtkStaticCellLinks` is used "
+"to create the cell links."
+msgstr ""

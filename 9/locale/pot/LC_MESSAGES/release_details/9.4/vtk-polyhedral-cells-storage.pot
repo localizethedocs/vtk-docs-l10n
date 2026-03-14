@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:1
+msgid "Improvements related to vtk Polyhedral cell storage"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:3
+msgid "Storing faces as vtkCellArray"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:5
+msgid ""
+"When storing face information for polyhedral cells, `vtkUnstructuredGrid` "
+"uses a `vtkIdTypeArray` in a special format that looks awfully similar to "
+"how `vtkCellArray` used maintain its internal storage. The new internal "
+"storage simply changes it to using `vtkCellArray` instead. That will allow "
+"us to use a non-interleaved storage for faces. Together with using a "
+"`vtkCellArray` for `FaceLocations`  the one-2-many relationship can be "
+"easily preserved without resorting to custom layout used by the `Faces` "
+"array."
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:9
+msgid "So here's the current storage structure:"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:10
+msgid ""
+"**Connectivity** (`vtkCellArray`): simply stores point ids for all points "
+"for each polyhedral element"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:11
+msgid ""
+"**Faces** (`vtkCellArray`): each element defines a polygonal face. The "
+"indices per element directly refer to point ids."
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:12
+msgid ""
+"**FaceLocations** (`vtkCellArray`): each element identifies a polyhedral "
+"cell. The indices per element reference face defined in the **ElementFace** "
+"array."
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:15
+msgid "Contrast this with how this information was previously stored:"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:16
+msgid ""
+"**Connectivity** (`vtkCellArray`): simply stores point ids for all points "
+"for each polyhedral element (same as in the new proposal)"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:17
+msgid ""
+"**(Legacy)Faces** (`vtkIdTypeArray`): an interleaved array of the form "
+"`(numCellFaces, numFace0Pts, id1, id2, id3, numFace1Pts,id1, id2, id3, ...)`"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:18
+msgid ""
+"**(Legacy)FaceLocations** (`vtkIdTypeArray`): offset array into "
+"**(Legacy)Faces** array indicating where the faces for a corresponding cell "
+"are stored"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:21
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:23
+msgid ""
+"To ensure a nice transition to the new storage, some old API are kept. More "
+"precisely the method `void SetCells(vtkUnsignedCharArray* cellTypes, "
+"vtkCellArray* cells, vtkIdTypeArray* faceLocations, vtkIdTypeArray* faces);` "
+"from vtkUnstructuredGrid is deprecated but can still be used. In this case a "
+"copy of faceLocations and faces data will be done. Another case are the "
+"`GetFaces` and  `GetFaceLocations` methods. They are still available  but an "
+"internal cache with the old internal layout is used. It means that they "
+"should be considered as read only methods and not be relied on to change "
+"internal data of vtkUnstructuredGrid. The caching process may impact a bit "
+"performance."
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:29
+msgid ""
+"The `FaceConn` and `FaceLocs` internal arrays of "
+"`vtkUnstructuredGridCellIterator` are no longer available as "
+"`vtkIdTypeArray`. This may break your subclasses if you rely on them "
+"directly and not on the exposed API of `vtkUnstructuredGridCellIterator`. A "
+"solution to keep using them in subclasses is to define them directly in "
+"subclasses and handle their logic."
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:32
+msgid "Compatibility with Conduit"
+msgstr ""
+
+#: ../../../release_details/9.4/vtk-polyhedral-cells-storage.md:34
+msgid ""
+"The new layout is much closer to how Conduit store its polyhedral cell "
+"information. Thus, some gain should be expected on the long run."
+msgstr ""

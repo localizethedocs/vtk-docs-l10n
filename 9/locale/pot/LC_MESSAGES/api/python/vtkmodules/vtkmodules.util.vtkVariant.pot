@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:1
+msgid "{py:mod}`vtkmodules.util.vtkVariant`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:7
+msgid ""
+"Utility functions to mimic the template support functions for vtkVariant"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:18
+msgid ""
+"{py:obj}`vtkVariantStrictWeakOrderKey <vtkmodules.util.vtkVariant."
+"vtkVariantStrictWeakOrderKey>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:145
+msgid "A key method (class, actually) for use with sort()"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:30
+msgid ""
+"{py:obj}`vtkVariantCreate <vtkmodules.util.vtkVariant.vtkVariantCreate>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:116
+msgid ""
+"Create a vtkVariant of the specified type, where the type is in the "
+"following format: 'int', 'unsigned int', etc. for numeric types, and "
+"'string' for strings.  You can also use an integer VTK type constant for the "
+"type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:34
+msgid ""
+"{py:obj}`vtkVariantExtract <vtkmodules.util.vtkVariant.vtkVariantExtract>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:123
+msgid ""
+"Extract the specified value type from the vtkVariant, where the type is in "
+"the following format: 'int', 'unsigned int', etc. for numeric types, and "
+"'string' for strings.  You can also use an integer VTK type constant for the "
+"type.  Set the type to 'None\" to extract the value in its native type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:38
+msgid "{py:obj}`vtkVariantCast <vtkmodules.util.vtkVariant.vtkVariantCast>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:130
+msgid ""
+"Cast the vtkVariant to the specified value type, where the type is in the "
+"following format: 'int', 'unsigned int', etc. for numeric types, and "
+"'string' for strings.  You can also use an integer VTK type constant for the "
+"type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:42
+msgid ""
+"{py:obj}`vtkVariantStrictWeakOrder <vtkmodules.util.vtkVariant."
+"vtkVariantStrictWeakOrder>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:137
+msgid "Compare variants by type first, and then by value."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:46
+msgid ""
+"{py:obj}`vtkVariantStrictEquality <vtkmodules.util.vtkVariant."
+"vtkVariantStrictEquality>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:163
+msgid "Check two variants for strict equality of type and value."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:50
+msgid ""
+"{py:obj}`vtkVariantLessThan <vtkmodules.util.vtkVariant.vtkVariantLessThan>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:170
+msgid "Return true if s1 < s2."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:54
+msgid "{py:obj}`vtkVariantEqual <vtkmodules.util.vtkVariant.vtkVariantEqual>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkVariant.py:177
+msgid "Return true if s1 == s2."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:60
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:66
+msgid ""
+"{py:obj}`_variant_type_map <vtkmodules.util.vtkVariant._variant_type_map>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:70
+msgid ""
+"{py:obj}`_variant_method_map <vtkmodules.util.vtkVariant."
+"_variant_method_map>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:74
+msgid ""
+"{py:obj}`_variant_check_map <vtkmodules.util.vtkVariant._variant_check_map>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:80
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:86
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:96
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:106
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.md:147
+msgid "Initialization"
+msgstr ""

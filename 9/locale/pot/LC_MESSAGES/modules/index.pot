@@ -1,0 +1,1654 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/index.md:3
+msgid "Module-specific documentation"
+msgstr ""
+
+#: ../../../modules/index.md:1
+msgid "Modules"
+msgstr ""
+
+#: ../../../modules/index.md:12
+msgid ""
+"VTK library is a dynamic C++ toolkit built around the  concept of "
+"\"modules\". Each module may have dependencies to other VTK module or "
+"external libraries."
+msgstr ""
+
+#: ../../../modules/index.md:14
+msgid "Foundational dependencies have been wrapped into convenient \"module\"."
+msgstr ""
+
+#: ../../../modules/index.md:16
+msgid "Enabling or Disabling Modules"
+msgstr ""
+
+#: ../../../modules/index.md:18
+msgid "To enable a module set"
+msgstr ""
+
+#: ../../../modules/index.md:20
+msgid "cmake -DVTK_MODULE_ENABLE_<module name>=WANT ...\n"
+msgstr ""
+
+#: ../../../modules/index.md:24
+msgid ""
+"during the [configuration](../build_instructions/index.md#configure) stage."
+msgstr ""
+
+#: ../../../modules/index.md:27
+msgid "Disabling a module can be done as follows:"
+msgstr ""
+
+#: ../../../modules/index.md:29
+msgid "cmake -DVTK_MODULE_ENABLE_<module name>=DONT_WANT ...\n"
+msgstr ""
+
+#: ../../../modules/index.md:33
+msgid ""
+"Enabling a module may cause more to be enabled due to dependencies.  For "
+"more details about the module infrastructure in VTK see  the [Module System]"
+"(../api/cmake/ModuleSystem.md) section."
+msgstr ""
+
+#: ../../../modules/index.md:37
+msgid "Available Modules"
+msgstr ""
+
+#: ../../../modules/index.md:39
+msgid "Here is a complete list of the available vtk modules:"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Module Name"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Description"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`Dummy::Dummy`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`ES::ExoticShapes`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::AcceleratorsVTKmCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Viskores (formerly VTK-m) data structures"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::AcceleratorsVTKmDataModel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::AcceleratorsVTKmFilters`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Viskores (formerly VTK-m) filters and algorithms"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ChartsCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Charts and plots"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonArchive`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonColor`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Color palette and named color support classes"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonComputationalGeometry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Parametric splines and curves"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "The base VTK library"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonDataModel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Core data types"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonExecutionModel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Core algorithms and execution"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonMath`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Linear algebra types"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonMisc`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Assorted utility classes"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonPython`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonSystem`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filesystem and networking support"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonTransforms`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Linear algebra transformations"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::DICOMParser`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::DomainsChemistry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Algorithms used in chemistry"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::DomainsChemistryOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "OpenGL support for chemistry data"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::DomainsMicroscopy`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"File readers for microscopy file formats [{material-regular}`menu_book;2em`]"
+"(../modules/vtk-modules/Domains/Microscopy/readme.md)"
+msgstr ""
+
+#: ../../../modules/index.md:64 ../../../modules/index.md:67
+#: ../../../modules/index.md:80 ../../../modules/index.md:104
+#: ../../../modules/index.md:109 ../../../modules/index.md:117
+#: ../../../modules/index.md:118 ../../../modules/index.md:131
+#: ../../../modules/index.md:155 ../../../modules/index.md:180
+#: ../../../modules/index.md:208 ../../../modules/index.md:210
+#: ../../../modules/index.md:227 ../../../modules/index.md:228
+#: ../../../modules/index.md:229 ../../../modules/index.md:237
+#: ../../../modules/index.md:243 ../../../modules/index.md:257
+#: ../../../modules/index.md:258 ../../../modules/index.md:264
+#: ../../../modules/index.md:265 ../../../modules/index.md:279
+#: ../../../modules/index.md:314
+msgid ""
+"<svg version=\"4.0.0.63c5cb3\" width=\"2.0em\" height=\"2.0em\" class=\"sd-"
+"material-icon sd-material-icon-menu_book\" viewBox=\"0 0 24 24\" aria-"
+"hidden=\"true\"><g><rect fill=\"none\" height=\"24\" width=\"24\"></rect></"
+"g><g><g></rect><g><path "
+"d=\"M21,5c-1.11-0.35-2.33-0.5-3.5-0.5c-1.95,0-4.05,0.4-5.5,1.5c-1.45-1.1-3.55-1.5-5.5-1.5S2.45,4.9,1,6v14.65 "
+"c0,0.25,0.25,0.5,0.5,0.5c0.1,0,0.15-0.05,0.25-0.05C3.1,20.45,5.05,20,6.5,20c1.95,0,4.05,0.4,5.5,1.5c1.35-0.85,3.8-1.5,5.5-1.5 "
+"c1.65,0,3.35,0.3,4.75,1.05c0.1,0.05,0.15,0.05,0.25,0.05c0.25,0,0.5-0.25,0.5-0.5V6C22.4,5.55,21.75,5.25,21,5z "
+"M21,18.5 "
+"c-1.1-0.35-2.3-0.5-3.5-0.5c-1.7,0-4.15,0.65-5.5,1.5V8c1.35-0.85,3.8-1.5,5.5-1.5c1.2,0,2.4,0.15,3.5,0.5V18.5z\"></"
+"path><g><path "
+"d=\"M17.5,10.5c0.88,0,1.73,0.09,2.5,0.26V9.24C19.21,9.09,18.36,9,17.5,9c-1.7,0-3.24,0.29-4.5,0.83v1.66 "
+"C14.13,10.85,15.7,10.5,17.5,10.5z\"></path><path "
+"d=\"M13,12.49v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26V11.9c-0.79-0.15-1.64-0.24-2.5-0.24 "
+"C15.8,11.66,14.26,11.96,13,12.49z\"></path><path "
+"d=\"M17.5,14.33c-1.7,0-3.24,0.29-4.5,0.83v1.66c1.13-0.64,2.7-0.99,4.5-0.99c0.88,0,1.73,0.09,2.5,0.26v-1.52 "
+"C19.21,14.41,18.36,14.33,17.5,14.33z\"></path></g></g></g></svg>"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::DomainsParallelChemistry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Parallel versions of algorithms used in chemistry"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersAMR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Adaptive mesh refinement filters and algorithms"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersCellGrid`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters and cell-types for vtkCellGrid objects [{material-regular}"
+"`menu_book;2em`](../modules/vtk-modules/Filters/CellGrid/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Common filters for VTK data types"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersExtraction`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for selecting subsets data"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersFlowPaths`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters and algorithms for streamlines"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersGeneral`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for transforming data"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersGeneric`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for selecting subsets of data at arbitrary points"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersGeometry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Geometric transformation filters"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersGeometryPreview`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for creating a preview of the geometry of a dataset."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersHybrid`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters that process both regular (image) and unstructured data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersHyperTree`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Hypertree filters and algorithms"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersImaging`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters and algorithms for images"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersModeling`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Geometric modeling tools for VTK."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersONNX`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "ONNX based filters"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersOpenTURNS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters that depend on the OpenTURNS library for uncertainty quantification. "
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Filters/OpenTURNS/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelDIY2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters that use the DIY MPI library to perform tasks in a distributed-"
+"memory environment."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelFlowPaths`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters that trace particles in a distributed-memory parallel environment."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelGeometry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for distributed-memory processing of geometric data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelImaging`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters that perform image processing in distributed-memory parallel "
+"environments."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelMPI`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Distributed-memory algorithms that require the message-passing interface "
+"(MPI) library."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelStatistics`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters to compute statistics in distributed-memory parallel environments."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersParallelVerdict`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Parallel mesh-quality computation."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersPoints`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for point-cloud processing."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersProgrammable`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters that accept user input at run-time to process VTK data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersPython`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Provide a python base class for writing VTK algorithms in python."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersReduction`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Tools to convert explicit (tabular) arrays into implicit (procedural) "
+"arrays, which can reduce memory consumption."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersReebGraph`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Compute Reeb graphs of VTK data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersSMP`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Filters that take advantage of symmetric multiprocessing (SMP) for speed."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersSelection`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters to create and process selections of VTK data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersSources`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters that construct VTK data from scratch."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersStatistics`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Compute statistics of VTK data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersTemporal`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters that process time-varying data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersTensor`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Filters for tensor manipulation"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersTexture`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Utilities to aid with texture-mapping of VTK data."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersTopology`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Topological analysis of VTK data objects."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersVerdict`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GUISupportMFC`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Make VTK available to Microsoft MFC applications."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GUISupportQt`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Make VTK render-windows, interactors, and widgets available to Qt "
+"applications. [{material-regular}`menu_book;2em`](../modules/vtk-modules/"
+"GUISupport/Qt/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GUISupportQtQuick`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Make VTK render-windows and interactors available in Qt Quick applications."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GUISupportQtSQL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Adapt Qt's SQL interface to VTK's vtkSQLDatabase."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GeovisCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Core functionality for geospatial visualizations, such as spherical "
+"projections."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GeovisGDAL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Geospatial reprojection filters that use GDAL."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOADIOS2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/ADIOS2/README."
+"md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOAMR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOAlembic`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOAsynchronous`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOAvmesh`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCGNSReader`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCONVERGECFD`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCatalystConduit`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Catalyst implementation for VTK, including Conduit to/from VTK conversion."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCellGrid`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Readers and writers for vtkCellGrid-specific file-types [{material-regular}"
+"`menu_book;2em`](../modules/vtk-modules/IO/CellGrid/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCesium3DTiles`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/Cesium3DTiles/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOChemistry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "File readers used in chemistry"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCityGML`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOERF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOEnSight`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOEngys`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Reader for Engys files"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOExodus`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOExport`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOExportGL2PS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOExportPDF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOFDS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"A module for handling I/O for the Fire Dynamics Simulator (FDS) output "
+"format."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOFFMPEG`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOFLUENTCFF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"Reader for the FluentCFF file format [{material-regular}`menu_book;2em`](../"
+"modules/vtk-modules/IO/FLUENTCFF/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOFides`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "The base Fides reader library"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOGDAL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOGeoJSON`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOGeometry`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOH5Rage`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOH5part`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOHDF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOHDFTools`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOIOSS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOImage`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOImport`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOInfovis`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOLANLX3D`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOLAS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOLSDyna`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOLegacy`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOMINC`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOMPIImage`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOMPIParallel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOMotionFX`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOMovie`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOMySQL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IONetCDF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOOCCT`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"OCCT bridge for VTK, see README for more info [{material-regular}"
+"`menu_book;2em`](../modules/vtk-modules/IO/OCCT/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOODBC`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOOMF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "The base OMF Reader library"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOOggTheora`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOOpenVDB`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOPDAL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOPIO`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOPLY`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOParallel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOParallelExodus`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOParallelLSDyna`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOParallelNetCDF`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOParallelXML`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOParallelXdmf3`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOPostgreSQL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOSQL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOSegY`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOTRUCHAS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOTecplotTable`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOUSD`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOVPIC`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOVeraOut`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOVideo`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOXML`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOXMLParser`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOXdmf2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/Xdmf2/README."
+"md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOXdmf3`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingColor`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingFourier`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingGeneral`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingHybrid`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingMath`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingMorphological`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingSources`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingStatistics`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ImagingStencil`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InfovisBoost`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InfovisBoostGraphAlgorithms`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InfovisCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InfovisLayout`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InteractionImage`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InteractionStyle`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::InteractionWidgets`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::Java`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ParallelCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ParallelDIY`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "DIY utility classes to simplify DIY-based filters"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ParallelMPI`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ParallelMPI4Py`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::Python`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::PythonContext2D`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::PythonInterpreter`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingAnari`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/ANARI/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingAnnotation`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingCellGrid`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/"
+"CellGrid/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingContext2D`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingContextOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingExternal`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingFFMPEGOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingFreeType`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingFreeTypeFontConfig`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingGL2PSOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingGridAxes`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingHyperTreeGrid`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingImage`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingLICOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingLOD`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingLabel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingMatplotlib`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingOpenVR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/OpenVR/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingOpenXR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/OpenXR/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingOpenXRRemoting`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/"
+"OpenXRRemoting/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingParallel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingParallelLIC`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingQt`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingRayTracing`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingSceneGraph`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingTk`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingUI`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/VR/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVRModels`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVolume`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVolumeAMR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVolumeOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVtkJS`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingWebGPU`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/WebGPU/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingZSpace`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::SerializationManager`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Manage object serialization and deserialization utilities."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::TestingCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Core classes for regression and unit testing of VTK."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::TestingDataModel`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Utilities to aid testing of VTK::CommonDataModel classes."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::TestingGenericBridge`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"An adaptor that presents vtkDataSet instances as vtkGenericDataSet instances "
+"for testing."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::TestingIOSQL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Facilities for testing SQL database functionality in VTK."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::TestingRendering`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Utilities for testing VTK by rendering and image comparison."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::TestingSerialization`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Utilities to aid testing of VTK::SerializationManager module."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::UtilitiesBenchmarks`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ViewsContext2D`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ViewsCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ViewsInfovis`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ViewsQt`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WebAssembly`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Web/WebAssembly/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WebAssemblyAsync`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Web/"
+"WebAssemblyAsync/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WebAssemblySession`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WebCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WebGLExporter`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WebPython`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WrappingJavaScript`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WrappingPythonCore`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Wrapping/"
+"PythonCore/README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::WrappingTools`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Wrapping/Tools/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::catalyst`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::cgns`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::cli11`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::diy2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::eigen`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::exodusII`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::expat`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::exprtk`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::fast_float`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::fides`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::fmt`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::freetype`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::gl2ps`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::glad`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/ThirdParty/glad/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::h5hut`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::hdf5`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ioss`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::jpeg`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::jsoncpp`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::kissfft`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::kwiml`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::libharu`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::libproj`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::libxml2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::loguru`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::lz4`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::lzma`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::metaio`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::mpi`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::mpi4py`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::netcdf`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::nlohmannjson`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::octree`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::ogg`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::pegtl`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::png`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::pugixml`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::scn`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::sqlite`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::theora`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::tiff`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::token`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::utf8`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::verdict`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::vpic`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::vtksys`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::vtkviskores`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::vtkvtkm`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::x11`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Utilities/X11/"
+"README.md)"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::xdmf2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::xdmf3`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::zlib`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTKMY::Common`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTKMY::Imaging`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTKMY::Unsorted`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`Wrapping::Wrappable`"
+msgstr ""

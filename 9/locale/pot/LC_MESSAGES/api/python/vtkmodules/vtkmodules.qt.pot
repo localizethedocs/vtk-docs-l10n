@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:1
+msgid "{py:mod}`vtkmodules.qt`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/__init__.py:7
+msgid "Qt module for VTK/Python."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/__init__.py:9
+msgid "Example usage:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/__init__.py:11
+msgid ""
+"import sys\n"
+"import PyQt5\n"
+"from PyQt5.QtWidgets import QApplication\n"
+"from vtkmodules.qt.QVTKRenderWindowInteractor import "
+"QVTKRenderWindowInteractor\n"
+"\n"
+"app = QApplication(sys.argv)\n"
+"\n"
+"widget = QVTKRenderWindowInteractor()\n"
+"widget.Initialize()\n"
+"widget.Start()\n"
+"\n"
+"renwin = widget.GetRenderWindow()\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/__init__.py:24
+msgid ""
+"For more information, see QVTKRenderWidgetConeExample() in the file "
+"QVTKRenderWindowInteractor.py."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:10
+msgid "Submodules"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:19
+msgid "Package Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:21
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:27
+msgid "{py:obj}`PyQtImpl <vtkmodules.qt.PyQtImpl>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:31
+msgid "{py:obj}`QVTKRWIBase <vtkmodules.qt.QVTKRWIBase>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:35
+msgid "{py:obj}`__all__ <vtkmodules.qt.__all__>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:41
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:47
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:57
+msgid "'QWidget'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.md:67
+msgid "['QVTKRenderWindowInteractor']"
+msgstr ""

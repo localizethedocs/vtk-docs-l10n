@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/python-numpy-integration.md:1
+msgid "Numpy integration improvements"
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:3
+msgid "Add Python logic to enable module import at vtk module load"
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:5
+msgid ""
+"This feature is mostly driven by the @override capability in Python to "
+"automatically enhance native vtk class with some Python one."
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:7
+msgid "By default we have added those following dependencies:"
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:8
+msgid "vtkCommonDataModel: vtkmodules.util.data_model"
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:9
+msgid "vtkCommonExecutionModel: vtkmodules.util.execution_model"
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:11
+msgid ""
+"But now a user is able to add to it by calling `vtkmodules."
+"register_vtk_module_dependencies(vtk_module_name, *import_strings)` to "
+"automate imports at vtk module loading."
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:13
+msgid "Make numpy optional for vtkmodules.util.data_model"
+msgstr ""
+
+#: ../../../release_details/9.4/python-numpy-integration.md:15
+msgid ""
+"`vtkmodules.util.data_model` has been added to enhance vtkDataModel API for "
+"Python using the @override infrastructure to mainly handle numpy in/out "
+"manipulation. But since numpy is an optional dependency for VTK, we are "
+"providing a downgraded version when numpy is not available so we can keep "
+"automatically load it at module startup regardless of numpy presence."
+msgstr ""
