@@ -1,0 +1,30 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/fix-deserialization-bug-in-vtkCollection.md:1
+msgid "Fix deserialization bug in vtkCollection"
+msgstr ""
+
+#: ../../../release_details/9.4/fix-deserialization-bug-in-vtkCollection.md:3
+msgid ""
+"Fixes a bug in the deserialization of `vtkRenderer`. When an actor in a "
+"renderer was replaced with another actor, and the scene reserialized with "
+"`vtkObjectManager`, the deserializer was unable to detect that the actor had "
+"changed. Instead, the renderer continued to show the old actor. This bug in "
+"deserialization of vtkCollection is now fixed."
+msgstr ""

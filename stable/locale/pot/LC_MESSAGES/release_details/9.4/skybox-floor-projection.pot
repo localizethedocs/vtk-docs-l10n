@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/skybox-floor-projection.md:1
+msgid "Infinite floor plane with vtkSkybox"
+msgstr ""
+
+#: ../../../release_details/9.4/skybox-floor-projection.md:3
+msgid ""
+"The vtkSkybox class is commonly used for creating a cubemap that encompasses "
+"the whole scene. In addition to the typical cube projection, the vtkSkybox "
+"also allows for mapping a single image texture onto a plane giving the "
+"illusion of an infinite ground plane."
+msgstr ""
+
+#: ../../../release_details/9.4/skybox-floor-projection.md:7
+msgid ""
+"In this version, vtkSkybox learned of new properties of scaling the texture "
+"mapping of the image onto the floor projection. `vtkSkybox::"
+"SetFloorTexCoordScale` allows users to scale the texture map in the (u, v) "
+"space."
+msgstr ""
+
+#: ../../../release_details/9.4/skybox-floor-projection.md:11
+msgid ""
+"Coincident topology resolution is also built into the skybox allowing "
+"coincident geometry to be displayed on top of the skybox floor."
+msgstr ""
+
+#: ../../../release_details/9.4/skybox-floor-projection.md:14
+msgid ""
+"![](https://www.vtk.org/files/ExternalData/"
+"SHA512/3c49faca41da626020e45a14b43b08412bbe200508e568930ee37374ae95f89d633bc9a4c6d4c7b211fffc4bc3ea6f47d42ee97dc3ce236dca389905de00ed05)"
+msgstr ""

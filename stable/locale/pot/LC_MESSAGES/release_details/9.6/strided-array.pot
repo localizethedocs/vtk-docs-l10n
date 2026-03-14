@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/strided-array.md:1
+msgid "Introduce the implicit vtkStridedArray: a strided view on a buffer"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:3
+msgid ""
+"The `vtkStridedArray` is a `vtkImplicitArray` providing a strided view on an "
+"existing memory buffer."
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:5
+msgid ""
+"If you work with a multi-dimensional buffer of data, you can create a "
+"`vtkStridedArray` to manipulate a single dimension (that can be itself a "
+"scalar or a vector) of this buffer through the classical `vtkDataArray` API."
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:9
+msgid ""
+"This is typically useful in the InSitu context as with the "
+"`vtkConduitSource` for Catalyst. In this case, we want to create "
+"`vtkDataArray` around existing memory with zero copy."
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:13
+msgid "Let's have this buffer"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:14
+msgid ""
+"std::vector<float> localBuffer\n"
+"{\n"
+"      0, 1000, 2000, 3000,\n"
+"      1, 1001, 2001, 3001,\n"
+"      2, 1002, 2002, 3002,\n"
+"      3, 1003, 2003, 3003,\n"
+"      4, 1004, 2004, 3004,\n"
+"      5, 1005, 2005, 3005,\n"
+"      6, 1006, 2006, 3006,\n"
+"      7, 1007, 2007, 3007,\n"
+"      8, 1008, 2008, 3008,\n"
+"      9, 1009, 2009, 3009\n"
+"}\n"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:29
+msgid ""
+"This may represent a one-component array (first column) interlaced with a 3-"
+"components array, both with 10 tuples."
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:31
+msgid "We can now create a `vtkStridedArray` as follow:"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:32
+msgid ""
+"  vtkNew<vtkStridedArray<float>> stridedArray;\n"
+"  stridedArray->SetNumberOfComponents(3);\n"
+"  stridedArray->SetNumberOfTuples(10);\n"
+"  stridedArray->ConstructBackend(\n"
+"    localBuffer.data(), /*stride*/ 3, /*offset*/ 1, /*components*/ 3);\n"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:39
+msgid ""
+"This will provide a (zero copy) view on the last 3 columns of our initial "
+"buffer."
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:41
+msgid ""
+"In the context of `CatalystConduit`, with the same buffer we can write the "
+"following:"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:42
+msgid ""
+"  fields[\"vectorArray/values/x\"].set_external(\n"
+"    localBuffer.data(), nbPts, /*offset=*/sizeof(float), stride * "
+"sizeof(float));\n"
+"  fields[\"vectorArray/values/y\"].set_external(\n"
+"    localBuffer.data(), nbPts, /*offset=*/sizeof(float) * 2, stride * "
+"sizeof(float));\n"
+"  fields[\"vectorArray/values/z\"].set_external(\n"
+"    localBuffer.data(), nbPts, /*offset=*/sizeof(float) * 3, stride * "
+"sizeof(float));\n"
+msgstr ""
+
+#: ../../../release_details/9.6/strided-array.md:51
+msgid ""
+"The conduit source will then provide a `vtkStridedArray` as in previous "
+"example."
+msgstr ""

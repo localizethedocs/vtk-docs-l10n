@@ -1,0 +1,2293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/PythonWrappers.md:1
+msgid "Python Wrappers"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:5
+msgid ""
+"This document is a reference for using VTK from Python. It is not a tutorial "
+"and provides very little information about VTK itself, but instead describes "
+"in detail the features of the Python wrappers and how using VTK from Python "
+"differs from using VTK from C++.  It assumes that the reader is already "
+"somewhat familiar with both Python and VTK."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:12
+msgid "Background"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:14
+msgid ""
+"The Python wrappers are automatically generated from the VTK source code, "
+"and for the most part, there is a one-to-one mapping between the VTK classes "
+"and methods that you can use from Python and the ones that you can use from "
+"C++.  More specifically, the wrappers are a package of Python extension "
+"modules that interface directly to the VTK C++ libraries.  When you use VTK "
+"through the wrappers, you are actually executing compiled C++ code, and "
+"there is very little performance difference between VTK/C++ and VTK/Python."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:23
+msgid "Installation"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:25
+msgid ""
+"VTK for Python can be installed via either conda or pip, where the conda "
+"packages is maintained on conda-forge, while the pip packages are maintained "
+"by the VTK developers themselves.  If you are first getting started, then "
+"pip is probably the most convenient way to install VTK for Python:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:30
+msgid "pip install vtk\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:32
+msgid ""
+"This will provide a basic installation of VTK that includes all core "
+"functionality, but which will not include some of the specialized VTK "
+"modules that rely on external libraries.  Binary packages for VTK can also "
+"be downloaded directly from https://www.vtk.org/download/."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:37
+msgid ""
+"Instructions for building VTK from source code are given in the file "
+"[Documentation/dev/build.md][vtk-build] within the source repository."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:43
+msgid "Importing"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:45
+msgid ""
+"VTK is comprised of over one hundred individual modules. Programs can import "
+"just the modules that are needed, in order to reduce load time."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:48
+msgid ""
+"from vtkmodules.vtkCommonCore import vtkObject\n"
+"from vtkmodules.vtkFiltersSources import vtkConeSource, vtkSphereSource\n"
+"from vtkmodules.vtkRenderingCore import (\n"
+"    vtkActor,\n"
+"    vtkDataSetMapper,\n"
+"    vtkRenderer,\n"
+"    vtkRenderWindow\n"
+")\n"
+"import vtkmodules.vtkRenderingOpenGL2\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:58
+msgid ""
+"When getting started, however, it is hard to know what modules you will "
+"need. So if you are experimenting with VTK in a Python console, or writing a "
+"quick and dirty Python script, it is easiest to simply import everything.  "
+"There is a special module called '`all`' that allows this to be done:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:63
+msgid "from vtkmodules.all import *\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:65
+msgid ""
+"After importing the VTK classes, you can check to see which module each of "
+"the classes comes from:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:68
+msgid ""
+"for c in vtkObject, vtkConeSource, vtkRenderWindow:\n"
+"    print(f\"from {c.__module__} import {c.__name__}\")\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:71
+msgid "The output is as follows:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:73
+msgid ""
+"from vtkmodules.vtkCommonCore import vtkObject\n"
+"from vtkmodules.vtkFiltersSources import vtkConeSource\n"
+"from vtkmodules.vtkRenderingCore import vtkRenderWindow\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:77
+msgid "Factories and Implementation Modules"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:79
+msgid ""
+"In the first 'import' example above, you might be wondering about this line:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:81
+msgid "import vtkmodules.vtkRenderingOpenGL2\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:83
+msgid ""
+"This import is needed because `vtkRenderingOpenGL2` provides the OpenGL "
+"implementations of the classes in `vtkRenderingCore`.  To see this in "
+"action, open a new Python console and do the following:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:87
+msgid ""
+">>> from vtkmodules.vtkRenderingCore import vtkRenderWindow\n"
+">>> renwin = vtkRenderWindow()\n"
+">>> type(renwin)\n"
+"<class 'vtkmodules.vtkRenderingCore.vtkRenderWindow'>\n"
+">>>\n"
+">>> import vtkmodules.vtkRenderingOpenGL2\n"
+">>> renwin2 = vtkRenderWindow()\n"
+">>> type(renwin2)\n"
+"<class 'vtkmodules.vtkRenderingOpenGL2.vtkXOpenGLRenderWindow'>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:97
+msgid ""
+"After `vtkRenderingOpenGL2` has been imported, the `vtkRenderWindow()` "
+"constructor magically starts returning a different type of object. This "
+"occurs because `vtkRenderWindow` is a *factory* class, which means that the "
+"kind of object it produces can be overridden by an *implementation* class.  "
+"In order for the implementation class to do the override, all that is "
+"necessary is that its module is imported.  To make things even more "
+"confusing, `vtkRenderingOpenGL2` is not the only module that contains "
+"implementations for the factory classes in `vtkRenderingCore`.  The "
+"following modules are often needed, as well:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:107
+msgid ""
+"import vtkmodules.vtkInteractionStyle\n"
+"import vtkmodules.vtkRenderingFreeType\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:110
+msgid ""
+"Although you only need implementations for the factory classes that you use, "
+"it can be hard to know which classes are factory classes, or what modules "
+"contain implementations for them.  Also, it can be difficult to even know "
+"what classes you are using, since many VTK classes make use of other VTK "
+"classes.  An example of this is `vtkDataSetMapper`, which internally uses "
+"`vtkPolyDataMapper` to do the rendering.  So even though `vtkDataSetMapper` "
+"is not a factory class, it needs an OpenGL implementation for "
+"`vtkPolyDataMapper`."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:118
+msgid ""
+"The simplest approach is to import all the important implementation modules "
+"into your program, even if you are not certain that you need them."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:120
+msgid ""
+"For `vtkRenderingCore`, `import vtkRenderingOpenGL2, vtkRenderingFreeType, "
+"vtkInteractionStyle`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:121
+msgid "For `vtkRenderingVolume`, `import vtkRenderingVolumeOpenGL2`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:122
+msgid "For `vtkCharts`, `import vtkContextOpenGL2`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:124
+msgid "Classic VTK Import"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:126
+msgid ""
+"There are many VTK programs that still import the '`vtk`' module, which has "
+"been available since VTK 4.0, rather than using the '`vtkmodules`' package "
+"that was introduced in VTK 8.2:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:130
+msgid "import vtk\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:132
+msgid ""
+"The advantage (and disadvantage) of this is that it imports everything.  It "
+"requires just one import statement for all of VTK, but it can be slow "
+"because VTK has grown to be very large over the years."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:136
+msgid ""
+"Also note that, between VTK 8.2 and VTK 9.2.5, the use of the `vtk` module "
+"would confuse the auto-completion features of IDEs such as PyCharm.  This "
+"was fixed in VTK 9.2.6.  For 9.2.5 and earlier, the following can be used:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:140
+msgid "import vtkmodules.all as vtk\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:142
+msgid ""
+"From the programmer's perspective, this is equivalent to '`import vtk`'."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:144
+msgid "VTK Classes and Objects"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:146
+msgid "Classes Derived from vtkObjectBase"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:148
+msgid ""
+"In C++, classes derived from `vtkObjectBase` are instantiated by calling "
+"`New()`.  In Python, these classes are instantiated by simply calling the "
+"constructor:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:152
+msgid "o = vtkObject()\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:154
+msgid ""
+"For factory classes, the returned object's type might be a subtype of the "
+"class.  This occurs because the Python wrappers are actually calling `New()` "
+"for you, which allows the VTK factory overrides to occur:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:158
+msgid ""
+">>> a = vtkActor()\n"
+">>> type(a)\n"
+"<class 'vtkmodules.vtkRenderingOpenGL2.vtkOpenGLActor'>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:162
+msgid ""
+"When you create a VTK object in Python, you are in fact creating two "
+"objects: a C++ object, and a Python object that holds a pointer to the C++ "
+"object.  The `repr()` of the object shows the memory address of the C++ "
+"object (in parentheses) and of the Python object (after the '`at`'):"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:167
+msgid ""
+">>> a = vtkFloatArray()\n"
+">>> a\n"
+"<vtkmodules.vtkCommonCore.vtkFloatArray(0x5653a6a6f700) at 0x7f0e7aecf5e0>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:171
+msgid ""
+"If you call `str()` or `print()` on these objects, the wrappers will call "
+"the C++ `PrintSelf()` method.  The printed information can be useful for "
+"debugging:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:174
+msgid ""
+">>> o = vtkObject()\n"
+">>> print(o)\n"
+"vtkObject (0x55858308a210)\n"
+"  Debug: Off\n"
+"  Modified Time: 85\n"
+"  Reference Count: 1\n"
+"  Registered Events: (none)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:182
+msgid "Other Classes (Special Types)"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:184
+msgid ""
+"VTK also uses several classes that aren't derived from `vtkObjectBase`.  The "
+"most important of these is `vtkVariant`, which can hold any type of object:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:187
+msgid ""
+">>> v1 = vtkVariant('hello')\n"
+">>> v1\n"
+"vtkmodules.vtkCommonCore.vtkVariant('hello')\n"
+">>> v2 = vtkVariant(3.14)\n"
+">>> v2\n"
+"vtkmodules.vtkCommonCore.vtkVariant(3.14)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:194
+msgid ""
+"The wrapping of these classes is fully automatic, but is done in a slightly "
+"different manner than `vtkObjectBase`-derived classes.  First, these classes "
+"have no `New()` method, and instead the public C++ constructors are wrapped "
+"to create an equivalent Python constructor.  Second, the Python object "
+"contains its own copy of the C++ object, rather than containing just a "
+"pointer to the C++ object.  The vast majority of these classes are "
+"lightweight containers and numerical types.  For example, `vtkQuaterniond`, "
+"`vtkRectf`, `vtkColor4ub`, etc.  Many of them are actually class templates, "
+"which are discussed below."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:204
+msgid ""
+"When you apply `print()` or `str()` to these objects, the `operator<<` of "
+"the underlying C++ object is used to print them.  For `repr()`, the name of "
+"the type name is printed, followed by the `str()` output in prentheses.  The "
+"result looks similar to a constructor, though it might look strange "
+"depending on what `operator<<` produces."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:210
+msgid ""
+">> v = vtkVariant()\n"
+">> print(repr(v))\n"
+"vtkmodules.vtkCommonCore.vtkVariant((invalid))\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:214
+msgid "Class Templates"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:216
+msgid ""
+"There are several C++ templates in VTK, which can be tricky to use from the "
+"wrappers since the Python language has no real concept of templates.  The "
+"wrappers wrap templates as dictionary-like objects that map the template "
+"parameters to template instantiations:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:221
+msgid ""
+">>> vtkSOADataArrayTemplate\n"
+"<template vtkCommonCorePython.vtkSOADataArrayTemplate>\n"
+">>> vtkSOADataArrayTemplate.keys()\n"
+"['char', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int',\n"
+"'uint', 'int64', 'uint64', 'float32', 'float64']\n"
+">>> c = vtkSOADataArrayTemplate['float64']\n"
+">>> c\n"
+"<class 'vtkmodules.vtkCommonCore.vtkSOADataArrayTemplate_IdE'>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:230
+msgid ""
+"The wrappers instantiate the C++ template for a few useful types, as "
+"indicated by the `keys()` of the template.  The Python type name also has a "
+"suffix (the '`IdE`') that indicates the template parameters in a compressed "
+"form according to IA64 C++ ABI name mangling rules, even when VTK is built "
+"with a compiler that does not use the IA64 ABI natively."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:236
+msgid ""
+"Objects are created by first instantiating the template, and then "
+"instantiating the class:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:239
+msgid ""
+">>> a = vtkSOADataArrayTemplate['float32']()\n"
+">>> a.SetNumberOfComponents(3)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:242
+msgid ""
+"In the case of multiple template parameters, the syntax can look rather "
+"complicated, but really it isn't all that bad.  For example, constructing a "
+"`vtkTuple<double,4>` in Python looks like this, with the template args in "
+"square brackets and the constructor args in parentheses:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:247
+msgid ""
+">>> vtkTuple['float64',4]([1.0, 2.0, 3.0, 4.0])\n"
+"vtkmodules.vtkCommonMath.vtkTuple_IdLi4EE([1.0, 2.0, 3.0, 4.0])\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:250
+msgid ""
+"The type names are the same as numpy's dtypes: `bool`, `int8`, `uint8`, "
+"`int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`, `float32`, and "
+"`float64`.  Since `int64` is '`long long`', `int` is used for `long`.  Also "
+"see [Template Keys](#template-keys) in [Advanced Topics](#internals-and-"
+"advanced-topics)."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:256
+msgid "Method Calls"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:258
+msgid ""
+"When VTK methods are called from Python, conversion of all parameters from "
+"Python to C++ occurs automatically.  That is, if the C++ method signature "
+"expects an integral type, you can pass a Python `int`, and if C++ expects a "
+"floating-point type, you can pass a Python `float` (or any type that allows "
+"implicit conversion to `float`)."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:264
+msgid ""
+"For C++ '`char`' parameters, which are rarely used in VTK, you must pass a "
+"string with a length of 1. For unicode, the code must fit into eight bits "
+"(either ASCII, or within the Latin-1 Supplement block).  A null character is "
+"represented by '\\\\0', or equivalently `chr(0)`."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:269
+msgid ""
+"A Python `tuple`, `list`, or any other Python sequence can be passed to a "
+"VTK method that requires an array or `std::vector` in C++:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:272
+msgid ""
+">>> a = vtkActor()\n"
+">>> p = (100.0, 200.0, 100.0)\n"
+">>> a.SetPosition(p)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:276
+msgid ""
+"If the method is going to modify the array that you pass as a parameter, "
+"then you must pass a Python `list` that has the correct number of slots to "
+"accept the returned values.  If you try this with a `tuple`, you will get a "
+"`TypeError` because `tuple` is immutable."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:281
+msgid ""
+">>> z = [0.0, 0.0, 0.0]\n"
+">>> vtkMath.Cross((1,0,0),(0,1,0),z)\n"
+">>> print(z)\n"
+"[0.0, 0.0, 1.0]\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:286
+msgid ""
+"For multi-dimensional array parameters, you can either use a nested list, or "
+"you can use numpy array with the correct shape."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:289
+msgid ""
+"If the C++ method returns a pointer to an array, then in Python the method "
+"will return a tuple if the wrappers know the size of the array.  In most "
+"cases, the size is hinted in the header file."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:293
+msgid ""
+">>> a = vtkActor()\n"
+">>> print(a.GetPosition())\n"
+"(0.0, 0.0, 0.0)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:297
+msgid ""
+"Finally, Python `None` is treated the same as C++ `nullptr`, which allows "
+"you to pass null objects and null strings:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:300
+msgid ""
+">>> a = vtkActor()\n"
+">>> a.SetMapper(None)\n"
+">>> print(a.GetMapper())\n"
+"None\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:305
+msgid "Wrappable and Unwrappable Methods"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:307
+msgid ""
+"A method cannot be used from Python if its C++ parameters or return type "
+"cannot be converted to or from Python by the wrappers, or if the method is "
+"templated.  Common non-convertible types include `std::ostream`, `std::"
+"istream`, and all STL container types except for `std::vector` (see below), "
+"and any non-trivial pointer type or any pointer to an object whose class is "
+"not derived from `vtkObjectBase`."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:314
+msgid "The wrappable parameter types are:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:315
+msgid "`char`, wrapped as a single ASCII character in a Python `str`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:316
+msgid "`signed char` and `unsigned char`, wrapped as Python `int`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:317
+msgid "`short`, `int`, `long` and `long long`, wrapped as Python `int`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:318
+msgid "`unsigned short` to `unsigned long long`, wrapped as Python `int`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:319
+msgid "`float` and `double`, wrapped as Python `float`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:320
+msgid "`size_t` and `ssize_t`, wrapped as Python `int`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:321
+msgid "`std::string`, wrapped as Python `str` via utf-8 encoding/decoding"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:322
+msgid "typedefs of all the above, for any typedef defined in a VTK header file"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:323
+msgid ""
+"`std::vector<T>` where `T` is one of the above, as Python `tuple` or `list`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:324
+msgid "`const T&` where `T` is any of the above, wrapped as described above"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:325
+msgid "`T[N]` where `T` is a fundamental type, as Python `tuple` or `list`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:326
+msgid "`T[N][M]` where `T` is a fundamental type, as nested `tuple` or `list`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:327
+msgid "`T*` where `T` is a fundamental type, as `tuple` or `list`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:328
+msgid "`vtkObjectBase*` and derived types, as their respective Python type"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:329
+msgid "`vtkSmartPointer<T>` as the Python vtkObjectBase-derived type `T`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:330
+msgid "`std::vector<vtkSmartPointer<T>>` as a sequence of objects of type `T`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:331
+msgid ""
+"`const std::vector<vtkSmartPointer<T>>` as a sequence of objects of type `T`"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:332
+msgid ""
+"other wrapped classes (like `vtkVariant`), but not pointers to these types"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:333
+msgid "`char*`, as Python `str` via utf-8 encoding/decoding"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:334
+msgid "`void*`, as Python buffer (e.g. `bytes` or `bytearray`)"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:335
+msgid ""
+"the parameter list `(void (*f)(void*), void*)` as a Python callable type"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:337
+msgid ""
+"References like `int&` and `std::string&` are wrapped via a reference proxy "
+"type as described in the [Pass by Reference](#pass-by-reference) section "
+"below.  Non-const references to `std::vector<T>` and other mutable types do "
+"not use a proxy, but instead require that a mutable Python object is passed, "
+"for example a `list` rather than a `tuple`."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:343
+msgid ""
+"A `void*` parameter can accept a pointer in two different ways: either from "
+"any Python object that supports the Python buffer protocol (this includes "
+"all numpy arrays along with the Python bytes and bytearray types), or from a "
+"string that contains a mangled pointer of the form '`_hhhhhhhhhhhh_p_void`' "
+"where '`hhhhhhhhhhhh`' is the hexadecimal address.  Return-value `void*` "
+"will always be a string containing the mangled pointer."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:350
+msgid ""
+"Also, a `T*` parameter for fundamental type `T` can accept a buffer object, "
+"if and only if it is annotated with the `VTK_ZEROCOPY` hint in the header "
+"file. With this hint, a numpy array of `T` can be passed to a `T*` parameter "
+"and the VTK method will directly access the memory buffer of the array.  "
+"Hence the name 'zerocopy', which indicates no copying is done, and that "
+"direct memory access is used."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:357
+msgid ""
+"The `vtkObject::AddObserver()` method has a special wrapping, as discussed "
+"in the [Observer Callbacks](#observer-callbacks) section below."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:360
+msgid "Conversion Constructors"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:362
+msgid ""
+"If a wrapped type has constructor that takes one parameter, and if that "
+"constructor is not declared '`explicit`', then the wrappers will "
+"automatically use that constructor for type conversion to the parameter "
+"type.  The wrappers ensure that this conversion occurs in Python in the same "
+"manner that it is expected to occur in C++."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:368
+msgid ""
+"For example, `vtkVariantArray` has a method `InsertNextItem(v:vtkVariant)`, "
+"and `vtkVariant` has a constructor `vtkVariant(x:int)`.  So, you can do this:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:371
+msgid ">>> variantArray.InsertNextItem(1)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:373
+msgid ""
+"The wrappers will automatically construct a `vtkVariant` from '`1`', and "
+"will then pass it as a parameter to `InsertNextItem()`.  This is a feature "
+"that most C++ programmers will take for granted, but Python users might find "
+"it surprising."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:378
+msgid "Overloaded Methods"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:380
+msgid ""
+"If you call a VTK method that is overloaded, the Python wrappers will choose "
+"the overload that best matches the supplied arguments.  This matching takes "
+"into account all allowed implicit conversions, such as int to float or any "
+"conversion constructors that are defined for wrapped objects."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:385
+msgid ""
+"Some overloads will be unavailable (not wrapped) either because they are "
+"unwrappable as per the criteria described above, or because they are "
+"shadowed by another overload that is always preferable.  A simple example of "
+"this is any methods that is overloaded on C++ `float` and `double`.  The "
+"Python `float` type is a perfect match C++ `double`, therefore the `float` "
+"overload is not wrapped."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:392
+msgid "Static Methods"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:394
+msgid "A static method can be called without an instance.  For example,"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:396
+msgid "vtkObject.SetGlobalWarningDisplay(1)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:398
+msgid ""
+"Some VTK classes, like vtkMath, consist solely of static methods.  For "
+"others, like `vtkMatrix4x4`, most of the non-static methods have static "
+"overloads. Within Python, the only way to tell if a VTK method is static "
+"(other than trying it) is to look at its docstring."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:403
+msgid "Unbound Methods"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:405
+msgid ""
+"When a non-static method is called on the class, rather than on an instance, "
+"it is called an unbound method call.  An unbound method call must provide "
+"'self' as the first argument, where 'self' is an instance of either the "
+"class or a subclass."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:410
+msgid ""
+"w = vtkRenderWindow()\n"
+"vtkWindow.Render(w)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:413
+msgid ""
+"In other words, the wrappers translate Python unbound method calls into C++ "
+"unbound method calls.  These are useful when deriving a Python class from a "
+"wrapped VTK class, since they allow you to call any base class methods that "
+"have been overridden in the subclass."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:418
+msgid "Operator Methods"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:420
+msgid ""
+"For special classes (the ones not derived from `vtkObjectBase`), some useful "
+"C++ operators are wrapped in python.  The '`[]`' operator is wrapped for "
+"indexing and item assignment, but because it relies on hints to guess which "
+"indices are out-of-bounds, it is only wrapped for `vtkVector` and related "
+"classes."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:426
+msgid ""
+"The comparison operators '`<`' '`<=`' '`==`' '`>=`' '`>`' are wrapped for "
+"all classes that have these operators in C++.  These operators allow sorting "
+"of `vtkVariant` objects with Python."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:430
+msgid ""
+"The '`<<`' operator for printing is wrapped and is used by the python "
+"`print()` and `str()` commands."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:433
+msgid "Strings and Bytes"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:435
+msgid ""
+"VTK uses both `char*` and `std::string` for strings.  As far as the wrappers "
+"are concerned, these are equivalent except that the former can be `nullptr` "
+"(`None` in Python).  For both, the expected encoding is ASCII or utf-8."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:439
+msgid ""
+"In Python, either `str` or `bytes` can be used to store strings, and both of "
+"these can be passed to VTK methods that require `char*` or `std::string` (or "
+"the legacy `vtkStdString`).  A `str` object is passed to VTK as utf-8, while "
+"a `bytes` object is passed as-is."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:444
+msgid ""
+"When a VTK method returns a string, it is received in Python as a `str` "
+"object if it is valid utf-8, or as a `bytes` object if not.  The caller "
+"should check the type of the returned object (`str`, `bytes`, or perhaps "
+"`None`) if there is any reason to suspect that non-utf-8 text might be "
+"present."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:449
+msgid "STL Containers"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:451
+msgid ""
+"VTK provides conversion between `std::vector` and Python sequences such as "
+"`tuple` and `list`.  If the C++ method returns a vector, the Python method "
+"will return a tuple:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:455
+msgid ""
+"C++: const std::vector<std::string>& GetPaths()\n"
+"C++: std::vector<std::string> GetPaths()\n"
+"Python: GetPaths() -> Tuple[str]\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:459
+msgid ""
+"If the C++ method accepts a vector, then the Python method can be passed any "
+"sequence with compatible values:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:462
+msgid ""
+"C++: void SetPaths(const std::vector<std::string>& paths)\n"
+"C++: void SetPaths(std::vector<std::string> paths)\n"
+"Python: SetPaths(paths: Sequence[str]) -> None\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:466
+msgid ""
+"Furthermore, if the C++ method accepts a non-const vector reference, then "
+"the Python method can be passed a mutable sequence (e.g. `list`):"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:469
+msgid ""
+"C++: void GetPaths(std::vector<std::string>& paths)\n"
+"Python: GetPaths(paths: MutableSequence[str]) -> None\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:472
+msgid ""
+"The value type of the `std::vector<T>` must be `std::string` or a "
+"fundamental numeric type such as `double` or `int` (including `signed char` "
+"and `unsigned char` but excluding `char`)."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:476
+msgid "Smart pointers"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:478
+msgid ""
+"The wrappers will automatically convert between C++ `vtkSmartPointer<T>` and "
+"objects of type `T` (or `None`, if the smart pointer is empty):"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:481
+msgid ""
+"C++: vtkSmartPointer<vtkObject> TakeObject()\n"
+"Python: TakeObject() -> vtkObject\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:484
+msgid ""
+"In other words, in Python the smart pointer doesn't look any different from "
+"the object it points to.  Under the hood, however, the wrappers understand "
+"that the smart pointer carries a reference to the object and will take "
+"responsibility for deleting that reference."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:489
+msgid ""
+"A C++ method can return a vector of smart pointers, which will be seen in "
+"Python as a tuple of objects:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:492
+msgid ""
+"C++: std::vector<vtkSmartPointer<vtkObject>> GetObjects()\n"
+"Python: GetObject() -> Tuple[vtkObject]\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:495
+msgid ""
+"If a C++ method expects `std::vector<vtkSmartPointer<T>>` as a parameter, "
+"the wrappers will automatically construct the vector from any sequence that "
+"is passed from Python.  The objects in the sequence must be of type `T` (or "
+"a subclass of `T`, or `None`).  If not, a `TypeError` will be raised."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:500
+msgid "Pass by Reference"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:502
+msgid ""
+"Many VTK methods use pass-by-reference to return values back to the caller. "
+"Calling these methods from Python requires special consideration, since "
+"Python's `str`, `tuple`, `int`, and `float` types are immutable.  The "
+"wrappers provide a '`reference`' type, which is a simple container that "
+"allows pass-by-reference."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:508
+msgid ""
+"For example, consider the following C++ method that uses pass-by-reference:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:510
+msgid ""
+"void GetCellAtId(vtkIdType cellId, vtkIdType& cellSize, vtkIdType const*& "
+"cellPoints)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:512
+msgid ""
+"It requires a reference to `vtkIdType` (a Python `int`), and to `vtkIdType "
+"const*` (a tuple of `int`s).  So we can call this method as follows:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:516
+msgid ""
+">>> from vtkmodules.vtkCommonCore import reference\n"
+">>> from vtkmodules.vtkCommonDataModel import vtkCellArray\n"
+">>>\n"
+">>> # Build a cell array\n"
+">>> a = vtkCellArray()\n"
+">>> a.InsertNextCell(3, (1, 3, 0))\n"
+">>>\n"
+">>> # Create the reference objects\n"
+">>> n = reference(0)\n"
+">>> t = reference((0,))\n"
+">>>\n"
+">>> # Call the pass-by-reference method\n"
+">>> a.GetCellAtId(0, n, t)\n"
+">>>\n"
+">>> n.get()\n"
+"3\n"
+">>> t.get()\n"
+"(1, 3, 0)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:535
+msgid "Some important notes when using pass-by-reference:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:536
+msgid ""
+"The reference constructor must be given a value of the desired type. The "
+"method might use this value or might ignore it."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:538
+msgid ""
+"Calling the `get()` method of the reference is usually unnecessary, because "
+"the reference already supports the interface protocols of the object that it "
+"contains."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:542
+msgid "Preconditions"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:544
+msgid ""
+"One very real concern when using VTK from Python is that the parameters that "
+"you pass to a method might cause the program to crash.  In particular, it is "
+"very easy to pass an index that causes an out-of-bounds memory access, since "
+"the C++ methods don't do bounds checking.  As a safety precaution, the "
+"wrappers perform the bounds check before the C++ method is called:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:550
+msgid ""
+">>> a = vtkFloatArray()\n"
+">>> a.GetValue(10)\n"
+"Traceback (most recent call last):\n"
+"  File \"<stdin>\", line 1, in <module>\n"
+"ValueError: expects 0 <= id && id < GetNumberOfValues()\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:556
+msgid ""
+"All precondition checks raise a `ValueError` if they fail, since they are "
+"checks on the values of the parameters.  The wrappers don't know if C++ is "
+"using the parameter as an index, so `IndexError` is not used."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:560
+msgid ""
+"Currently the only way to find out if a method has preconditions is to look "
+"at the declaration of the method in the C++ header file to see if it has a "
+"`VTK_EXPECTS` hint."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:564
+msgid "Observer Callbacks"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:566
+msgid ""
+"Similar to what can be done in C++, a Python function can be called each "
+"time a VTK event is invoked on a given object.  In general, the callback "
+"function should have the signature `func(obj:vtkObject, event:str)`, or "
+"`func(self, obj:vtkObject, event:str)` if it is a method of a class."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:571
+msgid ""
+">>> def onObjectModified(object, event):\n"
+">>>     print('object: %s - event: %s' % (object.GetClassName(), event))\n"
+">>>\n"
+">>> o = vtkObject()\n"
+">>> o.AddObserver(vtkCommand.ModifiedEvent, onObjectModified)\n"
+"1\n"
+">>> o.Modified()\n"
+"object: vtkObject - event: ModifiedEvent\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:581
+msgid "Call Data"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:583
+msgid ""
+"In case there is a 'CallData' value associated with an event, in C++, you "
+"have to cast it from `void*` to the expected type using `reinterpret_cast`. "
+"The equivalent in python is to add a `CallDataType` attribute to the "
+"associated python callback method. The supported `CallDataType` values are "
+"`VTK_STRING`, `VTK_OBJECT`, `VTK_INT`, `VTK_LONG`, `VTK_DOUBLE`, and "
+"`VTK_FLOAT`."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:590
+msgid ""
+"The following example uses a function as a callback, but a method or any "
+"callable object can be used:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:593
+msgid ""
+">>> from vtkmodules.vtkCommonCore import vtkCommand, VTK_INT\n"
+">>>\n"
+">>> def onError(object, event, calldata):\n"
+">>>     print('object: %s - event: %s - msg: %s' % (object.GetClassName(), "
+"event, calldata))\n"
+">>>\n"
+">>> onError.CallDataType = VTK_INT\n"
+">>>\n"
+">>> lt = vtkLookupTable()\n"
+">>> lt.AddObserver(vtkCommand.ErrorEvent, onError)\n"
+"1\n"
+">>> lt.SetTableRange(2,1)\n"
+"object: vtkLookupTable - event: ErrorEvent - msg: ERROR:\n"
+"In /home/user/VTK/Common/Core/vtkLookupTable.cxx, line 122\n"
+"vtkLookupTable (0x6b40b30): Bad table range: [2, 1]\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:608
+msgid ""
+"For convenience, the `CallDataType` can also be specified where the function "
+"is first declared with the help of the `@calldata_type` decorator:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:611
+msgid ""
+">>> from vtkmodules.util.misc import calldata_type\n"
+">>>\n"
+">>> @calldata_type(VTK_INT)\n"
+">>> def onError(object, event, calldata):\n"
+">>>     print('object: %s - event: %s - msg: %s' % (object.GetClassName(),\n"
+"                                                    event, calldata))\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:618
+msgid "Other Wrapped Entities"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:620
+msgid "Constants"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:622
+msgid ""
+"Most of the constants defined in the VTK header files are available in "
+"Python, and they can be accessed from the module in which they are defined.  "
+"Many of these are found in the `vtkCommonCore` module, where they were "
+"defined as preprocessor macros."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:627
+msgid ""
+">>> from vtkmodules.vtkCommonCore import VTK_DOUBLE_MAX\n"
+">>> VTK_DOUBLE_MAX\n"
+"1.0000000000000001e+299\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:631
+msgid ""
+"Others are defined as enums, often within a class namespace.  If the enum is "
+"anonymous, then its values are `int`."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:634
+msgid ""
+">>> vtkCommand.ErrorEvent\n"
+"39\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:637
+msgid ""
+"Constants in the header files are wrapped if they are enums, or if they are "
+"const variables of a wrappable scalar type, or if they are preprocessor "
+"symbols that evaluate to integer, floating-point, or string literal types."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:641
+msgid "Enum Types"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:643
+msgid ""
+"Each named enum type is wrapped as a new Python type, and members of the "
+"enum are instances of that type.  This allows type checking for enum types:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:646
+msgid ""
+">>> from vtkmodules.vtkCommonColor import vtkColorSeries\n"
+">>> vtkColorSeries.COOL\n"
+"2\n"
+">>> isinstance(vtkColorSeries.ColorSchemes, vtkColorSeries.COOL)\n"
+">>> cs = vtkColorSeries()\n"
+">>> cs.SetColorScheme(vtkColorSeries.COOL)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:653
+msgid ""
+"Enum classes are wrapped in a manner similar to named enums, except that the "
+"enum values are placed within the enum class namespace.  For example, "
+"`vtkEventDataAction` is an enum class, with '`Press`' as a member:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:657
+msgid ""
+">>> from vtkmodules.vtkCommonCore import vtkEventDataAction\n"
+">>> vtkEventDataAction.Press\n"
+"1\n"
+">>> isinstance(vtkEventDataAction.Press, vtkEventDataAction)\n"
+"True\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:663
+msgid ""
+"In the first example, the `ColorSchemes` enum type and the `COOL` enum value "
+"were both defined in the `vtkColorSeries` namespace.  In the second example, "
+"the `vtkEventDataAction` enum class was defined in the module namespace, and "
+"the `Press` value was defined in the enum class namespace."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:668
+msgid ""
+"Note that the VTK enum types behave like C++ enums, and not like the Python "
+"enums types provided by the Python '`enum`' module.  In particular, all VTK "
+"enum values can be used anywhere that an `int` can be used."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:672
+msgid "Namespaces"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:674
+msgid ""
+"Namespaces are currently wrapped in a very limited manner.  The only "
+"namespace members that are wrapped are enum constants and enum types. There "
+"is no wrapping of namespaced classes or functions, or of nested namespaces.  "
+"Currently, the wrappers implement namespaces as Python `module` objects."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:681
+msgid "Docstrings"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:683
+msgid ""
+"The wrappers automatically generate docstrings from the doxygen comments in "
+"the header files.  The Python `help()` command can be used to print the "
+"documentation to the screen, or the `__doc__` attributes of the classes and "
+"methods can be accessed directly."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:688
+msgid "Method Docstrings"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:690
+msgid ""
+"The method docstrings are formatted with the method signatures first, "
+"followed by doxygen comments.  The Python method signatures have type "
+"annotations, and are followed by the C++ method signatures for completeness."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:695
+msgid ""
+"    InvokeEvent(self, event:int, callData:Any) -> int\n"
+"    C++: int InvokeEvent(unsigned long event, void* callData)\n"
+"    InvokeEvent(self, event:str, callData:Any) -> int\n"
+"    C++: int InvokeEvent(const char* event, void* callData)\n"
+"    InvokeEvent(self, event:int) -> int\n"
+"    C++: int InvokeEvent(unsigned long event)\n"
+"    InvokeEvent(self, event:str) -> int\n"
+"    C++: int InvokeEvent(const char* event)\n"
+"\n"
+"    This method invokes an event and returns whether the event was\n"
+"    aborted or not. If the event was aborted, the return value is 1,\n"
+"    otherwise it is 0.\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:710
+msgid ""
+"Some Python IDEs will automatically show the docstring as soon as you type "
+"the name of the method."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:713
+msgid "Class Docstrings"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:715
+msgid ""
+"The class docstrings include a brief description of the class, followed by "
+"the name of the superclass, and then the full doxygen documentation, "
+"including doxygen markup:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:719
+msgid ""
+"    vtkMatrix4x4 - represent and manipulate 4x4 transformation matrices\n"
+"\n"
+"    Superclass: vtkObject\n"
+"\n"
+"    vtkMatrix4x4 is a class to represent and manipulate 4x4 matrices.\n"
+"    Specifically, it is designed to work on 4x4 transformation matrices\n"
+"    found in 3D rendering using homogeneous coordinates [x y z w]. Many\n"
+"    of the methods take an array of 16 doubles in row-major format. Note\n"
+"    that OpenGL stores matrices in column-major format, so the matrix\n"
+"    contents must be transposed when they are moved between OpenGL and\n"
+"    VTK.\n"
+"    @sa\n"
+"    vtkTransform\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:735
+msgid ""
+"If the class is not derived from `vtkObjectBase`, then it will have one or "
+"more public constructors, and these will be included before the comments:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:738
+msgid ""
+"    vtkSimpleCriticalSection() -> vtkSimpleCriticalSection\n"
+"    C++: vtkSimpleCriticalSection()\n"
+"    vtkSimpleCriticalSection(isLocked:int) -> vtkSimpleCriticalSection\n"
+"    C++: vtkSimpleCriticalSection(int isLocked)\n"
+"\n"
+"    vtkSimpleCriticalSection - Critical section locking class\n"
+"\n"
+"    vtkCriticalSection allows the locking of variables which are accessed\n"
+"    through different threads.\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:750
+msgid "Template Docstrings"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:752
+msgid ""
+"Class templates are documented similar to classes, except that they include "
+"a 'Provided Types' section that lists the available template instantiations "
+"and the C++ template arguments that they correspond to."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:756
+msgid ""
+"    vtkSOADataArrayTemplate - Struct-Of-Arrays implementation of\n"
+"    vtkGenericDataArray.\n"
+"\n"
+"    Superclass: vtkGenericDataArray[vtkSOADataArrayTemplate[ValueTypeT],"
+"ValueTypeT]\n"
+"\n"
+"    vtkSOADataArrayTemplate is the counterpart of vtkAOSDataArrayTemplate.\n"
+"    Each component is stored in a separate array.\n"
+"\n"
+"    @sa\n"
+"    vtkGenericDataArray vtkAOSDataArrayTemplate\n"
+"\n"
+"\n"
+"    Provided Types:\n"
+"\n"
+"      vtkSOADataArrayTemplate[char] => vtkSOADataArrayTemplate<char>\n"
+"      vtkSOADataArrayTemplate[int8] => vtkSOADataArrayTemplate<signed char>\n"
+"      vtkSOADataArrayTemplate[uint8] => vtkSOADataArrayTemplate<unsigned "
+"char>\n"
+"      vtkSOADataArrayTemplate[int16] => vtkSOADataArrayTemplate<short>\n"
+"      vtkSOADataArrayTemplate[uint16] => vtkSOADataArrayTemplate<unsigned "
+"short>\n"
+"      vtkSOADataArrayTemplate[int32] => vtkSOADataArrayTemplate<int>\n"
+"      vtkSOADataArrayTemplate[uint32] => vtkSOADataArrayTemplate<unsigned "
+"int>\n"
+"      vtkSOADataArrayTemplate[int] => vtkSOADataArrayTemplate<long>\n"
+"      vtkSOADataArrayTemplate[uint] => vtkSOADataArrayTemplate<unsigned "
+"long>\n"
+"      vtkSOADataArrayTemplate[int64] => vtkSOADataArrayTemplate<long long>\n"
+"      vtkSOADataArrayTemplate[uint64] => vtkSOADataArrayTemplate<unsigned "
+"long long>\n"
+"      vtkSOADataArrayTemplate[float32] => vtkSOADataArrayTemplate<float>\n"
+"      vtkSOADataArrayTemplate[float64] => vtkSOADataArrayTemplate<double>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:786
+msgid ""
+"Unlike classes, the template documentation is formatted similarly regardless "
+"of whether the the class template derives from `vtkObjectBase` or not:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:789
+msgid ""
+"    vtkVector - templated base type for storage of vectors.\n"
+"\n"
+"    Superclass: vtkTuple[T,Size]\n"
+"\n"
+"    This class is a templated data type for storing and manipulating fixed\n"
+"    size vectors, which can be used to represent two and three dimensional\n"
+"    points. The memory layout is a contiguous array of the specified type,\n"
+"    such that a float[2] can be cast to a vtkVector2f and manipulated. Also\n"
+"    a float[6] could be cast and used as a vtkVector2f[3].\n"
+"\n"
+"\n"
+"    Provided Types:\n"
+"\n"
+"      vtkVector[float64,4] => vtkVector<double, 4>\n"
+"      vtkVector[float32,4] => vtkVector<float, 4>\n"
+"      vtkVector[int32,4] => vtkVector<int, 4>\n"
+"      vtkVector[float64,2] => vtkVector<double, 2>\n"
+"      vtkVector[float32,2] => vtkVector<float, 2>\n"
+"      vtkVector[int32,2] => vtkVector<int, 2>\n"
+"      vtkVector[float64,3] => vtkVector<double, 3>\n"
+"      vtkVector[float32,3] => vtkVector<float, 3>\n"
+"      vtkVector[int32,3] => vtkVector<int, 3>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:815
+msgid "Internals and Advanced Topics"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:817
+msgid "Special Attributes"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:819
+msgid ""
+"Classes and objects derived from `vtkObjectBase` have special attributes, "
+"which are only used in very special circumstances."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:822
+msgid ""
+"The `__vtkname__` attribute of the class provides the same string that the "
+"GetClassName() method returns.  With the exception of classes that are "
+"template instantiations, it is identical to the `__name__` attribute. For "
+"template instantiations, however, `GetClassName()` and `__vtkname__` return "
+"the result of calling `typeid(cls).name()` from C++, which provides a "
+"platform specific result:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:829
+msgid ""
+">>> vtkSOADataArrayTemplate['float32'].__vtkname__\n"
+"'23vtkSOADataArrayTemplateIfE'\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:832
+msgid ""
+"This can be used to get the VTK `ClassName` when you don't have an "
+"instantiation to call `GetClassName()` on.  It is useful for checking the "
+"type of a C++ VTK object against a Python VTK class."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:836
+msgid ""
+"The `__this__` attribute of the objects is a bit less esoteric, it provides "
+"a pointer to the C++ object as a mangled string:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:839
+msgid ""
+">>> a = vtkFloatArray()\n"
+">>> a.__this__\n"
+"'_00005653a6a6f700_p_vtkFloatArray'\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:843
+msgid ""
+"The string provides the hexadecimal address of '`this`', followed by "
+"'`p`' (shorthand for *pointer*), and the type of the pointer.  You can also "
+"construct a Python object directly from the C++ address, if the address is "
+"formatted as described above:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:848
+msgid ""
+">>> a = vtkFloatArray('_00005653a6a6f700_p_vtkFloatArray')\n"
+">>> a\n"
+"<vtkmodules.vtkCommonCore.vtkFloatArray(0x5653a6a6f700) at 0x7f0e7aecf5e0>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:852
+msgid ""
+"If you call the constructor on the string provided by `__this__`, you will "
+"get exactly the same Python object back again, rather than a new object. But "
+"this constructor can be useful if you have some VTK code that has been "
+"wrapped with a different wrapper tool, for example with SWIG.  If you can "
+"get the VTK pointer from SWIG, you can use it to construct Python object "
+"that can be used with the native VTK wrappers."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:859
+msgid "Wrapper Hints"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:861
+msgid ""
+"A wrapper hint is an attribute that can be added to a class, method, or "
+"parameter declaration in a C++ header file to give extra information to the "
+"wrappers.  These hints are defined in the `vtkWrappingHints.h` header file."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:866
+msgid "The following hints can appear before a method declaration:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:867
+msgid "`VTK_WRAPEXCLUDE` excludes a method from the wrappers"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:868
+msgid ""
+"`VTK_NEWINSTANCE` passes ownership of a method's return value to the caller"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:870
+msgid ""
+"For convenience, `VTK_WRAPEXCLUDE` can also be used to exclude a whole "
+"class. The `VTK_NEWINSTANCE` hint is used when the return value is a "
+"`vtkObjectBase*` and the caller must not increment the reference count upon "
+"acceptance of the object (but must still decrement the reference count when "
+"finished with the object)."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:876
+msgid "The following hints can appear after a method declaration:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:877
+msgid "`VTK_EXPECTS(cond)` provides preconditions for the method call"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:878
+msgid "`VTK_SIZEHINT(expr)` marks the array size of a return value"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:879
+msgid "`VTK_SIZEHINT(name, expr)` marks the array size of a parameter"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:881
+msgid ""
+"For `VTK_EXPECTS(cond)`, the precondition must be valid C++ code, and can "
+"use any of the parameter names or `this`.  Even without `this`, any public "
+"names in the class namespace (including method names) will be resolved. See "
+"the [Preconditions](#preconditions) section for additional information."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:886
+msgid ""
+"`VTK_SIZEHINT(expr)` is used for methods that return an array as type `T*`, "
+"where `T` is a numeric data type.  The hint allows the wrappers to convert "
+"the array to a tuple of the correct size.  Without the size hint, the "
+"wrappers will return the pointer as a string that provides a mangled memory "
+"address of the form '`_hhhhhhhhhhhh_p_void`' where '`hhhhhhhhhhhh`' is "
+"address expressed in hexadecimal."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:893
+msgid ""
+"`VTK_SIZEHINT(parameter_name, expr)` is used to hint parameters of type `T*` "
+"or `T&*` (with `T` as a numeric data type) so that the wrappers know the "
+"size of the array that the pointer is pointing to.  The `expr` can be any "
+"expression that evaluates to an integer, and it can include parameter names, "
+"public class members and method calls, or the special name `_` (underscore) "
+"which indicates the method's return value.  In the absence of a size hint, "
+"the wrappers cannot check that the length of the sequence passed from Python "
+"matches the size of the array required by the method. If the method requires "
+"a larger array than it receives, a buffer overrun will occur."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:904
+msgid "The following hints can appear before a parameter declaration:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:905
+msgid "`VTK_FILEPATH` marks a parameter that accepts a pathlib.Path object"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:906
+msgid "`VTK_ZEROCOPY` marks a parameter that accepts a buffer object"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:908
+msgid ""
+"More specifically, `VTK_FILEPATH` is used with `char*` and `std::string` "
+"parameters to indicate that the method also accepts any object with a "
+"`__fspath__()` method that returns a path string.  And `VTK_ZEROCOPY` is "
+"used with `T*` parameters, for basic integer or float type `T`, to indicate "
+"that the Python buffer protocol will be used to access the values, rather "
+"than the Python sequence protocol that is used by default."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:915
+msgid "Deprecation Warnings"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:917
+msgid ""
+"In addition to the wrapping hints, the Python wrappers are also aware of the "
+"deprecation attributes that have been applied to classes and methods.  When "
+"a deprecated method is called, a `DeprecationWarning` is generated and "
+"information about the deprecation is printed, including the VTK version for "
+"the deprecation."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:923
+msgid "To ignore these warnings, use the following code:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:925
+msgid ""
+"import warnings\n"
+"warnings.filterwarnings('ignore', category=DeprecationWarning)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:928
+msgid "To see each deprecation warning just once per session,"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:930
+msgid "warnings.filterwarnings('once', category=DeprecationWarning)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:932
+msgid "Template Keys"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:934
+msgid ""
+"The following is a table of common template key names, which are the same as "
+"the numpy dtype names.  Note that you can actually use numpy dtypes as keys, "
+"as well as the native Python types `bool`, `int`, and `float`.  There is "
+"some danger in using `int`, however, because it maps to C++ `long` which has "
+"a platform-dependent size (either 32 bits or 64 bits).  Finally, the char "
+"codes from the Python `array` module can be used as keys, but they should be "
+"avoided since more programmers are familiar with numpy than with the much "
+"older `array` module."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "C++ Type"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "Template Key"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "Type Key"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "Char Key"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IA64 ABI Code"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "bool"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'bool'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'?'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IbE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "char"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'char'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'c'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IcE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "signed char"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'int8'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'b'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IaE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "unsigned char"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'uint8'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'B'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IhE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "short"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'int16'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'h'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IsE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "unsigned short"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'uint16'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'H'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "ItE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "int"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'int32'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'i'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IiE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "unsigned int"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'uint32'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'I'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IjE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "long"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'int'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'l'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IlE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "unsigned long"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'uint'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'L'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "ImE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "long long"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'int64'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'q'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IxE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "unsigned long long"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'uint64'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'Q'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IyE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "float"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'float32'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'f'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IfE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "double"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'float64'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "'d'"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:0
+msgid "IdE"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:960
+msgid ""
+"Since the size of '`long`' and '`unsigned long`' is platform-dependent, "
+"these types should generally be avoided."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:963
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:965
+msgid ""
+"There are times when an observer might generate a Python exception.  Since "
+"the observers are called from C++, there is no good way to catch these "
+"exceptions from within Python.  So, instead, the wrappers simply print a "
+"traceback to stderr and then clear the error indicator.  The Python program "
+"will continue running unless the exception was a `KeyboardInterrupt` (Ctrl-"
+"C), in which case the program will exit with an error code of 1."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:972
+msgid "Deleting a vtkObject"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:974
+msgid ""
+"There is no direct equivalent of VTK's `Delete()` method, since Python does "
+"garbage collection automatically.  The Python object will be deleted when "
+"there are no references to it within Python, and the C++ object will be "
+"deleted when there are no references to it from within either Python or C++. "
+"Note that references can hide in unexpected places, for example if a method "
+"of an object is used as an observer callback, the object will not be deleted "
+"until the observer is disconnected."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:982
+msgid ""
+"The `DeleteEvent` can be used to detect object deletion, but note that the "
+"observer will receive a None for the object, since the observer is called "
+"after (not before) the deletion occurs:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:986
+msgid ""
+">>> o = vtkObject()\n"
+">>> o.AddObserver('DeleteEvent', lambda o,e: print(e, o))\n"
+"1\n"
+">>> del o\n"
+"DeleteEvent None\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:992
+msgid ""
+"If you need to know what object is deleted, the identifying information must "
+"be extracted before the deletion occurs:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:995
+msgid ""
+">>> o = vtkObject()\n"
+">>> o.AddObserver('DeleteEvent',lambda x,e,r=repr(o): print(e, r))\n"
+"1\n"
+">>> del o\n"
+"DeleteEvent <vtkmodules.vtkCommonCore.vtkObject(0x55783870f970) at "
+"0x7f1e61678be0>\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1001
+msgid ""
+"In cases where you need to track down tricky memory issues, you might find "
+"it useful to call the `GetReferenceCount()` method of the object directly."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1004
+msgid "Ghosts"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1006
+msgid ""
+"A wrapped VTK object (derived from `vtkObjectBase`) is a Python object that "
+"holds a pointer to a C++ object (specifically, a `vtkObjectBase*`).  The "
+"Python object can have attributes that the C++ object knows nothing about. "
+"So, what happens to these attributes if the Python object is deleted, but "
+"the C++ object lives on?  Consider this simple example of storing the C++ "
+"object in an array and then deleting the Python object:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1013
+msgid ""
+"obj = vtkObject()\n"
+"obj.tag = 'FirstObject'\n"
+"va = vtkVariantArray()\n"
+"va.InsertNextValue(obj)\n"
+"del obj\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1019
+msgid ""
+"When we retrieve the object from the array, we want it to have the '`tag`' "
+"attributes that it had we stored it.  But you might wonder, aren't all "
+"Python-specific attributes deleted along with the Python object?  The answer "
+"is, no they aren't, they're saved until until the C++ object itself is "
+"deleted."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1025
+msgid ""
+"The wrappers have a special place, which we will call the graveyard, where "
+"'ghosts' of objects are stored when the objects are deleted. The ghost is "
+"not an object, but rather a container for the Python attributes of a "
+"deceased object.  If the object ever reappears within Python, usually as a "
+"return value from a C++ method call, then the ghost is resurrected as a new "
+"Python object that has all the attributes of the original Python object."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1032
+msgid ""
+"The graveyard is only used for objects that have unfinished business.  If a "
+"Python object has an empty dict and no other special attributes, then it "
+"will not go to the graveyard.  Also, if the C++ object is deleted at the "
+"same time as the Python object, then the graveyard will not be used.  Each "
+"ghost in the graveyard holds a weak pointer to its C++ object and will "
+"vanish when the C++ object is deleted (not immediately, but the next time "
+"the graveyard garbage collector runs)."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1040
+msgid "Subclassing a VTK Class"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1042
+msgid ""
+"It is possible to subclass a VTK class from within Python, but this is of "
+"limited use because the C++ virtual methods are not hooked to the Python "
+"methods.  In other words, if you make a subclass of `vtkPolyDataAlgorithm` "
+"and override the `Execute()` method, it will not be automatically called by "
+"the VTK pipeline. Your `Execute()` method will only be called if the call is "
+"made from Python."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1049
+msgid ""
+"The addition of virtual method hooks to the wrappers has been proposed, but "
+"currently the only way for Python methods to be called from C++ code is via "
+"callbacks. The `vtkProgrammableSource` and `vtkProgrammableFilter` are "
+"examples of VTK algorithm classes that use callbacks for execution, while "
+"`vtkInteractionStyleUser` can use observer callbacks for event handling."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1055
+msgid "Wrapping External VTK Modules"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1057
+msgid ""
+"If you have your own C++ classes that are based on VTK, and if they are "
+"placed with a VTK module with a vtk.module file, then they can be wrapped as "
+"shown in the [Module Wrapping Example][external-wrapping].  You will also "
+"find the cmake documentation on VTK modules to be useful."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1064
+msgid "Runtime C++ object wrapping"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1066
+msgid ""
+"VTK allows to declare an object in C++ and to use it in Python. To do so, "
+"you can simply call `vtkPythonUtil::GetObjectFromPointer` which will create "
+"your Python object from the pointer to a C++ VTK object. Here is a minimal "
+"example:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1070
+msgid ""
+"  #include <vtkPythonInterpreter.h>\n"
+"  #include <vtkPythonUtil.h>\n"
+"  #include <vtkSmartPyObject.h>\n"
+"\n"
+"  ...\n"
+"\n"
+"  // Create a C++ object\n"
+"  vtkNew<vtkPolyData> data;\n"
+"\n"
+"  // Initialize interpreter and GIL\n"
+"  vtkPythonInterpreter::Initialize();\n"
+"  vtkPythonScopeGilEnsurer gilEnsurer(true, true);\n"
+"\n"
+"  // Import vtk in Python\n"
+"  vtkPythonInterpreter::RunSimpleString(\"import vtkmodules."
+"vtkCommonCore\");\n"
+"\n"
+"  // Create the python object from the C++ object\n"
+"  vtkSmartPyObject pyDataFromCpp;\n"
+"  pyDataFromCpp.TakeReference(vtkPythonUtil::GetObjectFromPointer(data."
+"GetPointer()));\n"
+"\n"
+"  // Make it visible from python\n"
+"  PyObject* mainModule = PyImport_AddModule(\"__main__\");\n"
+"  PyObject* mainDict = PyModule_GetDict(mainModule);\n"
+"  PyDict_SetItemString(mainDict, \"pyDataFromPython\", pyDataFromCpp)\n"
+"\n"
+"  // Run Python script\n"
+"  std::string script;\n"
+"  script += \"print(type(pyDataFromPython))\\n\"; // available with the name "
+"set above\n"
+"  vtkPythonInterpreter::RunSimpleString(script.c_str());\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1102
+msgid "Experimental Features"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1104
+msgid "Python Class Overrides"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1106
+msgid ""
+"VTK now supports overriding wrapped classes with Python subclasses.  This "
+"enables developers to provide more Python friendly interfaces for certain "
+"classes.  Here is a trivial example of an override:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1110
+msgid ""
+"from vtkmodules.vtkCommonCore import vtkPoints\n"
+"@vtkPoints.override\n"
+"class CustomPoints(vtkPoints):\n"
+"    pass\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1115
+msgid ""
+"Once the override is in place, any future `vtkPoints` Python object "
+"instances will be instances of the override class.  This behavior is global."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1118
+msgid "points = vtk.vtkPoints() # returns an instance of CustomPoints\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1120
+msgid ""
+"The override can be reversed by setting an override of `None`, but this will "
+"not impact instantiations that have already occurred."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1123
+msgid "vtkPoints.override(None)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1125
+msgid ""
+"If a class is already overridden in C++ via VTK's object factory mechanism, "
+"for example the vtkWin32OpenGLRenderWindow override for vtkRenderWindow, "
+"then directly applying a Python override to the original class will not "
+"work.  However, the Python override can be chained to the C++ override "
+"class. For example, here is a chained override of vtkRenderWindow on Windows:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1131
+msgid ""
+"@vtkWin32OpenGLRenderWindow.override\n"
+"class CustomRenderWindow(vtkWin32OpenGLRenderWindow):\n"
+"    ...\n"
+"window = vtkRenderWindow() # creates a CustomRenderWindow\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1136
+msgid ""
+"Please see [Subclassing a VTK Class](#subclassing-a-vtk-class) for "
+"additional restrictions on subclassing VTK classes through Python."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1139
+msgid "Overrides and initialization"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1141
+msgid ""
+"The previous section contained examples of when an overridden VTK class is "
+"instantiated in Python.  A more interesting case is when the overridden "
+"class is instantiated in C++ and then, sometime later, becomes visible to "
+"the Python interpreter:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1146
+msgid ""
+"from vtkmodules.vtkImagingSources import vtkImageGridSource\n"
+"from vtkmodules.vtkCommonDataModel import vtkImageData\n"
+"\n"
+"@vtkImageData.override\n"
+"class CustomImageData(vtkImageData):\n"
+"    def __init__(self, filename=None):\n"
+"        self.filename = filename\n"
+"\n"
+"source = vtkImageGridSource()\n"
+"source.SetDataSpacing(0.1, 0.1, 0.1)\n"
+"source.Update()\n"
+"data = source.GetOutput()\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1159
+msgid ""
+"In this example, the vtkImageData object is created by vtkImageGridSource. "
+"At the time of its creation, it is a C++ object and Python is unaware that "
+"it has been created.  The corresponding Python object is not created until "
+"`source.GetOutput()` is called and returns the object.  It is specifically "
+"at this point that the override mechanism kicks in.  The C++ object remains "
+"the same, but the Python wrapper around that object is instantiated from the "
+"override class.  This exemplifies the dual nature of VTK-Python objects."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1167
+msgid ""
+"The automatic creation of the Python wrapper object is usually transparent, "
+"and is something that we take for granted.  However, one must be aware that "
+"the creation of the wrapper object involves calling its `__init__()` method, "
+"which can have unwanted side-effects if the C++ object itself is no longer "
+"in its initial state.  In the example above, the vtkImageData object will "
+"already have been modified by the vtkImageGridSource before the `__init__()` "
+"method adds the new `filename` attribute."
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1175
+msgid ""
+"A situation that we want to avoid, and which is only possible for override "
+"classes, is when the Python `__init__()` method modifies attributes of the "
+"pre-existing C++ object:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1179
+msgid ""
+"@vtkImageData.override\n"
+"class CustomImageData(vtkImageData):\n"
+"    def __init__(self, spacing=(1.0, 1.0, 1.0)):\n"
+"        self.SetSpacing(spacing)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1184
+msgid ""
+"Even though the vtkImageData object has already had its C++ attributes set "
+"by the vtkImageGridSource prior to the call to `__init__()`, this override "
+"will forcibly reset the spacing upon the call to `source.GetOutput()`.  This "
+"is not what we want!  In fact, the Python wrappers will raise a RuntimError "
+"warning when this occurs:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1190
+msgid ""
+">>> data = source.GetOutput()\n"
+"RuntimeWarning: Python method CustomImageData.__init__() unexpectedly\n"
+"modified pre-existing C++ base object vtkImageData (0x563cf7ddaf20).\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1194
+msgid ""
+"During the automated creation of a Python wrapper for a pre-existing C++ "
+"object, `__init__()` is always called with no parameters, so the goal is to "
+"ensure that default construction never modifies the C++ object.  This can be "
+"done by making all modifications conditional:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1199
+msgid ""
+"@vtkImageData.override\n"
+"class CustomImageData(vtkImageData):\n"
+"    def __init__(self, spacing=None):\n"
+"        if spacing is not None:\n"
+"            self.SetSpacing(spacing)\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1205
+msgid "Stub Files for Type Hinting"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1207
+msgid ""
+"VTK includes a script called [`generate_pyi.py`][generate_pyi] that will "
+"generate pyi stub files for each wrapped VTK module.  The purpose of these "
+"files, as explained in [PEP 484][pep_484], is to provide type information "
+"for all constants, classes, and methods in the modules. Each of these files "
+"contain blocks like this:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1213
+msgid ""
+"VTK_DOUBLE:int\n"
+"VTK_DOUBLE_MAX:float\n"
+"VTK_DOUBLE_MIN:float\n"
+"...\n"
+"\n"
+"class vtkObject(vtkObjectBase):\n"
+"    def AddObserver(self, event:int, command:Callback, priority:float=0.0) -"
+"> int: ...\n"
+"    def GetMTime(self) -> int: ...\n"
+"    @staticmethod\n"
+"    def GetNumberOfGenerationsFromBaseType(type:str) -> int: ...\n"
+"    @overload\n"
+"    def HasObserver(self, event:int, __b:'vtkCommand') -> int: ...\n"
+"    @overload\n"
+"    def HasObserver(self, event:str, __b:'vtkCommand') -> int: ...\n"
+"\n"
+"class vtkAbstractArray(vtkObject):\n"
+"    class DeleteMethod(int): ...\n"
+"    VTK_DATA_ARRAY_ALIGNED_FREE:'DeleteMethod'\n"
+"    VTK_DATA_ARRAY_DELETE:'DeleteMethod'\n"
+"    VTK_DATA_ARRAY_FREE:'DeleteMethod'\n"
+"    VTK_DATA_ARRAY_USER_DEFINED:'DeleteMethod'\n"
+"    def Allocate(self, numValues:int, ext:int=1000) -> int: ...\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1236
+msgid ""
+"Python consoles like ipython and IDEs like PyCharm can use the information "
+"in these files to provide hints while you edit the code.  These files are "
+"included in the Python packages for VTK, but they can also be built by "
+"executing the `generate_pyi.py` script.  To do so, execute the script with "
+"the `vtkpython` executable (or with the regular python executable, if its "
+"paths are set for VTK):"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1243
+msgid "vtkpython -m vtkmodules.generate_pyi\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1245
+msgid ""
+"This will place build the pyi files and place them inside the `vtkmodules` "
+"package, where ipython and PyCharm should automatically find them.  The help "
+"for this script is as follows:"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1249
+msgid ""
+"usage: python generate_pyi.py [-p package] [-o output_dir] [module ...]\n"
+"options:\n"
+"  -p NAME        Package name [vtkmodules by default].\n"
+"  -o OUTPUT      Output directory [package directory by default].\n"
+"  -e EXT         Output file suffix [.pyi by default].\n"
+"  module         Module or modules to process [all by default].\n"
+msgstr ""
+
+#: ../../../advanced/PythonWrappers.md:1256
+msgid ""
+"The pyi files are syntactically correct python files, so it is possible to "
+"load them as such in order to test them and inspect them."
+msgstr ""

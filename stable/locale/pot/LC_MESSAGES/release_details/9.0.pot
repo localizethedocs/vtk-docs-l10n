@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.0.md:1
+msgid "9.0"
+msgstr ""
+
+#: ../../../release_details/9.0.md:3
+msgid "Released on 2020-05-01."
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:2
+msgid "9.0.0"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:4
+msgid ""
+"See [Discourse](https://discourse.vtk.org/t/vtk-9-0-0/3205) for release "
+"notes."
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:6
+msgid "9.0.2"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:8
+msgid ""
+"VTK 9.0.2 collects fixes to 9.0.1 which have been made since its release. Of "
+"particular interest are the fixes to macOS rendering, support for the macOS "
+"arm64 platform, and updates for API changes in external libraries."
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:12
+msgid "New classes"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:14
+msgid ""
+"Added a `vtkImageProbeFilter` which works like `vtkProbeFilter`, but for "
+"`vtkImageData`"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:17
+msgid "New support"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:19
+msgid ""
+"`enum class` setters and getters are now supported via `vtk{Get,Set}"
+"EnumMacro`"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:22
+msgid "Fixes"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:24
+msgid "The `QVTKRenderWidget.h` is now installed."
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:25
+msgid "`vtk3DLinearGridPlaneCutter` guards against `nullptr` points and cells"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:26
+msgid "The composite date mapper now iterates over data blocks properly"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:27
+msgid "`vtkStringArray::Resize` takes tuple elements into account"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:28
+msgid ""
+"`vtkArrowSource` now supports scalong and rotation around the origin or the "
+"arrow's center point"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:30
+msgid ""
+"The `VTK::DomainsChemistryOpenGL2`, `VTK::RenderingContextOpenGL2`, and "
+"`VTK::RenderingOpenGL2` modules are added to the `Rendering` group to avoid "
+"missing implementations of rendering components"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:33
+msgid ""
+"`vtkCutter` enables point merging when requested through a `vtkPointLocator` "
+"which merges points"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:35
+msgid ""
+"`vtkAxesActor` bounds calculations improved to avoid assumptions about range "
+"values"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:37
+msgid ""
+"`vtkWindowLevelLookupTable` out-of-range colors are now initialized properly"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:39
+msgid ""
+"`vtkImageReslice::RequestInformation` is refactored handle common image "
+"information passing"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:41
+msgid ""
+"`vtkImageReslice` creates a new interpolator in `::GetInterpolator`; this "
+"new interpolator now uses the same interpolation mode as `vtkImageReslice` "
+"itself"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:45
+msgid "macOS"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:47
+msgid "macOS wheels are now built and uploaded by VTK's CI"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:48
+msgid "Fixes for macOS OpenGL state tracking (related to `GL_SCISSOR`)"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:49
+msgid ""
+"Multisampling on macOS with Intel graphics turned off for volume rendering"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:50
+msgid ""
+"OpenGL state tracking on macOS with layers is improved (rather than using "
+"the wrong context between layers)"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:52
+msgid "OSPRay is disabled when running under macOS Rosetta"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:54
+msgid "Third Party"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:56
+msgid "HDF5 has been updated to address errors on newer Xcode compilers"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:57
+msgid "HDF5 macOS universal2 compilation fixes"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:58
+msgid "`VTK::mpi` now disables C++ bindings for SGI MPT as well"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:59
+msgid "Usage of `numpy.character` is removed (deprecated in NumPy 1.19)"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:60
+msgid "Avoidance of APIs deprecated in Python 3.9"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:61
+msgid ""
+"Compilation with newer libfreetype resolved (`FT_CALLBACK_DEF` usage removed)"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:64
+msgid "9.0.3"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:66
+msgid ""
+"A minor patchset on top of 9.0.2 to fix problems with the new release "
+"process' configuration when building the wheels."
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:69
+msgid "Wheels"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:71
+msgid "Disable `VTK_DEBUG_LEAKS` in wheel builds"
+msgstr ""
+
+#: ../../../../release/_9.0-stripped.md:72
+msgid "Remove long-deprecated API usage in the Python bindings"
+msgstr ""
