@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:1
+msgid "Implicit Widget Representations Improvements"
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:3
+msgid "VTK has better support for several vtkWidgetRepresentation subclasses."
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:5
+msgid "Bug fixes"
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:7
+msgid ""
+"Interactions are smoother thanks to a better Picker choice. Also, "
+"interactively modifying radius (for Annulus, Cone and Cylinder) used to be "
+"based on screen motion. Switching to mouse world position makes it more "
+"intuitive: circle effectively follow the mouse cursor."
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:12
+msgid "New BoundedWidget design"
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:14
+msgid ""
+"vtkBoundedWidgetRepresentation is a new vtkWidgetRepresentation subclass, to "
+"inherits from to benefit of a \"crop at outline\" feature. This is useful "
+"for most vtkImplicitFunction representations."
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:18
+msgid "API breaking changes"
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:20
+msgid ""
+"The classes that were ported to the vtkBoundedWidgetRepresentation design "
+"loose some protected member, as the new parent class has same member as "
+"`private`. Please use the Getters instead."
+msgstr ""
+
+#: ../../../release_details/9.5/widget-representations-improvements.md:24
+msgid ""
+"Concerned classes:  vtkImplicitConeRepresentation, "
+"vtkImplicitCylinderRepresentation, vtkImplicitAnnulusRepresentation and "
+"vtkImplicitPlaneRepresentation"
+msgstr ""

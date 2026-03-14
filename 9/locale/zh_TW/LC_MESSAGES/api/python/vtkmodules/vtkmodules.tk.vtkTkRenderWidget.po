@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:1
+msgid "{py:mod}`vtkmodules.tk.vtkTkRenderWidget`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:7
+msgid "A simple vtkTkRenderWidget for tkinter."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:9
+msgid "Created by David Gobbi, April 1999"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:11
+msgid ""
+"May ??, 1999  - Modifications performed by Heather Drury,                 to "
+"rewrite _pan to match method in TkInteractor.tcl May 11, 1999  - Major "
+"rewrite by David Gobbi to make the                 interactor bindings "
+"identical to the TkInteractor.tcl                 bindings. July 14, 1999 - "
+"Added modification by Ken Martin for VTK 2.4, to                 use vtk "
+"widgets instead of Togl. Aug 29, 1999  - Renamed file to vtkRenderWidget.py "
+"Nov 14, 1999  - Added support for keyword 'rw' Mar 23, 2000  - Extensive but "
+"backwards compatible changes,                 improved documentation"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:23
+msgid "A few important notes:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:25
+msgid ""
+"This class is meant to be used as a base-class widget for doing VTK "
+"rendering in Python."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:28
+msgid ""
+"In VTK (and C++) there is a very important distinction between public ivars "
+"(attributes in pythonspeak), protected ivars, and private ivars.  When you "
+"write a python class that you want to 'look and feel' like a VTK class, you "
+"should follow these rules."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:33
+msgid ""
+"Attributes should never be public.  Attributes should always be either "
+"protected (prefixed with a single underscore) or private (prefixed with a "
+"double underscore).  You can provide access to attributes through public Set/"
+"Get methods (same as VTK)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:38
+msgid ""
+"Use a single underscore to denote a protected attribute, e.g. self."
+"_RenderWindow is protected (can be accessed from this class or a derived "
+"class)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:42
+msgid ""
+"Use a double underscore to denote a private attribute, e.g. self.__InExpose "
+"cannot be accessed outside of this class."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:45
+msgid ""
+"All attributes should be 'declared' in the __init__() function i.e. set to "
+"some initial value.  Don't forget that 'None' means 'NULL' - the python/vtk "
+"wrappers guarantee their equivalence."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:18
+msgid ""
+"{py:obj}`vtkTkRenderWidget <vtkmodules.tk.vtkTkRenderWidget."
+"vtkTkRenderWidget>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:45
+msgid "A vtkTkRenderWidget for Python."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:30
+msgid ""
+"{py:obj}`vtkRenderWidgetConeExample <vtkmodules.tk.vtkTkRenderWidget."
+"vtkRenderWidgetConeExample>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:250
+msgid "Like it says, just a simple example"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:36
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:42
+msgid "Bases: {py:obj}`tkinter.Widget`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:47
+msgid "Use GetRenderWindow() to get the vtkRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:49
+msgid ""
+"Create with the keyword stereo=1 in order to generate a stereo-capable "
+"window."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:52
+msgid ""
+"Create with the keyword focus_on_enter=1 to enable focus-follows-mouse.  The "
+"default is for a click-to-focus mode."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:47
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:51
+msgid "Constructor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:53
+msgid "Keyword arguments:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:55
+msgid "rw -- Use passed render window instead of creating a new one."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:57
+msgid ""
+"stereo -- If True, generate a stereo-capable window.   Defaults to False."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:60
+msgid ""
+"focus_on_enter -- If True, use a focus-follows-mouse mode.   Defaults to "
+"False where the widget will use a click-to-focus   mode."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:66
+msgid "Bind some default actions."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:82
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:90
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:98
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:106
+msgid "Mirrors the method with the same name in vtkRenderWindowInteractor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:146
+msgid ""
+"UpdateRenderer will identify the renderer under the mouse and set up "
+"_CurrentRenderer, _CurrentCamera, and _CurrentLight."
+msgstr ""

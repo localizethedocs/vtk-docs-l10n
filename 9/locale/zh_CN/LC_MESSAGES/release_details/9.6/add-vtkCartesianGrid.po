@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:1
+msgid "Add an abstract vtkCartesianGrid"
+msgstr ""
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:3
+msgid ""
+"A new abstract class, vtkCartesianGrid add a layer of abstraction on both "
+"vtkImageData and vtkRectilinearGrid."
+msgstr ""
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:6
+msgid "It is now possible to use a common API for both the classes."
+msgstr ""
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:8
+msgid "No behavior were changed."
+msgstr ""
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:10
+msgid ""
+"`vtkRectilinearGrid::ComputeStructuredCoordinates(double*, ...)` has been "
+"deprecated in favor or `vtkRectilinearGrid::"
+"ComputeStructuredCoordinates(const double*, ...)`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:13
+msgid "`vtkImageData::SetExtent` is not `virtual` anymore."
+msgstr ""
+
+#: ../../../release_details/9.6/add-vtkCartesianGrid.md:15
+msgid ""
+"`BuildImplicitStructures`, `BuildCells` and `BuildCellTypes` have been "
+"privatized, they are called as needed bt the vtkCartesianGrid. `Extent`, "
+"`Dimensions` and `DataDescription` members have been privatized, use the "
+"accessors."
+msgstr ""

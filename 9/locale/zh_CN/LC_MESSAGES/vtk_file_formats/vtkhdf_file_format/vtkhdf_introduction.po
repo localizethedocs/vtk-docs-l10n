@@ -1,0 +1,244 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:1
+msgid "Introduction"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:3
+msgid ""
+"The `VTKHDF` file format is a file format relying on [HDF5](https://www."
+"hdfgroup.org/solutions/hdf5/). It is meant to provide good I/O performance "
+"as well as robust and flexible parallel I/O capabilities."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:6
+msgid ""
+"It currently supports basic types: `PolyData`, `UnstructuredGrid`, "
+"`ImageData`, `HyperTreeGrid` and composite types such as `OverlappingAMR`, "
+"`MultiBlockDataSet` and the `PartitionedDataSetCollection`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:8
+msgid "The current file format version is **2.5**."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:11
+msgid "Python examples and tutorial"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:13
+msgid ""
+"To help adopters use the VTKHDF File Format, we provide a repository : "
+"[vtkhdf-script](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-scripts)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:15
+msgid "It contains several folders:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:16
+msgid ""
+"[tutorial](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-scripts/-/"
+"tree/main/tutorial): a complete tutorial showing how to create VTKHDF files "
+"from scratch, incrementally adding more features."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:17
+msgid ""
+"[scripts](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-scripts/-/tree/"
+"main/scripts): sample python scripts showing how to create VTKHDF files "
+"using `h5py` for most of the data types currently supported by the format, "
+"including temporal files."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:18
+msgid ""
+"[vtkxml-to-vtkhdf](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-"
+"scripts/-/tree/main/vtkxml-to-vtkhdf) folder which contains script to "
+"convert vtkxml file into vtk using the `vtkHDFWriter`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:21
+msgid "Valuable documentation from blog posts"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:23
+msgid ""
+"[an overview of the first version and the motivation behind HDF5 in VTK]"
+"(https://www.kitware.com/vtk-hdf-reader/)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:26
+msgid "Extension"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:28
+msgid ""
+"The ` VTKHDF` format generally uses the `.vtkhdf` extension. The `.hdf` "
+"extension is also supported but is not preferred. There are no specific "
+"extensions to differentiate between different types of dataset, serial vs. "
+"distributed data or static vs. temporal data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:34
+msgid "FAQ"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:36
+msgid "How to stay informed?"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:38
+msgid ""
+"We keep a [status](vtkhdf_status.md) page up to date, that tracks current "
+"status of the VTKHDF specification and implementation in the `vtkHDFReader` "
+"and `vtkHDFWriter`. Bug tracking and proposals are tracked in a [Gitlab "
+"issue](https://gitlab.kitware.com/vtk/vtk/-/issues/19243). Additionally, all "
+"VTKHDF issues are [tagged appropriately](https://gitlab.kitware.com/vtk/"
+"vtk/-/issues/?"
+"sort=created_date&state=opened&label_name%5B%5D=area%3AVTKHDF&first_page_size=20) "
+"as `area:VTKHDF`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:40
+msgid "Where should we create a proposal for the file format?"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:42
+msgid ""
+"The VTKHDF File Format is not considered complete, and lacks support for "
+"some VTK data types. This specification is led by the community; please post "
+"ideas and design for new data types on the [VTK discourse](https://discourse."
+"vtk.org/). This Discourse will be made into a Gitlab issue once VTKHDF "
+"contributors have agreed on a design."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:44
+msgid "Who maintains this specification?"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:46
+msgid "Current maintainer of this file format are :"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:47
+msgid "Lucas Givord (gitlab: @lucas.givord, discourse: @lgivord)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:48
+msgid "Louis Gombert (gitlab: @louis.gombert, discourse: @Louis_Gombert)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:49
+msgid "Mathieu Westphal (gitlab: @mwestphal, discourse: @mwestphal)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:51
+msgid ""
+"Do not hesitate to reach out on [discourse](https://discourse.vtk.org/) or "
+"[gitlab](https://gitlab.kitware.com/vtk/vtk/)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:54
+msgid "Changelog"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:56
+msgid "VTKHDF - 2.5"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:58
+msgid "add specification for Unstructured Grid polyhedrons"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:60
+msgid "VTKHDF - 2.4"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:62
+msgid "add specification for `HyperTreeGrid`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:64
+msgid "VTKHDF - 2.3"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:66
+msgid ""
+"fix array names which miss the `s` to be consistent with other temporal "
+"dataset in case of the temporal `OverlappingAMR`. It concerns these data "
+"names: `NumberOfBox`, `AMRBoxOffset`, `Point/Cell/FieldDataOffset`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:68
+msgid "VTKHDF - 2.2"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:70
+msgid "add support for temporal `OverlappingAMR`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:71
+msgid "add official support for ignored data outside of `VTKHDF`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:73
+msgid "VTKHDF - 2.1"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:75
+msgid ""
+"add specification in the format for `PartitionedDataSetCollection` and "
+"`MultiBlockDataSet`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:77
+msgid "VTKHDF - 2.0"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:79
+msgid "extends the specification for `PolyData`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:81
+msgid ""
+"add support for `Temporal` dataset for `PolyData`, `ImageData` and "
+"`UnstructuredGrid`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:83
+msgid "VTKHDF - 1.0"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:85
+msgid "add specification for these vtk data types:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:86
+msgid "`UnstructuredGrid`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:87
+msgid "`ImageData`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:88
+msgid "`Overlapping AMR`"
+msgstr ""

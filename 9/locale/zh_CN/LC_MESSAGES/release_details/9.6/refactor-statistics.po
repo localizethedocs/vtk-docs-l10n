@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/refactor-statistics.md:1
+msgid "Statistics algorithms refactored"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:3
+msgid ""
+"`vtkStatisticsAlgorithm` and its subclasses have been refactored to produce "
+"instances of a new data object (`vtkStatisticalModel`) for models rather "
+"than a `vtkMultiBlockDataSet` instance holding `vtkTable`s. This is a "
+"breaking change as it would be very hard to reliably validate and test "
+"filters that could be configured to produce different output types "
+"(especially since models are used as both filter inputs and outputs)."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:10
+msgid ""
+"This commit adds methods which enable any algorithm to own an instance of "
+"`vtkStatisticsAlgorithmPrivate` (which holds sets of requested attribute-"
+"array names) and copy its contents to a `vtkStatisticsAlgorithm` subclass "
+"they own. This way, a \"wrapper\" algorithm that adapts a `vtkDataObject` "
+"into a `vtkTable` can run on *any* statistics algorithm (instead of "
+"requiring a subclass of the wrapper for each subclass of "
+"vtkStatisticsAlgorithm as was done in the past)."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:19
+msgid ""
+"We also add `vtkGenerateStatistics` which adapts geometric and composite VTK "
+"data objects into tables of samples and creates statistical models of the "
+"samples. It accepts composite data held in a distributed-memory environment "
+"and performs communication as needed to build one model (or one hierarchy of "
+"models for composite data if requested) across all ranks. It does not "
+"currently handle multiblock datasets (you should convert to a partitioned "
+"dataset collection instead) or cell grids (though there is some work in this "
+"direction)."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:29
+msgid ""
+"Because `vtkGenerateStatistics` owns and can apply an instance of any "
+"subclass of `vtkStatisticsAlgorithm` to the tables it produces, the "
+"`vtkStatisticsAlgorithm` class now implements methods to serialize and "
+"deserialize ivars of any subclass. This allows a `vtkStatisticalModel` "
+"(which stores the serialization) to produce an instance of a properly-"
+"configured `vtkStatisticsAlgorithm` to perform further processing (such as "
+"assessing data or testing the likelihood of a model)."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:38
+msgid ""
+"In order to facilitate communication of statistical model data across ranks, "
+"both an XML and a legacy reader/writer pair for the new vtkStatisticalModel "
+"data object are added. The XML reader/writer only perform inline ASCII reads/"
+"writes for now. Models are small, so that is all that should be required."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:44
+msgid ""
+"We add a new statistics algorithm for combined order+moment stats called "
+"`vtkVisualStatistics`. It inherits `vtkDescriptiveStatistics` and adds a "
+"fixed-width bin approximation to a histogram of data. This has the potential "
+"to be faster than `vtkOrderStatistics` but cannot capture unique frequent "
+"values the way order statistics can."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:50
+msgid ""
+"A new filter, `vtkSumTables` is provided to sum numeric columns of a set of "
+"input `vtkTable` instances. This is used by `vtkVisualStatistics` to "
+"aggregate binned histogram models."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:54
+msgid ""
+"`vtkExtractStatisticalModelTables` is a new filter to extract model tables "
+"from a statistical model so that applications which do not deal with "
+"`vtkStatisticalModel` data objects can still access model information."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:59
+msgid "We centralize and expand ghost counting for statistics algorithms:"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:60
+msgid ""
+"Move GhostsToSkip bit-mask and NumberOfGhosts ivar to the base "
+"`vtkStatisticsAlgorithm` class. This removes a lot of duplication in "
+"subclasses. Really, all subclasses should support skipping ghosts."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:64
+msgid ""
+"Expand support for skipping ghosted samples to the "
+"`vtkCorrelativeStatistics` filter."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:67
+msgid ""
+"As part of this change, `vtkPCAStatistics` has renamed its Test output "
+"column from \"Block\" to \"Partition,\" so if you have code that processes "
+"the output of `vtkPCAStatistics` you may need to look for the column under "
+"its new name (in addition to processing models in their new format)."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-statistics.md:72
+msgid ""
+"Finally, this adds a new cell-grid query for creating sample tables named "
+"`vtkCellGridSampleQuery`, but does not provide any responders."
+msgstr ""

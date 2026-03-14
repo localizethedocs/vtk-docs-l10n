@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/index-buffer-creation-performances.md:1
+msgid "Improve IBO construction performances in vtkOpenGLIndexBufferObject"
+msgstr ""
+
+#: ../../../release_details/9.5/index-buffer-creation-performances.md:3
+msgid ""
+"For the common cases of triangles-only polydata, the IBO construction time "
+"as been reduced by about 25%. It is even more faster if the polydata cell "
+"arrays use 32bits connectivity IDs. This can be forced using the "
+"`VTK_USE_64BIT_IDS=OFF` when building, or using `vtkCellArray::"
+"SetDefaultStorageIs64Bit(false);` or `polydata->GetPolys()-"
+">ConvertTo32BitStorage()`."
+msgstr ""

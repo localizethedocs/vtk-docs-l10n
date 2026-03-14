@@ -1,0 +1,523 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:1
+msgid "Wrapping Tools"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:3
+msgid ""
+"The wrapping tools consist of executables that pull information from C++ "
+"header files, and produce wrapper code that allows the C++ interfaces to be "
+"used from other programming languages (Python and Java).  One can think of "
+"the wrappers as having a front-end that parses C++ header files, and a back-"
+"end that produces language-specific glue code."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:9
+msgid ""
+"All of the code in this directory is C, rather than C++.  One might think "
+"this is silly, since the front-end parses C++ .h files and the back-end "
+"generates .cxx files.  The original reason for this is that the parser uses "
+"lex and yacc, which are written in C and previously could not easily be "
+"linked into C++ programs."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:16
+msgid "The C++ Parser"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:18
+msgid "vtkParse"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:20
+msgid ""
+"The header vtkParse.h provides a C API for the C++ parser that wrappers use "
+"to read the VTK header files.  The parser consists of three critical pieces: "
+"a preprocessor (see below), a lex-based lexical analyzer (lex.yy.c, "
+"generated from vtkParse.l) and a bison-based glr parser (vtkParse.tab.c, "
+"generated from vtkParse.y).  Instructions on rebuilding the parser are "
+"provided at the end of this document."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:27
+msgid "vtkParsePreprocess"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:29
+msgid ""
+"This is a preprocessor that can run independently of the parser.  In "
+"general, the parser does not recursively parse `#include` files, but it does "
+"recursively preprocess them in order to gather all of the macro definitions "
+"within them."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:34
+msgid "vtkParseString"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:36
+msgid ""
+"This provides low-level string handling routines that are used by the parser "
+"and the preprocessor.  Most importantly, it contains a C++ tokenizer.  It "
+"also contains a cache for storing strings (type names, etc.) that are "
+"encountered during the parse."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:41
+msgid "vtkParseSystem"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:43
+msgid ""
+"This contains utilities for file system access.  One of its functionalities "
+"is to manage a cache of where header files are located on the file system, "
+"so that header file lookups can be done inexpensively even on slow file "
+"systems."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:47
+msgid "vtkParseType"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:49
+msgid ""
+"This is a header file that defines numerical constants that we use to "
+"identify C++ types, type qualifiers, and specifiers.  These constants are "
+"used in the vtkParseData data structures described below."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:53
+msgid "vtkParseAttributes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:55
+msgid ""
+"This is a header file that defines numerical constants for wrapper-specific "
+"attributes that can be added to declarations in the VTK header files.  For "
+"example, `[[vtk::wrapexclude]]` and ``[[vtk::deprecated]]``.  These "
+"attribute constants are stored in the vtkParseData data structures."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:60
+msgid "vtkParseData"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:62
+msgid ""
+"The data structures defined in vtkParseData.h are used for the output of the "
+"parser.  This header provides data structures for namespaces, classes, "
+"methods, typedefs, and for other entities that can be declared in a C++ "
+"file.  The wrappers convert this data into wrapper code."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:68
+msgid "Parser Utilities"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:70
+msgid "vtkParseExtras"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:72
+msgid ""
+"This file provides routines for managing certain abstractions of the data "
+"that is produced by the parser.  Most specifically, it provides facilities "
+"for expanding typedefs and for instantiating templates.  Its code is not "
+"pretty."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:76
+msgid "vtkParseMerge"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:78
+msgid ""
+"This provides methods for dealing with method resolution order.  It defines "
+"a data structure for managing a class along with all the classes it derives "
+"from.  It is needed for managing tricky details relating to inheritance, "
+"such as \"using\" declarations, overrides, virtual methods, etc."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:83
+msgid "vtkParseMangle"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:85
+msgid ""
+"The Python wrappers rely on name-mangling routines to convert C++ names into "
+"names that can be used in Python.  The mangling is done according to the "
+"rules of the IA64 ABI (this same mangling is used to convert C++ APIs into C "
+"APIs)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:90
+msgid "vtkParseHierarchy"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:92
+msgid ""
+"A hierarchy file is a text file that lists information about all the types "
+"defined in a VTK module.  The wrappers use these files to look up types from "
+"names.  Through the use of vtkParseHierarchy, the wrappers can get detailed "
+"information about a type even if the header file only contains a forward "
+"reference, as long as the type is defined somewhere in another header."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:98
+msgid "vtkParseMain"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:100
+msgid ""
+"A common main() function for use by wrapper tool executables.  It provides a "
+"standard set of command-line options as well as response-file handling.  It "
+"also invokes the parser."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:105
+msgid "Wrapper Utilities"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:107
+msgid "vtkWrap"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:109
+msgid ""
+"This has functions that are common to the wrapper tools for all the wrapper "
+"languages.  Unlikely vtkParse, it deals with the generation of code, rather "
+"than the parsing of code."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:113
+msgid "vtkWrapText"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:115
+msgid ""
+"This has functions for automatically generating documentation from the "
+"header files that are parsed.  It produces the Python docstrings."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:119
+msgid "Python-Specific Utilities"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:121
+msgid "These are named according to the pieces of wrapper code they produce."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:123
+msgid "__vtkWrapPythonClass__ creates type objects for vtkObjectBase classes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:124
+msgid "__vtkWrapPythonType__ creates type objects for other wrapped classes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:125
+msgid "__vtkWrapPythonMethod__ for calling C++ methods from Python"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:126
+msgid ""
+"__vtkWrapPythonOverload__ maps a Python method to multiple C++ overloads"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:127
+msgid ""
+"__vtkWrapPythonMethodDef__ generates the method tables for wrapped classes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:128
+msgid "__vtkWrapPythonTemplate__ for wrapping of C++ class templates"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:129
+msgid "__vtkWrapPythonNamespace__ for wrapping namespaces"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:130
+msgid "__vtkWrapPythonEnum__ creates type objects for enum types"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:131
+msgid ""
+"__vtkWrapPythonConstant__ adds C++ constants to Python classes, namespaces"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:134
+msgid "Python Wrapper Executables"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:136
+msgid "vtkWrapPython"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:138
+msgid ""
+"This executable will parse the C++ declarations from a header file and "
+"produce wrapper code that can be linked into a Python extension module."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:141
+msgid "vtkWrapPythonInit"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:143
+msgid ""
+"This will produce the PyInit entry point for a Python extension module, as "
+"well as code for loading all the dependent modules.  The .cxx file produced "
+"by vtkWrapPythonInit is linked together to the .cxx files that are produced "
+"by vtkWrapPython to create the module."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:149
+msgid "Java Wrapper Executables"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:151
+msgid "__vtkWrapJava__ produces C++ wrapper code that uses the JNI"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:152
+msgid "__vtkParseJava__ produces Java code that sits on top of the C++ code"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:155
+msgid "Other Executables"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:157
+msgid "vtkWrapHierarchy"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:159
+msgid ""
+"This will slurp up all the header files in a VTK module and produce a "
+"\"hierarchy.txt\" file that provides information about all of the types that "
+"are defined in that module.  In other words, it provides a summary of the "
+"module's contents.  The Python and Java wrapper executables rely on these "
+"\"hierarchy.txt\" files in order to look up types by name."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:166
+msgid "vtkWrapSerDes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:168
+msgid ""
+"This generates C++ code to serialize a VTK object into json and deserialize "
+"the object back from json. This relies upon the property parser from "
+"`vtkParseProperties`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:172
+msgid "Rebuilding the Parser"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:174
+msgid ""
+"The code for the C++ parser is generated from the files vtkParse.l and "
+"vtkParse.y with the classic compiler-generator tools lex and yacc (or, more "
+"specifically, with their modern incarnations flex and bison).  These tools "
+"are readily available on macOS and Linux systems, and they can be installed "
+"(with some difficulty) on Windows systems."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:180
+msgid ""
+"The C code that flex and bison generate is not styled according to VTK "
+"standards, and must be cleaned up in order to compile without warnings and "
+"in order to satisfy VTK's git hooks and style checks."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:184
+msgid "vtkParse.l"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:186
+msgid ""
+"The file vtkParse.l contains regular expressions for tokenizing a C++ header "
+"file.  It is used to generate the file lex.yy.c, which is directly included "
+"(i.e. as a C file) by the main parser file, vtkParse.tab.c."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:190
+msgid "To generate lex.yy.c from vtkParse.l, use the following steps."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:192
+msgid "Get a copy of flex, version 2.6.4 or later"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:193
+msgid "Run `flex --nodefault --noline -olex.yy.c vtkParse.l`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:194
+msgid "In an editor, remove blank lines from the top and bottom of lex.yy.c"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:195
+msgid "Replace all tabs with two spaces (e.g. `:%s/\\t/  /g` in vi)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:196
+msgid "Remove spaces from the ends of lines (e.g. `:%s/  *$//` in vi)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:197
+msgid "Remove `struct yy_trans_info`, which is used nowhere in the code"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:198
+msgid "Add the following code at line 23 (after \"`end standard C headers`\")"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:200
+msgid "#ifndef __cplusplus  extern int isatty(int);  #endif /* __cplusplus */"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:204
+msgid ""
+"Finally, if you have clang-format installed, you can use it to re-style the "
+"code."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:207
+msgid "vtkParse.y"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:209
+msgid ""
+"The file vtkParse.y contains the rules for parsing a C++ header file. Many "
+"of the rules in this file have the same names as in the description of the "
+"grammar in the official ISO standard.  The file vtkParse.y is used to "
+"generate the file vtkParse.tab.c, which contains the parser."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:214
+msgid "Get a copy of bison 3.8.2 or later, it has a yacc-compatible front end."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:215
+msgid ""
+"Run `bison --no-lines -b vtkParse vtkParse.y`, to generate vtkParse.tab.c"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:216
+msgid ""
+"In an editor, replace every `static inline` in vtkParse.tab.c with `static`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:217
+msgid "Replace `#if ! defined lint || defined __GNUC__` with `#if 1`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:218
+msgid "remove `YY_ATTRIBUTE_UNUSED` from `yyfillin`, `yyfill`, and `yynormal`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:219
+msgid "comment out the `break;` after `return yyreportAmbiguity`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:220
+msgid "replace `(1-yyrhslen)` with `(1-(int)yyrhslen)`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:221
+msgid ""
+"replace `sizeof yynewStates[0]` and `sizeof yyset->yystates[0]` with "
+"`sizeof(yyGLRState*)`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:222
+msgid ""
+"replace `sizeof yynewLookaheadNeeds[0]` and `sizeof yyset-"
+">yylookaheadNeeds[0]` with `sizeof(yybool)`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:223
+msgid ""
+"replace `sizeof yynewItems[0]` and `sizeof yystackp->yynextFree[0]` with "
+"`sizeof(yyGLRStackItem)`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:225
+msgid ""
+"If you are familiar with \"diff\" and \"patch\" and if you have clang-"
+"format, you can automate these code changes as follows.  For this, you must "
+"use exactly version 3.8.2 of bison to ensure that the code that is produced "
+"is as similar as possible to what is currently in the VTK repository."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:230
+msgid "Run bison (as above) on the vtkParse.y from the master branch"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:231
+msgid "Use clang-format-14 to re-style vtkParse.tab.c to match VTK code style"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:232
+msgid "Use \"git diff -R vtkParse.tab.c\" to produce a patch file"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:234
+msgid ""
+"If done correctly, this will produce a patch file that contains all the "
+"changes above (steps 3 through 9 in the original list).  Load the patch file "
+"into a text editor to verify that this is so, and remove any superfluous "
+"changes from the patch file."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:239
+msgid ""
+"Then, switch to your new vtkParse.y (the one you have modified).  Repeat "
+"steps 1 and 2 (generate vtkParse.tab.c and reformat it with clang-format). "
+"Now you can apply the patch file to automate the original steps 3 through 9. "
+"Note that as you continue to edit vtkParse.y and regenerate vtkParse.tab.c, "
+"you can continue to use the same patch.  Just remember to run clang-format "
+"every time that you run bison."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:246
+msgid "Debugging the Parser"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:248
+msgid ""
+"When bison is run, it should not report any shift/reduce or reduce/reduce "
+"warnings.  If modifications to the rules cause these warnings to occur, you "
+"can run bison with the `--debug` and `--verbose` options:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:252
+msgid "bison --debug --verbose -b vtkParse vtkParse.y\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/Tools/README.md:254
+msgid ""
+"This will cause bison to produce a file called \"vtkParse.output\" that will "
+"show which rules conflict with other rules."
+msgstr ""

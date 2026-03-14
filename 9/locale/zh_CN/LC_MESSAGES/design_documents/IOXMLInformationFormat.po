@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../design_documents/IOXMLInformationFormat.md:1
+msgid "VTK XML Reader/Writer Information Format"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:3
+msgid "Overview"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:5
+msgid ""
+"The vtk xml data file readers / writers store certain `vtkInformation` "
+"entries that are set on `vtkAbstractArray`'s `GetInformation()` object. "
+"Support is currently limited to numeric and string information keys, both "
+"single- and vector-valued. Only the information objects attached to arrays "
+"are written/read."
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:10
+msgid "Array Information"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:12
+msgid ""
+"Array information is embedded in the `<DataArray>` XML element as a series "
+"of `<InformationKey>` elements. The required attributes `name` and "
+"`location` specify the name and location strings associated with the key -- "
+"for instance, the `vtkDataArray::UNITS_LABEL()` key has "
+"`name=\"UNITS_LABEL\"` and `location=\"vtkDataArray\"`. The `length` "
+"attribute is required for vector keys."
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:18
+msgid ""
+"<DataArray [...]>\n"
+"  <InformationKey name=\"KeyName\" "
+"location=\"KeyLocation\" [ length=\"N\" ]>\n"
+"    [...]\n"
+"  </InformationKey>\n"
+"  <InformationKey [...]>\n"
+"    [...]\n"
+"  </InformationKey>\n"
+"  [...]\n"
+"</DataArray>"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:31
+msgid "Specific examples of supported key types:"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:33
+msgid "vtkInformationDoubleKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:35
+msgid ""
+"<InformationKey name=\"Double\" location=\"XMLTestKey\">\n"
+"  1\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:41
+msgid "vtkInformationDoubleVectorKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:43
+msgid ""
+"<InformationKey name=\"DoubleVector\" location=\"XMLTestKey\" length=\"3\">\n"
+"  <Value index=\"0\">\n"
+"    1\n"
+"  </Value>\n"
+"  <Value index=\"1\">\n"
+"    90\n"
+"  </Value>\n"
+"  <Value index=\"2\">\n"
+"    260\n"
+"  </Value>\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:57
+msgid "vtkInformationIdTypeKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:59
+msgid ""
+"<InformationKey name=\"IdType\" location=\"XMLTestKey\">\n"
+"  5\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:65
+msgid "vtkInformationStringKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:67
+msgid ""
+"<InformationKey name=\"String\" location=\"XMLTestKey\">\n"
+"  Test String!\n"
+"Line2\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:74
+msgid "vtkInformationIntegerKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:76
+msgid ""
+"<InformationKey name=\"Integer\" location=\"XMLTestKey\">\n"
+"  408\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:82
+msgid "vtkInformationIntegerVectorKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:84
+msgid ""
+"<InformationKey name=\"IntegerVector\" location=\"XMLTestKey\" "
+"length=\"3\">\n"
+"  <Value index=\"0\">\n"
+"    1\n"
+"  </Value>\n"
+"  <Value index=\"1\">\n"
+"    5\n"
+"  </Value>\n"
+"  <Value index=\"2\">\n"
+"    45\n"
+"  </Value>\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:98
+msgid "vtkInformationStringVectorKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:100
+msgid ""
+"<InformationKey name=\"StringVector\" location=\"XMLTestKey\" length=\"3\">\n"
+"  <Value index=\"0\">\n"
+"    First\n"
+"  </Value>\n"
+"  <Value index=\"1\">\n"
+"    Second (with whitespace!)\n"
+"  </Value>\n"
+"  <Value index=\"2\">\n"
+"    Third (with\n"
+"newline!)\n"
+"  </Value>\n"
+"</InformationKey>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:115
+msgid "vtkInformationUnsignedLongKey"
+msgstr ""
+
+#: ../../../design_documents/IOXMLInformationFormat.md:117
+msgid ""
+"<InformationKey name=\"UnsignedLong\" location=\"XMLTestKey\">\n"
+"  9\n"
+"</InformationKey>\n"
+msgstr ""

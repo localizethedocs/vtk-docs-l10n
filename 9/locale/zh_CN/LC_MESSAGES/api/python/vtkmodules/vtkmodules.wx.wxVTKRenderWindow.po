@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:1
+msgid "{py:mod}`vtkmodules.wx.wxVTKRenderWindow`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:7
+msgid "A simple VTK widget for wxPython."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:9
+msgid "Find wxPython info at http://wxPython.org"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:11
+msgid "Created by David Gobbi, December 2001 Based on vtkTkRenderWindget.py"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:14
+msgid ""
+"Updated to new wx namespace and some cleaning by Andrea Gavana, December 2006"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:18
+msgid ""
+"{py:obj}`wxVTKRenderWindow <vtkmodules.wx.wxVTKRenderWindow."
+"wxVTKRenderWindow>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:81
+msgid ""
+"A wxRenderWindow for wxPython. Use GetRenderWindow() to get the "
+"vtkRenderWindow. Create with the keyword stereo=1 in order to generate a "
+"stereo-capable window."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:30
+msgid ""
+"{py:obj}`wxVTKRenderWindowConeExample <vtkmodules.wx.wxVTKRenderWindow."
+"wxVTKRenderWindowConeExample>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:422
+msgid "Like it says, just a simple example."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:36
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:42
+msgid "{py:obj}`baseClass <vtkmodules.wx.wxVTKRenderWindow.baseClass>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:46
+msgid "{py:obj}`_useCapture <vtkmodules.wx.wxVTKRenderWindow._useCapture>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:52
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:58
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:68
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:78
+msgid "Bases: {py:obj}`vtkmodules.wx.wxVTKRenderWindow.baseClass`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.md:83
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:87
+msgid ""
+"Default class constructor. @param parent parent window @param ID window id "
+"@param **kw wxPython keywords (position, size, style) plus the 'stereo' "
+"keyword"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:94
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:102
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:110
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:118
+msgid "Mirrors the method with the same name in vtkRenderWindowInteractor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:126
+msgid "Handles the wx.EVT_PAINT event for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:134
+msgid "Handles the wx.EVT_SIZE event for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:142
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:150
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:166
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:182
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:190
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:198
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:214
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:222
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:230
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:238
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:254
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:262
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:270
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:278
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:286
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:294
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:310
+msgid "Overridable event."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:158
+msgid "Handles the wx.EVT_ENTER_WINDOW event for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:174
+msgid "Handles the wx.EVT_LEAVE_WINDOW event for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:206
+msgid "Handles the wx.EVT_LEFT/RIGHT/MIDDLE_DOWN events for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:246
+msgid "Handles the wx.EVT_LEFT/RIGHT/MIDDLE_UP events for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:302
+msgid "Handles the wx.EVT_KEY_DOWN events for wxVTKRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:318
+msgid "Returns the current zoom factor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:326
+msgid "Returns the render window (vtkRenderWindow)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:334
+msgid "Returns the current picker (vtkCellPicker)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:342
+msgid "Actually renders the VTK scene on screen."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:350
+msgid ""
+"UpdateRenderer will identify the renderer under the mouse and set up "
+"_CurrentRenderer, _CurrentCamera, and _CurrentLight."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:358
+msgid "Returns the current renderer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:366
+msgid "Rotates the scene (camera)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:374
+msgid "Pans the scene (camera)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:382
+msgid "Zooms the scene (camera)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:390
+msgid "Resets the camera."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:398
+msgid "Sets the current actor representation as wireframe."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:406
+msgid "Sets the current actor representation as surface."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindow.py:414
+msgid "Picks an actor."
+msgstr ""

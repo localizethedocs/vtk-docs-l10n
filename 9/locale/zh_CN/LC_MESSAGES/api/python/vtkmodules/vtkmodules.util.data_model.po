@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:1
+msgid "{py:mod}`vtkmodules.util.data_model`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:7
+msgid ""
+"This module provides classes that allow numpy style access to VTK datasets. "
+"See examples at bottom."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:18
+msgid "{py:obj}`FieldDataBase <vtkmodules.util.data_model.FieldDataBase>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:22
+msgid "{py:obj}`FieldData <vtkmodules.util.data_model.FieldData>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:26
+msgid ""
+"{py:obj}`DataSetAttributesBase <vtkmodules.util.data_model."
+"DataSetAttributesBase>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:30
+msgid ""
+"{py:obj}`DataSetAttributes <vtkmodules.util.data_model.DataSetAttributes>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:34
+msgid "{py:obj}`PointData <vtkmodules.util.data_model.PointData>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:38
+msgid "{py:obj}`CellData <vtkmodules.util.data_model.CellData>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:42
+msgid ""
+"{py:obj}`CompositeDataSetAttributesIterator <vtkmodules.util.data_model."
+"CompositeDataSetAttributesIterator>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:46
+msgid ""
+"{py:obj}`CompositeDataSetAttributes <vtkmodules.util.data_model."
+"CompositeDataSetAttributes>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:359
+msgid ""
+"This is a python friendly wrapper for vtkDataSetAttributes for composite "
+"datasets. Since composite datasets themselves don't have attribute data, but "
+"the attribute data is associated with the leaf nodes in the composite "
+"dataset, this class simulates a DataSetAttributes interface by taking a "
+"union of DataSetAttributes associated with all leaf nodes."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:50
+msgid "{py:obj}`DataSet <vtkmodules.util.data_model.DataSet>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:54
+msgid "{py:obj}`PointSet <vtkmodules.util.data_model.PointSet>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:58
+msgid ""
+"{py:obj}`UnstructuredGrid <vtkmodules.util.data_model.UnstructuredGrid>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:62
+msgid "{py:obj}`ImageData <vtkmodules.util.data_model.ImageData>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:66
+msgid "{py:obj}`PolyData <vtkmodules.util.data_model.PolyData>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:70
+msgid "{py:obj}`RectilinearGrid <vtkmodules.util.data_model.RectilinearGrid>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:74
+msgid ""
+"{py:obj}`CompositeDataIterator <vtkmodules.util.data_model."
+"CompositeDataIterator>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:679
+msgid ""
+"Wrapper for a vtkCompositeDataIterator class to satisfy the python iterator "
+"protocol. This iterator iterates over non-empty leaf nodes. To iterate over "
+"empty or non-leaf nodes, use the vtkCompositeDataIterator directly."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:78
+msgid ""
+"{py:obj}`CompositeDataSetBase <vtkmodules.util.data_model."
+"CompositeDataSetBase>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:727
+msgid ""
+"A wrapper for vtkCompositeData and subclasses that makes it easier to access "
+"Point/Cell/Field data as VTKCompositeDataArrays. It also provides a Python "
+"type iterator."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:82
+msgid ""
+"{py:obj}`PartitionedDataSet <vtkmodules.util.data_model.PartitionedDataSet>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:84
+msgid ""
+"{py:obj}`PartitionedDataSetCollection <vtkmodules.util.data_model."
+"PartitionedDataSetCollection>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:86
+msgid "{py:obj}`OverlappingAMR <vtkmodules.util.data_model.OverlappingAMR>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:88
+msgid ""
+"{py:obj}`MultiBlockDataSet <vtkmodules.util.data_model.MultiBlockDataSet>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:90
+msgid "{py:obj}`StructuredGrid <vtkmodules.util.data_model.StructuredGrid>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:96
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:102
+msgid "{py:obj}`NUMPY_AVAILABLE <vtkmodules.util.data_model.NUMPY_AVAILABLE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:108
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:114
+msgid "False"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:124
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:316
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:356
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:468
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:676
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:724
+msgid "Bases: {py:obj}`object`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:129
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:233
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:249
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:265
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:289
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:305
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:321
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:361
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:473
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:529
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:553
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:577
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:593
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:641
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:681
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:729
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:837
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:140
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:148
+msgid "Implements the [] operator. Accepts an array name or index."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:156
+msgid "Given an index or name, returns a VTKArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:164
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:388
+msgid ""
+"Returns true if the container contains arrays with the given name, false "
+"otherwise"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:172
+msgid "Returns the names of the arrays as a list."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:180
+msgid "Returns the arrays as a tuple."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:188
+msgid "Returns a tuple of pairs (name, array)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:196
+msgid "Appends a new array to the dataset attributes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:204
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:276
+msgid "Test dict-like equivalency."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:228
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.FieldDataBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkFieldData`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:244
+msgid "Bases: {py:obj}`vtkmodules.util.data_model.FieldDataBase`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:260
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkDataSetAttributes`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:284
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkPointData`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:300
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkCellData`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:380
+msgid "Rescans the contained dataset to update the internal list of arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:396
+msgid "Returns the names of the arrays as a tuple."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:404
+msgid "Returns all the arrays as a tuple."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:412
+msgid "Returns (name, array) pairs as a tuple."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:420
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:428
+msgid "Implements the [] operator. Accepts an array name."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:436
+msgid "Appends a new array to the composite dataset attributes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:444
+msgid "Given a name, returns a VTKCompositeArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:452
+msgid "Iterators on keys"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:508
+msgid "Test equivalency between data objects."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:524
+msgid "Bases: {py:obj}`vtkmodules.util.data_model.DataSet`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:548
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkUnstructuredGrid`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:572
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkImageData`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:588
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkPolyData`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:636
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkRectilinearGrid`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:716
+msgid "Returns attributes from the vtkCompositeDataIterator."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:740
+msgid "Creates an iterator for the contained datasets."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:748
+msgid ""
+"Returns the attributes specified by the type as a CompositeDataSetAttributes "
+"instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:756
+msgid "Returns the point data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:764
+msgid "Returns the cell data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:772
+msgid "Returns the field data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:780
+msgid "Returns the points as a VTKCompositeDataArray instance."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:788
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSet`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:803
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSetCollection`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:818
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkOverlappingAMR`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:825
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkMultiBlockDataSet`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:832
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkStructuredGrid`"
+msgstr ""

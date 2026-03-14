@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/filters-sources-ball.md:1
+msgid "Golden Ball Source"
+msgstr ""
+
+#: ../../../release_details/9.4/filters-sources-ball.md:3
+msgid ""
+"A `vtkGoldenBallSource` algorithm has been added to provide a method to "
+"construct a solid, tetrahedralized ball. It uses a Fibonacci spiral "
+"(generated using the \"Golden Angle\" of π(sqrt(5) - 1)) which is then "
+"projected out of the plane onto a sphere and Delaunay-tetrahedralized into a "
+"ball. It includes a \"normal\" vector field by default which is zero-length "
+"at the center of the ball."
+msgstr ""
+
+#: ../../../release_details/9.4/filters-sources-ball.md:11
+msgid ""
+"Besides the spiral construction this algorithm is also distinct from the "
+"existing sphere source because it produces a solid rather than a bounding "
+"surface."
+msgstr ""
