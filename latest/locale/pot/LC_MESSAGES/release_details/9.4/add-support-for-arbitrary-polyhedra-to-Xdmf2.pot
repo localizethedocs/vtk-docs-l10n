@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.md:1
+msgid "Add support for arbitrary polyhedra to Xdmf2."
+msgstr ""
+
+#: ../../../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.md:3
+msgid ""
+"The Xdmf2 reader now works with geometries that contain arbitrary polyhedra; "
+"i.e. cells with an arbitrary number and arrangement of faces. The face "
+"connectivity is defined explicitly in the geometry description."
+msgstr ""
+
+#: ../../../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.md:7
+msgid "This replicates the same ability that exists in Xdmf3."
+msgstr ""

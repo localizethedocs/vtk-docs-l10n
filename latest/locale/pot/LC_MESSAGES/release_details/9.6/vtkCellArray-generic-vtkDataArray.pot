@@ -1,0 +1,407 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:1
+msgid ""
+"vtkCellArray: Support offsets/connectivity as vtkDataArray including "
+"vtkAffineArray for Offsets"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:3
+msgid ""
+"The `vtkCellArray` used to be able to support storing connectivity and "
+"offsets that are either `vtkTypedInt32Array` or `vtkTypedInt64Array`. This "
+"was limiting because it did not allow using other `vtkDataArray` subclasses, "
+"therefore, many times a copy to the supported types was needed."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:7
+msgid ""
+"A user can now store the connectivity and offsets as any `vtkDataArray` "
+"subclass using `vtkCellArray::SetData(vtkDataArray* offsets, vtkDataArray* "
+"conn)`. This is useful because it allows storing any user given array "
+"without worrying whether VTK will deep copy the data arrays or not."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:11
+msgid ""
+"`vtkCellArray` used to have 2 storage types, but now has the following 5:"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:13
+msgid ""
+"`Int64` (Old): Offsets `vtkAOSDataArrayTemplate<vtkTypeInt64>`, Connectivity "
+"`vtkAOSDataArrayTemplate<vtkTypeInt64>`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:14
+msgid ""
+"`Int32` (Old): Offsets `vtkAOSDataArrayTemplate<vtkTypeInt32>`, Connectivity "
+"`vtkAOSDataArrayTemplate<vtkTypeInt32>`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:15
+msgid ""
+"`FixedSizeInt64` (New): Offsets `vtkAffineArray<vtkTypeInt64>`, Connectivity "
+"`vtkAOSDataArrayTemplate<vtkTypeInt64>`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:16
+msgid ""
+"`FixedSizeInt32` (New): Offsets `vtkAffineArray<vtkTypeInt32>`, Connectivity "
+"`vtkAOSDataArrayTemplate<vtkTypeInt32>`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:17
+msgid "`Generic` (New): Offsets `vtkDataArray`, Connectivity `vtkDataArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:19
+msgid ""
+"`vtkAffineArray` has become a first class citizen in `vtkCellArray` to "
+"support creating a cell array with cells of constant size without needing to "
+"store the offsets explicitly, and therefore saving memory."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:22
+msgid ""
+"The following functions can be used to interact with the new storage types:"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:24
+msgid "`bool IsStorage64Bit()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:25
+msgid "`bool IsStorage32Bit()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:26
+msgid "`bool IsStorageFixedSize64Bit()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:27
+msgid "`bool IsStorageFixedSize32Bit()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:28
+msgid "`bool IsStorageFixedSize()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:29
+msgid "`bool IsStorageGeneric()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:30
+msgid "`void Use64BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:31
+msgid "`void Use32BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:32
+msgid "`void UseFixedSize32BitStorage(int size)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:33
+msgid "`void UseFixedSize64BitStorage(int size)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:34
+msgid "`bool CanConvertTo64BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:35
+msgid "`bool CanConvertTo32BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:36
+msgid "`bool CanConvertToDefaultStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:37
+msgid "`bool CanConvertToFixedSize32BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:38
+msgid "`bool CanConvertToFixedSize64BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:39
+msgid "`bool CanConvertToFixedSizeStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:40
+msgid "`void ConvertTo64BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:41
+msgid "`void ConvertTo32BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:42
+msgid "`void ConvertToDefaultStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:43
+msgid "`void ConvertToFixedSize64BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:44
+msgid "`void ConvertToFixedSize32BitStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:45
+msgid "`void ConvertToFixedSizeStorage()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:46
+msgid "`bool ConvertToStorageType(int type)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:47
+msgid "`vtkAOSDataArrayTemplate<vtkTypeInt64>* GetOffsetsAOSArray64()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:48
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:53
+msgid "`vtkAOSDataArrayTemplate<vtkTypeInt32>* GetConnectivityAOSArray32()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:49
+msgid "`vtkAffineArray<vtkTypeInt32>* GetOffsetsAffineArray32()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:50
+msgid "`vtkAffineArray<vtkTypeInt64>* GetOffsetsAffineArray64()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:51
+msgid "`vtkDataArray* GetOffsetsArray()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:52
+msgid "`vtkAOSDataArrayTemplate<vtkTypeInt64>* GetConnectivityAOSArray64()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:54
+msgid "`vtkDataArray* GetConnectivityArray()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:55
+msgid "`int GetStorageType()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:57
+msgid "The following methods have been deprecated in favor of the new API:"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:59
+msgid ""
+"(old) `vtkTypeInt32Array* GetOffsetsArray32()`, (new) "
+"`vtkAOSDataArrayTemplate<vtkTypeInt32>* GetOffsetsAOSArray32()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:60
+msgid ""
+"(old) `vtkTypeInt64Array* GetOffsetsArray64()`, (new) "
+"`vtkAOSDataArrayTemplate<vtkTypeInt64>* GetOffsetsAOSArray64()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:61
+msgid ""
+"(old) `vtkTypeInt32Array* GetConnectivityArray32()`, (new) "
+"`vtkAOSDataArrayTemplate<vtkTypeInt32>* GetConnectivityAOSArray32()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:63
+msgid ""
+"(old) `vtkTypeInt64Array* GetConnectivityArray64()`, (new) "
+"`vtkAOSDataArrayTemplate<vtkTypeInt64>* GetConnectivityAOSArray64()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:66
+msgid ""
+"This was done to allow, when possible, to store the given array as is "
+"without needing to shallow copy it to either `vtkTypeInt32Array` or "
+"`vtkTypeInt64Array`."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:69
+msgid ""
+"When the storage type is `Int64`, `Int32`, `FixedSizeInt64` or "
+"`FixedSizeInt32` then direct access to the array is available through the "
+"`Visit` functor. When the storage type is `Generic`, then the `Visit` "
+"functor will provide the arrays as `vtkDataArray`, therefore the user can no "
+"longer assume the arrays will be a subclass of `vtkAOSDataArrayTemplate`. To "
+"solve this problem, the array access calls shown in the following `Visit` "
+"functor:"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:74
+msgid ""
+"struct MyVisitor\n"
+"{\n"
+"  template <typename CellStateT>\n"
+"  void operator()(CellStateT& state)\n"
+"  {\n"
+"    using ArrayType = typename CellStateT::ArrayType;\n"
+"    using ValueType = typename CellStateT::ValueType;\n"
+"    auto* conn = state.GetConnectivity();\n"
+"    auto connRange = vtk::DataArrayValueRange<1>(conn);\n"
+"    ValueType connValue = conn->GetValue(0);\n"
+"    conn->SetValue(0, connValue);\n"
+"    ValueType* connPtr = conn->GetPointer(0);\n"
+"    conn->InsertNextValue(connValue);\n"
+"    vtkIdType numCells = state.GetNumberOfCells();\n"
+"    vtkIdType beginOffset = state.GetBeginOffset(0);\n"
+"    vtkIdType endOffset = state.GetEndOffset(0);\n"
+"    vtkIdType cellSize = state.GetCellSize(0);\n"
+"    auto cellRange = state.GetCellRange(0);\n"
+"  }\n"
+"};\n"
+"cells->Visit(MyVisitor{});\n"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:98
+msgid "should be replaced with:"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:100
+msgid ""
+"struct MyVisitor : public vtkCellArray::DispatchUtilities\n"
+"{\n"
+"  template <class OffsetsT, class ConnectivityT>\n"
+"  void operator()(OffsetsT* offsets, ConnectivityT* conn)\n"
+"  {\n"
+"    using AccessorType = vtkDataArrayAccessor<ConnectivityT>;\n"
+"    using ValueType = GetAPIType<ConnectivityT>; // The result of "
+"GetAPIType<OffsetsT> is the same\n"
+"    auto connRange = GetRange(conn);             // or vtk::"
+"DataArrayValueRange<1, vtkIdType>(conn)\n"
+"    ValueType connValue = connRange[0];\n"
+"    connRange[0] = connValue;\n"
+"    auto connPtr = connRange.begin();\n"
+"    AccessorType accessor(conn);\n"
+"    accessor.InsertNext(connValue);\n"
+"    vtkIdType numCells = GetNumberOfCells(offsets);\n"
+"    vtkIdType beginOffset = GetBeginOffset(offsets, 0);\n"
+"    vtkIdType endOffset = GetEndOffset(offsets, 0);\n"
+"    vtkIdType cellSize = GetCellSize(offsets, 0);\n"
+"    auto cellRange = GetCellRange(offsets, conn, 0);\n"
+"  }\n"
+"};\n"
+"cells->Dispatch(MyVisitor{});\n"
+"// or also\n"
+"if (!vtkArrayDispatch::Dispatch2ByArrayWithSameValueType<vtkCellArray::"
+"OffsetsArrays,\n"
+"      vtkCellArray::ConnectivityArrays>::Execute(cells->GetOffsetsArray(),\n"
+"      cells->GetConnectivityArray(), MyVisitor{}))\n"
+"{\n"
+"  MyVisitor{}(cells->GetOffsetsArray(), cells->GetConnectivityArray());\n"
+"}\n"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:131
+msgid ""
+"Due to this new requirement, all `Visit` functors in VTK have been updated "
+"to use the new `Dispatch` API."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:133
+msgid ""
+"It should be noted that due to this change, offsets and connectivity arrays "
+"generated by a VTKm filter can now also be stored in `vtkCellArray` as "
+"`vtkmDataArray` without needing to copy the data to "
+"`vtkAOSDataArrayTemplate<vtkTypeInt32>` or "
+"`vtkAOSDataArrayTemplate<vtkTypeInt64>`."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:137
+msgid ""
+"Additionally, the majority of VTK filters that were generating constant size "
+"cells have been updated to use `FixedSizeInt32/64` storage type to save "
+"memory."
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:140
+msgid ""
+"Finally, the following methods that are associated with the legacy format of "
+"`vtkCellArray` have been deprecated:"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:142
+msgid "`vtkTypeBool Allocate(vtkIdType sz, vtkIdType vtkNotUsed(ext) = 1000)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:143
+msgid "`virtual void SetNumberOfCells(vtkIdType)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:144
+msgid "`vtkIdType EstimateSize(vtkIdType numCells, int maxPtsPerCell)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:145
+msgid "`vtkIdType GetSize()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:146
+msgid "`vtkIdType GetNumberOfConnectivityEntries()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:147
+msgid "`void GetCell(vtkIdType loc, vtkIdType& npts, const vtkIdType*& pts)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:148
+msgid "`void GetCell(vtkIdType loc, vtkIdList* pts)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:149
+msgid "`vtkIdType GetInsertLocation(int npts)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:150
+msgid "`vtkIdType GetTraversalLocation()`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:151
+msgid "`vtkIdType GetTraversalLocation(vtkIdType npts)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:152
+msgid "`void SetTraversalLocation(vtkIdType loc)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:153
+msgid "`void ReverseCell(vtkIdType loc)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:154
+msgid "`void ReplaceCell(vtkIdType loc, int npts, const vtkIdType pts[])`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:155
+msgid "`void SetCells(vtkIdType ncells, vtkIdTypeArray* cells)`"
+msgstr ""
+
+#: ../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.md:156
+msgid "`vtkIdTypeArray* GetData()`"
+msgstr ""

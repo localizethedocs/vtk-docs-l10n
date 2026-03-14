@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/thirdparty-projects.md:1
+msgid "Imported Third Party Projects"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:3
+msgid ""
+"This page provides an overview of the imported third-party projects that VTK "
+"depends on, grouped by import method."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:6
+msgid ""
+"The lists below references project directory name found in either the "
+"`ThirdParty` or `Utilities` source sub-directory available in the [VTK "
+"GitLab][] repository where additional details may be found."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:12
+msgid "Using the `update.sh` framework"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:14
+msgid ""
+"The following list shows third-party projects that were imported using the "
+"`update.sh` framework described in the [](thirdparty.md) document:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:17
+msgid "cgns"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:18
+msgid "cli11"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:19
+msgid "diy2"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:20
+msgid "eigen"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:21
+msgid "exodusII"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:22
+msgid "expat"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:23
+msgid "exprtk"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:24
+msgid "fast_float"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:25
+msgid "fides"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:26
+msgid "fmt"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:27
+msgid "freetype"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:28
+msgid "gl2ps"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:29
+#: ../../../developers_guide/git/thirdparty-projects.md:82
+msgid "glad"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:30
+msgid "h5hut"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:31
+msgid "hdf5"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:32
+msgid "ioss"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:33
+msgid "jpeg"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:34
+msgid "jsoncpp"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:35
+msgid "kissfft"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:36
+msgid "KWIML"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:37
+msgid "KWSys"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:38
+msgid "libharu"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:39
+msgid "libproj"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:40
+msgid "libxml2"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:41
+msgid "loguru"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:42
+msgid "lz4"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:43
+msgid "lzma"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:44
+msgid "MetaIO"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:45
+msgid "mpi4py"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:46
+msgid "netcdf"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:47
+msgid "nlohmannjson"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:48
+msgid "ogg"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:49
+msgid "pegtl"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:50
+msgid "png"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:51
+msgid "pugixml"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:52
+msgid "scn"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:53
+msgid "sqlite"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:54
+msgid "theora"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:55
+msgid "tiff"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:56
+msgid "token"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:57
+msgid "utf8"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:58
+msgid "verdict"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:59
+msgid "viskores"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:60
+msgid "xdmf3"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:61
+msgid "zlib"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:63
+msgid ""
+"<!--\n"
+"The list above was generated using the following script:\n"
+"\n"
+"```\n"
+"cd VTK/ThirdParty\n"
+"for path in $(ls -d -1 */) $(ls -d -1 ../Utilities/*/); do\n"
+"  path=${path%/*}  # \"dir1/dir2/Dir3/\" -> \"dir1/dir2/Dir3\"\n"
+"  project=${path##*/}  # \"dir1/dir2/Dir3\" -> \"Dir3\"\n"
+"  if [[ -f \"$path/update.sh\" ]]; then\n"
+"    echo \"  * [$project]($path/update.sh)\"\n"
+"  fi\n"
+"done | sort --ignore-case\n"
+"```\n"
+"-->\n"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:78
+msgid "Using `copy`"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:80
+msgid "The following third-party projects were imported by copying the files:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:83
+msgid "vpic"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:84
+msgid "xdmf2"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty-projects.md:86
+msgid ""
+"<!--\n"
+"The list above was generated using the following script:\n"
+"\n"
+"```\n"
+"root_src_dir=$(git rev-parse --show-toplevel)\n"
+"\n"
+"for path in $(ls -d -1 */); do\n"
+"  path=${path%/*}  # \"dir1/dir2/Dir3/\" -> \"dir1/dir2/Dir3\"\n"
+"  project=${path##*/}  # \"dir1/dir2/Dir3\" -> \"Dir3\"\n"
+"\n"
+"  # List project that isn't imported through \"update.sh\"\n"
+"  if [ ! -f \"$path/update.sh\" ]; then\n"
+"    echo \"  * $project\"\n"
+"  fi\n"
+"done | sort --ignore-case\n"
+"```\n"
+"-->\n"
+msgstr ""

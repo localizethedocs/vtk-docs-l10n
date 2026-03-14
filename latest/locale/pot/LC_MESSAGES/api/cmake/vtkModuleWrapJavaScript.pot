@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:4
+msgid "vtkModuleWrapJavaScript"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:9
+msgid "APIs for wrapping modules for JavaScript"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:16
+msgid ""
+"Generate sources for using a module's classes from JavaScript. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:18
+msgid ""
+"This function generates the wrapped sources for a module. It places the list "
+"of generated source files and classes in variables named in the second and "
+"third arguments, respectively."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:22
+msgid "_vtk_module_wrap_javascript_sources(<module> <sources> <classes>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:195
+msgid "Generate a JavaScript library for a set of modules. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:197
+msgid ""
+"A JavaScript module library may consist of the JavaScript wrappings of "
+"multiple modules. This is useful for kit-based builds where the modules part "
+"of the same kit belong to the same JavaScript module as well."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:201
+msgid "_vtk_module_wrap_javascript_library(<module> ...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:205
+msgid ""
+"The first argument is the name of the JavaScript module. The remaining "
+"arguments are modules to include in the JavaScript module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:208
+msgid ""
+"The remaining information it uses is assumed to be provided by the :cmake:"
+"command:`vtk_module_wrap_javascript function`."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:226
+msgid ""
+"Wrap a set of modules for use in JavaScript.|module-wrapping-javascript|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:228
+msgid ""
+"vtk_module_wrap_javascript(\n"
+"  MODULES <module>...\n"
+"  TARGET_NAME <name>\n"
+"  [WRAPPED_MODULES <varname>]\n"
+"  [UTILITY_TARGET <target>]\n"
+"  [EXTRA_BINDING_SOURCES <sources_list>]\n"
+"  [MODULE_EXPORT_NAME <name>]\n"
+"  [INSTALL_EXPORT <export>]\n"
+"  [COMPONENT <component>]\n"
+"  [BINDING_OBJECTS_DESTINATION <destination>]\n"
+"  [DEBUG_INFO <debug>]\n"
+"  [OPTIMIZATION <optimization>]\n"
+"  [MEMORY64 <ON|OFF>]\n"
+")"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:245
+msgid "``MODULES``: (Required) The list of modules to wrap."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:246
+msgid "``TARGET_NAME``: (Required) The name of the generated js/wasm files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:247
+msgid ""
+"``WRAPPED_MODULES``: (Recommended) Not all modules are wrappable. This "
+"variable will be set to contain the list of modules which were wrapped."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:249
+msgid ""
+"``UTILITY_TARGET``: If specified, all libraries made by the JavaScript "
+"wrapping will link privately to this target. This may be used to add compile "
+"flags to the JavaScript libraries."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:252
+msgid ""
+"``EXTRA_BINDING_SOURCES``: Optional list of emscripten bindings sources to "
+"append to the list of automatically wrapped sources."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:254
+msgid ""
+"``MODULE_EXPORT_NAME``: Optional name for the async function called to "
+"instantiate the wasm module. Sets the value of the emscripten EXPORT_NAME "
+"variable which will default to 'Module' if not specified."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:257
+msgid ""
+"``INSTALL_EXPORT``: If provided, installed targets are added to the provided "
+"export set."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:258
+msgid ""
+"``COMPONENT``: Installation component of the install rules created by this "
+"function. Defaults to ``development``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:260
+msgid ""
+"``BINDING_OBJECTS_DESTINATION``: Optional install destination for the "
+"objects libraries that contain the generated binding sources. Default value: "
+"CMAKE_INSTALL_LIBDIR."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:262
+msgid ""
+"``DEBUG_INFO``: (Recommended) Extent of debug information in webassembly "
+"binaries: - NONE:         -g0 - READABLE_JS:  -g1 - PROFILE:      -g2 - "
+"DEBUG_NATIVE: -g3 with emscripten compiler setting ASSERTIONS set to 1. "
+"Default value: \"NONE\"."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:268
+msgid ""
+"``OPTIMIZATION``: (Recommended) Optimization knobs for the webassembly "
+"binaries: - NO_OPTIMIZATION:       -O0 - LITTLE:                -O1 - "
+"MORE:                  -O2 - BEST:                  -O3 - "
+"SMALL:                 -Os - SMALLEST:              -Oz - "
+"SMALLEST_WITH_CLOSURE: -Oz with --closure 1. Default value: \"SMALL\"."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:277
+msgid ""
+"``MEMORY64``: (Recommended) The architecture to compile for. Sets the value "
+"of the emscripten MEMORY64 compiler setting. ``OFF`` is wasm32 and ``ON`` is "
+"wasm64. Defaults to ``OFF``"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:282
+msgid ""
+"The set of modules is compiled to a single ``<TARGET_NAME>.wasm/.js`` file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJavaScript.cmake:284
+msgid ""
+"For each wrapped module, a ``vtk<module>WebObjects`` object library will be "
+"created. If the object library already exists for a given module, "
+"$<TARGET_OBJECTS:...> is used to automatically retrieve the list of "
+"pregenerated wrapped sources. Pregenerated sources can be filtered by "
+"specifying a list of class names in the following target properties prior to "
+"calling this macro: - vtk_module_wrap_javascript_exclude: Exclude the "
+"specified list of class names - vtk_module_wrap_javascript_include: Only "
+"include the specified list of class names"
+msgstr ""
