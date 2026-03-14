@@ -1,0 +1,1196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../supported_data_formats.md:1
+msgid "Supported Data Formats"
+msgstr ""
+
+#: ../../../supported_data_formats.md:3
+msgid ""
+"Below is a list of all available readers and writers in VTK sorted by "
+"extension.  Note that for the same extension it could be more than one "
+"matching reader/writer since the same extensions are often used across "
+"different formats. The list is generated based on a [yaml](./"
+"supported_data_formats.yaml) file that contains all the relevant information."
+msgstr ""
+
+#: ../../../supported_data_formats.md:9
+msgid ""
+"To enable a reader/writer you need to enable the associated module during "
+"configuration:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:10
+msgid "cmake -DVTK_MODULE_ENABLE_<module name>=WANT ...\n"
+msgstr ""
+
+#: ../../../supported_data_formats.md:13
+msgid "or setting the flag value via `ccmake/cmake-qt`."
+msgstr ""
+
+#: ../../../supported_data_formats.md:15
+msgid ""
+"For example to enable `vtkPNGWriter` which belongs to {bdg-primary-line}"
+"`VTK::IOImage`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:17
+msgid "cmake -DVTK_MODULE_ENABLE_VTK_IOImage=WANT ...\n"
+msgstr ""
+
+#: ../../../supported_data_formats.md:21
+msgid ""
+"For more details on enabling module see the module system [api](api/cmake/"
+"ModuleSystem.md#enabling-modules-for-build)."
+msgstr ""
+
+#: ../../../supported_data_formats.md:24
+msgid "the list is incomplete, this is work in progress"
+msgstr ""
+
+#: ../../../supported_data_formats.md:29
+msgid "Stanford Exploration Project files reader:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:30
+msgid "Extension: .H"
+msgstr ""
+
+#: ../../../supported_data_formats.md:32
+msgid ""
+"reader: [vtkSEPReader](https://vtk.org/doc/nightly/html/classvtkSEPReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:34 ../../../supported_data_formats.md:64
+#: ../../../supported_data_formats.md:127
+#: ../../../supported_data_formats.md:134
+#: ../../../supported_data_formats.md:208
+#: ../../../supported_data_formats.md:224
+#: ../../../supported_data_formats.md:240
+#: ../../../supported_data_formats.md:263
+#: ../../../supported_data_formats.md:330
+#: ../../../supported_data_formats.md:337
+#: ../../../supported_data_formats.md:360
+#: ../../../supported_data_formats.md:392
+#: ../../../supported_data_formats.md:401
+#: ../../../supported_data_formats.md:415
+#: ../../../supported_data_formats.md:429
+#: ../../../supported_data_formats.md:452
+#: ../../../supported_data_formats.md:461
+#: ../../../supported_data_formats.md:493
+msgid "module: {bdg-primary-line}`VTK::IOImage`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:36
+msgid "[Alembic](http://www.alembic.io/) scene format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:37
+msgid "Extension: .abc"
+msgstr ""
+
+#: ../../../supported_data_formats.md:39
+msgid ""
+"writer: [vtkAlembicExporter](https://vtk.org/doc/nightly/html/"
+"classvtkAlembicExporter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:41
+msgid "module: {bdg-primary-line}`VTK::IOAlembic`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:43
+msgid "AVI video files (Windows only):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:44
+msgid "Extension: .avi"
+msgstr ""
+
+#: ../../../supported_data_formats.md:46
+msgid ""
+"writer: [vtkAVIWriter](https://vtk.org/doc/nightly/html/classvtkAVIWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:48 ../../../supported_data_formats.md:256
+msgid "module: {bdg-primary-line}`VTK::IOMovie`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:50
+msgid "LIDAR data using [PDAL](https://pdal.io/en/latest/stages/readers.html):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:51
+msgid ""
+"Extensions: .bin, .bpf, .csd, .csv, .greyhound, .gpkg, .icebride, .las, ."
+"laz, .mat, .nitf, .nsf, .ntf, .pcd, .ply, .pts, .qi, .rxp, .sbet, .sqlite, ."
+"sid, .tindex, .txt, .h5"
+msgstr ""
+
+#: ../../../supported_data_formats.md:53
+msgid ""
+"reader: [vtkPDALReader](https://vtk.org/doc/nightly/html/classvtkPDALReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:55
+msgid "module: {bdg-primary-line}`VTK::IOPDAL`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:57
+msgid "Windows BMP file:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:58
+msgid "Extension: .bmp"
+msgstr ""
+
+#: ../../../supported_data_formats.md:60
+msgid ""
+"reader: [vtkBMPReader](https://vtk.org/doc/nightly/html/classvtkBMPReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:62
+msgid ""
+"writer: [vtkBMPWriter](https://vtk.org/doc/nightly/html/classvtkBMPWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:66
+msgid "FLUENT native format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:67
+msgid "Extensions: .cas, .dat"
+msgstr ""
+
+#: ../../../supported_data_formats.md:69
+msgid ""
+"reader: [vtkFLUENTReader](https://vtk.org/doc/nightly/html/"
+"classvtkFLUENTReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:71 ../../../supported_data_formats.md:85
+#: ../../../supported_data_formats.md:150
+#: ../../../supported_data_formats.md:166
+#: ../../../supported_data_formats.md:215
+#: ../../../supported_data_formats.md:321
+msgid "module: {bdg-primary-line}`VTK::IOGeometry`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:73
+msgid "MotionFX motion definitions cfg files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:74
+msgid "Extension: .cfg"
+msgstr ""
+
+#: ../../../supported_data_formats.md:76
+msgid ""
+"reader: [vtkMotionFXCFGReader](https://vtk.org/doc/nightly/html/"
+"classvtkMotionFXCFGReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:78
+msgid "module: {bdg-primary-line}`VTK::IOMotionFX`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:80
+msgid "Computer Graphics Metafile:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:81
+msgid "Extension: .cgm"
+msgstr ""
+
+#: ../../../supported_data_formats.md:83
+msgid ""
+"writer: [vtkCGMWriter](https://vtk.org/doc/nightly/html/classvtkCGMWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:87
+msgid "[CONVERGE CFD](https://convergecfd.com) CGNS format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:88 ../../../supported_data_formats.md:95
+msgid "Extension: .cgns"
+msgstr ""
+
+#: ../../../supported_data_formats.md:90
+msgid ""
+"reader: [vtkCONVERGECFDCGNSReader](https://vtk.org/doc/nightly/html/"
+"classvtkCONVERGECFDCGNSReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:92 ../../../supported_data_formats.md:99
+msgid "module: {bdg-primary-line}`VTK::IOCGNSReader`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:94
+msgid "[CGNS](https://cgns.github.io/cgns-modern.github.io/index.html) format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:97
+msgid ""
+"reader: [vtkCGNSReader](https://vtk.org/doc/nightly/html/classvtkCGNSReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:101
+msgid "[LS-Dyna](https://www.oasys-software.com/dyna/) databases:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:102
+msgid "Extension: .d3plot"
+msgstr ""
+
+#: ../../../supported_data_formats.md:104
+msgid ""
+"reader: [vtkLSDynaReader](https://vtk.org/doc/nightly/html/"
+"classvtkLSDynaReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:106
+msgid "module: {bdg-primary-line}`VTK::IOLSDyna`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:108
+msgid "Tabulat data in Tecplot ascii format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:109
+msgid "Extensions: .dat, .DAT"
+msgstr ""
+
+#: ../../../supported_data_formats.md:111
+msgid ""
+"reader: [vtkTecplotTableReader](https://vtk.org/doc/nightly/html/"
+"classvtkTecplotTableReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:113
+msgid "module: {bdg-primary-line}`VTK::IOTecplotTable`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:115
+msgid "FLUENT CFF format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:116
+msgid "Extensions: .dat.h5, .cas.h5"
+msgstr ""
+
+#: ../../../supported_data_formats.md:118
+msgid ""
+"reader: [vtkFLUENTCFFReader](https://vtk.org/doc/nightly/html/"
+"classvtkFLUENTCFFReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:120
+msgid "module: {bdg-primary-line}`VTK::IOFLUENTCFF`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:122
+msgid "DICOM medical images:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:123
+msgid "Extension: .dcm"
+msgstr ""
+
+#: ../../../supported_data_formats.md:125
+msgid ""
+"reader: [vtkDICOMImageReader](https://vtk.org/doc/nightly/html/"
+"classvtkDICOMImageReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:129
+msgid "Digital Elevation Map File:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:130
+msgid "Extension: .dem"
+msgstr ""
+
+#: ../../../supported_data_formats.md:132
+msgid ""
+"reader: [vtkDEMReader](https://vtk.org/doc/nightly/html/classvtkDEMReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:136
+msgid "IOSS (Sierra IO System) files as cell-grids:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:137
+msgid "Extension: .exdg"
+msgstr ""
+
+#: ../../../supported_data_formats.md:139
+msgid ""
+"reader: [vtkIOSSCellGridReader](https://vtk.org/doc/nightly/html/"
+"classvtkIOSSCellGridReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:141
+#: ../../../supported_data_formats.md:159
+msgid "module: {bdg-primary-line}`VTK::IOIOSS`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:143
+msgid "Movie.BYU files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:144
+msgid "Extension: .g"
+msgstr ""
+
+#: ../../../supported_data_formats.md:146
+msgid ""
+"reader: [vtkBYUReader](https://vtk.org/doc/nightly/html/classvtkBYUReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:148
+msgid ""
+"writer: [vtkBYUWriter](https://vtk.org/doc/nightly/html/classvtkBYUWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:152
+msgid "IOSS (Sierra IO System), writer supports only Exodus files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:153
+msgid ""
+"Extension: .g .e .h .gc .ex2 .ex2v2 .exo .gen .par .exoII .exii .ex-"
+"timeseries .cgns"
+msgstr ""
+
+#: ../../../supported_data_formats.md:155
+msgid ""
+"reader: [vtkIOSSReader](https://vtk.org/doc/nightly/html/classvtkIOSSReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:157
+msgid ""
+"writer: [vtkIOSSWriter](https://vtk.org/doc/nightly/html/classvtkIOSSWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:161
+msgid "Chaco graph partitioning output files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:162
+msgid "Extensions: .graph, .coords"
+msgstr ""
+
+#: ../../../supported_data_formats.md:164
+msgid ""
+"reader: [vtkChacoReader](https://vtk.org/doc/nightly/html/"
+"classvtkChacoReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:168
+msgid "[VERAout-tools](https://github.com/palmtag/VERAout-tools):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:169
+#: ../../../supported_data_formats.md:176
+msgid "Extension: .h5"
+msgstr ""
+
+#: ../../../supported_data_formats.md:171
+msgid ""
+"reader: [vtkVeraOutReader](https://vtk.org/doc/nightly/html/"
+"classvtkVeraOutReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:173
+msgid "module: {bdg-primary-line}`VTK::IOVeraOut`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:175
+msgid "[CONVERGE CFD](https://convergecfd.com) format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:178
+msgid ""
+"reader: [vtkCONVERGECFDReader](https://vtk.org/doc/nightly/html/"
+"classvtkCONVERGECFDReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:180
+msgid "module: {bdg-primary-line}`VTK::IOCONVERGECFD`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:182
+msgid "H5Part particle files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:183
+msgid "Extension: .h5part"
+msgstr ""
+
+#: ../../../supported_data_formats.md:185
+msgid ""
+"reader: [vtkH5PartReader](https://vtk.org/doc/nightly/html/"
+"classvtkH5PartReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:187
+msgid "module: {bdg-primary-line}`VTK::IOH5Part`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:189
+msgid "hdf files generated from xRage, a LANL physics code:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:190
+msgid "Extension: .h5rage"
+msgstr ""
+
+#: ../../../supported_data_formats.md:192
+msgid ""
+"reader: [vtkH5RageReader](https://vtk.org/doc/nightly/html/"
+"classvtkH5RageReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:194
+msgid "module: {bdg-primary-line}`VTK::IOH5Rage`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:196
+msgid "GE TRUCHAS format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:197
+msgid "Extensions: .hdf5, .h5"
+msgstr ""
+
+#: ../../../supported_data_formats.md:199
+msgid ""
+"reader: [vtkTRUCHASReader](https://vtk.org/doc/nightly/html/"
+"classvtkTRUCHASReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:201
+msgid "module: {bdg-primary-line}`VTK::IOTRUCHAS`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:203
+msgid "Radiance HDR file:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:204
+msgid "Extension: .hdr"
+msgstr ""
+
+#: ../../../supported_data_formats.md:206
+msgid ""
+"reader: [vtkHDRReader](https://vtk.org/doc/nightly/html/classvtkHDRReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:210
+msgid "AVS UCD Binary/ASCII Files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:211
+msgid "Extension: .inp"
+msgstr ""
+
+#: ../../../supported_data_formats.md:213
+msgid ""
+"reader: [vtkAVSucdReader](https://vtk.org/doc/nightly/html/"
+"classvtkAVSucdReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:217
+msgid "JPEG Files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:218
+msgid "Extensions: .jpg, .jpeg"
+msgstr ""
+
+#: ../../../supported_data_formats.md:220
+msgid ""
+"reader: [vtkJPEGReader](https://vtk.org/doc/nightly/html/classvtkJPEGReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:222
+msgid ""
+"writer: [vtkJPEGWriter](https://vtk.org/doc/nightly/html/classvtkJPEGWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:226
+msgid "LIDAR data in LAS format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:227
+msgid "Extension: .las"
+msgstr ""
+
+#: ../../../supported_data_formats.md:229
+msgid ""
+"reader: [vtkLASReader](https://vtk.org/doc/nightly/html/classvtkLASReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:231
+msgid "module: {bdg-primary-line}`VTK::IOLAS`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:233
+msgid "binary UNC meta image data:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:234
+msgid "Extensions: .mhd, .mha"
+msgstr ""
+
+#: ../../../supported_data_formats.md:236
+msgid ""
+"reader: [vtkMetaImageReader](https://vtk.org/doc/nightly/html/"
+"classvtkMetaImageReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:238
+msgid ""
+"writer: [vtkMetaImageWriter](https://vtk.org/doc/nightly/html/"
+"classvtkMetaImageWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:242
+msgid "NetCDF-based medical image developed at [BIC:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:243
+msgid "Extension: .mnc"
+msgstr ""
+
+#: ../../../supported_data_formats.md:245
+msgid ""
+"reader: [vtkMINCImageReader](https://vtk.org/doc/nightly/html/"
+"classvtkMINCImageReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:247
+msgid ""
+"writer: [vtkMINCImageWriter](https://vtk.org/doc/nightly/html/"
+"classvtkMINCImageWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:249
+#: ../../../supported_data_formats.md:346
+#: ../../../supported_data_formats.md:445
+#: ../../../supported_data_formats.md:486
+msgid "module: {bdg-primary-line}`VTK::IOMINC`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:251
+msgid "H.264-encoded MP4 files (Windows only):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:252
+msgid "Extension: .mp4"
+msgstr ""
+
+#: ../../../supported_data_formats.md:254
+msgid ""
+"writer: [vtkMP4Writer](https://vtk.org/doc/nightly/html/classvtkMP4Writer."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:258
+msgid "[MRC](http://bio3d.colorado.edu/imod/doc/mrc_format.txt) Image Files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:259
+msgid "Extensions: .mrc, .ali, .st, .rec"
+msgstr ""
+
+#: ../../../supported_data_formats.md:261
+msgid ""
+"reader: [vtkMRCReader](https://vtk.org/doc/nightly/html/classvtkMRCReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:265
+msgid ""
+"[NetCDF UGRID file](https://ugrid-conventions.github.io/ugrid-conventions):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:266
+#: ../../../supported_data_formats.md:273
+#: ../../../supported_data_formats.md:280
+#: ../../../supported_data_formats.md:289
+#: ../../../supported_data_formats.md:296
+#: ../../../supported_data_formats.md:303
+msgid "Extensions: .nc, .ncdf"
+msgstr ""
+
+#: ../../../supported_data_formats.md:268
+#: ../../../supported_data_formats.md:291
+msgid ""
+"reader: [vtkNetCDFUGRIDReader](https://vtk.org/doc/nightly/html/"
+"classvtkNetCDFUGRIDReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:270
+#: ../../../supported_data_formats.md:277
+#: ../../../supported_data_formats.md:286
+#: ../../../supported_data_formats.md:293
+#: ../../../supported_data_formats.md:300
+#: ../../../supported_data_formats.md:307
+#: ../../../supported_data_formats.md:314
+#: ../../../supported_data_formats.md:408
+msgid "module: {bdg-primary-line}`VTK::IONetCDF`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:272
+msgid "CAM NetCDF (Unstructured):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:275
+msgid ""
+"reader: [vtkNetCDFCAMReader](https://vtk.org/doc/nightly/html/"
+"classvtkNetCDFCAMReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:279
+msgid "netCDF files generic and CF conventions:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:282
+msgid ""
+"reader: [vtkNetCDFReader](https://vtk.org/doc/nightly/html/"
+"classvtkNetCDFReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:284
+msgid ""
+"writer: [vtkNetCDFCFWriter](https://vtk.org/doc/nightly/html/"
+"classvtkNetCDFCFWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:288
+msgid "UGRID NetCDF (Unstructured):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:295
+msgid "MPAS NetCDF (Unstructured):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:298
+msgid ""
+"reader: [vtkMPASReader](https://vtk.org/doc/nightly/html/classvtkMPASReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:302
+msgid "[SLAC](https://www6.slac.stanford.edu) Data Reader:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:305
+msgid ""
+"reader: [vtkSLACReader](https://vtk.org/doc/nightly/html/classvtkSLACReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:309
+msgid ""
+"Particle data file used at [SLAC](https://ugrid-conventions.github.io/ugrid-"
+"conventions):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:310
+msgid "Extensions: .ncdf, .netcdf"
+msgstr ""
+
+#: ../../../supported_data_formats.md:312
+msgid ""
+"reader: [vtkSLACParticleReader](https://vtk.org/doc/nightly/html/"
+"classvtkSLACParticleReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:316
+msgid "GAMBIT GAMBIT ASCII format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:317
+msgid "Extension: .neu"
+msgstr ""
+
+#: ../../../supported_data_formats.md:319
+msgid ""
+"reader: [vtkGAMBITReader](https://vtk.org/doc/nightly/html/"
+"classvtkGAMBITReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:323
+msgid "NIfTI-1 and NIfTI-2 medical [image](https://nifti.nimh.nih.gov/) files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:324
+msgid "Extensions: .nii, .img, .hdr"
+msgstr ""
+
+#: ../../../supported_data_formats.md:326
+msgid ""
+"reader: [vtkNIFTIImageReader](https://vtk.org/doc/nightly/html/"
+"classvtkNIFTIImageReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:328
+msgid ""
+"writer: [vtkNIFTIImageWriter](https://vtk.org/doc/nightly/html/"
+"classvtkNIFTIImageWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:332
+msgid "Nrrd Raw Image Files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:333
+msgid "Extensions: .nrrd, .nhdr"
+msgstr ""
+
+#: ../../../supported_data_formats.md:335
+msgid ""
+"reader: [vtkNrrdReader](https://vtk.org/doc/nightly/html/classvtkNrrdReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:339
+msgid "[MNI](https://github.com/BIC-MNI) surface mesh files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:340
+msgid "Extension: .obj"
+msgstr ""
+
+#: ../../../supported_data_formats.md:342
+msgid ""
+"reader: [vtkMNIObjectReader](https://vtk.org/doc/nightly/html/"
+"classvtkMNIObjectReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:344
+msgid ""
+"writer: [vtkMNIObjectWriter](https://vtk.org/doc/nightly/html/"
+"classvtkMNIObjectWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:348
+msgid "[OggTheora](https://www.theora.org/):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:349
+msgid "Extension: .ogv"
+msgstr ""
+
+#: ../../../supported_data_formats.md:351
+msgid ""
+"writer: [vtkOggTheoraWriter](https://vtk.org/doc/nightly/html/"
+"classvtkOggTheoraWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:353
+msgid "module: {bdg-primary-line}`VTK::IOOggTheora`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:355
+msgid ""
+"[OME](https://docs.openmicroscopy.org/ome-model/5.6.3/ome-tiff/specification."
+"html#ome-tiff-specification) TIFF files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:356
+msgid "Extensions: .ome.tif, .ome.tiff"
+msgstr ""
+
+#: ../../../supported_data_formats.md:358
+msgid ""
+"reader: [vtkOMETIFFReader](https://vtk.org/doc/nightly/html/"
+"classvtkOMETIFFReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:362
+msgid "[OMF](https://omf.readthedocs.io/en/stable/index.html):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:363
+msgid "Extension: .omf"
+msgstr ""
+
+#: ../../../supported_data_formats.md:365
+msgid ""
+"reader: [vtkOMRReader](https://vtk.org/doc/nightly/html/classvtkOMRReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:367
+msgid "module: {bdg-primary-line}`VTK::IOOMF`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:369
+msgid "PIO (Parallel Input Output) data files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:370
+msgid "Extension: .pio"
+msgstr ""
+
+#: ../../../supported_data_formats.md:372
+msgid ""
+"reader: [vtkPIOReader](https://vtk.org/doc/nightly/html/classvtkPIOReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:374
+msgid "module: {bdg-primary-line}`VTK::IOPIO`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:376
+msgid "Stanford University PLY format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:377
+msgid "Extension: .ply"
+msgstr ""
+
+#: ../../../supported_data_formats.md:379
+msgid ""
+"reader: [vtkPLYReader](https://vtk.org/doc/nightly/html/classvtkPLYReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:381
+msgid ""
+"writer: [vtkPLYWriter](https://vtk.org/doc/nightly/html/classvtkPLYWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:383
+msgid "module: {bdg-primary-line}`VTK::IOPLY`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:385
+msgid "PNG file:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:386
+msgid "Extension: .png"
+msgstr ""
+
+#: ../../../supported_data_formats.md:388
+msgid ""
+"reader: [vtkPNGReader](https://vtk.org/doc/nightly/html/classvtkPNGReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:390
+msgid ""
+"writer: [vtkPNGWriter](https://vtk.org/doc/nightly/html/classvtkPNGWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:394
+msgid "pnm (i.e., portable anymap) file:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:395
+msgid "Extensions: .pnm, .pgm, .ppm"
+msgstr ""
+
+#: ../../../supported_data_formats.md:397
+msgid ""
+"reader: [vtkPNMReader](https://vtk.org/doc/nightly/html/classvtkPNMReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:399
+msgid ""
+"writer: [vtkPNMWriter](https://vtk.org/doc/nightly/html/classvtkPNMWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:403
+msgid "POP Ocean NetCDF (Rectilinear):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:404
+msgid "Extension: .pop.ncdf .pop.nc"
+msgstr ""
+
+#: ../../../supported_data_formats.md:406
+msgid ""
+"reader: [vtkNetCDFPOPReader](https://vtk.org/doc/nightly/html/"
+"classvtkNetCDFPOPReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:410
+msgid "PostScript file:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:411
+msgid "Extension: .ps"
+msgstr ""
+
+#: ../../../supported_data_formats.md:413
+msgid ""
+"writer: [vtkPostScriptWriter](https://vtk.org/doc/nightly/html/"
+"classvtkPostScriptWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:417
+msgid "[SEG-Y](https://en.wikipedia.org/wiki/SEG-Y):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:418
+msgid "Extensions: .sgy, .segy"
+msgstr ""
+
+#: ../../../supported_data_formats.md:420
+msgid ""
+"reader: [vtkSegYReader](https://vtk.org/doc/nightly/html/classvtkSegYReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:422
+msgid "module: {bdg-primary-line}`VTK::IOSegY`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:424
+msgid "SLC volume file:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:425
+msgid "Extension: .slc"
+msgstr ""
+
+#: ../../../supported_data_formats.md:427
+msgid ""
+"reader: [vtkSLCReader](https://vtk.org/doc/nightly/html/classvtkSLCReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:431
+msgid "VTK Reader for STEP and IGES files using OpenCASCADE:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:432
+msgid "Extensions: .step, .iges"
+msgstr ""
+
+#: ../../../supported_data_formats.md:434
+msgid ""
+"reader: [vtkOCCTReader](https://vtk.org/doc/nightly/html/classvtkOCCTReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:436
+msgid "module: {bdg-primary-line}`VTK::IOOCCT`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:438
+msgid "[MNI](https://github.com/BIC-MNI) tag files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:439
+msgid "Extension: .tag"
+msgstr ""
+
+#: ../../../supported_data_formats.md:441
+msgid ""
+"reader: [vtkMNITagPointReader](https://vtk.org/doc/nightly/html/"
+"classvtkMNITagPointReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:443
+msgid ""
+"writer: [vtkMNITagPointWriter](https://vtk.org/doc/nightly/html/"
+"classvtkMNITagPointWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:447
+msgid "[Targa](https://en.wikipedia.org/wiki/Truevision_TGA) files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:448
+msgid "Extension: .tga"
+msgstr ""
+
+#: ../../../supported_data_formats.md:450
+msgid ""
+"reader: [vtkTGAReader](https://vtk.org/doc/nightly/html/classvtkTGAReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:454
+msgid "Tiff image format:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:455
+msgid "Extensions: .tif, .tiff"
+msgstr ""
+
+#: ../../../supported_data_formats.md:457
+msgid ""
+"reader: [vtkTIFFReader](https://vtk.org/doc/nightly/html/classvtkTIFFReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:459
+msgid ""
+"writer: [vtkTIFFWriter](https://vtk.org/doc/nightly/html/classvtkTIFFWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:463
+msgid "[OpenVDB](https://www.openvdb.org/):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:464
+msgid "Extension: .vdb"
+msgstr ""
+
+#: ../../../supported_data_formats.md:466
+msgid ""
+"reader: [vtkOpenVDBReader](https://vtk.org/doc/nightly/html/"
+"classvtkOpenVDBReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:468
+msgid ""
+"writer: [vtkOpenVDBWriter](https://vtk.org/doc/nightly/html/"
+"classvtkOpenVDBWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:470
+msgid "module: {bdg-primary-line}`VTK::IOOpenVDB`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:472
+msgid "[VPIC](https://github.com/lanl/vpic):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:473
+msgid "Extension: .vpc"
+msgstr ""
+
+#: ../../../supported_data_formats.md:475
+msgid ""
+"reader: [vtkVPCIReader](https://vtk.org/doc/nightly/html/classvtkVPCIReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:477
+msgid "module: {bdg-primary-line}`VTK::IOVPIC`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:479
+msgid "[MNI](https://github.com/BIC-MNI) transformation files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:480
+msgid "Extension: .xfm"
+msgstr ""
+
+#: ../../../supported_data_formats.md:482
+msgid ""
+"reader: [vtkMNITransformReader](https://vtk.org/doc/nightly/html/"
+"classvtkMNITransformReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:484
+msgid ""
+"writer: [vtkMNITransformWriter](https://vtk.org/doc/nightly/html/"
+"classvtkMNITransformWriter.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:488
+msgid "GE Signa ximg files:"
+msgstr ""
+
+#: ../../../supported_data_formats.md:489
+msgid "Extension: .ximg"
+msgstr ""
+
+#: ../../../supported_data_formats.md:491
+msgid ""
+"reader: [vtkGESignaReader](https://vtk.org/doc/nightly/html/"
+"classvtkGESignaReader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:495
+#: ../../../supported_data_formats.md:504
+msgid "[XDMF](https://www.xdmf.org) (eXtensible Data Model and Format):"
+msgstr ""
+
+#: ../../../supported_data_formats.md:496
+msgid "Extensions: .xmf, .xdmf, .xmf2, .xdmf2"
+msgstr ""
+
+#: ../../../supported_data_formats.md:498
+msgid ""
+"reader: [vtkXdmfReader](https://vtk.org/doc/nightly/html/classvtkXdmfReader."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:500
+msgid ""
+"writer: [vtkXdmfWriter](https://vtk.org/doc/nightly/html/classvtkXdmfWriter."
+"html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:502
+msgid "module: {bdg-primary-line}`VTK::IOXdmf2`"
+msgstr ""
+
+#: ../../../supported_data_formats.md:505
+msgid "Extensions: .xmf, .xdmf, .xmf3, .xdmf3"
+msgstr ""
+
+#: ../../../supported_data_formats.md:507
+msgid ""
+"reader: [vtkXdmf3Reader](https://vtk.org/doc/nightly/html/"
+"classvtkXdmf3Reader.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:509
+msgid ""
+"writer: [vtkXdmf3Writer](https://vtk.org/doc/nightly/html/"
+"classvtkXdmf3Writer.html)"
+msgstr ""
+
+#: ../../../supported_data_formats.md:511
+msgid "module: {bdg-primary-line}`VTK::IOXdmf3`"
+msgstr ""

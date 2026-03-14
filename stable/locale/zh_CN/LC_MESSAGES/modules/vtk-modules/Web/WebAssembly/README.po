@@ -1,0 +1,456 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:1
+msgid "VTK WebAssembly JavaScript"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:3
+msgid ""
+"The `vtkWebAssembly.mjs` module provides JavaScript bindings to VTK "
+"WebAssembly using Emscripten. It includes two key classes:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:5
+msgid ""
+"[`vtkStandaloneSession`](#vtkstandalonesession): For standalone VTK "
+"WebAssembly apps capable of creating and manipulating VTK objects."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:6
+msgid ""
+"[`vtkRemoteSession`](#vtkremotesession): For remote VTK WebAssembly apps "
+"meant to sync with a VTK application on a remote server."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:10
+msgid "Global Functions"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Function"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Description"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getVTKVersion()`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid ""
+"Returns the short VTK version string (e.g., `\"9.4.2\"` or `\"9.4.20250508`)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getVTKVersionFull()`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid ""
+"Returns the full VTK version string (e.g., `\"9.4.2-2017-gd453d24731\"`)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:19
+msgid "vtkStandaloneSession"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:21
+msgid ""
+"Provides methods to directly create, manage, and manipulate VTK objects."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:23
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:43
+msgid "Constructor"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:24
+msgid "new vtkStandaloneSession()\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:28
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:48
+msgid "Methods"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Signature"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`create(className: string) => number`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Creates a new VTK object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`destroy(objectId: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Destroys a previously created VTK object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`set(objectId: number, properties: object) => undefined`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Apply properties from JSON object to the VTK object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`get(objectId: number) => object`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Retrieves the state of the given object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`invoke(objectId: number, methodName: string, args: object) => object`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Invokes a method on the object with JSON arguments."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid ""
+"`observe(objectId: number, eventName: string, callback: Function) => number`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Registers a JavaScript callback for a VTK event."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`unObserve(objectId: number, tag: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Unregisters an observer using its tag."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:39
+msgid "vtkRemoteSession"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:41
+msgid ""
+"Wraps around VTK session C API for client-server WebAssembly rendering. This "
+"is more suitable when the rendering state is controlled remotely."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:44
+msgid "new vtkRemoteSession()\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`registerState(state: object) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Registers a VTK object state."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`unRegisterState(objectId: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Unregisters an object’s state."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getState(objectId: number) => object`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "[**Deprecated**] Retrieves the object's current state."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`skipProperty(className: string, propertyName: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Prevents a property from being (de)serialized."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`unSkipProperty(className: string, propertyName: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Re-enables serialization for a property."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`registerBlob(hash: string, jsArray: Uint8Array) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Registers a binary blob."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`unRegisterBlob(hash: string) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Unregisters a blob using its hash."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getBlob(hash: string) => Uint8Array`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Retrieves a registered blob."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Calls a method on a VTK object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getAllDependencies(objectId: number) => Uint32Array`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Returns object dependency handles."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`updateObjectFromState(state: object) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Applies a JSON state to an object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`updateStateFromObject(objectId: number) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Updates the state JSON from the object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`setSize(objectId: number, width: number, height: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Sets the size of a render window."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`render(objectId: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Triggers a render operation."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`resetCamera(objectId: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Resets the camera for the given scene."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`startEventLoop(objectId: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Begins the VTK interactor event loop."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`stopEventLoop(objectId: number) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Stops the VTK interactor event loop."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`bindRenderWindow(objectId: number, canvasSelector: string) => boolean`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Binds a VTK render window to an HTML canvas element."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Observes events on an object."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Removes an observer by tag."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`export(fileName: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Exports the state and blobs."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`import(stateFile: string, blobFile: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Imports a scene and associated data."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`updateObjectsFromStates() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Applies all registered states to their respective objects."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`updateStatesFromObjects() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Refreshes all states based on their current object data."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`pruneUnusedBlobs() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Deletes unused blobs."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`pruneUnusedObjects() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Deletes unused objects."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`pruneUnusedStates() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Deletes unused states."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`clear() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Clears all objects, blobs, and state."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getTotalBlobMemoryUsage() => number`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Returns memory usage of all blobs."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`getTotalVTKDataObjectMemoryUsage() => number`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Returns memory usage of all VTK data objects."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`printSceneManagerInformation() => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Prints internal scene manager details."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`setDeserializerLogVerbosity(level: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Sets verbosity for deserialization."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`setInvokerLogVerbosity(level: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Sets verbosity for method invocations."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`setObjectManagerLogVerbosity(level: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Sets verbosity for the object manager."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "`setSerializerLogVerbosity(level: string) => void`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:0
+msgid "Sets verbosity for serialization."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:89
+msgid "Notes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:91
+msgid "All `objectId` are an unsigned integer."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:93
+msgid ""
+"All states must be passed as JSON and will be returned as JSON. Do not pass "
+"stringified JSON."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Web/WebAssembly/README.md:95
+msgid ""
+"Blob support is useful for caching binary data such as images or meshes to "
+"ease network traffic in the remote session use case."
+msgstr ""

@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:1
+msgid "{py:mod}`vtkmodules.gtk.GtkVTKRenderWindow`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:7
+msgid "Description:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:9
+msgid ""
+"Provides a simple VTK widget for pyGtk.  This embeds a   vtkRenderWindow "
+"inside a GTK widget.  This is based on   vtkTkRenderWidget.py.  The "
+"GtkVTKRenderWindowBase class provides the   abstraction necessary for "
+"someone to use their own interaction   behaviour.  The method names are "
+"similar to those in   vtkInteractorStyle.h."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:16
+msgid ""
+"The class uses the gtkgl.GtkGLArea widget (gtkglarea).  This avoids   a lot "
+"of problems with flicker."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:19
+msgid "There is a working example at the bottom."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:21
+msgid "Credits:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:23
+msgid ""
+"Thanks to Dave Reed for testing the code under various platforms and   for "
+"his suggestion to use the GtkGLArea widget to avoid flicker   related issues."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:27
+msgid "Created by Prabhu Ramachandran, March 2001."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:29
+msgid "Using GtkGLArea, March, 2002."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:31
+msgid "Bugs:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:33
+msgid ""
+"(*) There is a focus related problem.  Tkinter has a focus object   that "
+"handles focus events.  I don't know of an equivalent object   under GTK.  "
+"So, when an 'enter_notify_event' is received on the   GtkVTKRenderWindow I "
+"grab the focus but I don't know what to do when   I get a "
+"'leave_notify_event'."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:39
+msgid ""
+"(*) Will not work under Win32 because it uses the XID of a window in   "
+"OnRealize.  Suggestions to fix this will be appreciated."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:18
+msgid ""
+"{py:obj}`GtkVTKRenderWindowBase <vtkmodules.gtk.GtkVTKRenderWindow."
+"GtkVTKRenderWindowBase>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:49
+msgid ""
+"A base class that enables one to embed a vtkRenderWindow into a pyGTK "
+"widget.  This class embeds the RenderWindow correctly. Provided are some "
+"empty methods that can be overloaded to provide a user defined interaction "
+"behaviour.  The event handling functions have names that are somewhat "
+"similar to the ones in the vtkInteractorStyle class included with VTK."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:22
+msgid ""
+"{py:obj}`GtkVTKRenderWindow <vtkmodules.gtk.GtkVTKRenderWindow."
+"GtkVTKRenderWindow>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:217
+msgid ""
+"An example of a fully functional GtkVTKRenderWindow that is based on the "
+"vtkRenderWidget.py provided with the VTK sources."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:28
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:34
+msgid "{py:obj}`main <vtkmodules.gtk.GtkVTKRenderWindow.main>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:40
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:46
+msgid "Bases: {py:obj}`gtkgl.GtkGLArea`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:51
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:219
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:86
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:94
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:102
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:110
+msgid "Mirrors the method with the same name in vtkRenderWindowInteractor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:158
+msgid "Mouse button pressed."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:166
+msgid "Mouse button released."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:174
+msgid "Mouse has moved."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:182
+msgid "Entering the vtkRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:190
+msgid "Leaving the vtkRenderWindow."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:198
+msgid "Key pressed."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:206
+msgid "Key released."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.md:214
+msgid ""
+"Bases: {py:obj}`vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/gtk/GtkVTKRenderWindow.py:292
+msgid ""
+"UpdateRenderer will identify the renderer under the mouse and set up "
+"_CurrentRenderer, _CurrentCamera, and _CurrentLight."
+msgstr ""

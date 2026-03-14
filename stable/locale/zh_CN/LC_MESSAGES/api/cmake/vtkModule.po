@@ -1,0 +1,2588 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/vtkModule.cmake:6
+msgid "vtkModule"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:13
+msgid "Conditionally output debug statements |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:16
+msgid ""
+"The :cmake:command:`_vtk_module_debug` function is provided to assist in "
+"debugging. It is controlled by the `_vtk_module_log` variable which contains "
+"a list of \"domains\" to debug."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:20
+msgid "_vtk_module_debug(<domain> <format>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:25
+msgid ""
+"If the `domain` is enabled for debugging, the `format` argument is "
+"configured and printed. It should contain `@` variable expansions to replace "
+"rather than it being done outside. This helps to avoid the cost of "
+"generating large strings when debugging is disabled."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:50
+msgid "Find `vtk.kit` files in a set of directories |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:53
+msgid "vtk_module_find_kits(<output> [<directory>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:58
+msgid ""
+"This scans the given directories recursively for `vtk.kit` files and put the "
+"paths into the output variable."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:75
+msgid "Find `vtk.module` files in a set of directories |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:78
+msgid "vtk_module_find_modules(<output> [<directory>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:82
+msgid ""
+"This scans the given directories recursively for ``vtk.module`` files and "
+"put the paths into the output variable. Note that module files are assumed "
+"to live next to the ``CMakeLists.txt`` file which will build the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:100
+msgid ""
+"Split a module name into a namespace and target component |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:103
+msgid ""
+"Module names may include a namespace. This function splits the name into a "
+"namespace and target name part."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:106
+msgid "_vtk_module_split_module_name(<name> <prefix>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:110
+msgid ""
+"The ``<prefix>_NAMESPACE`` and ``<prefix>_TARGET_NAME`` variables will be "
+"set in the calling scope."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:135
+msgid "Detect whether an optional dependency exists or not. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:138
+msgid ""
+"Optional dependencies need to be detected namespace and target name part."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:141
+msgid ""
+"_vtk_module_optional_dependency_exists(<dependency>\n"
+"  SATISFIED_VAR <var>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:146
+msgid ""
+"The result will be returned in the variable specified by ``SATISFIED_VAR``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:197
+msgid "vtk.module file contents"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:199
+msgid ""
+"The `vtk.module` file is parsed and used as arguments to a CMake function "
+"which stores information about the module for use when building it. Note "
+"that no variable expansion is allowed and it is not CMake code, so no "
+"control flow is allowed. Comments are supported and any content after a `#` "
+"on a line is treated as a comment. Due to the breakdown of the content, "
+"quotes are not meaningful within the files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:206
+#: ../../../../../CMake/vtkModule.cmake:367
+msgid "Example:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:208
+msgid ""
+"NAME\n"
+"  VTK::CommonCore\n"
+"LIBRARY_NAME\n"
+"  vtkCommonCore\n"
+"DESCRIPTION\n"
+"  The base VTK library.\n"
+"LICENSE_FILES\n"
+"  Copyright.txt\n"
+"SPDX_COPYRIGHT_TEXT\n"
+"  Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen\n"
+"SPDX_LICENSE_IDENTIFIER\n"
+"  BSD-3-Clause\n"
+"GROUPS\n"
+"  StandAlone\n"
+"DEPENDS\n"
+"  VTK::kwiml\n"
+"PRIVATE_DEPENDS\n"
+"  VTK::vtksys\n"
+"  VTK::utf8"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:230
+#: ../../../../../CMake/vtkModule.cmake:378
+msgid ""
+"All values are optional unless otherwise noted. The following arguments are "
+"supported:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:233
+msgid "``NAME``: (Required) The name of the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:234
+#: ../../../../../CMake/vtkModule.cmake:382
+msgid ""
+"``LIBRARY_NAME``: The base name of the library file. It defaults to the "
+"module name, but any namespaces are removed. For example, a ``NS::Foo`` "
+"module will have a default ``LIBRARY_NAME`` of ``Foo``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:237
+msgid ""
+"``DESCRIPTION``: (Recommended) Short text describing what the module is for."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:238
+msgid ""
+"``KIT``: The name of the kit the module belongs to (see ``Kits files`` for "
+"more information)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:240
+msgid ""
+"``IMPLEMENTABLE``: If present, the module contains logic which supports the "
+"autoinit functionality."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:242
+msgid ""
+"``GROUPS``: Modules may belong to \"groups\" which is exposed as a build "
+"option. This allows for enabling a set of modules with a single build option."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:245
+msgid ""
+"``CONDITION``: Arguments to CMake's ``if`` command which may be used to hide "
+"the module for certain platforms or other reasons. If the expression is "
+"false, the module is completely ignored."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:248
+msgid ""
+"``DEPENDS``: A list of modules which are required by this module and modules "
+"using this module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:250
+msgid ""
+"``PRIVATE_DEPENDS``: A list of modules which are required by this module, "
+"but not by those using this module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:252
+msgid ""
+"``OPTIONAL_DEPENDS``: A list of modules which are used by this module if "
+"enabled; these are treated as ``PRIVATE_DEPENDS`` if they exist."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:254
+msgid ""
+"``ORDER_DEPENDS``: Dependencies which only matter for ordering. This does "
+"not mean that the module will be enabled, just guaranteed to build before "
+"this module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:257
+msgid ""
+"``IMPLEMENTS``: A list of modules for which this module needs to register "
+"with."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:259
+msgid "``TEST_DEPENDS``: Modules required by the test suite for this module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:260
+msgid ""
+"``TEST_OPTIONAL_DEPENDS``: Modules used by the test suite for this module if "
+"available."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:262
+msgid ""
+"``TEST_LABELS``: Labels to apply to the tests of this module. By default, "
+"the module name is applied as a label."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:264
+msgid ""
+"``EXCLUDE_WRAP``: If present, this module should not be wrapped in any "
+"language."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:266
+msgid ""
+"``INCLUDE_MARSHAL``: If present, this module opts into automatic code "
+"generation of (de)serializers. This option requires that the module is not "
+"excluded from wrapping with `EXCLUDE_WRAP`."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:269
+msgid "``THIRD_PARTY``: If present, this module is a third party module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:270
+msgid "``LICENSE_FILES``: A list of license files to install for the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:271
+msgid ""
+"``SPDX_LICENSE_IDENTIFIER``: A license identifier for SPDX file generation."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:272
+msgid ""
+"``SPDX_DOWNLOAD_LOCATION``: A download location for the SPDX file generation."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:273
+msgid "``SPDX_COPYRIGHT_TEXT``: A copyright text for the SPDX file generation."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:274
+#: ../../../../../CMake/vtkModule.cmake:6250
+msgid ""
+"``SPDX_CUSTOM_LICENSE_FILE``: A relative path to a  single custom license "
+"file to include in generated SPDX file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:275
+#: ../../../../../CMake/vtkModule.cmake:6251
+msgid ""
+"``SPDX_CUSTOM_LICENSE_NAME``: The name of the single custom license, without "
+"the ``LicenseRef-``"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:282
+msgid "Parse ``vtk.module`` file contents"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:284
+msgid "|module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:286
+msgid ""
+"This macro places all ``vtk.module`` keyword \"arguments\" into the caller's "
+"scope prefixed with the value of ``name_output`` which is set to the "
+"``NAME`` of the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:290
+msgid "_vtk_module_parse_module_args(name_output <vtk.module args...>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:294
+msgid "For example, this ``vtk.module`` file:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:296
+msgid ""
+"NAME\n"
+"  Namespace::Target\n"
+"LIBRARY_NAME\n"
+"  nsTarget"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:303
+msgid ""
+"called with ``_vtk_module_parse_module_args(name ...)`` will set the "
+"following variables in the calling scope:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:306
+msgid "``name``: ``Namespace::Target``"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:307
+msgid "``Namespace::Target_LIBRARY_NAME``: ``nsTarget``"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:309
+msgid ""
+"With namespace support for module names, the variable should instead be "
+"referenced via ``${${name}_LIBRARY_NAME}`` instead."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:361
+msgid "vtk.kit file contents"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:363
+msgid ""
+"The `vtk.kit` file is parsed similarly to `vtk.module` files. Kits are "
+"intended to bring together related modules into a single library in order to "
+"reduce the number of objects that linkers need to deal with."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:369
+msgid ""
+"NAME\n"
+"  VTK::Common\n"
+"LIBRARY_NAME\n"
+"  vtkCommon\n"
+"DESCRIPTION\n"
+"  Core utilities for VTK."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:381
+msgid "``NAME``: (Required) The name of the kit."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:385
+msgid ""
+"``DESCRIPTION``: (Recommended) Short text describing what the kit contains."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:391
+msgid "Parse `vtk.kit` file contents |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:394
+msgid "Just like :cmake:command:`_vtk_module_parse_module_args`, but for kits."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:441
+msgid "Enable status values"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:443
+msgid ""
+"Modules and groups are enable and disable preferences are specified using a "
+"5-way flag setting:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:446
+msgid "``YES``: The module or group must be built."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:447
+msgid "``NO``: The module or group must not be built."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:448
+msgid "``WANT``: The module or group should be built if possible."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:449
+msgid ""
+"``DONT_WANT``: The module or group should only be built if required (e.g., "
+"via a dependency)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:451
+msgid ""
+"``DEFAULT``: Acts as either ``WANT`` or ``DONT_WANT`` based on the group "
+"settings for the module or ``WANT_BY_DEFAULT`` option to :cmake:command:"
+"`vtk_module_scan` if no other preference is specified. This is usually "
+"handled via another setting in the main project."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:456
+msgid ""
+"If a ``YES`` module preference requires a module with a ``NO`` preference, "
+"an error is raised."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:459
+msgid ""
+"A module with a setting of ``DEFAULT`` will look for its first non-"
+"``DEFAULT`` group setting and only if all of those are set to ``DEFAULT`` is "
+"the ``WANT_BY_DEFAULT`` setting used."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:467
+msgid "Verify enable values |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:470
+msgid ""
+"Verifies that the variable named as the first parameter is a valid `enable "
+"status` value."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:473
+msgid "_vtk_module_verify_enable_value(var)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:494
+msgid "Scan modules and kits |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:497
+msgid ""
+"Once all of the modules and kits files have been found, they are \"scanned\" "
+"to determine what modules are enabled or required."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:500
+msgid ""
+"vtk_module_scan(\n"
+"  MODULE_FILES              <file>...\n"
+"  [KIT_FILES                <file>...]\n"
+"  PROVIDES_MODULES          <variable>\n"
+"  [PROVIDES_KITS            <variable>]\n"
+"  [REQUIRES_MODULES         <variable>]\n"
+"  [REQUEST_MODULES          <module>...]\n"
+"  [REJECT_MODULES           <module>...]\n"
+"  [UNRECOGNIZED_MODULES     <variable>]\n"
+"  [WANT_BY_DEFAULT          <ON|OFF>]\n"
+"  [HIDE_MODULES_FROM_CACHE  <ON|OFF>]\n"
+"  [ENABLE_TESTS             <ON|OFF|WANT|DEFAULT>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:515
+msgid ""
+"The ``MODULE_FILES`` and ``PROVIDES_MODULES`` arguments are required. "
+"Modules which refer to kits must be scanned at the same time as their kits. "
+"This is so that modules may not add themselves to kits declared prior. The "
+"arguments are as follows:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:519
+msgid "``MODULE_FILES``: (Required) The list of module files to scan."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:520
+msgid "``KIT_FILES``: The list of kit files to scan."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:521
+msgid ""
+"``PROVIDES_MODULES``: (Required) This variable will contain the list of "
+"modules which are enabled due to this scan."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:523
+msgid ""
+"``PROVIDES_KITS``: (Required if ``KIT_FILES`` are provided) This variable "
+"will contain the list of kits which are enabled due to this scan."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:525
+msgid ""
+"``REQUIRES_MODULES``: This variable will contain the list of modules "
+"required by the enabled modules that were not scanned."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:527
+msgid "``REQUEST_MODULES``: The list of modules required by previous scans."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:528
+msgid ""
+"``REJECT_MODULES``: The list of modules to exclude from the scan. If any of "
+"these modules are required, an error will be raised."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:530
+msgid ""
+"``UNRECOGNIZED_MODULES``: This variable will contain the list of requested "
+"modules that were not scanned."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:532
+msgid ""
+"``WANT_BY_DEFAULT``: (Defaults to ``OFF``) Whether modules should default to "
+"being built or not."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:534
+msgid ""
+"``HIDE_MODULES_FROM_CACHE``: (Defaults to ``OFF``) Whether or not to hide "
+"the control variables from the cache or not. If enabled, modules will not be "
+"built unless they are required elsewhere."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:537
+msgid ""
+"``ENABLE_TESTS``: (Defaults to ``DEFAULT``) Whether or not modules required "
+"by the tests for the scanned modules should be enabled or not."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:540
+msgid "``ON``: Modules listed as ``TEST_DEPENDS`` will be required."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:541
+msgid "``OFF``: Test modules will not be considered."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:542
+msgid ""
+"``WANT``: Test dependencies will enable modules if possible. Note that this "
+"has known issues where modules required only via testing may not have their "
+"dependencies enabled."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:545
+msgid ""
+"``DEFAULT``: Test modules will be enabled if their required dependencies are "
+"satisfied and skipped otherwise."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:548
+msgid ""
+"To make error messages clearer, modules passed to ``REQUIRES_MODULES`` and "
+"``REJECT_MODULES`` may have a ``_vtk_module_reason_<MODULE>`` variable set "
+"to the reason for the module appearing in either argument. For example, if "
+"the ``Package::Frobnitz`` module is required due to a ``ENABLE_FROBNITZ`` "
+"cache variable:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:554
+msgid ""
+"set(\"_vtk_module_reason_Package::Frobnitz\"\n"
+"  \"via the `ENABLE_FROBNITZ` setting\")"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:559
+msgid ""
+"Additionally, the reason for the ``WANT_BY_DEFAULT`` value may be provided "
+"via the ``_vtk_module_reason_WANT_BY_DEFAULT`` variable."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:565
+msgid "Scanning multiple groups of modules"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:567
+msgid ""
+"When scanning complicated projects, multiple scans may be required to get "
+"defaults set properly. The ``REQUIRES_MODULES``, ``REQUEST_MODULES``, and "
+"``UNRECOGNIZED_MODULES`` arguments are meant to deal with this case. As an "
+"example, imagine a project with its source code, third party dependencies, "
+"as well as some utility modules which should only be built as necessary. "
+"Here, the project would perform three scans, one for each \"grouping\" of "
+"modules:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:574
+msgid ""
+"# Scan our modules first because we need to know what of the other groups "
+"we\n"
+"# need.\n"
+"vtk_module_find_modules(our_modules \"${CMAKE_CURRENT_SOURCE_DIR}/src\")\n"
+"vtk_module_scan(\n"
+"  MODULE_FILES      ${our_modules}\n"
+"  PROVIDES_MODULES  our_enabled_modules\n"
+"  REQUIRES_MODULES  required_modules)\n"
+"\n"
+"# Scan the third party modules, requesting only those that are necessary, "
+"but\n"
+"# allowing them to be toggled during the build.\n"
+"vtk_module_find_modules(third_party_modules \"${CMAKE_CURRENT_SOURCE_DIR}/"
+"third-party\")\n"
+"vtk_module_scan(\n"
+"  MODULE_FILES            ${third_party_modules}\n"
+"  PROVIDES_MODULES        third_party_enabled_modules\n"
+"  # These modules were requested by an earlier scan.\n"
+"  REQUEST_MODULES         ${required_modules}\n"
+"  REQUIRES_MODULES        required_modules\n"
+"  UNRECOGNIZED_MODULES    unrecognized_modules)\n"
+"\n"
+"# These modules are internal and should only be built if necessary. There is "
+"no\n"
+"# need to support them being enabled independently, so hide them from the\n"
+"# cache.\n"
+"vtk_module_find_modules(utility_modules \"${CMAKE_CURRENT_SOURCE_DIR}/"
+"utilities\")\n"
+"vtk_module_scan(\n"
+"  MODULE_FILES            ${utility_modules}\n"
+"  PROVIDES_MODULES        utility_enabled_modules\n"
+"  # These modules were either requested or unrecognized by an earlier scan.\n"
+"  REQUEST_MODULES         ${required_modules}\n"
+"                          ${unrecognized_modules}\n"
+"  REQUIRES_MODULES        required_modules\n"
+"  UNRECOGNIZED_MODULES    unrecognized_modules\n"
+"  HIDE_MODULES_FROM_CACHE ON)\n"
+"\n"
+"if (required_modules OR unrecognized_modules)\n"
+"  # Not all of the modules we required were found. This should probably "
+"error out.\n"
+"endif ()"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1254
+msgid "Module-as-target functions"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1256
+msgid ""
+"Due to the nature of VTK modules supporting being built as kits, the module "
+"name might not be usable as a target to CMake's `target_` family of "
+"commands. Instead, there are various wrappers around them which take the "
+"module name as an argument. These handle the forwarding of relevant "
+"information to the kit library as well where necessary."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1262
+msgid ":cmake:command:`vtk_module_set_properties`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1263
+msgid ":cmake:command:`vtk_module_set_property`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1264
+msgid ":cmake:command:`vtk_module_get_property`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1265
+msgid ":cmake:command:`vtk_module_depend`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1266
+msgid ":cmake:command:`vtk_module_include`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1267
+msgid ":cmake:command:`vtk_module_definitions`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1268
+msgid ":cmake:command:`vtk_module_compile_options`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1269
+msgid ":cmake:command:`vtk_module_compile_features`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1270
+msgid ":cmake:command:`vtk_module_link`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1271
+msgid ":cmake:command:`vtk_module_link_options`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1279
+msgid "Module target internals"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1281
+msgid ""
+"When manipulating modules as targets, there are a few functions provided for "
+"use in wrapping code to more easily access them."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1284
+msgid ":cmake:command:`_vtk_module_real_target`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1285
+msgid ":cmake:command:`_vtk_module_real_target_kit`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1291
+msgid "The real target for a module |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1294
+msgid "_vtk_module_real_target(<var> <module>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1298
+msgid ""
+"Sometimes the actual, core target for a module is required (e.g., setting "
+"CMake-level target properties or install rules). This function returns the "
+"real target for a module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1361
+msgid "The real target for a kit |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1363
+msgid "_vtk_module_real_target_kit(<var> <kit>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1367
+msgid ""
+"Sometimes the actual, core target for a module is required (e.g., setting "
+"CMake-level target properties or install rules). This function returns the "
+"real target for a kit."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1405
+msgid "Set multiple properties on a module |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1408
+msgid "A wrapper around `set_target_properties` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1410
+msgid ""
+"vtk_module_set_properties(<module>\n"
+"  [<property> <value>]...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1426
+msgid "Set a property on a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1428
+msgid "A wrapper around ``set_property(TARGET)`` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1430
+msgid ""
+"vtk_module_set_property(<module>\n"
+"  [APPEND] [APPEND_STRING]\n"
+"  PROPERTY  <property>\n"
+"  VALUE     <value>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1485
+msgid "Get a property from a module |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1488
+msgid "A wrapper around `get_property(TARGET)` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1490
+msgid ""
+"vtk_module_get_property(<module>\n"
+"  PROPERTY  <property>\n"
+"  VARIABLE  <variable>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1496
+msgid ""
+"The variable name passed to the ``VARIABLE`` argument will be unset if the "
+"property is not set (rather than the empty string)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1544
+msgid "Generate arguments for target function wrappers |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1546
+msgid ""
+"Create the ``INTERFACE``, ``PUBLIC``, and ``PRIVATE`` arguments for a "
+"function wrapping CMake's ``target_`` functions to call the wrapped function."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1549
+msgid ""
+"This is necessary because not all of the functions support empty lists given "
+"a keyword."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1566
+msgid "Add dependencies to a module |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1568
+msgid "A wrapper around ``add_dependencies`` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1570
+msgid "vtk_module_depend(<module> <depend>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1585
+msgid "Add source files to a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1587
+msgid "A wrapper around `target_sources` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1589
+msgid ""
+"vtk_module_sources(<module>\n"
+"  [PUBLIC     <source>...]\n"
+"  [PRIVATE    <source>...]\n"
+"  [INTERFACE  <source>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1626
+msgid "Add include directories to a module |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1629
+msgid "A wrapper around `target_include_directories` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1631
+msgid ""
+"vtk_module_include(<module>\n"
+"  [SYSTEM]\n"
+"  [PUBLIC     <directory>...]\n"
+"  [PRIVATE    <directory>...]\n"
+"  [INTERFACE  <directory>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1675
+msgid "Add compile definitions to a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1677
+msgid "A wrapper around ``target_compile_definitions`` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1679
+msgid ""
+"vtk_module_definitions(<module>\n"
+"  [PUBLIC     <define>...]\n"
+"  [PRIVATE    <define>...]\n"
+"  [INTERFACE  <define>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1717
+msgid "Add compile options to a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1719
+msgid "A wrapper around ``target_compile_options`` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1721
+msgid ""
+"vtk_module_compile_options(<module>\n"
+"  [PUBLIC     <option>...]\n"
+"  [PRIVATE    <option>...]\n"
+"  [INTERFACE  <option>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1758
+msgid "Add compile features to a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1760
+msgid "A wrapper around `target_compile_features` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1762
+msgid ""
+"vtk_module_compile_features(<module>\n"
+"  [PUBLIC     <feature>...]\n"
+"  [PRIVATE    <feature>...]\n"
+"  [INTERFACE  <feature>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1799
+msgid "Manage the private link target for a module. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1801
+msgid "This function manages the private link target for a module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1803
+msgid ""
+"_vtk_private_kit_link_target(<module>\n"
+"  [CREATE_IF_NEEDED]\n"
+"  [SETUP_TARGET_NAME <var>]\n"
+"  [USAGE_TARGET_NAME <var>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1871
+msgid "Add link libraries to a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1873
+msgid ""
+"A wrapper around `target_link_libraries` that works for modules. Note that "
+"this function does extra work in kit builds, so circumventing it may break "
+"in kit builds."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1877
+msgid ""
+"The ``NO_KIT_EXPORT_IF_SHARED`` argument may be passed to additionally "
+"prevent leaking ``PRIVATE`` link targets from kit builds. Intended to be "
+"used for targets coming from a "
+"``vtk_module_find_package(PRIVATE_IF_SHARED)`` call. Applies to all "
+"``PRIVATE`` arguments; if different treatment is needed for subsets of these "
+"arguments, use a separate call to ``vtk_module_link``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1883
+msgid ""
+"vtk_module_link(<module>\n"
+"  [NO_KIT_EXPORT_IF_SHARED]\n"
+"  [PUBLIC     <link item>...]\n"
+"  [PRIVATE    <link item>...]\n"
+"  [INTERFACE  <link item>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1949
+msgid "Add link options to a module. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1951
+msgid "A wrapper around `target_link_options` that works for modules."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1953
+msgid ""
+"vtk_module_link_options(<module>\n"
+"  [PUBLIC     <option>...]\n"
+"  [PRIVATE    <option>...]\n"
+"  [INTERFACE  <option>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1991
+msgid "Module properties"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1992
+msgid "|module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:1994
+msgid ""
+"The VTK module system leverages CMake's target propagation and storage. As "
+"such, there are a number of properties added to the targets representing "
+"modules. These properties are intended for use by the module system and "
+"associated functionality. In particular, more properties may be available by "
+"language wrappers."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2003
+msgid "Naming properties"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2006
+msgid ""
+"When creating properties for use with the module system, they should be "
+"prefixed with ``INTERFACE_vtk_module_``. The ``INTERFACE_`` portion is "
+"required in order to work with interface libraries. The ``vtk_module_`` "
+"portion is to avoid colliding with any other properties. This function "
+"assumes this naming scheme for some of its convenience features as well."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2012
+msgid ""
+"Properties should be the same in the local build as well as when imported to "
+"ease use."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2018
+msgid "VTK module system properties"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2020
+msgid ""
+"There are a number of properties that are used and expected by the core of "
+"the module system. These are generally module metadata (module dependencies, "
+"whether to wrap or not, etc.). The properties all have the "
+"``INTERFACE_vtk_module_`` prefix mentioned in the previous section."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2025
+msgid ""
+"``third_party``: If set, the module represents a third party dependency and "
+"should be treated specially. Third party modules are very restricted and "
+"generally do not have any other properties set on them."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2028
+msgid ""
+"``exclude_wrap``: If set, the module should not be wrapped by an external "
+"language."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2030
+msgid ""
+"``depends``: The list of dependent modules. Language wrappers will generally "
+"require this to satisfy references to parent classes of the classes in the "
+"module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2033
+msgid ""
+"``private_depends``: The list of privately dependent modules. Language "
+"wrappers may require this to satisfy references to parent classes of the "
+"classes in the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2036
+msgid ""
+"``optional_depends``: The list of optionally dependent modules. Language "
+"wrappers may require this to satisfy references to parent classes of the "
+"classes in the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2039
+msgid ""
+"``kit``: The kit the module is a member of. Only set if the module is "
+"actually a member of the kit (i.e., the module was built with "
+"``BUILD_WITH_KITS ON``)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2042
+msgid ""
+"``implements``: The list of modules for which this module registers to. This "
+"is used by the autoinit subsystem and generally is not required."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2044
+msgid ""
+"``implementable``: If set, this module provides registries which may be "
+"populated by dependent modules. It is used to check the ``implements`` "
+"property to help minimize unnecessary work from the autoinit subsystem."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2047
+msgid ""
+"``needs_autoinit``: If set, linking to this module requires the autoinit "
+"subsystem to ensure that registries in modules are fully populated."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2049
+msgid ""
+"``headers``: Paths to the public headers from the module. These are the "
+"headers which should be handled by language wrappers."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2051
+msgid ""
+"``hierarchy``: The path to the hierarchy file describing inheritance of the "
+"classes for use in language wrappers."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2053
+msgid ""
+"``forward_link``: Usage requirements that must be forwarded even though the"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2054
+msgid "module is linked to privately."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2055
+msgid ""
+"``include_marshal``: If set, the whole module opts into automatic code "
+"generation of (de)serializers. Note that only classes annotated with "
+"VTK_MARSHALAUTO are considered for code generation."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2059
+msgid ""
+"Kits have the following properties available (but only if kits are enabled):"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2061
+msgid "``kit_modules``: Modules which are compiled into the kit."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2067
+msgid "Set a module property. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2069
+msgid ""
+"This function sets a :ref:`module property <module-properties>` on a module. "
+"The required prefix will automatically be added to the passed name."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2072
+msgid ""
+"_vtk_module_set_module_property(<module>\n"
+"  [APPEND] [APPEND_STRING]\n"
+"  PROPERTY  <property>\n"
+"  VALUE     <value>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2135
+msgid "Get a module property.  |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2137
+msgid "Get a :ref:`module property <module-properties>` from a module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2139
+msgid ""
+"_vtk_module_get_module_property(<module>\n"
+"  PROPERTY  <property>\n"
+"  VARIABLE  <variable>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2146
+msgid ""
+"As with :cmake:command:`vtk_module_get_property`, the output variable will "
+"be unset if the property is not set. The property name is automatically "
+"prepended with the required prefix."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2203
+msgid "Check that destinations are valid. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2205
+msgid ""
+"All installation destinations are expected to be relative so that "
+"``CMAKE_INSTALL_PREFIX`` can be relied upon in all code paths. This function "
+"may be used to verify that destinations are relative."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2209
+msgid "_vtk_module_check_destinations(<prefix> [<suffix>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2213
+msgid ""
+"For each ``suffix``, ``prefix`` is prefixed to it and the resulting variable "
+"name is checked for validity as an install prefix. Raises an error if any is "
+"invalid."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2231
+msgid "Write an import prefix statement. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2233
+msgid ""
+"CMake files, once installed, may need to construct paths to other locations "
+"within the install prefix. This function writes a prefix computation for "
+"file given its install destination."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2237
+msgid "_vtk_module_write_import_prefix(<file> <destination>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2241
+msgid ""
+"The passed file is cleared so that it occurs at the top of the file. The "
+"prefix is available in the file as the ``_vtk_module_import_prefix`` "
+"variable. It is recommended to unset the variable at the end of the file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2265
+msgid "Export properties on modules and targets. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2267
+msgid ""
+"This function is intended for use in support functions which leverage the "
+"module system, not by general system users. This function supports exporting "
+"properties from the build into dependencies via target properties which are "
+"loaded from a project's config file which is loaded via CMake's "
+"``find_package`` function."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2273
+msgid ""
+"_vtk_module_export_properties(\n"
+"  [MODULE       <module>]\n"
+"  [KIT          <kit>]\n"
+"  BUILD_FILE    <path>\n"
+"  INSTALL_FILE  <path>\n"
+"  [PROPERTIES               <property>...]\n"
+"  [FROM_GLOBAL_PROPERTIES   <property fragment>...]\n"
+"  [SPLIT_INSTALL_PROPERTIES <property fragment>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2284
+msgid ""
+"The ``BUILD_FILE`` and ``INSTALL_FILE`` arguments are required. Exactly one "
+"of ``MODULE`` and ``KIT`` is also required. The ``MODULE`` or ``KIT`` "
+"argument holds the name of the module or kit that will have properties "
+"exported. The ``BUILD_FILE`` and ``INSTALL_FILE`` paths are *appended to*. "
+"As such, when setting up these files, it should be preceded with:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2290
+msgid ""
+"file(WRITE \"${build_file}\")\n"
+"file(WRITE \"${install_file}\")"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2295
+msgid ""
+"To avoid accidental usage of the install file from the build tree, it is "
+"recommended to store it under a ``CMakeFiles/`` directory in the build tree "
+"with an additional ``.install`` suffix and use ``install(RENAME)`` to rename "
+"it at install time."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2300
+msgid "The set of properties exported is computed as follows:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2302
+msgid ""
+"``PROPERTIES`` queries the module target for the given property and exports "
+"its value as-is to both the build and install files. In addition, these "
+"properties are set on the target directly as the same name."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2305
+msgid ""
+"``FROM_GLOBAL_PROPERTIES`` queries the global "
+"``_vtk_module_<MODULE>_<fragment>`` property and exports it to both the "
+"build and install files as ``INTERFACE_vtk_module_<fragment>``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2308
+msgid ""
+"``SPLIT_INSTALL_PROPERTIES`` queries the target for "
+"``INTERFACE_vtk_module_<fragment>`` and exports its value to the build file "
+"and ``INTERFACE_vtk_module_<fragment>_install`` to the install file as the "
+"non-install property name. This is generally useful for properties which "
+"change between the build and installation."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2432
+msgid "Build modules and kits. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2434
+msgid ""
+"Once all of the modules have been scanned, they need to be built. Generally, "
+"there will be just one build necessary for a set of scans, though they may "
+"be built distinctly as well. If there are multiple calls to this function, "
+"they should generally in reverse order of their scans."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2439
+msgid ""
+"vtk_module_build(\n"
+"  MODULES       <module>...\n"
+"  [KITS          <kit>...]\n"
+"\n"
+"  [LIBRARY_NAME_SUFFIX  <suffix>]\n"
+"  [VERSION              <version>]\n"
+"  [SOVERSION            <soversion>]\n"
+"\n"
+"  [PACKAGE              <package>]\n"
+"\n"
+"  [BUILD_WITH_KITS  <ON|OFF>]\n"
+"\n"
+"  [ENABLE_WRAPPING <ON|OFF>]\n"
+"  [ENABLE_SERIALIZATION <ON|OFF>]\n"
+"\n"
+"  [USE_EXTERNAL <ON|OFF>]\n"
+"\n"
+"  [INSTALL_HEADERS             <ON|OFF>]\n"
+"  [HEADERS_COMPONENT           <component>]\n"
+"  [HEADERS_EXCLUDE_FROM_ALL    <ON|OFF>]\n"
+"  [USE_FILE_SETS               <ON|OFF>]\n"
+"\n"
+"  [TARGETS_COMPONENT  <component>]\n"
+"  [INSTALL_EXPORT     <export>]\n"
+"\n"
+"  [TARGET_SPECIFIC_COMPONENTS <ON|OFF>]\n"
+"\n"
+"  [LICENSE_COMPONENT  <component>]\n"
+"\n"
+"  [UTILITY_TARGET     <target>]\n"
+"  [PLATFORM_TARGET    <target>]\n"
+"\n"
+"  [TEST_DIRECTORY_NAME        <name>]\n"
+"  [TEST_DATA_TARGET           <target>]\n"
+"  [TEST_INPUT_DATA_DIRECTORY  <directory>]\n"
+"  [TEST_OUTPUT_DATA_DIRECTORY <directory>]\n"
+"  [TEST_OUTPUT_DIRECTORY      <directory>]\n"
+"\n"
+"  [GENERATE_SPDX            <ON|OFF>]\n"
+"  [SPDX_COMPONENT           <component>]\n"
+"  [SPDX_DOCUMENT_NAMESPACE  <uri>]\n"
+"  [SPDX_DOWNLOAD_LOCATION   <url>]\n"
+"\n"
+"  [ARCHIVE_DESTINATION    <destination>]\n"
+"  [HEADERS_DESTINATION    <destination>]\n"
+"  [LIBRARY_DESTINATION    <destination>]\n"
+"  [RUNTIME_DESTINATION    <destination>]\n"
+"  [CMAKE_DESTINATION      <destination>]\n"
+"  [LICENSE_DESTINATION    <destination>]\n"
+"  [HIERARCHY_DESTINATION  <destination>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2492
+msgid ""
+"The only requirement of the function is the list of modules to build, the "
+"rest have reasonable defaults if not specified."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2495
+msgid "``MODULES``: (Required) The list of modules to build."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2496
+msgid ""
+"``KITS``: (Required if ``BUILD_WITH_KITS`` is ``ON``) The list of kits to "
+"build."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2497
+msgid ""
+"``LIBRARY_NAME_SUFFIX``: (Defaults to ``\"\"``) A suffix to add to library "
+"names. If it is not empty, it is prefixed with ``-`` to separate it from the "
+"kit name."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2500
+msgid ""
+"``VERSION``: If specified, the ``VERSION`` property on built libraries will "
+"be set to this value."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2502
+msgid ""
+"``SOVERSION``: If specified, the ``SOVERSION`` property on built libraries "
+"will be set to this value."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2504
+msgid ""
+"``PACKAGE``: (Defaults to ``${CMAKE_PROJECT_NAME}``) The name the build is "
+"meant to be found as when using ``find_package``. Note that separate builds "
+"will require distinct ``PACKAGE`` values."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2507
+msgid ""
+"``BUILD_WITH_KITS``: (Defaults to ``OFF``) If enabled, kit libraries will be "
+"built."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2509
+msgid ""
+"``ENABLE_WRAPPING``: (Default depends on the existence of ``VTK::"
+"WrapHierarchy`` or ``VTKCompileTools::WrapHierarchy`` targets) If enabled, "
+"wrapping will be available to the modules built in this call."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2512
+msgid ""
+"``ENABLE_SERIALIZATION``: (Defaults to ``OFF``) If enabled, "
+"(de)serialization code will be autogenerated for classes with the correct "
+"wrapping hints."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2514
+msgid ""
+"``USE_EXTERNAL``: (Defaults to ``OFF``) Whether third party modules should "
+"find external copies rather than building their own copy."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2516
+msgid ""
+"``INSTALL_HEADERS``: (Defaults to ``ON``) Whether or not to install public "
+"headers."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2517
+msgid ""
+"``HEADERS_COMPONENT``: (Defaults to ``development``) The install component "
+"to use for header installation. Note that other SDK-related bits use the "
+"same component (e.g., CMake module files)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2520
+msgid ""
+"``HEADERS_EXCLUDE_FROM_ALL``: (Defaults to ``OFF``) Whether to install the "
+"headers component in ALL or not."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2522
+msgid ""
+"``USE_FILE_SETS``: (Defaults to ``OFF``) Whether to use ``FILE_SET`` source "
+"specification or not."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2524
+msgid ""
+"``TARGETS_COMPONENT``: ``Defaults to ``runtime``) The install component to "
+"use for the libraries built."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2526
+msgid ""
+"``TARGET_SPECIFIC_COMPONENTS``: (Defaults to ``OFF``) If ``ON``, place "
+"artifacts into target-specific install components (``<TARGET>-<COMPONENT>``)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2528
+msgid ""
+"``LICENSE_COMPONENT``: (Defaults to ``licenses``) The install component to "
+"use for licenses."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2530
+msgid ""
+"``UTILITY_TARGET``: If specified, all libraries and executables made by the "
+"VTK Module API will privately link to this target. This may be used to "
+"provide things such as project-wide compilation flags or similar."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2533
+msgid ""
+"``PLATFORM_TARGET``: If specified, all libraries made by the VTK Module API "
+"will \"public\" link to this target. This may be used to provide things such "
+"as platform-specific flags that will be propagated to consumers of the "
+"module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2537
+msgid ""
+"``TARGET_NAMESPACE``: ``Defaults to ``\\<AUTO\\>``) The namespace for "
+"installed targets. All targets must have the same namespace. If set to "
+"``\\<AUTO\\>``, the namespace will be detected automatically."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2540
+msgid ""
+"``INSTALL_EXPORT``: (Defaults to ``\"\"``) If non-empty, targets will be "
+"added to the given export. The export will also be installed as part of this "
+"build command."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2543
+msgid ""
+"``TEST_DIRECTORY_NAME``: (Defaults to ``Testing``) The name of the testing "
+"directory to look for in each module. Set to ``NONE`` to disable automatic "
+"test management."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2546
+msgid ""
+"``TEST_DATA_TARGET``: (Defaults to ``<PACKAGE>-data``) The target to add "
+"testing data download commands to."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2548
+msgid ""
+"``TEST_INPUT_DATA_DIRECTORY``: (Defaults to ``${CMAKE_CURRENT_SOURCE_DIR}/"
+"Data``) The directory which will contain data for use by tests."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2551
+msgid ""
+"``TEST_OUTPUT_DATA_DIRECTORY``: (Defaults to ``${CMAKE_CURRENT_BINARY_DIR}/"
+"Data``) The directory which will contain data for use by tests."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2554
+msgid ""
+"``TEST_OUTPUT_DIRECTORY``: (Defaults to ``${CMAKE_BINARY_DIR}/"
+"<TEST_DIRECTORY_NAME>/Temporary``) The directory which tests may write any "
+"output files to."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2557
+msgid ""
+"``GENERATE_SPDX``: (Defaults to ``OFF``) Whether or not to generate and "
+"install SPDX file for each modules and third parties."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2559
+msgid ""
+"``SPDX_COMPONENT``: (Defaults to ``spdx``) The install component to use for "
+"SPDX files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2561
+msgid ""
+"``SPDX_DOCUMENT_NAMESPACE``: (Defaults to ``\"\"``) Document namespace to "
+"use when generating SPDX files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2563
+msgid ""
+"``SPDX_DOWNLOAD_LOCATION``: (Defaults to ``\"\"``) Download location to use "
+"when generating SPDX files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2566
+msgid ""
+"The remaining arguments control where to install files related to the build. "
+"See CMake documentation for the difference between ``ARCHIVE``, ``LIBRARY``, "
+"and ``RUNTIME``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2570
+msgid ""
+"``ARCHIVE_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_LIBDIR}``) The "
+"install destination for archive files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2572
+msgid ""
+"``HEADERS_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_INCLUDEDIR}``) The "
+"install destination for header files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2574
+msgid ""
+"``LIBRARY_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_LIBDIR}``) The "
+"install destination for library files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2576
+msgid ""
+"``RUNTIME_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_BINDIR}``) The "
+"install destination for runtime files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2578
+msgid ""
+"``CMAKE_DESTINATION``: (Defaults to ``<LIBRARY_DESTINATION>/cmake/"
+"<PACKAGE>``) The install destination for CMake files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2580
+msgid ""
+"``LICENSE_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_DATAROOTDIR}/"
+"licenses/${CMAKE_PROJECT_NAME}``) The install destination for license files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2582
+msgid ""
+"``SPDX_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_DATAROOTDIR}/doc/"
+"${CMAKE_PROJECT_NAME}/spdx/``) The install destination for SPDX files."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:2584
+msgid ""
+"``HIERARCHY_DESTINATION``: (Defaults to ``<LIBRARY_DESTINATION>/vtk/"
+"hierarchy/<PACKAGE>``) The install destination for hierarchy files (used for "
+"language wrapping)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3230
+msgid "Add \"standard\" include directories to a module. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3232
+msgid ""
+"Add the \"standard\" includes for a module to its interface. These are the "
+"source And build directories for the module itself. They are always either "
+"``PUBLIC`` or ``INTERFACE`` (depending on the module's target type)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3236
+msgid ""
+"_vtk_module_standard_includes(\n"
+"  [SYSTEM]\n"
+"  [INTERFACE]\n"
+"  TARGET                <target>\n"
+"  [HEADERS_DESTINATION  <destination>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3292
+msgid "Determine the default export macro for a module. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3294
+msgid ""
+"Determines the export macro to be used for a module from its metadata. "
+"Assumes it is called from within a :cmake:command:`vtk_module_build call`."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3297
+msgid "_vtk_module_default_library_name(<varname>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3318
+msgid "Autoinit"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3320
+#: ../../../../../CMake/vtkModule.cmake:5841
+msgid "|module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3322
+msgid ""
+"When a module contains a factory which may be populated by other modules, "
+"these factories need to be populated when the modules are loaded by the "
+"dynamic linker (for shared builds) or program load time (for static builds). "
+"To provide for this, the module system contains an autoinit \"subsystem\"."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3330
+msgid "Leveraging the autoinit subsystem"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3332
+msgid "The subsystem provides the following hooks for use by projects:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3334
+msgid ""
+"In modules which ``IMPLEMENTS`` other modules, in the generated "
+"``<module>Module.h`` header (which provides export symbols as well) will "
+"include the modules which are implemented."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3337
+msgid ""
+"In modules which are ``IMPLEMENTABLE`` or ``IMPLEMENTS`` another module, the "
+"generated ``<module>Module.h`` file will include the following block:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3340
+msgid ""
+"#ifdef <module>_AUTOINIT_INCLUDE\n"
+"#include <module>_AUTOINIT_INCLUDE\n"
+"#endif\n"
+"#ifdef <module>_AUTOINIT\n"
+"#include <header>\n"
+"VTK_MODULE_AUTOINIT(<module>)\n"
+"#endif"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3350
+msgid ""
+"The :cmake:command:`vtk_module_autoinit` function will generate an include "
+"file and provide its path via the ``<module>_AUTOINIT_INCLUDE`` define. once "
+"it has been included, if the ``<module>_AUTOINIT`` symbol is defined, a "
+"header is included which is intended to provide the ``VTK_MODULE_AUTOINIT`` "
+"macro. This macro is given the module name and should use "
+"``<module>_AUTOINIT`` to fill in the factories in the module with those from "
+"the ``IMPLEMENTS`` modules listed in that symbol."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3357
+msgid "The ``<module>_AUTOINIT`` symbol's value is:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3359
+msgid "<count>(<module1>,<module2>,<module3>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3363
+msgid ""
+"where ``<count>`` is the number of modules in the parentheses and each "
+"module listed need to register something to ``<module>``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3366
+msgid ""
+"If not provided via the ``AUTOINIT_INCLUDE`` argument to the :cmake:command:"
+"`vtk_module_add_module` function, the header to use is fetched from the "
+"``_vtk_module_autoinit_include`` global property. This only needs to be "
+"managed in modules that ``IMPLEMENTS`` or are ``IMPLEMENTABLE``. This should "
+"be provided by projects using the module system at its lowest level. "
+"Projects not implementing the ``VTK_MODULE_AUTOINIT`` macro should have its "
+"value provided by ``find_package`` dependencies in some way."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3378
+msgid "Linking to autoinit-using modules. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3380
+msgid ""
+"When linking to modules, in order for the autoinit system to work, modules "
+"need to declare their registration. In order to do this, defines may need to "
+"be provided to targets in order to trigger registration. These defines may "
+"be added to targets by using this function."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3385
+msgid ""
+"vtk_module_autoinit(\n"
+"  TARGETS <target>...\n"
+"  MODULES <module>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3391
+msgid ""
+"After this call, the targets given to the ``TARGETS`` argument will gain the "
+"preprocessor definitions to trigger registrations properly."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3536
+msgid "Compute supported depfile tracking arguments. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3538
+msgid ""
+"Support for ``add_custom_command(DEPFILE)`` has changed over the CMake "
+"timeline. Generate the required arguments as supported for the current CMake "
+"version and generator."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3542
+msgid ""
+"_vtk_module_depfile_args(\n"
+"  [MULTI_CONFIG_NEEDS_GENEX]\n"
+"  TOOL_ARGS <variable>\n"
+"  CUSTOM_COMMAND_ARGS <variable>\n"
+"  DEPFILE_PATH <path>\n"
+"  [SOURCE <path>]\n"
+"  [SOURCE_LANGUAGE <lang>]\n"
+"  [DEPFILE_NO_GENEX_PATH <path>]\n"
+"  [TOOL_FLAGS <flag>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3554
+msgid ""
+"The arguments to pass to the tool are returned in the variable given to "
+"``TOOL_ARGS`` while the arguments for ``add_custom_command`` itself are "
+"returned in the variable given to ``CUSTOM_COMMAND_ARGS``. ``DEPFILE_PATH`` "
+"is the path to the depfile to use. If a generator expression can optionally "
+"be used, ``DEPFILE_NO_GENEX_PATH`` can be specified as a fallback in case of "
+"no generator expression support (unless ``MULTI_CONFIG_NEEDS_GENEX`` is "
+"specified and a multi-config generator is used). ``TOOL_FLAGS`` specifies "
+"the flags the tool needs to specify the depfile if used. If support is not "
+"available, the path given to ``SOURCE`` is used for ``IMPLICIT_DEPENDS`` "
+"using ``SOURCE_LANGUAGE`` (which defaults to ``CXX``)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3665
+msgid "Generate the hierarchy for a module. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3667
+msgid ""
+"Write wrap hierarchy files for the module currently being built. This also "
+"installs the hierarchy file for use by dependent projects if "
+"``INSTALL_HEADERS`` is set. This function honors the ``HEADERS_COMPONENT``, "
+"and ``HEADERS_EXCLUDE_FROM_ALL`` arguments to :cmake:command:"
+"`vtk_module_build`."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3672
+msgid "_vtk_module_write_wrap_hierarchy()"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3884
+msgid "Add a file set to a target. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3886
+msgid ""
+"_vtk_module_add_file_set(<target>\n"
+"  NAME <name>\n"
+"  [VIS <visibility>]\n"
+"  [TYPE <type>]\n"
+"  [BASE_DIRS <base directory>...]\n"
+"  FILES\n"
+"    [members...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3896
+msgid "Add a file set to the ``<target>`` named ``<name>``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3898
+msgid "``NAME``: The name of the file set."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3899
+msgid ""
+"``VIS``: The visibility of the file set. Defaults to ``PRIVATE``. Must be a "
+"valid CMake visibility (``PUBLIC``, ``PRIVATE``, or ``INTERFACE``)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3902
+msgid ""
+"``TYPE``: The type of the file set. Defaults to ``HEADERS``. File sets types "
+"that are recognized and known to not be supported by the CMake version in "
+"use will be added as ``PRIVATE`` sources not part of any file set."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3906
+msgid ""
+"``BASE_DIRS``: Base directories for the files. Defaults to "
+"``${CMAKE_CURRENT_SOURCE_DIR}`` and ``${CMAKE_CURRENT_BINARY_DIR}`` if not "
+"specified."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3909
+msgid "``FILES``: The paths to add to the file set."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3911
+msgid ""
+"Note that prior to CMake 3.19, usage of ``FILE_SET`` with ``INTERFACE`` "
+"targets is severely restricted and instead this function will do nothing. "
+"Any ``PUBLIC`` files specified this way need installed using standard "
+"mechanisms."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3985
+msgid "Create a module library. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:3987
+msgid ""
+"vtk_module_add_module(<name>\n"
+"  [NO_INSTALL] [FORCE_STATIC|FORCE_SHARED]\n"
+"  [HEADER_ONLY] [HEADER_DIRECTORIES]\n"
+"  [EXPORT_MACRO_PREFIX      <prefix>]\n"
+"  [HEADERS_SUBDIR           <subdir>]\n"
+"  [LIBRARY_NAME_SUFFIX      <suffix>]\n"
+"  [CLASSES                  <class>...]\n"
+"  [TEMPLATE_CLASSES         <template class>...]\n"
+"  [NOWRAP_CLASSES           <nowrap class>...]\n"
+"  [NOWRAP_TEMPLATE_CLASSES  <nowrap template class>...]\n"
+"  [SOURCES                  <source>...]\n"
+"  [HEADERS                  <header>...]\n"
+"  [NOWRAP_HEADERS           <header>...]\n"
+"  [TEMPLATES                <template>...]\n"
+"  [PRIVATE_CLASSES          <class>...]\n"
+"  [PRIVATE_TEMPLATE_CLASSES <template class>...]\n"
+"  [PRIVATE_HEADERS          <header>...]\n"
+"  [PRIVATE_TEMPLATES        <template>...]\n"
+"  [SPDX_SKIP_REGEX          <regex>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4009
+msgid ""
+"The ``PRIVATE_`` arguments are analogous to their non-``PRIVATE_`` "
+"arguments, but the associated files are not installed or available for "
+"wrapping (``SOURCES`` are always private, so there is no ``PRIVATE_`` "
+"variant for that argument)."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4013
+msgid ""
+"``NO_INSTALL``: Skip installation of the module and all its installation "
+"artifacts. Note that if this target is used by any other target that is "
+"exported, this option may not be used because CMake (in addition to VTK "
+"module APIs such as ``vtk_module_export_find_packages`` and ' ') will "
+"generate references to the target that are expected to be satisfied. It is "
+"highly recommended to test that the build and install exports (as used) be "
+"tested to make sure that the module is not actually referenced."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4020
+msgid ""
+"``FORCE_STATIC`` or ``FORCE_SHARED``: For a static (respectively, shared) "
+"library to be created. If neither is provided, ``BUILD_SHARED_LIBS`` will "
+"control the library type."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4023
+msgid ""
+"``HEADER_ONLY``: The module only contains headers (or templates) and "
+"contains no compilation steps. Mutually exclusive with ``FORCE_STATIC``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4025
+msgid ""
+"``HEADER_DIRECTORIES``: The headers for this module are in a directory "
+"structure which should be preserved in the install tree."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4027
+msgid ""
+"``EXPORT_MACRO_PREFIX``: The prefix for the export macro definitions. "
+"Defaults to the library name of the module in all uppercase."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4029
+msgid ""
+"``HEADERS_SUBDIR``: The subdirectory to install headers into in the install "
+"tree."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4031
+msgid ""
+"``LIBRARY_NAME_SUFFIX``: The suffix to the module's library name if "
+"additional information is required."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4033
+msgid ""
+"``CLASSES``: A list of classes in the module. This is a shortcut for adding "
+"``<class>.cxx`` to ``SOURCES`` and ``<class>.h`` to ``HEADERS``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4035
+msgid ""
+"``TEMPLATE_CLASSES``: A list of template classes in the module. This is a "
+"shortcut for adding ``<class>.txx`` to ``TEMPLATES`` and ``<class>.h`` to "
+"``HEADERS``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4038
+msgid "``SOURCES``: A list of source files which require compilation."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4039
+msgid ""
+"``HEADERS``: A list of header files which will be available for wrapping and "
+"installed."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4041
+msgid ""
+"``NOWRAP_CLASSES``: A list of classes which will not be available for "
+"wrapping but installed. This is a shortcut for adding ``<class>.cxx`` to "
+"``SOURCES`` and ``<class>.h`` to ``NOWRAP_HEADERS``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4044
+msgid ""
+"``NOWRAP_TEMPLATE_CLASSES``: A list of template classes which will not be"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4045
+msgid ""
+"available for wrapping but installed. This is a shortcut for adding "
+"``<class>.txx`` to ``TEMPLATES`` and ``<class>.h`` to ``NOWRAP_HEADERS``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4048
+msgid ""
+"``NOWRAP_HEADERS``: A list of header files which will not be available for "
+"wrapping but installed."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4050
+msgid "``TEMPLATES``: A list of template files which will be installed."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4051
+msgid "``SPDX_SKIP_REGEX``: A python regex to skip a file based on its name"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4052
+msgid "when parsing for SPDX headers."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4764
+msgid "Add header tests for a module. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4766
+msgid "Todo"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4768
+msgid ""
+"Move this function out to be VTK-specific, probably into `vtkModuleTesting."
+"cmake`. Each module would then need to manually call this function. It "
+"currently assumes it is in VTK itself."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4772
+msgid "_vtk_module_add_header_tests()"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4931
+msgid "Apply properties to a module. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4933
+msgid ""
+"Apply build properties to a target. Generally only useful to wrapping code "
+"or other modules that cannot use :cmake:command:`vtk_module_add_module` for "
+"some reason."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4936
+msgid ""
+"_vtk_module_apply_properties(<target>\n"
+"  [BASENAME <basename>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4941
+msgid ""
+"If ``BASENAME`` is given, it will be used instead of the target name as the "
+"basis for ``OUTPUT_NAME``. Full modules (as opposed to third party or other "
+"non-module libraries) always use the module's ``LIBRARY_NAME`` setting."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4945
+msgid ""
+"The following target properties are set based on the arguments to the "
+"calling :cmake:command:`vtk_module_build call`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4948
+msgid ""
+"``OUTPUT_NAME`` (based on the module's ``LIBRARY_NAME`` and "
+"``vtk_module_build(LIBRARY_NAME_SUFFIX)``)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4950
+msgid "``VERSION`` (based on ``vtk_module_build(VERSION)``)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4951
+msgid "``SOVERSION`` (based on ``vtk_module_build(SOVERSION)``)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:4952
+msgid ""
+"``DEBUG_POSTFIX`` (on Windows unless already set via ``CMAKE_DEBUG_POSTFIX``)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5036
+msgid "Install a module target. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5038
+msgid ""
+"Install a target within the module context. Generally only useful to "
+"wrapping code, modules that cannot use :cmake:command:"
+"`vtk_module_add_module` for some reason, or modules which create utility "
+"targets that need installed."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5042
+msgid "_vtk_module_install(<target>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5046
+msgid ""
+"This function uses the various installation options to :cmake:command:"
+"`vtk_module_build` function to keep the install uniform."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5117
+msgid "Create a module executable. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5119
+msgid ""
+"Some modules may have associated executables with them. By using this "
+"function, the target will be installed following the options given to the "
+"associated :cmake:command:`vtk_module_build` command. Its name will also be "
+"changed according to the ``LIBRARY_NAME_SUFFIX`` option."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5124
+msgid ""
+"vtk_module_add_executable(<name>\n"
+"  [NO_INSTALL]\n"
+"  [DEVELOPMENT]\n"
+"  [BASENAME <basename>]\n"
+"  <source>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5132
+msgid ""
+"If ``NO_INSTALL`` is specified, the executable will not be installed. If "
+"``BASENAME`` is given, it will be used as the name of the executable rather "
+"than the target name."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5136
+msgid ""
+"If ``DEVELOPMENT`` is given, it marks the executable as a development tool "
+"and will not be installed if ``INSTALL_HEADERS`` is not set for the "
+"associated :cmake:command:`vtk_module_build` command."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5140
+msgid ""
+"If the executable being built is the module, its module properties are used "
+"rather than ``BASENAME``. In addition, the dependencies of the module will "
+"be linked."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5279
+msgid "Find a package. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5281
+msgid ""
+"A wrapper around ``find_package`` that records information for use so that "
+"the same targets may be found when finding this package."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5284
+msgid ""
+"Modules may need to find external dependencies. CMake often provides modules "
+"to find these dependencies, but when imported targets are involved, these."
+"need to also be found from dependencies of the current project. Since the "
+"benefits of imported targets greatly outweighs not using them, it is "
+"preferred to use them."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5289
+msgid ""
+"The module system provides the :cmake:command:`vtk_module_find_package` "
+"function in order to extend ``find_package`` support to include finding the "
+"dependencies from an install of the project."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5293
+msgid ""
+"vtk_module_find_package(\n"
+"  [PRIVATE] [PRIVATE_IF_SHARED] [CONFIG_MODE]\n"
+"  PACKAGE               <package>\n"
+"  [VERSION              <version>]\n"
+"  [COMPONENTS           <component>...]\n"
+"  [OPTIONAL_COMPONENTS  <component>...]\n"
+"  [FORWARD_VERSION_REQ  <MAJOR|MINOR|PATCH|EXACT>]\n"
+"  [VERSION_VAR          <variable>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5304
+msgid "``PACKAGE``: The name of the package to find."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5305
+msgid "``VERSION``: The minimum version of the package that is required."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5306
+msgid "``COMPONENTS``: Components of the package which are required."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5307
+msgid ""
+"``OPTIONAL_COMPONENTS``: Components of the package which may be missing."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5308
+msgid ""
+"``FORWARD_VERSION_REQ``: If provided, the found version will be promoted to "
+"the minimum version required matching the given version scheme."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5310
+msgid ""
+"``VERSION_VAR``: The variable to use as the provided version (defaults to "
+"``<PACKAGE>_VERSION``). It may contain ``@`` in which case it will be "
+"configured. This is useful for modules which only provide components of the "
+"actual version number."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5314
+msgid ""
+"``CONFIG_MODE``: If present, pass ``CONFIG`` to the underlying "
+"``find_package`` call."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5316
+msgid "``PRIVATE``: The dependency should not be exported to the install."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5317
+msgid ""
+"``PRIVATE_IF_SHARED``: The dependency should not be exported to the install "
+"if the module is built as a ``SHARED`` library."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5320
+msgid ""
+"The ``PACKAGE`` argument is the only required argument. The rest are "
+"optional."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5322
+msgid ""
+"Note that ``PRIVATE`` is *only* applicable for private dependencies on "
+"interface targets (basically, header libraries) because some platforms "
+"require private shared libraries dependencies to be present when linking "
+"dependent libraries and executables as well. Such usages should additionally "
+"be used only via a ``$<BUILD_INTERFACE>`` generator expression to avoid "
+"putting the target name into the install tree at all."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5502
+msgid "Export find_package calls for dependencies. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5504
+msgid ""
+"When installing a project that is meant to be found via ``find_package`` "
+"from CMake, using imported targets in the build means that imported targets "
+"need to be created during the ``find_package`` as well. This function writes "
+"a file suitable for inclusion from a ``<package>-config.cmake`` file to "
+"satisfy dependencies. It assumes that the exported targets are named "
+"``${CMAKE_FIND_PACKAGE_NAME}::${component}``. Dependent packages will only "
+"be found if a requested component requires the package to be found either "
+"directly or transitively."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5513
+msgid ""
+"vtk_module_export_find_packages(\n"
+"  CMAKE_DESTINATION <directory>\n"
+"  FILE_NAME         <filename>\n"
+"  [COMPONENT        <component>]\n"
+"  MODULES           <module>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5521
+msgid ""
+"The file will be named according to the ``FILE_NAME`` argument will be "
+"installed into ``CMAKE_DESTINATION`` in the build and install trees with the "
+"given filename. If not provided, the ``development`` component will be used."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5525
+msgid ""
+"The ``vtk_module_find_package`` calls made by the modules listed in "
+"``MODULES`` will be exported to this file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5840
+msgid "Third party support"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5843
+msgid ""
+"The module system acknowledges that third party support is a pain and offers "
+"APIs to help wrangle them. Sometimes third party code needs a shim "
+"introduced to make it behave better, so an ``INTERFACE`` library to add that "
+"in is very useful. Other times, third party code is hard to ensure that it "
+"exists everywhere, so it is bundled. When that happens, the ability to "
+"select between the bundled copy and an external copy is useful. All three "
+"(and more) of these are possible."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5851
+msgid "The following functions are used to handle third party modules:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5853
+msgid ":cmake:command:`vtk_module_third_party`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5854
+msgid ":cmake:command:`vtk_module_third_party_external`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5855
+msgid ":cmake:command:`vtk_module_third_party_internal`"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5861
+msgid "Third party module.|module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5863
+msgid ""
+"When a project has modules which represent third party packages, there are "
+"some convenience functions to help deal with them. First, there is the meta-"
+"wrapper:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5866
+msgid ""
+"vtk_module_third_party(\n"
+"  [INTERNAL <internal arguments>...]\n"
+"  [EXTERNAL <external arguments>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5872
+msgid ""
+"This offers a cache variable named ``VTK_MODULE_USE_EXTERNAL_<module name>`` "
+"that may be set to trigger between the internal copy and an externally "
+"provided copy. This is available as a local variable named "
+"``VTK_MODULE_USE_EXTERNAL_<library name>``. See the :cmake:command:"
+"`vtk_module_third_party_external` and :cmake:"
+"command`vtk_module_third_party_internal` functions for the arguments "
+"supported by the ``EXTERNAL`` and ``INTERNAL`` arguments, respectively."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5921
+msgid "Mark a module as being third party. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5923
+msgid "Mark a module as being a third party module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5925
+msgid "_vtk_module_mark_third_party(<target>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5942
+msgid "External third party package. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5944
+msgid ""
+"A third party dependency may be expressed as a module using this function. "
+"Third party packages are found using CMake's ``find_package`` function. It "
+"is highly recommended that imported targets are used to make usage easier. "
+"The module itself will be created as an ``INTERFACE`` library which exposes "
+"the package."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5950
+msgid ""
+"vtk_module_third_party_external(\n"
+"  PACKAGE               <package>\n"
+"  [VERSION              <version>]\n"
+"  [COMPONENTS           <component>...]\n"
+"  [OPTIONAL_COMPONENTS  <component>...]\n"
+"  [TARGETS              <target>...]\n"
+"  [INCLUDE_DIRS <path-or-variable>...]\n"
+"  [LIBRARIES    <target-or-variable>...]\n"
+"  [DEFINITIONS  <variable>...]\n"
+"  [FORWARD_VERSION_REQ  <MAJOR|MINOR|PATCH|EXACT>]\n"
+"  [VERSION_VAR          <version-spec>]\n"
+"  [USE_VARIABLES        <variable>...]\n"
+"  [CONFIG_MODE]\n"
+"  [STANDARD_INCLUDE_DIRS])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5967
+msgid ""
+"Only the ``PACKAGE`` argument is required. The arguments are as follows:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5969
+msgid "``PACKAGE``: (Required) The name of the package to find."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5970
+msgid ""
+"``VERSION``: If specified, the minimum version of the dependency that must "
+"be found."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5972
+msgid "``COMPONENTS``: The list of components to request from the package."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5973
+msgid ""
+"``OPTIONAL_COMPONENTS``: The list of optional components to request from the "
+"package."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5975
+msgid ""
+"``TARGETS``: The list of targets to search for when using this package. "
+"Targets which do not exist will be ignored to support different versions of "
+"a package using different target names."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5978
+msgid ""
+"``STANDARD_INCLUDE_DIRS``: If present, standard include directories will be "
+"added to the module target. This is usually only required if both internal "
+"and external are supported for a given dependency."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5981
+msgid ""
+"``INCLUDE_DIRS``: If specified, this is added as a ``SYSTEM INTERFACE`` "
+"include directory for the target. If a variable name is given, it will be "
+"dereferenced."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5984
+msgid ""
+"``LIBRARIES``: The libraries to link from the package. If a variable name is "
+"given, it will be dereferenced, however a warning that imported targets are "
+"not being used will be emitted."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5987
+msgid ""
+"``DEFINITIONS``: If specified, the given variables will be added to the "
+"target compile definitions interface."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5989
+msgid "``CONFIG_MODE``: Force ``CONFIG`` mode."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5990
+msgid ""
+"``FORWARD_VERSION_REQ`` and ``VERSION_VAR``: See documentation for :cmake:"
+"command:`vtk_module_find_package`."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:5992
+msgid ""
+"``USE_VARIABLES``: List of variables from the ``find_package`` to make "
+"available to the caller."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6214
+msgid "Internal third party package. |module|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6216
+msgid ""
+"Third party modules may also be bundled with the project itself. In this "
+"case, it is an internal third party dependency. The dependency is assumed to "
+"be in a subdirectory that will be used via ``add_subdirectory``. Unless it "
+"is marked as ``HEADERS_ONLY``, it is assumed that it will create a target "
+"with the name of the module."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6222
+msgid ""
+"SPDX generation requires that ``SPDX_LICENSE_IDENTIFIER`` and "
+"``SPDX_COPYRIGHT_TEXT`` are specified."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6225
+msgid ""
+"vtk_module_third_party_internal(\n"
+"  [SUBDIRECTORY   <path>]\n"
+"  [HEADERS_SUBDIR <subdir>]\n"
+"  [LICENSE_FILES  <file>...]\n"
+"  [VERSION        <version>]\n"
+"  [HEADER_ONLY]\n"
+"  [INTERFACE]\n"
+"  [STANDARD_INCLUDE_DIRS])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6236
+msgid ""
+"All arguments are optional, however warnings are emitted if "
+"``LICENSE_FILES``, ``VERSION``, ``SPDX_LICENSE_IDENTIFIER`` or "
+"``SPDX_COPYRIGHT_TEXT`` are not specified."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6239
+msgid "They are as follows:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6241
+msgid ""
+"``SUBDIRECTORY``: (Defaults to the library name of the module) The "
+"subdirectory containing the ``CMakeLists.txt`` for the dependency."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6243
+msgid ""
+"``HEADERS_SUBDIR``: If non-empty, the subdirectory to use for installing "
+"headers."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6245
+msgid ""
+"``LICENSE_FILES``: A list of license files to install for the dependency. If "
+"not given, a warning will be emitted."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6247
+msgid ""
+"``SPDX_LICENSE_IDENTIFIER``: A license identifier for SPDX file generation"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6248
+msgid ""
+"``SPDX_DOWNLOAD_LOCATION``: A download location for SPDX file generation"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6249
+msgid "``SPDX_COPYRIGHT_TEXT``: A copyright text for SPDX file generation"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6252
+msgid "``VERSION``: The version of the library that is included."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6253
+msgid ""
+"``HEADER_ONLY``: The dependency is header only and will not create a target."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6254
+msgid "``INTERFACE``: The dependency is an ``INTERFACE`` library."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6255
+msgid ""
+"``STANDARD_INCLUDE_DIRS``: If present, module-standard include directories "
+"will be added to the module target."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6393
+msgid "SPDX file generation at build time. |module-internal|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6396
+msgid ""
+"Modules can specify a copyright and a license identifier as well as other "
+"information to generate a SPDX file in order to provide a Software Bill Of "
+"Materials (SBOM). Inputs files can be parsed for SPDX copyrights and license "
+"identifier to add to the SPDX file as well."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6401
+msgid ""
+"_vtk_module_generate_spd(\n"
+"  [MODULE_NAME <name>]\n"
+"  [TARGET      <target>]\n"
+"  [OUTPUT      <file>]\n"
+"  [SKIP_REGEX  <regex>]\n"
+"  [INPUT_FILES <file>...]"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6410
+msgid "All arguments are required except for ``INPUT_FILES``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6412
+msgid ""
+"``MODULE_NAME``: The name of the module that will be used as package name in "
+"the SPDX file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6414
+msgid ""
+"``TARGET``: A CMake target for the generation of the SPDX file at build time"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6415
+msgid "``OUTPUT``: Path to the SPDX file to generate"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6416
+msgid ""
+"``SKIP_REGEX``: A python regex to exclude certain source files from SPDX "
+"parsing"
+msgstr ""
+
+#: ../../../../../CMake/vtkModule.cmake:6417
+msgid ""
+"``INPUT_FILES``: A list of input files to parse for SPDX copyrights and "
+"license identifiers, some files are automatically excluded from parsing."
+msgstr ""

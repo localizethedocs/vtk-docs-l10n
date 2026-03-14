@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:1
+msgid "{py:mod}`vtkmodules.util.vtkMethodParser`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:7
+msgid ""
+"This python module provides functionality to parse the methods of a VTK "
+"object."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:10
+msgid "Created by Prabhu Ramachandran.  Committed in Apr, 2002."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:18
+msgid ""
+"{py:obj}`VtkDirMethodParser <vtkmodules.util.vtkMethodParser."
+"VtkDirMethodParser>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:76
+msgid "Parses the methods from dir(vtk_obj)."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:22
+msgid ""
+"{py:obj}`VtkPrintMethodParser <vtkmodules.util.vtkMethodParser."
+"VtkPrintMethodParser>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:164
+msgid ""
+"This class finds the methods for a given vtkObject.  It uses the output from "
+"vtkObject->Print() (or in Python str(vtkObject)) and output from the "
+"VtkDirMethodParser to obtain the methods."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:28
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:34
+msgid "{py:obj}`debug <vtkmodules.util.vtkMethodParser.debug>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:40
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:46
+msgid "{py:obj}`DEBUG <vtkmodules.util.vtkMethodParser.DEBUG>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:52
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.md:58
+msgid "0"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:171
+msgid "Parse for the methods."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkMethodParser.py:187
+msgid "Do the basic parsing and setting up"
+msgstr ""

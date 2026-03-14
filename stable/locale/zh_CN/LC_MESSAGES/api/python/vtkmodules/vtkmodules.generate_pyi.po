@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:1
+msgid "{py:mod}`vtkmodules.generate_pyi`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:7
+msgid ""
+"This program will generate .pyi files for all the VTK modules in the "
+"\"vtkmodules\" package (or whichever package you specify). These files are "
+"used for type checking and autocompletion in some Python IDEs."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:12
+msgid ""
+"The VTK modules must be in Python's path when you run this script. Options "
+"are as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:15
+msgid ""
+"-p PACKAGE    The package to generate .pyi files for [vtkmodules]  -o "
+"OUTPUT     The output directory [default is the package directory]  -e "
+"EXT        The file suffix [.pyi]  -i IMPORTER   The static module importer "
+"(for static builds only)  -h HELP"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:21
+msgid ""
+"With no arguments, the script runs with the defaults (the .pyi files are put "
+"inside the existing vtkmodules package).  This is equivalent to the "
+"following:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:25
+msgid "python -m vtkmodules.generate_pyi -p vtkmodules\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:27
+msgid "To put the pyi files somewhere else, perhaps with a different suffix:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:29
+msgid "python -m vtkmodules.generate_pyi -o /path/to/vtkmodules -e .pyi\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:31
+msgid "To generate pyi files for just one or two modules:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:33
+msgid ""
+"python -m vtkmodules.generate_pyi -p vtkmodules vtkCommonCore "
+"vtkCommonDataModel\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:35
+msgid "To generate pyi files for your own modules in your own package:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:37
+msgid ""
+"python -m vtkmodules.generate_pyi -p mypackage mymodule [mymodule2 ...]\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:18
+msgid "{py:obj}`Graph <vtkmodules.generate_pyi.Graph>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:260
+msgid "A graph for topological sorting."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:22
+msgid "{py:obj}`Node <vtkmodules.generate_pyi.Node>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:290
+msgid "A node for the graph."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:28
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:34
+msgid "{py:obj}`isvtkmethod <vtkmodules.generate_pyi.isvtkmethod>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:224
+msgid "Check for VTK's custom method descriptor"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:38
+msgid "{py:obj}`isnamespace <vtkmodules.generate_pyi.isnamespace>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:231
+msgid "Check for namespaces within a module"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:42
+msgid "{py:obj}`isenum <vtkmodules.generate_pyi.isenum>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:238
+msgid "Check for enums (currently derived from int)"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:46
+msgid "{py:obj}`typename <vtkmodules.generate_pyi.typename>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:245
+msgid "Generate a typename that can be used for annotation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:50
+msgid "{py:obj}`typename_forward <vtkmodules.generate_pyi.typename_forward>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:252
+msgid "Generate a typename, or if necessary, a forward reference."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:54
+msgid "{py:obj}`build_graph <vtkmodules.generate_pyi.build_graph>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:303
+msgid "Build a graph from a module's dictionary."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:58
+msgid ""
+"{py:obj}`sorted_graph_helper <vtkmodules.generate_pyi.sorted_graph_helper>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:310
+msgid "Helper for topological sorting."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:62
+msgid "{py:obj}`sorted_graph <vtkmodules.generate_pyi.sorted_graph>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:317
+msgid "Sort a graph and return the sorted items."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:66
+msgid ""
+"{py:obj}`topologically_sorted_items <vtkmodules.generate_pyi."
+"topologically_sorted_items>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:324
+msgid "Return the items from a module's dictionary, topologically sorted."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:70
+msgid "{py:obj}`parse_error <vtkmodules.generate_pyi.parse_error>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:381
+msgid "Print a parse error, syntax or otherwise."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:74
+msgid "{py:obj}`annotation_text <vtkmodules.generate_pyi.annotation_text>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:388
+msgid "Return the new text to be used for an annotation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:78
+msgid "{py:obj}`fix_annotations <vtkmodules.generate_pyi.fix_annotations>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:395
+msgid ""
+"Fix the annotations in a method definition. The signature must be a single-"
+"line function def, no decorators."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:82
+msgid "{py:obj}`push_signature <vtkmodules.generate_pyi.push_signature>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:84
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:402
+msgid "Process a method signature and add it to the list."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:86
+msgid "{py:obj}`get_signatures <vtkmodules.generate_pyi.get_signatures>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:409
+msgid "Return a list of method signatures found in the docstring."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:90
+msgid "{py:obj}`get_constructors <vtkmodules.generate_pyi.get_constructors>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:92
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:416
+msgid "Get constructors from the class documentation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:94
+msgid "{py:obj}`handle_static <vtkmodules.generate_pyi.handle_static>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:423
+msgid "If method has no \"self\", add @static decorator."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:98
+msgid "{py:obj}`add_indent <vtkmodules.generate_pyi.add_indent>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:430
+msgid "Add the given indent before every line in the string."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:102
+msgid "{py:obj}`namespace_pyi <vtkmodules.generate_pyi.namespace_pyi>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:437
+msgid "Fake a namespace by creating a dummy class."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:106
+msgid "{py:obj}`class_pyi <vtkmodules.generate_pyi.class_pyi>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:108
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:444
+msgid "Generate all the method stubs for a class."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:110
+msgid "{py:obj}`module_pyi <vtkmodules.generate_pyi.module_pyi>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:112
+#: ../../../../../Wrapping/Python/vtkmodules/generate_pyi.py:451
+msgid "Generate the contents of a .pyi file for a VTK module."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:114
+msgid "{py:obj}`main <vtkmodules.generate_pyi.main>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:120
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:126
+msgid "{py:obj}`types <vtkmodules.generate_pyi.types>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:130
+msgid "{py:obj}`ismethod <vtkmodules.generate_pyi.ismethod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:134
+msgid "{py:obj}`isclass <vtkmodules.generate_pyi.isclass>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:138
+msgid "{py:obj}`vtkmethod <vtkmodules.generate_pyi.vtkmethod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:142
+msgid "{py:obj}`template <vtkmodules.generate_pyi.template>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:146
+msgid "{py:obj}`string <vtkmodules.generate_pyi.string>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:150
+msgid "{py:obj}`identifier <vtkmodules.generate_pyi.identifier>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:154
+msgid "{py:obj}`indent <vtkmodules.generate_pyi.indent>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:158
+msgid "{py:obj}`has_self <vtkmodules.generate_pyi.has_self>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:162
+msgid "{py:obj}`keychar <vtkmodules.generate_pyi.keychar>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:168
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:174
+msgid "'set(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:184
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:194
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:204
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:214
+msgid "'type(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:262
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:292
+msgid "Initialization"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:331
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:341
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:351
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:361
+#: ../../../api/python/vtkmodules/vtkmodules.generate_pyi.md:371
+msgid "'compile(...)'"
+msgstr ""

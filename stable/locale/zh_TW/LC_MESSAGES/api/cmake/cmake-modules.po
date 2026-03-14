@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/cmake/cmake-modules.rst:4
+msgid "CMake"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:6
+msgid ""
+"For a thorough description of the module system see the :doc:`ModuleSystem` "
+"section."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:8
+msgid "The CMake API can be separated into several categories:"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:12
+msgid "**Module APIs** |module|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:14
+msgid ""
+"This category includes functions to find and build VTK modules. A module is "
+"a set of related functionality. These are then compiled together into "
+"libraries at the \"kit\" level. Each module may be enabled or disabled "
+"individually and its dependencies will be built as needed."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:19
+msgid ""
+"All functions strictly check their arguments. Any unrecognized or invalid "
+"values for a function cause errors to be raised."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:24
+msgid "**Internal APIs** |module-internal|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:26
+msgid ""
+"The VTK module system provides some API functions for use by other code "
+"which consumes VTK modules (primarily language wrappers). This file "
+"documents these APIs. They may start with `_vtk_module`, but they are "
+"intended for use in cases of language wrappers or dealing with trickier "
+"third party packages."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:33
+msgid "**Implementation APIs** |module-impl|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:35
+msgid ""
+"These functions are purely internal implementation details. No guarantees "
+"are made for them and they may change at any time (including wrapping code "
+"calls). Note that these functions are usually very lax in their argument "
+"parsing."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:41
+msgid "**Python Wrapping APIs** |module-wrapping-python|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:43
+msgid "APIs for wrapping modules for Python."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:47
+msgid "**Java Wrapping APIs** |module-wrapping-java|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:49
+msgid "APIs for wrapping modules for Java."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:53
+msgid "**JavaScript Wrapping APIs** |module-wrapping-javascript|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:55
+msgid "APIs for wrapping modules for JavaScript."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:59
+msgid "**Serialization APIs** |module-serialization|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:61
+msgid "APIs for generation (de)serialization code for modules."
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:65
+msgid "**Support APIs**  |module-support|"
+msgstr ""
+
+#: ../../../api/cmake/cmake-modules.rst:67
+msgid "Miscellaneous utilities."
+msgstr ""

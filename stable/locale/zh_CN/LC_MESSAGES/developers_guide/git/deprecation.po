@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/deprecation.md:1
+msgid "Deprecation Process"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:4
+msgid ""
+"This page documents how to deprecate an API and mark it as no longer "
+"necessary for downstream consumers of VTK."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:7
+msgid "Deprecating classes and functions"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:10
+msgid ""
+"Classes, functions, member functions and member variables may be deprecated "
+"using the deprecation macros."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:12
+msgid ""
+"#include \"vtkDeprecation.h\" // Include the macros.\n"
+"\n"
+"// A deprecated class.\n"
+"class VTK_DEPRECATED_IN_X_Y_Z(\"reason for deprecation\") OPT_EXPORT_MACRO "
+"oldClass {\n"
+"public:\n"
+"  // A deprecated member function.\n"
+"  VTK_DEPRECATED_IN_X_Y_Z(\"reason for deprecation\")\n"
+"  void oldMemberFunction();\n"
+"};\n"
+"\n"
+"// A deprecated function.\n"
+"VTK_DEPRECATED_IN_X_Y_Z(\"reason for deprecation\")\n"
+"void oldFunction();\n"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:28
+msgid ""
+"The `X_Y_Z` should be the newest macro available in the `vtkDeprecation.h` "
+"header when the API is added."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:31
+msgid ""
+"Note that, unlike, the old `VTK_LEGACY_REMOVE` mechanism, the APIs are not "
+"deleted. This does interfere with various kinds of deprecations."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:34
+msgid ""
+"*Changing the return type*: Don't do this. Use a new name for the function."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:36
+msgid ""
+"*Deprecating macros*: Use `VTK_LEGACY_REMOVE`. New macro APIs should be "
+"highly discouraged."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:39
+msgid "Lifetime of deprecated APIs"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:41
+msgid ""
+"Deprecated APIs should exist for at least one release with the deprecation "
+"warning active. This gives consumers of VTK at least one cycle to notice the "
+"deprecation and move off of it."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:45
+msgid ""
+"Upon branching for a release, `master` will soon after have all instances of "
+"deprecated symbols removed."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:48
+msgid "Avoiding warnings within VTK"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:50
+msgid ""
+"VTK is providing the deprecated symbols and as such may still use them in "
+"tests or implementations. Since these generate warnings when compiling VTK "
+"itself, classes which define deprecated symbols must suppress them."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:54
+msgid ""
+"Sources which continue to use the deprecated macros should add a comment to "
+"the top of the source file to hide deprecation warnings in CI."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:57
+msgid ""
+"// Hide VTK_DEPRECATED_IN_X_Y_Z() warnings for this class.\n"
+"#define VTK_DEPRECATION_LEVEL 0\n"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:62
+msgid ""
+"If one already exists, please add another comment to it so that when "
+"deprecated symbols are removed, it shows up in the search."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:65
+msgid "Deprecation policy"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:67
+msgid ""
+"Ideally, any part of the public API of VTK, installed via its public headers "
+"should be deprecated instead of being removed."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:70
+msgid ""
+"When deprecating anything, it is critical to ensure that they keep operating "
+"as expected, if not, it would not be a deprecation but a bug."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:73
+msgid "In that regards, here is the deprecation policy:"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:74
+msgid "public structs/defines/enums/functions: **must** be deprecated"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:75
+msgid ""
+"public member variables: Should not exist but if they do, **must** be "
+"deprecated"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:76
+msgid "public member functions: **must** be deprecated"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:77
+msgid ""
+"public virtual member functions: **must** be deprecated unless in force "
+"majeure case, which must be discussed with the community"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:78
+msgid ""
+"protected members variables: **Can just be removed** and mentioned in "
+"markdown release notes"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:79
+msgid ""
+"protected member functions: **Should be deprecated** but removal and mention "
+"in markdown can be acceptable in hard cases"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:80
+msgid ""
+"protected virtual member functions: **Can be deprecated** but removal and "
+"mention in markdown is also ok"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:82
+msgid "Using `VTK_DEPRECATION_LEVEL`"
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:85
+msgid ""
+"When using VTK, the `VTK_DEPRECATION_LEVEL` macro may be set to a version "
+"number. APIs which have been deprecated after this point will not fire (as "
+"the API is not deprecated as of the level requested). It should be defined "
+"using the `VTK_VERSION_CHECK(major, minor, patch)` macro."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:90
+msgid ""
+"Note that APIs on the verge of deletion (those deprecated in at least one "
+"release) will always raise deprecation warnings."
+msgstr ""
+
+#: ../../../developers_guide/git/deprecation.md:93
+msgid "If not set, its value defaults to the current level of VTK."
+msgstr ""

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/image-testing-framework.md:1
+msgid "Image testing framework in `vtkTesting` has a new opt-in backend"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:3
+msgid "Overview"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:5
+msgid ""
+"The VTK image testing framework has been enhanced to incorporate the "
+"Structural Similarity Index (SSIM) metric on the Lab color space. This "
+"contribution provides an opt-in feature to ensure that projects dependent on "
+"VTK do not encounter broken tests when updating."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:7
+msgid "SSIM Metric"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:9
+msgid "Definition"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:11
+msgid ""
+"The Structural Similarity Index (SSIM) is a metric introduced in the paper "
+"titled \"Image Quality Assessment: From Error Visibility to Structural "
+"Similarity\" by Wang et al. It measures the \"structural correlation\" "
+"between two images, providing a comprehensive evaluation of their similarity."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:13
+msgid "Computation"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:15
+msgid ""
+"In this implementation, SSIM is computed per pixel around a patch in the Lab "
+"color space. The Lab color space is chosen for its perceptual uniformity, "
+"ensuring that differences in color are consistent with human perception."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:17
+msgid ""
+"The SSIM metric produces a value between 0 and 1, where 1 indicates perfect "
+"structural similarity between the images, and 0 indicates no similarity. "
+"Domain of Output"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:20
+msgid ""
+"The output of SSIM metric ranges from 0 to 1, where 1 indicates perfect "
+"similarity, and 0 indicates no similarity."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:22
+msgid "Integration"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:24
+msgid ""
+"Users can enable this feature by defining the CMake variable "
+"`DEFAULT_USE_SSIM_IMAGE_COMP` as true. When turned on, SSIM will be used by "
+"default. Configuration"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:27
+msgid "There are three ways to use the SSIM metric when setting a test:"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:29
+msgid "`TIGHT_VALID` (Default)"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:31
+msgid ""
+"Uses Euclidean metrics (L2 and 2-Wasserstein) on each channel. Computes the "
+"maximum discrepancy (from 0 to 1). Recommended for images sensitive to "
+"outliers. Default threshold is around 0.05."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:36
+msgid "`LOOSE_VALID`"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:38
+msgid ""
+"Uses both Manhattan distance and Earth-mover's distance on each channel. "
+"Less sensitive to outliers. Suitable for images dependent on graphics "
+"drivers or containing text. Default threshold is recommended."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:44
+msgid "`LEGACY_VALID`"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:46
+msgid ""
+"Uses the old metric (not recommended). For compatibility with previous "
+"testing methods."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:49
+#: ../../../release_details/9.4/image-testing-framework.md:66
+msgid "Example:"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:51
+msgid ""
+"vtk_add_test_cxx(myModuleCxxTests tests\n"
+"  Test1.cxx, LOOSE_VALID\n"
+"  Test2.cxx # TIGHT_VALID by default\n"
+"  Test3.cxx, LEGACY_VALID)\n"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:58
+msgid "Manual Configuration"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:60
+msgid ""
+"Tests added without using `vtk_add_test*` functions can still change the "
+"metric using `set_tests_properties`:"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:62
+msgid "Use `set_tests_properties` to set the environment variables."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:64
+msgid ""
+"Set `VTK_TESTING_IMAGE_COMPARE_METHOD` to one of the following values: "
+"`TIGHT_VALID`, `LOOSE_VALID`, or `LEGACY_VALID`."
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:68
+msgid ""
+"set_tests_properties(Test1 PROPERTIES ENVIRONMENT \"VTK_TESTING=1;"
+"VTK_TESTING_IMAGE_COMPARE_METHOD=LOOSE_VALID\")\n"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:72
+msgid "Migration"
+msgstr ""
+
+#: ../../../release_details/9.4/image-testing-framework.md:74
+msgid ""
+"It is advised to migrate to the new SSIM metric within a reasonable time "
+"frame. The new metric is more selective and results in fewer false negatives "
+"compared to the legacy method."
+msgstr ""

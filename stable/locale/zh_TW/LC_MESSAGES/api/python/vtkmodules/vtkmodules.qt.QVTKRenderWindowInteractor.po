@@ -1,0 +1,321 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:1
+msgid "{py:mod}`vtkmodules.qt.QVTKRenderWindowInteractor`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:7
+msgid ""
+"A simple VTK widget for PyQt or PySide. See http://www.trolltech.com for Qt "
+"documentation, http://www.riverbankcomputing.co.uk for PyQt, and http://"
+"pyside.github.io for PySide."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:12
+msgid ""
+"This class is based on the vtkGenericRenderWindowInteractor and is therefore "
+"fairly powerful.  It should also play nicely with the vtk3DWidget code."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:16
+msgid ""
+"Created by Prabhu Ramachandran, May 2002 Based on David Gobbi's "
+"QVTKRenderWidget.py"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:19
+msgid "Changes by Gerard Vermeulen Feb. 2003  Win32 support."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:22
+msgid ""
+"Changes by Gerard Vermeulen, May 2003  Bug fixes and better integration with "
+"the Qt framework."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:25
+msgid ""
+"Changes by Phil Thompson, Nov. 2006  Ported to PyQt v4.  Added support for "
+"wheel events."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:29
+msgid "Changes by Phil Thompson, Oct. 2007  Bug fixes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:32
+msgid "Changes by Phil Thompson, Mar. 2008  Added cursor support."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:35
+msgid ""
+"Changes by Rodrigo Mologni, Sep. 2013 (Credit to Daniele Esposti)  Bug fix "
+"to PySide: Converts PyCObject to void pointer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:38
+msgid ""
+"Changes by Greg Schussman, Aug. 2014  The keyPressEvent function now passes "
+"keysym instead of None."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:41
+msgid "Changes by Alex Tsui, Apr. 2015  Port from PyQt4 to PyQt5."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:44
+msgid "Changes by Fabian Wenzel, Jan. 2016  Support for Python3"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:47
+msgid "Changes by Tobias Hänel, Sep. 2018  Support for PySide2"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:50
+msgid ""
+"Changes by Ruben de Bruin, Aug. 2019  Fixes to the keyPressEvent function"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:53
+msgid "Changes by Chen Jintao, Aug. 2021  Support for PySide6"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:56
+msgid ""
+"Changes by Eric Larson and Guillaume Favelier, Apr. 2022  Support for PyQt6"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:18
+msgid ""
+"{py:obj}`QVTKRenderWindowInteractor <vtkmodules.qt."
+"QVTKRenderWindowInteractor.QVTKRenderWindowInteractor>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:86
+msgid ""
+"A QVTKRenderWindowInteractor for Python and Qt.  Uses a "
+"vtkGenericRenderWindowInteractor to handle the interactions.  Use "
+"GetRenderWindow() to get the vtkRenderWindow.  Create with the keyword "
+"stereo=1 in order to generate a stereo-capable window."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:30
+msgid ""
+"{py:obj}`_get_event_pos <vtkmodules.qt.QVTKRenderWindowInteractor."
+"_get_event_pos>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:34
+msgid ""
+"{py:obj}`QVTKRenderWidgetConeExample <vtkmodules.qt."
+"QVTKRenderWindowInteractor.QVTKRenderWidgetConeExample>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:326
+msgid "A simple example that uses the QVTKRenderWindowInteractor class."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:40
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:46
+msgid ""
+"{py:obj}`QVTKRWIBase <vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBase>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:50
+msgid ""
+"{py:obj}`_keysyms_for_ascii <vtkmodules.qt.QVTKRenderWindowInteractor."
+"_keysyms_for_ascii>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:54
+msgid "{py:obj}`_keysyms <vtkmodules.qt.QVTKRenderWindowInteractor._keysyms>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:60
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:66
+msgid "'QWidget'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:83
+msgid ""
+"Bases: {py:obj}`vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBaseClass`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:91
+msgid "The user interface is summarized in vtkInteractorStyle.h:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:93
+msgid ""
+"Keypress j / Keypress t: toggle between joystick (position sensitive) and "
+"trackball (motion sensitive) styles. In joystick style, motion occurs "
+"continuously as long as a mouse button is pressed. In trackball style, "
+"motion occurs when the mouse button is pressed and the mouse pointer moves."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:99
+msgid ""
+"Keypress c / Keypress o: toggle between camera and object (actor) modes. In "
+"camera mode, mouse events affect the camera position and focal point. In "
+"object mode, mouse events affect the actor that is under the mouse pointer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:104
+msgid ""
+"Button 1: rotate the camera around its focal point (if camera mode) or "
+"rotate the actor around its origin (if actor mode). The rotation is in the "
+"direction defined from the center of the renderer's viewport towards the "
+"mouse position. In joystick mode, the magnitude of the rotation is "
+"determined by the distance the mouse is from the center of the render window."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:111
+msgid ""
+"Button 2: pan the camera (if camera mode) or translate the actor (if object "
+"mode). In joystick mode, the direction of pan or translation is from the "
+"center of the viewport towards the mouse position. In trackball mode, the "
+"direction of motion is the direction the mouse moves. (Note: with 2-button "
+"mice, pan is defined as <Shift>-Button 1.)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:111
+msgid "<Shift>"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:118
+msgid ""
+"Button 3: zoom the camera (if camera mode) or scale the actor (if object "
+"mode). Zoom in/increase scale if the mouse position is in the top half of "
+"the viewport; zoom out/decrease scale if the mouse position is in the bottom "
+"half. In joystick mode, the amount of zoom is controlled by the distance of "
+"the mouse pointer from the horizontal centerline of the window."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:125
+msgid ""
+"Keypress 3: toggle the render window into and out of stereo mode.  By "
+"default, red-blue stereo pairs are created. Some systems support Crystal "
+"Eyes LCD stereo glasses; you have to invoke SetStereoTypeToCrystalEyes() on "
+"the rendering window.  Note: to use stereo you also need to pass a stereo=1 "
+"keyword argument to the constructor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:132
+msgid "Keypress e: exit the application."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:134
+msgid "Keypress f: fly to the picked point"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:136
+msgid ""
+"Keypress p: perform a pick operation. The render window interactor has an "
+"internal instance of vtkCellPicker that it uses to pick."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:139
+msgid ""
+"Keypress r: reset the camera view along the current view direction. Centers "
+"the actors and moves the camera so that all actors are visible."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:143
+msgid ""
+"Keypress s: modify the representation of all actors so that they are "
+"surfaces."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:146
+msgid ""
+"Keypress u: invoke the user-defined function. Typically, this keypress will "
+"bring up an interactor that you can type commands in."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:149
+msgid ""
+"Keypress w: modify the representation of all actors so that they are "
+"wireframe."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:88
+msgid "Initialization"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:98
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:343
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:109
+msgid "Makes the object behave like a vtkGenericRenderWindowInteractor"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:117
+msgid "Call internal cleanup method on VTK objects"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:149
+msgid "Called when the CursorChangedEvent fires on the render window."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:157
+msgid "Hides the cursor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:165
+msgid "Shows the cursor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:213
+msgid "Convert a Qt key into a char and a vtk keysym."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/qt/QVTKRenderWindowInteractor.py:215
+msgid ""
+"This is essentially copied from the c++ implementation in GUISupport/Qt/"
+"QVTKInteractorAdapter.cxx."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.md:333
+msgid ""
+"(None, None, None, None, None, None, None, None, None, 'Tab', None, None, "
+"None, None, None, None, No..."
+msgstr ""
