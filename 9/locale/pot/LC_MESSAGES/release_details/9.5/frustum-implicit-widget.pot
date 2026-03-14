@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:1
+msgid "Introduce New vtkFrustum Implicit Function and Widget"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:3
+msgid "Introduce implicit Frustum"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:5
+msgid ""
+"The new `vtkFrustum` implicit function represents a frustum resembling a "
+"pyramid with a clipped top. You can shape it by using the setters for its "
+"vertical/horizontal angles, i.e. the angles between its forward axis and its "
+"top and bottom, or right and left planes respectively. The distance between "
+"the near plane and the frustum's origin can also be set. As for all "
+"`vtkImplicitFunction`s, you can manipulate its position/orientation/scale by "
+"setting a transform."
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:7
+msgid "Add a new Implicit Frustum Widget"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:9
+msgid ""
+"The new `vtkFrustum` has a widget representation. The representation can be "
+"manipulated through widget controls:"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:10
+msgid "Rotate through the orientation handles"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:11
+msgid "Translate through the origin or near plane center handles"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:12
+msgid ""
+"Adjust vertical/horizontal angles through the \"far plane\" edges handles"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:13
+msgid "Adjust near plane distance through the near plane edges handle."
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:15
+msgid ""
+"![Screenshot of the Frustum widget in a VTK view](../imgs/9.5/implicit-"
+"frustum-widget.png)"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:15
+#: ../../../release_details/9.5/frustum-implicit-widget.md:17
+msgid "Screenshot of the Frustum widget in a VTK view"
+msgstr ""
+
+#: ../../../release_details/9.5/frustum-implicit-widget.md:19
+msgid ""
+"Its underlying frustum can be used in any filter relying on implicit "
+"functions (i.e. Clip, Slice)."
+msgstr ""

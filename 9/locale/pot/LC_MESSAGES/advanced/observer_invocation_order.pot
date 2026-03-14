@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/observer_invocation_order.md:1
+msgid "vtkObject Observers"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:3
+msgid ""
+"Every `vtkObject` maintains a **priority-ordered** list of *observers* "
+"(callbacks) that may be invoked by `vtkObject::InvokeEvent`. In practice, "
+"this means:"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:6
+msgid "**Priority:** Higher numeric priority runs first (default is `0`)."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:7
+msgid ""
+"**Stable order at equal priority:** Observers with the same priority "
+"generally run in **insertion order**."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:8
+msgid "**Legacy exceptions:**"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:9
+msgid ""
+"When a **new lowest priority** observer is added, that observer is **pinned "
+"to the end** of the list."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:10
+msgid ""
+"An observer may **grab focus**; if it handles an event, remaining observers "
+"are **not** invoked."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:12
+msgid ""
+"If an application requires two observers to execute in a particular relative "
+"order, then the application ***MUST*** add those observers with appropriate "
+"priorities. The behavior described here is maintained for legacy "
+"compatibility reasons only, and may be modified in the future."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:16
+msgid "Example Ordering"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:18
+msgid ""
+"For example, adding four observers with default priority results in "
+"invocation order:"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:20
+msgid ""
+"AddObserver(priority=0)  # tag = 1\n"
+"AddObserver(priority=0)  # tag = 2\n"
+"AddObserver(priority=0)  # tag = 3\n"
+"AddObserver(priority=0)  # tag = 4\n"
+"\n"
+"InvokeEvent()  # order 2 3 4 1\n"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:29
+msgid ""
+"Higher priorities are not pinned (they run first in insertion order). Lower "
+"priorities trigger the pin-at-end behavior."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:31
+msgid ""
+"AddObserver(priority=+1)  # tag = 5\n"
+"AddObserver(priority=+1)  # tag = 6\n"
+"\n"
+"AddObserver(priority=-1)  # tag = 7\n"
+"AddObserver(priority=-1)  # tag = 8\n"
+"\n"
+"InvokeEvent()  # order 5 6 / 2 3 4 1 / 8 7\n"
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:41
+msgid ""
+"Since observer `tag = 1` is no longer at the end, its pin is \"released\" "
+"and subsequent default-priority observers are invoked in insertion order."
+msgstr ""
+
+#: ../../../advanced/observer_invocation_order.md:44
+msgid ""
+"AddObserver(priority=0)  # tag = 9\n"
+"\n"
+"InvokeEvent()  # order 5 6 / 2 3 4 1 9 / 8 7\n"
+msgstr ""

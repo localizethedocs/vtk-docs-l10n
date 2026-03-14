@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../design_documents/IOXMLTimeInFieldData.md:1
+msgid "Field Data as Time Meta-Data in VTK XML File Formats"
+msgstr ""
+
+#: ../../../design_documents/IOXMLTimeInFieldData.md:3
+msgid ""
+"As of VTK 8.2, VTK XML readers and writers support embedding time meta-data "
+"as a field array. This is demonstrated best with an example:"
+msgstr ""
+
+#: ../../../design_documents/IOXMLTimeInFieldData.md:6
+msgid ""
+"<VTKFile type=\"PolyData\" version=\"1.0\" byte_order=\"LittleEndian\" "
+"header_type=\"UInt64\">\n"
+"  <PolyData>\n"
+"    <FieldData>\n"
+"      <DataArray type=\"Float64\" Name=\"TimeValue\" "
+"NumberOfTuples=\"1\">1.24\n"
+"      </DataArray>\n"
+"    </FieldData>\n"
+"    ...\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../design_documents/IOXMLTimeInFieldData.md:17
+msgid ""
+"Here TimeValue is a regular double precision array that has a single value "
+"of 1.24. The XML readers will treat this array in a special way. When they "
+"encounter this array during the meta-data stage (`RequestInformation()`), "
+"they will read the value from this array and generate a "
+"`vtkStreamingDemandDrivenPipeline::TIME_STEPS()` key in the output "
+"information containing this value."
+msgstr ""
+
+#: ../../../design_documents/IOXMLTimeInFieldData.md:23
+msgid ""
+"In addition, the XML writers will generate a field array of name TimeValue "
+"in the output, if they encounter time value in their input (`vtkDataObject::"
+"DATA_TIME_STEP()`). This is done even if the data does not have a TimeValue "
+"array. Furthermore, even such an array exists, it will be replaced with one "
+"that contains the value from `vtkDataObject::DATA_TIME_STEP()` to make sure "
+"that the value is consistent with the pipeline value."
+msgstr ""
+
+#: ../../../design_documents/IOXMLTimeInFieldData.md:30
+msgid ""
+"This change may appear pointless on its own as a single time value is not "
+"very useful. Its main use is when reading file series as it is done by "
+"ParaView's file (time) series readers."
+msgstr ""

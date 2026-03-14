@@ -1,0 +1,418 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../getting_started/using_cpp.md:1
+msgid "Using C++ and CMake"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:3
+msgid ""
+"CMake is an open-source platform-independent build system that manages the "
+"entire software build process, from source code to executable binary. If "
+"you're new to CMake, you can find more information on the [CMake website]"
+"(https://cmake.org)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:7
+msgid "**Installing a binary release**"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:9
+msgid ""
+"Pre-built VTK releases maintained by the community exist for a number of "
+"distributions, as shown in the following table:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Operating System/ Package manager"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Package Name"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Version"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Fedora Rawhide"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "vtk-devel"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Fedora rawhide package](https://img.shields.io/fedora/v/vtk-devel)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:15
+msgid "Fedora rawhide package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Fedora 38"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Fedora 38 package](https://img.shields.io/fedora/v/vtk-devel/f38)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:16
+msgid "Fedora 38 package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Fedora 37"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Fedora 37 package](https://img.shields.io/fedora/v/vtk-devel/f37)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:17
+msgid "Fedora 37 package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Ubuntu 23.04 (lunar)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "libvtk9-dev"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Ubuntu lunar package](https://img.shields.io/ubuntu/v/vtk9/lunar)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:18
+msgid "Ubuntu lunar package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Ubuntu 22.10 (kinetic)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Ubuntu kinetic package](https://img.shields.io/ubuntu/v/vtk9/kinetic)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:19
+msgid "Ubuntu kinetic package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Ubuntu 22.04 (jammy)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Ubuntu jammy package](https://img.shields.io/ubuntu/v/vtk9/jammy)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:20
+msgid "Ubuntu jammy package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Ubuntu 20.04 (focal)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "libvtk7-dev"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Ubuntu focal package](https://img.shields.io/ubuntu/v/vtk7/focal)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:21
+msgid "Ubuntu focal package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Debian unstable"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "libvtk9-devel"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Debian unstable package](https://img.shields.io/debian/v/libvtk9-dev)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:22
+msgid "Debian unstable package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Debian testing"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid ""
+"![Debian testing package](https://img.shields.io/debian/v/libvtk9-dev/"
+"testing)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:23
+msgid "Debian testing package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Debian stable"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid ""
+"![Debian stable package](https://img.shields.io/debian/v/libvtk9-dev/stable)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:24
+msgid "Debian stable package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "Gentoo"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "vtk"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid ""
+"[![Gentoo package](https://repology.org/badge/version-for-repo/gentoo/vtk."
+"svg)](https://repology.org/project/vtk/versions)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:25
+msgid "Gentoo package"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "homebrew"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![homebrew version](https://img.shields.io/homebrew/v/vtk)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:26
+msgid "homebrew version"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "vckpg"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Vcpkg](https://img.shields.io/vcpkg/v/vtk)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:27
+msgid "Vcpkg"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "spack"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:0
+msgid "![Spack](https://img.shields.io/spack/v/vtk)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:28
+msgid "Spack"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:31
+msgid ""
+"Note that these packages may be lacking some optional features such as mpi, "
+"qt etc. or, they may not contain the latest VTK features.  Check the "
+"documentation of each package to verify that the build contains what you "
+"need.  If what you need is missing you will need to [build vtk from scratch]"
+"(../build_instructions/index.md)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:36
+msgid "**Building an executable**"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:38
+msgid ""
+"Once VTK is installed using either of the methods above you can use it in "
+"your project utilizing the [find_package](https://cmake.org/cmake/help/"
+"latest/command/find_package.html) infrastructure of cmake:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:43
+msgid ""
+"find_package(VTK\n"
+"  COMPONENTS\n"
+"  .. list of vtk modules to link to\n"
+")\n"
+"\n"
+"# your executable\n"
+"add_executable(testExample ...)\n"
+"\n"
+"# link to required VTK libraries\n"
+"target_link_libraries(testExample\n"
+"  PRIVATE\n"
+"   ${VTK_LIBRARIES}\n"
+")\n"
+"\n"
+"vtk_module_autoinit(\n"
+"  TARGETS testExample\n"
+"  MODULES ${VTK_LIBRARIES}\n"
+")\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:64
+msgid ""
+"{cmake:command}`vtk_module_autoinit` is responsible for triggering static "
+"code construction required for some VTK classes. For more details regarding "
+"the autoinit system of VTK see [here](../api/cmake/ModuleSystem.md#autoinit)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:67
+msgid ""
+"The list of required vtk modules depends on the files `#include`d in your "
+"code. The module a header file belongs to is determined in most cases by its "
+"location in the VTK source tree. For, example `vtkXMLPolyDataReader` is "
+"located under `IO/XML` so it belongs to the `IOXML` module, to verify check "
+"the accompanying [`vtk.module`](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/IO/XML/vtk.module) file in the same directory."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:71
+msgid ""
+"The above method works in most cases but it does not express the "
+"dependencies that some module have. A better (and easier) way to find the "
+"required modules is the [VTKModulesForCxx](https://examples.vtk.org/site/"
+"Python/Utilities/VTKModulesForCxx) script."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:74
+msgid ""
+"For example, running the script on the [CylinderExample](https://examples."
+"vtk.org/site/Cxx/GeometricObjects/CylinderExample) we get the following "
+"suggestion:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:77
+msgid ""
+"find_package(VTK\n"
+" COMPONENTS\n"
+"    CommonColor\n"
+"    CommonCore\n"
+"    FiltersSources\n"
+"    RenderingCore\n"
+"    #\n"
+"    # These modules are suggested since they implement an existing module.\n"
+"    # You may need to uncomment one or more of these.\n"
+"    # If vtkRenderWindow is used and you want to use OpenGL,\n"
+"    #   you also need the RenderingOpenGL2 module.\n"
+"    # If vtkRenderWindowInteractor is used,\n"
+"    #    uncomment RenderingUI and possibly InteractionStyle.\n"
+"    # If text rendering is used, uncomment RenderingFreeType\n"
+"    #\n"
+"    # InteractionStyle  # implements VTK::RenderingCore\n"
+"    # RenderingCellGrid # implements VTK::RenderingCore\n"
+"    # RenderingFreeType # implements VTK::RenderingCore\n"
+"    # RenderingOpenGL2  # implements VTK::RenderingCore\n"
+"    # RenderingUI       # implements VTK::RenderingCore\n"
+")\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:101
+msgid ""
+"Based on the suggestions of the script and the template above the relevant "
+"sections of the `CMakeLists.txt` are:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:103
+msgid ""
+"...\n"
+"find_package(VTK COMPONENTS\n"
+"  CommonColor\n"
+"  CommonCore\n"
+"  FiltersSources\n"
+"  InteractionStyle\n"
+"  RenderingContextOpenGL2\n"
+"  RenderingCore\n"
+"  RenderingFreeType\n"
+"  RenderingGL2PSOpenGL2\n"
+"  RenderingOpenGL2\n"
+")\n"
+"\n"
+"add_executable(CylinderExample CylinderExample.cxx)\n"
+"target_link_libraries(CylinderExample PRIVATE ${VTK_LIBRARIES})\n"
+"# vtk_module_autoinit is needed\n"
+"vtk_module_autoinit(\n"
+"  TARGETS CylinderExample\n"
+"  MODULES ${VTK_LIBRARIES}\n"
+")\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:126
+msgid ""
+"The full source of the example can be found [here](https://examples.vtk.org/"
+"site/Cxx/GeometricObjects/CylinderExample/)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:128
+msgid "To build the example:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:130
+msgid ""
+"mkdir build\n"
+"cd build\n"
+"ccmake ../ # or cmake-gui if on Windows\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:135
+msgid ""
+"Hit `C` if using `ccmake` or the configure button if using `cmake-gui`. If "
+"VTK was built from scratch you will need to set `VTK_DIR` to the "
+"installation path. If `ccmake`/`cmake-gui` reports no errors quit `ccmake`/"
+"`cmake-gui` and build the project as follows:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:139
+msgid "cmake --build .\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:142
+msgid "To run the example"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:144
+msgid "./CylinderExample\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:148
+msgid ""
+"For more examples check the [tutorials](https://kitware.github.io/vtk-"
+"examples/site/Cxx/#tutorial), [how to guides](https://kitware.github.io/vtk-"
+"examples/site/CxxHowTo) or [examples](https://kitware.github.io/vtk-examples/"
+"site/Cxx) sections of the vtk examples website."
+msgstr ""

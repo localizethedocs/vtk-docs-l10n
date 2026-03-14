@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python.md:1
+msgid "Python"
+msgstr ""
+
+#: ../../../api/python.md:3
+msgid "Native Python documentation"
+msgstr ""
+
+#: ../../../api/python.md:4
+msgid "Python-style documentation is available for the following packages:"
+msgstr ""
+
+#: ../../../api/python.md:13
+msgid "Doxygen-style documentation"
+msgstr ""
+
+#: ../../../api/python.md:14
+msgid ""
+"VTK is implemented in C++ and it is made available in Python via its Python "
+"Wrappers. Although, the VTK doxygen [documentation](http://vtk.org/doc/"
+"nightly/html) is derived from the C++ API, the corresponding Python API uses "
+"the same classes and methods. There are however some conventions in place "
+"for how wrapping is constructed. To quickly inspect the available methods of "
+"a class you can use the `help` method:"
+msgstr ""
+
+#: ../../../api/python.md:17
+msgid ""
+">> import vtk\n"
+"help(vtk.vtkSphereSource)\n"
+"\n"
+"Help on vtkSphereSource object:\n"
+"\n"
+"class vtkSphereSource(vtkmodules.vtkCommonExecutionModel."
+"vtkPolyDataAlgorithm)\n"
+" |  vtkSphereSource - create a polygonal sphere centered at the origin\n"
+" |\n"
+" |  Superclass: vtkPolyDataAlgorithm\n"
+" |\n"
+" |  vtkSphereSource creates a sphere (represented by polygons) of\n"
+" |  specified radius centered at the origin. The resolution (polygonal\n"
+" |  discretization) in both the latitude (phi) and longitude (theta)\n"
+" |  directions can be specified. It also is possible to create partial\n"
+" |  spheres by specifying maximum phi and theta angles. By default, the\n"
+" |  surface tessellation of the sphere uses triangles; however you can\n"
+" |  set LatLongTessellation to produce a tessellation using\n"
+" |  quadrilaterals.\n"
+" |\n"
+" |  @warning\n"
+" |  Resolution means the number of latitude or longitude lines for a\n"
+" |  complete sphere. If you create partial spheres the number of\n"
+" |  latitude/longitude lines may be off by one.\n"
+" |\n"
+" |  Method resolution order:\n"
+" |      vtkSphereSource\n"
+" |      vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm\n"
+" |      vtkmodules.vtkCommonExecutionModel.vtkAlgorithm\n"
+" |      vtkmodules.vtkCommonCore.vtkObject\n"
+" |      vtkmodules.vtkCommonCore.vtkObjectBase\n"
+" |      builtins.object\n"
+" |\n"
+" |  Methods defined here:\n"
+" |\n"
+" |  GenerateNormalsOff(...)\n"
+" |      GenerateNormalsOff(self) -> None\n"
+" |      C++: virtual void GenerateNormalsOff()\n"
+" |\n"
+" |  GenerateNormalsOn(...)\n"
+" |      GenerateNormalsOn(self) -> None\n"
+" |      C++: virtual void GenerateNormalsOn()\n"
+" |\n"
+" |  GetCenter(...)\n"
+" |      GetCenter(self) -> (float, float, float)\n"
+" |      C++: virtual double *GetCenter()\n"
+"...\n"
+msgstr ""
+
+#: ../../../api/python.md:67
+msgid ""
+"For a more in-depth description of the Python Wrappers see the dedicated "
+"[section](../advanced/PythonWrappers.md)."
+msgstr ""
