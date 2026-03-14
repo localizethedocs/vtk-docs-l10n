@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:1
+msgid "Replace unsafe c from/to string functions"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:3
+msgid ""
+"VTK has been using a set of either unsafe or slow C/C++ functions to convert "
+"numbers to string or vice versa. The exhaustive list of functions is given "
+"below. And all of them have been replaced with safer alternatives/faster "
+"alternatives provided by scnlib, fmt, and fast_float libraries and exposed "
+"though the vtk:: namespace."
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:7
+msgid ""
+"C/C++ has the following functions to convert one/many char or string to a "
+"number."
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:9
+msgid "atof, atoi, atol, atoll,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:10
+msgid ""
+"std::stof, std::stod, std::stold, std::stoi, std::stol, std::stoll, std::"
+"stoul, std::stoull"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:11
+msgid ""
+"std::strtof, std::strtod, std::strtold, std::strtol, std::strtoll/_strtoi64, "
+"std::strtoul, std::strtoull"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:13
+msgid "sscanf, sscanf_s, vsscanf, vsscanf_s"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:14
+msgid ""
+"std::from_chars (This is slow because it does not use fast_float under the "
+"hood)"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:16
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:26
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:40
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:51
+msgid "These functions should be replaced by:"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:18
+msgid ""
+"vtk::from_chars, vtk::scan_int, vtk::scan_value, if one number needs to be "
+"converted"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:19
+msgid ""
+"vtk::scan, if one/many numbers need to be converted (optionally with a "
+"specific format)"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:21
+msgid ""
+"C/C++ has the following functions to scan one/many numbers from a stdin/file."
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:23
+msgid "scanf, scanf_s, vscanf, vscanf_s,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:24
+msgid "fscanf, fscanf_s, vfscanf, vfscanf_s,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:28
+msgid "vtk::scan_value, if one number needs to be converted"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:29
+msgid ""
+"vtk::input, vtk::scan, if one/many numbers need to be converted (optionally "
+"with a specific format)"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:32
+msgid ""
+"C/C++ has the following functions to convert one/many numbers to a char or "
+"string."
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:34
+msgid ""
+"itoa/_itoa, ltoa/_ltoa, lltoa/_i64toa, ultoa/_ultoa, ulltoa/_ulltoa/_ui64toa"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:35
+msgid "sprintf, sprintf_s, vsprintf, vsprintf_s,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:36
+msgid "snprintf, snprintf_s, vsnprintf, vsnprintf_s,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:37
+msgid "strftime"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:38
+msgid "std::to_chars, std::to_string"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:42
+msgid "vtk::to_chars or vtk::to_string, if one number needs to be converted"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:43
+msgid ""
+"vtk::format, vtk::format_to, or vtk::format_to_n, if one/many numbers need "
+"to be converted with a specific format"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:46
+msgid ""
+"C/C++ has the following functions to print one/many numbers to stdout/file."
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:48
+msgid "printf, printf_s, vprintf, vprintf_s,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:49
+msgid "fprintf, fprintf_s, vfprintf, vfprintf_s,"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:53
+msgid "vtk::print, vtk::println"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:55
+msgid ""
+"It should also be noted that the following member functions can be provided "
+"with strings that use the std::format style format in addition to the printf "
+"style:"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:58
+msgid "`void vtkControlPointsItem::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:59
+msgid ""
+"`void vtkTimerLog::FormatAndMarkEvent(const char* formatArg, T&&... args)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:60
+msgid "`void vtkAngleRepresentation::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:61
+msgid ""
+"`void vtkBiDimensionalRepresentation::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:62
+msgid "`void vtkDistanceRepresentation::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:63
+msgid ""
+"`void vtkLineRepresentation::SetDistanceAnnotationFormat(const char* "
+"formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:64
+msgid ""
+"`void vtkResliceCursorRepresentation::SetThicknessLabelFormat(const char* "
+"formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:65
+msgid "`void vtkSliderRepresentation::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:66
+msgid "`void vtkImageReader2::SetFilePattern(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:67
+msgid "`void vtkImageWriter::SetFilePattern(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:68
+msgid "`void vtkVolumeReader::SetFilePattern(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:69
+msgid "`void vtkPDataSetWriter::SetFilePattern(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:70
+msgid "`void vtkPExodusIIReader::SetFilePattern(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:71
+msgid "`void vtkAxisActor::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:72
+msgid "`void vtkAxisActor2D::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:73
+msgid "`void vtkCubeAxesActor::SetXLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:74
+msgid "`void vtkCubeAxesActor::SetYLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:75
+msgid "`void vtkCubeAxesActor::SetZLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:76
+msgid "`void vtkCubeAxesActor2D::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:77
+msgid "`void vtkLeaderActor2D::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:78
+msgid ""
+"`void vtkParallelCoordinatesActor::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:79
+msgid "`void vtkPolarAxesActor::SetPolarLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:80
+msgid "`void vtkScalarBarActor::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:81
+msgid "`void vtkXYPlotActor::SetXLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:82
+msgid "`void vtkXYPlotActor::SetYLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:83
+msgid "`void vtkLabeledDataMapper::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:84
+msgid "`void vtkFastLabeledDataMapper::SetLabelFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:85
+msgid "`void vtkDateToNumeric::SetDateFormat(const char* formatArg)`"
+msgstr ""
+
+#: ../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.md:86
+msgid "`void vtkPlot::SetTooltipLabelFormat(const vtkStdString& labelFormat)`"
+msgstr ""

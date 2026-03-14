@@ -1,0 +1,30 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/cell-grid-initialization.md:1
+msgid "Fix cell-grid initialization"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-initialization.md:3
+msgid ""
+"Static debug builds on Windows could crash at initialization as the Schwarz "
+"counter to prepare the singleton container used to register cell-grid cell "
+"metadata subclasses was not incremented in time. See [#19552](https://gitlab."
+"kitware.com/vtk/vtk/-/issues/19552) for more information."
+msgstr ""

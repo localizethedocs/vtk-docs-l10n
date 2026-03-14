@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:1
+msgid "{py:mod}`vtkmodules.util.execution_model`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:7
+msgid ""
+"Utility classes to help with the simpler Python interface for connecting and "
+"executing pipelines."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:18
+msgid "{py:obj}`select_ports <vtkmodules.util.execution_model.select_ports>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:82
+msgid ""
+"Helper class for selecting input and output ports when connecting pipeline "
+"objects with the >> operator. Example uses:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:22
+msgid "{py:obj}`Pipeline <vtkmodules.util.execution_model.Pipeline>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:162
+msgid ""
+"Pipeline objects are created when 2 or more algorithms are connected with "
+"the >> operator. They store the first and last algorithms in the pipeline "
+"and enable connecting more algorithms and executing the pipeline. One should "
+"not have to create Pipeline objects directly. They are created by the use of "
+"the >> operator."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:26
+msgid "{py:obj}`Output <vtkmodules.util.execution_model.Output>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:28
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:266
+msgid ""
+"Helper object to represent the output of an algorithms as returned by the "
+"update() method. Implements the output property enabling calling update()."
+"output."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:32
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:38
+msgid "{py:obj}`_call <vtkmodules.util.execution_model._call>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:72
+msgid ""
+"Set the input of the first filter, update the pipeline and return the output."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:44
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:50
+msgid "{py:obj}`__all__ <vtkmodules.util.execution_model.__all__>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:56
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:62
+msgid "['select_ports', 'Pipeline', 'Output']"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:79
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:159
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:263
+msgid "Bases: {py:obj}`object`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:85
+msgid ""
+"Connect a source to the second input of a filter./home/runner/work/vtk-docs-"
+"l10n/vtk-docs-l10n/out/repo/Wrapping/Python/vtkmodules/util/execution_model."
+"py:85: (INFO/1) Duplicate implicit target name: \"connect a source to the "
+"second input of a filter.\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:86
+msgid "source >> select_ports(1, filter)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:87
+msgid ""
+"Connect the second output of a source to a filter./home/runner/work/vtk-docs-"
+"l10n/vtk-docs-l10n/out/repo/Wrapping/Python/vtkmodules/util/execution_model."
+"py:87: (INFO/1) Duplicate implicit target name: \"connect the second output "
+"of a source to a filter.\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:88
+msgid "select_ports(source, 1) >> filter"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:89
+msgid ""
+"Combination of both: Connect source to second/home/runner/work/vtk-docs-l10n/"
+"vtk-docs-l10n/out/repo/Wrapping/Python/vtkmodules/util/execution_model."
+"py:89: (INFO/1) Duplicate implicit target name: \"combination of both: "
+"connect source to second\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:90
+msgid ""
+"input of the filter, then connect the second/home/runner/work/vtk-docs-l10n/"
+"vtk-docs-l10n/out/repo/Wrapping/Python/vtkmodules/util/execution_model."
+"py:90: (INFO/1) Duplicate implicit target name: \"input of the filter, then "
+"connect the second\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:91
+msgid ""
+"output of that filter to another one./home/runner/work/vtk-docs-l10n/vtk-"
+"docs-l10n/out/repo/Wrapping/Python/vtkmodules/util/execution_model.py:91: "
+"(INFO/1) Duplicate implicit target name: \"output of that filter to another "
+"one.\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:92
+msgid "source >>> select_ports(1, filter, 1) >> filter2"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:84
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:164
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:268
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:88
+msgid ""
+"This constructor takes 2 or 3 arguments. The possibilities are: "
+"select_ports(input_port, algorithm) select_ports(algorithm, output_port) "
+"select_ports(input_port, algorithm, output_port)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:95
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:103
+msgid "Forwards to underlying algorithm and port."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:111
+msgid "Returns the output port of the underlying algorithm."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:127
+msgid ""
+"Execute the algorithm and return the output from the selected output port."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:135
+msgid "Creates a pipeline between the underlying port and an algorithm."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:143
+msgid ""
+"Creates a pipeline between the underlying port and an algorithm. This is to "
+"handle sequence >> select_ports where the port can accept multiple "
+"connections."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:151
+msgid ""
+"Executes the underlying algorithm by passing input data to the selected "
+"input port. Returns a single output or a tuple if there are multiple outputs."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:168
+msgid ""
+"Create a pipeline object that connects two objects of the following type: "
+"data object, pipeline object, algorithm object."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:174
+msgid "0"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:184
+msgid "1"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:194
+msgid "2"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:204
+msgid "3"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:231
+msgid "Update the pipeline and return the last algorithm's output."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:239
+msgid ""
+"Sets the input of the first filter, update the pipeline and returns the "
+"output. A single data object or a tuple of data objects (when there are "
+"multiple outputs) are returned."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:247
+msgid ""
+"Used to connect two pipeline items. The left side can be a data object, an "
+"algorithm or a pipeline. The right side can be an algorithm or a pipeline."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:255
+msgid "Creates a pipeline between a sequence input and a pipeline."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:279
+msgid ""
+"Returns a single data object or a tuple of data objects if there are "
+"multiple outputs."
+msgstr ""

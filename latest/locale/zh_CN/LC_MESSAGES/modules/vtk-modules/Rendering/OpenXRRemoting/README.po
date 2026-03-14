@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:1
+msgid "VTK::RenderingOpenXRRemoting"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:2
+msgid "VTK - OpenXR Holographic Remoting"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:4
+msgid ""
+"Holographic remoting consists in a player application running on the XR "
+"device, and a VTK-based remote application running on a standard Windows "
+"machine.<br/> The remote application receives camera information and "
+"rendering resources from the player. It renders the VTK scene before "
+"streaming back the resulting texture to the player application.<br/> This "
+"way we avoid the need to build VTK for Universal Windows Platform (UWP), and "
+"we can also keep using VTK's OpenGL-based rendering pipeline.<br/> Still, "
+"DirectX must be used to fill the texture to be streamed back to the "
+"Hololens. This is possible by creating a texture shared by both a DirectX "
+"and an OpenGL context, thanks to the NV_DX_interop extension available on "
+"almost every recent GPU."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:4
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:13
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:25
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:29
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:34
+msgid "<br/>"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:9
+msgid ""
+"At this time holographic remoting is supported only for the Microsoft "
+"HoloLens 2 virtual reality headset."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:11
+msgid "Player application"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:13
+msgid ""
+"Download the Microsoft MixedReality HolographicRemoting [samples](https://"
+"github.com/microsoft/MixedReality-HolographicRemoting-Samples) and follow "
+"the instruction to build the player application.<br/> ⚠️ The version number "
+"in the branch name **must** match the version of the `Microsoft.Holographic."
+"Remoting.OpenXr` package used below by the remote application."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:16
+msgid ""
+"Follow the [instructions](https://docs.microsoft.com/en-us/windows/mixed-"
+"reality/develop/advanced-concepts/using-visual-studio?tabs=hl2#enabling-"
+"developer-mode) to deploy the player application to the Hololens 2. "
+"Alternatively, if you don't have access to a device, you can use the "
+"[Hololens emulator](https://docs.microsoft.com/en-us/windows/mixed-reality/"
+"develop/advanced-concepts/using-the-hololens-emulator#hololens-2-emulator-"
+"overview)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:19
+msgid ""
+"When the player is deployed, you should see the following message: `Waiting "
+"for connection on XX.XX.XX.XX` where *XX.XX.XX.XX* describes the IP address "
+"the remote application should connect to."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:21
+msgid "Remote application"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:23
+msgid ""
+"Enable the CMake option `VTK_MODULE_ENABLE_VTK_RenderingOpenXRRemoting` when "
+"building VTK."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:25
+msgid ""
+"Set the `OpenXRRemoting_BIN_DIR` and `OpenXRRemoting_INCLUDE_DIR` to provide "
+"the path to the OpenXR Remoting headers and binary directory.<br/> The "
+"`Microsoft.Holographic.Remoting.OpenXr` Nuget package that provides this "
+"dependency is available [here](https://www.nuget.org/packages/Microsoft."
+"Holographic.Remoting.OpenXr) on nuget.org.<br/> ⚠️ The version of the "
+"`Microsoft.Holographic.Remoting.OpenXr` package must match the branch name "
+"of the player application above."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:29
+msgid ""
+"When successfully built, run the TestOpenXRRemotingInitialization test by "
+"sending the IP displayed in the player application as argument:<br/> "
+"`vtkRenderingOpenXRRemotingCxxTests.exe \"TestOpenXRRemotingInitialization\" "
+"-playerIP XX.XX.XX.XX`<br/> Alternatively, the `VTK_PLAYER_IP` environment "
+"variable can be used to specify the IP address to connect to.<br/> ⚠️ Make "
+"sure to provide the content of the OpenXR Remoting binary directory in the "
+"system PATH or next to the executable before running the program."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:34
+msgid ""
+"To use this feature in your own application, use the OpenXR and "
+"OpenXRRemoting dedicated rendering stack: `vtkOpenXRRenderer`, "
+"`vtkOpenXRRemotingRenderWindow`, `vtkOpenXRRenderWindowInteractor` and "
+"`vtkOpenXRCamera`.<br/> The address of the player application to connect to "
+"must be set using `vtkOpenXRRemotingRenderWindow::SetRemotingIPAddress(\"XX."
+"XX.XX.XX\")` before starting the interactor.<br/> See the "
+"TestOpenXRRemotingInitialization test for a complete example."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:38
+msgid "Troubleshooting:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:40
+msgid "The OpenXR runtime fails to create and initialize the XrInstance."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:42
+msgid ""
+"To make sure that the player and remote application are compatible, the "
+"version of the Microsoft.Holographic.Remoting.OpenXr package must match the "
+"version number of the player application branch name."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:44
+msgid ""
+"The remote application exits with the following output:   WARN| Failed to "
+"initialize connection strategy.   ERR| vtkOpenXRRemotingRenderWindow: Failed "
+"to initialize OpenXRManager"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:48
+msgid ""
+"The remote application could not find the RemotingXR.json or the Microsoft."
+"Holographic.AppRemoting.OpenXr.dll. Make sure to provide the content of the "
+"OpenXR Remoting binary directory in the system PATH or next to the "
+"executable."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:50
+msgid ""
+"When running in the Hololens emulator, the connection fails with the "
+"following error displayed in the player: \"Transport connection was closed "
+"due to the requested video format not being supported\""
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:52
+msgid ""
+"If you have both an Intel and NVidia GPU in your laptop, try disabling the "
+"NVidia GPU temporarily under \"Display Adaptors\" in the \"Device Manager\"."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:54
+msgid ""
+"When building the player application from VisualStudio, the Hololens "
+"emulator does not appear in the list of machine to deploy to."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:56
+msgid ""
+"Add a new x64 solution platform within VisualStudio and switch the current "
+"platform from ARM64 to x64. When building, if you now get the error `module "
+"machine type 'x64' conflicts with target machine type 'ARM64'`, then edit "
+"the project file to remove all occurrence of `/machine:ARM64`."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:58
+msgid "Additional Notes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.md:60
+msgid ""
+"See [VTK `OpenXR` documentation](../OpenXR/README.md) for information on "
+"virtual reality rendering with OpenGL."
+msgstr ""

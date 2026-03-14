@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:4
+msgid "vtkModuleGraphviz"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:9
+msgid "Output a node in the graph |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:11
+msgid ""
+"Queries the properties for modules and generates the node for it in the "
+"graph and its outgoing dependency edges."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:118
+msgid ""
+"Generate graphviz output for a module dependency graph. |module-support|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:120
+msgid ""
+"Information about the modules built and/or available may be dumped to a "
+"Graphviz `.dot` file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:123
+msgid ""
+"vtk_module_graphviz(\n"
+"  MODULES   <module>...\n"
+"  OUTPUT    <path>\n"
+"\n"
+"  [PRIVATE_DEPENDENCIES <ON|OFF>]\n"
+"  [KIT_CLUSTERS <ON|OFF>])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:132
+msgid "``MODULES``: (Required) The modules to output information for."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:133
+msgid ""
+"``OUTPUT``: (Required) A Graphviz file describing the modules built will be "
+"output to this path. Relative paths are rooted to ``CMAKE_BINARY_DIR``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:135
+msgid ""
+"``PRIVATE_DEPENDENCIES``: (Default ``ON``) Whether to draw private "
+"dependency edges or not.."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleGraphviz.cmake:137
+msgid ""
+"``KIT_CLUSTERS``: (Default ``OFF``) Whether to draw modules as part of a kit "
+"as a cluster or not."
+msgstr ""

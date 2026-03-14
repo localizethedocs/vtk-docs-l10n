@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-fluent-reader-zones-support.md:1
+msgid "FLUENT Reader handles zones"
+msgstr ""
+
+#: ../../../release_details/9.4/add-fluent-reader-zones-support.md:3
+msgid ""
+"The FLUENT .msh reader now handles zones and provides the user with one "
+"block per defined zone. BREAKING_CHANGE: Some of the vtkFLUENTReader member "
+"variables have been moved to private visibility which could impact classes "
+"that inherit it and directly access member variables. BREAKING_CHANGE: Some "
+"zones from the file were previously ignored by the reader, and are now "
+"provided as blocks in a vktMultiBlockDataset. Users might need to filter the "
+"excess out manually"
+msgstr ""

@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:1
+msgid "Add numpy support for composite arrays"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:3
+msgid ""
+"You can now use VTK composite arrays with numpy functionnality just like non "
+"composite arrays. In terms of available features:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:5
+msgid ""
+"All numpy related algorithms previously accessible via algs (alias for "
+"numpy_interface.algorithms) are now accessible directly with their numpy "
+"counterpart (algs.mean -> np.mean)"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:6
+msgid ""
+"Most of in place numpy functions are now supported (typically math functions "
+"like cos, arctan, ...)"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:7
+msgid "Slicing is now available to extract specific elements or sub-arrays"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:8
+msgid ""
+"The old algs API is now deprecated for functions that have native NumPy "
+"equivalents"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:10
+msgid ""
+"Note that the algs intermediate layer is still useful to access some VTK "
+"specific features, such as MPI related algs."
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:12
+msgid "Developer notes:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:14
+msgid ""
+"NumPy supports extension of its core functionality to non-`ndarray` types "
+"using two key protocols which were overriden in the `VTKCompositeDataArray` "
+"class:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:15
+msgid ""
+"`__array_ufunc__`\\ This method is called whenever a NumPy universal "
+"function (ufunc) like np.sin or np.sqrt is applied. Universal functions are "
+"more or less the elementwise functions."
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:0
+msgid "<br />\n"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:0
+msgid "\\\\\n"
+msgstr ""
+
+#: ../../../release_details/9.6/add-numpy-support-for-composite-arrays.md:17
+msgid ""
+"`__array_function__`\\ This method is used for non-ufunc NumPy functions, "
+"such as np.mean or np.expand_dims. It is used for functions that imply "
+"structural manipulation, and is thus more general than `__array_ufunc__`. We "
+"register supported functions explicitly and dispatch to custom "
+"implementations. The registration mechanism is handled by a simple "
+"dictionnary and a function used as decorator."
+msgstr ""

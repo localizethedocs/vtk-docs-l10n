@@ -1,0 +1,707 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1
+msgid "{py:mod}`vtkmodules.util.functions`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:7
+msgid "Algorithm module for the new VTK array types."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:9
+msgid ""
+"This module provides algorithms (reductions, VTK filter wrappers, vector/"
+"matrix ops, cell quality metrics) that work with the new array mixin classes "
+"(VTKAOSArray, VTKSOAArray, VTKAffineArray, VTKConstantArray, "
+"VTKPartitionedArray)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:13
+msgid ""
+"It is a self-contained reimplementation of the functionality in the three "
+"legacy modules (internal_algorithms, numpy_algorithms, algorithms) from "
+"``numpy_interface/``, using:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:17
+msgid "``VTKPartitionedArray``  instead of ``dsa.VTKCompositeDataArray``"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:18
+msgid "``NoneArray``          from ``utils.py`` instead of ``dsa.NoneArray``"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:19
+msgid "Lowercase properties   (``.dataset``, ``.association``, ``.arrays``)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:20
+msgid ""
+"No ``dsa.vtkDataArrayToVTKArray()`` wrapping — the override mechanism "
+"handles types automatically."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:23
+msgid ""
+"The old modules remain in place for backward compatibility with "
+"``dataset_adapter``."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:18
+msgid "{py:obj}`_to_vtk_array <vtkmodules.util.functions._to_vtk_array>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:494
+msgid "Wrap a numpy result as a VTK array, copying metadata from *source*."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:22
+msgid "{py:obj}`_apply_func2 <vtkmodules.util.functions._apply_func2>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:501
+msgid "Apply *func* to each block of a VTKPartitionedArray. Returns a list."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:26
+msgid "{py:obj}`apply_ufunc <vtkmodules.util.functions.apply_ufunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:28
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:508
+msgid ""
+"Apply a unary function to each block of a VTKPartitionedArray. Plain arrays "
+"and NoneArray are also supported."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:30
+msgid "{py:obj}`apply_dfunc <vtkmodules.util.functions.apply_dfunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:515
+msgid "Apply a binary function across composite / plain arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:34
+msgid "{py:obj}`_make_ufunc <vtkmodules.util.functions._make_ufunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:522
+msgid "Factory: wrap a unary function for composite dispatch."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:38
+msgid "{py:obj}`_make_dfunc <vtkmodules.util.functions._make_dfunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:529
+msgid "Factory: wrap a binary function for composite dispatch."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:42
+msgid "{py:obj}`_make_dsfunc <vtkmodules.util.functions._make_dsfunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:536
+msgid "Factory: wrap a (array, dataset) function for composite dispatch."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:46
+msgid "{py:obj}`_make_dsfunc2 <vtkmodules.util.functions._make_dsfunc2>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:543
+msgid "Factory: wrap a (dataset) function for composite dispatch."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:50
+msgid "{py:obj}`_lookup_mpi_type <vtkmodules.util.functions._lookup_mpi_type>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:54
+msgid "{py:obj}`_reduce_dims <vtkmodules.util.functions._reduce_dims>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:58
+msgid "{py:obj}`global_func <vtkmodules.util.functions.global_func>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:564
+msgid "Reduction driver with MPI parallel support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:62
+msgid ""
+"{py:obj}`_local_array_count <vtkmodules.util.functions._local_array_count>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:66
+msgid "{py:obj}`array_count <vtkmodules.util.functions.array_count>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:578
+msgid "Count elements in a VTK or NumPy array, with MPI support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:70
+msgid ""
+"{py:obj}`_cell_derivatives <vtkmodules.util.functions._cell_derivatives>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:74
+msgid "{py:obj}`_cell_quality <vtkmodules.util.functions._cell_quality>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:78
+msgid ""
+"{py:obj}`_matrix_math_filter <vtkmodules.util.functions._matrix_math_filter>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:82
+msgid "{py:obj}`_sum <vtkmodules.util.functions._sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:86
+msgid "{py:obj}`_max <vtkmodules.util.functions._max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:90
+msgid "{py:obj}`_min <vtkmodules.util.functions._min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:94
+msgid "{py:obj}`_all <vtkmodules.util.functions._all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:98
+msgid "{py:obj}`_mean <vtkmodules.util.functions._mean>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:102
+msgid "{py:obj}`_var <vtkmodules.util.functions._var>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:106
+msgid "{py:obj}`_cross <vtkmodules.util.functions._cross>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:110
+msgid "{py:obj}`_dot <vtkmodules.util.functions._dot>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:114
+msgid "{py:obj}`_mag <vtkmodules.util.functions._mag>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:118
+msgid "{py:obj}`_matmul <vtkmodules.util.functions._matmul>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:122
+msgid "{py:obj}`_norm <vtkmodules.util.functions._norm>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:126
+msgid "{py:obj}`_det <vtkmodules.util.functions._det>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:130
+msgid "{py:obj}`_eigenvalue <vtkmodules.util.functions._eigenvalue>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:134
+msgid "{py:obj}`_eigenvector <vtkmodules.util.functions._eigenvector>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:138
+msgid "{py:obj}`_inv <vtkmodules.util.functions._inv>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:142
+msgid "{py:obj}`_trace <vtkmodules.util.functions._trace>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:146
+msgid "{py:obj}`_curl <vtkmodules.util.functions._curl>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:150
+msgid "{py:obj}`_gradient <vtkmodules.util.functions._gradient>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:154
+msgid "{py:obj}`_divergence <vtkmodules.util.functions._divergence>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:158
+msgid "{py:obj}`_laplacian <vtkmodules.util.functions._laplacian>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:162
+msgid "{py:obj}`_strain <vtkmodules.util.functions._strain>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:166
+msgid "{py:obj}`_area <vtkmodules.util.functions._area>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:170
+msgid "{py:obj}`_aspect <vtkmodules.util.functions._aspect>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:174
+msgid "{py:obj}`_aspect_gamma <vtkmodules.util.functions._aspect_gamma>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:178
+msgid "{py:obj}`_condition <vtkmodules.util.functions._condition>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:182
+msgid "{py:obj}`_diagonal <vtkmodules.util.functions._diagonal>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:186
+msgid "{py:obj}`_jacobian <vtkmodules.util.functions._jacobian>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:190
+msgid "{py:obj}`_max_angle <vtkmodules.util.functions._max_angle>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:194
+msgid "{py:obj}`_min_angle <vtkmodules.util.functions._min_angle>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:198
+msgid "{py:obj}`_shear <vtkmodules.util.functions._shear>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:202
+msgid "{py:obj}`_skew <vtkmodules.util.functions._skew>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:206
+msgid "{py:obj}`_volume <vtkmodules.util.functions._volume>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:210
+msgid "{py:obj}`_surface_normal <vtkmodules.util.functions._surface_normal>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:214
+msgid "{py:obj}`_vertex_normal <vtkmodules.util.functions._vertex_normal>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:218
+msgid "{py:obj}`_make_vector <vtkmodules.util.functions._make_vector>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:222
+msgid "{py:obj}`sum <vtkmodules.util.functions.sum>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:224
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:861
+msgid "Composite + MPI aware sum."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:226
+msgid "{py:obj}`max <vtkmodules.util.functions.max>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:228
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:868
+msgid "Composite + MPI aware max."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:230
+msgid "{py:obj}`min <vtkmodules.util.functions.min>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:232
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:875
+msgid "Composite + MPI aware min."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:234
+msgid "{py:obj}`all <vtkmodules.util.functions.all>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:236
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:882
+msgid "Composite + MPI aware all."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:238
+msgid "{py:obj}`mean <vtkmodules.util.functions.mean>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:240
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:889
+msgid "Composite + MPI aware mean."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:242
+msgid "{py:obj}`var <vtkmodules.util.functions.var>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:244
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:896
+msgid "Composite + MPI aware variance."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:246
+msgid "{py:obj}`std <vtkmodules.util.functions.std>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:248
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:903
+msgid "Composite + MPI aware standard deviation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:250
+msgid "{py:obj}`make_vector <vtkmodules.util.functions.make_vector>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:252
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1220
+msgid "Composite-aware vector construction from 2 or 3 scalar arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:254
+msgid ""
+"{py:obj}`make_mask_from_NaNs <vtkmodules.util.functions.make_mask_from_NaNs>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:256
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1227
+msgid "Create a ghost array from NaN values."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:258
+msgid ""
+"{py:obj}`make_point_mask_from_NaNs <vtkmodules.util.functions."
+"make_point_mask_from_NaNs>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:260
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1234
+msgid "Create a ghost array for point data with NaN values."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:262
+msgid ""
+"{py:obj}`make_cell_mask_from_NaNs <vtkmodules.util.functions."
+"make_cell_mask_from_NaNs>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:264
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1241
+msgid "Create a ghost array for cell data with NaN values."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:266
+msgid ""
+"{py:obj}`_global_per_block <vtkmodules.util.functions._global_per_block>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:270
+msgid "{py:obj}`sum_per_block <vtkmodules.util.functions.sum_per_block>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:272
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1255
+msgid "Per-block sum with MPI support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:274
+msgid "{py:obj}`count_per_block <vtkmodules.util.functions.count_per_block>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:276
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1262
+msgid "Per-block count with MPI support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:278
+msgid "{py:obj}`mean_per_block <vtkmodules.util.functions.mean_per_block>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:280
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1269
+msgid "Per-block mean with MPI support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:282
+msgid "{py:obj}`max_per_block <vtkmodules.util.functions.max_per_block>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:284
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1276
+msgid "Per-block max with MPI support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:286
+msgid "{py:obj}`min_per_block <vtkmodules.util.functions.min_per_block>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:288
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1283
+msgid "Per-block min with MPI support."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:290
+msgid ""
+"{py:obj}`unstructured_from_composite_arrays <vtkmodules.util.functions."
+"unstructured_from_composite_arrays>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:292
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:1290
+msgid "Create a vtkUnstructuredGrid from VTKPartitionedArrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:296
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:302
+msgid "{py:obj}`_builtin_min <vtkmodules.util.functions._builtin_min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:306
+msgid "{py:obj}`_builtin_max <vtkmodules.util.functions._builtin_max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:310
+msgid "{py:obj}`_builtin_sum <vtkmodules.util.functions._builtin_sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:314
+msgid "{py:obj}`_builtin_all <vtkmodules.util.functions._builtin_all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:318
+msgid "{py:obj}`_vorticity <vtkmodules.util.functions._vorticity>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:322
+msgid "{py:obj}`curl <vtkmodules.util.functions.curl>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:326
+msgid "{py:obj}`gradient <vtkmodules.util.functions.gradient>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:330
+msgid "{py:obj}`divergence <vtkmodules.util.functions.divergence>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:334
+msgid "{py:obj}`laplacian <vtkmodules.util.functions.laplacian>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:338
+msgid "{py:obj}`strain <vtkmodules.util.functions.strain>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:342
+msgid "{py:obj}`vorticity <vtkmodules.util.functions.vorticity>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:346
+msgid "{py:obj}`area <vtkmodules.util.functions.area>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:350
+msgid "{py:obj}`aspect <vtkmodules.util.functions.aspect>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:354
+msgid "{py:obj}`aspect_gamma <vtkmodules.util.functions.aspect_gamma>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:358
+msgid "{py:obj}`condition <vtkmodules.util.functions.condition>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:362
+msgid "{py:obj}`diagonal <vtkmodules.util.functions.diagonal>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:366
+msgid "{py:obj}`jacobian <vtkmodules.util.functions.jacobian>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:370
+msgid "{py:obj}`max_angle <vtkmodules.util.functions.max_angle>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:374
+msgid "{py:obj}`min_angle <vtkmodules.util.functions.min_angle>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:378
+msgid "{py:obj}`shear <vtkmodules.util.functions.shear>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:382
+msgid "{py:obj}`skew <vtkmodules.util.functions.skew>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:386
+msgid "{py:obj}`volume <vtkmodules.util.functions.volume>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:390
+msgid "{py:obj}`det <vtkmodules.util.functions.det>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:394
+msgid "{py:obj}`determinant <vtkmodules.util.functions.determinant>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:398
+msgid "{py:obj}`eigenvalue <vtkmodules.util.functions.eigenvalue>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:402
+msgid "{py:obj}`eigenvector <vtkmodules.util.functions.eigenvector>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:406
+msgid "{py:obj}`inv <vtkmodules.util.functions.inv>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:410
+msgid "{py:obj}`inverse <vtkmodules.util.functions.inverse>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:414
+msgid "{py:obj}`trace <vtkmodules.util.functions.trace>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:418
+msgid "{py:obj}`cross <vtkmodules.util.functions.cross>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:422
+msgid "{py:obj}`dot <vtkmodules.util.functions.dot>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:426
+msgid "{py:obj}`matmul <vtkmodules.util.functions.matmul>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:430
+msgid "{py:obj}`mag <vtkmodules.util.functions.mag>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:434
+msgid "{py:obj}`norm <vtkmodules.util.functions.norm>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:438
+msgid "{py:obj}`surface_normal <vtkmodules.util.functions.surface_normal>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:442
+msgid "{py:obj}`vertex_normal <vtkmodules.util.functions.vertex_normal>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:448
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:454
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:464
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:474
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:484
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:753
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1090
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1130
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/functions.py:496
+msgid ""
+"If *result* is an ndarray whose first dimension matches *source*, creates a "
+"VTK-backed array with association/dataset propagated. Returns the result "
+"unchanged for scalars, 0-d arrays, or mismatched shapes."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:910
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:920
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:930
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:940
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:950
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:960
+msgid "'_make_dsfunc(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:970
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:980
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:990
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1000
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1010
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1020
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1030
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1040
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1050
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1060
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1070
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1200
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1210
+msgid "'_make_dsfunc2(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1080
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1100
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1110
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1120
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1140
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1180
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1190
+msgid "'_make_ufunc(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1150
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1160
+#: ../../../api/python/vtkmodules/vtkmodules.util.functions.md:1170
+msgid "'_make_dfunc(...)'"
+msgstr ""

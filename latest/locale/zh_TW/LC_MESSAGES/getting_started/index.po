@@ -1,0 +1,725 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../getting_started/index.md:1
+msgid "Getting Started"
+msgstr ""
+
+#: ../../../getting_started/index.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../getting_started/index.md:5
+msgid ""
+"Welcome to VTK! We recommend that you start by reading [The VTK Book]"
+"(https://book.vtk.org), a comprehensive guide to VTK that covers all aspects "
+"of its functionality. Additionally, you may find it helpful to explore the "
+"[VTK Examples](https://examples.vtk.org), a collection of useful reference "
+"materials that demonstrate how to use VTK's different modules and features."
+msgstr ""
+
+#: ../../../getting_started/index.md:11
+msgid ""
+"Before diving into VTK's functionality, ensure that your system meets its "
+"[system requirements](#system-requirements). Depending on your programming "
+"experience and needs, you can choose different programming languages to work "
+"with VTK. We have documentation on how to use VTK with [Python](#using-"
+"python), [Jupyter](#using-jupyter), [C++ and CMake](#using-c-and-cmake), "
+"[Javascript](#using-javascript), and [WebAssembly](#using-webassembly)."
+msgstr ""
+
+#: ../../../getting_started/index.md:18
+msgid ""
+"Lastly, to help address your specific needs, you may also consider exploring "
+"existing free and open-source [frameworks or applications](#using-existing-"
+"frameworks-and-applications) that already leverage VTK. These frameworks and "
+"applications can be extended and customized to work for specific use cases "
+"and may provide ready-to-use solutions for your project."
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:2
+msgid "System requirements"
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:4
+msgid "**Runtime**"
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:6
+msgid "At least Python 3.x to use scripting capabilities"
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:7
+msgid "Minimum macOS version 10.10."
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:8
+msgid ""
+"Minimum OpenGL version is 3.2 but a higher versions may be required for more "
+"advanced features."
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:10
+msgid "**Build-time**"
+msgstr ""
+
+#: ../../../getting_started/system_requirements.md:12
+msgid ""
+"Check the build [prerequisites](../build_instructions/index."
+"md#prerequisites)."
+msgstr ""
+
+#: ../../../getting_started/using_python.md:2
+msgid "Using Python"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:4
+msgid ""
+"VTK is available on [PyPI](https://pypi.org/) for Windows, macOS and Linux."
+msgstr ""
+
+#: ../../../getting_started/using_python.md:5
+msgid "pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:8
+msgid ""
+"or in a [virtual environment](https://docs.python.org/3/library/venv.html) "
+"if you want to install the package only locally instead of system-wide"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:0
+msgid "Linux"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:15
+#: ../../../getting_started/using_python.md:24
+msgid ""
+"python -m venv ./env\n"
+"source ./env/bin/activate\n"
+"pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:0
+msgid "macOS"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:0
+msgid "Windows"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:32
+msgid "Using `PowerShell`"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:33
+msgid ""
+"python -m venv env\n"
+".\\env\\Activate.ps1\n"
+"pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:39
+msgid "or using `cmd.exe`"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:40
+msgid ""
+"python -m venv env\n"
+".\\env\\activate.bat\n"
+"pip install vtk\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:48
+msgid ""
+"To verify the installation try to import vtk from an interactive python "
+"environment:"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:50
+msgid ""
+">>> import vtk\n"
+">>> print(vtk.__version__)\n"
+"9.2.6\n"
+msgstr ""
+
+#: ../../../getting_started/using_python.md:56
+msgid ""
+"That's it ! You may now try some of the [tutorials](https://kitware.github."
+"io/vtk-examples/site/Python/#tutorial), [how to guides](https://kitware."
+"github.io/vtk-examples/site/PythonHowTo) or [examples](https://kitware."
+"github.io/vtk-examples/site/Python)."
+msgstr ""
+
+#: ../../../getting_started/using_python.md:61
+msgid ""
+"If you are looking for a higher-level interface to VTK in Python, you may "
+"want to explore using [PyVista](https://docs.pyvista.org) as it exposes VTK "
+"in a \"Pythonic\" manner."
+msgstr ""
+
+#: ../../../getting_started/using_jupyter.md:18
+#: ../../../getting_started/using_python.md:65
+msgid ""
+"If you are running the script in a Linux/Windows machine without a display "
+"or a GPU, VTK will automatically select an appropriate OpenGL render window "
+"class. Please learn more about how you can influence the render window "
+"selection process in [](/advanced/runtime_settings.md#opengl)"
+msgstr ""
+
+#: ../../../getting_started/using_jupyter.md:2
+msgid "Using Jupyter"
+msgstr ""
+
+#: ../../../getting_started/using_jupyter.md:4
+msgid ""
+"When it comes to rendering with VTK in Jupyter, there are several options."
+msgstr ""
+
+#: ../../../getting_started/using_jupyter.md:6
+msgid ""
+"To harness the full power of VTK in Jupyter, you may want to leverage "
+"[PyVista](https://docs.pyvista.org/) and [Trame](https://kitware.github.io/"
+"trame/index.html). PyVista exposes a high-level interface to VTK for "
+"plotting and when combined with Trame, empowers users to bring the full "
+"power of VTK to a Jupyter notebook. We have [a post on the VTK discourse "
+"about this](https://discourse.vtk.org/t/pyvista-trame-jupyter-3d-"
+"visualization/10610). See PyVista's documentation for more information on "
+"using PyVista's wrappings of VTK in Jupyter."
+msgstr ""
+
+#: ../../../getting_started/using_jupyter.md:14
+msgid ""
+"[itkwidgets](https://itkwidgets.readthedocs.io/en/latest) is one example of "
+"a domain-specific Jupyter viewer built on VTK. To try out itkwidgets, check "
+"[this example](https://colab.research.google.com/github/"
+"InsightSoftwareConsortium/itkwidgets/blob/main/examples/integrations/vtk/"
+"vtkImageData.ipynb)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:2
+msgid "Using C++ and CMake"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:4
+msgid ""
+"CMake is an open-source platform-independent build system that manages the "
+"entire software build process, from source code to executable binary. If "
+"you're new to CMake, you can find more information on the [CMake website]"
+"(https://cmake.org)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:8
+msgid "**Installing a binary release**"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:10
+msgid ""
+"Pre-built VTK releases maintained by the community exist for a number of "
+"distributions, as shown in the following table:"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Operating System/ Package manager"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Package Name"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Version"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Fedora Rawhide"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "vtk-devel"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Fedora rawhide package](https://img.shields.io/fedora/v/vtk-devel)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:16
+msgid "Fedora rawhide package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Fedora 38"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Fedora 38 package](https://img.shields.io/fedora/v/vtk-devel/f38)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:17
+msgid "Fedora 38 package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Fedora 37"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Fedora 37 package](https://img.shields.io/fedora/v/vtk-devel/f37)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:18
+msgid "Fedora 37 package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Ubuntu 23.04 (lunar)"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "libvtk9-dev"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Ubuntu lunar package](https://img.shields.io/ubuntu/v/vtk9/lunar)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:19
+msgid "Ubuntu lunar package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Ubuntu 22.10 (kinetic)"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Ubuntu kinetic package](https://img.shields.io/ubuntu/v/vtk9/kinetic)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:20
+msgid "Ubuntu kinetic package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Ubuntu 22.04 (jammy)"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Ubuntu jammy package](https://img.shields.io/ubuntu/v/vtk9/jammy)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:21
+msgid "Ubuntu jammy package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Ubuntu 20.04 (focal)"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "libvtk7-dev"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Ubuntu focal package](https://img.shields.io/ubuntu/v/vtk7/focal)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:22
+msgid "Ubuntu focal package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Debian unstable"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "libvtk9-devel"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Debian unstable package](https://img.shields.io/debian/v/libvtk9-dev)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:23
+msgid "Debian unstable package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Debian testing"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid ""
+"![Debian testing package](https://img.shields.io/debian/v/libvtk9-dev/"
+"testing)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:24
+msgid "Debian testing package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Debian stable"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid ""
+"![Debian stable package](https://img.shields.io/debian/v/libvtk9-dev/stable)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:25
+msgid "Debian stable package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "Gentoo"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "vtk"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid ""
+"[![Gentoo package](https://repology.org/badge/version-for-repo/gentoo/vtk."
+"svg)](https://repology.org/project/vtk/versions)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:26
+msgid "Gentoo package"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "homebrew"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![homebrew version](https://img.shields.io/homebrew/v/vtk)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:27
+msgid "homebrew version"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "vckpg"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Vcpkg](https://img.shields.io/vcpkg/v/vtk)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:28
+msgid "Vcpkg"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "spack"
+msgstr ""
+
+#: ../../../getting_started/index.md:34
+msgid "![Spack](https://img.shields.io/spack/v/vtk)"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:29
+msgid "Spack"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:32
+msgid ""
+"Note that these packages may be lacking some optional features such as mpi, "
+"qt etc. or, they may not contain the latest VTK features.  Check the "
+"documentation of each package to verify that the build contains what you "
+"need.  If what you need is missing you will need to [build vtk from scratch]"
+"(../build_instructions/index.md)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:37
+msgid "**Building an executable**"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:39
+msgid ""
+"Once VTK is installed using either of the methods above you can use it in "
+"your project utilizing the [find_package](https://cmake.org/cmake/help/"
+"latest/command/find_package.html) infrastructure of cmake:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:44
+msgid ""
+"find_package(VTK\n"
+"  COMPONENTS\n"
+"  .. list of vtk modules to link to\n"
+")\n"
+"\n"
+"# your executable\n"
+"add_executable(testExample ...)\n"
+"\n"
+"# link to required VTK libraries\n"
+"target_link_libraries(testExample\n"
+"  PRIVATE\n"
+"   ${VTK_LIBRARIES}\n"
+")\n"
+"\n"
+"vtk_module_autoinit(\n"
+"  TARGETS testExample\n"
+"  MODULES ${VTK_LIBRARIES}\n"
+")\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:65
+msgid ""
+"{cmake:command}`vtk_module_autoinit` is responsible for triggering static "
+"code construction required for some VTK classes. For more details regarding "
+"the autoinit system of VTK see [here](../api/cmake/ModuleSystem.md#autoinit)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:68
+msgid ""
+"The list of required vtk modules depends on the files `#include`d in your "
+"code. The module a header file belongs to is determined in most cases by its "
+"location in the VTK source tree. For, example `vtkXMLPolyDataReader` is "
+"located under `IO/XML` so it belongs to the `IOXML` module, to verify check "
+"the accompanying [`vtk.module`](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/IO/XML/vtk.module) file in the same directory."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:72
+msgid ""
+"The above method works in most cases but it does not express the "
+"dependencies that some module have. A better (and easier) way to find the "
+"required modules is the [VTKModulesForCxx](https://examples.vtk.org/site/"
+"Python/Utilities/VTKModulesForCxx) script."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:75
+msgid ""
+"For example, running the script on the [CylinderExample](https://examples."
+"vtk.org/site/Cxx/GeometricObjects/CylinderExample) we get the following "
+"suggestion:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:78
+msgid ""
+"find_package(VTK\n"
+" COMPONENTS\n"
+"    CommonColor\n"
+"    CommonCore\n"
+"    FiltersSources\n"
+"    RenderingCore\n"
+"    #\n"
+"    # These modules are suggested since they implement an existing module.\n"
+"    # You may need to uncomment one or more of these.\n"
+"    # If vtkRenderWindow is used and you want to use OpenGL,\n"
+"    #   you also need the RenderingOpenGL2 module.\n"
+"    # If vtkRenderWindowInteractor is used,\n"
+"    #    uncomment RenderingUI and possibly InteractionStyle.\n"
+"    # If text rendering is used, uncomment RenderingFreeType\n"
+"    #\n"
+"    # InteractionStyle  # implements VTK::RenderingCore\n"
+"    # RenderingCellGrid # implements VTK::RenderingCore\n"
+"    # RenderingFreeType # implements VTK::RenderingCore\n"
+"    # RenderingOpenGL2  # implements VTK::RenderingCore\n"
+"    # RenderingUI       # implements VTK::RenderingCore\n"
+")\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:102
+msgid ""
+"Based on the suggestions of the script and the template above the relevant "
+"sections of the `CMakeLists.txt` are:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:104
+msgid ""
+"...\n"
+"find_package(VTK COMPONENTS\n"
+"  CommonColor\n"
+"  CommonCore\n"
+"  FiltersSources\n"
+"  InteractionStyle\n"
+"  RenderingContextOpenGL2\n"
+"  RenderingCore\n"
+"  RenderingFreeType\n"
+"  RenderingGL2PSOpenGL2\n"
+"  RenderingOpenGL2\n"
+")\n"
+"\n"
+"add_executable(CylinderExample CylinderExample.cxx)\n"
+"target_link_libraries(CylinderExample PRIVATE ${VTK_LIBRARIES})\n"
+"# vtk_module_autoinit is needed\n"
+"vtk_module_autoinit(\n"
+"  TARGETS CylinderExample\n"
+"  MODULES ${VTK_LIBRARIES}\n"
+")\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:127
+msgid ""
+"The full source of the example can be found [here](https://examples.vtk.org/"
+"site/Cxx/GeometricObjects/CylinderExample/)."
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:129
+msgid "To build the example:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:131
+msgid ""
+"mkdir build\n"
+"cd build\n"
+"ccmake ../ # or cmake-gui if on Windows\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:136
+msgid ""
+"Hit `C` if using `ccmake` or the configure button if using `cmake-gui`. If "
+"VTK was built from scratch you will need to set `VTK_DIR` to the "
+"installation path. If `ccmake`/`cmake-gui` reports no errors quit `ccmake`/"
+"`cmake-gui` and build the project as follows:"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:140
+msgid "cmake --build .\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:143
+msgid "To run the example"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:145
+msgid "./CylinderExample\n"
+msgstr ""
+
+#: ../../../getting_started/using_cpp.md:149
+msgid ""
+"For more examples check the [tutorials](https://kitware.github.io/vtk-"
+"examples/site/Cxx/#tutorial), [how to guides](https://kitware.github.io/vtk-"
+"examples/site/CxxHowTo) or [examples](https://kitware.github.io/vtk-examples/"
+"site/Cxx) sections of the vtk examples website."
+msgstr ""
+
+#: ../../../getting_started/using_js.md:2
+msgid "Using Javascript"
+msgstr ""
+
+#: ../../../getting_started/using_js.md:4
+msgid ""
+"[vtk.js](https://kitware.github.io/vtk-js/docs/) is an implementation of VTK "
+"in JavaScript that consists of an ES6 class library which can be integrated "
+"into any web application. See [here](https://kitware.github.io/vtk-js/docs/"
+"#What-is-the-difference-with-VTK-C)  to learn more about the differences "
+"between VTK C++ and vtk.js."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:2
+msgid "Using WebAssembly"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:4
+msgid ""
+"VTK-Wasm is a prototype infrastructure that enables the compilation of VTK C+"
+"+ code to WebAssembly via Emscripten. This feature is still under active "
+"development."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:6
+msgid ""
+"To learn more about VTK-Wasm and its capabilities, please take a look at the "
+"following resources:"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:8
+msgid "[Homepage for VTK.wasm](https://kitware.github.io/vtk-wasm/)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:10
+msgid ""
+"[Examples of WebAssembly applications that use VTK for rendering.](https://"
+"gitlab.kitware.com/vtk/vtk/-/tree/master/Examples/Emscripten/Cxx)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:12
+msgid ""
+"[A collection of VTK WebAssembly demos.](https://github.com/Kitware/vtk-wasm-"
+"demos)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:14
+msgid ""
+"[A guide on using the experimental WebGPU feature in VTK-Wasm.](https://"
+"discourse.vtk.org/t/guide-how-do-i-use-vtk-wasm-webgpu-experimental-"
+"feature/11164)."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:16
+msgid ""
+"[Instructions for building VTK using Emscripten for WebAssembly.](../"
+"advanced/build_wasm_emscripten.md)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:18
+msgid ""
+"[vtk-wasm-sdk](https://gitlab.kitware.com/vtk/vtk-wasm-sdk) for building and "
+"publishing the [`kitware/vtk-wasm-sdk`](https://hub.docker.com/r/kitware/vtk-"
+"wasm-sdk) docker images."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:20
+msgid ""
+"[Deep dive into WebAssembly & WebGPU in VTK: presentation from April 28th, "
+"2023](https://docs.google.com/presentation/"
+"d/1Nl0TVa55616QKCSHP54BoYBvByMKe6lIUl6IFZqSeJo/edit#slide=id.p). This "
+"presentation covers topics such as Emscripten, VTK-wasm Docker image, WASM "
+"Dev tools, VTK and WebGPU: PolyData Mapper, API inspection with RenderDoc, "
+"and performance profiles."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:22
+msgid ""
+"We welcome your feedback and contributions to this project. Feel free to "
+"share your experiences, questions, and ideas in the [web/vtk-wasm](https://"
+"discourse.vtk.org/c/web/vtk-wasm/12) category of the VTK Discourse forum. "
+"Stay tuned for updates and new developments!"
+msgstr ""
+
+#: ../../../getting_started/using_frameworks.md:2
+msgid "Using existing frameworks and applications"
+msgstr ""
+
+#: ../../../getting_started/using_frameworks.md:4
+msgid ""
+"There are many VTK-based, free, open-source applications for scientific, bio-"
+"medical and medical image visualization and processing; several of them are "
+"extensible frameworks that can be customized for particular use cases. "
+"[ParaView](https://paraview.org), [Trame](https://kitware.github.io/trame/"
+"index.html), [PyVista](https://docs.pyvista.org), and [3D Slicer](https://"
+"www.slicer.org/) are examples. Therefore, it is worth evaluating if any of "
+"these would allow you to address your challenges. This would save time by "
+"avoiding redeveloping everything from scratch and by capitalizing on large "
+"communities with thousands of experts."
+msgstr ""
+
+#: ../../../getting_started/using_frameworks.md:14
+msgid ""
+"Generally, the default (complex, but powerful) user interface of these "
+"applications allows one to figure out the complete workflow. Once one knows "
+"exactly what and how to do it, they can create a small Python scripted "
+"module that automates most of the steps and provides a simplified user "
+"interface."
+msgstr ""

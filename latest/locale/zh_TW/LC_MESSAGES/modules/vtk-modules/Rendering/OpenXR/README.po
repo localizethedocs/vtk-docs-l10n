@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:1
+msgid "VTK::RenderingOpenXR"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:3
+msgid ""
+"The `OpenXR` module aims to support rendering to a variety of mixed reality "
+"devices under the OpenXR industry-wide standard. Detailed information on the "
+"OpenXR specification and compliant OpenXR runtimes may be found on the "
+"[Khronos Group website](https://www.khronos.org/openxr/)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:8
+msgid "Supported Devices"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:10
+msgid ""
+"The OpenXR standard is implemented by most PC-based OpenXR runtimes and "
+"devices. The VTK `OpenXR` module aims to support most devices that implement "
+"the OpenXR specification and support OpenGL rendering."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:14
+msgid ""
+"The list of possible XR device targets is extensive and constantly "
+"expanding. At the time of writing, theoretically supported devices include "
+"but are not limited to the following:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:17
+msgid "Valve Index"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:18
+msgid "HTC Vive (, Pro)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:19
+msgid "Meta Quest (1,2,3,Pro)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:20
+msgid ""
+"[Quest Link](https://www.meta.com/help/quest/articles/headsets-and-"
+"accessories/oculus-link/connect-link-with-quest-2/) or [Air Link](https://"
+"www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/"
+"connect-with-air-link/) only"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:21
+msgid "HP Reverb G2"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:23
+msgid "Supported input devices and mechanisms include the following:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:24
+msgid ""
+"HP Mixed Reality Controller [json](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Rendering/OpenXR/vtk_openxr_binding_hp_mixed_reality.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:25
+msgid ""
+"HTC Vive Controller [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenXR/vtk_openxr_binding_htc_vive_controller.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:26
+msgid ""
+"KHR Simple Controller [json](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Rendering/OpenXR/vtk_openxr_binding_khr_simple_controller.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:27
+msgid ""
+"Microsoft Hand Interaction [json](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Rendering/OpenXR/vtk_openxr_binding_microsoft_hand_interaction.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:28
+msgid ""
+"Oculus Touch [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenXR/vtk_openxr_binding_oculus_touch_controller.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:29
+msgid ""
+"Valve Knuckles [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenXR/vtk_openxr_binding_knuckles.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:31
+msgid ""
+"The `OpenXR` module is commonly tested with the Valve Index and HTC Vive "
+"virtual reality headsets."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:34
+msgid "Adding New Devices"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:36
+msgid ""
+"It may be necessary to tell VTK how to handle inputs from a new OpenXR-"
+"compatible device. Consider contributing a new JSON input binding "
+"specification to add support for a new XR device to the VTK `OpenXR` module."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:40
+msgid "The OpenXR interaction profile specification is documented here:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:42
+msgid ""
+"https://registry.khronos.org/OpenXR/specs/1.0/html/xrspec.html#semantic-path-"
+"interaction-profiles"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:44
+msgid ""
+"Input binding JSON files should be added to `OpenXR` and set as default in "
+"`vtk_openxr_actions.json`[json](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Rendering/OpenXR/vtk_openxr_actions.json)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:47
+msgid "Building"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:49
+msgid ""
+"The `OpenXR` module depends on the [`OpenXR-SDK`](https://github.com/"
+"KhronosGroup/OpenXR-SDK) library. `OpenXR-SDK` can be built with CMake via "
+"the steps below:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:52
+msgid ""
+"> git clone git@github.com:KhronosGroup/OpenXR-SDK.git\n"
+"> mkdir OpenXR-SDK-build\n"
+"> cd OpenXR-SDK-build\n"
+"OpenXR-SDK-build > cmake ../OpenXR-SDK\n"
+"OpenXR-SDK-build > cmake --build . --config \"Release\"\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:60
+msgid ""
+"The `OpenXR` is turned off in VTK by default. Run the following steps to "
+"build VTK with OpenXR:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:62
+msgid ""
+"VTK-build > cmake -DVTK_MODULE_ENABLE_VTK_RenderingOpenXR:STRING=YES -"
+"DOpenXR_INCLUDE_DIR:PATH=\"path/to/OpenXR-SDK/include/openxr\" -"
+"DOpenXR_LIBRARY:FILEPATH=\"path/to/OpenXR-SDK-build/src/loader/Release/"
+"openxr_loader.lib\" path/to/VTK\n"
+"VTK-build > cmake --build . --config \"Release\"\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:67
+msgid "Controller Model Rendering"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:69
+msgid ""
+"OpenXR does not yet provide any api for rendering controller models in the "
+"same way that OpenVR does, though work towards that goal has been in "
+"progress for a long time.  Until that materializes, VTK provides a way to "
+"render glTF controller models by using the currently active interaction "
+"profile to index into a customizable lookup table of rendering assets."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:71
+msgid ""
+"Out of the box, VTK does not come with any controller models for the `VTK::"
+"RenderingOpenXR` module to render, but a data archive containing models for "
+"a subset of the currently supported interaction profiles is available from "
+"[here](https://www.paraview.org/files/data/OpenXRControllerModels-0.1.tgz).  "
+"Those models are included by default in ParaView binary downloads, but can "
+"be extracted into any build or install tree, and VTK will automatically find "
+"and use them."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:73
+msgid ""
+"Though some of the contents are omitted below for expository purposes, the "
+"structure of the default model archive is mostly as follows:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:75
+msgid ""
+"OpenXRControllerModels-<version>/\n"
+"OpenXRControllerModels-<version>/openxr_controllermodels.json\n"
+"OpenXRControllerModels-<version>/valve_index/\n"
+"OpenXRControllerModels-<version>/valve_index/left/\n"
+"OpenXRControllerModels-<version>/valve_index/left/scene.gltf\n"
+"OpenXRControllerModels-<version>/valve_index/right/\n"
+"OpenXRControllerModels-<version>/valve_index/right/scene.gltf\n"
+"OpenXRControllerModels-<version>/htc_vive/\n"
+"OpenXRControllerModels-<version>/htc_vive/scene.gltf\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:87
+msgid ""
+"Models are also accompanied by a binary file containing geometry, a base "
+"color image, and a license file detailing model attribution and the terms "
+"under which the model is distributed."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:89
+msgid "The contents of `openxr_controllermodels.json` looks like this:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:91
+msgid ""
+"[\n"
+"  {\n"
+"    \"interaction_profile\": \"/interaction_profiles/htc/vive_controller\",\n"
+"    \"asset_paths\": {\n"
+"      \"left_controller\": \"htc_vive/scene.gltf\",\n"
+"      \"right_controller\": \"htc_vive/scene.gltf\"\n"
+"    }\n"
+"  },\n"
+"  {\n"
+"    \"interaction_profile\": \"/interaction_profiles/valve/"
+"index_controller\",\n"
+"    \"asset_paths\": {\n"
+"      \"left_controller\": \"valve_index/left/scene.gltf\",\n"
+"      \"right_controller\": \"valve_index/right/scene.gltf\"\n"
+"    }\n"
+"  }\n"
+"]\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:110
+msgid ""
+"Note it's just a json array of objects. Each object contains an interaction "
+"profile, which should match one of those referenced in the binding files "
+"found in `VTK/Rendering/OpenxR/` or `ParaView/Plugins/XRInterface/Plugin/`. "
+"Each object also contains a dictionary indicating relative path (from the "
+"root of the model archive) to glTF models for left and right controllers."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:112
+msgid ""
+"By extracting this archive (or a sufficiently similar one) into your VTK or "
+"ParaView build or install tree, the `VTK::RenderingOpenXR` module will be "
+"able to render the supplied models in place of the default green pyramids. "
+"Note that downloaded ParaView binaries come with this default set of "
+"controller models already installed."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:114
+msgid "Testing"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:116
+msgid ""
+"Minimum OpenXR examples are available in the [`Testing/Cxx`](https://gitlab."
+"kitware.com/vtk/vtk/-/blob/master/Rendering/OpenXR/Testing/Cxx) directory "
+"for testing."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:118
+msgid "To run OpenXR tests, first build VTK with testing enabled."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:120
+msgid ""
+"VTK-build > cmake -DVTK_BUILD_TESTING:BOOL=ON path/to/VTK\n"
+"VTK-build > cmake --build . --config \"Release\"\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:125
+msgid "Then run the test with CTest."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:127
+msgid "VTK-build > ctest -C Release -R <name_of_test>\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:131
+msgid "Additional Notes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:133
+msgid ""
+"See [VTK `OpenXRRemoting` documentation](../OpenXRRemoting/README.md) for "
+"information on virtual reality rendering to DirectX devices such as the "
+"Microsoft HoloLens 2."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:136
+msgid ""
+"Some non-OpenGL devices may be compatible with the WebGL and WebXR "
+"specifications. If your XR device does not support OpenGL or OpenXR, we "
+"suggest visiting [VTK.js WebXR documentation](https://kitware.github.io/vtk-"
+"js/docs/develop_webxr.html) for a web-driven solution."
+msgstr ""

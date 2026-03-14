@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:1
+msgid "VTK::IOXDMF2"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:3
+msgid ""
+"The IO/Xdmf2 directory contains a reduced distribution of the xdmf2/vtk (pv "
+"branch) source tree with only the library source code needed by VTK.  It is "
+"not a submodule; the actual content is part of our source tree and changes "
+"can be made and committed directly."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:9
+msgid ""
+"We update from upstream using Git's \"subtree\" merge strategy.  A special "
+"branch contains commits of upstream xdmf2/vtk snapshots and nothing else.  "
+"No Git ref points explicitly to the head of this branch, but it is merged "
+"into our history."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:14
+msgid ""
+"Update xdmf2/vtk from upstream as follows.  Create a local branch to "
+"explicitly reference the upstream snapshot branch head:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:17
+msgid "git branch xdmf2vtk-upstream f40916ae"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:19
+msgid "Use a temporary directory to checkout the branch:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:21
+msgid ""
+"mkdir xdmf2vtk-tmp  cd xdmf2vtk-tmp  git init  git pull .. xdmf2vtk-"
+"upstream  rm -rf *"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:27
+msgid ""
+"Now place the (reduced) xdmf2/vtk content in this directory.  See "
+"instructions shown by"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:30
+msgid "git log f40916ae"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:32
+msgid ""
+"for help extracting the content from the upstream tarball.  Then run the "
+"following commands to commit the new version.  Substitute the appropriate "
+"date and version number:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:36
+msgid "git add --all"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:38
+msgid ""
+"GIT_AUTHOR_NAME='XDMF Developers' \\  GIT_AUTHOR_EMAIL='xdmf@lists.kitware."
+"com' \\  GIT_AUTHOR_DATE='2012-08-01 16:14:03 -0500' \\  git commit -m "
+"'xdmf2/vtk 2012-08-01 (reduced)' &&  git commit --amend"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:0
+msgid "<br />\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:0
+msgid "\\\\\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:44
+msgid ""
+"Edit the commit message to describe the procedure used to obtain the "
+"content. Then push the changes back up to the main local repository:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:47
+msgid "git push .. HEAD:xdmf2vtk-upstream  cd ..  rm -rf xdmf2vtk-tmp"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:51
+msgid "Create a topic in the main repository on which to perform the update:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:53
+msgid "git checkout -b update-xdmf2 master"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:55
+msgid "Merge the xdmf2vtk-upstream branch as a subtree:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:57
+msgid ""
+"git merge -s recursive -X subtree=IO/Xdmf2 \\            xdmf2vtk-upstream"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:60
+msgid ""
+"If there are conflicts, resolve them and commit.  Build and test the tree.  "
+"Commit any additional changes needed to succeed."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:63
+msgid "Finally, run"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:65
+msgid "git rev-parse --short=8 xdmf2vtk-upstream"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Xdmf2/README.md:67
+msgid ""
+"to get the commit from which the xdmf2vtk-upstream branch must be started on "
+"the next update.  Edit the \"git branch xdmf2vtk-upstream\" line above to "
+"record it, and commit this file."
+msgstr ""

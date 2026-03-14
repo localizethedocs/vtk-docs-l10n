@@ -1,0 +1,34 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.array_overrides.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.array_overrides`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/array_overrides.py:7
+msgid "Register numpy-compatible overrides for VTK array types."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/array_overrides.py:9
+msgid ""
+"Importing this module registers VTKAOSArray and VTKSOAArray mixins as "
+"overrides for all vtkAOSDataArrayTemplate and vtkSOADataArrayTemplate "
+"instantiations.  This is triggered automatically when vtkCommonCore is "
+"imported (via MODULE_MAPPER in vtkmodules/__init__.py)."
+msgstr ""

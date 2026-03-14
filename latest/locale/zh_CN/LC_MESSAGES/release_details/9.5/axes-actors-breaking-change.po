@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/axes-actors-breaking-change.md:1
+msgid "vtkAxisActor and vtkPolarAxesActor breaking changes"
+msgstr ""
+
+#: ../../../release_details/9.5/axes-actors-breaking-change.md:3
+msgid ""
+"Protected members of `vtkAxisActor` and `vtkPolarAxesActor` classes were "
+"moved to private. Please use appropriate Getter/Setter to use them instead."
+msgstr ""
+
+#: ../../../release_details/9.5/axes-actors-breaking-change.md:6
+msgid ""
+"Also some API were ported from `const char*` to `std::string`. While this is "
+"straigtforward for setters, this breaks the following getters:"
+msgstr ""
+
+#: ../../../release_details/9.5/axes-actors-breaking-change.md:8
+msgid "`vtkAxisActor::GetTitle()`"
+msgstr ""
+
+#: ../../../release_details/9.5/axes-actors-breaking-change.md:9
+msgid "`vtkPolarAxesActor::GetPolarAxisTitle()`"
+msgstr ""

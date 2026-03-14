@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/wasm/README.md:2
+msgid "VTK WASM regression test suite architecture"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:4
+msgid ""
+"The VTK Emscripten test utilities utilize a custom protocol designed to "
+"address the file I/O requirements of WebAssembly (WASM) unit tests. This "
+"protocol allows C++ unit tests to dump files from the sandbox to the server "
+"hosting the WASM module."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:6
+msgid "Fixtures"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:8
+msgid ""
+"The test suite requires a HTTP server to run in the background. "
+"Additionally, the tests expect to find a \"vtkhttp.lock\" file in the "
+"`${CMAKE_BINARY_DIR}/Testing/Temporary` directory."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:10
+msgid ""
+"This lock file must contain the URL of a HTTP server that the tests may "
+"connect to using web browser APIs. Right now, the connection is only made "
+"when a unit test needs to dump a file (like difference images) to server "
+"filesystem."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:13
+msgid ""
+"A new fixture called \"HTTP\" is used to coordinate the startup and shutdown "
+"of the HTTP server. The special unit test `HTTPServerStart` is run before "
+"all the unit tests that have \"HTTP\" in their `FIXTURES_REQUIRED` property "
+"and finally the `HTTPServerStop` is run at the end to shutdown the HTTP "
+"server."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:17
+msgid "Arguments"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:19
+msgid ""
+"The command line for a unit test is set by the CMake functions in "
+"vtkModuleTesting.cmake file. It looks like \"cmake\" -D... \"CMake/"
+"vtkWasmTestRunner.cmake\" \"/path/to/vtkModuleNameCxxTests.js_file\" "
+"\"TestName\" \"arg1\" \"arg2\" ... \"argn\""
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:22
+msgid "Routes:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:24
+msgid "`/dump?file=/path/to/file.ext`:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:26
+msgid ""
+"**Request description**: wasm unit test initiates a POST with the full path "
+"of a file in its query parameters and sends the entire contents of the "
+"output file in the POST content."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:28
+msgid ""
+"**Expected response**: No response needed if parameters are valid. 'Invalid "
+"query for /dump' if query parameters are invalid."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:30
+msgid "`/preload?file=[Drive:]/path/to/host_file.ext`:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:32
+msgid ""
+"**Request description**: wasm unit test initiates a GET with the full path "
+"of a file on the host filesystem in its query parameters."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:34
+msgid ""
+"**Expected response**: The entire contents of the requested file if it "
+"exists. 'File not found' if the file does not exist."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:36
+msgid "`/favicon.ico`:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:38
+msgid "**Request description**: Browser requests the favicon for the server."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:40
+msgid "**Expected response**: An empty response with 200 OK status is fine."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:42
+msgid "`/VTK<ModuleName>/test.html`:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:44
+msgid ""
+"**Request description**: Browser requests the test HTML page for a given VTK "
+"module."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:46
+msgid ""
+"**Expected response**: The HTML page that loads the corresponding wasm "
+"module and runs the tests."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:48
+msgid "`/VTK<ModuleName>/vtk<ModuleName>CxxTests.js`:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:50
+msgid ""
+"**Request description**: Browser requests the wasm JS file for a given VTK "
+"module."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:52
+msgid ""
+"**Expected response**: The wasm JS file that contains the compiled "
+"WebAssembly module and its JavaScript glue code. This file is located in the "
+"CMake build directory under `${CMAKE_RUNTIME_OUTPUT_DIRECTORY}`."
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:54
+msgid "Reference Client-side implementation in VTK:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:56
+msgid ""
+"[vtkEmscriptenTestUtilities.h](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Testing/Core/vtkEmscriptenTestUtilities.h)"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:57
+msgid ""
+"[vtkEmscriptenTestUtilities.cxx](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Testing/Core/vtkEmscriptenTestUtilities.cxx)"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:58
+msgid ""
+"[vtkEmscriptenTestUtilities.js](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Testing/Core/vtkEmscriptenTestUtilities.js)"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:60
+msgid "Reference Server-side implementation in VTK:"
+msgstr ""
+
+#: ../../../../../CMake/wasm/README.md:62
+msgid "The `server.js` implements the `/dump` request."
+msgstr ""

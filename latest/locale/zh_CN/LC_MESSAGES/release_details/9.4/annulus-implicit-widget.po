@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:1
+msgid "New vtkAnnulus Implicit Function and Widget"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:3
+msgid "Introduce implicit Annulus"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:5
+msgid ""
+"The new `vtkAnnulus` implicit function represents an infinite annulus (two "
+"co-axial cylinders). It exposes getters and setters for its axis, origin, "
+"and inner/outer radii parameters. Changing those will automatically update "
+"the base `vtkImplicitFunction`'s transform."
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:9
+msgid "Add a new Implicit Annulus Widget"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:11
+msgid ""
+"The new `vtkAnnulus` has a widget representation. The representation can be "
+"manipulated through widget controls:"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:13
+msgid "Rotate through the axis handle"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:14
+msgid "Translate through the center handle"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:15
+msgid "Scale through the outline handle"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:16
+msgid "Adjust inner/outer radii through the cone edges handles"
+msgstr ""
+
+#: ../../../release_details/9.4/annulus-implicit-widget.md:18
+msgid ""
+"Its underlying annulus can be used in any filter relying on implicit "
+"functions (i.e. Clip, Slice)."
+msgstr ""

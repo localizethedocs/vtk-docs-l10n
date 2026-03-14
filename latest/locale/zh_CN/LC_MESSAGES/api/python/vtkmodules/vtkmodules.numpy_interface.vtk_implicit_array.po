@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_implicit_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:24
+msgid "Notes"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:26
+msgid ""
+"Because AOS overrides are registered on concrete types (``vtkFloatArray``, "
+"``vtkAOSDataArrayTemplate[float32]``, etc.) and SOA overrides on "
+"``vtkSOADataArrayTemplate[...]``, those always take precedence over this "
+"``vtkDataArray``-level fallback."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:7
+msgid ""
+"VTKImplicitArray — fallback numpy-compatible mixin for implicit VTK arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:9
+msgid ""
+"VTK implicit arrays (vtkImplicitArray<BackendT>) compute values on the fly "
+"from a backend functor rather than storing them in memory.  Many backends "
+"are defined locally in C++ implementation files and are never exposed to the "
+"Python wrapping system.  When such an array crosses from C++ to Python, "
+"VTK's ``FindNearestBaseClass`` resolves it to ``vtkDataArray`` — the nearest "
+"wrapped ancestor."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:9
+msgid "<BackendT>"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:16
+msgid ""
+"This module registers a fallback mixin on ``vtkDataArray`` so that *any* "
+"data array type that does not have a more-specific override (AOS, SOA, or a "
+"dedicated implicit-array override) still gets a working numpy interface."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:20
+msgid ""
+"The mixin materialises values by deep-copying to an AOS array on first "
+"access and caches the result.  A ``ModifiedEvent`` observer invalidates the "
+"cache so that re-reads after the underlying data changes produce correct "
+"results."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:18
+msgid ""
+"{py:obj}`VTKImplicitArray <vtkmodules.numpy_interface.vtk_implicit_array."
+"VTKImplicitArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:67
+msgid "Fallback numpy-compatible mixin for implicit/unknown VTK data arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:30
+msgid ""
+"{py:obj}`_register_implicit_override <vtkmodules.numpy_interface."
+"vtk_implicit_array._register_implicit_override>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:360
+msgid "Register VTKImplicitArray as override on vtkDataArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:36
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:42
+msgid ""
+"{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_implicit_array."
+"_UNINITIALIZED>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:48
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:54
+msgid "'object(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:64
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:69
+msgid ""
+"Materialises the array to a contiguous AOS copy (via ``DeepCopy``) on first "
+"numpy access and caches the result.  The cache is invalidated when VTK fires "
+"``ModifiedEvent`` on the array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:73
+msgid ""
+"This mixin is automatically applied to any ``vtkDataArray`` subclass that "
+"does not already have a more specific override (AOS or SOA)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:76
+msgid ""
+"Properties/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_implicit_array.py:76: (INFO/1) "
+"Duplicate implicit target name: \"properties\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:78
+msgid ""
+"shape : tuple of int     ``(ntuples,)`` for 1-component, ``(ntuples, "
+"ncomps)`` otherwise. dtype : numpy.dtype     The element data type. "
+"dataset : vtkDataSet or None     The owning VTK dataset, when the array is "
+"attached to one. association : int or None     The attribute association "
+"(POINT, CELL, etc.)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:87
+msgid ""
+"Examples/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_implicit_array.py:87: (INFO/1) "
+"Duplicate implicit target name: \"examples\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:89
+msgid "Implicit arrays from VTK are automatically wrapped::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:91
+msgid ""
+"implicit_arr = some_filter.GetOutput().GetPointData().GetArray(0)\n"
+"print(np.sum(implicit_arr))   # materialises once, then cached\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:94
+msgid ""
+"See Also/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_implicit_array.py:94: (INFO/1) "
+"Duplicate implicit target name: \"see also\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:96
+msgid ""
+"VTKAOSArray : Mixin for array-of-structures VTK arrays (zero-copy). "
+"VTKSOAArray : Mixin for structure-of-arrays VTK arrays (zero-copy)."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:69
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:80
+msgid "Deep-copy this array into a contiguous AOS numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:96
+msgid "Invalidate the cached numpy array when the VTK array is modified."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:120
+msgid "Expose the materialised AOS copy via the buffer protocol."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:122
+msgid ""
+"This allows ``numpy.frombuffer(implicit_arr)`` and "
+"``vtk_to_numpy(implicit_arr)`` to work transparently."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:362
+msgid ""
+"This is a fallback: any array type that already has a more-specific override "
+"(AOS on vtkFloatArray, SOA on vtkSOADataArrayTemplate, etc.) is unaffected.  "
+"Only types whose nearest wrapped ancestor is vtkDataArray will use this "
+"mixin."
+msgstr ""

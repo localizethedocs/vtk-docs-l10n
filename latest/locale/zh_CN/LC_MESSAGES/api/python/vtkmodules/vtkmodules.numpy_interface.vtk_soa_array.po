@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_soa_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:7
+msgid "VTKSOAArray — numpy-compatible mixin for vtkSOADataArrayTemplate."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:9
+msgid ""
+"This module provides the VTKSOAArray mixin class and registers overrides for "
+"all vtkSOADataArrayTemplate instantiations so that SOA arrays coming from "
+"VTK automatically have numpy-compatible operations.  Per-component buffers "
+"are exposed as zero-copy numpy arrays; when a contiguous AOS array is "
+"needed, the wrapper materialises one on the fly via ``numpy.column_stack``."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:18
+msgid ""
+"{py:obj}`VTKSOAArray <vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:180
+msgid "A numpy-compatible view of VTK's structure-of-arrays data arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:30
+msgid ""
+"{py:obj}`_to_ndarray <vtkmodules.numpy_interface.vtk_soa_array._to_ndarray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:156
+msgid "Materialise a VTKSOAArray to ndarray via ``__array__()``."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:34
+msgid ""
+"{py:obj}`_soa_to_ndarray_arg <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_to_ndarray_arg>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:163
+msgid "Convert VTKSOAArray to ndarray, recursing into lists/tuples."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:38
+msgid ""
+"{py:obj}`_soa_as_ndarray <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_as_ndarray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:170
+msgid "Convert VTKSOAArray to ndarray; pass anything else through."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:42
+msgid "{py:obj}`_soa_sum <vtkmodules.numpy_interface.vtk_soa_array._soa_sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:46
+msgid ""
+"{py:obj}`_soa_mean <vtkmodules.numpy_interface.vtk_soa_array._soa_mean>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:50
+msgid "{py:obj}`_soa_min <vtkmodules.numpy_interface.vtk_soa_array._soa_min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:54
+msgid "{py:obj}`_soa_max <vtkmodules.numpy_interface.vtk_soa_array._soa_max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:58
+msgid "{py:obj}`_soa_std <vtkmodules.numpy_interface.vtk_soa_array._soa_std>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:62
+msgid "{py:obj}`_soa_var <vtkmodules.numpy_interface.vtk_soa_array._soa_var>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:66
+msgid "{py:obj}`_soa_any <vtkmodules.numpy_interface.vtk_soa_array._soa_any>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:70
+msgid "{py:obj}`_soa_all <vtkmodules.numpy_interface.vtk_soa_array._soa_all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:74
+msgid ""
+"{py:obj}`_soa_prod <vtkmodules.numpy_interface.vtk_soa_array._soa_prod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:78
+msgid ""
+"{py:obj}`_soa_argmin <vtkmodules.numpy_interface.vtk_soa_array._soa_argmin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:82
+msgid ""
+"{py:obj}`_soa_argmax <vtkmodules.numpy_interface.vtk_soa_array._soa_argmax>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:86
+msgid ""
+"{py:obj}`_soa_cumsum <vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:90
+msgid ""
+"{py:obj}`_soa_cumprod <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_cumprod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:94
+msgid ""
+"{py:obj}`_soa_concatenate <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_concatenate>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:98
+msgid ""
+"{py:obj}`_soa_clip <vtkmodules.numpy_interface.vtk_soa_array._soa_clip>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:102
+msgid ""
+"{py:obj}`_soa_sort <vtkmodules.numpy_interface.vtk_soa_array._soa_sort>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:106
+msgid ""
+"{py:obj}`_soa_where <vtkmodules.numpy_interface.vtk_soa_array._soa_where>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:110
+msgid ""
+"{py:obj}`_soa_isin <vtkmodules.numpy_interface.vtk_soa_array._soa_isin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:114
+msgid ""
+"{py:obj}`_soa_round <vtkmodules.numpy_interface.vtk_soa_array._soa_round>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:118
+msgid "{py:obj}`_soa_dot <vtkmodules.numpy_interface.vtk_soa_array._soa_dot>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:122
+msgid ""
+"{py:obj}`_register_soa_overrides <vtkmodules.numpy_interface.vtk_soa_array."
+"_register_soa_overrides>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:124
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:766
+msgid "Register VTKSOAArray mixin as override for all SOA template types."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:128
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:134
+msgid ""
+"{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_soa_array."
+"_UNINITIALIZED>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:140
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:146
+msgid "'object(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:158
+msgid ""
+"Calls ``__array__()`` directly for VTKSOAArray to ensure per-component "
+"column_stack materialisation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:177
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:182
+msgid ""
+"VTK's SOA (structure-of-arrays) layout stores each component in a separate "
+"contiguous buffer.  This mixin exposes those per-component buffers as **zero-"
+"copy numpy arrays** and performs element-wise operations per-component, "
+"avoiding the overhead of converting to AOS layout."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:188
+msgid ""
+"This mixin is automatically applied to all ``vtkSOADataArrayTemplate`` "
+"instantiations.  Any SOA array that crosses from C++ to Python is already a "
+"``VTKSOAArray`` instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:192
+msgid ""
+"Properties/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_soa_array.py:192: (INFO/1) Duplicate "
+"implicit target name: \"properties\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:194
+msgid ""
+"shape : tuple of int     ``(ntuples,)`` for 1-component, ``(ntuples, "
+"ncomps)`` otherwise. dtype : numpy.dtype     The element data type. "
+"components : list of numpy.ndarray     Per-component zero-copy numpy array "
+"views. dataset : vtkDataSet or None     The owning VTK dataset, when the "
+"array is attached to one. association : int or None     The attribute "
+"association (POINT, CELL, etc.)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:205
+msgid ""
+"Per-Component Operations/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/"
+"repo/Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:205: "
+"(INFO/1) Duplicate implicit target name: \"per-component operations\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:207
+msgid ""
+"Arithmetic, comparisons, and ufuncs operate on each component buffer "
+"independently, preserving the SOA layout in the result. This avoids the "
+"memory overhead and cache penalty of interleaving components into AOS form::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:212
+msgid ""
+"arr = soa_filter.GetOutput().GetPointData().GetArray(0)\n"
+"scaled = arr * 2.0          # per-component multiply, stays SOA\n"
+"diff = arr1 - arr2          # per-component subtract\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:216
+msgid ""
+"When an operation cannot be decomposed per-component (e.g. cross-component "
+"reductions with ``axis=1``), the mixin materialises a contiguous AOS copy "
+"via ``numpy.column_stack``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:220
+msgid ""
+"Memory Safety/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_soa_array.py:220: (INFO/1) Duplicate "
+"implicit target name: \"memory safety\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:222
+msgid ""
+"The mixin observes ``BufferChangedEvent`` from VTK.  If any component buffer "
+"is reallocated, the cached views are automatically invalidated."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:226
+msgid ""
+"NumPy Integration/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/"
+"Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:226: (INFO/1) "
+"Duplicate implicit target name: \"numpy integration\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:228
+msgid "``numpy.asarray(arr)`` materialises an AOS copy via column_stack."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:229
+msgid ""
+"Reductions (``sum``, ``mean``, ``min``, ``max``, ``std``, ``var``) operate "
+"per-component without materialisation when possible."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:231
+msgid ""
+"``numpy.concatenate``, ``numpy.where``, ``numpy.clip``, etc. have SOA-aware "
+"overrides."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:233
+msgid ""
+"The ``__buffer__`` override (PEP 688) prevents ``GetVoidPointer`` from "
+"destructively converting SOA storage to AOS."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:236
+msgid ""
+"Examples/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_soa_array.py:236: (INFO/1) Duplicate "
+"implicit target name: \"examples\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:238
+msgid "Arrays from VTK are already the right type::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:240
+msgid ""
+"arr = soa_output.point_data[\"velocity\"]\n"
+"print(arr.components)      # [x_array, y_array, z_array]\n"
+"print(np.sum(arr, axis=0)) # per-component sum, no AOS copy\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:244
+msgid "Create from numpy::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:246
+msgid ""
+"from vtkmodules.util.numpy_support import numpy_to_vtk_soa\n"
+"soa = numpy_to_vtk_soa([x, y, z], name=\"coords\")\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:249
+msgid ""
+"See Also/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_soa_array.py:249: (INFO/1) Duplicate "
+"implicit target name: \"see also\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:251
+msgid "VTKAOSArray : Mixin for array-of-structures VTK arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:182
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:193
+msgid "Populate this array from an iterable of per-component iterables."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:195
+msgid ""
+"Each element of *data* becomes one component.  All components must have the "
+"same length.  Data is converted to match this array's VTK data type."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:201
+msgid "Copy dataset/association metadata to target array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:209
+msgid "Override to prevent garbage collection of numpy arrays passed in."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:225
+msgid "Extract per-component numpy arrays from VTK buffers."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:233
+msgid "Set up BufferChangedEvent observer for memory safety."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:273
+msgid "Return the list of per-component zero-copy numpy arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:281
+msgid "Return tuple of per-component numpy arrays (zero-copy)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:290
+msgid "Build a VTKSOAArray from a list of numpy arrays with VTK backing."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:292
+msgid ""
+"For bool components, the backing VTK array is "
+"``vtkSOADataArrayTemplate<char>`` (int8) since bool and char are binary "
+"compatible (both 1 byte)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:306
+msgid "Override C-level buffer protocol for SOA arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:308
+msgid ""
+"Materialises an AOS copy via ``__array__`` so that callers expecting a "
+"contiguous buffer get correct results without altering the underlying SOA "
+"storage."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:362
+msgid "Decompose other into per-component operands, or return None."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:618
+msgid "Sort per-component (axis=0) or materialise for other axes."
+msgstr ""

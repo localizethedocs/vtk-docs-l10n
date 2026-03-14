@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/fix-backface-color-for-glyph3d-mapper.md:1
+msgid "Fix backface color in glyph 3D mapper"
+msgstr ""
+
+#: ../../../release_details/9.4/fix-backface-color-for-glyph3d-mapper.md:3
+msgid ""
+"Fixes a bug in the OpenGL implementation of `vtkGlyph3DMapper` that did not "
+"propagate backface colors from the actor to the OpenGL shader program. You "
+"can now set the back face color of an actor connected to a "
+"`vtkGlyph3DMapper` and see the interior faces of the glyph mesh with a "
+"different color than the front faces."
+msgstr ""

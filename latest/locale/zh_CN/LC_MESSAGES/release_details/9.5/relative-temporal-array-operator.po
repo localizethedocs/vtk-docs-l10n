@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/relative-temporal-array-operator.md:1
+msgid "Relative Mode for vtkTemporalArrayOperatorFilter"
+msgstr ""
+
+#: ../../../release_details/9.5/relative-temporal-array-operator.md:3
+msgid ""
+"The `vtkTemporalArrayOperatorFilter` now has a `RelativeMode`, where it uses "
+"`UPDATE_TIME_STEP` time as first value alongside to a `TimeStepShift` "
+"shifted value, instead of two static time steps."
+msgstr ""
+
+#: ../../../release_details/9.5/relative-temporal-array-operator.md:5
+msgid "Behavior Breaking Change"
+msgstr ""
+
+#: ../../../release_details/9.5/relative-temporal-array-operator.md:7
+msgid ""
+"This filter was inconsistent on which input mesh and arrays were forwarded "
+"to output: Composite data used first input, while non composite used second. "
+"The forwarded data is now the one given by `FirstTimeStepIndex` when "
+"`RelativeMode` is off or by `UPDATE_TIME_STEP` otherwise, as Composite used "
+"to do."
+msgstr ""
+
+#: ../../../release_details/9.5/relative-temporal-array-operator.md:10
+msgid "Build Breaking Change"
+msgstr ""
+
+#: ../../../release_details/9.5/relative-temporal-array-operator.md:12
+msgid ""
+"The protected variable members where moved to private. From inherited "
+"classes, please use Getter/Setter instead."
+msgstr ""

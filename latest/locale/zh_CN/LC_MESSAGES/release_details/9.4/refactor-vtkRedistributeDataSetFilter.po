@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.md:1
+msgid "Refactor the `vtkRedistributeDataSetFilter` for more modularity"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.md:3
+msgid ""
+"The `vtkRedistributeDataSetFilter` now utilises a strategy pattern "
+"`vtkPartitioningStrategy` for encapsulating the partitioning algorithm to "
+"use when redistributing a data set. You can now change the partitioning "
+"strategy dynamically at runtime."
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.md:5
+msgid ""
+"The previous strategy hardcoded into the `vtkRedistributeDataSetFilter` has "
+"been refactored into the `vtkNativePartitioningStrategy` class (inheriting "
+"from `vtkPartitioningStrategy`). No novel strategies are included in this "
+"development."
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.md:7
+msgid ""
+"WARNING: The method `vtkRedistributeDataSetFilter::SplitDataSet` has changed "
+"signature and been made private. It no longer made any sense in the generic "
+"implementation proposed in this development."
+msgstr ""

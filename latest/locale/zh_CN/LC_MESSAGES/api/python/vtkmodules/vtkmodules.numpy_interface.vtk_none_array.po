@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_none_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_none_array.py:7
+msgid ""
+"VTKNoneArray — numpy-compatible void array for parallel composite operations."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_none_array.py:9
+msgid ""
+"VTKNoneArray is used to represent a \"void\" array.  An instance of this "
+"class (NoneArray) is returned instead of None when an array that doesn't "
+"exist in a DataSetAttributes is requested. All operations on the NoneArray "
+"return NoneArray.  The main reason for this is to support operations in "
+"parallel where one of the processes may be working on an empty dataset.  In "
+"such cases, the process is still expected to evaluate a whole expression "
+"because some of the functions may perform bulk MPI communication.  None "
+"cannot be used in these instances because it cannot properly override "
+"operators such as __add__, __sub__ etc."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_none_array.py:20
+msgid "The singleton instance is ``NoneArray``, importable as::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_none_array.py:22
+msgid "from vtkmodules.numpy_interface.vtk_none_array import NoneArray\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:18
+msgid ""
+"{py:obj}`VTKNoneArray <vtkmodules.numpy_interface.vtk_none_array."
+"VTKNoneArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_none_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_none_array.py:43
+msgid "Singleton void array — every operation returns itself."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:24
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:30
+msgid ""
+"{py:obj}`NoneArray <vtkmodules.numpy_interface.vtk_none_array.NoneArray>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:36
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:49
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.md:689
+msgid "'VTKNoneArray(...)'"
+msgstr ""

@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../vtk_file_formats/index.md:3
+msgid "Contents"
+msgstr ""
+
+#: ../../../vtk_file_formats/index.md:1
+msgid "VTK File Formats"
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:2
+msgid "Overview"
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:4
+msgid ""
+"A lot of this material is taken from [The VTK User’s Guide](https://www."
+"kitware.com/products/books/VTKUsersGuide.pdf)."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:6
+msgid ""
+"The *Visualization Toolkit* provides a number of source and writer objects "
+"to read and write popular data file formats. The *Visualization Toolkit* "
+"also provides some of its own file formats. The main reason for creating yet "
+"another data file format is to offer a consistent data representation scheme "
+"for a variety of dataset types, and to provide a simple method to "
+"communicate data between software. Whenever possible, we recommend that you "
+"use formats that are more widely used. But if this is not possible, the "
+"*Visualization Toolkit* formats described here can be used instead. Note "
+"that these formats may not be supported by many other tools."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:8
+msgid ""
+"There are three different styles of file formats available in VTK: Legacy, "
+"XML and VTKHDF."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:11
+msgid "Legacy"
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:13
+msgid ""
+"It's a serial formats that are easy to read and write either by hand or "
+"programmatically."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:15
+msgid ""
+"For more details, read the [related documentation](vtk_legacy_file_format."
+"md)."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:17
+msgid "XML"
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:19
+msgid ""
+"More flexible but more complex than the legacy file format, it supports "
+"random access, parallel I/O, and portable data compression and are preferred "
+"to the serial VTK file formats whenever possible."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:21
+msgid ""
+"For more details, read the [related documentation](vtkxml_file_format.md)."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:24
+msgid "VTKHDF"
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:26
+msgid ""
+"This is a file format using the same concepts as the XML formats described "
+"above but relying on HDF5 for actual storage. It is simpler than the XML. It "
+"provides good I/O performance as well as robust and flexible parallel I/O "
+"capabilities and may to replace others file formats once it will be "
+"complete. It can be read/written using either hdf5 directly or the vtkhdf "
+"implementation in VTK."
+msgstr ""
+
+#: ../../../vtk_file_formats/overview.md:28
+msgid ""
+"For more details, read the [related documentation](vtkhdf_file_format/index."
+"md)."
+msgstr ""

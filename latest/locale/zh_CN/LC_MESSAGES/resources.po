@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../resources.md:1
+msgid "Resources"
+msgstr ""
+
+#: ../../../resources.md:3
+msgid ""
+"For commercial or confidential consulting related to VTK or any of our other "
+"products and services, please contact [Kitware’s advanced support team]"
+"(https://www.kitware.com/contact/advanced-support/) for personalized "
+"assistance."
+msgstr ""
+
+#: ../../../resources.md:5
+msgid "Links"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Name"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Description"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Book"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid ""
+"Descriptions of important visualization algorithms, including example images "
+"and code that utilizes VTK"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "book.vtk.org"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Discourse"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Community forum"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "discourse.vtk.org"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "GitLab"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Merge requests and issues take place here"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "gitlab.kitware.com/vtk/vtk"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Examples"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Examples, Tutorials, and guides for VTK in C++ and Python"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "examples.vtk.org"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Doxygen"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Documentation of VTK C++ classes updated daily"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "vtk.org/doc/nightly/html"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "CDash"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Quality Dashboard"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "open.cdash.org/index.php?project=VTK"
+msgstr ""
+
+#: ../../../resources.md:17
+msgid "Python"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "PyPI"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Python Wheels"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "`pip install vtk`"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "`wheels.vtk.org`"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "See [](./advanced/available_python_wheels.md)"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "`pip install --extra-index-url https://wheels.vtk.org vtk`"
+msgstr ""
+
+#: ../../../resources.md:24
+msgid "Docker"
+msgstr ""
+
+#: ../../../resources.md:26
+msgid ""
+"The VTK Docker Repositories are a set of ready-to-run [Docker images]"
+"(https://hub.docker.com/search?q=kitware%2Fvtk) aiming to support "
+"development and testing of VTK-based projects."
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "Repository"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "`Dockerfile`"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "[`kitware/vtk`][dockerhub-vtk]"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid ""
+"Images with built dependencies to support the continuous integration of VTK"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "[{material-regular}`code;2em`][dockerfile-vtk]"
+msgstr ""
+
+#: ../../../resources.md:30 ../../../resources.md:32
+msgid ""
+"<svg version=\"4.0.0.63c5cb3\" width=\"2.0em\" height=\"2.0em\" class=\"sd-"
+"material-icon sd-material-icon-code\" viewBox=\"0 0 24 24\" aria-"
+"hidden=\"true\"><path d=\"M0 0h24v24H0V0z\" fill=\"none\"></path><path "
+"d=\"M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 "
+"6l6 6-6 6-1.4-1.4z\"></path></svg>"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "[`kitware/vtk-for-ci`][dockerhub-vtk-for-ci]"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid ""
+"Images with installation of VTK (in `/opt/vtk/install`) to support building "
+"& testing your VTK-based projects. <br/>Learn more reading [this blog]"
+"(https://www.kitware.com/adding-ci-to-your-paraview-plugin-and-vtk-modules/)."
+msgstr ""
+
+#: ../../../resources.md:31
+msgid "<br/>"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "[`kitware/vtk-wasm`][dockerhub-vtk-wasm]"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid ""
+"Static emscripten build of VTK to support building VTK-based WebAssembly "
+"applications. See [](getting_started/using_webassembly.md)"
+msgstr ""
+
+#: ../../../resources.md:0
+msgid "[{material-regular}`code;2em`][dockerfile-vtk-wasm]"
+msgstr ""

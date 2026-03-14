@@ -1,0 +1,2222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../design_documents/ArrayDispatch.md:1
+msgid "vtkArrayDispatch and Related Tools"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:3
+msgid "Background"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:5
+msgid ""
+"VTK datasets store most of their important information in subclasses of "
+"`vtkAbstractArray`. Vertex locations (`vtkPoints::Data`), cell topology "
+"(`vtkCellArray::Offsets/Connectivity`), and numeric point, cell, and generic "
+"attributes (`vtkFieldData::Data`) are the dataset features accessed most "
+"frequently by VTK algorithms, and these all rely on the `vtkAbstractArray` "
+"API."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:11
+msgid "Terminology"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:13
+msgid "This page uses the following terms:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:15
+msgid ""
+"An __ArrayType__ is a concrete subclass of `vtkAbstractArray`. For instance:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:17
+msgid "`vtkAOSDataArrayTemplate<float>` or `vtkFloatArray`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:18
+msgid "`vtkSOADataArrayTemplate<vtkTypeInt64>` or `vtkSOATypeInt64Array`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:19
+msgid "`vtkConstantArray<vtkTypeInt8>` or `vtkConstantTypeInt8Array`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:20
+msgid "`vtkStringArray`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:21
+msgid "`vtkBitArray`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:23
+msgid ""
+"An __ArrayTypeTag__ is a constexpr integer value that represents an _class_ "
+"of arrays which can be either templated or non-templated. For instance:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:26
+msgid ""
+"`vtkAOSDataArrayTemplate<float>` has an ArrayTypeTag of `std::"
+"integral_constant<int, vtkArrayTypes::VTK_AOS_DATA_ARRAY>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:28
+msgid ""
+"`vtkSOADataArrayTemplate<vtkTypeInt64>` has an ArrayTypeTag of `std::"
+"integral_constant<int, vtkArrayTypes::VTK_SOA_DATA_ARRAY>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:30
+msgid ""
+"`vtkConstantArray<vtkTypeInt8>` has an ArrayTypeTag of `std::"
+"integral_constant<int, vtkArrayTypes::VTK_CONSTANT_ARRAY>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:32
+msgid ""
+"`vtkStringArray` has an ArrayTypeTag of `std::integral_constant<int, "
+"vtkArrayTypes::VTK_STRING_ARRAY>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:34
+msgid ""
+"`vtkBitArray` has an ArrayTypeTag of `std::integral_constant<int, "
+"vtkArrayTypes::VTK_BIT_ARRAY>`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:36
+msgid ""
+"The integer values used in ArrayTypeTag can be found in `vtkType.h`, and "
+"queried using `int vtkAbstractArray::GetArrayType()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:39
+msgid ""
+"A __DataTypeTag__ is constexpr integer value that represents a ValueType of "
+"an ArrayType. For instance:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:41
+msgid ""
+"`vtkAOSDataArrayTemplate<float>` has a DataTypeTag of `std::"
+"integral_constant<int, VTK_FLOAT>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:42
+msgid ""
+"`vtkSOADataArrayTemplate<vtkTypeInt64>` has a DataTypeTag of `std::"
+"integral_constant<int, VTK_TYPE_INT64>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:43
+msgid ""
+"`vtkConstantArray<vtkTypeInt8>` has a DataTypeTag of `std::"
+"integral_constant<int, VTK_TYPE_INT8>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:44
+msgid ""
+"`vtkStringArray` has a DataTypeTag of `std::integral_constant<int, "
+"VTK_STRING>`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:45
+msgid ""
+"`vtkBitArray` has a DataTypeTag of `std::integral_constant<int, VTK_BIT>`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:47
+msgid ""
+"The integer values used in DataTypeTag can be found in `vtkType.h`, and "
+"queried using `int vtkAbstractArray::GetDataType()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:50
+msgid "A __ValueType__ is the element type of an ArrayType. For instance:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:52
+msgid ""
+"`vtkAOSDataArrayTemplate<float>` or `vtkFloatArray` have a ValueType of "
+"`float`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:53
+msgid ""
+"`vtkSOADataArrayTemplate<vtkTypeInt64>` or `vtkSOATypeInt64Array` have a "
+"ValueType of `vtkTypeInt64`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:54
+msgid ""
+"`vtkConstantArray<vtkTypeInt8>` or `vtkConstantTypeInt8Array` have a "
+"ValueType of `vtkTypeInt8`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:55
+msgid "`vtkStringArray` has a ValueType of `vtkStdString`,"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:56
+msgid ""
+"`vtkBitArray` has a ValueType of `unsigned char`, because we can't have bit."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:58
+msgid ""
+"And Array must specify all of the above, i.e. ValueType, DataTypeTag, and "
+"ArrayTypeTag, along with an array implementation. This becomes important as "
+"`vtkAbstractArray` concrete subclasses will begin to stray from the typical "
+"\"array-of-structs\" ordering that has been exclusively used in the past."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:63
+msgid ""
+"A __dispatch__ is a runtime-resolution of a `vtkAbstractArray`'s ArrayType, "
+"and is used to call a section of executable code that has been tailored for "
+"that ArrayType. Dispatching has compile-time and run-time components. At "
+"compile-time, the possible ArrayTypes to be used are determined, and a "
+"worker code template is generated for each type, which is stored in an array "
+"so that it can be efficiently accessed using `GetArrayType()` and "
+"`GetDataType()` with `O(1)` complexity. At run-time, the correct ArrayType "
+"is determined, using `GetArrayType()` and `GetDataType()`, and the proper "
+"worker instantiation is called."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:72
+msgid ""
+"__Template explosion__ refers to a sharp increase in the size of a compiled "
+"binary that results from instantiating a template function or class on many "
+"different types."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:76
+msgid "vtkAbstractArray"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:78
+msgid ""
+"The abstract array type hierarchy in VTK has a unique feature when compared "
+"to typical C++ containers: a non-templated base class. All arrays inherit "
+"`vtkAbstractArray`. Those containing numeric data inherit `vtkDataArray`, "
+"which is a subclass of `vtkAbstractArray`, a common interface that sports a "
+"very useful API. Without knowing the underlying ValueType stored in data "
+"array, an algorithm or user may still work with any `vtkDataArray` in "
+"meaningful ways: The array can be resized, reshaped, read, and rewritten "
+"easily using a generic API that substitutes double-precision floating point "
+"numbers for the array's actual ValueType. For instance, we can write a "
+"simple function that computes the magnitudes for a set of vectors in one "
+"array and store the results in another using nothing but the typeless "
+"`vtkDataArray` API:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:90
+msgid ""
+"// 3 component magnitude calculation using the vtkDataArray API.\n"
+"// Inefficient, but easy to write:\n"
+"void calcMagnitude(vtkDataArray *vectors, vtkDataArray *magnitude)\n"
+"{\n"
+"  vtkIdType numVectors = vectors->GetNumberOfTuples();\n"
+"  for (vtkIdType tupleIdx = 0; tupleIdx < numVectors; ++tupleIdx)\n"
+"  {\n"
+"    // What data types are magnitude and vectors using?\n"
+"    // We don't care! These methods all use double.\n"
+"    magnitude->SetComponent(tupleIdx, 0, std::sqrt(\n"
+"      vectors->GetComponent(tupleIdx, 0) * vectors->GetComponent(tupleIdx, "
+"0) +\n"
+"      vectors->GetComponent(tupleIdx, 1) * vectors->GetComponent(tupleIdx, "
+"1) +\n"
+"      vectors->GetComponent(tupleIdx, 2) * vectors->GetComponent(tupleIdx, "
+"2));\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:108
+msgid "The Costs of Flexibility"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:110
+msgid ""
+"However, this flexibility comes at a cost. Passing data through a generic "
+"API has a number of issues:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:113
+msgid "Accuracy"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:115
+msgid ""
+"Not all ValueTypes are fully expressible as a `double`. The truncation of "
+"integers with > 52 bits of precision can be a particularly nasty issue."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:118
+msgid "Performance"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:120
+msgid ""
+"__Virtual overhead__: The only way to implement such a system is to route "
+"the `vtkDataArray` calls through a run-time resolution of ValueTypes. This "
+"is implemented through the virtual override mechanism of C++, which adds a "
+"small overhead to each API call."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:125
+msgid ""
+"__Missed optimization__: The virtual indirection described above also "
+"prevents the compiler from being able to make assumptions about the layout "
+"of the data in-memory. This information could be used to perform advanced "
+"optimizations, such as vectorization."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:130
+msgid ""
+"So what can one do if they want fast, optimized, type-safe access to the "
+"data stored in a `vtkDataArray` or `vtkAbstractArray`? What options are "
+"available?"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:133
+msgid "The Old Solution: vtkTemplateMacro"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:135
+msgid ""
+"The `vtkTemplateMacro`, or its extension `vtkExtendedTemplateMacro` (adds "
+"`VTK_STRING`) and `vtkExtraExtendedTemplateMacro` (adds `VTK_STRING`, "
+"`VTK_VARIANT`) is described in this section. While it is no longer "
+"considered a best practice to use this construct in new code, it is still "
+"usable and likely to be encountered when reading the VTK source code. Newer "
+"code should use the `vtkArrayDispatch` mechanism, which is detailed later. "
+"The discussion of `vtkTemplateMacro` will help illustrate some of the "
+"practical issues with array dispatching."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:144
+msgid ""
+"With a few minor exceptions that we won't consider here, prior to VTK 7.1 it "
+"was safe to assume that all numeric `vtkDataArray` objects were also "
+"subclasses of `vtkAOSDataArrayTemplate`, which at the time was called "
+"`vtkDataArrayTemplate`. This template class provided the implementation of "
+"all documented numeric data arrays such as `vtkDoubleArray`, "
+"`vtkIdTypeArray`, etc., and stores the tuples in memory as a contiguous "
+"array-of-structs (AOS). For example, if we had an array that stored 3-"
+"component tuples as floating point numbers, we could define a tuple as:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:152
+msgid "struct Tuple { float x; float y; float z; };\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:156
+msgid ""
+"An array-of-structs, or AOS, memory buffer containing this data could be "
+"described as:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:159
+msgid "Tuple ArrayOfStructsBuffer[NumTuples];\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:163
+msgid ""
+"As a result, `ArrayOfStructsBuffer` will have the following memory layout:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:165
+msgid "{ x1, y1, z1, x2, y2, z2, x3, y3, z3, ...}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:169
+msgid ""
+"That is, the components of each tuple are stored in adjacent memory "
+"locations, one tuple after another. While this is not exactly how "
+"`vtkAOSDataArrayTemplate` implemented its memory buffers, it accurately "
+"describes the resulting memory layout."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:174
+msgid ""
+"Combine the AOS memory convention and `GetDataType()` with a horrific little "
+"method on the data arrays named `GetVoidPointer()`, and a path to efficient, "
+"type-safe access was available. `GetVoidPointer()` does what it says on the "
+"tin: it returns the memory address for the array data's base location as a "
+"`void*`. While this breaks encapsulation and sets off warning bells for the "
+"more pedantic among us, the following technique was safe and efficient when "
+"used correctly:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:182
+msgid ""
+"// 3-component magnitude calculation using GetVoidPointer.\n"
+"// Efficient and fast, but assumes AOS memory layout\n"
+"template <typename ValueType>\n"
+"void calcMagnitudeWorker(ValueType* vectors, ValueType* magnitude, vtkIdType "
+"numVectors)\n"
+"{\n"
+"  for (vtkIdType tupleIdx = 0; tupleIdx < numVectors; ++tupleIdx)\n"
+"  {\n"
+"    // We now have access to the raw memory buffers, and assuming\n"
+"    // AOS memory layout, we know how to access them.\n"
+"    magnitude[tupleIdx] = std::sqrt(\n"
+"      vectors[3 * tupleIdx + 0] * vectors[3 * tupleIdx + 0] +\n"
+"      vectors[3 * tupleIdx + 1] * vectors[3 * tupleIdx + 1] +\n"
+"      vectors[3 * tupleIdx + 2] * vectors[3 * tupleIdx + 2]);\n"
+"   }\n"
+"}\n"
+"\n"
+"void calcMagnitude(vtkDataArray* vectors, vtkDataArray* magnitude)\n"
+"{\n"
+"  assert(\"Arrays must have same datatype!\" &&\n"
+"         vtkDataTypesCompare(vectors->GetDataType(),\n"
+"                             magnitude->GetDataType()));\n"
+"  switch (vectors->GetDataType())\n"
+"  {\n"
+"    vtkTemplateMacro(calcMagnitudeWorker<VTK_TT*>(\n"
+"      static_cast<VTK_TT*>(vectors->GetVoidPointer(0)),\n"
+"      static_cast<VTK_TT*>(magnitude->GetVoidPointer(0)),\n"
+"      vectors->GetNumberOfTuples());\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:214
+msgid ""
+"The `vtkTemplateMacro`, as you may have guessed, expands into a series of "
+"case statements that determine an array's ValueType from the `int "
+"GetDataType()` return value. The ValueType is then `typedef`'d to `VTK_TT`, "
+"and the macro's argument is called for each numeric type returned from "
+"`GetDataType`. In this case, the call to `calcMagnitudeWorker` is made by "
+"the macro, with `VTK_TT` `typedef`'d to the array's ValueType."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:221
+msgid ""
+"This is the typical usage pattern for `vtkTemplateMacro`. The "
+"`calcMagnitude` function calls a templated worker implementation that uses "
+"efficient, raw memory access to a typesafe memory buffer so that the "
+"worker's code can be as efficient as possible. But this assumes AOS memory "
+"ordering, and as we'll mention, this assumption may no longer be valid as "
+"VTK moves further into the field of in-situ analysis."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:228
+msgid ""
+"But first, you may have noticed that the above example using "
+"`vtkTemplateMacro` has introduced a step backwards in terms of "
+"functionality. In the `vtkDataArray` implementation, we didn't care if both "
+"arrays were the same ValueType, but now we have to ensure this, since we "
+"cast both arrays' `void` pointers to `VTK_TT`*. What if vectors is an array "
+"of integers, but we want to calculate floating point magnitudes?"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:235
+msgid "vtkTemplateMacro with Multiple Arrays"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:237
+msgid ""
+"The best solution prior to VTK 7.1 was to use two worker functions. The "
+"first is templated on vector's ValueType, and the second is templated on "
+"both array ValueTypes:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:241
+msgid ""
+"// 3-component magnitude calculation using GetVoidPointer and a\n"
+"// double-dispatch to resolve ValueTypes of both arrays.\n"
+"// Efficient and fast, but assumes AOS memory layout, lots of boilerplate\n"
+"// code, and the sensitivity to template explosion issues increases.\n"
+"template <typename VectorType, typename MagnitudeType>\n"
+"void calcMagnitudeWorker2(VectorType* vectors, MagnitudeType* magnitude,\n"
+"                          vtkIdType numVectors)\n"
+"{\n"
+"  for (vtkIdType tupleIdx = 0; tupleIdx < numVectors; ++tupleIdx)\n"
+"  {\n"
+"    // We now have access to the raw memory buffers, and assuming\n"
+"    // AOS memory layout, we know how to access them.\n"
+"    // We now have access to the raw memory buffers, and assuming\n"
+"    // AOS memory layout, we know how to access them.\n"
+"    magnitude[tupleIdx] = std::sqrt(\n"
+"      vectors[3 * tupleIdx + 0] * vectors[3 * tupleIdx + 0] +\n"
+"      vectors[3 * tupleIdx + 1] * vectors[3 * tupleIdx + 1] +\n"
+"      vectors[3 * tupleIdx + 2] * vectors[3 * tupleIdx + 2]);\n"
+"  }\n"
+"}\n"
+"\n"
+"// Vector ValueType is known (VectorType), now use vtkTemplateMacro on\n"
+"// magnitude:\n"
+"template <typename VectorType>\n"
+"void calcMagnitudeWorker1(VectorType* vectors, vtkDataArray* magnitude,\n"
+"                          vtkIdType numVectors)\n"
+"{\n"
+"  switch (magnitude->GetDataType())\n"
+"  {\n"
+"    vtkTemplateMacro(calcMagnitudeWorker2(vectors,\n"
+"      static_cast<VTK_TT*>(magnitude->GetVoidPointer(0)), numVectors);\n"
+"  }\n"
+"}\n"
+"\n"
+"void calcMagnitude(vtkDataArray *vectors, vtkDataArray *magnitude)\n"
+"{\n"
+"  // Dispatch vectors first:\n"
+"  switch (vectors->GetDataType())\n"
+"  {\n"
+"    vtkTemplateMacro(calcMagnitudeWorker1<VTK_TT*>(\n"
+"      static_cast<VTK_TT*>(vectors->GetVoidPointer(0)),\n"
+"      magnitude, vectors->GetNumberOfTuples());\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:288
+msgid ""
+"This works well, but it's a bit ugly and has the same issue as before "
+"regarding memory layout. Double dispatches using this method will also see "
+"more problems regarding binary size. The number of template instantiations "
+"that the compiler needs to generate is determined by `I = T^D`, where `I` is "
+"the number of template instantiations, `T` is the number of types "
+"considered, and `D` is the number of dispatches. As of VTK 7.1, "
+"`vtkTemplateMacro` considers 14 data types, so this double-dispatch will "
+"produce 14 instantiations of `calcMagnitudeWorker1` and 196 instantiations "
+"of `calcMagnitudeWorker2`. If we tried to resolve 3 `vtkDataArray`s into raw "
+"C arrays, 2744 instantiations of the final worker function would be "
+"generated. As more arrays are considered, the need for some form of "
+"restricted dispatch becomes very important to keep this template explosion "
+"in check."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:301
+msgid "Data Array Changes in newer VTK"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:303
+msgid ""
+"Starting with VTK 7.1, the Array-Of-Structs (AOS) memory layout is no longer "
+"the only `vtkDataArray` implementation provided by the library. The Struct-"
+"Of-Arrays (SOA) memory layout is now available through the "
+"`vtkSOADataArrayTemplate` class. The SOA layout assumes that the components "
+"of an array are stored separately, as in:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:309
+msgid ""
+"struct StructOfArraysBuffer\n"
+"{\n"
+"  float *x; // Pointer to array containing x components\n"
+"  float *y; // Same for y\n"
+"  float *z; // Same for z\n"
+"};\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:318
+msgid ""
+"The new SOA arrays were added to improve interoperability between VTK and "
+"simulation packages for live visualization of in-situ results. Many "
+"simulations use the SOA layout for their data, and natively supporting these "
+"arrays in VTK will allow analysis of live data without the need to "
+"explicitly copy it into a VTK data structure."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:324
+msgid ""
+"As a result of this change, a new mechanism is needed to efficiently access "
+"array data. `vtkTemplateMacro` and `GetVoidPointer` are no longer an "
+"acceptable solution -- implementing `GetVoidPointer` for SOA arrays requires "
+"creating a deep copy of the data into a new AOS buffer, a waste of both "
+"processor time and memory. Even if someone is willing to pay the cost of "
+"this copy, `GetVoidPointer` could only be used to read data from the SOA "
+"array, not write to it, so it would be of limited use."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:332
+msgid ""
+"So we need a replacement for `vtkTemplateMacro` that can abstract away "
+"things like storage details while providing performance that is on-par with "
+"raw memory buffer operations (when possible). And while we're at it, let's "
+"look at removing the tedium of multi-array dispatch and reducing the problem "
+"of 'template explosion'. The remainder of this page details such a system."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:338
+msgid "Best Practices for vtkDataArray access"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:340
+msgid ""
+"We'll describe a new set of tools that make managing template instantiations "
+"for efficient array access both easy and extensible. As an overview, the "
+"following new features will be discussed:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:344
+msgid ""
+"`vtkGenericDataArray`: The new templated base interface for all numeric "
+"`vtkDataArray` subclasses."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:346
+msgid ""
+"`vtkArrayDispatch`: Collection of code generation tools that allow concise "
+"and precise specification of restrictable dispatch for up to 3 "
+"`vtkAbstractArray`s simultaneously."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:349
+msgid ""
+"`vtkArrayDownCast`: Access to specialized downcast implementations from code "
+"templates."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:351
+msgid ""
+"`vtk::DataArrayValueRange<TupleSize = vtk::detail::DynamicTupleSize, "
+"ForceValueTypeForVtkDataArray = double>()`: Range-based for loop support for "
+"`vtkAbstractArray` subclasses that abstracts away storage details and allows "
+"efficient access of values."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:354
+msgid ""
+"`vtk::DataArrayTupleRange<TupleSize = vtk::detail::DynamicTupleSize>()`: "
+"Range-based for loop support for `vtkAbstractArray` subclasses that "
+"abstracts away storage details and allows efficient access of values."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:357
+msgid ""
+"`vtkDataArrayAccessor`: A helper class that provides a single API for "
+"accessing/inserting values/tuples in any `vtkDataArray` subclass. This class "
+"was the predecessor of `vtk::DataArray(Value/Tuple)Range`. It should only be "
+"used when inserting is required, and not for value/tuple access, because "
+"it's not as optimized."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:361
+msgid ""
+"These will be discussed more fully, but as a preview, here's our familiar "
+"`calcMagnitude` example implemented using these new tools:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:364
+msgid ""
+"// Modern implementation of calcMagnitude using new concepts in VTK:\n"
+"// A worker functor. The calculation is implemented in the function "
+"template\n"
+"// for operator().\n"
+"struct CalcMagnitudeWorker\n"
+"{\n"
+"  // The worker accepts VTK array objects now, not raw memory buffers.\n"
+"  template <typename VectorArray, typename MagnitudeArray>\n"
+"  void operator()(VectorArray* vectorsArray, MagnitudeArray* "
+"magnitudeArray)\n"
+"  {\n"
+"    // These allow this single worker function to be used with both\n"
+"    // the vtkDataArray 'double' API and the more efficient\n"
+"    // vtkGenericDataArray APIs, depending on the template parameters:\n"
+"    auto vectors = vtk::DataArrayTupleRange<3>(vectorsArray);\n"
+"    auto magnitude = vtk::DataArrayValueRange<1>(magnitudeArray);\n"
+"\n"
+"    vtkIdType numVectors = vectorsArray->GetNumberOfTuples();\n"
+"    for (vtkIdType tupleIdx = 0; tupleIdx < numVectors; ++tupleIdx)\n"
+"    {\n"
+"      // These operataors[] compile to inlined optimizable raw memory "
+"accesses\n"
+"      // for vtkGenericDataArray subclasses.\n"
+"      magnitude[tupleIdx] = std::sqrt(\n"
+"        vectors[tupleIdx][0] * vectors[tupleIdx][0] +\n"
+"        vectors[tupleIdx][1] * vectors[tupleIdx][1] +\n"
+"        vectors[tupleIdx][2] * vectors[tupleIdx][2]);\n"
+"    }\n"
+"  }\n"
+"};\n"
+"\n"
+"void calcMagnitude(vtkDataArray *vectors, vtkDataArray *magnitude)\n"
+"{\n"
+"  // Create our worker functor:\n"
+"  CalcMagnitudeWorker worker;\n"
+"\n"
+"  // Define our dispatcher. We'll let vectors have any ValueType, but only\n"
+"  // consider float/double arrays for magnitudes. These combinations will\n"
+"  // use a 'fast-path' implementation generated by the dispatcher:\n"
+"  using Dispatcher = vtkArrayDispatch::Dispatch2ByValueType\n"
+"    <\n"
+"      vtkArrayDispatch::AllTypes, // ValueTypes allowed by first array\n"
+"      vtkArrayDispatch::Reals     // ValueTypes allowed by second array\n"
+"    >;\n"
+"\n"
+"  // Execute the dispatcher:\n"
+"  if (!Dispatcher::Execute(vectors, magnitude, worker))\n"
+"  {\n"
+"    // If Execute() fails, it means the dispatch failed due to an\n"
+"    // unsupported array type. In this case, it's likely that the magnitude\n"
+"    // array is using an integral type. This is an uncommon case, so we "
+"won't\n"
+"    // generate a fast path for these, but instead call an instantiation of\n"
+"    // CalcMagnitudeWorker::operator()<vtkDataArray, vtkDataArray>.\n"
+"    // Through the use of vtk::DataArrayTupleRange, this falls back to using "
+"the\n"
+"    // vtkDataArray double API:\n"
+"    worker(vectors, magnitude);\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:422
+msgid "vtkGenericDataArray"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:424
+msgid ""
+"The `vtkGenericDataArray` class template drives the new `vtkDataArray` class "
+"hierarchy. The ValueType is introduced here, both as a template parameter "
+"and a class-scope `typedef`. This allows a typed API to be written that "
+"doesn't require conversion to/from a common type (as `vtkDataArray` does "
+"with double). It does not implement any storage details, however. Instead, "
+"it uses the CRTP idiom to forward key method calls to a derived class "
+"without using a virtual function call. By eliminating this indirection, "
+"`vtkGenericDataArray` defines an interface that can be used to implement "
+"highly efficient code, because the compiler is able to see past the method "
+"calls and optimize the underlying memory accesses instead."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:435
+msgid ""
+"There are two main subclasses of `vtkGenericDataArray`: "
+"`vtkAOSDataArrayTemplate` and `vtkSOADataArrayTemplate`. These implement "
+"array-of-structs and struct-of-arrays storage, respectively. Recently, "
+"`vtkImplicitArray` was added, which is also a subclass of "
+"`vtkGenericDataArray`, and is used to implement read-only arrays using a "
+"given backend. We won't go into detail how this is done, but one could look "
+"into `vtkConstantArray` and `vtkAffineArray` which are examples of "
+"`vtkImplicitArray` subclasses."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:442
+msgid "vtkTypeList"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:444
+msgid ""
+"Type lists are a metaprogramming construct used to generate a list of C++ "
+"types. They are used in VTK to implement restricted array dispatching. As we "
+"will see, `vtkArrayDispatch` offers ways to reduce the number of generated "
+"template instantiations by enforcing constraints on the arrays used to "
+"dispatch. For instance, if one wanted to only generate templated worker "
+"implementations for `vtkFloatArray` and `vtkIntArray`, a typelist is used to "
+"specify this:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:451
+msgid ""
+"// Create a typelist of 2 types, vtkFloatArray and vtkIntArray:\n"
+"using MyArrays = vtkTypeList::Create<vtkFloatArray, vtkIntArray>;\n"
+"\n"
+"Worker someWorker = ...;\n"
+"vtkDataArray *someArray = ...;\n"
+"\n"
+"// Use vtkArrayDispatch to generate code paths for these arrays:\n"
+"vtkArrayDispatch::DispatchByArray<MyArrays>(someArray, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:462
+msgid ""
+"There's not much to know about type lists as a user, other than how to "
+"create them. As seen above, there is a set of macros named `vtkTypeList::"
+"Create<...>`, where X is the number of types in the created list, and the "
+"arguments are the types to place in the list. In the example above, the new "
+"type list is typically bound to a friendlier name using a local `typedef`, "
+"which is a common practice."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:469
+msgid ""
+"The `vtkTypeList.h` header defines some additional type list operations that "
+"may be useful, such as deleting and appending types, looking up indices, "
+"etc. `vtkArrayDispatch::FilterArraysByValueType` may come in handy, too. But "
+"for working with array dispatches, most users will only need to create new "
+"ones, or use one of the following predefined `vtkTypeLists`:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:475
+msgid "`vtkArrayDispatch::Reals`: All floating point ValueTypes."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:476
+msgid "`vtkArrayDispatch::Integrals`: All integral ValueTypes."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:477
+msgid "`vtkArrayDispatch::AllTypes`: Union of Reals and Integrals."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:478
+msgid ""
+"`vtkArrayDispatch::AOSArrays`: Default list of AOS ArrayTypes to use in "
+"dispatches, which is filled if `CMake` option `VTK_DISPATCH_AOS_ARRAYS` is "
+"on."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:480
+msgid ""
+"`vtkArrayDispatch::SOAArrays`: Default list of SOA ArrayTypes to use in "
+"dispatches, which is filled if `CMake` option `VTK_DISPATCH_SOA_ARRAYS` is "
+"on."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:482
+msgid ""
+"`vtkArrayDispatch::Arrays`: Default list of read/write ArrayTypes to use in "
+"dispatches, which is a union of `AOSArrays` and `SOAArrays`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:484
+msgid ""
+"`vtkArrayDispatch::AffineArrays`: Default list of affine ArrayTypes to use "
+"in dispatches, which is filled if `CMake` option "
+"`VTK_DISPATCH_AFFINE_ARRAYS` is on."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:486
+msgid ""
+"`vtkArrayDispatch::ConstantArrays`: Default list of constant ArrayTypes to "
+"use in dispatches, which is filled if `CMake` option "
+"`VTK_DISPATCH_CONSTANT_ARRAYS` is on."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:488
+msgid ""
+"`vtkArrayDispatch::StridedArrays`: Default list of strided ArrayTypes to use "
+"in dispatches, which is filled if `CMake` option "
+"`VTK_DISPATCH_STRIDED_ARRAYS` is on."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:490
+msgid ""
+"`vtkArrayDispatch::StructuredPointArrays`: Default list of structured point "
+"ArrayTypes to use in dispatches, which is filled if `CMake` option "
+"`VTK_DISPATCH_STRUCTURED_POINT_ARRAYS` is on."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:492
+msgid ""
+"`vtkArrayDispatch::ReadOnlyArrays`: Default list of read-only ArrayTypes to "
+"use in dispatches, which is union of `AffineArrays`, `ConstantArrays`, "
+"`StridedArrays`, and `StructuredPointArrays`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:494
+msgid ""
+"`vtkArrayDispatch::AllArrays`: Union of `vtkArrayDispatch::Arrays` and "
+"`vtkArrayDispatch::ReadOnlyArrays`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:496
+msgid ""
+"There are also some additional predefined `vtkTypeLists` in "
+"`vtkArrayDispatchDataSetArrayList.h`:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:498
+msgid ""
+"`vtkArrayDispatch::AOSPointArrays`: Float and double AOS arrays that are "
+"commonly used for point coordinates."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:499
+msgid ""
+"`vtkArrayDispatch::PointArrays`: Float and double AOS and SOA arrays that "
+"are commonly used for point coordinates."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:500
+msgid ""
+"`vtkArrayDispatch::AllPointArrays`: Float and double AOS, SOA, "
+"StructuredPoint arrays that are commonly used for point coordinates."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:502
+msgid ""
+"`vtkArrayDispatch::ConnectivityArrays`: `vtkTypeInt32` and `vtkTypeInt64` "
+"AOS arrays that are commonly used for cell connectivity."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:504
+msgid ""
+"`vtkArrayDispatch::OffsetsArrays`: `vtkTypeInt32` and `vtkTypeInt64` AOS and "
+"Affine arrays that are commonly used for cell offsets."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:506
+msgid ""
+"`vtkArrayDispatch::CellTypesArrays`: unsigned char AOS and Constant arrays "
+"that are commonly used for cell types."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:508
+msgid ""
+"`vtkArrayDispatch::Arrays` is a special typelist of ArrayTypes set "
+"application-wide when VTK is built. This `vtkTypeList` of `vtkDataArray` "
+"subclasses is used for unrestricted dispatches, and is the list that gets "
+"filtered when restricting a dispatch to specific ValueTypes."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:512
+msgid ""
+"Refining `vtkArrayDispatch::Arrays` or `vtkArrayDispatch::AllArrays` can be "
+"done using the aforementioned `CMake` options `VTK_DISPATCH_*_ARRAYS`, and "
+"allows the user building VTK to have some control over the dispatch process. "
+"If SOA arrays (or others) are never going to be used, they can be removed "
+"from dispatch calls, reducing compile times and binary size. On the other "
+"hand, a user applying in-situ techniques may want them available, because "
+"they'll be used to import views of intermediate results."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:519
+msgid "vtkArrayDownCast"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:521
+msgid ""
+"In VTK, all subclasses of `vtkObject` (including the data arrays) support a "
+"downcast method called `SafeDownCast`. It is used similarly to the C++ "
+"`dynamic_cast` -- given an object, try to cast it to a more derived type or "
+"return `nullptr` if the object is not the requested type. Say we have a "
+"`vtkDataArray` and want to test if it is actually a `vtkFloatArray`. We can "
+"do this:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:528
+msgid ""
+"void DoSomeAction(vtkDataArray *dataArray)\n"
+"{\n"
+"  vtkFloatArray *floatArray = vtkFloatArray::SafeDownCast(dataArray);\n"
+"  if (floatArray)\n"
+"  {\n"
+"    // ... (do work with float array)\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:539
+msgid ""
+"This works, but it can pose a serious problem if `DoSomeAction` is called "
+"repeatedly. `SafeDownCast` works by performing a series of virtual calls and "
+"string comparisons to determine if an object falls into a particular class "
+"hierarchy. These string comparisons add up and can actually dominate "
+"computational resources if an algorithm implementation calls `SafeDownCast` "
+"in a tight loop."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:546
+msgid ""
+"In such situations, it's ideal to restructure the algorithm so that the "
+"downcast only happens once and the same result is used repeatedly, but "
+"sometimes this is not possible. To lessen the cost of downcasting arrays, a "
+"`FastDownCast` method exists for all concrete subclasses of "
+"`vtkAbstractArray`. This replaces the string comparisons with a single "
+"virtual call and a few integer comparisons and is far cheaper than the more "
+"general SafeDownCast. However, not all array implementations support the "
+"`FastDownCast` method, such as a vtkImplicitArray with a backend that is not "
+"publicly defined."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:555
+msgid "This creates a headache for templated code. Take the following example:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:557
+msgid ""
+"template <typename ArrayType>\n"
+"void DoSomeAction(vtkAbstractArray *array)\n"
+"{\n"
+"  ArrayType *myArray = ArrayType::SafeDownCast(array);\n"
+"  if (myArray)\n"
+"  {\n"
+"    // ... (do work with myArray)\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:569
+msgid ""
+"We cannot use `FastDownCast` here since not all possible ArrayTypes support "
+"it. But we really want that performance increase for the ones that do -- "
+"`SafeDownCast`s are really slow! `vtkArrayDownCast` fixes this issue:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:573
+msgid ""
+"template <typename ArrayType>\n"
+"void DoSomeAction(vtkAbstractArray *array)\n"
+"{\n"
+"  ArrayType *myArray = vtkArrayDownCast<ArrayType>(array);\n"
+"  if (myArray)\n"
+"  {\n"
+"    // ... (do work with myArray)\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:585
+msgid ""
+"`vtkArrayDownCast` automatically selects `FastDownCast` when it is defined "
+"for the ArrayType, and otherwise falls back to `SafeDownCast`. This is the "
+"preferred array downcast method for performance, uniformity, and reliability."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:589
+msgid "vtk::DataArrayValueRange and vtk::DataArrayTupleRange"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:591
+msgid ""
+"Array dispatching relies on having templated worker code carry out some "
+"operation. For instance, take this `vtkArrayDispatch` code that locates the "
+"maximum value in an array:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:595
+msgid ""
+"// Stores the tuple/component coordinates of the maximum value:\n"
+"struct FindMax\n"
+"{\n"
+"  vtkIdType Tuple; // Result\n"
+"  int Component; // Result\n"
+"\n"
+"  FindMax() : Tuple(-1), Component(-1) {}\n"
+"\n"
+"  template <typename ArrayT>\n"
+"  void operator()(ArrayT* array)\n"
+"  {\n"
+"    // The type to use for temporaries, and a temporary to store\n"
+"    // the current maximum value:\n"
+"    typedef typename ArrayT::ValueType ValueType;\n"
+"    ValueType max = std::numeric_limits<ValueType>::min();\n"
+"\n"
+"    // Iterate through all tuples and components, noting the location\n"
+"    // of the largest element found.\n"
+"    vtkIdType numTuples = array->GetNumberOfTuples();\n"
+"    int numComps = array->GetNumberOfComponents();\n"
+"    for (vtkIdType tupleIdx = 0; tupleIdx < numTuples; ++tupleIdx)\n"
+"    {\n"
+"      for (int compIdx = 0; compIdx < numComps; ++compIdx)\n"
+"      {\n"
+"        if (max < array->GetTypedComponent(tupleIdx, compIdx))\n"
+"        {\n"
+"          max = array->GetTypedComponent(tupleIdx, compIdx);\n"
+"          this->Tuple = tupleIdx;\n"
+"          this->Component = compIdx;\n"
+"        }\n"
+"      }\n"
+"    }\n"
+"  }\n"
+"};\n"
+"\n"
+"void someFunction(vtkDataArray *array)\n"
+"{\n"
+"  FindMax maxWorker;\n"
+"  vtkArrayDispatch::Dispatch::Execute(array, maxWorker);\n"
+"  // Do work using maxWorker.Tuple and maxWorker.Component...\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:639
+msgid ""
+"There's a problem, though. Recall that only the arrays in `vtkArrayDispatch::"
+"Arrays` are tested for dispatching. What happens if the array passed into "
+"someFunction wasn't on that list?"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:643
+msgid ""
+"The dispatch will fail, and `maxWorker.Tuple` and `maxWorker.Component` will "
+"be left to their initial values of -1. That's no good. What if "
+"`someFunction` is a critical path where we want to use a fast dispatched "
+"worker if possible, but still have valid results to use if dispatching "
+"fails? Well, we can fall back on the `vtkDataArray` API and do things the "
+"slow way in that case. When a dispatcher is given an unsupported array, "
+"Execute() returns false, so let's just add a backup implementation:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:651
+msgid ""
+"// Stores the tuple/component coordinates of the maximum value:\n"
+"struct FindMax\n"
+"{ /* As before... */ };\n"
+"\n"
+"void someFunction(vtkDataArray *array)\n"
+"{\n"
+"  FindMax maxWorker;\n"
+"  if (!vtkArrayDispatch::Dispatch::Execute(array, maxWorker))\n"
+"  {\n"
+"    // Reimplement FindMax::operator(), but use the vtkDataArray API's\n"
+"    // \"virtual double GetComponent()\" instead of the more efficient\n"
+"    // \"ValueType GetTypedComponent()\" from vtkGenericDataArray.\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:668
+msgid ""
+"Ok, that works. But ugh...why write the same algorithm twice? That's extra "
+"debugging, extra testing, extra maintenance burden, and just plain not fun."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:671
+msgid ""
+"So here is where `vtk::DataArrayValueRange` and `vtk::DataArrayTupleRange` "
+"come in."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:673
+msgid ""
+"`vtk::DataArrayValueRange` provides a range-based for loop interface to "
+"access the elements of a `vtkAbstractArray` subclass as if it's a simple "
+"flat array, like `std::vector<ValueType>`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:675
+msgid ""
+"`vtk::DataArrayTupleRange` provides a similar interface, but presents the "
+"data as a set of tuples."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:678
+msgid ""
+"Both of these utilities work with both `vtkAbstractArray` and `vtkDataArray` "
+"concrete subclasses and `vtkDataArray` too, using the most efficient access "
+"method available for the given array type. abstract away the storage details "
+"of the underlying array, allowing efficient access to the data regardless of "
+"whether the array is AOS, SOA, or some other storage scheme."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:683
+msgid ""
+"The also provide C++11 range-based for loop support, making iterating "
+"through the data easy and less error-prone, along with functions like "
+"`size()` to get the number of values/tuples in the array. If the tuple size "
+"is known at compile time, it can be provided as a template parameter to "
+"`vtk::DataArrayTupleRange`, allowing for further optimizations."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:688
+msgid ""
+"`vtk::DataArrayValueRange` also has a second template parameter, "
+"`ForceValueTypeForVtkDataArray`, which allows the user to specify the type "
+"to use when the underlying array is a `vtkDataArray`. This is useful when "
+"the user wants to avoid the default double type for `vtkDataArray`s. A "
+"usefully utility is `vtk::GetAPIType<ArrayType>`, which returns the "
+"corresponding ValueType for concrete subclasses and double for "
+"`vtkDataArray`. Both these utilities provide similar funct"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:695
+msgid ""
+"Using `vtk::DataArray(Tuple/Value)Range`, we can write a single worker "
+"template that works for both `vtkDataArray` and `vtkGenericDataArray`, "
+"without a loss of performance in the latter case. That worker looks like "
+"this:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:699
+msgid ""
+"// Better, uses vtk::DataArrayTupleRange:\n"
+"struct FindMax\n"
+"{\n"
+"  vtkIdType Tuple; // Result\n"
+"  int Component; // Result\n"
+"\n"
+"  FindMax() : Tuple(-1), Component(-1) {}\n"
+"\n"
+"  template <typename ArrayT>\n"
+"  void operator()(ArrayT* array)\n"
+"  {\n"
+"    // Create the range:\n"
+"    auto range = vtk::DataArrayTupleRange(array);\n"
+"\n"
+"    // Prepare the temporary.\n"
+"    using ValueType = vtk::GetAPIType<ArrayT>;\n"
+"    ValueType max = std::numeric_limits<ValueType>::min();\n"
+"\n"
+"    vtkIdType numTuples = array->GetNumberOfTuples();\n"
+"    int numComps = array->GetNumberOfComponents();\n"
+"    for (auto tuple : range)\n"
+"    {\n"
+"      for (auto comp : tuple)\n"
+"      {\n"
+"        if (max < comp)\n"
+"        {\n"
+"          max = comp;\n"
+"          this->Tuple = tupleIdx;\n"
+"          this->Component = compIdx;\n"
+"        }\n"
+"      }\n"
+"    }\n"
+"  }\n"
+"};\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:736
+msgid ""
+"Now when we call `operator()` with say, `ArrayT=vtkFloatArray`, we'll get an "
+"optimized, efficient code path. But we can also call this same "
+"implementation with `ArrayT=vtkDataArray` and still get a correct result "
+"(assuming that the `vtkDataArray`'s double API represents the data well "
+"enough)."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:741
+msgid ""
+"Using the `vtkDataArray` fallback path is straightforward. At the call site:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:743
+msgid ""
+"void someFunction(vtkDataArray *array)\n"
+"{\n"
+"  FindMax maxWorker;\n"
+"  if (!vtkArrayDispatch::Dispatch::Execute(array, maxWorker))\n"
+"  {\n"
+"    maxWorker(array); // Dispatch failed, call vtkDataArray fallback\n"
+"  }\n"
+"  // Do work using maxWorker.Tuple and maxWorker.Component -- now we know\n"
+"  // for sure that they're initialized!\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:756
+msgid "vtkArrayDispatch"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:758
+msgid ""
+"The dispatchers implemented in the vtkArrayDispatch namespace provide array "
+"dispatching with customizable restrictions on code generation and a simple "
+"syntax that hides the messy details of type resolution and multi-array "
+"dispatch. There are several \"flavors\" of dispatch available that operate "
+"on up to three arrays simultaneously."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:764
+msgid "Components Of A Dispatch"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:766
+msgid ""
+"Using the `vtkArrayDispatch` system requires three elements: the array(s), "
+"the worker, and the dispatcher."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:769
+msgid "The Arrays"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:771
+msgid ""
+"All dispatched arrays must be concrete subclasses of `vtkAbstractArray`. It "
+"is important to identify as many restrictions as possible. Must every "
+"ArrayType be considered during dispatch, or is the array's ValueType (or "
+"even the ArrayType itself) restricted? If dispatching multiple arrays at "
+"once, are they expected to have the same ValueType? These scenarios are "
+"common, and these conditions can be used to reduce the number of "
+"instantiations of the worker template."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:778
+msgid "The Worker"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:780
+msgid ""
+"The worker is some generic callable. In C++98, a templated functor is a good "
+"choice. In C++14, a generic lambda is a usable option as well. For our "
+"purposes, we'll only consider the functor approach,, but since VTK 9.5 "
+"requires C++17, generic lambdas should work just fine as workers, too."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:785
+msgid ""
+"At a minimum, the worker functor should define `operator()` to make it "
+"callable. This should be a function template with a template parameter for "
+"each array it should handle. For a three array dispatch, it should look "
+"something like this:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:790
+msgid ""
+"struct ThreeArrayWorker\n"
+"{\n"
+"  template <typename Array1T, typename Array2T, typename Array3T>\n"
+"  void operator()(Array1T* array1, Array2T* array2, Array3T* array3)\n"
+"  {\n"
+"    /* Do stuff... */\n"
+"  }\n"
+"};\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:801
+msgid ""
+"At runtime, the dispatcher will call `ThreeWayWorker::operator()` with a set "
+"of `Array1T`, `Array2T`, and `Array3T` that satisfy any dispatch "
+"restrictions."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:804
+msgid ""
+"Workers can be stateful, too, as seen in the `FindMax` worker earlier where "
+"the worker simply identified the component and tuple id of the largest value "
+"in the array. The functor stored them for the caller to use in further "
+"analysis:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:808
+msgid ""
+"// Example of a stateful dispatch functor:\n"
+"struct FindMax\n"
+"{\n"
+"  // Functor state, holds results that are accessible to the caller:\n"
+"  vtkIdType Tuple;\n"
+"  int Component;\n"
+"\n"
+"  // Set initial values:\n"
+"  FindMax() : Tuple(-1), Component(-1) {}\n"
+"\n"
+"  // Template method to set Tuple and Component ivars:\n"
+"  template <typename ArrayT>\n"
+"  void operator()(ArrayT *array)\n"
+"  {\n"
+"    /* Do stuff... */\n"
+"  }\n"
+"};\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:828
+msgid "The Dispatcher"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:830
+msgid ""
+"The dispatcher is the workhorse of the system. It is responsible for "
+"applying restrictions, resolving array types, and generating the requested "
+"template instantiations. It has responsibilities both at run-time and "
+"compile-time."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:834
+msgid ""
+"During compilation, the dispatcher will identify the valid combinations of "
+"arrays that can be used according to the restrictions. This is done by "
+"starting with a typelist of arrays, either supplied as a template parameter "
+"or by defaulting to `vtkArrayDispatch::Arrays`, and/or filtering them by "
+"ValueType if needed. For multi-array dispatches, additional restrictions may "
+"apply, such as forcing the second and third arrays to have the same "
+"ValueType as the first. It must then generate the required code for the "
+"dispatch -- that is, the templated worker implementation must be "
+"instantiated for each valid combination of arrays. These implementation are "
+"stored in an array and can be accessed at runtime using `GetDataType` and "
+"`GetArrayType` with `O(1)` complexity, if their array type is listed in the "
+"`vtkArrayTypes` enum."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:846
+msgid ""
+"At runtime, the dispatcher can either get the correct implementation with "
+"`O(1)` complexity (most common), or if the provided are not regular VTK "
+"arrays, it tests each of the dispatched arrays to see if they match one of "
+"the generated code paths. Runtime type resolution is carried out using "
+"`vtkArrayDownCast` to get the best performance available for the arrays of "
+"interest. If it finds a match, it calls the worker's `operator()` method "
+"with the properly typed arrays. If no match is found, it returns `false` "
+"without executing the worker."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:854
+msgid "Restrictions: Why They Matter"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:856
+msgid ""
+"We've made several mentions of using restrictions to reduce the number of "
+"template instantiations during a dispatch operation. You may be wondering if "
+"it really matters so much. Let's consider some numbers."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:860
+msgid ""
+"VTK is configured to use 13 ValueTypes for numeric data. These are the "
+"standard numeric types `float`, `int`, `unsigned char`, etc. By default, VTK "
+"will define `vtkArrayDispatch::Arrays` to use all 13 types with "
+"`vtkAOSDataArrayTemplate` for the standard set of dispatchable arrays. If "
+"enabled during compilation, the SOA data arrays are added to this list for a "
+"total of 26 arrays."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:866
+msgid ""
+"Using these 26 arrays in a single, unrestricted dispatch will result in 26 "
+"instantiations of the worker template. A double dispatch will generate 676 "
+"workers. A triple dispatch with no restrictions creates a whopping 17,576 "
+"functions to handle the possible combinations of arrays. That's a _lot_ of "
+"instructions to pack into the final binary object."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:872
+msgid ""
+"Applying some simple restrictions can reduce this immensely. Say we know "
+"that the arrays will only contain `float`s or `double`s. This would reduce "
+"the single dispatch to 4 instantiations, the double dispatch to 16, and the "
+"triple to 64. We've just reduced the generated code size significantly. "
+"Dispatch restriction is a powerful tool for reducing the compiled size of a "
+"binary object."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:878
+msgid ""
+"Another common restriction is that all arrays in a multi-array dispatch have "
+"the same ValueType, even if that ValueType is not known at compile time. By "
+"specifying this restriction, a double dispatch on all 26 AOS/SOA arrays will "
+"only produce 52 worker instantiations, down from 676. The triple dispatch "
+"drops to 104 instantiations from 17,576."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:884
+msgid ""
+"Always apply restrictions when they are known, especially for multi-array "
+"dispatches. The savings are worth it."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:887
+msgid "Types of Dispatchers"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:889
+msgid ""
+"Now that we've discussed the components of a dispatch operation, what the "
+"dispatchers do, and the importance of restricting dispatches, let's take a "
+"look at the types of dispatchers available."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:895
+msgid "vtkArrayDispatch::Dispatch"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:897
+msgid ""
+"This family of dispatchers take no parameters and perform an unrestricted "
+"dispatch over all arrays in `vtkArrayDispatch::Arrays`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:900
+#: ../../../design_documents/ArrayDispatch.md:929
+#: ../../../design_documents/ArrayDispatch.md:982
+#: ../../../design_documents/ArrayDispatch.md:1027
+#: ../../../design_documents/ArrayDispatch.md:1073
+#: ../../../design_documents/ArrayDispatch.md:1104
+#: ../../../design_documents/ArrayDispatch.md:1153
+#: ../../../design_documents/ArrayDispatch.md:1200
+msgid "__Variations__:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:902
+msgid "`vtkArrayDispatch::Dispatch`: Single dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:903
+msgid "`vtkArrayDispatch::Dispatch2`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:904
+msgid "`vtkArrayDispatch::Dispatch3`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:906
+msgid "__Arrays considered__: All arrays in `vtkArrayDispatch::Arrays`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:908
+msgid "__Restrictions__: None."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:910
+msgid ""
+"__Usecase__: Used when no useful information exists that can be used to "
+"apply restrictions."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:913
+#: ../../../design_documents/ArrayDispatch.md:941
+#: ../../../design_documents/ArrayDispatch.md:997
+#: ../../../design_documents/ArrayDispatch.md:1042
+#: ../../../design_documents/ArrayDispatch.md:1089
+#: ../../../design_documents/ArrayDispatch.md:1119
+#: ../../../design_documents/ArrayDispatch.md:1168
+#: ../../../design_documents/ArrayDispatch.md:1216
+msgid "__Example Usage__:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:915
+msgid "vtkArrayDispatch::Dispatch::Execute(array, worker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:921
+msgid "vtkArrayDispatch::DispatchByArray"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:923
+msgid ""
+"This family of dispatchers takes a `vtkTypeList` of explicit array types to "
+"use during dispatching. They should only be used when an array's exact type "
+"is restricted. If dispatching multiple arrays and only one has such type "
+"restrictions, use `vtkArrayDispatch::Arrays` (or a filtered version) for the "
+"unrestricted arrays."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:931
+msgid "`vtkArrayDispatch::DispatchByArray`: Single dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:932
+msgid "`vtkArrayDispatch::Dispatch2ByArray`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:933
+msgid "`vtkArrayDispatch::Dispatch3ByArray`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:935
+msgid ""
+"__Arrays considered__: All arrays explicitly listed in the parameter lists."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:937
+msgid ""
+"__Restrictions__: Array must be explicitly listed in the dispatcher's type."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:939
+msgid "__Use case__: Used when one or more arrays have known implementations."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:943
+msgid ""
+"An example here would be a filter that processes an input array of some "
+"integral type and produces either a `vtkDoubleArray` or a `vtkFloatArray`, "
+"depending on some condition. Since the input array's implementation is "
+"unknown (it comes from outside the filter), we'll rely on a ValueType-"
+"filtered version of `vtkArrayDispatch::Arrays` for its type. However, we "
+"know the output array is either `vtkDoubleArray` or `vtkFloatArray`, so "
+"we'll want to be sure to apply that restriction:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:951
+msgid ""
+"// input has an unknown implementation, but an integral ValueType.\n"
+"vtkDataArray *input = ...;\n"
+"\n"
+"// Output is always either vtkFloatArray or vtkDoubleArray:\n"
+"vtkDataArray *output = someCondition ? vtkFloatArray::New()\n"
+"                                     : vtkDoubleArray::New();\n"
+"\n"
+"// Define the valid ArrayTypes for input by filtering\n"
+"// vtkArrayDispatch::Arrays to remove non-integral types:\n"
+"using InputTypes = vtkArrayDispatch::FilterArraysByValueType<\n"
+"  vtkArrayDispatch::Arrays, vtkArrayDispatch::Integrals>::Result;\n"
+"\n"
+"// For output, create a new vtkTypeList with the only two possibilities:\n"
+"using OutputTypes = vtkTypeList::Create<vtkFloatArray, vtkDoubleArray>;\n"
+"\n"
+"// Typedef the dispatch to a more manageable name:\n"
+"using Dispatcher = vtkArrayDispatch::Dispatch2ByArray<InputTypes, "
+"OutputTypes>;\n"
+"\n"
+"// Execute the dispatch:\n"
+"Dispatcher::Execute(input, output, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:976
+msgid "vtkArrayDispatch::DispatchByValueType"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:978
+msgid ""
+"This family of dispatchers takes a vtkTypeList of ValueTypes for each array "
+"and restricts dispatch to only arrays in vtkArrayDispatch::Arrays that have "
+"one of the specified value types."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:984
+msgid "`vtkArrayDispatch::DispatchByValueType`: Single dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:985
+msgid "`vtkArrayDispatch::Dispatch2ByValueType`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:986
+msgid "`vtkArrayDispatch::Dispatch3ByValueType`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:988
+#: ../../../design_documents/ArrayDispatch.md:1158
+msgid ""
+"__Arrays considered__: All arrays in `vtkArrayDispatch::Arrays` that meet "
+"the ValueType requirements."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:991
+msgid ""
+"__Restrictions__: Arrays that do not satisfy the ValueType requirements are "
+"eliminated."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:994
+msgid ""
+"__Use case__: Used when one or more of the dispatched arrays has an unknown "
+"implementation, but a known (or restricted) ValueType."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:999
+msgid ""
+"Here we'll consider a filter that processes three arrays. The first is a "
+"complete unknown. The second is known to hold `unsigned char`, but we don't "
+"know the implementation. The third holds either `double`s or `float`s, but "
+"its implementation is also unknown."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1004
+msgid ""
+"// Complete unknown:\n"
+"vtkDataArray *array1 = ...;\n"
+"// Some array holding unsigned chars:\n"
+"vtkDataArray *array2 = ...;\n"
+"// Some array holding either floats or doubles:\n"
+"vtkDataArray *array3 = ...;\n"
+"\n"
+"// Typedef the dispatch to a more manageable name:\n"
+"using Dispatcher = vtkArrayDispatch::Dispatch3ByValueType<\n"
+"  vtkArrayDispatch::AllTypes, vtkTypeList::Create<unsigned char>, "
+"vtkArrayDispatch::Reals>;\n"
+"\n"
+"// Execute the dispatch:\n"
+"Dispatcher::Execute(array1, array2, array3, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1022
+msgid "vtkArrayDispatch::DispatchByArrayAndValueType"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1024
+msgid ""
+"This family of dispatchers takes a `vtkTypeList` of explicit array types to "
+"use during dispatching, and a `vtkTypeList` of ValueTypes to consider during "
+"dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1029
+msgid "`vtkArrayDispatch::DispatchByArrayAndValueType`: Single dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1030
+msgid "`vtkArrayDispatch::Dispatch2ByArrayAndValueType`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1031
+msgid "`vtkArrayDispatch::Dispatch3ByArrayAndValueType`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1033
+msgid ""
+"__Arrays considered__: All arrays explicitly listed in the parameter lists "
+"that also have ValueTypes in the ValueType typelists."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1036
+msgid ""
+"__Restrictions__: Array must be explicitly listed in the dispatcher's type, "
+"and its ValueType must be in the ValueType typelist."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1039
+msgid ""
+"__Use case__: Used when one or more arrays have known implementations, but "
+"those implementations have unknown ValueTypes, and the ValueTypes are "
+"restricted in some way."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1044
+msgid ""
+"The example shown for `vtkArrayDispatch::DispatchByArray` can also be "
+"implemented using this family of dispatchers as follows:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1047
+msgid ""
+"// input has an unknown implementation, but an integral ValueType.\n"
+"vtkDataArray *input = ...;\n"
+"\n"
+"// Output is always either vtkFloatArray or vtkDoubleArray:\n"
+"vtkDataArray *output = someCondition ? vtkFloatArray::New()\n"
+"                                     : vtkDoubleArray::New();\n"
+"\n"
+"// Define the valid ArrayTypes for input by filtering\n"
+"// vtkArrayDispatch::Arrays to remove non-integral types:\n"
+"using Dispatcher = vtkArrayDispatch::Dispatch2ByArrayAndValueType<\n"
+"  vtkArrayDispatch::Arrays, vtkArrayDispatch::AOSArrays,\n"
+"  vtkArrayDispatch::Integrals, vtkArrayDispatch::Reals>;\n"
+"\n"
+"// Execute the dispatch:\n"
+"Dispatcher::Execute(input, output, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1067
+msgid "vtkArrayDispatch::Dispatch*SameValueType"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1069
+msgid ""
+"This family of dispatchers requires that all dispatched arrays share a "
+"ValueType, considering all arrays from `vtkArrayDispatch::Arrays` across "
+"`vtkArrayDispatch::AllTypes` with no additional ValueType restriction."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1075
+msgid ""
+"`vtkArrayDispatch::Dispatch2SameValueType`: Double dispatch using "
+"`vtkArrayDispatch::AllTypes`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1077
+msgid ""
+"`vtkArrayDispatch::Dispatch3SameValueType`: Triple dispatch using "
+"`vtkArrayDispatch::AllTypes`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1080
+msgid ""
+"__Arrays considered__: All arrays in `vtkArrayDispatch::Arrays` across all "
+"ValueTypes in `vtkArrayDispatch::AllTypes`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1083
+#: ../../../design_documents/ArrayDispatch.md:1112
+#: ../../../design_documents/ArrayDispatch.md:1161
+#: ../../../design_documents/ArrayDispatch.md:1208
+msgid ""
+"__Restrictions__: Combinations of arrays with differing ValueTypes are "
+"eliminated."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1086
+msgid ""
+"__Use case__: When all arrays are known to share the same ValueType but no "
+"further restriction on which ValueType is known, regardless of "
+"implementation."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1091
+msgid ""
+"vtkArrayDispatch::Dispatch2SameValueType::Execute(a1, a2, worker);\n"
+"vtkArrayDispatch::Dispatch3SameValueType::Execute(a1, a2, a3, worker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1098
+msgid "vtkArrayDispatch::DispatchByArray*WithSameValueType"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1100
+msgid ""
+"This family of dispatchers takes a `vtkTypeList` of ArrayTypes for each "
+"array and restricts dispatch to only consider arrays from those typelists, "
+"with the added requirement that all dispatched arrays share a ValueType."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1106
+msgid "`vtkArrayDispatch::Dispatch2ByArrayWithSameValueType`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1107
+msgid "`vtkArrayDispatch::Dispatch3ByArrayWithSameValueType`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1109
+msgid ""
+"__Arrays considered__: All arrays in the explicit typelists that meet the "
+"ValueType requirements."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1115
+msgid ""
+"__Use case__: When one or more arrays are known to belong to a restricted "
+"set of ArrayTypes, and all arrays are known to share the same ValueType, "
+"regardless of implementation."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1121
+msgid ""
+"Let's consider a double array dispatch, with `array1` known to be one of "
+"four common array types (SOA `float`, `double`, `int`, and `vtkIdType` "
+"arrays), and the other is an AOS and we know that it holds the same "
+"ValueType as `array1`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1125
+msgid ""
+"// SOA float, double, int, or vtkIdType array:\n"
+"vtkDataArray *array1 = ...;\n"
+"// AOS implementation, but the ValueType matches array1:\n"
+"vtkDataArray *array2 = ...;\n"
+"\n"
+"// array1's possible types:\n"
+"using Array1Types =\n"
+"  vtkTypeList::Create<vtkSOADataArrayTemplate<float>, "
+"vtkSOADataArrayTemplate<double>,\n"
+"  vtkSOADataArrayTemplate<int>, vtkSOADataArrayTemplate<vtkIdType>>;\n"
+"\n"
+"// Typedef the dispatch to a more manageable name:\n"
+"using Dispatcher =\n"
+"  vtkArrayDispatch::Dispatch2ByArrayWithSameValueType<Array1Types, "
+"vtkArrayDispatch::AOSArrays>;\n"
+"\n"
+"// Execute the dispatch:\n"
+"Dispatcher::Execute(array1, array2, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1146
+msgid "vtkArrayDispatch::Dispatch*BySameValueType"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1148
+msgid ""
+"This family of dispatchers takes a single `vtkTypeList` of ValueType and "
+"restricts dispatch to only consider arrays from `vtkArrayDispatch::Arrays` "
+"with those ValueTypes, with the added requirement that all dispatched arrays "
+"share a ValueType."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1155
+msgid "`vtkArrayDispatch::Dispatch2BySameValueType`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1156
+msgid "`vtkArrayDispatch::Dispatch3BySameValueType`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1164
+msgid ""
+"__Use case__: When one or more arrays are known to belong to a restricted "
+"set of ValueTypes, and all arrays are known to share the same ValueType, "
+"regardless of implementation."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1170
+msgid ""
+"Let's consider a double array dispatch, with `array1` known to be one of "
+"four common ValueTypes (`float`, `double`, `int`, and `vtkIdType` arrays), "
+"and `array2` known to have the same ValueType as `array1`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1174
+msgid ""
+"// Some float, double, int, or vtkIdType array:\n"
+"vtkDataArray *array1 = ...;\n"
+"// Unknown, but the ValueType matches array1:\n"
+"vtkDataArray *array2 = ...;\n"
+"\n"
+"// The allowed ValueTypes:\n"
+"using ValidValueTypes = vtkTypeList::Create<float, double, int, vtkIdType>;\n"
+"\n"
+"// Typedef the dispatch to a more manageable name:\n"
+"using Dispatcher = vtkArrayDispatch::"
+"Dispatch2BySameValueType<ValidValueTypes>;\n"
+"\n"
+"// Execute the dispatch:\n"
+"Dispatcher::Execute(array1, array2, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1192
+msgid "vtkArrayDispatch::Dispatch*ByArrayAndSameValueType"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1194
+msgid ""
+"This family of dispatchers takes both a `vtkTypeList` of array types "
+"(`ArrayList`) and a `vtkTypeList` of ValueTypes (`ValueTypeList`), "
+"restricting dispatch to only consider array types found in `ArrayList` that "
+"have a ValueType contained in `ValueTypeList`, with the added requirement "
+"that all dispatched arrays share a ValueType."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1202
+msgid "`vtkArrayDispatch::Dispatch2ByArrayAndSameValueType`: Double dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1203
+msgid "`vtkArrayDispatch::Dispatch3ByArrayAndSameValueType`: Triple dispatch."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1205
+msgid ""
+"__Arrays considered__: All arrays found in `ArrayList` whose ValueType is "
+"contained in `ValueTypeList`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1211
+msgid ""
+"__Use case__: When all arrays are known to belong to a specific set of array "
+"implementations and ValueTypes, and all arrays are known to share the same "
+"ValueType. Use `vtkArrayDispatch::AllTypes` for `ValueTypeList` to consider "
+"all ValueTypes."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1218
+msgid ""
+"Let's consider a double array dispatch, with `array1` and `array2` known to "
+"be AOS arrays with a ValueType of `float`, `double`, `int`, or `vtkIdType`, "
+"and `array2` known to have the same ValueType as `array1`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1222
+msgid ""
+"// Some AOS float, double, int, or vtkIdType array:\n"
+"vtkDataArray *array1 = ...;\n"
+"// Unknown, but the ValueType matches array1:\n"
+"vtkDataArray *array2 = ...;\n"
+"\n"
+"// The allowed ValueTypes:\n"
+"using ValidValueTypes = vtkTypeList::Create<float, double, int, vtkIdType>;\n"
+"\n"
+"// Typedef the dispatch to a more manageable name:\n"
+"using Dispatcher = vtkArrayDispatch::Dispatch2ByArrayAndSameValueType\n"
+"    vtkArrayDispatch::AOSArrays, ValidValueTypes>;\n"
+"\n"
+"// Execute the dispatch:\n"
+"Dispatcher::Execute(array1, array2, someWorker);\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1241
+msgid "Advanced Usage"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1243
+msgid "Accessing Memory Buffers"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1245
+msgid ""
+"Despite the thin `vtkGenericDataArray` API's nice feature that compilers can "
+"optimize memory accesses, sometimes there are still legitimate reasons to "
+"access the underlying memory buffer. This can still be done safely by "
+"providing overloads to your worker's `operator()` method. For instance, "
+"`vtkDataArray::DeepCopy` uses a generic implementation when mixed array "
+"implementations are used, but has optimized overloads for copying between "
+"arrays with the same ValueType and implementation. The worker for this "
+"dispatch is shown below as an example:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1254
+msgid ""
+"// Copy tuples from src to dest:\n"
+"struct DeepCopyWorker\n"
+"{\n"
+"  // AoS --> AoS same-type specialization:\n"
+"  template <typename ValueType>\n"
+"  void operator()(vtkAOSDataArrayTemplate<ValueType>* src,\n"
+"                  vtkAOSDataArrayTemplate<ValueType>* dst)\n"
+"  {\n"
+"    std::copy_n(src->GetPointer(0), src->GetNumberOfValues(), dst-"
+">GetPointer(0));\n"
+"  }\n"
+"\n"
+"  // SoA --> SoA same-type specialization:\n"
+"  template <typename ValueType>\n"
+"  void operator()(vtkSOADataArrayTemplate<ValueType>* src,\n"
+"                  vtkSOADataArrayTemplate<ValueType>* dst)\n"
+"  {\n"
+"    for (int comp; comp < src->GetNumberOfComponents(); ++comp)\n"
+"    {\n"
+"      std::copy_n(src->GetComponentArrayPointer(comp), src-"
+">GetNumberOfTuples(),\n"
+"        dst->GetComponentArrayPointer(comp));\n"
+"    }\n"
+"  }\n"
+"\n"
+"  // Generic implementation:\n"
+"  template <typename Array1T, typename Array2T>\n"
+"  void operator()(Array1T* srcArray, Array2T* dstArray)\n"
+"  {\n"
+"    auto src = vtk::DataArrayTupleRange(srcArray);\n"
+"    auto dst = vtk::DataArrayTupleRange(dstArray);\n"
+"\n"
+"    using DestType = vtk::GetAPIType<Array2T>;\n"
+"\n"
+"    vtkIdType tuples = src->GetNumberOfTuples();\n"
+"    int comps = src->GetNumberOfComponents();\n"
+"    for (vtkIdType t = 0; t < tuples; ++t)\n"
+"    {\n"
+"      for (int c = 0; c < comps; ++c)\n"
+"      {\n"
+"        dst[t][c] = static_cast<DestType>(src[t][c]);\n"
+"      }\n"
+"    }\n"
+"  }\n"
+"};\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1300
+msgid "Putting It All Together"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1302
+msgid ""
+"Now that we've explored the new tools introduced with VTK that allow "
+"efficient, implementation agnostic array access, let's take another look at "
+"the `calcMagnitude` example from before and identify the key features of the "
+"implementation:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1306
+msgid ""
+"// Modern implementation of calcMagnitude using new concepts in VTK:\n"
+"struct CalcMagnitudeWorker\n"
+"{\n"
+"  void operator()(VectorArray* vectorsArray, MagnitudeArray* "
+"magnitudeArray)\n"
+"  {\n"
+"    auto vectors = vtk::DataArrayTupleRange<3>(vectorsArray);\n"
+"    auto magnitude = vtk::DataArrayValueRange<1>(magnitudeArray);\n"
+"\n"
+"    vtkIdType numVectors = vectorsArray->GetNumberOfTuples();\n"
+"    for (vtkIdType tupleIdx = 0; tupleIdx < numVectors; ++tupleIdx)\n"
+"    {\n"
+"      // These operataors[] compile to inlined optimizable raw memory "
+"accesses\n"
+"      // for vtkGenericDataArray subclasses.\n"
+"      magnitude[tupleIdx] = std::sqrt(\n"
+"        vectors[tupleIdx][0] * vectors[tupleIdx][0] +\n"
+"        vectors[tupleIdx][1] * vectors[tupleIdx][1] +\n"
+"        vectors[tupleIdx][2] * vectors[tupleIdx][2]);\n"
+"    }\n"
+"  }\n"
+"};\n"
+"\n"
+"void calcMagnitude(vtkDataArray *vectors, vtkDataArray *magnitude)\n"
+"{\n"
+"  CalcMagnitudeWorker worker;\n"
+"  using Dispatcher = vtkArrayDispatch::Dispatch2ByValueType<\n"
+"    vtkArrayDispatch::AllTypes, vtkArrayDispatch::Reals>;\n"
+"\n"
+"  if (!Dispatcher::Execute(vectors, magnitude, worker))\n"
+"  {\n"
+"    worker(vectors, magnitude); // vtkDataArray fallback\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1341
+msgid "This implementation:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1343
+msgid ""
+"Uses dispatch restrictions to reduce the number of instantiated templated "
+"worker functions."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1345
+msgid "Assuming 26 types are in `vtkArrayDispatch::Arrays` (13 AOS + 13 SOA)."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1346
+msgid "The first array is unrestricted. All 26 array types are considered."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1347
+msgid ""
+"The second array is restricted to `float` or `double` ValueTypes, which "
+"translates to 4 array types (one each, SOA and AOS)."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1349
+msgid ""
+"26 * 4 = 104 possible combinations exist. We've eliminated 26 * 22 = 572 "
+"combinations that an unrestricted double-dispatch would have generated (it "
+"would create 676 instantiations)."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1352
+msgid ""
+"The calculation is still carried out at `double` precision when the "
+"ValueType restrictions are not met."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1354
+msgid ""
+"Just because we don't want those other 572 cases to have special code "
+"generated doesn't necessarily mean that we wouldn't want them to run."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1356
+msgid ""
+"Thanks to `vtk::DataArray(Value/Tuple)Range`, we have a fallback "
+"implementation that reuses our templated worker code."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1358
+msgid ""
+"In this case, the dispatch is really just a fast-path implementation for "
+"floating point output types."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1360
+msgid ""
+"The performance should be identical to iterating through raw memory buffers."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1361
+msgid ""
+"The `vtkGenericDataArray` API is transparent to the compiler. The "
+"specialized instantiations of `operator()` can be heavily optimized since "
+"the memory access patterns are known and well-defined."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1365
+msgid ""
+"Guidelines to remove/reduce vtkAbstractArray::GetVoidPointer() usages from "
+"your codebase"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1367
+msgid ""
+"As we have already mentioned, `vtkAbstractArray::GetVoidPointer()` is a "
+"function that returns a raw pointer to the underlying data of a VTK array. "
+"This function was added in VTK's early days when it only supported "
+"`vtkAOSDataArrayTemplate` arrays. Since then, VTK has added support for "
+"multiple other array types, either explicit (e.g., "
+"`vtkSOADataArrayTemplate`, etc.) or implicit (e.g., `vtkAffineArray`, "
+"`vtkConstantArray`, etc.). These array types don't store their data in a "
+"contiguous block of memory, so using `GetVoidPointer()` leads to duplication "
+"of data in an internal `vtkAOSDataArrayTemplate` array, which leads to "
+"memory usage increase and unnecessary copying overhead."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1376
+msgid ""
+"The following guidelines can be used to remove the usage of "
+"`GetVoidPointer()`:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1378
+msgid ""
+"If array is `vtkAOSDataArrayTemplate/vtkBitArray/vtkmDataArray`, use "
+"`GetPointer()` instead of `GetVoidPointer()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1379
+msgid ""
+"If array is `vtkSOADataArrayTemplate`, and only a single component is "
+"needed, use `GetComponentArrayPointer()` instead of `GetVoidPointer()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1381
+msgid ""
+"If array is `vtkDataArray` and all tuples need to be filled, use `Fill` "
+"instead of `memset()` with `GetVoidPointer()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1383
+msgid ""
+"If array is `vtkAbstractArray` and all tuples need to be copied, use "
+"`DeepCopy()/ShallowCopy()` instead of `memcpy()` with `GetVoidPointer()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1385
+msgid ""
+"If array is `vtkAbstractArray` and some tuples need to be copied, use "
+"`InsertTuples*()` methods instead of `GetVoidPointer()` and `memcpy()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1387
+msgid ""
+"If two `vtkAbstractArray`s need to be compared, use `vtkTestUtilities::"
+"CompareAbstractArray()` instead of `GetVoidPointer()` and `std::equal()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1389
+msgid ""
+"If array is `vtkAbstractArray` and values are needed as `vtkVariant`, use "
+"`GetVariantValue()` instead of `vtkExtraExtendedTemplateMacro` with "
+"`GetVoidPointer()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1391
+msgid ""
+"If array is `vtkAbstractArray` and access to the tuples/values is needed, "
+"use `vtkArrayDispatch` and `vtk::DataArray(Value/Tuple)Range()`, instead of "
+"`vtkTemplateMacro` (or other variations) with `GetVoidPointer()`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1393
+msgid ""
+"If array is `vtkDataArray`, the data type is known, and raw pointer to data "
+"is absolutely needed, use `auto aos = array->ToAOSDataArray()`, and then use "
+"`vtkAOSDataArrayTemplate<Type>::FastDownCast(aos)->GetPointer()`, instead of "
+"`GetVoidPointer()`, being aware that this may lead to data duplication if "
+"the array is not `vtkAOSDataArrayTemplate`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1398
+msgid ""
+"The following guidelines can be used to ensure that using `GetVoidPointer()` "
+"is _safe_:"
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1400
+msgid ""
+"If array is `vtkDataArray`, but using `HasStandardMemoryLayout`, it has been "
+"verified that it actually is `vtkAOSDataArrayTemplate`, then "
+"`GetVoidPointer()` is _safe_ to use. This usually happens when the array was "
+"created using `vtkAbstractArray::CreateArray()` or `vtkDataArray::"
+"CreateDataArray()` by passing a standard VTK data type."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1403
+msgid ""
+"If array is `vtkDataArray`, the data type is NOT known, but raw pointer to "
+"data is absolutely needed, use `auto aos = array->ToAOSDataArray()`, and "
+"then use `aos->GetVoidPointer()`, which is _safe_, being aware that this may "
+"lead to data duplication if the array is not `vtkAOSDataArrayTemplate`."
+msgstr ""
+
+#: ../../../design_documents/ArrayDispatch.md:1407
+msgid ""
+"Finally, `vtkAbstractArray::GetVoidPointer()` and `vtkDataArray::"
+"GetVoidPointer()` have been marked as an _unsafe_ function using `clang-"
+"tidy`, and its usage will be warned as such, unless explicitly marked as "
+"_safe_ using the `(bugprone-unsafe-functions)` lint, upon guaranteeing that "
+"it is indeed safe to use, if and only if, it satisfies one of the two "
+"conditions mentioned above."
+msgstr ""

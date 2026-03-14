@@ -1,0 +1,390 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/cell-grid-changes.md:1
+msgid "Cell Grid Data-object Improvements"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:3
+msgid ""
+"vtkCellGrid is a new subclass of vtkDataObject aimed at supporting data "
+"which breaks the assumptions vtkDataSet makes (such as spatially-varying "
+"attributes requiring multiple arrays to compute interpolated values; cell-"
+"data values representing functions producing a constant value over the "
+"entire cell; or that cell shapes are defined by corner points that are "
+"exactly interpolated). The cell-grid class makes very few assumptions about "
+"your data; instead, it is a container for arrays related to your data and "
+"you must register instances of subclasses of vtkCellGridResponder to respond "
+"to the particular queries (subclasses of vtkCellGridQuery) you wish to "
+"support."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:16
+msgid "Discontinuous (and Continuous) Galerkin Cells"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:18
+msgid ""
+"This release includes generalizations and extensions to support H(Curl), "
+"H(Div), and H(Grad) function spaces. It also contains classes that use this "
+"new functionality to implement fixed-topology cells which support these "
+"function spaces. The cell classes all inherit `vtkDGCell` (named as they are "
+"intended to support discontinuous Galerkin finite elements; however, your "
+"solution fields do not need to be computed with a Galerkin solver to make "
+"use of them)."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:27
+msgid ""
+"Of particular note is that these cells allow the geometric shape and other "
+"cell-attributes to have different polynomial interpolation orders (i.e., non-"
+"isoparametric cells are supported). For example, this image"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:32
+msgid ""
+"![cell-grid-non-isoparametric](../imgs/9.4/cell-grid-non-isoparametric.png)"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:32
+msgid "cell-grid-non-isoparametric"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:34
+msgid ""
+"shows two linear hexahedral cells colored by a quadratic attribute. Not only "
+"do the colors vary nonlinearly across the faces of the cells, but there is a "
+"discontinuity in the color-mapped field at the boundary that cannot be "
+"modeled by `vtkDataSet` and its subclasses."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:39
+msgid ""
+"Finally, as this section's title hints, even though the cell classes are "
+"named `DG`, they also support continuous (`CG`) cells where each degree of "
+"freedom is referenced by a connectivity entry."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:43
+msgid "Multi-pass Cell Grid Queries"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:45
+msgid ""
+"This release, vtkCellGridQuery has been modified to allow for multiple "
+"passes. A new virtual method `IsAnotherPassRequired()` is provided; by "
+"default it returns false so existing query classes do not need to be "
+"modified. Override it if your algorithm needs multiple passes, but be aware "
+"it must eventually return false for the algorithm to terminate."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:52
+msgid ""
+"Another virtual method, `StartPass()`, is called at the beginning of each "
+"pass and you may override it to update the query's state as needed. This "
+"method exists in addition to the `Initialize()` and `Finalize()` methods "
+"already invoked at the beginning and end of the entire query."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:58
+msgid "New Queries and Responders"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:60
+msgid "The following subclasses of vtkCellGridQuery are now available."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:62
+msgid ""
+"vtkCellGridBoundsQuery – compute the spatial (3D) bounds of a cell grid."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:63
+msgid ""
+"vtkCellGridEvaluator – classify and evaluate cell attributes of a cell grid "
+"at a set of input points."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:65
+msgid "vtkCellGridRangeQuery – compute the range of a cell attribute."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:66
+msgid ""
+"vtkCellGridSidesQuery – compute the number of occurrences of cell boundaries "
+"of any dimension."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:68
+msgid ""
+"vtkCellGridElevationQuery – add an \"elevation\" attribute to an existing "
+"cell grid."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:69
+msgid ""
+"vtkUnstructuredGridToCellGrid::TranscribeQuery – transform an unstructured "
+"grid (potentially with special markup) into a cell grid. Note that this "
+"query is an implementation detail inside a subclass of vtkAlgorithm."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:72
+msgid "vtkCellGridRenderRequest – render a cell grid."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:74
+msgid ""
+"Each query class has a matching responder to support continuous and "
+"discontinuous Galerkin (CG and DG) cells that support H(Curl), H(Div), and "
+"H(Grad) function spaces for their cell attributes. Only H(Grad) "
+"interpolation is supported for a grid's \"shape\" attribute (the mapping "
+"from reference elements into world coordinates)."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:80
+msgid "Filters based on Queries"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:82
+msgid ""
+"Several of the queries above are used to implement subclasses of "
+"vtkAlgorithm which accept cell grids. Other algorithm classes contain their "
+"own query classes nested into the algorithm."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:87
+msgid ""
+"vtkCellGridComputeSides – compute the external boundaries of cells using "
+"vtkCellGridSidesQuery."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:88
+msgid ""
+"vtkCellGridElevation – add a new cell attribute to an existing cell grid "
+"using vtkCellGridElevationQuery."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:89
+msgid ""
+"vtkUnstructuredGridToCellGrid – convert an unstructured grid into a cell "
+"grid using its internal TranscribeQuery."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:90
+msgid ""
+"vtkCellGridCellCenters – place a vertex cell at the parametric center of "
+"each input cell."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:91
+msgid ""
+"vtkCellGridCellSource – generate a single cell of the requested type, "
+"optionally with cell attributes."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:92
+msgid ""
+"vtkLegacyCellGridWriter – write cell-grid data in VTK's \"legacy\" format "
+"(by wrapping JSON into a legacy header)."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:93
+msgid ""
+"vtkLegacyCellGridReader – read cell-grid data from a \"legacy\"-formatted "
+"file."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:94
+msgid ""
+"vtkCellGridToUnstructuredGrid – convert to an approximating unstructured "
+"grid; currently, all cell-attributes are converted to point-data and the "
+"output will have linear geometry even if the source uses quadratic or higher "
+"order interpolation."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:97
+msgid ""
+"vtkPassSelectedArrays – this pre-existing filter now handles cell-grid data; "
+"instead of named arrays being passed/omitted, entire cell-attributes (with "
+"all of their arrays) are passed/omitted."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:100
+msgid ""
+"vtkCellGridTransform – apply a linear transform to the shape attribute of a "
+"cell-grid."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:101
+msgid ""
+"vtkCellGridWarp – add a scaled version of a cell-attribute to the shape "
+"attribute of a cell-grid."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:102
+msgid ""
+"vtkIOSSCellGridReader – read exodus-formatted files as cell-grids rather "
+"than unstructured grids."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:104
+msgid "Attribute Calculators"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:106
+msgid ""
+"Just as cell grids can be asked for responders to different types of "
+"queries, we have added new functionality to deal with cell attributes. This "
+"way, a query responder can ask a separate object to perform interpolation, "
+"integration, or other calculations involving cell attributes. These objects "
+"all inherit the base class vtkCellAttributeCalculator."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:112
+msgid ""
+"If a responder does not need special information about a cell-attribute, it "
+"can delegate calculations to an attribute calculator. Each subclass of "
+"vtkCellAttributeCalculator provides its own custom API for performing its "
+"calculations."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:117
+msgid ""
+"For example, responders to the vtkCellGridEvaluator query need to classify "
+"points as inside cells, evaluate the parametric coordinates at points "
+"classified as interior to a cell, and interpolate an attribute value at the "
+"parametric coordinates. Each of these tasks requires knowledge of either the "
+"shape attribute or another cell-attribute defined over the grid. While the "
+"responder knows how to handle specific types of cells, its work does not "
+"require it to know how to handle interpolation in every function space "
+"supported by every cell-attribute. Therefore, it asks for an attribute "
+"calculator specific to"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:128
+msgid "the work it needs performed (interpolation of the cell-attribute),"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:129
+msgid "the current cell type, and"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:130
+msgid "the relevant cell-attribute,"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:132
+msgid "rather than hardwiring support for a fixed set of function spaces."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:134
+msgid ""
+"The vtkCellGridResponders class – in addition to holding a registry of "
+"responders for cell types to different query types – now also holds a "
+"registry of these calculator classes that can perform calculations on cell-"
+"attributes of different types (i.e., different function spaces). This allows "
+"support for new function spaces to be added to existing algorithm "
+"implementations without changes."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:141
+msgid ""
+"In the next section below, we discuss the first cell-attribute calculator "
+"subclass provided by VTK."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:144
+msgid "Interpolation Calculator"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:146
+msgid ""
+"We now provide a base class, vtkInterpolateCalculator, for evaluating cell "
+"attributes and their derivatives at one or more points inside cells. Similar "
+"to the query/responder pattern above, you may register subclasses to handle "
+"not just specific types of cells but also specific function spaces defined "
+"on those cells."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:152
+msgid ""
+"An implementation (via a subclass) is provided for CG/DG cells that works "
+"with H(Curl), H(Div), and H(Grad) function spaces."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:155
+msgid "Rendering"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:157
+msgid ""
+"The rendering query for cell grids has been refactored to support novel "
+"function spaces and also to make prototyping and debugging simpler; a base "
+"`vtkDrawTexturedElements` class is provided that binds a user-specified set "
+"of arrays to OpenGL texture objects and calls `glDrawElementsInstanced()` "
+"with the number of elements and instances you specify. You can also set the "
+"shape of elements rendered (i.e., lines, triangles, strips, etc.). Thus, "
+"given"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:165
+msgid "a set of vtkDataArrays and names for their samplers;"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:166
+msgid "a set of shader programs (vertex, geometry, and fragment);"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:167
+msgid "an element shape;"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:168
+msgid "the number of elements; and"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:169
+msgid "the number of instances of the elements above;"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:171
+msgid ""
+"the array renderer will use the arrays however your shaders choose to draw "
+"data."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:173
+msgid ""
+"The vtkOpenGLCellGridMapper uses a vtkCellGridRenderRequest to find "
+"responders that can render input cell grids and the DG responder configures "
+"an array renderer to draw its cells to a framebuffer."
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:177
+msgid "Example Application"
+msgstr ""
+
+#: ../../../release_details/9.4/cell-grid-changes.md:179
+msgid ""
+"The `Examples/GUI/Qt/CellGridSource` directory contains an example "
+"application using the vtkCellGridCellSource filter to construct a single "
+"cell so you can explore the way arrays in different array-groups are used to "
+"specify cell-grids. It has an editable spreadsheet view so you can change "
+"the coefficients used to define the cell's attributes (including its shape)."
+msgstr ""

@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/thirdparty.md:1
+msgid "Updating Third Party Projects"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:3
+msgid ""
+"When updating a third party project, any changes to the imported project "
+"itself (e.g., the `zlib/vtkzlib` directory for zlib), should go through the "
+"`update.sh` framework. This framework ensures that all patches to the third "
+"party projects are tracked externally and available for (preferably) "
+"upstream or other projects also embedding the library."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:9
+msgid ""
+"The [](thirdparty-projects.md) document lists all projects grouped by import "
+"method:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:11
+msgid "`update.sh` framework"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:12
+msgid "`git submodule`"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:13
+msgid "`copy`"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:16
+msgid ""
+"Any updates to projects imported through the `copy` method should first be "
+"converted over to the `update.sh` framework."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:20
+msgid "Updating a Project Upstream"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:22
+msgid ""
+"Ideally, any code changes to third party code should first be submitted to "
+"the upstream project using whatever workflow they prefer or require.  Once "
+"that is done, the changes can next be brought into VTK."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:26
+msgid "Updating the Import"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:28
+msgid ""
+"Examine the project's `update.sh` script and note the value of the `repo=` "
+"field."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:30
+msgid ""
+"If it's referring to anything other than [Kitware's GitLab](https://gitlab."
+"kitware.com/third-party), then skip to the next section."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:33
+msgid ""
+"Otherwise, you first need to bring in the upstream changes into the `third-"
+"party` repo. To do that, first fork and clone the repository named in the "
+"`repo=` field. Then use git commands to bring in a copy of the upstream "
+"changes."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:37
+msgid ""
+"Here's an example of updating the `twisted` project from tag 17.1.0 to "
+"17.5.0:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:39
+msgid ""
+"$ cd twisted/\n"
+"$ git checkout for/vtk\n"
+"$ git fetch origin\n"
+"$ git rebase --onto twisted-17.5.0 twisted-17.1.0\n"
+"$ git push\n"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:47
+msgid ""
+"When deciding what to rebase, you should generally use the first commit in "
+"the current history that isn't upstream."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:50
+msgid "Updating a Project into VTK"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:52
+msgid ""
+"Bringing changes into VTK involves first deciding what to bring in. That is "
+"specified in the `update.sh` script under the `tag=` field. Usually this is "
+"a `for/vtk` branch, but may be `master`, or a tag, or any other Git "
+"reference."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:56
+msgid ""
+"If `update.sh` needs to be edited (the usual case), create a branch in the "
+"usual way and commit just those changes."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:59
+msgid ""
+"Next, run the `update.sh` script as below. This will update the local copy "
+"of the project to the version specified within."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:62
+msgid ""
+"$ cd vtk/ThirdParty/zlib\n"
+"$ git checkout -b update_zlib_YYYY_MM_DD\n"
+"$ ./update.sh\n"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:68
+msgid ""
+"Appending the date to the branch name is not necessary, it just prevents any "
+"conflict in the event of you doing this procedure multiple times and "
+"inadvertently using the same branch name."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:71
+msgid ""
+"(All this requires a Git 2.5 or higher due the `worktree` tool being used to "
+"simplify the availability of the commits to the main checkout.)"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:74
+msgid ""
+"Make sure to update the `SPDX_DOWNLOAD_LOCATION` in `CMakeLists.txt` to "
+"reflect the changes made to the project."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:77
+msgid ""
+"Now you can review the change and make a merge request from the branch as "
+"normal."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:79
+msgid "Porting a Project"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:81
+msgid ""
+"When converting a project, if there are any local patches, a project should "
+"be created [on Kitware's GitLab](https://gitlab.kitware.com/third-party) to "
+"track it (requests may be filed on the [repo-requests][] repository). If the "
+"upstream project does not use Git, it should be imported into Git (there may "
+"be existing conversions available on Github already). The project's "
+"description should indicate where the source repository lives."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:88
+msgid ""
+"Once a mirror of the project is created, a branch named `for/foo` should be "
+"created where patches for the `foo` project will be applied (i.e., `for/vtk` "
+"for VTK's patches to the project). Usually, changes to the build system, the "
+"source code for mangling, the addition of `.gitattributes` files, and other "
+"changes belong here. Functional changes should be submitted upstream (but "
+"may still be tracked so that they may be used)."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:95
+msgid "For mangling documentation, [some guidelines][] are available."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:100
+msgid ""
+"The basic steps to import a project `twisted` based on the tag "
+"`twisted-17.1.0` looks like this:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:103
+msgid ""
+"$ git clone https://github.com/twisted/twisted.git\n"
+"$ cd twisted/\n"
+"$ git remote add kitware git@gitlab.kitware.com:third-party/twisted.git\n"
+"$ git push -u kitware\n"
+"$ git push -u kitware --tags\n"
+"$ git checkout twisted-17.1.0\n"
+"$ git checkout -b for/vtk\n"
+"$ git push --set-upstream kitware for/vtk\n"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:114
+msgid ""
+"Making the initial import involves filling out the project's `update.sh` "
+"script in its directory. The [update-common.sh](path:../../../../ThirdParty/"
+"update-common.sh) script describes what is necessary, but in a nutshell, it "
+"is basically metadata such as the name of the project and where it goes in "
+"the importing project."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:119
+msgid ""
+"The most important bit is the `extract_source` function which should subset "
+"the repository. If all that needs to be done is to extract the files given "
+"in the `paths` variable (described in the `update-common.sh` script), the "
+"`git_archive` function may be used if the `git archive` tool generates a "
+"suitable subset."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:125
+msgid "Make sure `update.sh` is executable before commit. On Unix, run:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:127
+msgid "  $ chmod u+x update.sh && git add -u update.sh\n"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:131
+msgid "On Windows, run:"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:133
+msgid "  $ git update-index --chmod=+x update.sh\n"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:137
+msgid ""
+"Also add an entry to [](thirdparty-projects.md) for the project, and "
+"`CMakeLists.txt` and `module.cmake` as appropriate."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:140
+msgid "Process"
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:142
+msgid ""
+"The basic process involves a second branch where the third party project's "
+"changes are tracked. This branch has a commit for each time it has been "
+"updated and is stripped to only contain the relevant parts (no unit tests, "
+"documentation, etc.). This branch is then merged into the main branch as a "
+"subdirectory using the `subtree` merge strategy."
+msgstr ""
+
+#: ../../../developers_guide/git/thirdparty.md:148
+msgid ""
+"Initial conversions will require a manual push by the maintainers since the "
+"conversion involves a root commit which is not allowed under normal "
+"circumstances. Please post a message on the [VTK Discourse][] forum asking "
+"for assistance if necessary."
+msgstr ""

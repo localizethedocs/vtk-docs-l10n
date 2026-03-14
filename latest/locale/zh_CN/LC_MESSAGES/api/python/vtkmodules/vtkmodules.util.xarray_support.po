@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:1
+msgid "{py:mod}`vtkmodules.util.xarray_support`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:18
+msgid "{py:obj}`VtkAccessor <vtkmodules.util.xarray_support.VtkAccessor>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:22
+msgid ""
+"{py:obj}`vtkXArrayCFReader <vtkmodules.util.xarray_support."
+"vtkXArrayCFReader>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:59
+msgid ""
+"Reads data from a file using the XArray readers and then connects the XArray "
+"data to the vtkNetCDFCFREader (using zero-copy when possible). At the "
+"moment, data is copied for coordinates (because they are converted to double "
+"in the reader) and for certain data that is subset either in XArray or in "
+"VTK.  Lazy loading in XArray is respected, that is data is accessed only "
+"when it is needed. Time is passed to VTK either as an int64 for datetime64 "
+"or timedelta64, or as a double (using cftime.toordinal) for cftime."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:28
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:37
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:61
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:48
+msgid ""
+"Returns a vtkXArrayCFReader that reads data from the XArray (using zero-copy "
+"when possible). At the moment, data is copied for coordinates (because they "
+"are converted to double in the reader) and for certain data that is subset "
+"either in XArray or in VTK. Lazy loading in XArray is respected, that is "
+"data is accessed only when it is needed. Time is passed to VTK either as an "
+"int64 for datetime64 or timedelta64, or as a double (using cftime.toordinal) "
+"for cftime."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:56
+msgid "Bases: {py:obj}`vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkAlgorithm.py:65
+msgid ""
+"Sets up default NumberOfInputPorts, NumberOfOutputPorts, InputType and "
+"OutputType that are used by various methods. Make sure to call this method "
+"from any subclass' __init__"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:71
+#: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:81
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:100
+msgid "Specify filename for the file to read."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:177
+msgid "Returns a nc_type given a numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:209
+msgid "Special data_vars associated coords"
+msgstr ""

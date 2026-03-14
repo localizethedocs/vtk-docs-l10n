@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../getting_started/using_webassembly.md:1
+msgid "Using WebAssembly"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:3
+msgid ""
+"VTK-Wasm is a prototype infrastructure that enables the compilation of VTK C+"
+"+ code to WebAssembly via Emscripten. This feature is still under active "
+"development."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:5
+msgid ""
+"To learn more about VTK-Wasm and its capabilities, please take a look at the "
+"following resources:"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:7
+msgid "[Homepage for VTK.wasm](https://kitware.github.io/vtk-wasm/)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:9
+msgid ""
+"[Examples of WebAssembly applications that use VTK for rendering.](https://"
+"gitlab.kitware.com/vtk/vtk/-/tree/master/Examples/Emscripten/Cxx)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:11
+msgid ""
+"[A collection of VTK WebAssembly demos.](https://github.com/Kitware/vtk-wasm-"
+"demos)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:13
+msgid ""
+"[A guide on using the experimental WebGPU feature in VTK-Wasm.](https://"
+"discourse.vtk.org/t/guide-how-do-i-use-vtk-wasm-webgpu-experimental-"
+"feature/11164)."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:15
+msgid ""
+"[Instructions for building VTK using Emscripten for WebAssembly.](../"
+"advanced/build_wasm_emscripten.md)"
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:17
+msgid ""
+"[vtk-wasm-sdk](https://gitlab.kitware.com/vtk/vtk-wasm-sdk) for building and "
+"publishing the [`kitware/vtk-wasm-sdk`](https://hub.docker.com/r/kitware/vtk-"
+"wasm-sdk) docker images."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:19
+msgid ""
+"[Deep dive into WebAssembly & WebGPU in VTK: presentation from April 28th, "
+"2023](https://docs.google.com/presentation/"
+"d/1Nl0TVa55616QKCSHP54BoYBvByMKe6lIUl6IFZqSeJo/edit#slide=id.p). This "
+"presentation covers topics such as Emscripten, VTK-wasm Docker image, WASM "
+"Dev tools, VTK and WebGPU: PolyData Mapper, API inspection with RenderDoc, "
+"and performance profiles."
+msgstr ""
+
+#: ../../../getting_started/using_webassembly.md:21
+msgid ""
+"We welcome your feedback and contributions to this project. Feel free to "
+"share your experiences, questions, and ideas in the [web/vtk-wasm](https://"
+"discourse.vtk.org/c/web/vtk-wasm/12) category of the VTK Discourse forum. "
+"Stay tuned for updates and new developments!"
+msgstr ""

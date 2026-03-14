@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:1
+msgid "{py:mod}`vtkmodules.util.numpy_support`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:19
+msgid "Caveats:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:22
+msgid ""
+"Bit arrays in general do not have a numpy equivalent and are not supported.  "
+"Char arrays are also not easy to handle and might not work as you expect.  "
+"Patches welcome."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:26
+msgid ""
+"You need to make sure you hold a reference to a Numpy array you want to "
+"import into VTK.  If not you'll get a segfault (in the best case). The same "
+"holds in reverse when you convert a VTK array to a numpy array -- don't "
+"delete the VTK array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:32
+msgid "Created by Prabhu Ramachandran in Feb. 2008."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:7
+msgid ""
+"This module adds support to easily import and export NumPy (http://numpy."
+"scipy.org) arrays into/out of VTK arrays.  The code is loosely based on TVTK "
+"(https://svn.enthought.com/enthought/wiki/TVTK)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:11
+msgid ""
+"This code depends on an addition to the VTK data arrays made by Berk Geveci "
+"to make it support Python's buffer protocol (on Feb. 15, 2008)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:14
+msgid ""
+"The main functionality of this module is provided by the two functions:     "
+"numpy_to_vtk,     vtk_to_numpy."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:18
+msgid ""
+"{py:obj}`get_vtk_array_type <vtkmodules.util.numpy_support."
+"get_vtk_array_type>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:98
+msgid "Returns a VTK typecode given a numpy array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:22
+msgid ""
+"{py:obj}`get_vtk_to_numpy_typemap <vtkmodules.util.numpy_support."
+"get_vtk_to_numpy_typemap>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:105
+msgid "Returns the VTK array type to numpy array type mapping."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:26
+msgid ""
+"{py:obj}`get_numpy_array_type <vtkmodules.util.numpy_support."
+"get_numpy_array_type>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:28
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:112
+msgid "Returns a numpy array typecode given a VTK array type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:30
+msgid ""
+"{py:obj}`create_vtk_array <vtkmodules.util.numpy_support.create_vtk_array>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:119
+msgid ""
+"Internal function used to create a VTK data array from another VTK array "
+"given the VTK array type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:34
+msgid "{py:obj}`numpy_to_vtk <vtkmodules.util.numpy_support.numpy_to_vtk>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:126
+msgid "Converts a real numpy Array to a VTK array object."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:38
+msgid ""
+"{py:obj}`numpy_to_vtkIdTypeArray <vtkmodules.util.numpy_support."
+"numpy_to_vtkIdTypeArray>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:42
+msgid "{py:obj}`vtk_to_numpy <vtkmodules.util.numpy_support.vtk_to_numpy>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:140
+msgid "Converts a VTK data array to a numpy array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:46
+msgid ""
+"{py:obj}`vtk_soa_to_numpy <vtkmodules.util.numpy_support.vtk_soa_to_numpy>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:147
+msgid ""
+"Convert a vtkSOADataArrayTemplate in SOA mode to per-component numpy arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:50
+msgid ""
+"{py:obj}`numpy_to_vtk_soa <vtkmodules.util.numpy_support.numpy_to_vtk_soa>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:154
+msgid ""
+"Create a vtkSOADataArrayTemplate from a list of per-component numpy arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:56
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:62
+msgid ""
+"{py:obj}`VTK_ID_TYPE_SIZE <vtkmodules.util.numpy_support.VTK_ID_TYPE_SIZE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:66
+msgid ""
+"{py:obj}`VTK_LONG_TYPE_SIZE <vtkmodules.util.numpy_support."
+"VTK_LONG_TYPE_SIZE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:72
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:78
+#: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:88
+msgid "'GetDataTypeSize(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:128
+msgid ""
+"This function only works for real arrays. Complex arrays are NOT handled.  "
+"It also works for multi-component arrays.  However, only 1, and 2 "
+"dimensional arrays are supported. This function is very efficient, so large "
+"arrays should not be a problem."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:134
+msgid ""
+"If the second argument is set to 1, the array is deep-copied from from "
+"numpy. This is not as efficient as the default behavior (shallow copy) and "
+"uses more memory but detaches the two arrays such that the numpy array can "
+"be released."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:139
+msgid ""
+"WARNING: You must maintain a reference to the passed numpy array, if the "
+"numpy data is gc'd and VTK will point to garbage which will in the best case "
+"give you a segfault."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:143
+msgid "Parameters:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:145
+msgid "num_array   a 1D or 2D, real numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:142
+msgid ""
+"Given a subclass of vtkDataArray, this function returns an appropriate numpy "
+"array containing the same data -- it actually points to the same data."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:146
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:148
+msgid "vtk_array   The VTK data array to be converted."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:149
+msgid ""
+"Returns a list of 1-D numpy arrays (one per component), each zero-copy "
+"sharing memory with the underlying VTK buffer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:152
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/numpy_support.py:152: (INFO/1) Duplicate implicit "
+"target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:154
+msgid "vtk_array : vtkSOADataArrayTemplate or vtkScaledSOADataArrayTemplate"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:156
+msgid ""
+"Returns/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/numpy_support.py:156: (INFO/1) Duplicate implicit "
+"target name: \"returns\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:158
+msgid ""
+"list of numpy.ndarray     One 1-D array per component, each of length "
+"GetNumberOfTuples()."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:161
+msgid ""
+"Raises/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/Python/"
+"vtkmodules/util/numpy_support.py:161: (INFO/1) Duplicate implicit target "
+"name: \"raises\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:163
+msgid ""
+"TypeError     If the array does not support per-component buffer access."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:156
+msgid ""
+"Each element of *arrays* must be a contiguous 1-D numpy array of the same "
+"dtype and length.  The VTK array will share memory with the numpy arrays "
+"(zero-copy), so the caller must keep the numpy arrays alive."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:160
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/numpy_support.py:160: (INFO/1) Duplicate implicit "
+"target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:162
+msgid ""
+"arrays : list of numpy.ndarray     One 1-D array per component. name : str, "
+"optional     Name to assign to the resulting VTK array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:167
+msgid ""
+"Returns/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/numpy_support.py:167: (INFO/1) Duplicate implicit "
+"target name: \"returns\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:169
+msgid ""
+"vtkSOADataArrayTemplate     A VTK SOA array backed by the provided numpy "
+"buffers."
+msgstr ""

@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:1
+msgid "VTK::WrappingPythonCore"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:3
+msgid "Python Wrapper Core Classes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:5
+msgid ""
+"This directory provides the core support classes that are used by VTK's "
+"Python wrappers.  The classes can be split into two broad categories: the "
+"*PyVTK* classes provide C APIs for Python types, while the *vtkPython* "
+"classes are C++ utility classes."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:10
+msgid "The Python Classes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:12
+msgid "PyVTKObject"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:14
+msgid ""
+"This defines APIs for creating and managing *PyVTKClass* objects, which are "
+"Python extension types that wrap vtkObjectBase-derived classes, and "
+"*PyVTKObject* objects, which are instances of the these extension types."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:18
+msgid "PyVTKSpecialObject"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:20
+msgid ""
+"Similarly, *PyVTKSpecialType* objects are Python extension types that wrap C+"
+"+ classes that are *not* derived from vtkObjectBase, and "
+"*PyVTKSpecialObject* wraps the instances.  These object are reference "
+"counted on the Python side, but not on the C++ side.  In general they are "
+"lightweight objects that are cheap to copy."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:26
+msgid "PyVTKTemplate"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:28
+msgid ""
+"These objects represent C++ class templates.  The wrappers instantiate the "
+"templates over a limited set of template parameters, and *PyVTKTemplate* is "
+"a container for the template instantiations.  It is implemented as a "
+"dictionary that maps template parameters to template instantiations."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:33
+msgid "PyVTKEnum"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:35
+msgid ""
+"This provides an API for managing subtypes of the Python *int* type that "
+"represent named C++ enum types."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:38
+msgid "PyVTKNamespace"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:40
+msgid ""
+"This provides an API for managing subtypes of the Python *module* type that "
+"represent C++ namespaces."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:43
+msgid "PyVTKReference"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:45
+msgid ""
+"Python does not support C++-style pass-by-reference, but pass-by-reference "
+"can be simulated by passing a typed container whose contents can be "
+"modified. The *PyVTKReference* type defines such containers.  Within Python, "
+"this type can be accessed as *vtkmodules.vtkCommonCore.reference*."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:50
+msgid "PyVTKMethodDescriptor"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:52
+msgid ""
+"In Python, a method descriptor is an object that customizes method lookup, "
+"specifically it customizes *object.method* and *class.method* method access. "
+"The *PyVTKMethodDescriptor* customizes the access of *PyVTKClass* methods. "
+"It handles bound method calls, unbound method calls, static method calls, "
+"and calls to overloaded methods."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:58
+msgid "PyVTKExtras"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:60
+msgid ""
+"This one is not actually a class, it is a helper function that adds utility "
+"methods and types like the previously-mentioned *reference* type to the "
+"vtkCommonCore module.  Everything in this file becomes part of vtkCommonCore."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:65
+msgid "The C++ Classes"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:67
+msgid "vtkPythonUtil"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:69
+msgid ""
+"This is a singleton that keeps track of all the vtk-python extension modules "
+"that have been loaded, and all of the vtk-python objects that have been "
+"instantiated.  It contains all of the machinery that is needed for moving "
+"VTK objects from C++ to Python and back again."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:74
+msgid "vtkPythonCommand"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:76
+msgid ""
+"This is a subclass of vtkCommand that allows Python methods to be used as "
+"VTK observer callbacks."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:79
+msgid "vtkPythonArgs"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:81
+msgid ""
+"When a method call is performed in the wrappers, vtkPythonArgs does the "
+"conversion of the arguments from Python to C++, and it also converts the "
+"return value from C++ to Python."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:85
+msgid "vtkPythonOverload"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:87
+msgid ""
+"When an overloaded method is called from Python, this class uses the method "
+"arguments to decide which overload to use."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:90
+msgid "vtkPythonCompatibility"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:92
+msgid ""
+"This is actually just a header, not a class.  It contains macros that make "
+"it easier to write code that is compatible with different versions of the "
+"Python C API."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:96
+msgid "vtkSmartPyObject"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Wrapping/PythonCore/README.md:98
+msgid ""
+"Whereas the other classes in this directory are for using VTK C++ objects "
+"through Python, this class is for using Python objects through C++.  This "
+"class is a C++ smart pointer that handles Python reference counting."
+msgstr ""

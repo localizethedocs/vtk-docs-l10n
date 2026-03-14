@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:1
+msgid "VTKHDF: Implementation Status"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:3
+msgid ""
+"This document specifies the features currently supported by the VTK "
+"implementation of the VTKHDF file format, `vtkHDFReader` and `vtkHDFWriter`. "
+"The following list only showcases complete and planned developments."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:6
+msgid "File Format Specifications Status"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:8
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:39
+msgid "Data Types"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:10
+msgid ""
+"The following list shows the VTK data types currently specified, at least "
+"partially. Any data type not listed here is also not yet specified, the one "
+"that are listed has not specified have ongoing discussions and may be "
+"specified when possible."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "VTK Data Type"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "Status"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkCellGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "[not specified](https://discourse.vtk.org/t/vtkhdf-roadmap/13257/19)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkHyperTreeGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "specified"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkImageData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkMultiBlockDataSet"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkPartitionedDataSet"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkPartitionedDataSetCollection"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkOverlappingAMR"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid ""
+"partial [1](https://gitlab.kitware.com/vtk/vtk/-/issues/19926)[2](https://"
+"gitlab.kitware.com/vtk/vtk/-/issues/19927)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkPolyData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkRectilinearGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "[not specified](https://gitlab.kitware.com/vtk/vtk/-/issues/19379)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkStructuredGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid ""
+"[not specified](https://discourse.vtk.org/t/vtkhdf-vtkstructuredgrid-"
+"support/15920)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkUnstructuredGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:28
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:52
+msgid "Additional Features"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:30
+msgid ""
+"Here is the list of supported feature which doesn't depends on a VTK data "
+"type:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "Features"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "Static¹"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "supported"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "Temporal"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:37
+msgid "Implementation Status in VTK"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkHDFReader"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "vtkHDFWriter"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "not supported"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "Compression"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid ""
+"[partially supported²](https://gitlab.kitware.com/vtk/vtk/-/issues/19746)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "[not supported](https://gitlab.kitware.com/vtk/vtk/-/issues/19888)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:60
+msgid ""
+"¹: ability to reuse data instead of duplicating it to save disk space and "
+"performance. ²: missing for vtkHyperTreeGrid."
+msgstr ""
