@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:1
 msgid "Module System"
-msgstr ""
+msgstr "模組系統"
 
 #: ../../../api/cmake/ModuleSystem.md:3
 msgid ""
@@ -181,7 +181,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:91
 msgid "Modules"
-msgstr ""
+msgstr "模組"
 
 #: ../../../api/cmake/ModuleSystem.md:93
 msgid ""
@@ -440,7 +440,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:234
 msgid "Testing"
-msgstr ""
+msgstr "測試"
 
 #: ../../../api/cmake/ModuleSystem.md:236
 msgid ""
@@ -519,7 +519,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:280
 msgid "Building modules"
-msgstr ""
+msgstr "建置模組"
 
 #: ../../../api/cmake/ModuleSystem.md:282
 msgid ""
@@ -609,7 +609,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:333
 msgid "Library parameters"
-msgstr ""
+msgstr "程式庫參數"
 
 #: ../../../api/cmake/ModuleSystem.md:335
 msgid ""
@@ -655,31 +655,31 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:359
 msgid "`ARCHIVE_DESTINATION`"
-msgstr ""
+msgstr "`ARCHIVE_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:360
 msgid "`HEADERS_DESTINATION`"
-msgstr ""
+msgstr "`HEADERS_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:361
 msgid "`LIBRARY_DESTINATION`"
-msgstr ""
+msgstr "`LIBRARY_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:362
 msgid "`RUNTIME_DESTINATION`"
-msgstr ""
+msgstr "`RUNTIME_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:363
 msgid "`CMAKE_DESTINATION`"
-msgstr ""
+msgstr "`CMAKE_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:364
 msgid "`LICENSE_DESTINATION`"
-msgstr ""
+msgstr "`LICENSE_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:365
 msgid "`HIERARCHY_DESTINATION`"
-msgstr ""
+msgstr "`HIERARCHY_DESTINATION`"
 
 #: ../../../api/cmake/ModuleSystem.md:367
 msgid ""
@@ -736,7 +736,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:398
 msgid "Test data information"
-msgstr ""
+msgstr "測試資料資訊"
 
 #: ../../../api/cmake/ModuleSystem.md:400
 msgid ""
@@ -879,15 +879,15 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:481
 msgid "`SOURCES`"
-msgstr ""
+msgstr "`SOURCES`"
 
 #: ../../../api/cmake/ModuleSystem.md:482
 msgid "`HEADERS`"
-msgstr ""
+msgstr "`HEADERS`"
 
 #: ../../../api/cmake/ModuleSystem.md:483
 msgid "`TEMPLATES`"
-msgstr ""
+msgstr "`TEMPLATES`"
 
 #: ../../../api/cmake/ModuleSystem.md:485
 msgid ""
@@ -982,7 +982,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:535
 msgid "Module APIs"
-msgstr ""
+msgstr "模組 API"
 
 #: ../../../api/cmake/ModuleSystem.md:537
 msgid ""
@@ -1180,7 +1180,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:652
 msgid "Setting the `_FOUND` variable"
-msgstr ""
+msgstr "設定 `_FOUND` 變數"
 
 #: ../../../api/cmake/ModuleSystem.md:654
 msgid ""
@@ -1215,7 +1215,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:676
 msgid "Advanced topics"
-msgstr ""
+msgstr "進階話題"
 
 #: ../../../api/cmake/ModuleSystem.md:678
 msgid ""
@@ -1313,11 +1313,11 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:729
 msgid "<a name=\"wrapping\"></a>"
-msgstr ""
+msgstr "<a name=\"wrapping\"></a>"
 
 #: ../../../api/cmake/ModuleSystem.md:729
 msgid "<a name=\"wrapping\">"
-msgstr ""
+msgstr "<a name=\"wrapping\">"
 
 #: ../../../api/cmake/ModuleSystem.md:730
 msgid "Wrapping"
@@ -1452,7 +1452,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:811
 msgid "External third party modules"
-msgstr ""
+msgstr "外部第三方模組"
 
 #: ../../../api/cmake/ModuleSystem.md:813
 msgid ""
@@ -1488,7 +1488,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:833
 msgid "Internal third party modules"
-msgstr ""
+msgstr "內部第三方模組"
 
 #: ../../../api/cmake/ModuleSystem.md:835
 msgid ""
@@ -1636,7 +1636,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:909
 msgid "Control variables"
-msgstr ""
+msgstr "控制變數"
 
 #: ../../../api/cmake/ModuleSystem.md:911
 msgid "These variables do not follow the API convention and are used if set:"
@@ -1673,7 +1673,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:926
 msgid "SPDX files generation"
-msgstr ""
+msgstr "SPDX 檔案生成"
 
 #: ../../../api/cmake/ModuleSystem.md:928
 msgid "The generation of VTK module SPDX files relies on three components:"
@@ -1731,11 +1731,11 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:952
 msgid "`GENERATE_SPDX`"
-msgstr ""
+msgstr "`GENERATE_SPDX`"
 
 #: ../../../api/cmake/ModuleSystem.md:953
 msgid "`SPDX_DOCUMENT_NAMESPACE`"
-msgstr ""
+msgstr "`SPDX_DOCUMENT_NAMESPACE`"
 
 #: ../../../api/cmake/ModuleSystem.md:954
 #: ../../../api/cmake/ModuleSystem.md:981
