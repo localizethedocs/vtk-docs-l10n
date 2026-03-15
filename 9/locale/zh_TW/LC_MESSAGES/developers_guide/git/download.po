@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../developers_guide/git/download.md:5
 msgid "Download VTK with Git"
-msgstr ""
+msgstr "使用 Git 下載 VTK"
 
 #: ../../../developers_guide/git/download.md:8
 msgid ""
@@ -41,10 +41,13 @@ msgid ""
 "$ cd VTK\n"
 "$ git submodule update --init\n"
 msgstr ""
+"$ git clone https://gitlab.kitware.com/vtk/vtk.git VTK\n"
+"$ cd VTK\n"
+"$ git submodule update --init\n"
 
 #: ../../../developers_guide/git/download.md:22
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: ../../../developers_guide/git/download.md:25
 msgid ""
@@ -76,7 +79,7 @@ msgstr ""
 
 #: ../../../developers_guide/git/download.md:42
 msgid "$ git checkout --track -b release origin/release\n"
-msgstr ""
+msgstr "$ git checkout --track -b release origin/release\n"
 
 #: ../../../developers_guide/git/download.md:44
 msgid ""
