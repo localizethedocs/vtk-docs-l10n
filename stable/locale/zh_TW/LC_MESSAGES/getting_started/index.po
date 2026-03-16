@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../getting_started/index.md:1
 msgid "Getting Started"
-msgstr ""
+msgstr "開始使用"
 
 #: ../../../getting_started/index.md:3
 msgid "Introduction"
-msgstr ""
+msgstr "介紹"
 
 #: ../../../getting_started/index.md:5
 msgid ""
@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../getting_started/system_requirements.md:2
 msgid "System requirements"
-msgstr ""
+msgstr "系統要求"
 
 #: ../../../getting_started/system_requirements.md:4
 msgid "**Runtime**"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: ../../../getting_started/using_python.md:2
 msgid "Using Python"
-msgstr ""
+msgstr "使用 Python"
 
 #: ../../../getting_started/using_python.md:4
 msgid ""
@@ -118,15 +118,15 @@ msgstr ""
 
 #: ../../../getting_started/using_python.md:0
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../../getting_started/using_python.md:0
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../getting_started/using_python.md:32
 msgid "Using `PowerShell`"
-msgstr ""
+msgstr "使用 `PowerShell`"
 
 #: ../../../getting_started/using_python.md:33
 msgid ""
@@ -134,10 +134,13 @@ msgid ""
 ".\\env\\Activate.ps1\n"
 "pip install vtk\n"
 msgstr ""
+"python -m venv env\n"
+".\\env\\Activate.ps1\n"
+"pip install vtk\n"
 
 #: ../../../getting_started/using_python.md:39
 msgid "or using `cmd.exe`"
-msgstr ""
+msgstr "或者使用 `cmd.exe`"
 
 #: ../../../getting_started/using_python.md:40
 msgid ""
@@ -145,6 +148,9 @@ msgid ""
 ".\\env\\activate.bat\n"
 "pip install vtk\n"
 msgstr ""
+"python -m venv env\n"
+".\\env\\activate.bat\n"
+"pip install vtk\n"
 
 #: ../../../getting_started/using_python.md:48
 msgid ""
@@ -158,6 +164,9 @@ msgid ""
 ">>> print(vtk.__version__)\n"
 "9.2.6\n"
 msgstr ""
+">>> import vtk\n"
+">>> print(vtk.__version__)\n"
+"9.2.6\n"
 
 #: ../../../getting_started/using_python.md:56
 msgid ""
@@ -215,7 +224,7 @@ msgstr ""
 
 #: ../../../getting_started/using_cpp.md:2
 msgid "Using C++ and CMake"
-msgstr ""
+msgstr "使用 C++ 和 CMake"
 
 #: ../../../getting_started/using_cpp.md:4
 msgid ""
@@ -241,11 +250,11 @@ msgstr ""
 
 #: ../../../getting_started/index.md:34
 msgid "Package Name"
-msgstr ""
+msgstr "軟體包名稱"
 
 #: ../../../getting_started/index.md:34
 msgid "Version"
-msgstr ""
+msgstr "版本"
 
 #: ../../../getting_started/index.md:34
 msgid "Fedora Rawhide"
@@ -700,7 +709,7 @@ msgstr ""
 
 #: ../../../getting_started/using_frameworks.md:2
 msgid "Using existing frameworks and applications"
-msgstr ""
+msgstr "使用現有的框架與應用程式"
 
 #: ../../../getting_started/using_frameworks.md:4
 msgid ""
