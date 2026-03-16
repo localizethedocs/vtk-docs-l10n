@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../getting_started/using_python.md:1
 msgid "Using Python"
-msgstr ""
+msgstr "使用 Python"
 
 #: ../../../getting_started/using_python.md:3
 msgid ""
@@ -50,15 +50,15 @@ msgstr ""
 
 #: ../../../getting_started/using_python.md:0
 msgid "macOS"
-msgstr ""
+msgstr "macOS"
 
 #: ../../../getting_started/using_python.md:0
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../../getting_started/using_python.md:31
 msgid "Using `PowerShell`"
-msgstr ""
+msgstr "使用 `PowerShell`"
 
 #: ../../../getting_started/using_python.md:32
 msgid ""
@@ -66,10 +66,13 @@ msgid ""
 ".\\env\\Activate.ps1\n"
 "pip install vtk\n"
 msgstr ""
+"python -m venv env\n"
+".\\env\\Activate.ps1\n"
+"pip install vtk\n"
 
 #: ../../../getting_started/using_python.md:38
 msgid "or using `cmd.exe`"
-msgstr ""
+msgstr "或者使用 `cmd.exe`"
 
 #: ../../../getting_started/using_python.md:39
 msgid ""
@@ -77,6 +80,9 @@ msgid ""
 ".\\env\\activate.bat\n"
 "pip install vtk\n"
 msgstr ""
+"python -m venv env\n"
+".\\env\\activate.bat\n"
+"pip install vtk\n"
 
 #: ../../../getting_started/using_python.md:47
 msgid ""
@@ -90,6 +96,9 @@ msgid ""
 ">>> print(vtk.__version__)\n"
 "9.2.6\n"
 msgstr ""
+">>> import vtk\n"
+">>> print(vtk.__version__)\n"
+"9.2.6\n"
 
 #: ../../../getting_started/using_python.md:55
 msgid ""
