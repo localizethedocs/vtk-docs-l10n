@@ -1,0 +1,56 @@
+# {py:mod}`vtkmodules.numpy_interface`
+
+```{py:module} vtkmodules.numpy_interface
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface
+:allowtitles:
+```
+
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+vtkmodules.numpy_interface.algorithms
+vtkmodules.numpy_interface.vtk_affine_array
+vtkmodules.numpy_interface.utils
+vtkmodules.numpy_interface.vtk_soa_array
+vtkmodules.numpy_interface.dataset_adapter
+vtkmodules.numpy_interface.vtk_none_array
+vtkmodules.numpy_interface.vtk_aos_array
+vtkmodules.numpy_interface.numpy_algorithms
+vtkmodules.numpy_interface.array_overrides
+vtkmodules.numpy_interface.internal_algorithms
+vtkmodules.numpy_interface._vtk_array_mixin
+vtkmodules.numpy_interface.vtk_partitioned_array
+vtkmodules.numpy_interface.vtk_constant_array
+vtkmodules.numpy_interface.vtk_implicit_array
+```
+
+## Package Contents
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.numpy_interface.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.__all__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __all__
+:canonical: vtkmodules.numpy_interface.__all__
+:value: >
+   ['algorithms', 'dataset_adapter']
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.__all__
+```
+
+````

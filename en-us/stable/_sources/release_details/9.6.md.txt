@@ -1,0 +1,30 @@
+# 9.6
+
+Released on 2026-02-09.
+
+```{include} ../../release/_9.6-stripped.md
+:relative-images:
+:heading-offset: 1
+```
+
+```{toctree}
+:hidden:
+
+9.6/add-arrays-deprecate-arrays
+9.6/add-javascript-wrapper-frontend
+9.6/add-missing-selection-behavior-parallel-coordinates-view
+9.6/add-numpy-support-for-composite-arrays
+9.6/add-onnx-support
+9.6/add-stream-support
+9.6/add-usd-exporter
+9.6/add-vtkCartesianGrid
+9.6/algorithm-array-components
+9.6/hip-type-attrib
+9.6/optimize-vtkObserver
+9.6/refactor-amr-datamodel
+9.6/refactor-statistics
+9.6/replace-GetVoidPointer-usages
+9.6/replace-unsafe-c-from-to-string-functions
+9.6/strided-array
+9.6/vtkCellArray-generic-vtkDataArray
+```

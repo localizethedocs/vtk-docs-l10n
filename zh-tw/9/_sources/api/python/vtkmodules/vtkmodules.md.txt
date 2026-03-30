@@ -1,0 +1,102 @@
+# {py:mod}`vtkmodules`
+
+```{py:module} vtkmodules
+```
+
+```{autodoc2-docstring} vtkmodules
+:allowtitles:
+```
+
+## Subpackages
+
+```{toctree}
+:titlesonly:
+:maxdepth: 3
+
+vtkmodules.qt
+vtkmodules.gtk
+vtkmodules.tk
+vtkmodules.test
+vtkmodules.numpy_interface
+vtkmodules.util
+vtkmodules.wx
+```
+
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+vtkmodules.generate_pyi
+```
+
+## Package Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_windows_dll_path <vtkmodules._windows_dll_path>`
+  - ```{autodoc2-docstring} vtkmodules._windows_dll_path
+    :summary:
+    ```
+* - {py:obj}`_load_vtkmodules_static <vtkmodules._load_vtkmodules_static>`
+  - ```{autodoc2-docstring} vtkmodules._load_vtkmodules_static
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.__all__
+    :summary:
+    ```
+* - {py:obj}`__version__ <vtkmodules.__version__>`
+  - ```{autodoc2-docstring} vtkmodules.__version__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} _windows_dll_path()
+:canonical: vtkmodules._windows_dll_path
+
+```{autodoc2-docstring} vtkmodules._windows_dll_path
+```
+````
+
+````{py:function} _load_vtkmodules_static()
+:canonical: vtkmodules._load_vtkmodules_static
+
+```{autodoc2-docstring} vtkmodules._load_vtkmodules_static
+```
+````
+
+````{py:data} __all__
+:canonical: vtkmodules.__all__
+:value: >
+   ['vtkCommonCore', 'vtkWebCore', 'vtkCommonMath', 'vtkCommonTransforms', 'vtkCommonDataModel', 'vtkCo...
+
+```{autodoc2-docstring} vtkmodules.__all__
+```
+
+````
+
+````{py:data} __version__
+:canonical: vtkmodules.__version__
+:value: >
+   '9.2.6'
+
+```{autodoc2-docstring} vtkmodules.__version__
+```
+
+````

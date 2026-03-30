@@ -1,0 +1,1247 @@
+<!doctype html>
+<html class="no-js" lang="zh-TW" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="關於這些文件" href="../../about.html" /><link rel="index" title="索引" href="../../genindex.html" /><link rel="search" title="搜尋" href="../../search.html" /><link rel="next" title="Regression Testing" href="../testing.html" /><link rel="prev" title="開發者指南" href="../index.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/developers_guide/git/develop.html" />
+
+    <link rel="shortcut icon" href="../../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Develop - VTK 說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">VTK  說明文件</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  說明文件</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="搜尋" name="q" aria-label="搜尋">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">關於</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">開始使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supported_data_formats.html">支援的資料格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supported_hardware.html">支援的硬體</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules/index.html">模組</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 模組</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../build_instructions/index.html">建置</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 建置</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.utils</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_soa_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_none_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_aos_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.array_overrides.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.array_overrides</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface._vtk_array_mixin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_partitioned_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_constant_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_implicit_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/ModuleSystem.html">模組系統</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../advanced/index.html">進階話題</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 進階話題</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../vtk_file_formats/index.html">VTK 檔案格式</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK 檔案格式</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vtk_file_formats/vtkxml_file_format.html">XML 檔案格式</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF 檔案格式</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF 檔案格式</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../design_documents/index.html">設計文件</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 設計文件</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/ArrayDispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../design_documents/WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">開發者指南</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of 開發者指南</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resources.html">資源</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys』 BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="develop">
+<h1>Develop<a class="headerlink" href="#develop" title="Link to this heading">#</a></h1>
+<p>This page documents how to develop VTK using <a class="reference external" href="https://gitlab.kitware.com">GitLab</a> and <a class="reference external" href="https://git-scm.com">Git</a>.
+See the <a class="reference internal" href="README.html"><span class="std std-doc">README</span></a> for more information.</p>
+<p>Git is an extremely powerful version control tool that supports many
+different 「workflows」 for individual development and collaboration.
+Here we document procedures used by the VTK development community.
+In the interest of simplicity and brevity we do <em>not</em> provide an
+explanation of why we use this approach.</p>
+<p>For a quickstart guide see <a class="reference internal" href="../develop_quickstart.html"><span class="std std-doc">here</span></a></p>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<p>VTK development uses a <a class="reference external" href="https://public.kitware.com/Wiki/Git/Workflow/Topic">branchy workflow</a> based on topic branches.
+Our collaboration workflow consists of three main steps:</p>
+<ol class="arabic simple">
+<li><p>Local Development:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#update">Update</a></p></li>
+<li><p><a class="reference internal" href="#create-a-topic">Create a Topic</a></p></li>
+</ul>
+</li>
+<li><p>Code Review (requires <a class="reference external" href="https://gitlab.kitware.com/users/sign_in">GitLab Access</a>):</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#share-a-topic">Share a Topic</a></p></li>
+<li><p><a class="reference internal" href="#create-a-merge-request">Create a Merge Request</a></p></li>
+<li><p><a class="reference internal" href="#review-a-merge-request">Review a Merge Request</a></p></li>
+<li><p><a class="reference internal" href="#revise-a-topic">Revise a Topic</a></p></li>
+</ul>
+</li>
+<li><p>Integrate Changes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#merge-a-topic">Merge a Topic</a> (requires permission in GitLab)</p></li>
+<li><p><a class="reference internal" href="#delete-a-topic">Delete a Topic</a></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="update">
+<h2>更新<a class="headerlink" href="#update" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Update your local <code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+$ git pull
+</pre></div>
+</div>
+</li>
+<li><p>Optionally push <code class="docutils literal notranslate"><span class="pre">master</span></code> to your fork in GitLab:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push gitlab master
+</pre></div>
+</div>
+<p>to keep it in sync.  The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">gitlab-push</span></code> script used to
+<a class="reference internal" href="#share-a-topic">Share a Topic</a> below will also do this.</p>
+</li>
+</ol>
+</section>
+<section id="create-a-topic">
+<h2>Create a Topic<a class="headerlink" href="#create-a-topic" title="Link to this heading">#</a></h2>
+<p>All new work must be committed on topic branches.
+Name topics like you might name functions: concise but precise.
+A reader should have a general idea of the feature or fix to be developed given just the branch name.</p>
+<ol class="arabic">
+<li><p>To start a new topic branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git fetch origin
+</pre></div>
+</div>
+</li>
+<li><p>For new development, start the topic from <code class="docutils literal notranslate"><span class="pre">origin/master</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b my-topic origin/master
+</pre></div>
+</div>
+<p>For release branch fixes, start the topic from <code class="docutils literal notranslate"><span class="pre">origin/release</span></code>, and
+by convention use a topic name starting in <code class="docutils literal notranslate"><span class="pre">release-</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b release-my-topic origin/release
+</pre></div>
+</div>
+<p>If backporting a change, you may rebase the branch back onto
+<code class="docutils literal notranslate"><span class="pre">origin/release</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b release-my-topic my-topic
+$ git rebase --onto origin/release origin/master
+</pre></div>
+</div>
+<p>Alternatively, for more targeted or aggregate backports, use the <code class="docutils literal notranslate"><span class="pre">-x</span></code> flag
+when performing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">cherry-pick</span></code> so that a reference to the original
+commit is added to the commit message:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b release-my-topic origin/release
+$ git cherry-pick -x $hash_a $hash_b $hash_c
+$ git cherry-pick -x $hash_d $hash_e $hash_f
+</pre></div>
+</div>
+</li>
+<li><p>Edit files and create commits (repeat as needed):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ edit file1 file2 file3
+$ git add file1 file2 file3
+$ git commit
+</pre></div>
+</div>
+<p>Caveats:</p>
+<ul class="simple">
+<li><p>To add data follow <a class="reference internal" href="test.html#add-data"><span class="std std-ref">these instructions</span></a>.</p></li>
+<li><p>If your change modifies third party code, see <a class="reference internal" href="thirdparty.html"><span class="std std-doc">Updating Third Party Projects</span></a>.</p></li>
+<li><p>To deprecate APIs, see <a class="reference internal" href="deprecation.html"><span class="std std-doc">Deprecation Process</span></a>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="guidelines-for-commit-logs">
+<h2>Guidelines for Commit logs<a class="headerlink" href="#guidelines-for-commit-logs" title="Link to this heading">#</a></h2>
+<p>Remember to <em>motivate &amp; summarize</em>. When writing commit logs, make sure
+that there is enough information there for any developer to read and glean
+relevant information such as:</p>
+<ol class="arabic simple">
+<li><p>Is this change important and why?</p></li>
+<li><p>If addressing an issue, which issue(s)?</p></li>
+<li><p>If a new feature, why is it useful and/or necessary?</p></li>
+<li><p>Are there background references or documentation?</p></li>
+</ol>
+<p>A short description of what the issue being addressed and how will go a long way
+towards making the log more readable and the software more maintainable.</p>
+<p>Style guidelines for commit logs are as follows:</p>
+<ol class="arabic simple">
+<li><p>Separate subject from body with a blank line</p></li>
+<li><p>Limit the subject line to 60 characters</p></li>
+<li><p>Capitalize the subject line</p></li>
+<li><p>Use the imperative mood in the subject line e.g. 「Refactor foo」 or 「Fix Issue #12322」,
+instead of 「Refactoring foo」, or 「Fixing issue #12322」.</p></li>
+<li><p>Wrap the body at 80 characters</p></li>
+<li><p>Use the body to explain <code class="docutils literal notranslate"><span class="pre">what</span></code> and <code class="docutils literal notranslate"><span class="pre">why</span></code> and if applicable a brief <code class="docutils literal notranslate"><span class="pre">how</span></code>.</p></li>
+</ol>
+</section>
+<section id="share-a-topic">
+<h2>Share a Topic<a class="headerlink" href="#share-a-topic" title="Link to this heading">#</a></h2>
+<p>When a topic is ready for review and possible inclusion, share it by pushing
+to a fork of your repository in GitLab.  Be sure you have registered and
+signed in for <a class="reference external" href="https://gitlab.kitware.com/users/sign_in">GitLab Access</a> and created your fork by visiting the main
+<a class="reference external" href="https://gitlab.kitware.com/vtk/vtk">VTK GitLab</a> repository page and using the 「Fork」 button in the upper right.</p>
+<ol class="arabic">
+<li><p>Checkout the topic if it is not your current branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout my-topic
+</pre></div>
+</div>
+</li>
+<li><p>Check what commits will be pushed to your fork in GitLab:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git prepush
+</pre></div>
+</div>
+</li>
+<li><p>Push commits in your topic branch to your fork in GitLab:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git gitlab-push
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>If you are revising a previously pushed topic and have rewritten the
+topic history, add <code class="docutils literal notranslate"><span class="pre">-f</span></code> or <code class="docutils literal notranslate"><span class="pre">--force</span></code> to overwrite the destination.</p></li>
+<li><p>If the topic adds data see <a class="reference internal" href="test.html#push"><span class="std std-ref">this note</span></a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">gitlab-push</span></code> script also pushes the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch to your
+fork in GitLab to keep it in sync with the upstream <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+</ul>
+<p>The output will include a link to the topic branch in your fork in GitLab
+and a link to a page for creating a Merge Request.</p>
+</li>
+</ol>
+</section>
+<section id="create-a-merge-request">
+<h2>Create a Merge Request<a class="headerlink" href="#create-a-merge-request" title="Link to this heading">#</a></h2>
+<p>(If you already created a merge request for a given topic and have reached
+this step after revising it, skip to the <a class="reference internal" href="#review-a-merge-request">next step</a>.)</p>
+<p>Visit your fork in GitLab, browse to the 「<strong>Merge Requests</strong>」 link on the
+left, and use the 「<strong>New Merge Request</strong>」 button in the upper right to
+reach the URL printed at the end of the <a class="reference internal" href="#share-a-topic">previous step</a>.
+It should be of the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://gitlab.kitware.com/&lt;username&gt;/vtk/-/merge_requests/new
+</pre></div>
+</div>
+<p>Follow these steps:</p>
+<ol class="arabic">
+<li><p>In the 「<strong>Source branch</strong>」 box select the <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;/vtk</span></code> repository
+and the <code class="docutils literal notranslate"><span class="pre">my-topic</span></code> branch.</p></li>
+<li><p>In the 「<strong>Target branch</strong>」 box select the <code class="docutils literal notranslate"><span class="pre">vtk/vtk</span></code> repository and
+the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.  It should be the default.</p>
+<p>If your change is a fix for the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch, you should still
+select the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch as the target because the change needs
+to end up there too.</p>
+<p>For other <code class="docutils literal notranslate"><span class="pre">release</span></code> branches (e.g., <code class="docutils literal notranslate"><span class="pre">release-6.3</span></code>), merge requests should
+go directly to the branch (they are not tied with <code class="docutils literal notranslate"><span class="pre">master</span></code> in our
+workflow).</p>
+</li>
+<li><p>Use the 「<strong>Compare branches</strong>」 button to proceed to the next page
+and fill out the merge request creation form.</p></li>
+<li><p>In the 「<strong>Title</strong>」 field provide a one-line summary of the entire
+topic.  This will become the title of the Merge Request.</p>
+<p>Example Merge Request Title:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Wrapping: Add Java 1.x support
+</pre></div>
+</div>
+</li>
+<li><p>In the 「<strong>Description</strong>」 field provide a high-level description
+of the change the topic makes and any relevant information about
+how to try it.</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code> syntax to draw attention of specific developers.
+This syntax may be used anywhere outside literal text and code
+blocks.  Or, wait until the <a class="reference internal" href="#review-a-merge-request">next step</a>
+and add comments to draw attention of developers.</p></li>
+<li><p>If your change is a fix for the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch, indicate this
+so that a maintainer knows it should be merged to <code class="docutils literal notranslate"><span class="pre">release</span></code>.</p></li>
+<li><p>Optionally use a fenced code block with type <code class="docutils literal notranslate"><span class="pre">message</span></code> to specify
+text to be included in the generated merge commit message when the
+topic is <a class="reference internal" href="#merge-a-topic">merged</a>.</p></li>
+</ul>
+<p>Example Merge Request Description:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This branch requires Java 1.x which is not generally available yet.
+Get Java 1.x from ... in order to try these changes.
+
+```message
+Add support for Java 1.x to the wrapping infrastructure.
+```
+
+Cc: @user1 @user2
+</pre></div>
+</div>
+</li>
+<li><p>The 「<strong>Assign to</strong>」, 「<strong>Milestone</strong>」, and 「<strong>Labels</strong>」 fields
+may be left blank.</p></li>
+<li><p>Use the 「<strong>Submit merge request</strong>」 button to create the merge request
+and visit its page.</p></li>
+</ol>
+</section>
+<section id="guidelines-for-merge-requests">
+<h2>Guidelines for Merge Requests<a class="headerlink" href="#guidelines-for-merge-requests" title="Link to this heading">#</a></h2>
+<p>Remember to <em>motivate &amp; summarize</em>. When creating a merge request, consider the
+reviewers and future perusers of the software. Provide enough information to motivate
+the merge request such as:</p>
+<ol class="arabic simple">
+<li><p>Is this merge request important and why?</p></li>
+<li><p>If addressing an issue, which issue(s)?</p></li>
+<li><p>If a new feature, why is it useful and/or necessary?</p></li>
+<li><p>Are there background references or documentation?</p></li>
+</ol>
+<p>Also provide a summary statement expressing what you did and if there is a choice
+in implementation or design pattern, the rationale for choosing a certain path.
+Notable software or data features should be mentioned as well.</p>
+<p>A well written merge request will motivate your reviewers, and bring them up
+to speed faster. Future software developers will be able to understand the
+reasons why something was done, and possibly avoid chasing down dead ends,
+Although it may take you a little more time to write a good merge request,
+you’ll likely see payback in faster reviews and better understood and
+maintainable software.</p>
+</section>
+<section id="review-a-merge-request">
+<h2>Review a Merge Request<a class="headerlink" href="#review-a-merge-request" title="Link to this heading">#</a></h2>
+<p>Add comments mentioning specific developers using <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code> syntax to
+draw their attention and have the topic reviewed.  After typing <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> and
+some text, GitLab will offer completions for developers whose real names
+or user names match.</p>
+<p>Here is a list of developers usernames and their specific area of
+expertise. A merge request without a developer tagged has very low chance
+to be merged in a reasonable timeframe.</p>
+<ul class="simple">
+<li><p>&#64;mwestphal: Qt, filters, data Model, widgets, parallel, anything else.</p></li>
+<li><p>&#64;charles.gueunet: filters, data model, SMP, events, pipeline, computational geometry, distributed algorithms.</p></li>
+<li><p>&#64;kmorel: General VTK Expertise, Viskores accelerators.</p></li>
+<li><p>&#64;will.schroeder: algorithms, computational geometry, filters, SPH, SMP, widgets,  point cloud, spatial locators.</p></li>
+<li><p>&#64;sebastien.jourdain: web, WebAssembly, Python, Java.</p></li>
+<li><p>&#64;sankhesh: volume rendering, Qt, OpenGL, widgets, vtkImageData, DICOM, VR, Raytracing, webgpu, QtQuick, QtQml, OpenXR</p></li>
+<li><p>&#64;ben.boeckel: CMake, module system, third-parties.</p></li>
+<li><p>&#64;cory.quammen: readers, filters, data modeling, general usage, documentation.</p></li>
+<li><p>&#64;seanm: macOS, Cocoa, cppcheck, clang.</p></li>
+<li><p>&#64;spiros.tsalikis: filters, SMP, computational geometry.</p></li>
+<li><p>&#64;louis.gombert: VTKHDF, HyperTreeGrid, Catalyst</p></li>
+<li><p>&#64;jaswant.panchumarti: Rendering, WASM, WebGPU, emscripten</p></li>
+<li><p>&#64;dcthomp: CellGrid</p></li>
+</ul>
+<p>If you would like to be included in this list, juste create a merge request.</p>
+<section id="human-reviews">
+<h3>Human Reviews<a class="headerlink" href="#human-reviews" title="Link to this heading">#</a></h3>
+<p>Reviewers may add comments providing feedback or to acknowledge their
+approval. When a human reviewers suggest a change, please take it into
+account or discuss your choices with the reviewers until an agreement
+is reached. At this point, please <code class="docutils literal notranslate"><span class="pre">resolve</span></code> the discussion by clicking
+on the dedicated button.</p>
+<p>When all discussion have been addressed, the reviewers will either do
+another pass of comment or acknowledge their approval in some form.</p>
+<p>Please be swift to address or discuss comments, it will increase
+the speed at which your changes will be merged.</p>
+</section>
+<section id="comments-formatting">
+<h3>Comments Formatting<a class="headerlink" href="#comments-formatting" title="Link to this heading">#</a></h3>
+<p>Comments use <a class="reference external" href="https://gitlab.kitware.com/help/markdown/markdown">GitLab Flavored Markdown</a> for formatting.  See GitLab
+documentation on <a class="reference external" href="https://gitlab.kitware.com/help/markdown/markdown#special-gitlab-references">Special GitLab References</a> to add links to things
+like merge requests and commits in other repositories.</p>
+<p>Lines of specific forms will be extracted during
+<a class="reference internal" href="#merge-a-topic">merging</a> and included as trailing lines of the
+generated merge commit message.</p>
+<p>A commit message consists of up to three parts which must be specified
+in the following order: the <a class="reference internal" href="#leading-line">leading line</a>, then
+<a class="reference internal" href="#middle-lines">middle lines</a>, then <a class="reference internal" href="#trailing-lines">trailing lines</a>.
+Each part is optional, but they must be specified in this order.</p>
+<section id="leading-line">
+<h4>Leading Line<a class="headerlink" href="#leading-line" title="Link to this heading">#</a></h4>
+<p>The <em>leading</em> line of a comment may optionally be exactly one of the
+following votes followed by nothing but whitespace before the end
+of the line:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-1</span></code> or <code class="docutils literal notranslate"><span class="pre">:-1:</span></code> indicates 「the change is not ready for integration」.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+1</span></code> or <code class="docutils literal notranslate"><span class="pre">:+1:</span></code> indicates 「I like the change」.
+This adds an <code class="docutils literal notranslate"><span class="pre">Acked-by:</span></code> trailer to the merge commit message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+2</span></code> indicates 「the change is ready for integration」.
+This adds a <code class="docutils literal notranslate"><span class="pre">Reviewed-by:</span></code> trailer to the merge commit message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+3</span></code> indicates 「I have tested the change and verified it works」.
+This adds a <code class="docutils literal notranslate"><span class="pre">Tested-by:</span></code> trailer to the merge commit message.</p></li>
+</ul>
+</section>
+<section id="middle-lines">
+<h4>Middle Lines<a class="headerlink" href="#middle-lines" title="Link to this heading">#</a></h4>
+<p>The middle lines of a comment may be free-form <a class="reference external" href="https://gitlab.kitware.com/help/markdown/markdown">GitLab Flavored Markdown</a>.</p>
+</section>
+<section id="trailing-lines">
+<h4>Trailing Lines<a class="headerlink" href="#trailing-lines" title="Link to this heading">#</a></h4>
+<p>Zero or more <em>trailing</em> lines in the last section of a comment may
+each contain exactly one of the following votes followed by nothing
+but whitespace before the end of the line:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Rejected-by:</span> <span class="pre">me</span></code> means 「The change is not ready for integration.」</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Acked-by:</span> <span class="pre">me</span></code> means 「I like the change but defer to others.」</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Reviewed-by:</span> <span class="pre">me</span></code> means 「The change is ready for integration.」</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tested-by:</span> <span class="pre">me</span></code> means 「I have tested the change and verified it works.」</p></li>
+</ul>
+<p>Each <code class="docutils literal notranslate"><span class="pre">me</span></code> reference may instead be an <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code> reference or a full
+<code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">Name</span> <span class="pre">&lt;user&#64;domain&gt;</span></code> reference to credit someone else for performing
+the review.  References to <code class="docutils literal notranslate"><span class="pre">me</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code> will automatically be
+transformed into a real name and email address according to the user’s
+GitLab account profile.</p>
+</section>
+<section id="fetching-changes">
+<h4>Fetching Changes<a class="headerlink" href="#fetching-changes" title="Link to this heading">#</a></h4>
+<p>One may fetch the changes associated with a merge request by using
+the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> command line shown at the top of the Merge Request
+page.  It is of the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git fetch https://gitlab.kitware.com/$username/vtk.git $branch
+</pre></div>
+</div>
+<p>This updates the local <code class="docutils literal notranslate"><span class="pre">FETCH_HEAD</span></code> to refer to the branch.</p>
+<p>There are a few options for checking out the changes in a work tree:</p>
+<ul>
+<li><p>One may checkout the branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout FETCH_HEAD -b $branch
+</pre></div>
+</div>
+<p>or checkout the commit without creating a local branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout FETCH_HEAD
+</pre></div>
+</div>
+</li>
+<li><p>Or, one may cherry-pick the commits to minimize rebuild time:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git cherry-pick ..FETCH_HEAD
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="robot-reviews">
+<h3>Robot Reviews<a class="headerlink" href="#robot-reviews" title="Link to this heading">#</a></h3>
+<p>The 「Kitware Robot」 automatically performs basic checks on the commits
+and adds a comment acknowledging or rejecting the topic.  This will be
+repeated automatically whenever the topic is pushed to your fork again.
+A re-check may be explicitly requested by adding a comment with a single
+<a class="reference internal" href="#trailing-lines"><em>trailing</em> line</a>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Do: check
+</pre></div>
+</div>
+<p>A topic cannot be <a class="reference internal" href="#merge-a-topic">merged</a> until the automatic review
+succeeds.</p>
+</section>
+<section id="continuous-integration">
+<h3>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h3>
+<p>VTK uses <a class="reference external" href="https://gitlab.kitware.com/help/ci/examples/README.md">GitLab CI</a> to
+test its functionality. CI results are published to CDash and a link is added
+to the <code class="docutils literal notranslate"><span class="pre">External</span></code> stage of the CI pipeline by <code class="docutils literal notranslate"><span class="pre">&#64;kwrobot</span></code>. Developers and
+reviewers should start jobs which make sense for the change using the following
+methods:</p>
+<ul class="simple">
+<li><p>The first thing to check is that CI is enabled in your fork of VTK.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Navigate to your fork (change the username in the URL): (<a class="reference external" href="https://gitlab.kitware.com/username/vtk/">https://gitlab.kitware.com/username/vtk/</a>)</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">General</span></code>, then expand 「Visibility, project features, permissions」</p></li>
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Visibility</span></code> is <code class="docutils literal notranslate"><span class="pre">Public</span></code> and <code class="docutils literal notranslate"><span class="pre">CI/CD</span></code> is enabled for <code class="docutils literal notranslate"><span class="pre">Everyone</span> <span class="pre">With</span> <span class="pre">Access</span></code></p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">CI/CD</span></code>, then expand <code class="docutils literal notranslate"><span class="pre">General</span></code></p></li>
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">Public</span> <span class="pre">Pipelines</span></code> is enabled</p></li>
+</ol>
+<ul>
+<li><p>The simplest way to trigger CI on a merge request is by adding a comment
+with a command among the <a class="reference internal" href="#trailing-lines">trailing lines</a>:</p>
+<p>Do: test</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;kwrobot</span></code> will add an award emoji to the comment to indicate that it was
+processed and trigger all jobs that are awaiting manual interaction in the
+merge request’s pipelines.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Do:</span> <span class="pre">test</span></code> command accepts the following arguments:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">--named</span> <span class="pre">&lt;regex&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">&lt;regex&gt;</span></code>: Trigger jobs matching <code class="docutils literal notranslate"><span class="pre">&lt;regex&gt;</span></code> anywhere
+in their name. Job names may be seen on the merge request’s Pipelines tab.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--stage</span> <span class="pre">&lt;stage&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">&lt;stage&gt;</span></code>: Only affect jobs in a given stage. Stage
+names may be seen on the merge request’s Pipelines tab. Note that the stage
+names are determined by what is in the <code class="docutils literal notranslate"><span class="pre">.gitlab-ci.yml</span></code> file and may be
+capitalized in the web page, so lowercasing the webpage’s display name for
+stages may be required.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--action</span> <span class="pre">&lt;action&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">-a</span> <span class="pre">&lt;action&gt;</span></code>: The action to perform on the jobs.
+Possible actions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">manual</span></code> (the default): Start jobs awaiting manual interaction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unsuccessful</span></code>: Start or restart jobs which have not completed
+successfully.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">failed</span></code>: Restart jobs which have completed, but without success.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">completed</span></code>: Restart all completed jobs.</p></li>
+</ul>
+</li>
+<li><p>There is a <code class="docutils literal notranslate"><span class="pre">quick</span></code> stage, so unless you are confident the CI will pass, it is preferable
+to run only that by doing:</p>
+<p>Do: test -s quick</p>
+</li>
+<li><p>It is even possible to start a single job be navigating in the merge request’s pipeline and
+click on individual play button. This is a great way to test quickly run a smoke test or
+debug CI issues without wasting CI resources.</p></li>
+</ul>
+</li>
+</ul>
+<p>If the merge request topic branch is updated by a push, a new manual trigger
+using one of the above methods is needed to start CI again.</p>
+<p>Before the merge, all the jobs, including tidy, must be run and reviewed, see below.</p>
+<p>If you have any question about the CI process, do not hesitate to ask a CI maintainer:</p>
+<ul class="simple">
+<li><p>&#64;ben.boeckel</p></li>
+<li><p>&#64;mwestphal</p></li>
+</ul>
+</section>
+<section id="reading-ci-results">
+<h3>Reading CI Results<a class="headerlink" href="#reading-ci-results" title="Link to this heading">#</a></h3>
+<p>Reading CI results is a very important part of the merge request process
+and is the responsibility of the author of the merge request, although reviewers
+can usually help. There are two locations to read the results, GitLab CI and CDash.
+Both should be checked and considered clean before merging.</p>
+<p>To read GitLab CI result, click on the Pipelines tab then on the last pipeline.
+It is expected to be fully green. If there is a yellow warning job, please consult CDash.
+If there is a red failed job, click on it to see the reason for the failure.
+It should clearly appears at the bottom of the log.
+Possible failures are:</p>
+<ul class="simple">
+<li><p>Timeouts: please rerun the job and report to CI maintainers</p></li>
+<li><p>Memory related errors: please rerun the job and report to CI maintainers</p></li>
+<li><p>Testing errors: please consult CDash for more information, usually an issue in your code</p></li>
+<li><p>Non disclosed error: please consult CDash, usually a build error in your code</p></li>
+</ul>
+<p>To read CDash results, on the job page, click on the 「cdash-commit」 external job which
+will open the commit-specific CDash page. Once it is open, make sure to show 「All Build」 on the bottom left of the page.
+CDash results displays error, warnings, and test failures for all the jobs.
+It is expected to be green <em>except</em> for the 「NoRun」 and 「Test Timings」 categories, which can be ignored.</p>
+<ul class="simple">
+<li><p>Configure warnings: there <strong>must</strong> not be any; to fix before the merge</p></li>
+<li><p>Configure errors: there <strong>must</strong> not be any; to fix before the merge</p></li>
+<li><p>Build warnings: there <strong>must</strong> not be any; to fix before the merge. If unrelated to your code, report to CI maintainers.</p></li>
+<li><p>Build errors: there <strong>must</strong> not be any; to fix before the merge. If unrelated to your code, rerun the job and report to CI maintainers.</p></li>
+<li><p>NotRun test : ignore; these tests have self-diagnosed that they are not relevant on the testing machine.</p></li>
+<li><p>Testing failure: there <strong>should</strong> not be any, ideally, to fix before the merge. If unrelated to your code, check the test history to see if it is a flaky test and report to CI maintainers.</p></li>
+<li><p>Testing success: if your MR creates or modifies tests, please check that your test are listed there.</p></li>
+<li><p>Test timings errors: can be ignored, but if it is all red, you may want to report it to CI maintainers.</p></li>
+</ul>
+<p>To check the history of a failing test, on the test page, click on the 「Summary」 link to see a summary of the test for the day,
+then click on the date controls on the top of the page to go back in time.
+If the test fails on other MRs or on master, this is probably a flaky test, currently in the process of being fixed or excluded.
+A flaky test can be ignored.</p>
+<p>As a reminder, here is our current policy regarding CI results.
+All the jobs must be run before merging, <em>including tidy</em>.
+Configure warnings and errors are not acceptable to merge and must be fixed.
+Build warning and errors are not acceptable to merge and must be fixed.
+Testing failure should be fixed before merging but can be accepted if a flaky test has been clearly identified.</p>
+</section>
+</section>
+<section id="revise-a-topic">
+<h2>Revise a Topic<a class="headerlink" href="#revise-a-topic" title="Link to this heading">#</a></h2>
+<p>If a topic is approved during GitLab review, skip to the
+<a class="reference internal" href="#merge-a-topic">next step</a>.  Otherwise, revise the topic
+and push it back to GitLab for another review as follows:</p>
+<ol class="arabic">
+<li><p>Checkout the topic if it is not your current branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout my-topic
+</pre></div>
+</div>
+</li>
+<li><p>To revise the <code class="docutils literal notranslate"><span class="pre">3</span></code>rd commit back on the topic:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git rebase -i HEAD~3
+</pre></div>
+</div>
+<p>(Substitute the correct number of commits back, as low as <code class="docutils literal notranslate"><span class="pre">1</span></code>.)
+Follow Git’s interactive instructions.</p>
+</li>
+<li><p>Return to the <a class="reference internal" href="#share-a-topic">above step</a> to share the revised topic.</p></li>
+</ol>
+</section>
+<section id="merge-a-topic">
+<h2>Merge a Topic<a class="headerlink" href="#merge-a-topic" title="Link to this heading">#</a></h2>
+<p>Once review has concluded that the MR topic is ready for integration
+(at least one <code class="docutils literal notranslate"><span class="pre">+2</span></code>), authorized developers may add a comment with a single
+<a class="reference internal" href="#trailing-lines"><em>trailing</em> line</a>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Do: merge
+</pre></div>
+</div>
+<p>in order for your change to be merged into the upstream repository.</p>
+<p>If your merge request has been already approved by developers
+but not merged yet, do not hesitate to tag an authorized developer
+and ask for a merge.</p>
+<p>By convention, do not request a merge if any <code class="docutils literal notranslate"><span class="pre">-1</span></code> or <code class="docutils literal notranslate"><span class="pre">Rejected-by:</span></code>
+review comments have not been resolved and superseded by at least
+<code class="docutils literal notranslate"><span class="pre">+1</span></code> or <code class="docutils literal notranslate"><span class="pre">Acked-by:</span></code> review comments from the same user.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Do:</span> <span class="pre">merge</span></code> command accepts the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-t</span> <span class="pre">&lt;topic&gt;</span></code>: substitute <code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> for the name of the MR topic
+branch in the constructed merge commit message.</p></li>
+</ul>
+<p>Additionally, <code class="docutils literal notranslate"><span class="pre">Do:</span> <span class="pre">merge</span></code> extracts configuration from trailing lines
+in the MR description (the following have no effect if used in a MR
+comment instead):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Backport:</span> <span class="pre">release[:&lt;commit-ish&gt;]</span></code>: merge the topic branch into
+the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch to backport the change.  This is allowed
+only if the topic branch is based on a commit in <code class="docutils literal notranslate"><span class="pre">release</span></code> already.
+If only part of the topic branch should be backported, specify it as
+<code class="docutils literal notranslate"><span class="pre">:&lt;commit-ish&gt;</span></code>.  The <code class="docutils literal notranslate"><span class="pre">&lt;commit-ish&gt;</span></code> may use <a class="reference external" href="https://git-scm.com/docs/git-rev-parse">git rev-parse</a>
+syntax to reference commits relative to the topic <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.
+See additional <a class="reference external" href="https://gitlab.kitware.com/utils/git-workflow/-/wikis/Backport-topics">backport instructions</a> for details.
+For example:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Backport:</span> <span class="pre">release</span></code>
+Merge the topic branch head into both <code class="docutils literal notranslate"><span class="pre">release</span></code> and <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Backport:</span> <span class="pre">release:HEAD~1^2</span></code>
+Merge the topic branch head’s parent’s second parent commit into
+the <code class="docutils literal notranslate"><span class="pre">release</span></code> branch.  Merge the topic branch head to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Topic-rename:</span> <span class="pre">&lt;topic&gt;</span></code>: substitute <code class="docutils literal notranslate"><span class="pre">&lt;topic&gt;</span></code> for the name of
+the MR topic branch in the constructed merge commit message.
+It is also used in merge commits constructed by <code class="docutils literal notranslate"><span class="pre">Do:</span> <span class="pre">stage</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">-t</span></code> option to a <code class="docutils literal notranslate"><span class="pre">Do:</span> <span class="pre">merge</span></code> command overrides any topic
+rename set in the MR description.</p></li>
+</ul>
+<section id="merge-success">
+<h3>Merge Success<a class="headerlink" href="#merge-success" title="Link to this heading">#</a></h3>
+<p>If the merge succeeds the topic will appear in the upstream repository
+<code class="docutils literal notranslate"><span class="pre">master</span></code> branch and the Merge Request will be closed automatically.</p>
+</section>
+<section id="merge-failure">
+<h3>Merge Failure<a class="headerlink" href="#merge-failure" title="Link to this heading">#</a></h3>
+<p>If the merge fails (likely due to a conflict), a comment will be added
+describing the failure.  In the case of a conflict, fetch the latest
+upstream history and rebase on it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git fetch origin
+$ git rebase origin/master
+</pre></div>
+</div>
+<p>(If you are fixing a bug in the latest release then substitute
+<code class="docutils literal notranslate"><span class="pre">origin/release</span></code> for <code class="docutils literal notranslate"><span class="pre">origin/master</span></code>.)</p>
+<p>Return to the <a class="reference internal" href="#share-a-topic">above step</a> to share the revised topic.</p>
+</section>
+</section>
+<section id="delete-a-topic">
+<h2>Delete a Topic<a class="headerlink" href="#delete-a-topic" title="Link to this heading">#</a></h2>
+<p>After a topic has been merged upstream the Merge Request will be closed.
+Now you may delete your copies of the branch.</p>
+<ol class="arabic">
+<li><p>In the GitLab Merge Request page a 「<strong>Remove Source Branch</strong>」
+button will appear.  Use it to delete the <code class="docutils literal notranslate"><span class="pre">my-topic</span></code> branch
+from your fork in GitLab.</p></li>
+<li><p>In your work tree checkout and update the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+$ git pull
+</pre></div>
+</div>
+</li>
+<li><p>Delete the local topic branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch -d my-topic
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">branch</span> <span class="pre">-d</span></code> command works only when the topic branch has been
+correctly merged.  Use <code class="docutils literal notranslate"><span class="pre">-D</span></code> instead of <code class="docutils literal notranslate"><span class="pre">-d</span></code> to force the deletion
+of an unmerged topic branch (warning - you could lose commits).</p>
+</li>
+</ol>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../testing.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Regression Testing</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">開發者指南</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Develop</a><ul>
+<li><a class="reference internal" href="#workflow">Workflow</a></li>
+<li><a class="reference internal" href="#update">更新</a></li>
+<li><a class="reference internal" href="#create-a-topic">Create a Topic</a></li>
+<li><a class="reference internal" href="#guidelines-for-commit-logs">Guidelines for Commit logs</a></li>
+<li><a class="reference internal" href="#share-a-topic">Share a Topic</a></li>
+<li><a class="reference internal" href="#create-a-merge-request">Create a Merge Request</a></li>
+<li><a class="reference internal" href="#guidelines-for-merge-requests">Guidelines for Merge Requests</a></li>
+<li><a class="reference internal" href="#review-a-merge-request">Review a Merge Request</a><ul>
+<li><a class="reference internal" href="#human-reviews">Human Reviews</a></li>
+<li><a class="reference internal" href="#comments-formatting">Comments Formatting</a><ul>
+<li><a class="reference internal" href="#leading-line">Leading Line</a></li>
+<li><a class="reference internal" href="#middle-lines">Middle Lines</a></li>
+<li><a class="reference internal" href="#trailing-lines">Trailing Lines</a></li>
+<li><a class="reference internal" href="#fetching-changes">Fetching Changes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#robot-reviews">Robot Reviews</a></li>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+<li><a class="reference internal" href="#reading-ci-results">Reading CI Results</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#revise-a-topic">Revise a Topic</a></li>
+<li><a class="reference internal" href="#merge-a-topic">Merge a Topic</a><ul>
+<li><a class="reference internal" href="#merge-success">Merge Success</a></li>
+<li><a class="reference internal" href="#merge-failure">Merge Failure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#delete-a-topic">Delete a Topic</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=0d9984b1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../../_static/translations.js?v=d9a6981e"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

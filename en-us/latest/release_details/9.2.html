@@ -1,0 +1,1526 @@
+<!doctype html>
+<html class="no-js" lang="en-US" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="9.1" href="9.1.html" /><link rel="prev" title="9.3" href="9.3.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/release_details/9.2.html" />
+
+    <link rel="shortcut icon" href="../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>9.2 - VTK documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VTK  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_data_formats.html">Supported Data Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build_instructions/index.html">Building</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Building</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.utils</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_soa_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_none_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_aos_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.array_overrides.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.array_overrides</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface._vtk_array_mixin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_partitioned_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_constant_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_implicit_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/ModuleSystem.html">Module System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Advanced Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vtk_file_formats/index.html">VTK File Formats</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK File Formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtkxml_file_format.html">XML File Formats</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF File Format</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF File Format</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../design_documents/index.html">Design Documents</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Design Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/ArrayDispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developers_guide/index.html">Developer’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Developer’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Release Details</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys’ BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">9.2</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="id1">
+<h1>9.2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>Released on 2022-09-27.</p>
+<section id="release-notes">
+<h2>9.2.0 Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
+<p>Changes made since VTK 9.1.0 include the following.</p>
+<hr class="docutils" />
+<p><a name="changes"></a></p>
+<section id="changes-changes">
+<h3>Changes {#changes}<a class="headerlink" href="#changes-changes" title="Link to this heading">#</a></h3>
+<p><a name="build"></a></p>
+<section id="build-build">
+<h4>Build {#build}<a class="headerlink" href="#build-build" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">VTK_USE_MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">VTK_USE_TK</span></code> options are more lenient and will not
+force any modules in the <code class="docutils literal notranslate"><span class="pre">MPI</span></code> or <code class="docutils literal notranslate"><span class="pre">Tk</span></code> group, respectively, to be built.
+Instead, affected modules may be disabled if they are unwanted.</p></li>
+<li><p>VTK’s packages now hint OpenVR locations (for the build tree or
+<code class="docutils literal notranslate"><span class="pre">VTK_RELOCATABLE_INSTALL=OFF</span></code> installations).</p></li>
+<li><p>Installation destinations for Python modules is now fixed under MinGW.</p></li>
+<li><p>Compile fixes for older compilers, mainly GCC 4.8.</p></li>
+</ul>
+<p><a name="core"></a></p>
+</section>
+<section id="core-core">
+<h4>Core {#core}<a class="headerlink" href="#core-core" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkVector</span></code>’s <code class="docutils literal notranslate"><span class="pre">+=</span></code> and <code class="docutils literal notranslate"><span class="pre">-=</span></code> operators now return a <code class="docutils literal notranslate"><span class="pre">vtkVector&amp;</span></code> as expected.
+Previously they returned uninitialized <code class="docutils literal notranslate"><span class="pre">vtkVector</span></code> instances which is of
+little use to anyone.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSetGet.h</span></code> macros which create setters now have <code class="docutils literal notranslate"><span class="pre">*Override</span></code> variants to
+use the <code class="docutils literal notranslate"><span class="pre">override</span></code> keyword instead of repeating <code class="docutils literal notranslate"><span class="pre">virtual</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkObject</span></code> instances may now be assigned a name used in reporting. It is not
+copied by <code class="docutils literal notranslate"><span class="pre">ShallowCopy</span></code> or <code class="docutils literal notranslate"><span class="pre">DeepCopy</span></code> copies.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkAbstractArray::CreateArray</span></code> now prefers creating sized integer arrays
+rather than arrays of basic C types. This is intended to help readers  get
+the correct size instead of having to remember whether <code class="docutils literal notranslate"><span class="pre">long</span></code> is 32 or 64
+bits on the given platform.</p></li>
+</ul>
+<p><a name="data"></a></p>
+</section>
+<section id="data-data">
+<h4>Data {#data}<a class="headerlink" href="#data-data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkArrayListTemplate</span></code> helper class for <code class="docutils literal notranslate"><span class="pre">vtkDataSetAttributes</span></code>
+incorrectly held a <code class="docutils literal notranslate"><span class="pre">vtkDataArray*</span></code>. This meant that filters using the class
+could not support other arrays such as <code class="docutils literal notranslate"><span class="pre">vtkStringArray</span></code>. Now, it holds a
+<code class="docutils literal notranslate"><span class="pre">vtkAbstractArray*</span></code> to support these types. Users may adapt by using
+<code class="docutils literal notranslate"><span class="pre">vtkArrayDownCast</span></code> to obtain a <code class="docutils literal notranslate"><span class="pre">vtkDataArray*</span></code> if needed.</p></li>
+</ul>
+<p><a name="filters"></a></p>
+</section>
+<section id="filters-filters">
+<h4>Filters {#filters}<a class="headerlink" href="#filters-filters" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkArrayCalculator</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">vtkProgrammableFilter</span></code> support for <code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGrid</span></code> has been improved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGridQuadricDecimation::NO_ERROR</span></code> has been renamed to
+<code class="docutils literal notranslate"><span class="pre">::NON_ERROR</span></code> to avoid conflicts with Microsoft Windows SDK headers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkImprintFilter::ABSOLUTE</span></code> has been renamed to <code class="docutils literal notranslate"><span class="pre">::ABSOLUTE_TOLERANCE</span></code> to
+avoid conflicts with Microsoft Windows SDK headers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMeshQuality</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkCellTypes</span></code> now use a <code class="docutils literal notranslate"><span class="pre">enum</span> <span class="pre">class</span> <span class="pre">QualityMeasureTypes</span></code> instead of <code class="docutils literal notranslate"><span class="pre">#define</span></code> symbols for metrics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCheckerboardSplatter</span></code> no longer has nested parallelism.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkmProbe</span></code> filters now return probed fields as point data rather than cell
+data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDescriptiveStatistics</span></code>’s Kurtosis formula had a mistake which is now
+corrected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDescriptiveStatistics</span></code> previously supported toggling kurtosis, skewness,
+and variance over sample or population individually. Now, sample or
+population can be selected using the <code class="docutils literal notranslate"><span class="pre">SampleEstimate</span></code> boolean (on by
+default). This simplifies interactions with the filter and avoids confusion
+by mixing and matching. The previous APIs still exist, but do not do anything.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPlaneCutter</span></code> now frees the sphere trees if the input changes and can
+handle <code class="docutils literal notranslate"><span class="pre">vtkUniformGridAMR</span></code> inputs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPlaneCutter</span></code> now uses <code class="docutils literal notranslate"><span class="pre">vtkAppendPolyData</span></code> internally to merge internal
+results. This avoids complex <code class="docutils literal notranslate"><span class="pre">vtkMultiBlockDataSet</span></code> inputs from creating
+complicated sets of <code class="docutils literal notranslate"><span class="pre">vtkMultiPieceDataSet</span></code>. Inputs and outputs are now
+transformed as follows:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMultiBlockDataSet</span></code> input becomes <code class="docutils literal notranslate"><span class="pre">vtkMultiBlockDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUniformGridAMR</span></code> input becomes <code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSetCollection</span></code>
+(previously <code class="docutils literal notranslate"><span class="pre">vtkMultiBlockDataSet</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSetCollection</span></code> input becomes
+<code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSetCollection</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSet</span></code> input becomes <code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSet</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDataSet</span></code> input becomes <code class="docutils literal notranslate"><span class="pre">vtkPolyData</span></code> (previously
+<code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSet</span></code>)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellTreeLocator</span></code> has moved from <code class="docutils literal notranslate"><span class="pre">VTK::FiltersGeneral</span></code> to
+<code class="docutils literal notranslate"><span class="pre">VTK::CommonDataModel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkArrayCalculator</span></code> no longer calls <code class="docutils literal notranslate"><span class="pre">Modified()</span></code> on any value setting
+because it causes multi-threaded contention.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkArrayRename</span></code> filter may be used to rename data arrays within a data
+set.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkGeometryFilter</span></code> no longer supports the <code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid::FastMode</span></code>
+using the <code class="docutils literal notranslate"><span class="pre">Degree</span></code> flag.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkTemporalDataSetCache</span></code> no longer crashes when a nonexistent timestep is
+requested.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkTableFFT</span></code> no longer prefixes output array names with “FFT_” like it was in 9.1
+and just keep the same name as the input like it was doing before 9.1. A new API
+has been added to keep 9.1 behavior when needed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkContourTriangulator</span></code> polygon bounds checking now factors in the tolerance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkImageDifference</span></code> calculations have been fixed. Note that this may affect
+testing results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkLagrangianParticleTracker</span></code> caching invalidation logic fixed.</p></li>
+</ul>
+<p><a name="interaction"></a></p>
+</section>
+<section id="interaction-interaction">
+<h4>Interaction {#interaction}<a class="headerlink" href="#interaction-interaction" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkFrustumSelection</span></code> has been optimized.</p></li>
+<li><p>Selection extraction on <code class="docutils literal notranslate"><span class="pre">vtkUniformGridAMR</span></code> has been fixed.</p></li>
+</ul>
+<p><a name="io"></a></p>
+</section>
+<section id="i-o-io">
+<h4>I/O {#io}<a class="headerlink" href="#i-o-io" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkIOSSReader</span></code> now provides <code class="docutils literal notranslate"><span class="pre">DisplacementMagnitude</span></code> to scale point
+displacement.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkIOSSReader</span></code> now turns off the <code class="docutils literal notranslate"><span class="pre">LOWER_CASE_VARIABLE_NAMES</span></code> IOSS
+property.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkIOSSReader</span></code> now reads side sets correctly by avoiding a false positive
+hit in its internal cache.</p></li>
+<li><p>FFmpeg 5.0 is now supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkXdmfReader</span></code> no longer caches internal <code class="docutils literal notranslate"><span class="pre">XdmfGrid</span></code> instances to avoid
+wasting memory. See #19633.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkJSONSceneExporter</span></code> no longer overwrites existing files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkGLTFExporter</span></code> now exports the correct camera transformation matrix.
+Imported scenes may use <code class="docutils literal notranslate"><span class="pre">vtkGLTFImporter::SetCamera(0)</span></code> prior to <code class="docutils literal notranslate"><span class="pre">Update()</span></code>
+to use the original camera location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPLYWriter</span></code> may now write the point normals of input meshes, if present.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPIOReader</span></code> now requires dump files to begin with the problem name. This
+avoids using an unrelated file for partially written dumps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkNetCDFCAMReader</span></code> now properly extracts level data.</p></li>
+</ul>
+<p><a name="rendering"></a></p>
+</section>
+<section id="rendering-rendering">
+<h4>Rendering {#rendering}<a class="headerlink" href="#rendering-rendering" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkProp3D</span></code> actors may now be added using different coordinate frames:
+<code class="docutils literal notranslate"><span class="pre">WORLD</span></code> (the default), <code class="docutils literal notranslate"><span class="pre">PHYSICAL</span></code> (in VR, the physical room’s coordinates, in
+meters), and <code class="docutils literal notranslate"><span class="pre">DEVICE</span></code> (relative to the device). When using <code class="docutils literal notranslate"><span class="pre">PHYSICAL</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DEVICE</span></code>, a renderer must be provided via the new
+<code class="docutils literal notranslate"><span class="pre">SetCoordinateSystemRenderer()</span></code> and <code class="docutils literal notranslate"><span class="pre">SetCoordinateSystemDevice()</span></code> methods.
+Such props should typically use <code class="docutils literal notranslate"><span class="pre">UseBoundsOff()</span></code> to ignore their bounds when
+resetting the camera.</p></li>
+<li><p>Unstable volume rendering configurations are detected.</p></li>
+<li><p>Volume rendering now supports more than 6 lights.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkXOpenGLRenderWindow</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkXRenderWindowInteractor</span></code> now properly
+disconnects from the display when it is not owned.</p></li>
+<li><p>Add a missing GIL lock in <code class="docutils literal notranslate"><span class="pre">vtkMatplotlibMathTextUtilities</span></code>.</p></li>
+<li><p>Avoid a hard-coded translation when resetting the camera in VR.</p></li>
+</ul>
+<p><a name="python"></a></p>
+</section>
+<section id="python-python">
+<h4>Python {#python}<a class="headerlink" href="#python-python" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>SDKs for each weekly wheels are now available on <code class="docutils literal notranslate"><span class="pre">vtk.org</span></code>. Releases will
+also have them available.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code> now supports PyQt6.</p></li>
+<li><p>Python 3.10 is now supported by <code class="docutils literal notranslate"><span class="pre">vtkpython</span></code>.</p></li>
+<li><p>Python 3.10 wheels are now supported.</p></li>
+<li><p>VTK’s wrapped classes may now be interposed by using the class’ <code class="docutils literal notranslate"><span class="pre">override</span></code>
+decorator:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkPoints</span>
+
+<span class="nd">@vtkPoints</span><span class="o">.</span><span class="n">override</span>
+<span class="k">class</span> <span class="nc">foo</span><span class="p">(</span><span class="n">vtkPoints</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="n">o</span> <span class="o">=</span> <span class="n">vtkPoints</span><span class="p">()</span> <span class="c1"># o is actually an instance of foo</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Note that Python subclasses still cannot override C++ <code class="docutils literal notranslate"><span class="pre">virtual</span></code> functions,
+cannot alter the C++ class hierarchy, is global, and is ignored when the
+class uses <code class="docutils literal notranslate"><span class="pre">vtkObjectFactory</span></code> to provide a subclass from its <code class="docutils literal notranslate"><span class="pre">::New()</span></code>
+method.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.pyi</span></code> files for autocompletion and hinting in editors are now available in
+VTK builds and wheels. Note that Windows wheels older than 3.8 do not provide
+<code class="docutils literal notranslate"><span class="pre">.pyi</span></code> files for platform-specific reasons.</p></li>
+<li><p>Starting with 9.2.3, Python 3.11 is supported and newly-deprecated APIs are
+avoided.</p></li>
+<li><p>Starting with 9.2.3, Matplotlib 3.6 is now supported.</p></li>
+<li><p>Starting with 9.2.3, <code class="docutils literal notranslate"><span class="pre">vtk[web]</span></code> is required to get web dependencies with the
+wheels.</p></li>
+</ul>
+<p><a name="web"></a></p>
+</section>
+<section id="web-web">
+<h4>Web {#web}<a class="headerlink" href="#web-web" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Fix a memory leak in <code class="docutils literal notranslate"><span class="pre">vtkWebApplication</span></code>.</p></li>
+<li><p>The render window serializers were updated to better map VTK options to
+VTK.js options. This includes font coloring for scalar bars and color
+transfer function discretization.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDataSetSurfaceFilter</span></code> is used in place of <code class="docutils literal notranslate"><span class="pre">vtkGeometryFilter</span></code></p></li>
+<li><p>The generic mapper serializer now uses <code class="docutils literal notranslate"><span class="pre">vtkDataSetSurfaceFilter</span></code> to always
+extract a surface from the input dataset.</p></li>
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">print</span></code> statements were changed to DEBUG logging statements.</p></li>
+</ul>
+<p><a name="third-party"></a></p>
+</section>
+<section id="third-party-third-party">
+<h4>Third Party {#third-party}<a class="headerlink" href="#third-party-third-party" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>VTK’s vendored HDF5 library has been updated to 1.13.1.</p></li>
+<li><p>VTK’s vendored <code class="docutils literal notranslate"><span class="pre">verdict</span></code> library has been updated.</p></li>
+<li><p>VTK’s vendored <code class="docutils literal notranslate"><span class="pre">freetype</span></code> library has been updated to 2.12.0.</p></li>
+<li><p>VTK’s vendored <code class="docutils literal notranslate"><span class="pre">mpi4py</span></code>’s Cython updated to support Python 3.11.</p></li>
+<li><p>Avoidance of deprecated APIs in new FFmpeg releases.</p></li>
+<li><p>VTK’s vendored <code class="docutils literal notranslate"><span class="pre">libproj</span></code> better supports cross-compilation.</p></li>
+</ul>
+<p><a name="infrastructure"></a></p>
+</section>
+<section id="infrastructure-infrastructure">
+<h4>Infrastructure {#infrastructure}<a class="headerlink" href="#infrastructure-infrastructure" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Modules may now specify license files for the module in their <code class="docutils literal notranslate"><span class="pre">vtk.module</span></code>
+file. It will automatically be installed.</p></li>
+</ul>
+<hr class="docutils" />
+<p><a name="new-features"></a></p>
+</section>
+</section>
+<section id="new-features-new-features">
+<h3>New Features {#new-features}<a class="headerlink" href="#new-features-new-features" title="Link to this heading">#</a></h3>
+<p><a name="animation"></a></p>
+<section id="animation-animation">
+<h4>Animation {#animation}<a class="headerlink" href="#animation-animation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Animations may now be played in reverse using <code class="docutils literal notranslate"><span class="pre">vtkAnimationCue</span></code>’s direction
+to <code class="docutils literal notranslate"><span class="pre">vtkAnimationCue::PlayDirection::BACKWARD</span></code></p></li>
+</ul>
+<p><a name="build"></a></p>
+</section>
+<section id="id2">
+<h4>Build {#build}<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">VTK::AcceleratorsVTKmFilters</span></code> is enabled, the
+<code class="docutils literal notranslate"><span class="pre">VTK_ENABLE_VTKM_OVERRIDES</span></code> option may be turned on to provide factory
+overrides for other VTK filters. Note that for these overrides to be used,
+the relevant VTKm modules must be linked (for C++) or imported (for Python)
+to be effective.</p></li>
+</ul>
+<p><a name="core"></a></p>
+</section>
+<section id="id3">
+<h4>Core {#core}<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMath::Convolve1D</span></code> can be used to compute the convolution of two 1D
+signals using <code class="docutils literal notranslate"><span class="pre">full</span></code>, <code class="docutils literal notranslate"><span class="pre">same</span></code>, or <code class="docutils literal notranslate"><span class="pre">valid</span></code> boundary conditions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkReservoirSampler</span></code> may be used to perform reservoir sampling. It is
+intended for selecting random fixed-size subsets of integer sequences (e.g.,
+array indices or element IDs).</p></li>
+</ul>
+<p><a name="charts"></a></p>
+</section>
+<section id="charts-charts">
+<h4>Charts {#charts}<a class="headerlink" href="#charts-charts" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The parallel coordinates chart now supports multiple selections on the same
+axis. This includes addition, subtraction, and toggle actions.</p></li>
+</ul>
+<p><a name="filters"></a></p>
+</section>
+<section id="id4">
+<h4>Filters {#filters}<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkGenerateTimeSteps</span></code> filter may be used to add timesteps to
+shallow-copied data within a pipeline.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridGradient</span></code> filter may be used to compute a gradient over
+a scalar field. The edges of the dual is used, so all neighbors are
+considered, but coarse cells are ignored.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkExtractParticlesOverTime</span></code> filter may extract particles over time that
+pass through a given volumetric dataset.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMultiObjectMassProperties</span></code> now also computes the centroids of each
+object. Centroids are calculated using tetrahedron centroids and uniform
+density.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkJoinTables</span></code> may perform a SQL-style <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> operation on two <code class="docutils literal notranslate"><span class="pre">vtkTable</span></code>
+objects. The columns to keep depend on the mode: <code class="docutils literal notranslate"><span class="pre">intersection</span></code> (keep columns
+common to both tables), <code class="docutils literal notranslate"><span class="pre">union</span></code> (keeps columns present in either table), and
+<code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code> (keeping the keys present in the respective input table).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkComputeQuantiles</span></code> has been split out of <code class="docutils literal notranslate"><span class="pre">vtkComputeQuartiles</span></code> as a new
+superclass. It supports arbitrary numbers of buckets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMeshQuality</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkCellQuality</span></code> have:</p>
+<ul>
+<li><p>been multithreaded</p></li>
+<li><p>improved documentation</p></li>
+<li><p>no longer supports the <code class="docutils literal notranslate"><span class="pre">AspectBeta</span></code> tetrahedron metric</p></li>
+<li><p>improved pyramid cell metrics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquiangleSkew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jacobian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ScaledJacobian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shape</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Volume</span></code></p></li>
+</ul>
+</li>
+<li><p>improved wedge cell metrics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Condition</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distortion</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EdgeRatio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquiangleSkew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jacobian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxAspectFrobenius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxStretch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MeanAspectFrobenius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ScaledJacobian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shape</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Volume</span></code></p></li>
+</ul>
+</li>
+<li><p>new triangle cell metrics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquiangleSkew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NormalizedInradius</span></code></p></li>
+</ul>
+</li>
+<li><p>new quadrilateral cell metrics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquiangleSkew</span></code></p></li>
+</ul>
+</li>
+<li><p>new tetrahedron cell metrics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquiangleSkew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquivolumeSkew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MeanRatio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NormalizedInradius</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SquishIndex</span></code></p></li>
+</ul>
+</li>
+<li><p>new hexahedron cell metrics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">EquiangleSkew</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NodalJacobianRatio</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The new <code class="docutils literal notranslate"><span class="pre">vtkLinearTransformCellLocator</span></code> is a cell locator adaptor which can
+calculate a transformation matrix from a base dataset to another dataset.
+This matrix is then used to perform cell locator operations. The
+<code class="docutils literal notranslate"><span class="pre">UseAllPoints()</span></code> method may be used to use either all dataset points (if the
+transformation might not be linear) or, at most, 100 sample points sampled
+uniformly from the dataset’s point array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellLocator</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkStaticCellLocator</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkCellTreeLocator</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkModifiedBSPTree</span></code>, and <code class="docutils literal notranslate"><span class="pre">vtkLinearTransformCellLocator</span></code> each have numerous
+improvements:</p>
+<ul>
+<li><p>support for <code class="docutils literal notranslate"><span class="pre">ShallowCopy()</span></code></p></li>
+<li><p>caching cell bounds has been multithreaded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">InsideCellBounds</span></code> checks are now cached</p></li>
+<li><p>new <code class="docutils literal notranslate"><span class="pre">IntersectWithLine</span></code> methods sorted by a parametric <code class="docutils literal notranslate"><span class="pre">t</span></code>; this also
+provides <code class="docutils literal notranslate"><span class="pre">FindCellsAlongLine</span></code> for each locator</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">tolerance</span></code> parameter may be used to check cell bound intersections</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">UseExistingSearchStructure</span></code> parameter may be used to not rebuild
+locators when component data changes, but the geometry stays the same; use
+<code class="docutils literal notranslate"><span class="pre">ForceBuildLocator</span></code> to rebuild as needed in this case</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellTreeLocator</span></code> supports 64bit IDs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellTreeLocator::IntersectWithLine()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkModifiedBSPTree::IntersectWithLine()</span></code> are now thread-safe.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellLocator</span></code> is now fully thread-safe.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkAlignImageDataSetFilter</span></code> has been added which can align image
+datasets to share a single global origin and offset extents in each component
+image accordingly. All images must use the same spacing.</p></li>
+<li><p>The new <code class="docutils literal notranslate"><span class="pre">vtkLengthDistribution</span></code> filter may be used to estimate the range of
+geometric length scales preset in a <code class="docutils literal notranslate"><span class="pre">vtkDataSet</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkImageMathematics</span></code> can now perform operations on more than two images.
+Rather than connecting a second image to port 1, all connections are made to
+port 0 instead. This unifies behavior with other repeatable image filters
+such as <code class="docutils literal notranslate"><span class="pre">vtkImageAppend</span></code>.</p></li>
+<li><p>VTKm’s <code class="docutils literal notranslate"><span class="pre">vtkmContour</span></code> filter may be used as a factory override for
+<code class="docutils literal notranslate"><span class="pre">vtkContourFilter</span></code>.</p></li>
+<li><p>VTKm filter factory overrides may be toggled using
+<code class="docutils literal notranslate"><span class="pre">vtkmFilterOverrides::SetEnabled()</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkExtractHistogram</span></code> filter has been moved from ParaView into VTK.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPointDataToCellData</span></code> now handles categorical data using multiple threads.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSuperquadricSource</span></code> now creates pieces using multiple threads.</p></li>
+<li><p>Particle traces now support <code class="docutils literal notranslate"><span class="pre">vtkDataObjectTree</span></code> objects to define seed points
+rather than only <code class="docutils literal notranslate"><span class="pre">vtkDataSet</span></code> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkStreamTracer</span></code> now uses SMP when multiprocessing is not in use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkStreamTracer</span></code> performance and quality have been improved.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkFindCellStrategy::FindClosestPointWithinRadius()</span></code> has been added.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCompositeInterpolatedVelocityField::SnapPointOnCell()</span></code> has been
+refactored from the <code class="docutils literal notranslate"><span class="pre">vtkInterpolatedVelocityField</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkCellLocatorInterpolatedVelocityField</span></code> subclasses.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkParticleTracerBase</span></code> is now multithreaded (with one MPI rank or more than
+100 particles).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkParticleTracerBase</span></code> can now use either use a cell locator (the default)
+or point locator for interpolation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkParticleTracerBase</span></code> supports different levels of mesh changes over time:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">DIFFERENT</span></code>: the mesh changes on every timestep.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAME</span></code>: the mesh is the same on every timestep.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LINEAR_TRANSFORMATION</span></code>: the mesh is a linear transformation of the prior
+timesteps (partially applies to point locators as only cell links are
+preserved).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SAME_TOPOLOGY</span></code>: the mesh data changes, but its topology is the same every
+timestep (only applies to point locators).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkTemporalInterpolatedVelocityField</span></code> can now use the <code class="docutils literal notranslate"><span class="pre">FindCellStrategy</span></code>
+because it now preserves higher numerical accuracy internally.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkGeometryFilter</span></code> is now multi-threaded over more data types including:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGridBase</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkImageData</span></code> (3D)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkRectilinearGrid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkStructuredGrid</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkGeometryFilter</span></code> can now handle ghost and blank cells and points.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkGeometryFilter</span></code> can now remove ghost interfaces using the
+<code class="docutils literal notranslate"><span class="pre">RemoveGhostInterfaces</span></code> flag (default on).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkFiniteElementFieldDistributor</span></code> filter can now visualize Discontinuous
+Galerkin (DG) finite element fields of type <code class="docutils literal notranslate"><span class="pre">H(Grad)</span></code>, <code class="docutils literal notranslate"><span class="pre">H(Curl)</span></code>, and <code class="docutils literal notranslate"><span class="pre">H(Div)</span></code>.</p>
+<ul>
+<li><p>Note that all cells must be of the same type and the field data must
+contain a <code class="docutils literal notranslate"><span class="pre">vtkStringArray</span></code> describing the DG fields, basis types, and
+reference cells.</p></li>
+</ul>
+</li>
+</ul>
+<p><a name="interaction"></a></p>
+</section>
+<section id="id5">
+<h4>Interaction {#interaction}<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDisplaySizedImplicitPlaneWidget</span></code> is now provided. Compared to
+<code class="docutils literal notranslate"><span class="pre">vtkImplicitPlaneWidget2</span></code>:</p>
+<ul>
+<li><p>the outline is not drawn by default</p></li>
+<li><p>the intersection edges of the outline and the plane may be drawn</p></li>
+<li><p>the normal arrow and plane size are relative to the viewport</p>
+<ul>
+<li><p>their sizes may be bounded by the widget bounds</p></li>
+</ul>
+</li>
+<li><p>the origin may be moved freely rather than constrained to the bounding box</p></li>
+<li><p>the handle sizes are larger</p></li>
+<li><p>the plane is represented as a disc</p></li>
+<li><p>the only option for the perimeter is to be tubed or not</p></li>
+<li><p>the perimeter may be selected and resized to change the disc radius</p></li>
+<li><p>the actors are highlighted only when hovered</p>
+<ul>
+<li><p>except the plane surface which is highlighted when any actor is hovered
+over</p></li>
+</ul>
+</li>
+<li><p>a new plane origin may be picked using <code class="docutils literal notranslate"><span class="pre">P</span></code> or <code class="docutils literal notranslate"><span class="pre">p</span></code></p>
+<ul>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> modifier will snap to the closest point on an object or the
+camera plane focal point otherwise</p></li>
+</ul>
+</li>
+<li><p>a new plane normal may be picked using <code class="docutils literal notranslate"><span class="pre">N</span></code> or <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
+<ul>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">ctrl</span></code> modifier will snap to the closest normal on an object or the
+camera plane normal otherwise</p></li>
+</ul>
+</li>
+<li><p>picking tolerance is relative to the viewport size</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkResliceImageViewer</span></code> may now apply a factor when scrolling.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkResliceCursorWidgetLineRepresentation</span></code> supports <code class="docutils literal notranslate"><span class="pre">alt+leftclick</span></code> to
+translate along a single axis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkVRInteractorStyle</span></code> now supports the <code class="docutils literal notranslate"><span class="pre">Grounded</span></code> movement style. The
+existing movement style is called <code class="docutils literal notranslate"><span class="pre">Flying</span></code>. <code class="docutils literal notranslate"><span class="pre">Grounded</span></code> movement is
+constrained to an <code class="docutils literal notranslate"><span class="pre">xy</span></code> plane in four directions on one joystick. The other
+joystick changes elevation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSelection</span></code> now supports the <code class="docutils literal notranslate"><span class="pre">xor</span></code> boolean operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSelectionSource</span></code> now supports multiple selection nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSelectionSource</span></code> may now define the field option using either <code class="docutils literal notranslate"><span class="pre">FieldType</span></code>
+or <code class="docutils literal notranslate"><span class="pre">ElementType</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSelectionSource</span></code> now defines the <code class="docutils literal notranslate"><span class="pre">ProcessId</span></code> of the selection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkAppendSelection</span></code> can now append multiple selections through an expression
+using selection input names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkConvertSelection</span></code> may now convert <code class="docutils literal notranslate"><span class="pre">BLOCK</span></code> and <code class="docutils literal notranslate"><span class="pre">BLOCK_SELECTORS</span></code> nodes to
+<code class="docutils literal notranslate"><span class="pre">INDICES</span></code>.</p></li>
+</ul>
+<p><a name="io"></a></p>
+</section>
+<section id="id6">
+<h4>I/O {#io}<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkFidesReader</span></code> reader can now use the <code class="docutils literal notranslate"><span class="pre">Inline</span></code> engine for in-situ
+processing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCatalystConduit</span></code> may be used to adapt <a class="reference external" href="https://llnl-conduit.readthedocs.io/en/latest/index.html">Conduit</a> datasets via the
+<a class="reference external" href="https://gitlab.kitware.com/paraview/catalyst">Catalyst</a> library’s <a class="reference external" href="https://catalyst-in-situ.readthedocs.io/en/latest/introduction.html#relationship-with-conduit">conduit interactions</a>. This
+module requires an external <code class="docutils literal notranslate"><span class="pre">catalyst</span></code> library to be provided. This module
+includes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkConduitSource</span></code>: a source filter which generates a <code class="docutils literal notranslate"><span class="pre">vtkPartionedDataSet</span></code>
+or <code class="docutils literal notranslate"><span class="pre">vtkPartitionedDataSetCollection</span></code> from a Conduit node (it may also
+generate <code class="docutils literal notranslate"><span class="pre">vtkMultiBlockDataSet</span></code> if needed for historical reasons).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDataObjectToConduit</span></code> to convert any <code class="docutils literal notranslate"><span class="pre">vtkDataObject</span></code> into a Conduit node</p></li>
+<li><p>a Catalyst implementation</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkHDFReader</span></code> filter now supports overlapping AMR datasets. The
+specification can be found in the
+<a class="reference external" href="https://kitware.github.io/vtk-examples/site/VTKFileFormats/#hdf-file-formats">VTK File Formats documentation</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCGNSReader</span></code> now support reading cell- or face-centered data arrays for
+meshes with 3D cells. Note that connectivity must be defined using <code class="docutils literal notranslate"><span class="pre">NGON_n</span></code>
+in face-based meshes. Data arrays are then defined with a <code class="docutils literal notranslate"><span class="pre">GridLocation_t</span></code> of
+either <code class="docutils literal notranslate"><span class="pre">CellCenter</span></code> or <code class="docutils literal notranslate"><span class="pre">FaceCenter</span></code>. The behavior may be selected by setting
+<code class="docutils literal notranslate"><span class="pre">vtkCGNSReader::DataLocation</span></code> to <code class="docutils literal notranslate"><span class="pre">vtkCGNSReader::CELL_DATA</span></code> (the default and
+previous behavior) or <code class="docutils literal notranslate"><span class="pre">vtkCGNSReader::FACE_DATA</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPIOReader</span></code> can now read restart block and even/odd dumps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPIOReader</span></code> will now add the <code class="docutils literal notranslate"><span class="pre">xdt</span></code>, <code class="docutils literal notranslate"><span class="pre">ydt</span></code>, <code class="docutils literal notranslate"><span class="pre">zdt</span></code>, and <code class="docutils literal notranslate"><span class="pre">rho</span></code> derived
+variables and calculate them if they are not already present in the restart
+file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkIOSSReader</span></code> now caches time values internally to avoid filesystem
+contention on HPC systems.</p></li>
+<li><p>The new <code class="docutils literal notranslate"><span class="pre">vtkIOSSWriter</span></code> can write Exodus files using the IOSS library. For
+now, only element blocks, node sets, and side sets are supported.</p></li>
+</ul>
+<p><a name="qt"></a></p>
+</section>
+<section id="qt-qt">
+<h4>Qt {#qt}<a class="headerlink" href="#qt-qt" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">QVTKTableModelAdapter</span></code> may be used to provide a <code class="docutils literal notranslate"><span class="pre">QAbstractItemModel</span></code> model
+as a <code class="docutils literal notranslate"><span class="pre">vtkTable</span></code> to use in a pipeline.</p></li>
+</ul>
+<p><a name="rendering"></a></p>
+</section>
+<section id="id7">
+<h4>Rendering {#rendering}<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Basic OpenXR support is supported for virtual reality rendering.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridMapper</span></code> mapper may be used to render only visible parts
+of a <code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGrid</span></code> in 2D.</p></li>
+<li><p>Rendering point sets may now use OSPRay’s “Particle Volume” when using
+<code class="docutils literal notranslate"><span class="pre">vtkPointGaussianMapper</span></code>’s ray tracing backend.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkColorTransferFunction::AddRGBPoints</span></code> may now be called with points and
+colors in batches for much better performance.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">WindowLocation</span></code> API has moved from <code class="docutils literal notranslate"><span class="pre">vtkTextRepresentation</span></code> to
+<code class="docutils literal notranslate"><span class="pre">vtkBorderRepresentation</span></code> so that it can be used by more classes.</p></li>
+<li><p>Volumetric shadows is now supported which allows for a volumetric model to
+cast shadows on itself. Requires volumetric shading to be enabled. An
+illumination reach parameter controls how accurate the shadows will be, <code class="docutils literal notranslate"><span class="pre">0</span></code>
+meaning only local shadows and <code class="docutils literal notranslate"><span class="pre">1</span></code> for shadows across the entire volume.</p></li>
+</ul>
+<p><img alt="TestOSPRayPointGaussianMapper" src="../_images/TestOSPRayPointGaussianMapper.png" /></p>
+<ul class="simple">
+<li><p>Interactive rendering of most widgets are now supported with OSPRay.</p></li>
+</ul>
+<p><img alt="TestOSPRayBoxWidget2" src="../_images/TestOSPRayBoxWidget2.png" />
+<img alt="TestOSPRaySplineWidget2" src="../_images/TestOSPRaySplineWidget2.png" />
+<img alt="TestOSPRayImplicitPlaneWidget2" src="../_images/TestOSPRayImplicitPlaneWidget2.png" />
+<img alt="TestOSPRayPointHandleRepresentation3D" src="../_images/TestOSPRayPointHandleRepresentation3D.png" /></p>
+<p><a name="widgets"></a></p>
+</section>
+<section id="widgets-widgets">
+<h4>Widgets {#widgets}<a class="headerlink" href="#widgets-widgets" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkCoordinateFrameWidget</span></code> controls 3 orthogonal right-handed planes.
+Axes are rendered proportionally to the viewport size (and is configurable).
+Interaction may pick a basis point and choose alignment with a surface normal
+or another point. See <a class="reference external" href="https://discourse.vtk.org/t/vtkcoordinateframewidget/7379">this Discourse thread</a> for discussion.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHardwarePicker</span></code> may be used to pick a point and normal by intersection
+with a mesh cell or nearest mesh point.</p></li>
+</ul>
+<p><img alt="Coordinate Frame Widget" src="../_images/coordinateFrameWidget.png" /></p>
+<p><a name="testing"></a></p>
+</section>
+<section id="testing-testing">
+<h4>Testing {#testing}<a class="headerlink" href="#testing-testing" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridPreConfiguredSource</span></code> may be used to generate different
+<code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGrid</span></code> datasets for testing purposes instead of hand-crafting
+them.</p></li>
+</ul>
+<p><a name="wrapping"></a></p>
+</section>
+<section id="wrapping-wrapping">
+<h4>Wrapping {#wrapping}<a class="headerlink" href="#wrapping-wrapping" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Wrapping tools now support Unicode command line arguments.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSmartPointer&lt;T&gt;</span></code> parameters and return values are now supported in
+wrapped Python APIs. <code class="docutils literal notranslate"><span class="pre">std::vector&lt;vtkSmartPointer&lt;T&gt;&gt;</span></code> is also supported by
+appearing as a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> in Python and conversion from any sequence when
+converting to C++.</p></li>
+</ul>
+<p><a name="module-system"></a></p>
+</section>
+<section id="module-system-module-system">
+<h4>Module System {#module-system}<a class="headerlink" href="#module-system-module-system" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtk_module_sources</span></code> is now provided as a wrapper around <code class="docutils literal notranslate"><span class="pre">target_sources</span></code> for
+VTK module targets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtk_module_add_module</span></code> now supports a <code class="docutils literal notranslate"><span class="pre">NOWRAP_TEMPLATE_CLASSES</span></code> keyword for
+template classes which should not be wrapped.</p></li>
+</ul>
+<p><a name="deprecated-and-removed-features"></a></p>
+</section>
+</section>
+<section id="deprecated-and-removed-features-deprecated-and-removed-features">
+<h3>Deprecated and Removed Features {#deprecated-and-removed-features}<a class="headerlink" href="#deprecated-and-removed-features-deprecated-and-removed-features" title="Link to this heading">#</a></h3>
+<p><a name="legacy"></a></p>
+<section id="legacy-legacy">
+<h4>Legacy {#legacy}<a class="headerlink" href="#legacy-legacy" title="Link to this heading">#</a></h4>
+<p>The following APIs were deprecated in 9.0 or earlier and are now removed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPlot::GetNearestPoint(const</span> <span class="pre">vtkVector2f&amp;,</span> <span class="pre">const</span> <span class="pre">vtkVector2f&amp;,</span> <span class="pre">vtkVector2f*)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPlot::LegacyRecursionFlag</span></code> (used to help subclasses implement the
+replacement for the prior method)</p></li>
+<li><p>The following APIs have been replaced by <code class="docutils literal notranslate"><span class="pre">vtkOutputWindow::SetDisplayMode()</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOutputWindow::SetUseStdErrorForAllMessages()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOutputWindow::GetUseStdErrorForAllMessages()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOutputWindow::UseStdErrorForAllMessagesOn()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOutputWindow::UseStdErrorForAllMessagesOff()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkWin32OutputWindow::SetSendToStdErr()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkWin32OutputWindow::GetSendToStdErr()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkWin32OutputWindow::SendToStdErrOn()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkWin32OutputWindow::SendToStdErrOff()</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkArrayDispatcher</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkDispatcher</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkDoubleDispatcher</span></code> have been
+replaced by <code class="docutils literal notranslate"><span class="pre">vtkArrayDispatch</span></code></p></li>
+<li><p>Fetching edge and face points via <code class="docutils literal notranslate"><span class="pre">int</span></code> rather than <code class="docutils literal notranslate"><span class="pre">vtkIdType</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkConvexPointSet::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkConvexPointSet::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHexagonalPrism::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHexagonalPrism::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHexahedron::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHexahedron::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPentagonalPrism::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPentagonalPrism::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPyramid::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPyramid::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkTetra::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkTetra::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkVoxel::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkVoxel::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkWedge::GetEdgePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkWedge::GetFacePoints(int,</span> <span class="pre">int*&amp;)</span></code></p></li>
+</ul>
+</li>
+<li><p>Querying point cells with an <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">short</span></code> count of cells:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPolyData::GetPointCells(vtkIdType,</span> <span class="pre">unsigned</span> <span class="pre">short&amp;,</span> <span class="pre">vtkIdType*&amp;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid::GetPointCells(vtkIdType,</span> <span class="pre">unsigned</span> <span class="pre">short&amp;,</span> <span class="pre">vtkIdType*&amp;)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkAlgorithm::SetProgress()</span></code> has been replaced by
+<code class="docutils literal notranslate"><span class="pre">vtkAlgorithm::UpdateProgress()</span></code></p></li>
+<li><p>The following APIs have been replaced by
+<code class="docutils literal notranslate"><span class="pre">vtkResourceFileLocator::SetLogVerbosity()</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkResourceFileLocator::SetPrintDebugInformation()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkResourceFileLocator::GetPrintDebugInformation()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkResourceFileLocator::PrintDebugInformationOn()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkResourceFileLocator::PrintDebugInformationOff()</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkIdFilter::SetIdsArrayName()</span></code> has been replaced by
+<code class="docutils literal notranslate"><span class="pre">vtkIdFilter::SetPointIdsArrayName()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkIdFilter::SetCellIdsArrayName()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkExtractTemporalFieldData</span></code> has been replaced by
+<code class="docutils literal notranslate"><span class="pre">vtkExtractExodusGlobalTemporalVariables</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkTemporalStreamTracer</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkPTemporalStreamTracer</span></code> have been replaced
+by <code class="docutils literal notranslate"><span class="pre">vtkParticleTracerBase</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkParticleTracer</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkParticlePathFilter</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">vtkStreaklineFilter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridSource::GetMaximumLevel()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridSource::SetMaximumLevel()</span></code> have been replaced by
+<code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridSource::GetMaxDepth()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridSource::SetMaxDepth()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QVTKOpenGLNativeWidget</span></code>, <code class="docutils literal notranslate"><span class="pre">QVTKOpenGLStereoWidget</span></code>, <code class="docutils literal notranslate"><span class="pre">QVTKOpenGLWindow</span></code>
+methods have been removed:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">::SetRenderWindow()</span></code> is now <code class="docutils literal notranslate"><span class="pre">::setRenderWindow()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">::GetRenderWindow()</span></code> is now <code class="docutils literal notranslate"><span class="pre">::renderWindow()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">::GetInteractor()</span></code> and <code class="docutils literal notranslate"><span class="pre">GetInteractorAdaptor()</span></code> have been removed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">::setQVTKCursor()</span></code> is now <code class="docutils literal notranslate"><span class="pre">QWidget::setCursor()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">::setDefaultQVTKCursor()</span></code> is now <code class="docutils literal notranslate"><span class="pre">QWidget::setDefaultCursor()</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QVTKOpenGLWidget</span></code> is replaced by <code class="docutils literal notranslate"><span class="pre">QVTKOpenGLStereoWidget</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkJSONDataSetWriter::{Get,Set}FileName()</span></code> is now
+<code class="docutils literal notranslate"><span class="pre">vtkJSONDataSetWriter::{Get,Set}ArchiveName()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkLineRepresentation::SetRestrictFlag()</span></code> has been removed</p></li>
+<li><p>The following <code class="docutils literal notranslate"><span class="pre">vtkRenderWindow</span></code> methods have been removed:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetIsPicking()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SetIsPicking()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IsPickingOn()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IsPickingOff()</span></code></p></li>
+</ul>
+</li>
+<li><p>The following APIs have been replaced by <code class="docutils literal notranslate"><span class="pre">vtkShaderProperty</span></code> methods of the
+same names:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::AddShaderReplacement()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::ClearShaderReplacement()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::ClearAllShaderReplacements()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::ClearAllShaderReplacements()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::SetVertexShaderCode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::GetVertexShaderCode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::SetFragmentShaderCode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::GetFragmentShaderCode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::SetGeometryShaderCode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::GetGeometryShaderCode()</span></code></p></li>
+</ul>
+</li>
+<li><p>The following APIs have been removed (they supported the legacy shader
+replacements):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::GetLegacyShaderProperty()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOpenGLPolyDataMapper::LegacyShaderProperty</span></code></p></li>
+</ul>
+</li>
+<li><p>The following APIs have been removed since only <code class="docutils literal notranslate"><span class="pre">FLOATING_POINT</span></code> mode is now
+supported:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::SetRenderingMode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::GetRenderingMode()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::SetInputArrayToProcess()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::SetInputComponentToProcess()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::SetScalarRange()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::IsFloatingPointModeSupported()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkValuePass::ColorToValue()</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkPythonInterpreter::GetPythonVerboseFlag()</span></code> has been replaced by
+<code class="docutils literal notranslate"><span class="pre">vtkPythonInterpreter::GetLogVerbosity()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUnicodeString</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkUnicodeStringArray</span></code> have been removed. The
+<code class="docutils literal notranslate"><span class="pre">vtkString</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkStringArray</span></code> classes are now fully UTF-8 aware. UTF-16
+conversion is no longer possible through VTK APIs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkVariant</span></code> support for <code class="docutils literal notranslate"><span class="pre">__int64</span></code> and <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">__int64</span></code> has been removed.
+They have returned <code class="docutils literal notranslate"><span class="pre">false</span></code> for years.</p></li>
+</ul>
+<p><a name="core"></a></p>
+</section>
+<section id="id8">
+<h4>Core {#core}<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellTypes</span></code> no longer uses <code class="docutils literal notranslate"><span class="pre">LocationArray</span></code>. It was used for
+<code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid</span></code> but is now stored with the class instead. As of this
+deprecation, all supported APIs are now only <code class="docutils literal notranslate"><span class="pre">static</span></code> methods.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid::GetCellTypes</span></code> is deprecated. Instead,
+<code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid::GetDistinctCellTypesArray</span></code> should be used to access the
+set of cell types present in the grid.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGrid::GetNumberOfVertices()</span></code> is now
+<code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGrid::GetNumberOfCells()</span></code> to align with VTK’s usage of the
+terminology.</p></li>
+<li><p>Classes may now opt into the garbage collection mechanism by overriding the
+<code class="docutils literal notranslate"><span class="pre">UsesGarbageCollector()</span></code> method to return <code class="docutils literal notranslate"><span class="pre">true</span></code> instead of via the
+<code class="docutils literal notranslate"><span class="pre">Register()</span></code> and <code class="docutils literal notranslate"><span class="pre">UnRegister()</span></code> methods.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCriticalSection</span></code> is deprecated. <code class="docutils literal notranslate"><span class="pre">vtkCriticalSection</span></code> was intended to be
+deprecated in VTK 9.1.0, but a warning was never added to it. VTK now has the
+warning present as it was originally intended.</p></li>
+</ul>
+<p><a name="filters"></a></p>
+</section>
+<section id="id9">
+<h4>Filters {#filters}<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkChemistryConfigure.h</span></code> has been deprecated. It previously only provided
+information to VTK’s test suite which is now routed internally instead. There
+is no replacement and any usage can simply be removed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMFCConfigure.h</span></code> has been deprecated. It used to provide information used
+during the module’s build that is now passed through command line flags
+instead. There is no replacement and any usage can simply be removed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMeshQuality</span></code>’s mechanism to run the filter in legacy mode is deprecated.
+In particular the <code class="docutils literal notranslate"><span class="pre">CompatibilityMode</span></code> and <code class="docutils literal notranslate"><span class="pre">Volume</span></code> members are no longer
+necessary with the new mode and should not be used anymore.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkMeshQuality</span></code> method renames:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">SetQuadQualityMeasureToMaxEdgeRatios</span></code> to
+<code class="docutils literal notranslate"><span class="pre">SetQuadQualityMeasureToMaxEdgeRatio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SetHexQualityMeasureToMaxEdgeRatios</span></code> to
+<code class="docutils literal notranslate"><span class="pre">SetHexQualityMeasureToMaxEdgeRatio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QuadMaxEdgeRatios</span></code> to <code class="docutils literal notranslate"><span class="pre">QuadMaxEdgeRatio</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TetShapeandSize</span></code> to <code class="docutils literal notranslate"><span class="pre">TetShapeAndSize</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkDescriptiveStatistics::UnbiasedVariance</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkDescriptiveStatistics::G1Skewness</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">vtkDescriptiveStatistics::G2Kurtosis</span></code> are now deprecated in favor of a
+single <code class="docutils literal notranslate"><span class="pre">vtkDescriptiveStatistics::SampleEstimate</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellLocator</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkStaticCellLocator</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkCellTreeLocator</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkModifiedBSPTree</span></code>, and <code class="docutils literal notranslate"><span class="pre">vtkLinearTransformCellLocator</span></code> all have deprecated
+their <code class="docutils literal notranslate"><span class="pre">LazyEvaluation</span></code> flag due to thread-safety issues.
+<code class="docutils literal notranslate"><span class="pre">BuildLocatorIfNeeded</span></code> is also deprecated for those that supported it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkStaticCellLocator:UseDiagonalLengthTolerance()</span></code> has been deprecated
+because it no longer uses <code class="docutils literal notranslate"><span class="pre">Tolerance</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkParticleTracerBase::StaticMesh</span></code> is deprecated in preference to
+<code class="docutils literal notranslate"><span class="pre">vtkParticleTracerBase::SetMeshOverTime</span></code> (an enumeration rather than a
+boolean).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCachingInterpolatedVelocityField</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkCellLocatorInterpolatedVelocityField</span></code>, and <code class="docutils literal notranslate"><span class="pre">vtkInterpolatedVelocityField</span></code>
+filters have been deprecated. Instead, use:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCellLocatorInterpolatedVelocityField</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">vtkCompositeInterpolatedVelocityField</span></code> with <code class="docutils literal notranslate"><span class="pre">vtkCellLocatorStrategy</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkInterpolatedVelocityField</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">vtkCompositeInterpolatedVelocityField</span></code> with <code class="docutils literal notranslate"><span class="pre">vtkClosestPointStrategy</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkCachingInterpolatedVelocityField</span></code> becomes
+<code class="docutils literal notranslate"><span class="pre">vtkCompositeInterpolatedVelocityField</span></code> with the appropriate strategy.</p></li>
+</ul>
+</li>
+</ul>
+<p><a name="interaction"></a></p>
+</section>
+<section id="id10">
+<h4>Interaction {#interaction}<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkExtractSelectedThresholds</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkExtractSelectedPolyDataIds</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkExtractSelectedLocations</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkExtractSelectedIds</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">vtkExtractSelectedBlock</span></code> can now be replaced by <code class="docutils literal notranslate"><span class="pre">vtkExtractSelection</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkHierarchicalBoxDataIterator</span></code> is now deprecated in favor of
+<code class="docutils literal notranslate"><span class="pre">vtkUniformGridAMRDataIterator</span></code>.</p></li>
+</ul>
+<p><a name="rendering"></a></p>
+</section>
+<section id="id11">
+<h4>Rendering {#rendering}<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkOSPRayRendererNode::VOLUME_ANISOTROPY</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkOSPRayRendererNode::GetVolumeAnisotropy()</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">vtkOSPRayRendererNode::SetVolumeAnistropy()</span></code> are deprecated in favor
+of<code class="docutils literal notranslate"><span class="pre">vtkVolumeProperty::SetScatteringAnisotropy()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkVolumeProperty::GetScatteringAnisotropy()</span></code>.</p></li>
+</ul>
+<p><a name="other-changes"></a></p>
+</section>
+</section>
+<section id="other-changes-other-changes">
+<h3>Other Changes {#other-changes}<a class="headerlink" href="#other-changes-other-changes" title="Link to this heading">#</a></h3>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="9.1.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">9.1</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="9.3.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">9.3</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">9.2</a><ul>
+<li><a class="reference internal" href="#release-notes">9.2.0 Release Notes</a><ul>
+<li><a class="reference internal" href="#changes-changes">Changes {#changes}</a><ul>
+<li><a class="reference internal" href="#build-build">Build {#build}</a></li>
+<li><a class="reference internal" href="#core-core">Core {#core}</a></li>
+<li><a class="reference internal" href="#data-data">Data {#data}</a></li>
+<li><a class="reference internal" href="#filters-filters">Filters {#filters}</a></li>
+<li><a class="reference internal" href="#interaction-interaction">Interaction {#interaction}</a></li>
+<li><a class="reference internal" href="#i-o-io">I/O {#io}</a></li>
+<li><a class="reference internal" href="#rendering-rendering">Rendering {#rendering}</a></li>
+<li><a class="reference internal" href="#python-python">Python {#python}</a></li>
+<li><a class="reference internal" href="#web-web">Web {#web}</a></li>
+<li><a class="reference internal" href="#third-party-third-party">Third Party {#third-party}</a></li>
+<li><a class="reference internal" href="#infrastructure-infrastructure">Infrastructure {#infrastructure}</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-features-new-features">New Features {#new-features}</a><ul>
+<li><a class="reference internal" href="#animation-animation">Animation {#animation}</a></li>
+<li><a class="reference internal" href="#id2">Build {#build}</a></li>
+<li><a class="reference internal" href="#id3">Core {#core}</a></li>
+<li><a class="reference internal" href="#charts-charts">Charts {#charts}</a></li>
+<li><a class="reference internal" href="#id4">Filters {#filters}</a></li>
+<li><a class="reference internal" href="#id5">Interaction {#interaction}</a></li>
+<li><a class="reference internal" href="#id6">I/O {#io}</a></li>
+<li><a class="reference internal" href="#qt-qt">Qt {#qt}</a></li>
+<li><a class="reference internal" href="#id7">Rendering {#rendering}</a></li>
+<li><a class="reference internal" href="#widgets-widgets">Widgets {#widgets}</a></li>
+<li><a class="reference internal" href="#testing-testing">Testing {#testing}</a></li>
+<li><a class="reference internal" href="#wrapping-wrapping">Wrapping {#wrapping}</a></li>
+<li><a class="reference internal" href="#module-system-module-system">Module System {#module-system}</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deprecated-and-removed-features-deprecated-and-removed-features">Deprecated and Removed Features {#deprecated-and-removed-features}</a><ul>
+<li><a class="reference internal" href="#legacy-legacy">Legacy {#legacy}</a></li>
+<li><a class="reference internal" href="#id8">Core {#core}</a></li>
+<li><a class="reference internal" href="#id9">Filters {#filters}</a></li>
+<li><a class="reference internal" href="#id10">Interaction {#interaction}</a></li>
+<li><a class="reference internal" href="#id11">Rendering {#rendering}</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-changes-other-changes">Other Changes {#other-changes}</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=ccd1e645"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

@@ -1,0 +1,344 @@
+# {py:mod}`vtkmodules.numpy_interface._vtk_array_mixin`
+
+```{py:module} vtkmodules.numpy_interface._vtk_array_mixin
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKDataArrayMixin <vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`make_override_registry <vtkmodules.numpy_interface._vtk_array_mixin.make_override_registry>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.make_override_registry
+    :summary:
+    ```
+* - {py:obj}`register_template_overrides <vtkmodules.numpy_interface._vtk_array_mixin.register_template_overrides>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.register_template_overrides
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} VTKDataArrayMixin
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin
+```
+
+````{py:method} _set_dataset(dataset)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin._set_dataset
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin._set_dataset
+```
+
+````
+
+````{py:property} dataset
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.dataset
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.dataset
+```
+
+````
+
+````{py:property} association
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.association
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.association
+```
+
+````
+
+````{py:method} _wrap_result(result)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin._wrap_result
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin._wrap_result
+```
+
+````
+
+````{py:property} shape
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.shape
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.shape
+```
+
+````
+
+````{py:property} ndim
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.ndim
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.ndim
+```
+
+````
+
+````{py:property} size
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.size
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.size
+```
+
+````
+
+````{py:property} T
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.T
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.T
+```
+
+````
+
+````{py:attribute} __hash__
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.__hash__
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.__hash__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.__len__
+```
+
+````
+
+````{py:method} sum(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.sum
+```
+
+````
+
+````{py:method} mean(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.mean
+```
+
+````
+
+````{py:method} min(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.min
+```
+
+````
+
+````{py:method} max(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.max
+```
+
+````
+
+````{py:method} std(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.std
+```
+
+````
+
+````{py:method} var(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.var
+```
+
+````
+
+````{py:method} any(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.any
+```
+
+````
+
+````{py:method} all(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.all
+```
+
+````
+
+````{py:method} prod(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.prod
+```
+
+````
+
+````{py:method} argmin(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.argmin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.argmin
+```
+
+````
+
+````{py:method} argmax(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.argmax
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.argmax
+```
+
+````
+
+````{py:method} cumsum(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.cumsum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.cumsum
+```
+
+````
+
+````{py:method} cumprod(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.cumprod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.cumprod
+```
+
+````
+
+````{py:method} reshape(*args, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.reshape
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.reshape
+```
+
+````
+
+````{py:method} flatten(order='C')
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.flatten
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.flatten
+```
+
+````
+
+````{py:method} ravel(order='C')
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.ravel
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.ravel
+```
+
+````
+
+````{py:method} copy(order='C')
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.copy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.copy
+```
+
+````
+
+````{py:method} squeeze(axis=None)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.squeeze
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.squeeze
+```
+
+````
+
+````{py:method} transpose(*axes)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.transpose
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.transpose
+```
+
+````
+
+````{py:method} tolist()
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.tolist
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.tolist
+```
+
+````
+
+````{py:method} clip(a_min=None, a_max=None, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.clip
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.clip
+```
+
+````
+
+````{py:method} round(decimals=0, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.round
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.round
+```
+
+````
+
+````{py:method} sort(axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.sort
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.sort
+```
+
+````
+
+````{py:method} dot(other)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.dot
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.dot
+```
+
+````
+
+````{py:method} astype(dtype)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.astype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin.astype
+```
+
+````
+
+`````
+
+````{py:function} make_override_registry()
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.make_override_registry
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.make_override_registry
+```
+````
+
+````{py:function} register_template_overrides(mixin_cls, template_cls, name_prefix, concrete_classes=None)
+:canonical: vtkmodules.numpy_interface._vtk_array_mixin.register_template_overrides
+
+```{autodoc2-docstring} vtkmodules.numpy_interface._vtk_array_mixin.register_template_overrides
+```
+````

@@ -1,0 +1,996 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="关于此文档" href="../about.html" /><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="vtkArrayDispatch and Related Tools" href="array_dispatch.html" /><link rel="prev" title="Design Documents" href="index.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/design_documents/smptools.html" />
+
+    <link rel="shortcut icon" href="../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Parallel Processing with VTK’s SMP Framework - VTK 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VTK  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_data_formats.html">Supported Data Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Web/WebAssembly/README.html">VTK WebAssembly JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Web/WebAssemblyAsync/README.html">VTK WebAssembly JavaScript Async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build_instructions/index.html">Building</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Building</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/ModuleSystem.html">Module System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Advanced Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vtk_file_formats/index.html">VTK File Formats</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK File Formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtkxml_file_format.html">XML File Formats</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF File Format</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF File Format</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Design Documents</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Design Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array_dispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developers_guide/index.html">Developer’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Developer’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys’ BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="parallel-processing-with-vtk-s-smp-framework">
+<h1>Parallel Processing with VTK’s SMP Framework<a class="headerlink" href="#parallel-processing-with-vtk-s-smp-framework" title="Link to this heading">#</a></h1>
+<p>August 2022</p>
+<section id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading">#</a></h2>
+<p>Berk Geveci wrote the initial version of this document in 2013. The design and implementation of vtkSMPTools was strongly influenced by the <a class="reference external" href="https://www.researchgate.net/publication/221564735_KAAPI_A_thread_scheduling_runtime_system_for_data_flow_computations_on_cluster_of_multi-processors">KAAPI thread scheduling system</a> and an associated Inria research report: <a class="reference external" href="https://hal.inria.fr/hal-00789814"><em>VtkSMP: Task-based Parallel Operators for Accelerating VTK Filters</em></a>. Later contributors to this document include:</p>
+<ul class="simple">
+<li><p>Timothee Couble</p></li>
+<li><p>Charles Gueunet</p></li>
+<li><p>Will Schroeder</p></li>
+<li><p>Spiros Tsalikis</p></li>
+</ul>
+<p>Also note that several blog posts have been written about vtkSMPTools:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kitware.com/simple-parallel-computing-with-vtksmptools/">Simple, Parallel Computing with vtkSMPTools</a></p></li>
+<li><p><a class="reference external" href="https://www.kitware.com/vtk-shared-memory-parallelism-tools-2021-updates/">VTK Shared Memory Parallelism Tools, 2021 updates</a></p></li>
+<li><p><a class="reference external" href="https://www.kitware.com/ongoing-vtk-paraview-performance-improvements/">Ongoing VTK / ParaView Performance Improvements</a></p></li>
+<li><p><a class="reference external" href="https://www.kitware.com/vtk-paraview-filters-performance-improvements/">VTK/ParaView Filters: Performance Improvements</a></p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The overarching objective of vtkSMPTools, the SMP (symmetric multiprocessing) framework, is to provide an infrastructure to simplify the development of shared memory parallel algorithms in VTK. In addition, vtkSMPTools defines a simple, abstract API that drives several threading backends such as std::thread, TBB (i.e., Intel’s Threading Building Blocks template library); and OpenMP; as well as supporting a sequential backend for testing and debugging. To achieve these objectives, we have developed three simple constructs to support basic SMP functionality:</p>
+<ul class="simple">
+<li><p>Parallel building blocks / functions</p></li>
+<li><p>Thread local storage</p></li>
+<li><p>Atomic integers and associated operations. (Note, since C++11 this has been superseded by <code class="docutils literal notranslate"><span class="pre">std::atomic&lt;&gt;</span></code>. Also, <code class="docutils literal notranslate"><span class="pre">std::mutex</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkAtomicMutex</span></code> are options.)</p></li>
+</ul>
+<p>vtkSMPTools is extremely easy to use, ensuring that the major challenge of creating parallel algorithms is not one of implementation, but rather the design of good, threaded algorithms.  In the next sections we describe the basic concepts used in vtkSMPTools, and then demonstrate these concepts through example code. Of course, there are hundreds of vtkSMPTools implementations found in VTK which provide an excellent source of more complex examples. In the final section of this document we provide tips on how to design and implement  vtkSMPTools-based algorithms.</p>
+</section>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
+<p>The following are several high-level concepts that will help you understand and use vtkSMPTools.</p>
+<section id="the-age-of-abundant-computing-cores">
+<h3>The Age of Abundant Computing Cores<a class="headerlink" href="#the-age-of-abundant-computing-cores" title="Link to this heading">#</a></h3>
+<p>Many early computational algorithms were designed and implemented in an era of limited computing resources: typically a single CPU was available with rudimentary memory models. Such limitations typically led to a frugal approach to writing algorithms, in particular approaches that minimized CPU utilization. However modern computing architectures commonly have many cores with multiple execution threads per core, and memory models have expanded to include a hierarchy of data caches to retrieve frequently used data more quickly. Also, many developers are inclined to think in terms of <em>sequential</em> algorithmic operations, partly due to the way in which we were trained but also because managing multiple simultaneous processes can take a lot of work and programmers are often pressed for time. But with growing data sizes, increasing computational demands, and the abundance of computing threads; it’s clear that parallel approaches are essential to creating responsive and impactful software tools. It’s important that VTK developers conceive and implement performant parallel algorithms to ensure that the system remain vital into the future.</p>
+<p>There are a variety of approaches to parallel computing, but two approaches - distributed computing and shared memory computing - are particularly relevant to VTK. In distributed computing, computational tasks are carried out in separate memory space and exchange information through message passing communication. In shared memory computing, information is exchanged through variables in shared memory space. Typically a flavor of MPI is used by VTK for distributed computing, plus VTK provides a variety of software constructs to support distributed computing. vtkSMPTools is used to implement shared memory computing with symmetric multiprocessing (SMP) approaches; i.e., where multiple processors are connected to a single, shared memory space. Distributed computing is more complex and scales best for extremely large data, while shared memory computing is simpler and works cell on single computers (desktop, laptop, mobile). Note that it is possible to combine distributed and shared computing in a VTK application.</p>
+<p>Besides MPI (for distributed computing) and vtkSMPTools (shared memory parallelism, typically on CPUs), be aware that VTK leverages another parallel processing toolkit for computing accelerators (e.g., GPUs). <a class="reference external" href="https://github.com/Viskores/viskores">viskores</a> is a toolkit of scientific visualization algorithms for emerging processor architectures, supporting fine-grained concurrency for data analysis and visualization algorithms. Depending on the application, viskores may be a preferred solution for extreme scale computing. It is possible to mix all three forms of parallel computing frameworks into a single VTK application.</p>
+</section>
+<section id="fine-and-coarse-grained-parallelism">
+<h3>Fine- and Coarse-Grained Parallelism<a class="headerlink" href="#fine-and-coarse-grained-parallelism" title="Link to this heading">#</a></h3>
+<p>When parallelizing an algorithm, it is important to first consider the “dimension” (i.e., the way in which data is accessed via threads) over which to parallelize it. For example, VTK’s Imaging modules parallelize many algorithms by assigning subsets of the input image (VOIs) to a thread safe function which processes them in parallel. Another example is parallelizing over blocks of a composite dataset (such as an AMR dataset). We refer to these examples as coarse-grained parallelism. On the other hand, we can choose points or cells as a dimension over which to parallelize access to a VTK dataset. Many algorithms simply loop over cells or points and are relatively trivial to parallelize this way. Here we refer to this approach as fine-grained parallelism. Note that some algorithms fall into a gray area. For example, if we parallelize streamline generation over seeds, is it fine- or coarse-grained parallelism?</p>
+</section>
+<section id="backends">
+<h3>Backends<a class="headerlink" href="#backends" title="Link to this heading">#</a></h3>
+<p>The SMP framework provides a thin abstraction over a number of threading backends. Currently, we support four backends: Sequential (serial execution); C++ std::thread referred to as STDThread; TBB (based on Intel’s TBB); and OpenMP. Note that the Sequential backend is useful for debugging but is typically not used unless no other backend can be made to work on the target platform. As discussed in the following, it’s possible to build VTK with multiple backends, and switch between them at run-time.</p>
+<p>Backends are configured via CMake during the build process. Setting the CMake variables <code class="docutils literal notranslate"><span class="pre">VTK_SMP_ENABLE_OPENMP</span></code>, <code class="docutils literal notranslate"><span class="pre">VTK_SMP_ENABLE_SEQUENTIAL</span></code>, <code class="docutils literal notranslate"><span class="pre">VTK_SMP_ENABLE_STDTHREAD</span></code>, and <code class="docutils literal notranslate"><span class="pre">VTK_SMP_ENABLE_TBB</span></code> enables the inclusion of the appropriate SMP backend(s), and <code class="docutils literal notranslate"><span class="pre">VTK_SMP_IMPLEMENTATION_TYPE</span></code> can be used to select one of Sequential, OpenMP, TBB, and STDThread (this selects the default backend when VTK runs). Once VTK is built, setting the environment variable <code class="docutils literal notranslate"><span class="pre">VTK_SMP_BACKEND_IN_USE</span></code> can be used to select from multiple backends. (Note: <code class="docutils literal notranslate"><span class="pre">vtkSMPTools::SetBackend()</span></code> can be used from within a C++ application to select the backend as well – for example <code class="docutils literal notranslate"><span class="pre">vtkSMPTools::SetBackend(&quot;TBB&quot;)</span></code> will select TBB.)</p>
+</section>
+<section id="thread-safety-in-vtk">
+<h3>Thread Safety in VTK<a class="headerlink" href="#thread-safety-in-vtk" title="Link to this heading">#</a></h3>
+<p>Probably the most important thing in parallelizing shared-memory algorithms is to make sure that all operations that occur in a parallel region are performed in a thread-safe way (i.e., avoid race conditions). Note that there is much in the VTK core functionality that is not thread-safe. The VTK community has an ongoing effort of cleaning this up and marking APIs that are thread-safe to use. At this point, probably the best approach is to double check by looking at the implementation. Also, we highly recommend using analysis tools such as ThreadSanitizer or Valgrind (with the Helgrind tool) to look for race conditions in problematic code.</p>
+<p>When coding parallel algorithms, be especially wary of insidious execution side effects. Such side effects typically result in simultaneous execution of code. For example, invoking <code class="docutils literal notranslate"><span class="pre">Update()</span></code> on a filter shared by multiple threads is a bad idea since simultaneous updates to that filter is likely doomed to fail. Also, some methods like <code class="docutils literal notranslate"><span class="pre">vtkPolyData::GetCellNeighbors()</span></code> internally invoke the one-time operation <code class="docutils literal notranslate"><span class="pre">BuildLinks()</span></code> in order to generate topological information. Similarly, the <code class="docutils literal notranslate"><span class="pre">BuildLocator()</span></code> method found in point and cell locators may be called as a side effect of a geoemtric query such as <code class="docutils literal notranslate"><span class="pre">vtkDataSet::FindCell()</span></code>. In such cases, prior to threaded execution, affected classes should be “primed” by explicitly invoking methods that produce side effects (e.g., call <code class="docutils literal notranslate"><span class="pre">BuildLinks()</span></code> directly on the <code class="docutils literal notranslate"><span class="pre">vtkPolyData</span></code>; or manually call <code class="docutils literal notranslate"><span class="pre">BuildLocator()</span></code> prior to using methods that require a locator).</p>
+</section>
+<section id="results-invariance">
+<h3>Results Invariance<a class="headerlink" href="#results-invariance" title="Link to this heading">#</a></h3>
+<p>A significant challenge to writing good threaded algorithms is to insure that they produce the same output each time they execute. For example, a threaded sort operation may order <em>identical</em> set elements differently each time the sort is run depending on the order in which data is processed by different computing threads. (This is related to the C++ standard providing the <code class="docutils literal notranslate"><span class="pre">std::stable_sort</span></code> algorithm.) Even simple threaded operation such as summing a list of numbers can produce different results, since the order and partitioning of data during threading may result in round off effects. Since sequential algorithms implicitly order their operations, and threading typically does not do so (unless extensive use of locks, barriers, etc. are used), a sequential algorithm may produce different results than a threaded algorithm, and even across multiple runs threaded algorithms may produce results that vary across each run. Such behaviors are disturbing to users, and make testing difficult. In VTK, we aim to write algorithms that are results invariant.</p>
+</section>
+<section id="show-me-the-code">
+<h3>Show Me the Code<a class="headerlink" href="#show-me-the-code" title="Link to this heading">#</a></h3>
+<p>The vtkSMPTools class defined in <code class="docutils literal notranslate"><span class="pre">VTK\Common\Core\vtkSMPTools.h</span></code> provides detailed documentation and further implementation details. To find examples of vtkSMPTools in use, simply search for VTK C++ classes that include this header file.</p>
+</section>
+</section>
+<section id="implementation-overview">
+<h2>Implementation Overview<a class="headerlink" href="#implementation-overview" title="Link to this heading">#</a></h2>
+<p>As mentioned previously, vtkSMPTools provides a few, simple programmatic building blocks; support for thread-local storage; and support for atomics. In this section we provide high-level descriptions of these building blocks. Then in the following section we provide implementation details.</p>
+<section id="functional-building-blocks">
+<h3>Functional Building Blocks<a class="headerlink" href="#functional-building-blocks" title="Link to this heading">#</a></h3>
+<p>The core, functional building blocks of vtkSMPTools are as follows. See <code class="docutils literal notranslate"><span class="pre">vtkSMPTools.h</span></code> for details.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">For(begin,</span> <span class="pre">end,</span> <span class="pre">functor)</span></code> - a for loop over the range [begin,end) executing the functor each time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fill(begin,</span> <span class="pre">end,</span> <span class="pre">value)</span></code> - assign the given value to the elements in range [begin,end) (a drop in replacement for <code class="docutils literal notranslate"><span class="pre">std::fill()</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sort(begin,end)</span></code> and <code class="docutils literal notranslate"><span class="pre">Sort(begin,end,compare)</span></code> - sort the elements in range [begin,end) using the optional comparison function (a drop in replacement for <code class="docutils literal notranslate"><span class="pre">std::sort()</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Transform()</span></code> - a drop in replacement for <code class="docutils literal notranslate"><span class="pre">std::transform()</span></code>.</p></li>
+</ul>
+<p>Note that the ranges [begin,end) may be expressed via integral (<code class="docutils literal notranslate"><span class="pre">vtkIdType</span></code>) types for example point or cell ids, or C++ iterators.</p>
+<p>Of special interest is the <code class="docutils literal notranslate"><span class="pre">functor</span></code> invoked in the <code class="docutils literal notranslate"><span class="pre">For()</span></code> loop. The functor is a class/struct which requires defining the <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">operator()(begin,end)</span></code> method. Given a range defined by <code class="docutils literal notranslate"><span class="pre">[begin,</span> <span class="pre">end)</span></code> and the functor, <code class="docutils literal notranslate"><span class="pre">For()</span></code> will call the functor’s <code class="docutils literal notranslate"><span class="pre">operator()</span></code>, usually in parallel, over a number of subranges of <code class="docutils literal notranslate"><span class="pre">[begin,</span> <span class="pre">end)</span></code>. The functor may also implement methods to initialize data associated with each thread (<code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">Initialize()</span></code>), and to composite the results of executing the <code class="docutils literal notranslate"><span class="pre">For()</span></code> loop into a final result (i.e., <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">Reduce()</span></code>).</p>
+<p>With these few building blocks, powerful threaded algorithms can easily be written. In many cases, the <code class="docutils literal notranslate"><span class="pre">For()</span></code> loop is all that is needed.</p>
+</section>
+<section id="thread-local-storage">
+<h3>Thread Local Storage<a class="headerlink" href="#thread-local-storage" title="Link to this heading">#</a></h3>
+<p>Often times parallel algorithms produce intermediate results that are combined to produce a final result. For example, to sum a long list of numbers, each thread may sum just a subset of the numbers, and when completed the intermediate sums from each thread can be combined to produce a final summation. So the ability to maintain intermediate data associated with each thread is valuable. This is the purpose of thread local storage.</p>
+<p>Thread local storage is generally referred to memory that is accessed by one thread only. In the SMP framework, vtkSMPThreadLocal and vtkSMPThreadLocalObject enable the creation of objects local to executing threads. The main difference between the two is that vtkSMPThreadLocalObject makes it easy to manage vtkObject and subclasses by allocating and deleting them appropriately. Thread local storage almost always requires definition of the <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> and <code class="docutils literal notranslate"><span class="pre">Reduce()</span></code> methods to initialize local storage, and then combine it once the <code class="docutils literal notranslate"><span class="pre">For()</span></code> loop completes.</p>
+<p>One important performance trick with thread local storage, is that temporary variables may be defined and then used in the execution of <code class="docutils literal notranslate"><span class="pre">operator()</span></code>. For example, instantiating temporary objects such as vtkGenericCell, vtkIdList, and other C++ containers or classes can be relatively slow. Sometimes it’s much faster to create and initialize them once (when the thread is created), and then “reset” them in each invocation of <code class="docutils literal notranslate"><span class="pre">operator()</span></code>.</p>
+</section>
+<section id="atomics">
+<h3>Atomics<a class="headerlink" href="#atomics" title="Link to this heading">#</a></h3>
+<p>Another very useful tool when developing shared memory parallel algorithms is atomic integers. Atomic integers provide the ability to manipulate integer values in a way that can’t be interrupted by other threads. A very common use case for atomic integers is implementing global counters. For example, in VTK, the modified time (MTime) global counter and vtkObject’s reference count are implemented as atomic integers.</p>
+<p>Prior to C++11, vtkSMPTools had an internal implementation for atomic integers. However, this implementation is now obsolete in favor of <code class="docutils literal notranslate"><span class="pre">std::atomic&lt;&gt;</span></code>. C++ also provides <code class="docutils literal notranslate"><span class="pre">std::mutex'</span> <span class="pre">and</span> <span class="pre">'std::lock_guard&lt;&gt;</span></code>; and VTK provides a lightweight spinlock <code class="docutils literal notranslate"><span class="pre">vtkAtomicMutex</span></code> which may be faster than using mutexes.</p>
+</section>
+</section>
+<section id="implementation-examples">
+<h2>Implementation Examples<a class="headerlink" href="#implementation-examples" title="Link to this heading">#</a></h2>
+<p>In the subsections below, we describe the SMP framework in more detail and provide examples of how it can be used.</p>
+<section id="functors-and-parallel-for">
+<h3>Functors and Parallel For<a class="headerlink" href="#functors-and-parallel-for" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">vtkSMPTools::For()</span></code> parallel for is the core computational construct of vtkSMPTools. It’s use is as shown in the following example which evaluates points against a set of planes, and adjusts the planes to “bound” the points (see <code class="docutils literal notranslate"><span class="pre">vtkHull.cxx</span></code> and <code class="docutils literal notranslate"><span class="pre">VTK/Common/DataModel/Testing/Cxx/TestSMPFeatures.cxx</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkPoints</span><span class="o">&gt;</span> <span class="n">pts</span><span class="p">;</span>
+  <span class="n">pts</span><span class="o">-&gt;</span><span class="n">SetDataTypeToFloat</span><span class="p">();</span>
+  <span class="n">pts</span><span class="o">-&gt;</span><span class="n">SetNumberOfPoints</span><span class="p">(</span><span class="n">numPts</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="n">auto</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numPts</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">pts</span><span class="o">-&gt;</span><span class="n">SetPoint</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vtkMath</span><span class="p">::</span><span class="n">Random</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">vtkMath</span><span class="p">::</span><span class="n">Random</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">vtkMath</span><span class="p">::</span><span class="n">Random</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p>Now define the functor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">HullFunctor</span>
+<span class="p">{</span>
+  <span class="n">vtkPoints</span> <span class="o">*</span><span class="n">InPts</span><span class="p">;</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;&amp;</span> <span class="n">Planes</span><span class="p">;</span>
+
+  <span class="n">HullFunctor</span><span class="p">(</span><span class="n">vtkPoints</span> <span class="o">*</span><span class="n">inPts</span><span class="p">,</span> <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;&amp;</span> <span class="n">planes</span><span class="p">)</span> <span class="p">:</span> <span class="n">InPts</span><span class="p">(</span><span class="n">inPts</span><span class="p">),</span> <span class="n">Planes</span><span class="p">(</span><span class="n">planes</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="n">void</span> <span class="n">operator</span><span class="p">()(</span><span class="n">vtkIdType</span> <span class="n">ptId</span><span class="p">,</span> <span class="n">vtkIdType</span> <span class="n">endPtId</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">vtkPoints</span> <span class="o">*</span><span class="n">inPts</span> <span class="o">=</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">InPts</span><span class="p">;</span>
+    <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;&amp;</span> <span class="n">planes</span> <span class="o">=</span> <span class="n">this</span><span class="o">-&gt;</span><span class="n">Planes</span><span class="p">;</span>
+    <span class="n">auto</span> <span class="n">numPlanes</span> <span class="o">=</span> <span class="n">planes</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">ptId</span> <span class="o">&lt;</span> <span class="n">endPtId</span><span class="p">;</span> <span class="o">++</span><span class="n">ptId</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">double</span> <span class="n">v</span><span class="p">,</span> <span class="n">coord</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+      <span class="n">inPts</span><span class="o">-&gt;</span><span class="n">GetPoint</span><span class="p">(</span><span class="n">ptId</span><span class="p">,</span> <span class="n">coord</span><span class="p">);</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">size_t</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numPlanes</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+          <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">coord</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="o">//</span> <span class="n">negative</span> <span class="n">means</span> <span class="n">further</span> <span class="ow">in</span> <span class="o">+</span> <span class="n">direction</span> <span class="n">of</span> <span class="n">plane</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="p">{</span>
+          <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span> <span class="o">//</span><span class="n">HullFunctor</span>
+</pre></div>
+</div>
+<p>To use the functor and invoke <code class="docutils literal notranslate"><span class="pre">vtkSMPTools::For()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">HullFunctor</span> <span class="n">hull</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span><span class="n">planes</span><span class="p">);</span>
+  <span class="n">vtkSMPTools</span><span class="p">::</span><span class="n">For</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">numPts</span><span class="p">,</span> <span class="n">hull</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that same code can be conveniently and compactly defined inline via a C++ lambda function. Lambdas are particularly useful when thread local storage and/or local variable are not required.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">vtkSMPTools</span><span class="p">::</span><span class="n">For</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numPts</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">vtkIdType</span> <span class="n">ptId</span><span class="p">,</span> <span class="n">vtkIdType</span> <span class="n">endPtId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="n">ptId</span> <span class="o">&lt;</span> <span class="n">endPtId</span><span class="p">;</span> <span class="o">++</span><span class="n">ptId</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">double</span> <span class="n">v</span><span class="p">,</span> <span class="n">coord</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+      <span class="n">pts</span><span class="o">-&gt;</span><span class="n">GetPoint</span><span class="p">(</span><span class="n">ptId</span><span class="p">,</span> <span class="n">coord</span><span class="p">);</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numPlanes</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span>
+          <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">coord</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="o">//</span> <span class="n">negative</span> <span class="n">means</span> <span class="n">further</span> <span class="ow">in</span> <span class="o">+</span> <span class="n">direction</span> <span class="n">of</span> <span class="n">plane</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="p">{</span>
+          <span class="n">planes</span><span class="p">[</span><span class="n">j</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span> <span class="o">//</span> <span class="n">end</span> <span class="k">lambda</span>
+</pre></div>
+</div>
+<p>With alternative signatures for <code class="docutils literal notranslate"><span class="pre">For()</span></code> it is possible to provide a grain parameter. Grain is a hint to the underlying backend about the coarseness of the typical range when parallelizing a for loop. If you don’t know what grain will work best for a particular problem, omit the grain specification and let the backend find a suitable grain. TBB in particular does a good job with this. Sometimes, you can eek out a little bit more performance by setting the grain just right. Too small, the task queuing overhead will be too much. Too little, load balancing will suffer.</p>
+</section>
+<section id="id1">
+<h3>Thread Local Storage<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Thread local storage is generally referred to memory that is accessed by one thread only. In the SMP framework, vtkSMPThreadLocal and vtkSMPThreadLocalObject enable the creation objects local to executing threads. The main difference between the two is that vtkSMPThreadLocalObject makes it easy to manage vtkObject and subclasses by allocating and deleting them appropriately.</p>
+<p>Below is an example of thread local objects in use. This example computes the bounds of a set of points represented by a vtkFloatArray. Note in particular the introduction of the <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> and <code class="docutils literal notranslate"><span class="pre">Reduce()</span></code> methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>using BoundsArray = std::array&lt;double,6&gt;;
+using TLS = vtkSMPThreadLocal&lt;BoundsArray&gt;;
+
+struct BoundsFunctor
+{
+  vtkFloatArray* Pts;
+  BoundsArray Bounds;
+  TLS LocalBounds;
+
+  BoundsFunctor(vtkFloatArray *pts) : Pts(pts) {}
+
+  // Initialize thread local storage
+  void Initialize()
+  {
+    // The first call to .Local() will create the array,
+    // all others will return the same.
+    std::array&lt;double,6&gt;&amp; bds = this-&gt;LocalBounds.Local();
+    bds[0] = VTK_DOUBLE_MAX;
+    bds[1] = -VTK_DOUBLE_MAX;
+    bds[2] = VTK_DOUBLE_MAX;
+    bds[3] = -VTK_DOUBLE_MAX;
+    bds[4] = VTK_DOUBLE_MAX;
+    bds[5] = -VTK_DOUBLE_MAX;
+  }
+
+  // Process the range of points [begin,end)
+  void operator()(vtkIdType begin, vtkIdType end)
+  {
+    BoundsArray&amp; lbounds = this-&gt;LocalBounds.Local();
+    float* x = this-&gt;Pts-&gt;GetPointer(3*begin);
+    for (vtkIdType i=begin; i&lt;end; i++)
+    {
+      lbounds[0] = (x[0] &lt; lbounds[0] ? x[0] : lbounds[0]);
+      lbounds[1] = (x[0] &gt; lbounds[1] ? x[0] : lbounds[1]);
+      lbounds[2] = (x[1] &lt; lbounds[2] ? x[1] : lbounds[2]);
+      lbounds[3] = (x[1] &gt; lbounds[3] ? x[1] : lbounds[3]);
+      lbounds[4] = (x[2] &lt; lbounds[4] ? x[2] : lbounds[4]);
+      lbounds[5] = (x[2] &gt; lbounds[5] ? x[2] : lbounds[5]);
+
+      x += 3;
+    }
+  }
+
+  // Composite / combine the thread local storage into a global result.
+  void Reduce()
+  {
+    this-&gt;Bounds[0] = VTK_DOUBLE_MAX;
+    this-&gt;Bounds[1] = -VTK_DOUBLE_MAX;
+    this-&gt;Bounds[2] = VTK_DOUBLE_MAX;
+    this-&gt;Bounds[3] = -VTK_DOUBLE_MAX;
+    this-&gt;Bounds[4] = VTK_DOUBLE_MAX;
+    this-&gt;Bounds[5] = -VTK_DOUBLE_MAX;
+
+    using TLSIter = TLS::iterator;
+    TLSIter end = this-&gt;LocalBounds.end();
+    for (TLSIter itr = this-&gt;LocalBounds.begin(); itr != end; ++itr)
+    {
+       BoundsArray&amp; lBounds = *itr;
+       this-&gt;Bounds[0] = (this-&gt;Bounds[0] &lt; lBounds[0] ? this-&gt;Bounds[0] : lBounds[0]);
+       this-&gt;Bounds[1] = (this-&gt;Bounds[1] &gt; lBounds[1] ? this-&gt;Bounds[1] : lBounds[1]);
+       this-&gt;Bounds[2] = (this-&gt;Bounds[2] &lt; lBounds[2] ? this-&gt;Bounds[2] : lBounds[2]);
+       this-&gt;Bounds[3] = (this-&gt;Bounds[3] &gt; lBounds[3] ? this-&gt;Bounds[3] : lBounds[3]);
+       this-&gt;Bounds[4] = (this-&gt;Bounds[4] &lt; lBounds[4] ? this-&gt;Bounds[4] : lBounds[4]);
+       this-&gt;Bounds[5] = (this-&gt;Bounds[5] &gt; lBounds[5] ? this-&gt;Bounds[5] : lBounds[5]);
+    }
+  }
+}; // BoundsFunctor
+</pre></div>
+</div>
+<p>Then to use the functor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">vtkFloatArray</span><span class="o">*</span> <span class="n">ptsArray</span> <span class="o">=</span> <span class="n">vtkFloatArray</span><span class="p">::</span><span class="n">SafeDownCast</span><span class="p">(</span><span class="n">pts</span><span class="o">-&gt;</span><span class="n">GetData</span><span class="p">());</span>
+  <span class="n">BoundsFunctor</span> <span class="n">calcBounds</span><span class="p">(</span><span class="n">ptsArray</span><span class="p">);</span>
+  <span class="n">vtkSMPTools</span><span class="p">::</span><span class="n">For</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numPts</span><span class="p">,</span> <span class="n">calcBounds</span><span class="p">);</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span><span class="mi">6</span><span class="o">&gt;&amp;</span> <span class="n">bds</span> <span class="o">=</span> <span class="n">calcBounds</span><span class="o">.</span><span class="n">Bounds</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>A few things to note here:</p>
+<ul class="simple">
+<li><p>LocalBounds.Local() will return a new instance of a <code class="docutils literal notranslate"><span class="pre">std::vector&lt;std::vector&lt;double&gt;&gt;</span></code> per thread the first time it is called by that thread. All calls afterwards will return the same instance for that thread. Therefore, threads can safely access the local object over and over again without worrying about race conditions.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> method initializes the new instance of the thread local vector with invalid bound values.</p></li>
+</ul>
+<p>So at the end of the threaded computation, the <code class="docutils literal notranslate"><span class="pre">LocalBounds</span></code> will contain a number of arrays, each that was populated by one thread during the parallel execution. These still need to be composited to produce the global bounds. This can be achieved by iterating over all thread local values and combining them in the <code class="docutils literal notranslate"><span class="pre">Reduce()</span></code> method as shown previously. Consequently the user can simply retrieve the final bounds by accessing <code class="docutils literal notranslate"><span class="pre">calcBounds.Bounds</span></code> once <code class="docutils literal notranslate"><span class="pre">vtkSMPTools::For()</span></code> completes execution. Note that, if the methods exist, <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> and <code class="docutils literal notranslate"><span class="pre">Reduce()</span></code> are invoked automatically by <code class="docutils literal notranslate"><span class="pre">vtkSMPTools::For()</span></code>.</p>
+<p>Very important note: if you use more than one thread local storage object, don’t assume that the iterators will traverse them in the same order. The iterator for one may return the value from thread i with begin() whereas the other may return the value form thread j. If you need to store and access values together, make sure to use a struct or class to group them.</p>
+<p>Thread local objects are immensely useful. Often, visualization algorithms want to accumulate their output by appending to a data structure. For example, the contour filter iterates over cells and produces polygons that it adds to an output vtkPolyData. This is usually not a thread safe operation. One way to address this is to use locks that serialize writing to the output data structure.</p>
+<p>However, mutexes have a major impact on the scalability of parallel operations. Another solution is to produce a different vtkPolyData for each execution of the functor. However, this can lead to hundreds if not thousands of outputs that need to be merged, which is a difficult operation to scale. The best option is to use one vtkPolyData per thread using thread local objects. Since it is guaranteed that thread local objects are accessed by one thread at a time (but possibly in many consecutive functor invocations), it is thread safe for functors to keep adding polygons to these objects. The result is that the parallel section will produce only a few vtkPolyData, usually the same as the number of threads in the pool. It is much easier to efficiently merge these vtkPolyData.</p>
+</section>
+<section id="atomic-integers">
+<h3>Atomic Integers<a class="headerlink" href="#atomic-integers" title="Link to this heading">#</a></h3>
+<p>As mentioned previously, atomics should be represented by the C++ std::atomic&lt;&gt;. However, to provide a brief explanation of the importance of atomics we provide the following simple example.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">Total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">std</span><span class="p">::</span><span class="n">atomic</span><span class="o">&lt;</span><span class="n">vtkTypeInt32</span><span class="o">&gt;</span> <span class="n">TotalAtomic</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">constexpr</span> <span class="nb">int</span> <span class="n">Target</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">;</span>
+<span class="n">constexpr</span> <span class="nb">int</span> <span class="n">NumThreads</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="n">VTK_THREAD_RETURN_TYPE</span> <span class="n">MyFunction</span><span class="p">(</span><span class="n">void</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">Target</span><span class="o">/</span><span class="n">NumThreads</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="o">++</span><span class="n">Total</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">TotalAtomic</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">VTK_THREAD_RETURN_VALUE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Now</span> <span class="n">exercise</span> <span class="n">atomics</span>
+<span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkMultiThreader</span><span class="o">&gt;</span> <span class="n">mt</span><span class="p">;</span>
+<span class="n">mt</span><span class="o">-&gt;</span><span class="n">SetSingleMethod</span><span class="p">(</span><span class="n">MyFunction</span><span class="p">,</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="n">mt</span><span class="o">-&gt;</span><span class="n">SetNumberOfThreads</span><span class="p">(</span><span class="n">NumThreads</span><span class="p">);</span>
+<span class="n">mt</span><span class="o">-&gt;</span><span class="n">SingleMethodExecute</span><span class="p">();</span>
+<span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Total</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">TotalAtomic</span><span class="o">.</span><span class="n">load</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>When this program is executed, most of the time <code class="docutils literal notranslate"><span class="pre">Total</span></code> will be different (smaller) than <code class="docutils literal notranslate"><span class="pre">Target</span></code> whereas <code class="docutils literal notranslate"><span class="pre">TotalAtomic</span></code> will be exactly the same as <code class="docutils literal notranslate"><span class="pre">Target</span></code>. For example, a test run on a Mac prints: <code class="docutils literal notranslate"><span class="pre">999982</span> <span class="pre">1000000</span></code>. This is because when the integer is not atomic, both threads can read the same value of <code class="docutils literal notranslate"><span class="pre">Total</span></code>, increment and write out the same value, which leads to losing one increment operation. Whereas, when ++ happens atomically, it is guaranteed that it will read, increment and write out <code class="docutils literal notranslate"><span class="pre">Total</span></code> all in one uninterruptible operation. When atomic operations are supported at hardware level, they are very fast.</p>
+</section>
+</section>
+<section id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Link to this heading">#</a></h2>
+<p>In this section, we provide some tips that we hope will be useful to those that want to develop shared memory parallel algorithms.</p>
+<section id="think-about-thread-safety">
+<h3>Think about Thread Safety<a class="headerlink" href="#think-about-thread-safety" title="Link to this heading">#</a></h3>
+<p>First things first, it is essential to keep thread safety in mind. If the parallel section does not produce correct results consistently, there is not a lot of point in the performance improvement it produces. To create thread-safe algorithms, consider using common parallel design patterns. Also verify that the API you are using is thread safe under your particular application. While VTK continues to add additional thread-safe capabilities, there are still many booby traps to avoid.</p>
+</section>
+<section id="analysis-tools-are-your-friend">
+<h3>Analysis Tools Are Your Friend<a class="headerlink" href="#analysis-tools-are-your-friend" title="Link to this heading">#</a></h3>
+<p>The LLVM/Clang-based ThreadSanitizer is widely used to detect data races. Valgrind’s Helgrind is also a wonderful tool. Use these tools often. We developed the original backends mainly using Helgrind. Note that backends like TBB can produce many false positives; you may want to try different backends to reduce these. There are commercial tools with similar functionality, e.g., Intel’s Parallel Studio has static and dynamic checking.</p>
+</section>
+<section id="debugging-tricks">
+<h3>Debugging Tricks<a class="headerlink" href="#debugging-tricks" title="Link to this heading">#</a></h3>
+<p>Beyond using the analysis tools mentioned previously (e.g., ThreadSanitizer), there are some simple tricks that can be used to resolve programming issues relatively quickly. Firstly, switch between different backends. For example, if a program runs correctly when the backend is set to Sequential, but incorrectly when the backend is other than Sequential, it’s likely that there is a race condition. Such broken code, when run repeatedly, while not always failing at the same point due to the variability of thread execution, will often fail at or near the same function, providing clues as to the location of the race. Also, empirically the STDThread backend seems to be most sensitive to race conditions. So make sure to test with more than one backend especially STDThread.</p>
+</section>
+<section id="avoid-locks">
+<h3>Avoid Locks<a class="headerlink" href="#avoid-locks" title="Link to this heading">#</a></h3>
+<p>Mutexes are expensive. Avoid them as much as possible. Mutexes are usually implemented as a table of locks by the kernel. They take a lot of CPU cycles to acquire. Specially, if multiple threads want to acquire them in the same parallel section. Use atomic integers if necessary. Try your best to design your algorithm without modifying the same data concurrently.</p>
+</section>
+<section id="use-atomics-sparingly">
+<h3>Use Atomics Sparingly<a class="headerlink" href="#use-atomics-sparingly" title="Link to this heading">#</a></h3>
+<p>Atomics are very useful and much more efficient that mutexes. However, overusing them may lead to performance issues. Try to design your algorithm in a way that you avoid locks and atomics. This also applies to using VTK classes that manipulate atomic integers such as MTime and reference count. Try to minimize operations that cause MTime or shared reference counts to change in parallel sections.</p>
+</section>
+<section id="grain-can-be-important">
+<h3>Grain Can Be Important<a class="headerlink" href="#grain-can-be-important" title="Link to this heading">#</a></h3>
+<p>In some situation, setting the right value for grain may be important. TBB does a decent job with this but there are situations where it can’t do the optimal thing. There are a number of documents on setting the grain size with TBB on the Web. If you are interested in tuning your code further, we recommend taking a look at some of them.</p>
+</section>
+<section id="minimize-data-movement">
+<h3>Minimize Data Movement<a class="headerlink" href="#minimize-data-movement" title="Link to this heading">#</a></h3>
+<p>This is true for serial parts of your code too but it is specially important when there are bunch of threads all accessing main memory. This can really push the limits of the memory bus. Code that is not very intensive computationally compared to how much memory it consumes is unlikely to scale well. Good cache use helps of course but may not be always sufficient. Try to group work together in tighter loops.</p>
+</section>
+<section id="choose-computation-over-memory">
+<h3>Choose Computation over Memory<a class="headerlink" href="#choose-computation-over-memory" title="Link to this heading">#</a></h3>
+<p>As mentioned earlier in this document, typically computation is much cheaper than data movement. As a result, it’s a good idea to create compact data structures with minimal representational fat. Such data structures may require computation to extract important information: for example, a data structure that contains a vector 3-tuple need not represent the vector magnitude since this can be quickly computed. Depending on the number of times vector magnitude is needed, the cost of computing it is usually less than the cost of placing vector magnitude into memory. Of course, effects like this are a function of scale / data size and must be considered when designing applications.</p>
+</section>
+<section id="multi-pass-implementations">
+<h3>Multi-Pass Implementations<a class="headerlink" href="#multi-pass-implementations" title="Link to this heading">#</a></h3>
+<p>Parallel algorithms often require significant bookkeeping to properly partition and transform input data to output data. Trivial algorithms, such as mapping an input vector array of 3-tuples to an output scalar array of vector magnitudes, are easy to partition and map: for each vector tuple, a single scalar is produced; and if there are N tuples, there are N scalars. However, more complex algorithms such as building cell links (creating lists of cells connected to a point) or smoothing stencils (identifying points connected to each other via a cell edge) require an initial pass to determine the size of output arrays (and then to allocate the output), followed by another pass to actually populate the output arrays. While at first counterintuitive, it turns out that allocating a small number of large memory blocks is much, much faster than many dynamic allocations of small amounts of memory. This is one reason that a common implementation pattern for parallel algorithms is to use multiple data processing passes consisting of simple computing operations. Such an approach is quite different than many serial algorithms that often perform multiple, complex algorithmic steps for each input data item to be processed.</p>
+<p>A variation of this approach is to use thread local storage to perform computation on a local range of input, store the result in thread local, and then reduce/composite the local storage into the global output. While this is problematic for many reasons (especially since data movement is needed to composite the output data), it still can be used to effectively partition and transform input data to the output, especially if the thread local storage is relatively small in size.</p>
+<p>Whatever approach is used, parallel algorithms are often implemented using multiple passes. When designing parallel algorithms, it is important to think in terms of passes, and implement algorithms accordingly.</p>
+</section>
+<section id="use-parallel-design-patterns">
+<h3>Use Parallel Design Patterns<a class="headerlink" href="#use-parallel-design-patterns" title="Link to this heading">#</a></h3>
+<p>There are many parallel operations that are used repeatedly. Of course <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and <code class="docutils literal notranslate"><span class="pre">fill()</span></code> are two obvious operations, but the <code class="docutils literal notranslate"><span class="pre">sort()</span></code> operation is more widely used than might be expected. Another is the prefix sum (or inclusive scan, or simply scan) typically used to build indices into data arrays. Become familiar with these and other parallel operations and the task of designing and implementing algorithms will be much easier.</p>
+</section>
+</section>
+<section id="parallel-is-not-always-faster">
+<h2>Parallel Is Not Always Faster<a class="headerlink" href="#parallel-is-not-always-faster" title="Link to this heading">#</a></h2>
+<p>Threading introduces overhead into computation. As a result, threaded computation is not always faster than an equivalent serial operation. For example, <code class="docutils literal notranslate"><span class="pre">for</span></code> loops across a small number of data items can easily slow down computation due to <strong>thread creation overhead</strong>. A simple addition on each entry of an array may become a bottleneck if done using a too fine grain, due to <strong>false sharing</strong> (threads continuously invalidating other thread’s cache). Even complex operations such as prefix sums across large amounts of data may be slower than serial implementations because of <strong>synchronization issues</strong>. For this reason, use threading sparingly to address data or computation of large scale. In VTK it is not uncommon to see code that switches between serial and parallel implementations based on input data size. For that reason, vtkSMPTools has an empirically determined THRESHOLD value that can be used by a developer to switch between serial and parallel implementations.</p>
+<p>Different backends may have significantly performance characteristics as well. TBB for example uses a thread pool combined with task stealing to address load balancing challenges. Empirically at the time of writing, in some situations TBB can significantly outperform the STDThread backend especially in situations where task loads are highly variable. Of course this may change as std::thread implementations mature and evolve.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="array_dispatch.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">vtkArrayDispatch and Related Tools</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Design Documents</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Parallel Processing with VTK’s SMP Framework</a><ul>
+<li><a class="reference internal" href="#contributors">Contributors</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#concepts">Concepts</a><ul>
+<li><a class="reference internal" href="#the-age-of-abundant-computing-cores">The Age of Abundant Computing Cores</a></li>
+<li><a class="reference internal" href="#fine-and-coarse-grained-parallelism">Fine- and Coarse-Grained Parallelism</a></li>
+<li><a class="reference internal" href="#backends">Backends</a></li>
+<li><a class="reference internal" href="#thread-safety-in-vtk">Thread Safety in VTK</a></li>
+<li><a class="reference internal" href="#results-invariance">Results Invariance</a></li>
+<li><a class="reference internal" href="#show-me-the-code">Show Me the Code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#implementation-overview">Implementation Overview</a><ul>
+<li><a class="reference internal" href="#functional-building-blocks">Functional Building Blocks</a></li>
+<li><a class="reference internal" href="#thread-local-storage">Thread Local Storage</a></li>
+<li><a class="reference internal" href="#atomics">Atomics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#implementation-examples">Implementation Examples</a><ul>
+<li><a class="reference internal" href="#functors-and-parallel-for">Functors and Parallel For</a></li>
+<li><a class="reference internal" href="#id1">Thread Local Storage</a></li>
+<li><a class="reference internal" href="#atomic-integers">Atomic Integers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tips">Tips</a><ul>
+<li><a class="reference internal" href="#think-about-thread-safety">Think about Thread Safety</a></li>
+<li><a class="reference internal" href="#analysis-tools-are-your-friend">Analysis Tools Are Your Friend</a></li>
+<li><a class="reference internal" href="#debugging-tricks">Debugging Tricks</a></li>
+<li><a class="reference internal" href="#avoid-locks">Avoid Locks</a></li>
+<li><a class="reference internal" href="#use-atomics-sparingly">Use Atomics Sparingly</a></li>
+<li><a class="reference internal" href="#grain-can-be-important">Grain Can Be Important</a></li>
+<li><a class="reference internal" href="#minimize-data-movement">Minimize Data Movement</a></li>
+<li><a class="reference internal" href="#choose-computation-over-memory">Choose Computation over Memory</a></li>
+<li><a class="reference internal" href="#multi-pass-implementations">Multi-Pass Implementations</a></li>
+<li><a class="reference internal" href="#use-parallel-design-patterns">Use Parallel Design Patterns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#parallel-is-not-always-faster">Parallel Is Not Always Faster</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

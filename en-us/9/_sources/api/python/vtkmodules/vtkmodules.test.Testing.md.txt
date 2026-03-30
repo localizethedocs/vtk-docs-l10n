@@ -1,0 +1,384 @@
+# {py:mod}`vtkmodules.test.Testing`
+
+```{py:module} vtkmodules.test.Testing
+```
+
+```{autodoc2-docstring} vtkmodules.test.Testing
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkTest <vtkmodules.test.Testing.vtkTest>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`skip <vtkmodules.test.Testing.skip>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.skip
+    :summary:
+    ```
+* - {py:obj}`interact <vtkmodules.test.Testing.interact>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.interact
+    :summary:
+    ```
+* - {py:obj}`isInteractive <vtkmodules.test.Testing.isInteractive>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.isInteractive
+    :summary:
+    ```
+* - {py:obj}`getAbsImagePath <vtkmodules.test.Testing.getAbsImagePath>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.getAbsImagePath
+    :summary:
+    ```
+* - {py:obj}`_getTempImagePath <vtkmodules.test.Testing._getTempImagePath>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing._getTempImagePath
+    :summary:
+    ```
+* - {py:obj}`_GetController <vtkmodules.test.Testing._GetController>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing._GetController
+    :summary:
+    ```
+* - {py:obj}`compareImageWithSavedImage <vtkmodules.test.Testing.compareImageWithSavedImage>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.compareImageWithSavedImage
+    :summary:
+    ```
+* - {py:obj}`compareImage <vtkmodules.test.Testing.compareImage>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.compareImage
+    :summary:
+    ```
+* - {py:obj}`main <vtkmodules.test.Testing.main>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.main
+    :summary:
+    ```
+* - {py:obj}`test <vtkmodules.test.Testing.test>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.test
+    :summary:
+    ```
+* - {py:obj}`usage <vtkmodules.test.Testing.usage>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.usage
+    :summary:
+    ```
+* - {py:obj}`parseCmdLine <vtkmodules.test.Testing.parseCmdLine>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.parseCmdLine
+    :summary:
+    ```
+* - {py:obj}`processCmdLine <vtkmodules.test.Testing.processCmdLine>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.processCmdLine
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTK_DATA_ROOT <vtkmodules.test.Testing.VTK_DATA_ROOT>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.VTK_DATA_ROOT
+    :summary:
+    ```
+* - {py:obj}`VTK_DATA_PATHS <vtkmodules.test.Testing.VTK_DATA_PATHS>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.VTK_DATA_PATHS
+    :summary:
+    ```
+* - {py:obj}`VTK_BASELINE_ROOT <vtkmodules.test.Testing.VTK_BASELINE_ROOT>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.VTK_BASELINE_ROOT
+    :summary:
+    ```
+* - {py:obj}`VTK_TEMP_DIR <vtkmodules.test.Testing.VTK_TEMP_DIR>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.VTK_TEMP_DIR
+    :summary:
+    ```
+* - {py:obj}`VTK_BASELINE_PATHS <vtkmodules.test.Testing.VTK_BASELINE_PATHS>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing.VTK_BASELINE_PATHS
+    :summary:
+    ```
+* - {py:obj}`_VERBOSE <vtkmodules.test.Testing._VERBOSE>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing._VERBOSE
+    :summary:
+    ```
+* - {py:obj}`_INTERACT <vtkmodules.test.Testing._INTERACT>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing._INTERACT
+    :summary:
+    ```
+* - {py:obj}`_NO_IMAGE <vtkmodules.test.Testing._NO_IMAGE>`
+  - ```{autodoc2-docstring} vtkmodules.test.Testing._NO_IMAGE
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} VTK_DATA_ROOT
+:canonical: vtkmodules.test.Testing.VTK_DATA_ROOT
+:value: <Multiline-String>
+
+```{autodoc2-docstring} vtkmodules.test.Testing.VTK_DATA_ROOT
+```
+
+````
+
+````{py:data} VTK_DATA_PATHS
+:canonical: vtkmodules.test.Testing.VTK_DATA_PATHS
+:value: >
+   []
+
+```{autodoc2-docstring} vtkmodules.test.Testing.VTK_DATA_PATHS
+```
+
+````
+
+````{py:data} VTK_BASELINE_ROOT
+:canonical: vtkmodules.test.Testing.VTK_BASELINE_ROOT
+:value: <Multiline-String>
+
+```{autodoc2-docstring} vtkmodules.test.Testing.VTK_BASELINE_ROOT
+```
+
+````
+
+````{py:data} VTK_TEMP_DIR
+:canonical: vtkmodules.test.Testing.VTK_TEMP_DIR
+:value: <Multiline-String>
+
+```{autodoc2-docstring} vtkmodules.test.Testing.VTK_TEMP_DIR
+```
+
+````
+
+````{py:data} VTK_BASELINE_PATHS
+:canonical: vtkmodules.test.Testing.VTK_BASELINE_PATHS
+:value: >
+   []
+
+```{autodoc2-docstring} vtkmodules.test.Testing.VTK_BASELINE_PATHS
+```
+
+````
+
+````{py:data} _VERBOSE
+:canonical: vtkmodules.test.Testing._VERBOSE
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.test.Testing._VERBOSE
+```
+
+````
+
+````{py:data} _INTERACT
+:canonical: vtkmodules.test.Testing._INTERACT
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.test.Testing._INTERACT
+```
+
+````
+
+````{py:data} _NO_IMAGE
+:canonical: vtkmodules.test.Testing._NO_IMAGE
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.test.Testing._NO_IMAGE
+```
+
+````
+
+````{py:function} skip()
+:canonical: vtkmodules.test.Testing.skip
+
+```{autodoc2-docstring} vtkmodules.test.Testing.skip
+```
+````
+
+`````{py:class} vtkTest(methodName='runTest')
+:canonical: vtkmodules.test.Testing.vtkTest
+
+Bases: {py:obj}`unittest.TestCase`
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest.__init__
+```
+
+````{py:attribute} _blackbox
+:canonical: vtkmodules.test.Testing.vtkTest._blackbox
+:value: >
+   'Tester(...)'
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest._blackbox
+```
+
+````
+
+````{py:attribute} dl
+:canonical: vtkmodules.test.Testing.vtkTest.dl
+:value: >
+   'vtkDebugLeaks(...)'
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest.dl
+```
+
+````
+
+````{py:method} _testParse(obj)
+:canonical: vtkmodules.test.Testing.vtkTest._testParse
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest._testParse
+```
+
+````
+
+````{py:method} _testGetSet(obj, excluded_methods=[])
+:canonical: vtkmodules.test.Testing.vtkTest._testGetSet
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest._testGetSet
+```
+
+````
+
+````{py:method} _testBoolean(obj, excluded_methods=[])
+:canonical: vtkmodules.test.Testing.vtkTest._testBoolean
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest._testBoolean
+```
+
+````
+
+````{py:method} pathToData(filename)
+:canonical: vtkmodules.test.Testing.vtkTest.pathToData
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest.pathToData
+```
+
+````
+
+````{py:method} pathToValidatedOutput(filename)
+:canonical: vtkmodules.test.Testing.vtkTest.pathToValidatedOutput
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest.pathToValidatedOutput
+```
+
+````
+
+````{py:method} prepareTestImage(interactor, **kwargs)
+:canonical: vtkmodules.test.Testing.vtkTest.prepareTestImage
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest.prepareTestImage
+```
+
+````
+
+````{py:method} assertImageMatch(renwin, baseline, **kwargs)
+:canonical: vtkmodules.test.Testing.vtkTest.assertImageMatch
+
+```{autodoc2-docstring} vtkmodules.test.Testing.vtkTest.assertImageMatch
+```
+
+````
+
+`````
+
+````{py:function} interact()
+:canonical: vtkmodules.test.Testing.interact
+
+```{autodoc2-docstring} vtkmodules.test.Testing.interact
+```
+````
+
+````{py:function} isInteractive()
+:canonical: vtkmodules.test.Testing.isInteractive
+
+```{autodoc2-docstring} vtkmodules.test.Testing.isInteractive
+```
+````
+
+````{py:function} getAbsImagePath(img_basename)
+:canonical: vtkmodules.test.Testing.getAbsImagePath
+
+```{autodoc2-docstring} vtkmodules.test.Testing.getAbsImagePath
+```
+````
+
+````{py:function} _getTempImagePath(img_fname)
+:canonical: vtkmodules.test.Testing._getTempImagePath
+
+```{autodoc2-docstring} vtkmodules.test.Testing._getTempImagePath
+```
+````
+
+````{py:function} _GetController()
+:canonical: vtkmodules.test.Testing._GetController
+
+```{autodoc2-docstring} vtkmodules.test.Testing._GetController
+```
+````
+
+````{py:function} compareImageWithSavedImage(src_img, img_fname, threshold=0.05)
+:canonical: vtkmodules.test.Testing.compareImageWithSavedImage
+
+```{autodoc2-docstring} vtkmodules.test.Testing.compareImageWithSavedImage
+```
+````
+
+````{py:function} compareImage(renwin, img_fname, threshold=0.05)
+:canonical: vtkmodules.test.Testing.compareImage
+
+```{autodoc2-docstring} vtkmodules.test.Testing.compareImage
+```
+````
+
+````{py:function} main(cases)
+:canonical: vtkmodules.test.Testing.main
+
+```{autodoc2-docstring} vtkmodules.test.Testing.main
+```
+````
+
+````{py:function} test(cases)
+:canonical: vtkmodules.test.Testing.test
+
+```{autodoc2-docstring} vtkmodules.test.Testing.test
+```
+````
+
+````{py:function} usage()
+:canonical: vtkmodules.test.Testing.usage
+
+```{autodoc2-docstring} vtkmodules.test.Testing.usage
+```
+````
+
+````{py:function} parseCmdLine()
+:canonical: vtkmodules.test.Testing.parseCmdLine
+
+```{autodoc2-docstring} vtkmodules.test.Testing.parseCmdLine
+```
+````
+
+````{py:function} processCmdLine()
+:canonical: vtkmodules.test.Testing.processCmdLine
+
+```{autodoc2-docstring} vtkmodules.test.Testing.processCmdLine
+```
+````

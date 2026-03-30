@@ -1,0 +1,1482 @@
+# {py:mod}`vtkmodules.numpy_interface.dataset_adapter`
+
+```{py:module} vtkmodules.numpy_interface.dataset_adapter
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`ArrayAssociation <vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation
+    :summary:
+    ```
+* - {py:obj}`VTKObjectWrapper <vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper
+    :summary:
+    ```
+* - {py:obj}`VTKArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass
+    :summary:
+    ```
+* - {py:obj}`VTKArray <vtkmodules.numpy_interface.dataset_adapter.VTKArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray
+    :summary:
+    ```
+* - {py:obj}`VTKNoneArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass
+    :summary:
+    ```
+* - {py:obj}`VTKNoneArray <vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray
+    :summary:
+    ```
+* - {py:obj}`VTKCompositeDataArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass
+    :summary:
+    ```
+* - {py:obj}`VTKCompositeDataArray <vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray
+    :summary:
+    ```
+* - {py:obj}`DataSetAttributes <vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes
+    :summary:
+    ```
+* - {py:obj}`CompositeDataSetAttributes <vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes
+    :summary:
+    ```
+* - {py:obj}`CompositeDataIterator <vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator
+    :summary:
+    ```
+* - {py:obj}`MultiCompositeDataIterator <vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator
+    :summary:
+    ```
+* - {py:obj}`DataObject <vtkmodules.numpy_interface.dataset_adapter.DataObject>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject
+    :summary:
+    ```
+* - {py:obj}`Table <vtkmodules.numpy_interface.dataset_adapter.Table>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Table
+    :summary:
+    ```
+* - {py:obj}`HyperTreeGrid <vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid
+    :summary:
+    ```
+* - {py:obj}`CompositeDataSet <vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet
+    :summary:
+    ```
+* - {py:obj}`DataSet <vtkmodules.numpy_interface.dataset_adapter.DataSet>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet
+    :summary:
+    ```
+* - {py:obj}`PointSet <vtkmodules.numpy_interface.dataset_adapter.PointSet>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PointSet
+    :summary:
+    ```
+* - {py:obj}`PolyData <vtkmodules.numpy_interface.dataset_adapter.PolyData>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PolyData
+    :summary:
+    ```
+* - {py:obj}`UnstructuredGrid <vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid
+    :summary:
+    ```
+* - {py:obj}`Graph <vtkmodules.numpy_interface.dataset_adapter.Graph>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph
+    :summary:
+    ```
+* - {py:obj}`Molecule <vtkmodules.numpy_interface.dataset_adapter.Molecule>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_override_numpy <vtkmodules.numpy_interface.dataset_adapter._override_numpy>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter._override_numpy
+    :summary:
+    ```
+* - {py:obj}`reshape_append_ones <vtkmodules.numpy_interface.dataset_adapter.reshape_append_ones>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.reshape_append_ones
+    :summary:
+    ```
+* - {py:obj}`vtkDataArrayToVTKArray <vtkmodules.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray
+    :summary:
+    ```
+* - {py:obj}`numpyTovtkDataArray <vtkmodules.numpy_interface.dataset_adapter.numpyTovtkDataArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.numpyTovtkDataArray
+    :summary:
+    ```
+* - {py:obj}`_make_tensor_array_contiguous <vtkmodules.numpy_interface.dataset_adapter._make_tensor_array_contiguous>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter._make_tensor_array_contiguous
+    :summary:
+    ```
+* - {py:obj}`_metaclass <vtkmodules.numpy_interface.dataset_adapter._metaclass>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter._metaclass
+    :summary:
+    ```
+* - {py:obj}`WrapDataObject <vtkmodules.numpy_interface.dataset_adapter.WrapDataObject>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.WrapDataObject
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`NUMPY_MAJOR_VERSION <vtkmodules.numpy_interface.dataset_adapter.NUMPY_MAJOR_VERSION>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.NUMPY_MAJOR_VERSION
+    :summary:
+    ```
+* - {py:obj}`COMPOSITE_OVERRIDE <vtkmodules.numpy_interface.dataset_adapter.COMPOSITE_OVERRIDE>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.COMPOSITE_OVERRIDE
+    :summary:
+    ```
+* - {py:obj}`NoneArray <vtkmodules.numpy_interface.dataset_adapter.NoneArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.NoneArray
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} NUMPY_MAJOR_VERSION
+:canonical: vtkmodules.numpy_interface.dataset_adapter.NUMPY_MAJOR_VERSION
+:value: >
+   'int(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.NUMPY_MAJOR_VERSION
+```
+
+````
+
+````{py:data} COMPOSITE_OVERRIDE
+:canonical: vtkmodules.numpy_interface.dataset_adapter.COMPOSITE_OVERRIDE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.COMPOSITE_OVERRIDE
+```
+
+````
+
+````{py:function} _override_numpy(numpy_function)
+:canonical: vtkmodules.numpy_interface.dataset_adapter._override_numpy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter._override_numpy
+```
+````
+
+````{py:function} reshape_append_ones(a1, a2)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.reshape_append_ones
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.reshape_append_ones
+```
+````
+
+`````{py:class} ArrayAssociation
+:canonical: vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation
+```
+
+````{py:attribute} POINT
+:canonical: vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.POINT
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.POINT
+```
+
+````
+
+````{py:attribute} CELL
+:canonical: vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.CELL
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.CELL
+```
+
+````
+
+````{py:attribute} FIELD
+:canonical: vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.FIELD
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.FIELD
+```
+
+````
+
+````{py:attribute} ROW
+:canonical: vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.ROW
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation.ROW
+```
+
+````
+
+`````
+
+`````{py:class} VTKObjectWrapper(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper.__init__
+```
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper.__getattr__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper.__getattr__
+```
+
+````
+
+`````
+
+````{py:function} vtkDataArrayToVTKArray(array, dataset=None)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray
+```
+````
+
+````{py:function} numpyTovtkDataArray(array, name='numpy_array', array_type=None)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.numpyTovtkDataArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.numpyTovtkDataArray
+```
+````
+
+````{py:function} _make_tensor_array_contiguous(array)
+:canonical: vtkmodules.numpy_interface.dataset_adapter._make_tensor_array_contiguous
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter._make_tensor_array_contiguous
+```
+````
+
+````{py:function} _metaclass(mcs)
+:canonical: vtkmodules.numpy_interface.dataset_adapter._metaclass
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter._metaclass
+```
+````
+
+`````{py:class} VTKArrayMetaClass
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass
+
+Bases: {py:obj}`type`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass
+```
+
+````{py:method} __new__(name, parent, attr)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass.__new__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass.__new__
+```
+
+````
+
+`````
+
+`````{py:class} VTKArray(shape, dtype=float, buffer=None, offset=0, strides=None, order=None)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray
+
+Bases: {py:obj}`numpy.ndarray`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray.__init__
+```
+
+````{py:method} _numeric_op(other, attr_name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray._numeric_op
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray._numeric_op
+```
+
+````
+
+````{py:method} _reverse_numeric_op(other, attr_name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray._reverse_numeric_op
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray._reverse_numeric_op
+```
+
+````
+
+````{py:method} __new__(input_array, array=None, dataset=None)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray.__new__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray.__new__
+```
+
+````
+
+````{py:method} __array_finalize__(obj)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray.__array_finalize__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray.__array_finalize__
+```
+
+````
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray.__getattr__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray.__getattr__
+```
+
+````
+
+````{py:method} __array_wrap__(out_arr, context=None, return_scalar=False)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray.__array_wrap__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray.__array_wrap__
+```
+
+````
+
+````{py:property} DataSet
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKArray.DataSet
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKArray.DataSet
+```
+
+````
+
+`````
+
+`````{py:class} VTKNoneArrayMetaClass
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass
+
+Bases: {py:obj}`type`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass
+```
+
+````{py:method} __new__(name, parent, attr)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass.__new__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass.__new__
+```
+
+````
+
+`````
+
+`````{py:class} VTKNoneArray
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray
+```
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray.__getitem__
+```
+
+````
+
+````{py:method} _op(other, op)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray._op
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray._op
+```
+
+````
+
+````{py:method} astype(dtype)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray.astype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray.astype
+```
+
+````
+
+````{py:property} shape
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray.shape
+:type: typing.Tuple[int, ...]
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray.shape
+```
+
+````
+
+`````
+
+````{py:data} NoneArray
+:canonical: vtkmodules.numpy_interface.dataset_adapter.NoneArray
+:value: >
+   'VTKNoneArray(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.NoneArray
+```
+
+````
+
+`````{py:class} VTKCompositeDataArrayMetaClass
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass
+
+Bases: {py:obj}`type`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass
+```
+
+````{py:method} __new__(name, parent, attr)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass.__new__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass.__new__
+```
+
+````
+
+`````
+
+`````{py:class} VTKCompositeDataArray(arrays=[], dataset=None, name=None, association=None)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__init__
+```
+
+````{py:method} __init_from_composite()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__init_from_composite
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__init_from_composite
+```
+
+````
+
+````{py:method} GetSize()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetSize
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetSize
+```
+
+````
+
+````{py:attribute} size
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.size
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.size
+```
+
+````
+
+````{py:method} GetArrays()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetArrays
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetArrays
+```
+
+````
+
+````{py:attribute} Arrays
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.Arrays
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.Arrays
+```
+
+````
+
+````{py:method} __setitem__(index, value) -> None
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__setitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__setitem__
+```
+
+````
+
+````{py:method} __getitem__(index) -> typing.Union[typing.List, vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray, numpy.ndarray]
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__getitem__
+```
+
+````
+
+````{py:method} _global_to_local_id(global_index, total_size, offsets)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._global_to_local_id
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._global_to_local_id
+```
+
+````
+
+````{py:method} _slice_intersection(global_slice, chunk_offset, chunk_size, total_length)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._slice_intersection
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._slice_intersection
+```
+
+````
+
+````{py:method} _numeric_op(other, op)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._numeric_op
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._numeric_op
+```
+
+````
+
+````{py:method} _reverse_numeric_op(other, op)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._reverse_numeric_op
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray._reverse_numeric_op
+```
+
+````
+
+````{py:method} __str__()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__str__
+
+````
+
+````{py:method} astype(dtype)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.astype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.astype
+```
+
+````
+
+````{py:property} shape
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.shape
+:type: typing.Tuple[int, ...]
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.shape
+```
+
+````
+
+````{py:method} __len__() -> int
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__len__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__len__
+```
+
+````
+
+````{py:method} __contains__(item) -> bool
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__contains__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__contains__
+```
+
+````
+
+````{py:method} __reversed__() -> typing.Generator[numpy.ndarray, None, None]
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__reversed__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__reversed__
+```
+
+````
+
+````{py:method} __iter__() -> typing.Generator[numpy.ndarray, None, None]
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__iter__
+```
+
+````
+
+````{py:method} __array__(dtype=None, copy=None) -> numpy.ndarray
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__array__
+```
+
+````
+
+````{py:method} __array_function__(func, types, args, kwargs)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__array_function__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__array_function__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray.__array_ufunc__
+```
+
+````
+
+`````
+
+`````{py:class} DataSetAttributes(vtkobject, dataset, association)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.__init__
+```
+
+````{py:method} __getitem__(idx)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.__getitem__
+```
+
+````
+
+````{py:method} GetArray(idx)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.GetArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.GetArray
+```
+
+````
+
+````{py:method} keys()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.keys
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.keys
+```
+
+````
+
+````{py:method} values()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.values
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.values
+```
+
+````
+
+````{py:method} PassData(other)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.PassData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.PassData
+```
+
+````
+
+````{py:method} append(narray, name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.append
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes.append
+```
+
+````
+
+`````
+
+`````{py:class} CompositeDataSetAttributes(dataset, association)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.__init__
+```
+
+````{py:method} __determine_arraynames()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.__determine_arraynames
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.__determine_arraynames
+```
+
+````
+
+````{py:method} keys()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.keys
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.keys
+```
+
+````
+
+````{py:method} __getitem__(idx)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.__getitem__
+```
+
+````
+
+````{py:method} append(narray, name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.append
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.append
+```
+
+````
+
+````{py:method} GetArray(idx)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.GetArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.GetArray
+```
+
+````
+
+````{py:method} PassData(other)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.PassData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes.PassData
+```
+
+````
+
+`````
+
+`````{py:class} CompositeDataIterator(cds)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__init__
+```
+
+````{py:method} __iter__()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__iter__
+```
+
+````
+
+````{py:method} __next__()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__next__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__next__
+```
+
+````
+
+````{py:method} next()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.next
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.next
+```
+
+````
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__getattr__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator.__getattr__
+```
+
+````
+
+`````
+
+`````{py:class} MultiCompositeDataIterator(cds)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator.__init__
+```
+
+````{py:method} __next__()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator.__next__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator.__next__
+```
+
+````
+
+````{py:method} next()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator.next
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator.next
+```
+
+````
+
+`````
+
+`````{py:class} DataObject(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataObject
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject.__init__
+```
+
+````{py:method} GetAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataObject.GetAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject.GetAttributes
+```
+
+````
+
+````{py:method} HasAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataObject.HasAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject.HasAttributes
+```
+
+````
+
+````{py:method} GetFieldData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataObject.GetFieldData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject.GetFieldData
+```
+
+````
+
+````{py:attribute} FieldData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataObject.FieldData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataObject.FieldData
+```
+
+````
+
+`````
+
+`````{py:class} Table(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Table
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Table
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Table.__init__
+```
+
+````{py:method} GetRowData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Table.GetRowData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Table.GetRowData
+```
+
+````
+
+````{py:method} HasAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Table.HasAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Table.HasAttributes
+```
+
+````
+
+````{py:attribute} RowData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Table.RowData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Table.RowData
+```
+
+````
+
+`````
+
+`````{py:class} HyperTreeGrid(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.__init__
+```
+
+````{py:method} GetCellData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.GetCellData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.GetCellData
+```
+
+````
+
+````{py:method} HasAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.HasAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.HasAttributes
+```
+
+````
+
+````{py:attribute} CellData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.CellData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid.CellData
+```
+
+````
+
+`````
+
+`````{py:class} CompositeDataSet(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.__init__
+```
+
+````{py:method} __iter__()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.__iter__
+```
+
+````
+
+````{py:method} GetNumberOfElements(assoc)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfElements
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfElements
+```
+
+````
+
+````{py:method} GetNumberOfPoints()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfPoints
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfPoints
+```
+
+````
+
+````{py:method} GetNumberOfCells()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfCells
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfCells
+```
+
+````
+
+````{py:method} GetAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetAttributes
+```
+
+````
+
+````{py:method} HasAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.HasAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.HasAttributes
+```
+
+````
+
+````{py:method} GetPointData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetPointData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetPointData
+```
+
+````
+
+````{py:method} GetCellData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetCellData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetCellData
+```
+
+````
+
+````{py:method} GetFieldData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetFieldData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetFieldData
+```
+
+````
+
+````{py:method} GetGlobalData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetGlobalData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetGlobalData
+```
+
+````
+
+````{py:method} GetPoints()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetPoints
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GetPoints
+```
+
+````
+
+````{py:attribute} PointData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.PointData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.PointData
+```
+
+````
+
+````{py:attribute} CellData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.CellData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.CellData
+```
+
+````
+
+````{py:attribute} FieldData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.FieldData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.FieldData
+```
+
+````
+
+````{py:attribute} GlobalData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GlobalData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.GlobalData
+```
+
+````
+
+````{py:attribute} Points
+:canonical: vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.Points
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet.Points
+```
+
+````
+
+`````
+
+`````{py:class} DataSet(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSet
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet.__init__
+```
+
+````{py:method} GetPointData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSet.GetPointData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet.GetPointData
+```
+
+````
+
+````{py:method} GetCellData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSet.GetCellData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet.GetCellData
+```
+
+````
+
+````{py:method} HasAttributes(type)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSet.HasAttributes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet.HasAttributes
+```
+
+````
+
+````{py:attribute} PointData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSet.PointData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet.PointData
+```
+
+````
+
+````{py:attribute} CellData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.DataSet.CellData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.DataSet.CellData
+```
+
+````
+
+`````
+
+`````{py:class} PointSet(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PointSet
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataSet`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PointSet
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PointSet.__init__
+```
+
+````{py:method} GetPoints()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PointSet.GetPoints
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PointSet.GetPoints
+```
+
+````
+
+````{py:method} SetPoints(pts)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PointSet.SetPoints
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PointSet.SetPoints
+```
+
+````
+
+````{py:attribute} Points
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PointSet.Points
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PointSet.Points
+```
+
+````
+
+`````
+
+`````{py:class} PolyData(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PolyData
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.PointSet`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PolyData
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PolyData.__init__
+```
+
+````{py:method} GetPolygons()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PolyData.GetPolygons
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PolyData.GetPolygons
+```
+
+````
+
+````{py:attribute} Polygons
+:canonical: vtkmodules.numpy_interface.dataset_adapter.PolyData.Polygons
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.PolyData.Polygons
+```
+
+````
+
+`````
+
+`````{py:class} UnstructuredGrid(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.PointSet`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.__init__
+```
+
+````{py:method} GetCellTypes()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellTypes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellTypes
+```
+
+````
+
+````{py:method} GetCellLocations()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellLocations
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellLocations
+```
+
+````
+
+````{py:method} GetCells()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.GetCells
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.GetCells
+```
+
+````
+
+````{py:method} SetCells(cellTypes, cellLocations, cells)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.SetCells
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.SetCells
+```
+
+````
+
+````{py:attribute} CellTypes
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.CellTypes
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.CellTypes
+```
+
+````
+
+````{py:attribute} CellLocations
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.CellLocations
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.CellLocations
+```
+
+````
+
+````{py:attribute} Cells
+:canonical: vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.Cells
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid.Cells
+```
+
+````
+
+`````
+
+`````{py:class} Graph(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Graph
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph.__init__
+```
+
+````{py:method} GetVertexData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Graph.GetVertexData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph.GetVertexData
+```
+
+````
+
+````{py:method} GetEdgeData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Graph.GetEdgeData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph.GetEdgeData
+```
+
+````
+
+````{py:attribute} VertexData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Graph.VertexData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph.VertexData
+```
+
+````
+
+````{py:attribute} EdgeData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Graph.EdgeData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Graph.EdgeData
+```
+
+````
+
+`````
+
+`````{py:class} Molecule(vtkobject)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Molecule
+
+Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule.__init__
+```
+
+````{py:method} GetAtomData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Molecule.GetAtomData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule.GetAtomData
+```
+
+````
+
+````{py:method} GetBondData()
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Molecule.GetBondData
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule.GetBondData
+```
+
+````
+
+````{py:attribute} AtomData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Molecule.AtomData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule.AtomData
+```
+
+````
+
+````{py:attribute} BondData
+:canonical: vtkmodules.numpy_interface.dataset_adapter.Molecule.BondData
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.Molecule.BondData
+```
+
+````
+
+`````
+
+````{py:function} WrapDataObject(ds)
+:canonical: vtkmodules.numpy_interface.dataset_adapter.WrapDataObject
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.dataset_adapter.WrapDataObject
+```
+````

@@ -1,0 +1,1077 @@
+<!doctype html>
+<html class="no-js" lang="en-US" data-content_root="../../../../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../../../../../about.html" /><link rel="index" title="Index" href="../../../../../genindex.html" /><link rel="search" title="Search" href="../../../../../search.html" /><link rel="next" title="Updating the GLAD library sources" href="../../../ThirdParty/glad/README.html" /><link rel="prev" title="Regular buffers" href="webgpu-compute-api-dev.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html" />
+
+    <link rel="shortcut icon" href="../../../../../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Description - VTK documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../../../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../../index.html"><div class="brand">VTK  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../../../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../supported_data_formats.html">Supported Data Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../../index.html">Modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Web/WebAssembly/README.html">VTK WebAssembly JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Web/WebAssemblyAsync/README.html">VTK WebAssembly JavaScript Async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../build_instructions/index.html">Building</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Building</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/ModuleSystem.html">Module System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../advanced/index.html">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Advanced Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../vtk_file_formats/index.html">VTK File Formats</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK File Formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../vtk_file_formats/vtkxml_file_format.html">XML File Formats</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF File Format</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF File Format</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../design_documents/index.html">Design Documents</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Design Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/array_dispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../design_documents/WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../developers_guide/index.html">Developer’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Developer’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../resources.html">Resources</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys’ BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="description">
+<h1>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h1>
+<p>The new WebGPU compute API allows offloading computations from the CPU to the GPU using WebGPU compute shaders
+through the new <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> classes.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass</span></code> is used to set the inputs and outputs to the compute shader, execute it and get the
+results back to the CPU. A <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> contains one or more <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass</span></code> that can be
+executed one after the other in a single <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline-&gt;Dispatch()</span></code> call.</p>
+</section>
+<section id="compute-pass-pipeline-usage-outside-a-rendering-pipeline">
+<h1>Compute pass &amp; pipeline - Usage outside a rendering pipeline<a class="headerlink" href="#compute-pass-pipeline-usage-outside-a-rendering-pipeline" title="Link to this heading">#</a></h1>
+<p>The basic usage of a compute pass outside a rendering pipeline is:</p>
+<ul class="simple">
+<li><p>Create a vtkWebGPUComputePipeline</p></li>
+<li><p>Obtain a compute pass from this compute pipeline</p></li>
+<li><p>Set its shader source code</p></li>
+<li><p>Set its shader entry point</p></li>
+<li><p>Create the vtkWebGPUComputeBuffers that contain the data manipulated by the compute pass</p></li>
+<li><p>Add the buffers to the compute pass</p></li>
+<li><p>Set the number of workgroups</p></li>
+<li><p>Dispatch the compute pass</p></li>
+<li><p>ReadBufferFromGPU() to make results from the GPU available to the CPU</p></li>
+<li><p>Update() the pipeline so that the compute pass is executed</p></li>
+</ul>
+<p>Let’s now review these steps in more details:</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> cannot really do much on its own. The hard work is done by the <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass</span></code>.
+To obtain a compute pass, you simply have to call <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline-&gt;CreateComputePass()</span></code>. This returns a
+<code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass</span></code> object that you then need to configure.</p>
+<p>You must first indicate the source code of the compute shader to use. This is done through the <code class="docutils literal notranslate"><span class="pre">SetShaderSource()</span></code> method.
+This method expects raw WGSL shader code. On top of setting the shader source code, you must also give the entry point
+(function name) of the compute shader via <code class="docutils literal notranslate"><span class="pre">SetShaderEntryPoint()</span></code>.</p>
+<p>The next (although the order of these compute pass set-up operations does not matter) step is to set the input
+and output buffers that will be used by the compute shader. This is done through the <code class="docutils literal notranslate"><span class="pre">AddBuffer()</span></code> method.
+This method expect a <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer</span></code> object as input. A <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer</span></code> object represents a set of parameters
+that will be used to create the buffer on the GPU and upload data to it.</p>
+<p>To be valid, all <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer</span></code> objects need to be given a group (via <code class="docutils literal notranslate"><span class="pre">SetGroup()</span></code>), a binding (via <code class="docutils literal notranslate"><span class="pre">SetBinding()</span></code>)
+and a mode (modes are described by <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer::BufferMode</span></code>) using <code class="docutils literal notranslate"><span class="pre">SetMode()</span></code>.
+All groups/bindings combination must be unique as these two values define the “location” of your buffer in the shader.</p>
+<p>You also need to indicate what data to use for input buffers using <code class="docutils literal notranslate"><span class="pre">SetData()</span></code>.
+<code class="docutils literal notranslate"><span class="pre">SetData()</span></code> accepts both <code class="docutils literal notranslate"><span class="pre">vtkDataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> data containers.
+Note that the data isn’t uploaded (copied to the GPU) until the buffer is actually added to the compute pass
+by <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass::AddBuffer()</span></code> so the data needs to stay valid (i.e. not destroyed) on the CPU until <code class="docutils literal notranslate"><span class="pre">AddBuffer()</span></code> is called.
+Because you can give either <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> data or <code class="docutils literal notranslate"><span class="pre">vtkDataArray</span></code> data to the buffer but only one of two is going to be used when
+sending data to the GPU, you must specify which one to use by calling <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer::SetDataType()</span></code>.</p>
+<p>For buffers used as outputs of the compute shader, you only need to specify their size using <code class="docutils literal notranslate"><span class="pre">SetByteSize()</span></code>.
+The size of input buffers is automatically determined when <code class="docutils literal notranslate"><span class="pre">SetData()</span></code> is called. <code class="docutils literal notranslate"><span class="pre">SetByteSize()</span></code> should not be called on input buffers.</p>
+<p>Once a buffer is set up, it can be added to the pass using <code class="docutils literal notranslate"><span class="pre">AddBuffer()</span></code>. This uploads the data to the GPU and the
+CPU-side data can be safely be destroyed.</p>
+<p>After the shader source and its entry point as well as the buffers have been set on the pipeline, one more step needs to be
+taken care of before you can dispatch the compute shader: setting the number of workgroups using <code class="docutils literal notranslate"><span class="pre">SetWorkgroups(X,</span> <span class="pre">Y,</span> <span class="pre">Z)</span></code>. The number of
+workgroups you need to set depends on the size of your data and the <code class="docutils literal notranslate"><span class="pre">&#64;compute</span> <span class="pre">&#64;workgroup_size(WX,</span> <span class="pre">WY,</span> <span class="pre">WZ)</span></code> annotation in your shader. As a simple
+rule, the result <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">*</span> <span class="pre">Y</span> <span class="pre">*</span> <span class="pre">Z</span> <span class="pre">*</span> <span class="pre">WX</span> <span class="pre">*</span> <span class="pre">WY</span> <span class="pre">*</span> <span class="pre">WZ</span></code> must be at least as big as the length of your input data. You can have a look at the
+WebGPU compute API tests under <code class="docutils literal notranslate"><span class="pre">Rendering/WebGPU/Testing</span></code> for some more details.</p>
+<p>Once all of that setup has been done, you can then <code class="docutils literal notranslate"><span class="pre">Dispatch()</span></code> the compute pass. Note that <code class="docutils literal notranslate"><span class="pre">Dispatch()</span></code> does not actually
+execute the compute shader, the <code class="docutils literal notranslate"><span class="pre">Update()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> does (see below).</p>
+<p>The next step is get the data back from the GPU to the CPU. Because the CPU cannot directly read data that is on the GPU, you need to
+copy the data from the GPU back to the CPU using the <code class="docutils literal notranslate"><span class="pre">ReadBufferFromGPU()</span></code> method.
+This method takes a buffer index as its first argument (returned by the <code class="docutils literal notranslate"><span class="pre">AddBuffer()</span></code> method). This is the index of the buffer that is
+going to be copied to the CPU.
+The second argument is a function that will be called after the buffer has been successfully copied from the GPU.
+This is typically the function that will copy the data into a CPU-side buffer (a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> or equivalent for example). That buffer
+can be passed through the third argument which is a pointer to some data that you want accessible from the callback (which is the second argument).
+This third argument can also be a structure if you need more than one argument to be available in the callback.</p>
+<p>The very last step is simple: you need to call the <code class="docutils literal notranslate"><span class="pre">Update()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> to actually execute the GPU
+commands (queued by the <code class="docutils literal notranslate"><span class="pre">Dispatch()</span></code> and <code class="docutils literal notranslate"><span class="pre">ReadBufferFromGPU()</span></code> calls).</p>
+<p>Here’s an example of how this all can look like in practice:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputValues</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="c1">// Fill the input vector with data</span>
+<span class="w">  </span><span class="c1">// ...</span>
+
+<span class="w">  </span><span class="c1">// Creating the input buffer to the compute shader</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputBuffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">READ_ONLY_COMPUTE_STORAGE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetData</span><span class="p">(</span><span class="n">inputValues</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetDataType</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferDataType</span><span class="o">::</span><span class="n">STD_VECTOR</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Creating the output buffer of the compute shader</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">outputBuffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">READ_WRITE_MAP_COMPUTE_STORAGE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetByteSize</span><span class="p">(</span><span class="n">inputValues</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+
+<span class="w">  </span><span class="c1">// Creating the compute pipeline</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePipeline</span><span class="o">&gt;</span><span class="w"> </span><span class="n">computePipeline</span><span class="p">;</span>
+<span class="w">  </span><span class="n">vtkSmartPointer</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePass</span><span class="o">&gt;</span><span class="w"> </span><span class="n">computePass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">CreateComputePass</span><span class="p">();</span>
+<span class="w">  </span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">SetShaderSource</span><span class="p">(</span><span class="n">computeShaderSource</span><span class="p">);</span>
+<span class="w">  </span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">SetShaderEntryPoint</span><span class="p">(</span><span class="s">&quot;computeMainFunction&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">AddBuffer</span><span class="p">(</span><span class="n">inputBuffer</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Getting the index of the output buffer for later mapping with ReadBufferFromGPU()</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">outputBufferIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">AddBuffer</span><span class="p">(</span><span class="n">outputBuffer</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">SetWorkgroups</span><span class="p">(</span><span class="n">workgroupsX</span><span class="p">,</span><span class="w"> </span><span class="n">workgroupsY</span><span class="p">,</span><span class="w"> </span><span class="n">workgroupsZ</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// We&#39;ve set up everything, ready to dispatch</span>
+<span class="w">  </span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">Dispatch</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Vector that will contain the results of the compute shader</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">outputData</span><span class="p">(</span><span class="n">outputBufferSize</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Function called by ReadBufferFromGPU() whose purpose is to copy</span>
+<span class="w">  </span><span class="c1">// the data into your result buffer (outputData here).</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">onBufferMapped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">mappedData</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">userdata</span><span class="p">)</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">outputDataVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">userdata</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// You must know in advance how many elements you&#39;re going to read from the mappedData.</span>
+<span class="w">    </span><span class="c1">// We&#39;re using the size of outputDataVector here because we resized it to just the right</span>
+<span class="w">    </span><span class="c1">// size so that&#39;s just the right number of elements. If you don&#39;t want or can&#39;t use a</span>
+<span class="w">    </span><span class="c1">// std::vector for that purpose, you can still pass the number of elements as the third</span>
+<span class="w">    </span><span class="c1">// argument of ReadBufferFromGPU().</span>
+<span class="w">    </span><span class="n">vtkIdType</span><span class="w"> </span><span class="n">elementCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outputDataVector</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">mappedDataAsF32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">mappedData</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">elementCount</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="p">(</span><span class="o">*</span><span class="n">outputDataVector</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mappedDataAsF32</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Mapping the buffer on the CPU to get the results from the GPU</span>
+<span class="w">  </span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">ReadBufferFromGPU</span><span class="p">(</span><span class="n">outputBufferIndex</span><span class="p">,</span><span class="w"> </span><span class="n">onBufferMapped</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">outputData</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Update() to actually execute WebGPU commands. Without this, the compute shader won&#39;t execute.</span>
+<span class="w">  </span><span class="c1">// Update() is called on the compute pipeline and not the compute pass because it is the</span>
+<span class="w">  </span><span class="c1">// compute pipeline that orchestrates the execution of all compute passes</span>
+<span class="w">  </span><span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// ... Do something with the output data</span>
+</pre></div>
+</div>
+<p>Note also that <code class="docutils literal notranslate"><span class="pre">Update()</span></code> does not need to be called after every call to the compute pipeline. Calling it once
+at the end is valid.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Update()</span></code> method executes commands on the GPU in the order they were added.</p>
+<p>This means that:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">computePass</span><span class="o">-&gt;</span><span class="n">ReadBufferFromGPU</span><span class="p">(</span><span class="n">outputBufferIndex</span><span class="p">,</span><span class="w"> </span><span class="cm">/* callback parameters */</span><span class="p">);</span>
+<span class="n">computePass</span><span class="o">-&gt;</span><span class="n">Dispatch</span><span class="p">();</span>
+<span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>is not going to produce the expected results as the buffer would be mapped (and read by the CPU)
+before the compute shader executed.</p>
+</section>
+<section id="chained-compute-passes">
+<h1>Chained compute passes<a class="headerlink" href="#chained-compute-passes" title="Link to this heading">#</a></h1>
+<p>Thanks to the concept of compute pipeline, it is possible to chain compute passes so that they execute
+one after the other, potentially using the output of one <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass</span></code> as the input to another pass.</p>
+<p>Following is an example of two compute passes chained together that operate on a vectors of numbers. The first compute
+pass multiplies two vectors together while the second compute pass adds the result of the first pass with a new (third)
+vector. The output of the second pass is then read back to the CPU.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DATA_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">secondPassShader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span>
+<span class="s">  @group(0) @binding(0) var&lt;storage, read_write&gt; inputOutput: array&lt;f32&gt;;</span>
+
+<span class="s">  @compute @workgroup_size(32, 1, 1)</span>
+<span class="s">  fn computeFunctionAdd(@builtin(global_invocation_id) id: vec3&lt;u32&gt;)</span>
+<span class="s">  {</span>
+<span class="s">      if (id.x &gt;= arrayLength(&amp;inputOutput))</span>
+<span class="s">      {</span>
+<span class="s">          return;</span>
+<span class="s">      }</span>
+
+<span class="s">      inputOutput[id.x] = inputOutput[id.x] + 42.0f;</span>
+<span class="s">  }</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">firstPassShader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span>
+<span class="s">  @group(0) @binding(0) var&lt;storage, read&gt; inputVector1: array&lt;i32&gt;;</span>
+<span class="s">  @group(0) @binding(1) var&lt;storage, read&gt; inputVector2: array&lt;f32&gt;;</span>
+<span class="s">  @group(0) @binding(2) var&lt;storage, read_write&gt; outputData: array&lt;f32&gt;;</span>
+
+<span class="s">  @compute @workgroup_size(32, 1, 1)</span>
+<span class="s">  fn computeFunction(@builtin(global_invocation_id) id: vec3&lt;u32&gt;)</span>
+<span class="s">  {</span>
+<span class="s">      if (id.x &gt;= arrayLength(&amp;inputVector1))</span>
+<span class="s">      {</span>
+<span class="s">          return;</span>
+<span class="s">      }</span>
+
+<span class="s">      outputData[id.x] = f32(inputVector1[id.x]) * inputVector2[id.x];</span>
+<span class="s">  }</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// This first vector will be using a vtkDataArray as its data source</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkIntArray</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputDataArray</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// Fill inputDataArray ...</span>
+
+<span class="w">  </span><span class="c1">// The second input to the compute pass uses a std::vector.</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputVector2Values</span><span class="p">(</span><span class="n">DATA_SIZE</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Fill inputVector2Values...</span>
+
+<span class="w">  </span><span class="c1">// Creating the input buffer to the compute pass</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputValues1Buffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">inputValues1Buffer</span><span class="o">-&gt;</span><span class="n">SetLabel</span><span class="p">(</span><span class="s">&quot;First input buffer&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues1Buffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues1Buffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues1Buffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">READ_ONLY_COMPUTE_STORAGE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues1Buffer</span><span class="o">-&gt;</span><span class="n">SetDataType</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferDataType</span><span class="o">::</span><span class="n">VTK_DATA_ARRAY</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues1Buffer</span><span class="o">-&gt;</span><span class="n">SetData</span><span class="p">(</span><span class="n">inputDataArray</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Creating the second input buffer for the compute pass</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputValues2Buffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">inputValues2Buffer</span><span class="o">-&gt;</span><span class="n">SetLabel</span><span class="p">(</span><span class="s">&quot;Second input buffer&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues2Buffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues2Buffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues2Buffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">READ_ONLY_COMPUTE_STORAGE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues2Buffer</span><span class="o">-&gt;</span><span class="n">SetDataType</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferDataType</span><span class="o">::</span><span class="n">STD_VECTOR</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputValues2Buffer</span><span class="o">-&gt;</span><span class="n">SetData</span><span class="p">(</span><span class="n">inputVector2Values</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Creating the output buffer to the compute pass</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">outputBuffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetLabel</span><span class="p">(</span><span class="s">&quot;Output buffer&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">READ_WRITE_MAP_COMPUTE_STORAGE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetByteSize</span><span class="p">(</span><span class="n">DATA_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+
+<span class="w">  </span><span class="c1">// Creating the compute pipeline</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePipeline</span><span class="o">&gt;</span><span class="w"> </span><span class="n">computePipeline</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// Creating the compute pass</span>
+<span class="w">  </span><span class="n">vtkSmartPointer</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePass</span><span class="o">&gt;</span><span class="w"> </span><span class="n">multiplyComputePass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">CreateComputePass</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Configuring the compute pass</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">SetShaderSource</span><span class="p">(</span><span class="n">firstPassShader</span><span class="p">);</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">SetShaderEntryPoint</span><span class="p">(</span><span class="s">&quot;computeFunction&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">AddBuffer</span><span class="p">(</span><span class="n">inputValues1Buffer</span><span class="p">);</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">AddBuffer</span><span class="p">(</span><span class="n">inputValues2Buffer</span><span class="p">);</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">AddBuffer</span><span class="p">(</span><span class="n">outputBuffer</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">vtkSmartPointer</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePass</span><span class="o">&gt;</span><span class="w"> </span><span class="n">addComputePass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">CreateComputePass</span><span class="p">();</span>
+<span class="w">  </span><span class="n">addComputePass</span><span class="o">-&gt;</span><span class="n">SetShaderSource</span><span class="p">(</span><span class="n">secondPassShader</span><span class="p">);</span>
+<span class="w">  </span><span class="n">addComputePass</span><span class="o">-&gt;</span><span class="n">SetShaderEntryPoint</span><span class="p">(</span><span class="s">&quot;computeFunctionAdd&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Setting the output buffer (of the first compute pass) on the (0, 0) binding point of</span>
+<span class="w">  </span><span class="c1">// the second pass</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">outputBuffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Using the output buffer of the first as the input and output (we&#39;re going to read and write</span>
+<span class="w">  </span><span class="c1">// from it) of the second pass. We&#39;re also storing its index because we&#39;re going to need the</span>
+<span class="w">  </span><span class="c1">// index when reading the buffer from the GPU back to the CPU</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">outputBufferIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addComputePass</span><span class="o">-&gt;</span><span class="n">AddBuffer</span><span class="p">(</span><span class="n">outputBuffer</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Dispatching the compute with</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">nbXGroups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ceil</span><span class="p">(</span><span class="n">DATA_SIZE</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">32.0f</span><span class="p">);</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">SetWorkgroups</span><span class="p">(</span><span class="n">nbXGroups</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">multiplyComputePass</span><span class="o">-&gt;</span><span class="n">Dispatch</span><span class="p">();</span>
+
+<span class="w">  </span><span class="n">addComputePass</span><span class="o">-&gt;</span><span class="n">SetWorkgroups</span><span class="p">(</span><span class="n">nbXGroups</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">addComputePass</span><span class="o">-&gt;</span><span class="n">Dispatch</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Output buffer for the result data</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">outputData</span><span class="p">;</span>
+<span class="w">  </span><span class="n">outputData</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">DATA_SIZE</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">onBufferMapped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">mappedData</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">userdata</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;*&gt;</span><span class="p">(</span><span class="n">userdata</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vtkIdType</span><span class="w"> </span><span class="n">elementCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*</span><span class="w"> </span><span class="n">mappedDataTyped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">mappedData</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">elementCount</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="p">(</span><span class="o">*</span><span class="n">out</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mappedDataTyped</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="c1">// Mapping the buffer on the CPU to get the results from the GPU</span>
+<span class="w">  </span><span class="n">addComputePass</span><span class="o">-&gt;</span><span class="n">ReadBufferFromGPU</span><span class="p">(</span><span class="n">outputBufferIndex</span><span class="p">,</span><span class="w"> </span><span class="n">onBufferMapped</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">outputData</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// Update() the compute pipeline to execute commands in the order they were emitted:</span>
+<span class="w">  </span><span class="c1">// 1) multiplyComputePass-&gt;Dispatch()</span>
+<span class="w">  </span><span class="c1">// 2) addComputePass-&gt;Dispatch()</span>
+<span class="w">  </span><span class="c1">// 3) addComputePass-&gt;ReadBufferFromGPU()</span>
+<span class="w">  </span><span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="uniforms">
+<h1>Uniforms<a class="headerlink" href="#uniforms" title="Link to this heading">#</a></h1>
+<p>Uniforms are simply treated as <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer</span></code> with the <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeBuffer::BufferMode::UNIFORM_BUFFER</span></code> mode.</p>
+<p>Example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">shaderSource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sa">R</span><span class="s">&quot;</span><span class="dl">(</span>
+<span class="s">@group(0) @binding(0) var&lt;storage, read&gt; inputBuffer: array&lt;i32, 128&gt;;</span>
+<span class="s">@group(0) @binding(1) var&lt;uniform&gt; myUniform: f32;</span>
+
+<span class="s">@compute @workgroup_size(32, 1, 1)</span>
+<span class="s">fn computeFunction(@builtin(global_invocation_id) id: vec3&lt;u32&gt;)</span>
+<span class="s">{</span>
+<span class="s">  // ...</span>
+<span class="s">  // Do something</span>
+<span class="s">  // ...</span>
+<span class="s">}</span><span class="dl">)</span><span class="s">&quot;</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="c1">// Ipnut data vector</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputVector1Values</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="w">  </span><span class="c1">// Fill the data</span>
+<span class="w">  </span><span class="c1">// ...</span>
+
+<span class="w">  </span><span class="c1">// Creating the input buffer to the compute shader</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">inputBuffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">READ_ONLY_COMPUTE_STORAGE</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetData</span><span class="p">(</span><span class="n">inputVector1Values</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetLabel</span><span class="p">(</span><span class="s">&quot;First input buffer&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">inputBuffer</span><span class="o">-&gt;</span><span class="n">SetDataType</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferDataType</span><span class="o">::</span><span class="n">STD_VECTOR</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Creating a buffer for the additional uniform</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">myUniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.5f</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uniformData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">myUniform</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">uniformBuffer</span><span class="p">;</span>
+<span class="w">  </span><span class="n">uniformBuffer</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="n">uniformBuffer</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">uniformBuffer</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferMode</span><span class="o">::</span><span class="n">UNIFORM_BUFFER</span><span class="p">);</span>
+<span class="w">  </span><span class="n">uniformBuffer</span><span class="o">-&gt;</span><span class="n">SetData</span><span class="p">(</span><span class="n">uniformData</span><span class="p">);</span>
+<span class="w">  </span><span class="n">uniformBuffer</span><span class="o">-&gt;</span><span class="n">SetLabel</span><span class="p">(</span><span class="s">&quot;Uniform buffer&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">uniformBuffer</span><span class="o">-&gt;</span><span class="n">SetDataType</span><span class="p">(</span><span class="n">vtkWebGPUComputeBuffer</span><span class="o">::</span><span class="n">BufferDataType</span><span class="o">::</span><span class="n">STD_VECTOR</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// .... Add the uniformBuffer to a compute pass as usual</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Because uniforms are buffers, you could also have ‘myUniform’ be an array in the shader and upload
+more than one float when calling <code class="docutils literal notranslate"><span class="pre">SetData()</span></code>.</p>
+</section>
+<section id="textures">
+<h1>Textures<a class="headerlink" href="#textures" title="Link to this heading">#</a></h1>
+<p>Besides buffer, compute passes can also use textures and texture views. Although the concept
+of texture may be self explanatory, texture views on the other hand may not. A texture view
+gives access to a certain part of a texture with certain parameters.</p>
+<p>For example, a texture view can only refer to a given subregion of the texture instead of
+the whole texture. The shader won’t see the difference and will use it as if it was a whole texture.
+Texture views can also access textures in read and/or write mode. This could be useful in a compute
+shader that computes the mipmaps of a given texture where you would one texture view for reading
+the mip level N of the texture and another texture view for writing to level N-1 of the same texture.</p>
+<p>Crucially, this can all be done without having to duplicate the texture. Texture views are very lightweight.
+Also note that texture views are not just some kind of convenient objects, they are actually needed. The
+shader samples texture views, not textures directly.</p>
+<p>In code, textures and texture views are easy to use:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// First creating the texture</span>
+<span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeTexture</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myTexture</span><span class="p">;</span>
+
+<span class="c1">// Configuring the texture</span>
+<span class="n">myTexture</span><span class="o">-&gt;</span><span class="n">SetDimension</span><span class="p">(</span><span class="n">vtkWebGPUComputeTexture</span><span class="o">::</span><span class="n">TextureDimension</span><span class="o">::</span><span class="n">DIMENSION_2D</span><span class="p">)</span>
+<span class="n">myTexture</span><span class="o">-&gt;</span><span class="n">SetFormat</span><span class="p">(</span><span class="n">vtkWebGPUComputeTexture</span><span class="o">::</span><span class="n">TextureFormat</span><span class="o">::</span><span class="n">RGBA8_UNORM</span><span class="p">);</span>
+<span class="n">myTexture</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeTexture</span><span class="o">::</span><span class="n">TextureMode</span><span class="o">::</span><span class="n">READ_WRITE_STORAGE</span><span class="p">);</span>
+<span class="n">myTexture</span><span class="o">-&gt;</span><span class="n">SetSampleType</span><span class="p">(</span><span class="n">vtkWebGPUComputeTexture</span><span class="o">::</span><span class="n">TextureSampleType</span><span class="o">::</span><span class="n">FLOAT</span><span class="p">);</span>
+<span class="n">myTexture</span><span class="o">-&gt;</span><span class="n">SetSize</span><span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="w"> </span><span class="mi">720</span><span class="p">);</span>
+<span class="n">myTexture</span><span class="o">-&gt;</span><span class="n">SetMipLevelCount</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">textureIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myComputePass</span><span class="o">-&gt;</span><span class="n">AddTexture</span><span class="p">(</span><span class="n">myTexture</span><span class="p">);</span>
+
+<span class="n">vtkSmartPointer</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeTextureView</span><span class="o">&gt;</span><span class="w"> </span><span class="n">textureView</span><span class="p">;</span>
+<span class="n">textureView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myComputePasss</span><span class="o">-&gt;</span><span class="n">CreateTextureView</span><span class="p">(</span><span class="n">textureIndex</span><span class="p">);</span>
+<span class="n">textureView</span><span class="o">-&gt;</span><span class="n">SetBaseMipLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">textureView</span><span class="o">-&gt;</span><span class="n">SetMode</span><span class="p">(</span><span class="n">vtkWebGPUComputeTextureView</span><span class="o">::</span><span class="n">TextureViewMode</span><span class="o">::</span><span class="n">WRITE_ONLY_STORAGE</span><span class="p">);</span>
+<span class="c1">// The shader interacts with texture views, not textures so the binding/group is</span>
+<span class="c1">// on the texture view, not the texture</span>
+<span class="n">textureView</span><span class="o">-&gt;</span><span class="n">SetGroup</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">textureView</span><span class="o">-&gt;</span><span class="n">SetBinding</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">myComputePass</span><span class="o">-&gt;</span><span class="n">AddTextureView</span><span class="p">(</span><span class="n">textureView</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Some comments on the parameters used during the configuration of the texture &amp; texture view:</p>
+<ul class="simple">
+<li><p>Dimension: Whether the texture is 1D, 2D or 3D. Typical textures are 2D.</p></li>
+<li><p>Format: Internal format of the texture for storing the texels. HDR textures (but not limited
+to) would use the float format whereas a simple texture could probably get away with the
+RGBA 8-bit per channel format.</p></li>
+<li><p>Mode: Read/write/read-write/mappable etc… This works the same way as buffers</p></li>
+<li><p>Sample type: This parameter defines what is going to be returned when sampling the texture in
+a shader. In such a situation, the aspect allows to choose whether you’re only interested
+in sampling the depth part of the depth + stencil texture or only the stencil part.
+For typical color textures, <code class="docutils literal notranslate"><span class="pre">ASPECT_ALL</span></code> is the one to use and is the default.</p></li>
+<li><p>Aspect: This is useful for textures that contains multiple type of information such as a depth + stencil texture for example.</p></li>
+</ul>
+<p>Note that all these parameters have reasonable defaults so you may not have to set them all
+for each one of your textures.</p>
+</section>
+<section id="compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">
+<h1>Compute pass &amp; pipeline - Integration in an existing rendering pipeline<a class="headerlink" href="#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline" title="Link to this heading">#</a></h1>
+<p>A compute pass can also be used to access and modify data buffers used for rendering
+(point/cell data attributes: colors, positions, normals, …).</p>
+<p>The following documentation only discusses point data attributes but everything applies for cell data attributes
+as well (using <code class="docutils literal notranslate"><span class="pre">vtkWebGPUPolyDataMapper::AcquireCellAttributeComputeRenderBuffer()</span></code>).</p>
+<p>The global usage is the same as when using the compute pass and pipeline outside of the rendering pipeline, the main difference
+being that you do not create the attribute buffers yourself (since you’re using the existing buffers from the
+render pipeline). You can retrieve the buffers by calling <code class="docutils literal notranslate"><span class="pre">vtkWebGPUPolyDataMapper::AcquirePointAttributeComputeRenderBuffer()</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">bufferGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">bufferBinding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">uniformsGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">uniformsBinding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">vtkSmartPointer</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputeRenderBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">pointColorsRenderBuffer</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="n">webGPUMapper</span><span class="o">-&gt;</span><span class="n">AcquirePointAttributeComputeRenderBuffer</span><span class="p">(</span><span class="n">vtkWebGPUPolyDataMapper</span><span class="o">::</span><span class="n">PointDataAttributes</span><span class="o">::</span><span class="n">COLORS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">bufferGroup</span><span class="p">,</span><span class="w"> </span><span class="n">bufferBinding</span><span class="p">,</span><span class="w"> </span><span class="n">uniformsGroup</span><span class="p">,</span><span class="w"> </span><span class="n">uniformsBinding</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>All the points attributes data (positions, colors, normals, tangents, UVs, …) are actually contained within
+the returned buffer. <code class="docutils literal notranslate"><span class="pre">AcquirePointAttributeComputeRenderBuffer()</span></code> does not return a buffer that contains only what
+you requested. To identify which part of the buffer is relevant, you ask for a specific attribute using the first
+parameter of <code class="docutils literal notranslate"><span class="pre">vtkWebGPUPolyDataMapper::AcquirePointAttributeComputeRenderBuffer()</span></code>.</p>
+<p>The next 2 parameters indicate where the buffer is going to be bound in your compute shader, same as when creating a buffer
+that does not come from a rendering pipeline.</p>
+<p>Because the buffer you get from <code class="docutils literal notranslate"><span class="pre">vtkWebGPUPolyDataMapper::AcquirePointAttributeComputeRenderBuffer()</span></code> contains all the point data of
+the mapper you called the function on (not only the attribute you requested), you are going to need a way to identify where
+the part of the buffer that you requested (positions, colors, … depending on the first parameter of the function) begins and ends.</p>
+<p>This is made available through the last 2 parameters of the function. The compute pipeline will automatically bind a
+uniform buffer of two u32 values to your shader. These u32 values are, in order:</p>
+<ul class="simple">
+<li><p>The buffer offset, corresponding to the location where the attributes you requested start in the whole buffer, expressed in <strong>number of float elements</strong>.</p></li>
+<li><p>The buffer length, in <strong>number of attributes</strong>. For example, if you requested colors and the buffer length uniform is 2, then you
+have 8 floats of relevant data (a color value corresponding to 4 floats).</p></li>
+</ul>
+<p>These two values are bound in your shader as a uniform buffer at the group and binding given as the third and fourth parameters.</p>
+<p>The returned render buffer can then be added to the compute pass by calling <code class="docutils literal notranslate"><span class="pre">AddRenderBuffer()</span></code> (not <code class="docutils literal notranslate"><span class="pre">AddBuffer()</span></code>,
+since we’re manipulating a buffer used by the rendering pipeline here):</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vtkSmartPointer</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePass</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myComputePass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myComputePipeline</span><span class="o">-&gt;</span><span class="n">CreateComputePass</span><span class="p">()</span>
+<span class="n">myComputePass</span><span class="o">-&gt;</span><span class="n">AddRenderBuffer</span><span class="p">(</span><span class="n">pointColorsRenderBuffer</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The compute pipeline (to which the compute pass belongs) then needs to be added to a <code class="docutils literal notranslate"><span class="pre">vtkWebGPURenderer</span></code>.
+You can add the <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> to the renderer so that it executes before rendering a frame or
+after rendering a frame, depending on yours needs. To give examples, if you intend on modifying the geometry of some actors
+through your compute pipeline, you probably want to add the compute pipeline to the renderer so that it executes
+before the rendering process, allowing for the changes to the geometry to be reflected once the frame is rendered.
+On the other hand, if you need the depth buffer of the render window for your compute pipeline, you will want to add
+the compute pipeline so that it executes after the frame is rendered (so that the depth buffer has been constructed).</p>
+<p>You can decide that through the <code class="docutils literal notranslate"><span class="pre">AddPreRenderComputePipeline()</span></code> and <code class="docutils literal notranslate"><span class="pre">AddPostRenderComputePipeline()</span></code> functions.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vtkWebGPURenderer</span><span class="o">*</span><span class="w"> </span><span class="n">wegpuRenderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vtkWebGPURenderer</span><span class="o">::</span><span class="n">SafeDownCast</span><span class="p">(</span><span class="n">renWin</span><span class="o">-&gt;</span><span class="n">GetRenderers</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetFirstRenderer</span><span class="p">());</span>
+
+<span class="c1">// The compute pipeline will execute **before** rendering a frame.</span>
+<span class="c1">// Using AddPostRenderComputePipeline() will have the pipeline execute after</span>
+<span class="c1">// a frame is rendered</span>
+<span class="n">wegpuRenderer</span><span class="o">-&gt;</span><span class="n">AddPreRenderComputePipeline</span><span class="p">(</span><span class="n">myComputePipeline</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Warning: to add a compute pipeline to a <code class="docutils literal notranslate"><span class="pre">vtkWebGPURenderer</span></code>, the <code class="docutils literal notranslate"><span class="pre">vtkRenderWindow</span></code> of the renderer must be “initialized”. This
+means that you must call <code class="docutils literal notranslate"><span class="pre">renWin-&gt;Initialize()</span></code> before adding the compute pipeline to the renderer. This is because
+the <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> method creates the WebGPU internal state of the render window which the compute pipeline of the renderer
+is going to need.</p>
+<p>And that’s it. You do not need to call the <code class="docutils literal notranslate"><span class="pre">Update()</span></code> method for the compute pipeline to be executed.
+This is done automatically by the rendering pipeline on each frame.</p>
+<p><code class="docutils literal notranslate"><span class="pre">vtkWebGPURenderWindow</span></code> also exposes methods to access render textures used by the rendering pipeline such as the depth buffer
+(only texture exposed for now). These textures are accessible through <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeRenderTexture</span></code>s (analogous to <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputeRenderBuffer</span></code>s).
+They can be acquired with methods such as <code class="docutils literal notranslate"><span class="pre">AcquireDepthBufferRenderTexture()</span></code>. Here again, you will need to call <code class="docutils literal notranslate"><span class="pre">vtkRenderWindow::Initialize()</span></code> before
+calling <code class="docutils literal notranslate"><span class="pre">AcquireDepthBufferRenderTexture()</span></code> because it is the <code class="docutils literal notranslate"><span class="pre">Initialize()</span></code> method that creates the textures of the render window.</p>
+<p>Render textures are used as regular textures. Add them to a compute pass with <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass::AddRenderTexture()</span></code>. Store the
+index of the texture returned by that call. Use that texture index to create a texture view with <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePass::CreateTextureView()</span></code>.
+Configure the texture view, add it to the compute pass and you’re done. Your render texture is ready to be used in one of your shaders.</p>
+</section>
+<section id="using-a-dedicated-gpu-device">
+<h1>Using a dedicated GPU device<a class="headerlink" href="#using-a-dedicated-gpu-device" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> automatically initializes a webgpu Device to execute the compute passes.
+You can specify a different device by using the <code class="docutils literal notranslate"><span class="pre">SetWGPUConfiguration</span></code> method with a <code class="docutils literal notranslate"><span class="pre">vtkWebGPUConfiguration</span></code>
+object. In fact, this capability allows a <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> to integrate in an existing rendering
+pipeline. If you recall from the previous section, we added a compute pipeline to a <code class="docutils literal notranslate"><span class="pre">vtkWebGPURenderer</span></code>.
+Under the covers, VTK shares the <code class="docutils literal notranslate"><span class="pre">vtkWebGPUConfiguration</span></code> instance of the <code class="docutils literal notranslate"><span class="pre">vtkWebGPURenderWindow</span></code> with the
+compute pipeline.</p>
+<p>Here’s how you can build a compute pipeline to run on a device with low power consumption and a Vulkan
+backend assuming that Vulkan is available on the platform.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Creating a vtkWebGPUConfiguration</span>
+<span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUConfiguration</span><span class="o">&gt;</span><span class="w"> </span><span class="n">wgpuConfig</span><span class="p">;</span>
+<span class="n">wgpuConfig</span><span class="o">-&gt;</span><span class="n">SetBackend</span><span class="p">(</span><span class="n">vtkWebGPUConfiguration</span><span class="o">::</span><span class="n">BackendType</span><span class="o">::</span><span class="n">Vulkan</span><span class="p">);</span>
+<span class="n">wgpuConfig</span><span class="o">-&gt;</span><span class="n">SetPowerPreference</span><span class="p">(</span><span class="n">vtkWebGPUConfiguration</span><span class="o">::</span><span class="n">PowerPreferenceType</span><span class="o">::</span><span class="n">LowPower</span><span class="p">);</span>
+
+<span class="c1">// Creating a vtkWebGPUComputePipeline to use custom device</span>
+<span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkWebGPUComputePipeline</span><span class="o">&gt;</span><span class="w"> </span><span class="n">computePipeline</span><span class="p">;</span>
+<span class="n">computePipeline</span><span class="o">-&gt;</span><span class="n">SetWGPUConfiguration</span><span class="p">(</span><span class="n">wgpuConfig</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">vtkWebGPUComputePipeline</span></code> automatically initializes it’s own <code class="docutils literal notranslate"><span class="pre">wgpu::Device</span></code> in the constructor. This
+may cause a hang. You can specify the default timeout by calling the static method <code class="docutils literal notranslate"><span class="pre">vtkWebGPUConfiguration::SetDefaultTimeout(double</span> <span class="pre">timeout)</span></code> with a lower timeout value in milliseconds.</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../../ThirdParty/glad/README.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Updating the GLAD library sources</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="webgpu-compute-api-dev.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Regular buffers</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../../../_static/documentation_options.js?v=ccd1e645"></script>
+    <script src="../../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

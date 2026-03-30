@@ -1,0 +1,1879 @@
+<!doctype html>
+<html class="no-js" lang="zh-TW" data-content_root="../../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="關於這些文件" href="../../../about.html" /><link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜尋" href="../../../search.html" /><link rel="next" title="vtkmodules.numpy_interface.vtk_affine_array" href="vtkmodules.numpy_interface.vtk_affine_array.html" /><link rel="prev" title="vtkmodules.numpy_interface" href="vtkmodules.numpy_interface.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html" />
+
+    <link rel="shortcut icon" href="../../../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>vtkmodules.numpy_interface.algorithms - VTK 說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">VTK  說明文件</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  說明文件</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="搜尋" name="q" aria-label="搜尋">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">關於</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">開始使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_data_formats.html">支援的資料格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_hardware.html">支援的硬體</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../modules/index.html">模組</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of 模組</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../build_instructions/index.html">建置</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 建置</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../cpp.html">C++</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 has-children"><a class="reference internal" href="vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 current has-children"><a class="reference internal" href="vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l5 current current-page"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_affine_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.utils</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_soa_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_soa_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_none_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_none_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_aos_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_aos_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.array_overrides.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.array_overrides</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface._vtk_array_mixin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface._vtk_array_mixin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_partitioned_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_partitioned_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_constant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_constant_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.numpy_interface.vtk_implicit_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_implicit_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/ModuleSystem.html">模組系統</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../advanced/index.html">進階話題</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 進階話題</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../vtk_file_formats/index.html">VTK 檔案格式</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK 檔案格式</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../vtk_file_formats/vtkxml_file_format.html">XML 檔案格式</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF 檔案格式</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF 檔案格式</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../design_documents/index.html">設計文件</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 設計文件</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/ArrayDispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design_documents/WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developers_guide/index.html">開發者指南</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of 開發者指南</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">資源</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys』 BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-vtkmodules.numpy_interface.algorithms">
+<span id="vtkmodules-numpy-interface-algorithms"></span><h1><a class="reference internal" href="#module-vtkmodules.numpy_interface.algorithms" title="vtkmodules.numpy_interface.algorithms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a><a class="headerlink" href="#module-vtkmodules.numpy_interface.algorithms" title="Link to this heading">#</a></h1>
+<p>This module provides a number of algorithms that can be used with
+the dataset classes defined in the dataset_adapter module.
+See the documentation of the dataset_adapter for some examples.
+These algorithms work in serial and in parallel as long as the
+data is partitioned according to VTK data parallel execution
+guidelines. For details, see the documentation of individual
+algorithms.</p>
+<section id="module-contents">
+<h2>模組目次<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._lookup_mpi_type" title="vtkmodules.numpy_interface.algorithms._lookup_mpi_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_lookup_mpi_type</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._reduce_dims" title="vtkmodules.numpy_interface.algorithms._reduce_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_reduce_dims</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.global_func" title="vtkmodules.numpy_interface.algorithms.global_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_func</span></code></a></p></td>
+<td><p>Helper function for reduction-like operation (e.g., sum, min, max) to the given array,
+with support for parallel execution across different nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.bitwise_or" title="vtkmodules.numpy_interface.algorithms.bitwise_or"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bitwise_or</span></code></a></p></td>
+<td><p>Implements element by element or (bitwise, | in C/C++) operation.
+If one of the arrays is a NoneArray, this will return the array
+that is not NoneArray, treating NoneArray as 0 in the or operation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_point_mask_from_NaNs" title="vtkmodules.numpy_interface.algorithms.make_point_mask_from_NaNs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_point_mask_from_NaNs</span></code></a></p></td>
+<td><p>This method will create a ghost array corresponding to an
+input with NaN values. For each NaN value, the output array will
+have a corresponding value of vtkmodules.vtkCommonDataModel.vtkDataSetAttributes.HIDDENPOINT.
+These values are also combined with any ghost values that the
+dataset may have.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_cell_mask_from_NaNs" title="vtkmodules.numpy_interface.algorithms.make_cell_mask_from_NaNs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_cell_mask_from_NaNs</span></code></a></p></td>
+<td><p>This method will create a ghost array corresponding to an
+input with NaN values. For each NaN value, the output array will
+have a corresponding value of vtkmodules.vtkCommonDataModel.vtkDataSetAttributes.HIDDENCELL.
+These values are also combined with any ghost values that the
+dataset may have.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_mask_from_NaNs" title="vtkmodules.numpy_interface.algorithms.make_mask_from_NaNs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_mask_from_NaNs</span></code></a></p></td>
+<td><p>This method will create a ghost array corresponding to an
+input with NaN values. For each NaN value, the output array will
+have a corresponding value of vtkmodules.vtkCommonDataModel.vtkDataSetAttributes.HIDDENPOINT or
+HIDDENCELL is the is_cell argument is true. If an input ghost_array
+is passed, the array is bitwise_or’ed with it, simply adding
+the new ghost values to it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sum" title="vtkmodules.numpy_interface.algorithms.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a></p></td>
+<td><p>Returns the sum of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.max" title="vtkmodules.numpy_interface.algorithms.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a></p></td>
+<td><p>Returns the max of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.min" title="vtkmodules.numpy_interface.algorithms.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a></p></td>
+<td><p>Returns the min of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._global_per_block" title="vtkmodules.numpy_interface.algorithms._global_per_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_global_per_block</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sum_per_block" title="vtkmodules.numpy_interface.algorithms.sum_per_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum_per_block</span></code></a></p></td>
+<td><p>Returns the sum of all values along a particular axis (dimension) for
+each block of an VTKCompositeDataArray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.count_per_block" title="vtkmodules.numpy_interface.algorithms.count_per_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count_per_block</span></code></a></p></td>
+<td><p>Return the number of elements of each block in a VTKCompositeDataArray
+along an axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mean_per_block" title="vtkmodules.numpy_interface.algorithms.mean_per_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_per_block</span></code></a></p></td>
+<td><p>Returns the mean of all values along a particular axis (dimension)
+for each block of a VTKCompositeDataArray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.max_per_block" title="vtkmodules.numpy_interface.algorithms.max_per_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_per_block</span></code></a></p></td>
+<td><p>Returns the max of all values along a particular axis (dimension)
+for each block of a VTKCompositeDataArray.
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.min_per_block" title="vtkmodules.numpy_interface.algorithms.min_per_block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_per_block</span></code></a></p></td>
+<td><p>Returns the min of all values along a particular axis (dimension)
+for each block of a VTKCompositeDataArray.
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.all" title="vtkmodules.numpy_interface.algorithms.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a></p></td>
+<td><p>Returns True if all values of an array evaluate to True, returns
+False otherwise.
+This is useful to check if all values of an array match a certain
+condition such as:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._local_array_count" title="vtkmodules.numpy_interface.algorithms._local_array_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_local_array_count</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.array_count" title="vtkmodules.numpy_interface.algorithms.array_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array_count</span></code></a></p></td>
+<td><p>Helper function to count the number of elements in a VTK or NumPy array,
+supporting counting across MPI nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mean" title="vtkmodules.numpy_interface.algorithms.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a></p></td>
+<td><p>Returns the mean of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.var" title="vtkmodules.numpy_interface.algorithms.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a></p></td>
+<td><p>Returns the variance of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.std" title="vtkmodules.numpy_interface.algorithms.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a></p></td>
+<td><p>Returns the standard deviation of all values along a particular
+axis (dimension).
+Given an array of m tuples and n components:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.shape" title="vtkmodules.numpy_interface.algorithms.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
+<td><p>Returns the shape (dimensions) of an array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_vector" title="vtkmodules.numpy_interface.algorithms.make_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_vector</span></code></a></p></td>
+<td><p>Given 2 or 3 scalar arrays, returns a vector array. If only
+2 scalars are provided, the third component will be set to 0.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.unstructured_from_composite_arrays" title="vtkmodules.numpy_interface.algorithms.unstructured_from_composite_arrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstructured_from_composite_arrays</span></code></a></p></td>
+<td><p>Given a set of VTKCompositeDataArrays, creates a vtkUnstructuredGrid.
+The main goal of this function is to transform the output of XXX_per_block()
+methods to a single dataset that can be visualized and further processed.
+Here arrays is an iterable (e.g. list) of (array, name) pairs. Here is
+an example:</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.flatnonzero" title="vtkmodules.numpy_interface.algorithms.flatnonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatnonzero</span></code></a></p></td>
+<td><p>Return indices that are non-zero in the flattened version of the input array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.nonzero" title="vtkmodules.numpy_interface.algorithms.nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nonzero</span></code></a></p></td>
+<td><p>Return the indices of the non-zero elements of the input array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.where" title="vtkmodules.numpy_interface.algorithms.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a></p></td>
+<td><p>Returns the location (indices) of an array where the given
+expression is true. For scalars, it returns a single array of indices.
+For vectors and matrices, it returns two arrays: first with tuple indices,
+second with component indices. The output of this method can be used to
+extract the values from the array also by using it as the index of the [] operator.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-left">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.isin" title="vtkmodules.numpy_interface.algorithms.isin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.isnan" title="vtkmodules.numpy_interface.algorithms.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sqrt" title="vtkmodules.numpy_interface.algorithms.sqrt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sqrt</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.negative" title="vtkmodules.numpy_interface.algorithms.negative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">negative</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.reciprocal" title="vtkmodules.numpy_interface.algorithms.reciprocal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reciprocal</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.square" title="vtkmodules.numpy_interface.algorithms.square"><code class="xref py py-obj docutils literal notranslate"><span class="pre">square</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.exp" title="vtkmodules.numpy_interface.algorithms.exp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exp</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.floor" title="vtkmodules.numpy_interface.algorithms.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.ceil" title="vtkmodules.numpy_interface.algorithms.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.rint" title="vtkmodules.numpy_interface.algorithms.rint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rint</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sin" title="vtkmodules.numpy_interface.algorithms.sin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.cos" title="vtkmodules.numpy_interface.algorithms.cos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cos</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.tan" title="vtkmodules.numpy_interface.algorithms.tan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tan</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arcsin" title="vtkmodules.numpy_interface.algorithms.arcsin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsin</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arccos" title="vtkmodules.numpy_interface.algorithms.arccos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccos</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arctan" title="vtkmodules.numpy_interface.algorithms.arctan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arctan2" title="vtkmodules.numpy_interface.algorithms.arctan2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctan2</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sinh" title="vtkmodules.numpy_interface.algorithms.sinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinh</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.cosh" title="vtkmodules.numpy_interface.algorithms.cosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cosh</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.tanh" title="vtkmodules.numpy_interface.algorithms.tanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arcsinh" title="vtkmodules.numpy_interface.algorithms.arcsinh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arcsinh</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arccosh" title="vtkmodules.numpy_interface.algorithms.arccosh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arccosh</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arctanh" title="vtkmodules.numpy_interface.algorithms.arctanh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arctanh</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.expand_dims" title="vtkmodules.numpy_interface.algorithms.expand_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expand_dims</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.abs" title="vtkmodules.numpy_interface.algorithms.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.area" title="vtkmodules.numpy_interface.algorithms.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.aspect" title="vtkmodules.numpy_interface.algorithms.aspect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aspect</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.aspect_gamma" title="vtkmodules.numpy_interface.algorithms.aspect_gamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aspect_gamma</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.condition" title="vtkmodules.numpy_interface.algorithms.condition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">condition</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.cross" title="vtkmodules.numpy_interface.algorithms.cross"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.curl" title="vtkmodules.numpy_interface.algorithms.curl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">curl</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.divergence" title="vtkmodules.numpy_interface.algorithms.divergence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divergence</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.det" title="vtkmodules.numpy_interface.algorithms.det"><code class="xref py py-obj docutils literal notranslate"><span class="pre">det</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.determinant" title="vtkmodules.numpy_interface.algorithms.determinant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determinant</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.diagonal" title="vtkmodules.numpy_interface.algorithms.diagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diagonal</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.dot" title="vtkmodules.numpy_interface.algorithms.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.eigenvalue" title="vtkmodules.numpy_interface.algorithms.eigenvalue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eigenvalue</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.eigenvector" title="vtkmodules.numpy_interface.algorithms.eigenvector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eigenvector</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.gradient" title="vtkmodules.numpy_interface.algorithms.gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gradient</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.inv" title="vtkmodules.numpy_interface.algorithms.inv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inv</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.inverse" title="vtkmodules.numpy_interface.algorithms.inverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.jacobian" title="vtkmodules.numpy_interface.algorithms.jacobian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jacobian</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.laplacian" title="vtkmodules.numpy_interface.algorithms.laplacian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplacian</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.ln" title="vtkmodules.numpy_interface.algorithms.ln"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ln</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.log" title="vtkmodules.numpy_interface.algorithms.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.log10" title="vtkmodules.numpy_interface.algorithms.log10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log10</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.max_angle" title="vtkmodules.numpy_interface.algorithms.max_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_angle</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mag" title="vtkmodules.numpy_interface.algorithms.mag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mag</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.matmul" title="vtkmodules.numpy_interface.algorithms.matmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matmul</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.min_angle" title="vtkmodules.numpy_interface.algorithms.min_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_angle</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.norm" title="vtkmodules.numpy_interface.algorithms.norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">norm</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.shear" title="vtkmodules.numpy_interface.algorithms.shear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shear</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.skew" title="vtkmodules.numpy_interface.algorithms.skew"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skew</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.strain" title="vtkmodules.numpy_interface.algorithms.strain"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strain</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.surface_normal" title="vtkmodules.numpy_interface.algorithms.surface_normal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_normal</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.trace" title="vtkmodules.numpy_interface.algorithms.trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.volume" title="vtkmodules.numpy_interface.algorithms.volume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">volume</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.vorticity" title="vtkmodules.numpy_interface.algorithms.vorticity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vorticity</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.vertex_normal" title="vtkmodules.numpy_interface.algorithms.vertex_normal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vertex_normal</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.logical_not" title="vtkmodules.numpy_interface.algorithms.logical_not"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_not</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.divide" title="vtkmodules.numpy_interface.algorithms.divide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divide</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.multiply" title="vtkmodules.numpy_interface.algorithms.multiply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiply</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.add" title="vtkmodules.numpy_interface.algorithms.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.subtract" title="vtkmodules.numpy_interface.algorithms.subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subtract</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mod" title="vtkmodules.numpy_interface.algorithms.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.remainder" title="vtkmodules.numpy_interface.algorithms.remainder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remainder</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.power" title="vtkmodules.numpy_interface.algorithms.power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">power</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.hypot" title="vtkmodules.numpy_interface.algorithms.hypot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hypot</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Link to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms._lookup_mpi_type">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">_lookup_mpi_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ntype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms._lookup_mpi_type" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms._reduce_dims">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">_reduce_dims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms._reduce_dims" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.global_func">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">global_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="vtkmodules.numpy_interface.dataset_adapter.html#vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray" title="vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray"><span class="pre">vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="vtkmodules.numpy_interface.dataset_adapter.html#vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray" title="vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray"><span class="pre">vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.global_func" title="Link to this definition">#</a></dt>
+<dd><p>Helper function for reduction-like operation (e.g., sum, min, max) to the given array,
+with support for parallel execution across different nodes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.bitwise_or">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">bitwise_or</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.bitwise_or" title="Link to this definition">#</a></dt>
+<dd><p>Implements element by element or (bitwise, | in C/C++) operation.
+If one of the arrays is a NoneArray, this will return the array
+that is not NoneArray, treating NoneArray as 0 in the or operation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.make_point_mask_from_NaNs">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">make_point_mask_from_NaNs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.make_point_mask_from_NaNs" title="Link to this definition">#</a></dt>
+<dd><p>This method will create a ghost array corresponding to an
+input with NaN values. For each NaN value, the output array will
+have a corresponding value of vtkmodules.vtkCommonDataModel.vtkDataSetAttributes.HIDDENPOINT.
+These values are also combined with any ghost values that the
+dataset may have.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.make_cell_mask_from_NaNs">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">make_cell_mask_from_NaNs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.make_cell_mask_from_NaNs" title="Link to this definition">#</a></dt>
+<dd><p>This method will create a ghost array corresponding to an
+input with NaN values. For each NaN value, the output array will
+have a corresponding value of vtkmodules.vtkCommonDataModel.vtkDataSetAttributes.HIDDENCELL.
+These values are also combined with any ghost values that the
+dataset may have.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.make_mask_from_NaNs">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">make_mask_from_NaNs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ghost_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">dsa.NoneArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_cell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.make_mask_from_NaNs" title="Link to this definition">#</a></dt>
+<dd><p>This method will create a ghost array corresponding to an
+input with NaN values. For each NaN value, the output array will
+have a corresponding value of vtkmodules.vtkCommonDataModel.vtkDataSetAttributes.HIDDENPOINT or
+HIDDENCELL is the is_cell argument is true. If an input ghost_array
+is passed, the array is bitwise_or’ed with it, simply adding
+the new ghost values to it.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.sum">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.sum" title="Link to this definition">#</a></dt>
+<dd><p>Returns the sum of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the sum of all values in an array.</p></li>
+<li><p>axis=0: Sum values of all components and return a one tuple,
+n-component array.</p></li>
+<li><p>axis=1: Sum values of all components of each tuple and return an
+m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will sum across processes
+when a controller argument is passed or the global controller is
+defined. To disable parallel summing when running in parallel, pass
+a dummy controller as follows:</p>
+<p>sum(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.max">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.max" title="Link to this definition">#</a></dt>
+<dd><p>Returns the max of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the max of all values in an array.</p></li>
+<li><p>axis=0: Return the max values of all tuples and return a
+one tuple, n-component array.</p></li>
+<li><p>axis=1: Return the max values of all components of each tuple
+and return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the max across
+processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a
+dummy controller as follows:</p>
+<p>max(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.min">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.min" title="Link to this definition">#</a></dt>
+<dd><p>Returns the min of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the min of all values in an array.</p></li>
+<li><p>axis=0: Return the min values of all tuples and return a one
+tuple, n-component array.</p></li>
+<li><p>axis=1: Return the min values of all components of each tuple and
+return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the min across processes
+when a controller argument is passed or the global controller is defined.
+To disable parallel summing when running in parallel, pass a dummy controller as follows:</p>
+<p>min(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms._global_per_block">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">_global_per_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms._global_per_block" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.sum_per_block">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">sum_per_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.sum_per_block" title="Link to this definition">#</a></dt>
+<dd><p>Returns the sum of all values along a particular axis (dimension) for
+each block of an VTKCompositeDataArray.</p>
+<p>Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the sum of all values in an array.</p></li>
+<li><p>axis=0: Sum values of all components and return a one tuple,
+n-component array.</p></li>
+<li><p>axis=1: Sum values of all components of each tuple and return an
+m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will sum across processes
+when a controller argument is passed or the global controller is
+defined. To disable parallel summing when running in parallel, pass
+a dummy controller as follows:</p>
+<p>sum_per_block(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.count_per_block">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">count_per_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.count_per_block" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of elements of each block in a VTKCompositeDataArray
+along an axis.</p>
+<ul class="simple">
+<li><p>if axis is None, the number of all elements (ntuples * ncomponents) is
+returned.</p></li>
+<li><p>if axis is 0, the number of tuples is returned.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.mean_per_block">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">mean_per_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.mean_per_block" title="Link to this definition">#</a></dt>
+<dd><p>Returns the mean of all values along a particular axis (dimension)
+for each block of a VTKCompositeDataArray.</p>
+<p>Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the mean of all values in an array.</p></li>
+<li><p>axis=0: Return the mean values of all components and return a one
+tuple, n-component array.</p></li>
+<li><p>axis=1: Return the mean values of all components of each tuple and
+return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the mean across
+processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a
+dummy controller as follows:</p>
+<p>mean(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.max_per_block">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">max_per_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.max_per_block" title="Link to this definition">#</a></dt>
+<dd><p>Returns the max of all values along a particular axis (dimension)
+for each block of a VTKCompositeDataArray.
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the max of all values in an array.</p></li>
+<li><p>axis=0: Return the max values of all components and return a one
+tuple, n-component array.</p></li>
+<li><p>axis=1: Return the max values of all components of each tuple and return
+an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the max across
+processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a
+dummy controller as follows:</p>
+<p>max_per_block(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.min_per_block">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">min_per_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.min_per_block" title="Link to this definition">#</a></dt>
+<dd><p>Returns the min of all values along a particular axis (dimension)
+for each block of a VTKCompositeDataArray.
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the min of all values in an array.</p></li>
+<li><p>axis=0: Return the min values of all components and return a one
+tuple, n-component array.</p></li>
+<li><p>axis=1: Return the min values of all components of each tuple and
+return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the min across
+processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a
+dummy controller as follows:</p>
+<p>min_per_block(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.all">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.all" title="Link to this definition">#</a></dt>
+<dd><p>Returns True if all values of an array evaluate to True, returns
+False otherwise.
+This is useful to check if all values of an array match a certain
+condition such as:</p>
+<p>algorithms.all(array &gt; 5)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms._local_array_count">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">_local_array_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms._local_array_count" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.array_count">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">array_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.int64</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.array_count" title="Link to this definition">#</a></dt>
+<dd><p>Helper function to count the number of elements in a VTK or NumPy array,
+supporting counting across MPI nodes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.mean">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">mean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.mean" title="Link to this definition">#</a></dt>
+<dd><p>Returns the mean of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the mean of all values in an array.</p></li>
+<li><p>axis=0: Return the mean values of all components and return a one
+tuple, n-component array.</p></li>
+<li><p>axis=1: Return the mean values of all components of each tuple and
+return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the mean across
+processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a
+dummy controller as follows:</p>
+<p>mean(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.var">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.var" title="Link to this definition">#</a></dt>
+<dd><p>Returns the variance of all values along a particular axis (dimension).
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the variance of all values in an array.</p></li>
+<li><p>axis=0: Return the variance values of all components and return a one
+tuple, n-component array.</p></li>
+<li><p>axis=1: Return the variance values of all components of each tuple and
+return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the variance across
+processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a
+dummy controller as follows:</p>
+<p>var(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.std">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.std" title="Link to this definition">#</a></dt>
+<dd><p>Returns the standard deviation of all values along a particular
+axis (dimension).
+Given an array of m tuples and n components:</p>
+<ul class="simple">
+<li><p>Default is to return the standard deviation of all values in an array.</p></li>
+<li><p>axis=0: Return the standard deviation values of all components and
+return a one tuple, n-component array.</p></li>
+<li><p>axis=1: Return the standard deviation values of all components of
+each tuple and return an m-tuple, 1-component array.</p></li>
+</ul>
+<p>When called in parallel, this function will compute the standard deviation
+across processes when a controller argument is passed or the global controller
+is defined. To disable parallel summing when running in parallel, pass a dummy
+controller as follows:</p>
+<p>std(array, controller=vtkmodules.vtkParallelCore.vtkDummyController()).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.shape">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">shape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.shape" title="Link to this definition">#</a></dt>
+<dd><p>Returns the shape (dimensions) of an array.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.make_vector">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">make_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arrayx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrayy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrayz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.make_vector" title="Link to this definition">#</a></dt>
+<dd><p>Given 2 or 3 scalar arrays, returns a vector array. If only
+2 scalars are provided, the third component will be set to 0.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.unstructured_from_composite_arrays">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">unstructured_from_composite_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controller</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.unstructured_from_composite_arrays" title="Link to this definition">#</a></dt>
+<dd><p>Given a set of VTKCompositeDataArrays, creates a vtkUnstructuredGrid.
+The main goal of this function is to transform the output of XXX_per_block()
+methods to a single dataset that can be visualized and further processed.
+Here arrays is an iterable (e.g. list) of (array, name) pairs. Here is
+an example:</p>
+<p>centroid = mean_per_block(composite_data.Points)
+T = mean_per_block(composite_data.PointData[『Temperature』])
+ug = unstructured_from_composite_arrays(centroid, (T, 『Temperature』))</p>
+<p>When called in parallel, this function makes sure that each array in
+the input dataset is represented only on 1 process. This is important
+because methods like mean_per_block() return the same value for blocks
+that are partitioned on all of the participating processes. If the
+same point were to be created across multiple processes in the output,
+filters like histogram would report duplicate values erroneously.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.flatnonzero">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">flatnonzero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.flatnonzero" title="Link to this definition">#</a></dt>
+<dd><p>Return indices that are non-zero in the flattened version of the input array.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.nonzero">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">nonzero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.nonzero" title="Link to this definition">#</a></dt>
+<dd><p>Return the indices of the non-zero elements of the input array.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.where">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">where</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.where" title="Link to this definition">#</a></dt>
+<dd><p>Returns the location (indices) of an array where the given
+expression is true. For scalars, it returns a single array of indices.
+For vectors and matrices, it returns two arrays: first with tuple indices,
+second with component indices. The output of this method can be used to
+extract the values from the array also by using it as the index of the [] operator.</p>
+<p>For example:</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>algs.where(algs.array([1,2,3]) == 2)
+(array([1]),)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>algs.where(algs.array([[1,2,3], [2,1,1]]) == 2)
+(array([0, 1]), array([1, 0]))</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>a = array([[1,2,3], [2,1,1]])
+indices = algs.where(a &gt; 2)
+a[indices]
+array([3])</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.isin">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">isin</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.isin" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.isnan">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">isnan</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.isnan" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.sqrt">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">sqrt</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.sqrt" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.negative">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">negative</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.negative" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.reciprocal">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">reciprocal</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.reciprocal" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.square">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">square</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.square" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.exp">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">exp</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.exp" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.floor">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">floor</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.floor" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.ceil">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">ceil</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.ceil" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.rint">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">rint</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.rint" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.sin">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">sin</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.sin" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.cos">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">cos</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.cos" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.tan">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">tan</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.tan" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arcsin">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arcsin</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arcsin" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arccos">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arccos</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arccos" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arctan">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arctan</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arctan" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arctan2">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arctan2</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arctan2" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.sinh">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">sinh</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.sinh" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.cosh">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">cosh</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.cosh" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.tanh">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">tanh</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.tanh" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arcsinh">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arcsinh</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arcsinh" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arccosh">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arccosh</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arccosh" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.arctanh">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">arctanh</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.arctanh" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.expand_dims">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">expand_dims</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.expand_dims" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.abs">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">abs</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.abs" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.area">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">area</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.area" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.aspect">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">aspect</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.aspect" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.aspect_gamma">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">aspect_gamma</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.aspect_gamma" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.condition">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">condition</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.condition" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.cross">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">cross</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.cross" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.curl">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">curl</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.curl" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.divergence">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">divergence</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.divergence" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.det">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">det</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.det" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.determinant">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">determinant</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.determinant" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.diagonal">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">diagonal</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.diagonal" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.dot">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">dot</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.dot" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.eigenvalue">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">eigenvalue</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.eigenvalue" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.eigenvector">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">eigenvector</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.eigenvector" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.gradient">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">gradient</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.gradient" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.inv">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">inv</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.inv" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.inverse">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">inverse</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.inverse" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.jacobian">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">jacobian</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.jacobian" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.laplacian">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">laplacian</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.laplacian" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.ln">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">ln</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.ln" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.log">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">log</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.log" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.log10">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">log10</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.log10" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.max_angle">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">max_angle</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.max_angle" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.mag">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">mag</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.mag" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.matmul">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">matmul</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.matmul" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.min_angle">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">min_angle</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.min_angle" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.norm">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.norm" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.shear">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">shear</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.shear" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.skew">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">skew</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.skew" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.strain">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">strain</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.strain" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.surface_normal">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">surface_normal</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.surface_normal" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.trace">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">trace</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.trace" title="Link to this definition">#</a></dt>
+<dd><p>『_make_ufunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.volume">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.volume" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.vorticity">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">vorticity</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.vorticity" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.vertex_normal">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">vertex_normal</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.vertex_normal" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dsfunc2(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.logical_not">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">logical_not</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.logical_not" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.divide">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">divide</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.divide" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.multiply">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">multiply</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.multiply" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.add">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">add</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.add" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.subtract">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">subtract</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.subtract" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.mod">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">mod</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.mod" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.remainder">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">remainder</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.remainder" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.power">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">power</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.power" title="Link to this definition">#</a></dt>
+<dd><p>『(…)』</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="vtkmodules.numpy_interface.algorithms.hypot">
+<span class="sig-prename descclassname"><span class="pre">vtkmodules.numpy_interface.algorithms.</span></span><span class="sig-name descname"><span class="pre">hypot</span></span><a class="headerlink" href="#vtkmodules.numpy_interface.algorithms.hypot" title="Link to this definition">#</a></dt>
+<dd><p>『_make_dfunc(…)』</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="vtkmodules.numpy_interface.vtk_affine_array.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="vtkmodules.numpy_interface.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a><ul>
+<li><a class="reference internal" href="#module-contents">模組目次</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+<li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._lookup_mpi_type"><code class="docutils literal notranslate"><span class="pre">_lookup_mpi_type()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._reduce_dims"><code class="docutils literal notranslate"><span class="pre">_reduce_dims()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.global_func"><code class="docutils literal notranslate"><span class="pre">global_func()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.bitwise_or"><code class="docutils literal notranslate"><span class="pre">bitwise_or()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_point_mask_from_NaNs"><code class="docutils literal notranslate"><span class="pre">make_point_mask_from_NaNs()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_cell_mask_from_NaNs"><code class="docutils literal notranslate"><span class="pre">make_cell_mask_from_NaNs()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_mask_from_NaNs"><code class="docutils literal notranslate"><span class="pre">make_mask_from_NaNs()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sum"><code class="docutils literal notranslate"><span class="pre">sum()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.max"><code class="docutils literal notranslate"><span class="pre">max()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.min"><code class="docutils literal notranslate"><span class="pre">min()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._global_per_block"><code class="docutils literal notranslate"><span class="pre">_global_per_block()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sum_per_block"><code class="docutils literal notranslate"><span class="pre">sum_per_block()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.count_per_block"><code class="docutils literal notranslate"><span class="pre">count_per_block()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mean_per_block"><code class="docutils literal notranslate"><span class="pre">mean_per_block()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.max_per_block"><code class="docutils literal notranslate"><span class="pre">max_per_block()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.min_per_block"><code class="docutils literal notranslate"><span class="pre">min_per_block()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.all"><code class="docutils literal notranslate"><span class="pre">all()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms._local_array_count"><code class="docutils literal notranslate"><span class="pre">_local_array_count()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.array_count"><code class="docutils literal notranslate"><span class="pre">array_count()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mean"><code class="docutils literal notranslate"><span class="pre">mean()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.var"><code class="docutils literal notranslate"><span class="pre">var()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.std"><code class="docutils literal notranslate"><span class="pre">std()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.shape"><code class="docutils literal notranslate"><span class="pre">shape()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.make_vector"><code class="docutils literal notranslate"><span class="pre">make_vector()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.unstructured_from_composite_arrays"><code class="docutils literal notranslate"><span class="pre">unstructured_from_composite_arrays()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.flatnonzero"><code class="docutils literal notranslate"><span class="pre">flatnonzero()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.nonzero"><code class="docutils literal notranslate"><span class="pre">nonzero()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.where"><code class="docutils literal notranslate"><span class="pre">where()</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.isin"><code class="docutils literal notranslate"><span class="pre">isin</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.isnan"><code class="docutils literal notranslate"><span class="pre">isnan</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sqrt"><code class="docutils literal notranslate"><span class="pre">sqrt</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.negative"><code class="docutils literal notranslate"><span class="pre">negative</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.reciprocal"><code class="docutils literal notranslate"><span class="pre">reciprocal</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.square"><code class="docutils literal notranslate"><span class="pre">square</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.exp"><code class="docutils literal notranslate"><span class="pre">exp</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.floor"><code class="docutils literal notranslate"><span class="pre">floor</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.ceil"><code class="docutils literal notranslate"><span class="pre">ceil</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.rint"><code class="docutils literal notranslate"><span class="pre">rint</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sin"><code class="docutils literal notranslate"><span class="pre">sin</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.cos"><code class="docutils literal notranslate"><span class="pre">cos</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.tan"><code class="docutils literal notranslate"><span class="pre">tan</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arcsin"><code class="docutils literal notranslate"><span class="pre">arcsin</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arccos"><code class="docutils literal notranslate"><span class="pre">arccos</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arctan"><code class="docutils literal notranslate"><span class="pre">arctan</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arctan2"><code class="docutils literal notranslate"><span class="pre">arctan2</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.sinh"><code class="docutils literal notranslate"><span class="pre">sinh</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.cosh"><code class="docutils literal notranslate"><span class="pre">cosh</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.tanh"><code class="docutils literal notranslate"><span class="pre">tanh</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arcsinh"><code class="docutils literal notranslate"><span class="pre">arcsinh</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arccosh"><code class="docutils literal notranslate"><span class="pre">arccosh</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.arctanh"><code class="docutils literal notranslate"><span class="pre">arctanh</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.expand_dims"><code class="docutils literal notranslate"><span class="pre">expand_dims</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.abs"><code class="docutils literal notranslate"><span class="pre">abs</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.area"><code class="docutils literal notranslate"><span class="pre">area</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.aspect"><code class="docutils literal notranslate"><span class="pre">aspect</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.aspect_gamma"><code class="docutils literal notranslate"><span class="pre">aspect_gamma</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.condition"><code class="docutils literal notranslate"><span class="pre">condition</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.cross"><code class="docutils literal notranslate"><span class="pre">cross</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.curl"><code class="docutils literal notranslate"><span class="pre">curl</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.divergence"><code class="docutils literal notranslate"><span class="pre">divergence</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.det"><code class="docutils literal notranslate"><span class="pre">det</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.determinant"><code class="docutils literal notranslate"><span class="pre">determinant</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.diagonal"><code class="docutils literal notranslate"><span class="pre">diagonal</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.dot"><code class="docutils literal notranslate"><span class="pre">dot</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.eigenvalue"><code class="docutils literal notranslate"><span class="pre">eigenvalue</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.eigenvector"><code class="docutils literal notranslate"><span class="pre">eigenvector</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.gradient"><code class="docutils literal notranslate"><span class="pre">gradient</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.inv"><code class="docutils literal notranslate"><span class="pre">inv</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.inverse"><code class="docutils literal notranslate"><span class="pre">inverse</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.jacobian"><code class="docutils literal notranslate"><span class="pre">jacobian</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.laplacian"><code class="docutils literal notranslate"><span class="pre">laplacian</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.ln"><code class="docutils literal notranslate"><span class="pre">ln</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.log"><code class="docutils literal notranslate"><span class="pre">log</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.log10"><code class="docutils literal notranslate"><span class="pre">log10</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.max_angle"><code class="docutils literal notranslate"><span class="pre">max_angle</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mag"><code class="docutils literal notranslate"><span class="pre">mag</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.matmul"><code class="docutils literal notranslate"><span class="pre">matmul</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.min_angle"><code class="docutils literal notranslate"><span class="pre">min_angle</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.norm"><code class="docutils literal notranslate"><span class="pre">norm</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.shear"><code class="docutils literal notranslate"><span class="pre">shear</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.skew"><code class="docutils literal notranslate"><span class="pre">skew</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.strain"><code class="docutils literal notranslate"><span class="pre">strain</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.surface_normal"><code class="docutils literal notranslate"><span class="pre">surface_normal</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.trace"><code class="docutils literal notranslate"><span class="pre">trace</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.volume"><code class="docutils literal notranslate"><span class="pre">volume</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.vorticity"><code class="docutils literal notranslate"><span class="pre">vorticity</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.vertex_normal"><code class="docutils literal notranslate"><span class="pre">vertex_normal</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.logical_not"><code class="docutils literal notranslate"><span class="pre">logical_not</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.divide"><code class="docutils literal notranslate"><span class="pre">divide</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.multiply"><code class="docutils literal notranslate"><span class="pre">multiply</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.add"><code class="docutils literal notranslate"><span class="pre">add</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.subtract"><code class="docutils literal notranslate"><span class="pre">subtract</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.mod"><code class="docutils literal notranslate"><span class="pre">mod</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.remainder"><code class="docutils literal notranslate"><span class="pre">remainder</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.power"><code class="docutils literal notranslate"><span class="pre">power</span></code></a></li>
+<li><a class="reference internal" href="#vtkmodules.numpy_interface.algorithms.hypot"><code class="docutils literal notranslate"><span class="pre">hypot</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../_static/documentation_options.js?v=0d9984b1"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../../../_static/translations.js?v=d9a6981e"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

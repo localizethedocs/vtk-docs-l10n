@@ -1,0 +1,46 @@
+# {py:mod}`vtkmodules.tk`
+
+```{py:module} vtkmodules.tk
+```
+
+```{autodoc2-docstring} vtkmodules.tk
+:allowtitles:
+```
+
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+vtkmodules.tk.vtkTkRenderWindowInteractor
+vtkmodules.tk.vtkTkRenderWidget
+vtkmodules.tk.vtkTkPhotoImage
+vtkmodules.tk.vtkTkImageViewerWidget
+```
+
+## Package Contents
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.tk.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.tk.__all__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __all__
+:canonical: vtkmodules.tk.__all__
+:value: >
+   ['vtkTkRenderWidget', 'vtkTkImageViewerWidget', 'vtkTkRenderWindowInteractor', 'vtkTkPhotoImage']
+
+```{autodoc2-docstring} vtkmodules.tk.__all__
+```
+
+````

@@ -1,0 +1,57 @@
+# {py:mod}`vtkmodules.util`
+
+```{py:module} vtkmodules.util
+```
+
+```{autodoc2-docstring} vtkmodules.util
+:allowtitles:
+```
+
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+vtkmodules.util.keys
+vtkmodules.util.numpy_support
+vtkmodules.util.execution_model
+vtkmodules.util.vtkImageExportToArray
+vtkmodules.util.vtkVariant
+vtkmodules.util.data_model
+vtkmodules.util.colors
+vtkmodules.util.xarray_support
+vtkmodules.util.vtkConstants
+vtkmodules.util.vtkMethodParser
+vtkmodules.util.misc
+vtkmodules.util.functions
+vtkmodules.util.vtkAlgorithm
+vtkmodules.util.vtkImageImportFromArray
+vtkmodules.util.pickle_support
+```
+
+## Package Contents
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.util.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.util.__all__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __all__
+:canonical: vtkmodules.util.__all__
+:value: >
+   ['colors', 'misc', 'vtkConstants', 'vtkImageExportToArray', 'vtkImageImportFromArray', 'vtkMethodPar...
+
+```{autodoc2-docstring} vtkmodules.util.__all__
+```
+
+````

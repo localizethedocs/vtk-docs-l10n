@@ -1,0 +1,1996 @@
+<!doctype html>
+<html class="no-js" lang="en-US" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Runtime settings" href="runtime_settings.html" /><link rel="prev" title="Object serialization" href="object_serialization.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/advanced/PythonWrappers.html" />
+
+    <link rel="shortcut icon" href="../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Python Wrappers - VTK documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VTK  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_data_formats.html">Supported Data Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build_instructions/index.html">Building</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Building</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.utils</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_soa_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_none_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_aos_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.array_overrides.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.array_overrides</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface._vtk_array_mixin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_partitioned_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_constant_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_implicit_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/ModuleSystem.html">Module System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Advanced Topics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Advanced Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vtk_file_formats/index.html">VTK File Formats</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK File Formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtkxml_file_format.html">XML File Formats</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF File Format</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF File Format</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../design_documents/index.html">Design Documents</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Design Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/ArrayDispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design_documents/WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developers_guide/index.html">Developer’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Developer’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys’ BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python-wrappers">
+<h1>Python Wrappers<a class="headerlink" href="#python-wrappers" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This document is a reference for using VTK from Python. It is not a tutorial
+and provides very little information about VTK itself, but instead describes
+in detail the features of the Python wrappers and how using VTK from Python
+differs from using VTK from C++.  It assumes that the reader is already
+somewhat familiar with both Python and VTK.</p>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>The Python wrappers are automatically generated from the VTK source code,
+and for the most part, there is a one-to-one mapping between the VTK classes
+and methods that you can use from Python and the ones that you can use from
+C++.  More specifically, the wrappers are a package of Python extension modules
+that interface directly to the VTK C++ libraries.  When you use VTK through
+the wrappers, you are actually executing compiled C++ code, and there is
+very little performance difference between VTK/C++ and VTK/Python.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>VTK for Python can be installed via either conda or pip, where the conda
+packages is maintained on conda-forge, while the pip packages are maintained
+by the VTK developers themselves.  If you are first getting started, then pip
+is probably the most convenient way to install VTK for Python:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install vtk
+</pre></div>
+</div>
+<p>This will provide a basic installation of VTK that includes all core
+functionality, but which will not include some of the specialized VTK
+modules that rely on external libraries.  Binary packages for VTK can
+also be downloaded directly from <a class="reference external" href="https://www.vtk.org/download/">https://www.vtk.org/download/</a>.</p>
+<p>Instructions for building VTK from source code are given in the file
+<a class="reference external" href="https://gitlab.kitware.com/vtk/vtk/-/blob/release/Documentation/dev/build.md">Documentation/dev/build.md</a> within the source repository.</p>
+</section>
+<section id="importing">
+<h2>Importing<a class="headerlink" href="#importing" title="Link to this heading">#</a></h2>
+<p>VTK is comprised of over one hundred individual modules. Programs can import
+just the modules that are needed, in order to reduce load time.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from vtkmodules.vtkCommonCore import vtkObject
+from vtkmodules.vtkFiltersSources import vtkConeSource, vtkSphereSource
+from vtkmodules.vtkRenderingCore import (
+    vtkActor,
+    vtkDataSetMapper,
+    vtkRenderer,
+    vtkRenderWindow
+)
+import vtkmodules.vtkRenderingOpenGL2
+</pre></div>
+</div>
+<p>When getting started, however, it is hard to know what modules you will need.
+So if you are experimenting with VTK in a Python console, or writing a quick
+and dirty Python script, it is easiest to simply import everything.  There
+is a special module called ‘<code class="docutils literal notranslate"><span class="pre">all</span></code>’ that allows this to be done:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from vtkmodules.all import *
+</pre></div>
+</div>
+<p>After importing the VTK classes, you can check to see which module each of the
+classes comes from:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for c in vtkObject, vtkConeSource, vtkRenderWindow:
+    print(f&quot;from {c.__module__} import {c.__name__}&quot;)
+</pre></div>
+</div>
+<p>The output is as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from vtkmodules.vtkCommonCore import vtkObject
+from vtkmodules.vtkFiltersSources import vtkConeSource
+from vtkmodules.vtkRenderingCore import vtkRenderWindow
+</pre></div>
+</div>
+<section id="factories-and-implementation-modules">
+<h3>Factories and Implementation Modules<a class="headerlink" href="#factories-and-implementation-modules" title="Link to this heading">#</a></h3>
+<p>In the first ‘import’ example above, you might be wondering about this line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import vtkmodules.vtkRenderingOpenGL2
+</pre></div>
+</div>
+<p>This import is needed because <code class="docutils literal notranslate"><span class="pre">vtkRenderingOpenGL2</span></code> provides the OpenGL
+implementations of the classes in <code class="docutils literal notranslate"><span class="pre">vtkRenderingCore</span></code>.  To see this in action,
+open a new Python console and do the following:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.vtkRenderingCore import vtkRenderWindow
+&gt;&gt;&gt; renwin = vtkRenderWindow()
+&gt;&gt;&gt; type(renwin)
+&lt;class &#39;vtkmodules.vtkRenderingCore.vtkRenderWindow&#39;&gt;
+&gt;&gt;&gt;
+&gt;&gt;&gt; import vtkmodules.vtkRenderingOpenGL2
+&gt;&gt;&gt; renwin2 = vtkRenderWindow()
+&gt;&gt;&gt; type(renwin2)
+&lt;class &#39;vtkmodules.vtkRenderingOpenGL2.vtkXOpenGLRenderWindow&#39;&gt;
+</pre></div>
+</div>
+<p>After <code class="docutils literal notranslate"><span class="pre">vtkRenderingOpenGL2</span></code> has been imported, the <code class="docutils literal notranslate"><span class="pre">vtkRenderWindow()</span></code>
+constructor magically starts returning a different type of object.
+This occurs because <code class="docutils literal notranslate"><span class="pre">vtkRenderWindow</span></code> is a <em>factory</em> class, which means that
+the kind of object it produces can be overridden by an <em>implementation</em>
+class.  In order for the implementation class to do the override, all that
+is necessary is that its module is imported.  To make things even more
+confusing, <code class="docutils literal notranslate"><span class="pre">vtkRenderingOpenGL2</span></code> is not the only module that contains
+implementations for the factory classes in <code class="docutils literal notranslate"><span class="pre">vtkRenderingCore</span></code>.  The following
+modules are often needed, as well:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import vtkmodules.vtkInteractionStyle
+import vtkmodules.vtkRenderingFreeType
+</pre></div>
+</div>
+<p>Although you only need implementations for the factory classes that you use,
+it can be hard to know which classes are factory classes, or what modules
+contain implementations for them.  Also, it can be difficult to even know
+what classes you are using, since many VTK classes make use of other VTK
+classes.  An example of this is <code class="docutils literal notranslate"><span class="pre">vtkDataSetMapper</span></code>, which internally uses
+<code class="docutils literal notranslate"><span class="pre">vtkPolyDataMapper</span></code> to do the rendering.  So even though <code class="docutils literal notranslate"><span class="pre">vtkDataSetMapper</span></code> is
+not a factory class, it needs an OpenGL implementation for <code class="docutils literal notranslate"><span class="pre">vtkPolyDataMapper</span></code>.</p>
+<p>The simplest approach is to import all the important implementation modules
+into your program, even if you are not certain that you need them.</p>
+<ul class="simple">
+<li><p>For <code class="docutils literal notranslate"><span class="pre">vtkRenderingCore</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">vtkRenderingOpenGL2,</span> <span class="pre">vtkRenderingFreeType,</span> <span class="pre">vtkInteractionStyle</span></code></p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">vtkRenderingVolume</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">vtkRenderingVolumeOpenGL2</span></code></p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">vtkCharts</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">vtkContextOpenGL2</span></code></p></li>
+</ul>
+</section>
+<section id="classic-vtk-import">
+<h3>Classic VTK Import<a class="headerlink" href="#classic-vtk-import" title="Link to this heading">#</a></h3>
+<p>There are many VTK programs that still import the ‘<code class="docutils literal notranslate"><span class="pre">vtk</span></code>’ module, which
+has been available since VTK 4.0, rather than using the ‘<code class="docutils literal notranslate"><span class="pre">vtkmodules</span></code>’
+package that was introduced in VTK 8.2:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import vtk
+</pre></div>
+</div>
+<p>The advantage (and disadvantage) of this is that it imports everything.  It
+requires just one import statement for all of VTK, but it can be slow because
+VTK has grown to be very large over the years.</p>
+<p>Also note that, between VTK 8.2 and VTK 9.2.5, the use of the <code class="docutils literal notranslate"><span class="pre">vtk</span></code> module
+would confuse the auto-completion features of IDEs such as PyCharm.  This
+was fixed in VTK 9.2.6.  For 9.2.5 and earlier, the following can be used:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import vtkmodules.all as vtk
+</pre></div>
+</div>
+<p>From the programmer’s perspective, this is equivalent to ‘<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">vtk</span></code>’.</p>
+</section>
+</section>
+<section id="vtk-classes-and-objects">
+<h2>VTK Classes and Objects<a class="headerlink" href="#vtk-classes-and-objects" title="Link to this heading">#</a></h2>
+<section id="classes-derived-from-vtkobjectbase">
+<h3>Classes Derived from vtkObjectBase<a class="headerlink" href="#classes-derived-from-vtkobjectbase" title="Link to this heading">#</a></h3>
+<p>In C++, classes derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code> are instantiated by calling
+<code class="docutils literal notranslate"><span class="pre">New()</span></code>.  In Python, these classes are instantiated by simply calling the
+constructor:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>o = vtkObject()
+</pre></div>
+</div>
+<p>For factory classes, the returned object’s type might be a subtype of the
+class.  This occurs because the Python wrappers are actually calling <code class="docutils literal notranslate"><span class="pre">New()</span></code>
+for you, which allows the VTK factory overrides to occur:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkActor()
+&gt;&gt;&gt; type(a)
+&lt;class &#39;vtkmodules.vtkRenderingOpenGL2.vtkOpenGLActor&#39;&gt;
+</pre></div>
+</div>
+<p>When you create a VTK object in Python, you are in fact creating two
+objects: a C++ object, and a Python object that holds a pointer to the C++
+object.  The <code class="docutils literal notranslate"><span class="pre">repr()</span></code> of the object shows the memory address of the C++
+object (in parentheses) and of the Python object (after the ‘<code class="docutils literal notranslate"><span class="pre">at</span></code>’):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkFloatArray()
+&gt;&gt;&gt; a
+&lt;vtkmodules.vtkCommonCore.vtkFloatArray(0x5653a6a6f700) at 0x7f0e7aecf5e0&gt;
+</pre></div>
+</div>
+<p>If you call <code class="docutils literal notranslate"><span class="pre">str()</span></code> or <code class="docutils literal notranslate"><span class="pre">print()</span></code> on these objects, the wrappers will call the
+C++ <code class="docutils literal notranslate"><span class="pre">PrintSelf()</span></code> method.  The printed information can be useful for debugging:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; o = vtkObject()
+&gt;&gt;&gt; print(o)
+vtkObject (0x55858308a210)
+  Debug: Off
+  Modified Time: 85
+  Reference Count: 1
+  Registered Events: (none)
+</pre></div>
+</div>
+</section>
+<section id="other-classes-special-types">
+<h3>Other Classes (Special Types)<a class="headerlink" href="#other-classes-special-types" title="Link to this heading">#</a></h3>
+<p>VTK also uses several classes that aren’t derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code>.  The
+most important of these is <code class="docutils literal notranslate"><span class="pre">vtkVariant</span></code>, which can hold any type of object:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; v1 = vtkVariant(&#39;hello&#39;)
+&gt;&gt;&gt; v1
+vtkmodules.vtkCommonCore.vtkVariant(&#39;hello&#39;)
+&gt;&gt;&gt; v2 = vtkVariant(3.14)
+&gt;&gt;&gt; v2
+vtkmodules.vtkCommonCore.vtkVariant(3.14)
+</pre></div>
+</div>
+<p>The wrapping of these classes is fully automatic, but is done in a slightly
+different manner than <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code>-derived classes.  First, these classes
+have no <code class="docutils literal notranslate"><span class="pre">New()</span></code> method, and instead the public C++ constructors are wrapped
+to create an equivalent Python constructor.  Second, the Python object
+contains its own copy of the C++ object, rather than containing just a
+pointer to the C++ object.  The vast majority of these classes are lightweight
+containers and numerical types.  For example, <code class="docutils literal notranslate"><span class="pre">vtkQuaterniond</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkRectf</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vtkColor4ub</span></code>, etc.  Many of them are actually class templates, which are
+discussed below.</p>
+<p>When you apply <code class="docutils literal notranslate"><span class="pre">print()</span></code> or <code class="docutils literal notranslate"><span class="pre">str()</span></code> to these objects, the <code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;</span></code> of the
+underlying C++ object is used to print them.  For <code class="docutils literal notranslate"><span class="pre">repr()</span></code>, the name of the
+type name is printed, followed by the <code class="docutils literal notranslate"><span class="pre">str()</span></code> output in prentheses.  The
+result looks similar to a constructor, though it might look strange depending
+on what <code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;</span></code> produces.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt; v = vtkVariant()
+&gt;&gt; print(repr(v))
+vtkmodules.vtkCommonCore.vtkVariant((invalid))
+</pre></div>
+</div>
+</section>
+<section id="class-templates">
+<h3>Class Templates<a class="headerlink" href="#class-templates" title="Link to this heading">#</a></h3>
+<p>There are several C++ templates in VTK, which can be tricky to use from the
+wrappers since the Python language has no real concept of templates.  The
+wrappers wrap templates as dictionary-like objects that map the template
+parameters to template instantiations:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vtkSOADataArrayTemplate
+&lt;template vtkCommonCorePython.vtkSOADataArrayTemplate&gt;
+&gt;&gt;&gt; vtkSOADataArrayTemplate.keys()
+[&#39;char&#39;, &#39;int8&#39;, &#39;uint8&#39;, &#39;int16&#39;, &#39;uint16&#39;, &#39;int32&#39;, &#39;uint32&#39;, &#39;int&#39;,
+&#39;uint&#39;, &#39;int64&#39;, &#39;uint64&#39;, &#39;float32&#39;, &#39;float64&#39;]
+&gt;&gt;&gt; c = vtkSOADataArrayTemplate[&#39;float64&#39;]
+&gt;&gt;&gt; c
+&lt;class &#39;vtkmodules.vtkCommonCore.vtkSOADataArrayTemplate_IdE&#39;&gt;
+</pre></div>
+</div>
+<p>The wrappers instantiate the C++ template for a few useful types, as
+indicated by the <code class="docutils literal notranslate"><span class="pre">keys()</span></code> of the template.  The Python type name also has a
+suffix (the ‘<code class="docutils literal notranslate"><span class="pre">IdE</span></code>’) that indicates the template parameters in a compressed
+form according to IA64 C++ ABI name mangling rules, even when VTK is built
+with a compiler that does not use the IA64 ABI natively.</p>
+<p>Objects are created by first instantiating the template, and then
+instantiating the class:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkSOADataArrayTemplate[&#39;float32&#39;]()
+&gt;&gt;&gt; a.SetNumberOfComponents(3)
+</pre></div>
+</div>
+<p>In the case of multiple template parameters, the syntax can look rather
+complicated, but really it isn’t all that bad.  For example, constructing
+a <code class="docutils literal notranslate"><span class="pre">vtkTuple&lt;double,4&gt;</span></code> in Python looks like this, with the template
+args in square brackets and the constructor args in parentheses:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vtkTuple[&#39;float64&#39;,4]([1.0, 2.0, 3.0, 4.0])
+vtkmodules.vtkCommonMath.vtkTuple_IdLi4EE([1.0, 2.0, 3.0, 4.0])
+</pre></div>
+</div>
+<p>The type names are the same as numpy’s dtypes: <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int8</span></code>, <code class="docutils literal notranslate"><span class="pre">uint8</span></code>,
+<code class="docutils literal notranslate"><span class="pre">int16</span></code>, <code class="docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="docutils literal notranslate"><span class="pre">int32</span></code>, <code class="docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code>, <code class="docutils literal notranslate"><span class="pre">uint64</span></code>, <code class="docutils literal notranslate"><span class="pre">float32</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">float64</span></code>.  Since <code class="docutils literal notranslate"><span class="pre">int64</span></code> is ‘<code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code>’, <code class="docutils literal notranslate"><span class="pre">int</span></code> is used for <code class="docutils literal notranslate"><span class="pre">long</span></code>.  Also
+see <a class="reference internal" href="#template-keys">Template Keys</a> in <a class="reference internal" href="#internals-and-advanced-topics">Advanced Topics</a>.</p>
+</section>
+</section>
+<section id="method-calls">
+<h2>Method Calls<a class="headerlink" href="#method-calls" title="Link to this heading">#</a></h2>
+<p>When VTK methods are called from Python, conversion of all parameters from
+Python to C++ occurs automatically.  That is, if the C++ method signature
+expects an integral type, you can pass a Python <code class="docutils literal notranslate"><span class="pre">int</span></code>, and if C++ expects a
+floating-point type, you can pass a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> (or any type that allows
+implicit conversion to <code class="docutils literal notranslate"><span class="pre">float</span></code>).</p>
+<p>For C++ ‘<code class="docutils literal notranslate"><span class="pre">char</span></code>’ parameters, which are rarely used in VTK, you must pass a
+string with a length of 1. For unicode, the code must fit into eight bits
+(either ASCII, or within the Latin-1 Supplement block).  A null character
+is represented by ‘\0’, or equivalently <code class="docutils literal notranslate"><span class="pre">chr(0)</span></code>.</p>
+<p>A Python <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, or any other Python sequence can be passed to a VTK
+method that requires an array or <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> in C++:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkActor()
+&gt;&gt;&gt; p = (100.0, 200.0, 100.0)
+&gt;&gt;&gt; a.SetPosition(p)
+</pre></div>
+</div>
+<p>If the method is going to modify the array that you pass as a parameter,
+then you must pass a Python <code class="docutils literal notranslate"><span class="pre">list</span></code> that has the correct number of slots to
+accept the returned values.  If you try this with a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, you will get a
+<code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because <code class="docutils literal notranslate"><span class="pre">tuple</span></code> is immutable.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; z = [0.0, 0.0, 0.0]
+&gt;&gt;&gt; vtkMath.Cross((1,0,0),(0,1,0),z)
+&gt;&gt;&gt; print(z)
+[0.0, 0.0, 1.0]
+</pre></div>
+</div>
+<p>For multi-dimensional array parameters, you can either use a nested list,
+or you can use numpy array with the correct shape.</p>
+<p>If the C++ method returns a pointer to an array, then in Python the method
+will return a tuple if the wrappers know the size of the array.  In most
+cases, the size is hinted in the header file.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkActor()
+&gt;&gt;&gt; print(a.GetPosition())
+(0.0, 0.0, 0.0)
+</pre></div>
+</div>
+<p>Finally, Python <code class="docutils literal notranslate"><span class="pre">None</span></code> is treated the same as C++ <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>, which allows
+you to pass null objects and null strings:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkActor()
+&gt;&gt;&gt; a.SetMapper(None)
+&gt;&gt;&gt; print(a.GetMapper())
+None
+</pre></div>
+</div>
+<section id="wrappable-and-unwrappable-methods">
+<h3>Wrappable and Unwrappable Methods<a class="headerlink" href="#wrappable-and-unwrappable-methods" title="Link to this heading">#</a></h3>
+<p>A method cannot be used from Python if its C++ parameters or return type
+cannot be converted to or from Python by the wrappers, or if the method is
+templated.  Common non-convertible types include <code class="docutils literal notranslate"><span class="pre">std::ostream</span></code>, <code class="docutils literal notranslate"><span class="pre">std::istream</span></code>,
+and all STL container types except for <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> (see below),
+and any non-trivial pointer type or any pointer to an object whose class is
+not derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code>.</p>
+<p>The wrappable parameter types are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code>, wrapped as a single ASCII character in a Python <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">signed</span> <span class="pre">char</span></code> and <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">char</span></code>, wrapped as Python <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code> and <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code>, wrapped as Python <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">short</span></code> to <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">long</span></code>, wrapped as Python <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> and <code class="docutils literal notranslate"><span class="pre">double</span></code>, wrapped as Python <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size_t</span></code> and <code class="docutils literal notranslate"><span class="pre">ssize_t</span></code>, wrapped as Python <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::string</span></code>, wrapped as Python <code class="docutils literal notranslate"><span class="pre">str</span></code> via utf-8 encoding/decoding</p></li>
+<li><p>typedefs of all the above, for any typedef defined in a VTK header file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::vector&lt;T&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is one of the above, as Python <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">T&amp;</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is any of the above, wrapped as described above</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T[N]</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is a fundamental type, as Python <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T[N][M]</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is a fundamental type, as nested <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T*</span></code> where <code class="docutils literal notranslate"><span class="pre">T</span></code> is a fundamental type, as <code class="docutils literal notranslate"><span class="pre">tuple</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkObjectBase*</span></code> and derived types, as their respective Python type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtkSmartPointer&lt;T&gt;</span></code> as the Python vtkObjectBase-derived type <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::vector&lt;vtkSmartPointer&lt;T&gt;&gt;</span></code> as a sequence of objects of type <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::vector&lt;vtkSmartPointer&lt;T&gt;&gt;</span></code> as a sequence of objects of type <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+<li><p>other wrapped classes (like <code class="docutils literal notranslate"><span class="pre">vtkVariant</span></code>), but not pointers to these types</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">char*</span></code>, as Python <code class="docutils literal notranslate"><span class="pre">str</span></code> via utf-8 encoding/decoding</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">void*</span></code>, as Python buffer (e.g. <code class="docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="docutils literal notranslate"><span class="pre">bytearray</span></code>)</p></li>
+<li><p>the parameter list <code class="docutils literal notranslate"><span class="pre">(void</span> <span class="pre">(*f)(void*),</span> <span class="pre">void*)</span></code> as a Python callable type</p></li>
+</ul>
+<p>References like <code class="docutils literal notranslate"><span class="pre">int&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">std::string&amp;</span></code> are wrapped via a reference proxy
+type as described in the <a class="reference internal" href="#pass-by-reference">Pass by Reference</a> section
+below.  Non-const references to <code class="docutils literal notranslate"><span class="pre">std::vector&lt;T&gt;</span></code> and other mutable types
+do not use a proxy, but instead require that a mutable Python object is
+passed, for example a <code class="docutils literal notranslate"><span class="pre">list</span></code> rather than a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">void*</span></code> parameter can accept a pointer in two different ways: either from
+any Python object that supports the Python buffer protocol (this includes
+all numpy arrays along with the Python bytes and bytearray types), or from a
+string that contains a mangled pointer of the form ‘<code class="docutils literal notranslate"><span class="pre">_hhhhhhhhhhhh_p_void</span></code>’
+where ‘<code class="docutils literal notranslate"><span class="pre">hhhhhhhhhhhh</span></code>’ is the hexadecimal address.  Return-value <code class="docutils literal notranslate"><span class="pre">void*</span></code> will
+always be a string containing the mangled pointer.</p>
+<p>Also, a <code class="docutils literal notranslate"><span class="pre">T*</span></code> parameter for fundamental type <code class="docutils literal notranslate"><span class="pre">T</span></code> can accept a buffer object,
+if and only if it is annotated with the <code class="docutils literal notranslate"><span class="pre">VTK_ZEROCOPY</span></code> hint in the header file.
+With this hint, a numpy array of <code class="docutils literal notranslate"><span class="pre">T</span></code> can be passed to a <code class="docutils literal notranslate"><span class="pre">T*</span></code> parameter and
+the VTK method will directly access the memory buffer of the array.  Hence the
+name ‘zerocopy’, which indicates no copying is done, and that direct memory
+access is used.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">vtkObject::AddObserver()</span></code> method has a special wrapping, as discussed
+in the <a class="reference internal" href="#observer-callbacks">Observer Callbacks</a> section below.</p>
+</section>
+<section id="conversion-constructors">
+<h3>Conversion Constructors<a class="headerlink" href="#conversion-constructors" title="Link to this heading">#</a></h3>
+<p>If a wrapped type has constructor that takes one parameter, and if that
+constructor is not declared ‘<code class="docutils literal notranslate"><span class="pre">explicit</span></code>’, then the wrappers will automatically
+use that constructor for type conversion to the parameter type.  The
+wrappers ensure that this conversion occurs in Python in the same manner
+that it is expected to occur in C++.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">vtkVariantArray</span></code> has a method <code class="docutils literal notranslate"><span class="pre">InsertNextItem(v:vtkVariant)</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">vtkVariant</span></code> has a constructor <code class="docutils literal notranslate"><span class="pre">vtkVariant(x:int)</span></code>.  So, you can do this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; variantArray.InsertNextItem(1)
+</pre></div>
+</div>
+<p>The wrappers will automatically construct a <code class="docutils literal notranslate"><span class="pre">vtkVariant</span></code> from ‘<code class="docutils literal notranslate"><span class="pre">1</span></code>’, and
+will then pass it as a parameter to <code class="docutils literal notranslate"><span class="pre">InsertNextItem()</span></code>.  This is a feature
+that most C++ programmers will take for granted, but Python users might
+find it surprising.</p>
+</section>
+<section id="overloaded-methods">
+<h3>Overloaded Methods<a class="headerlink" href="#overloaded-methods" title="Link to this heading">#</a></h3>
+<p>If you call a VTK method that is overloaded, the Python wrappers will choose
+the overload that best matches the supplied arguments.  This matching takes
+into account all allowed implicit conversions, such as int to float or any
+conversion constructors that are defined for wrapped objects.</p>
+<p>Some overloads will be unavailable (not wrapped) either because they are
+unwrappable as per the criteria described above, or because they are shadowed
+by another overload that is always preferable.  A simple example of this is
+any methods that is overloaded on C++ <code class="docutils literal notranslate"><span class="pre">float</span></code> and <code class="docutils literal notranslate"><span class="pre">double</span></code>.  The Python
+<code class="docutils literal notranslate"><span class="pre">float</span></code> type is a perfect match C++ <code class="docutils literal notranslate"><span class="pre">double</span></code>, therefore the <code class="docutils literal notranslate"><span class="pre">float</span></code> overload
+is not wrapped.</p>
+</section>
+<section id="static-methods">
+<h3>Static Methods<a class="headerlink" href="#static-methods" title="Link to this heading">#</a></h3>
+<p>A static method can be called without an instance.  For example,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>vtkObject.SetGlobalWarningDisplay(1)
+</pre></div>
+</div>
+<p>Some VTK classes, like vtkMath, consist solely of static methods.  For others,
+like <code class="docutils literal notranslate"><span class="pre">vtkMatrix4x4</span></code>, most of the non-static methods have static overloads.
+Within Python, the only way to tell if a VTK method is static (other than
+trying it) is to look at its docstring.</p>
+</section>
+<section id="unbound-methods">
+<h3>Unbound Methods<a class="headerlink" href="#unbound-methods" title="Link to this heading">#</a></h3>
+<p>When a non-static method is called on the class, rather than on an instance,
+it is called an unbound method call.  An unbound method call must provide
+‘self’ as the first argument, where ‘self’ is an instance of either the class
+or a subclass.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>w = vtkRenderWindow()
+vtkWindow.Render(w)
+</pre></div>
+</div>
+<p>In other words, the wrappers translate Python unbound method calls into
+C++ unbound method calls.  These are useful when deriving a Python class
+from a wrapped VTK class, since they allow you to call any base class
+methods that have been overridden in the subclass.</p>
+</section>
+<section id="operator-methods">
+<h3>Operator Methods<a class="headerlink" href="#operator-methods" title="Link to this heading">#</a></h3>
+<p>For special classes (the ones not derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code>), some useful
+C++ operators are wrapped in python.  The ‘<code class="docutils literal notranslate"><span class="pre">[]</span></code>’ operator is wrapped for
+indexing and item assignment, but because it relies on hints to guess which
+indices are out-of-bounds, it is only wrapped for <code class="docutils literal notranslate"><span class="pre">vtkVector</span></code> and related
+classes.</p>
+<p>The comparison operators ‘<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>’ ‘<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>’ ‘<code class="docutils literal notranslate"><span class="pre">==</span></code>’ ‘<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>’ ‘<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>’ are wrapped for all
+classes that have these operators in C++.  These operators allow sorting
+of <code class="docutils literal notranslate"><span class="pre">vtkVariant</span></code> objects with Python.</p>
+<p>The ‘<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>’ operator for printing is wrapped and is used by the python
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">str()</span></code> commands.</p>
+</section>
+<section id="strings-and-bytes">
+<h3>Strings and Bytes<a class="headerlink" href="#strings-and-bytes" title="Link to this heading">#</a></h3>
+<p>VTK uses both <code class="docutils literal notranslate"><span class="pre">char*</span></code> and <code class="docutils literal notranslate"><span class="pre">std::string</span></code> for strings.  As far as the wrappers
+are concerned, these are equivalent except that the former can be <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>
+(<code class="docutils literal notranslate"><span class="pre">None</span></code> in Python).  For both, the expected encoding is ASCII or utf-8.</p>
+<p>In Python, either <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">bytes</span></code> can be used to store strings, and both
+of these can be passed to VTK methods that require <code class="docutils literal notranslate"><span class="pre">char*</span></code> or <code class="docutils literal notranslate"><span class="pre">std::string</span></code>
+(or the legacy <code class="docutils literal notranslate"><span class="pre">vtkStdString</span></code>).  A <code class="docutils literal notranslate"><span class="pre">str</span></code> object is passed to VTK as utf-8,
+while a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object is passed as-is.</p>
+<p>When a VTK method returns a string, it is received in Python as a <code class="docutils literal notranslate"><span class="pre">str</span></code> object
+if it is valid utf-8, or as a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object if not.  The caller should check
+the type of the returned object (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, or perhaps <code class="docutils literal notranslate"><span class="pre">None</span></code>) if there
+is any reason to suspect that non-utf-8 text might be present.</p>
+</section>
+<section id="stl-containers">
+<h3>STL Containers<a class="headerlink" href="#stl-containers" title="Link to this heading">#</a></h3>
+<p>VTK provides conversion between <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> and Python sequences
+such as <code class="docutils literal notranslate"><span class="pre">tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code>.  If the C++ method returns a vector,
+the Python method will return a tuple:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C++: const std::vector&lt;std::string&gt;&amp; GetPaths()
+C++: std::vector&lt;std::string&gt; GetPaths()
+Python: GetPaths() -&gt; Tuple[str]
+</pre></div>
+</div>
+<p>If the C++ method accepts a vector, then the Python method can be
+passed any sequence with compatible values:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C++: void SetPaths(const std::vector&lt;std::string&gt;&amp; paths)
+C++: void SetPaths(std::vector&lt;std::string&gt; paths)
+Python: SetPaths(paths: Sequence[str]) -&gt; None
+</pre></div>
+</div>
+<p>Furthermore, if the C++ method accepts a non-const vector reference,
+then the Python method can be passed a mutable sequence (e.g. <code class="docutils literal notranslate"><span class="pre">list</span></code>):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C++: void GetPaths(std::vector&lt;std::string&gt;&amp; paths)
+Python: GetPaths(paths: MutableSequence[str]) -&gt; None
+</pre></div>
+</div>
+<p>The value type of the <code class="docutils literal notranslate"><span class="pre">std::vector&lt;T&gt;</span></code> must be <code class="docutils literal notranslate"><span class="pre">std::string</span></code> or a
+fundamental numeric type such as <code class="docutils literal notranslate"><span class="pre">double</span></code> or <code class="docutils literal notranslate"><span class="pre">int</span></code> (including
+<code class="docutils literal notranslate"><span class="pre">signed</span> <span class="pre">char</span></code> and <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">char</span></code> but excluding <code class="docutils literal notranslate"><span class="pre">char</span></code>).</p>
+</section>
+<section id="smart-pointers">
+<h3>Smart pointers<a class="headerlink" href="#smart-pointers" title="Link to this heading">#</a></h3>
+<p>The wrappers will automatically convert between C++ <code class="docutils literal notranslate"><span class="pre">vtkSmartPointer&lt;T&gt;</span></code>
+and objects of type <code class="docutils literal notranslate"><span class="pre">T</span></code> (or <code class="docutils literal notranslate"><span class="pre">None</span></code>, if the smart pointer is empty):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C++: vtkSmartPointer&lt;vtkObject&gt; TakeObject()
+Python: TakeObject() -&gt; vtkObject
+</pre></div>
+</div>
+<p>In other words, in Python the smart pointer doesn’t look any different
+from the object it points to.  Under the hood, however, the wrappers
+understand that the smart pointer carries a reference to the object and
+will take responsibility for deleting that reference.</p>
+<p>A C++ method can return a vector of smart pointers, which will be seen in
+Python as a tuple of objects:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C++: std::vector&lt;vtkSmartPointer&lt;vtkObject&gt;&gt; GetObjects()
+Python: GetObject() -&gt; Tuple[vtkObject]
+</pre></div>
+</div>
+<p>If a C++ method expects <code class="docutils literal notranslate"><span class="pre">std::vector&lt;vtkSmartPointer&lt;T&gt;&gt;</span></code> as a parameter,
+the wrappers will automatically construct the vector from any sequence that
+is passed from Python.  The objects in the sequence must be of type <code class="docutils literal notranslate"><span class="pre">T</span></code> (or
+a subclass of <code class="docutils literal notranslate"><span class="pre">T</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code>).  If not, a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> will be raised.</p>
+</section>
+<section id="pass-by-reference">
+<h3>Pass by Reference<a class="headerlink" href="#pass-by-reference" title="Link to this heading">#</a></h3>
+<p>Many VTK methods use pass-by-reference to return values back to the caller.
+Calling these methods from Python requires special consideration, since
+Python’s <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, and <code class="docutils literal notranslate"><span class="pre">float</span></code> types are immutable.  The wrappers
+provide a ‘<code class="docutils literal notranslate"><span class="pre">reference</span></code>’ type, which is a simple container that allows
+pass-by-reference.</p>
+<p>For example, consider the following C++ method that uses pass-by-reference:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void GetCellAtId(vtkIdType cellId, vtkIdType&amp; cellSize, vtkIdType const*&amp; cellPoints)
+</pre></div>
+</div>
+<p>It requires a reference to <code class="docutils literal notranslate"><span class="pre">vtkIdType</span></code> (a Python <code class="docutils literal notranslate"><span class="pre">int</span></code>), and to
+<code class="docutils literal notranslate"><span class="pre">vtkIdType</span> <span class="pre">const*</span></code> (a tuple of <code class="docutils literal notranslate"><span class="pre">int</span></code>s).  So we can call this method as
+follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.vtkCommonCore import reference
+&gt;&gt;&gt; from vtkmodules.vtkCommonDataModel import vtkCellArray
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Build a cell array
+&gt;&gt;&gt; a = vtkCellArray()
+&gt;&gt;&gt; a.InsertNextCell(3, (1, 3, 0))
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Create the reference objects
+&gt;&gt;&gt; n = reference(0)
+&gt;&gt;&gt; t = reference((0,))
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Call the pass-by-reference method
+&gt;&gt;&gt; a.GetCellAtId(0, n, t)
+&gt;&gt;&gt;
+&gt;&gt;&gt; n.get()
+3
+&gt;&gt;&gt; t.get()
+(1, 3, 0)
+</pre></div>
+</div>
+<p>Some important notes when using pass-by-reference:</p>
+<ol class="arabic simple">
+<li><p>The reference constructor must be given a value of the desired type.
+The method might use this value or might ignore it.</p></li>
+<li><p>Calling the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method of the reference is usually unnecessary,
+because the reference already supports the interface protocols of the
+object that it contains.</p></li>
+</ol>
+</section>
+<section id="preconditions">
+<h3>Preconditions<a class="headerlink" href="#preconditions" title="Link to this heading">#</a></h3>
+<p>One very real concern when using VTK from Python is that the parameters that
+you pass to a method might cause the program to crash.  In particular, it is
+very easy to pass an index that causes an out-of-bounds memory access, since
+the C++ methods don’t do bounds checking.  As a safety precaution, the
+wrappers perform the bounds check before the C++ method is called:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkFloatArray()
+&gt;&gt;&gt; a.GetValue(10)
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+ValueError: expects 0 &lt;= id &amp;&amp; id &lt; GetNumberOfValues()
+</pre></div>
+</div>
+<p>All precondition checks raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if they fail, since they are
+checks on the values of the parameters.  The wrappers don’t know if C++ is
+using the parameter as an index, so <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> is not used.</p>
+<p>Currently the only way to find out if a method has preconditions is to look
+at the declaration of the method in the C++ header file to see if it has a
+<code class="docutils literal notranslate"><span class="pre">VTK_EXPECTS</span></code> hint.</p>
+</section>
+</section>
+<section id="observer-callbacks">
+<h2>Observer Callbacks<a class="headerlink" href="#observer-callbacks" title="Link to this heading">#</a></h2>
+<p>Similar to what can be done in C++, a Python function can be called
+each time a VTK event is invoked on a given object.  In general, the
+callback function should have the signature <code class="docutils literal notranslate"><span class="pre">func(obj:vtkObject,</span> <span class="pre">event:str)</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">func(self,</span> <span class="pre">obj:vtkObject,</span> <span class="pre">event:str)</span></code> if it is a method of a class.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; def onObjectModified(object, event):
+&gt;&gt;&gt;     print(&#39;object: %s - event: %s&#39; % (object.GetClassName(), event))
+&gt;&gt;&gt;
+&gt;&gt;&gt; o = vtkObject()
+&gt;&gt;&gt; o.AddObserver(vtkCommand.ModifiedEvent, onObjectModified)
+1
+&gt;&gt;&gt; o.Modified()
+object: vtkObject - event: ModifiedEvent
+</pre></div>
+</div>
+<section id="call-data">
+<h3>Call Data<a class="headerlink" href="#call-data" title="Link to this heading">#</a></h3>
+<p>In case there is a ‘CallData’ value associated with an event, in C++, you
+have to cast it from <code class="docutils literal notranslate"><span class="pre">void*</span></code> to the expected type using <code class="docutils literal notranslate"><span class="pre">reinterpret_cast</span></code>.
+The equivalent in python is to add a <code class="docutils literal notranslate"><span class="pre">CallDataType</span></code> attribute to the
+associated python callback method. The supported <code class="docutils literal notranslate"><span class="pre">CallDataType</span></code> values are
+<code class="docutils literal notranslate"><span class="pre">VTK_STRING</span></code>, <code class="docutils literal notranslate"><span class="pre">VTK_OBJECT</span></code>, <code class="docutils literal notranslate"><span class="pre">VTK_INT</span></code>, <code class="docutils literal notranslate"><span class="pre">VTK_LONG</span></code>, <code class="docutils literal notranslate"><span class="pre">VTK_DOUBLE</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">VTK_FLOAT</span></code>.</p>
+<p>The following example uses a function as a callback, but a method or any
+callable object can be used:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.vtkCommonCore import vtkCommand, VTK_INT
+&gt;&gt;&gt;
+&gt;&gt;&gt; def onError(object, event, calldata):
+&gt;&gt;&gt;     print(&#39;object: %s - event: %s - msg: %s&#39; % (object.GetClassName(), event, calldata))
+&gt;&gt;&gt;
+&gt;&gt;&gt; onError.CallDataType = VTK_INT
+&gt;&gt;&gt;
+&gt;&gt;&gt; lt = vtkLookupTable()
+&gt;&gt;&gt; lt.AddObserver(vtkCommand.ErrorEvent, onError)
+1
+&gt;&gt;&gt; lt.SetTableRange(2,1)
+object: vtkLookupTable - event: ErrorEvent - msg: ERROR:
+In /home/user/VTK/Common/Core/vtkLookupTable.cxx, line 122
+vtkLookupTable (0x6b40b30): Bad table range: [2, 1]
+</pre></div>
+</div>
+<p>For convenience, the <code class="docutils literal notranslate"><span class="pre">CallDataType</span></code> can also be specified where the function
+is first declared with the help of the <code class="docutils literal notranslate"><span class="pre">&#64;calldata_type</span></code> decorator:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.util.misc import calldata_type
+&gt;&gt;&gt;
+&gt;&gt;&gt; @calldata_type(VTK_INT)
+&gt;&gt;&gt; def onError(object, event, calldata):
+&gt;&gt;&gt;     print(&#39;object: %s - event: %s - msg: %s&#39; % (object.GetClassName(),
+                                                    event, calldata))
+</pre></div>
+</div>
+</section>
+</section>
+<section id="other-wrapped-entities">
+<h2>Other Wrapped Entities<a class="headerlink" href="#other-wrapped-entities" title="Link to this heading">#</a></h2>
+<section id="constants">
+<h3>Constants<a class="headerlink" href="#constants" title="Link to this heading">#</a></h3>
+<p>Most of the constants defined in the VTK header files are available in Python,
+and they can be accessed from the module in which they are defined.  Many of
+these are found in the <code class="docutils literal notranslate"><span class="pre">vtkCommonCore</span></code> module, where they were defined as
+preprocessor macros.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.vtkCommonCore import VTK_DOUBLE_MAX
+&gt;&gt;&gt; VTK_DOUBLE_MAX
+1.0000000000000001e+299
+</pre></div>
+</div>
+<p>Others are defined as enums, often within a class namespace.  If the enum
+is anonymous, then its values are <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vtkCommand.ErrorEvent
+39
+</pre></div>
+</div>
+<p>Constants in the header files are wrapped if they are enums, or if they are
+const variables of a wrappable scalar type, or if they are preprocessor
+symbols that evaluate to integer, floating-point, or string literal types.</p>
+</section>
+<section id="enum-types">
+<h3>Enum Types<a class="headerlink" href="#enum-types" title="Link to this heading">#</a></h3>
+<p>Each named enum type is wrapped as a new Python type, and members of the enum
+are instances of that type.  This allows type checking for enum types:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.vtkCommonColor import vtkColorSeries
+&gt;&gt;&gt; vtkColorSeries.COOL
+2
+&gt;&gt;&gt; isinstance(vtkColorSeries.ColorSchemes, vtkColorSeries.COOL)
+&gt;&gt;&gt; cs = vtkColorSeries()
+&gt;&gt;&gt; cs.SetColorScheme(vtkColorSeries.COOL)
+</pre></div>
+</div>
+<p>Enum classes are wrapped in a manner similar to named enums, except that
+the enum values are placed within the enum class namespace.  For example,
+<code class="docutils literal notranslate"><span class="pre">vtkEventDataAction</span></code> is an enum class, with ‘<code class="docutils literal notranslate"><span class="pre">Press</span></code>’ as a member:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from vtkmodules.vtkCommonCore import vtkEventDataAction
+&gt;&gt;&gt; vtkEventDataAction.Press
+1
+&gt;&gt;&gt; isinstance(vtkEventDataAction.Press, vtkEventDataAction)
+True
+</pre></div>
+</div>
+<p>In the first example, the <code class="docutils literal notranslate"><span class="pre">ColorSchemes</span></code> enum type and the <code class="docutils literal notranslate"><span class="pre">COOL</span></code> enum value
+were both defined in the <code class="docutils literal notranslate"><span class="pre">vtkColorSeries</span></code> namespace.  In the second example,
+the <code class="docutils literal notranslate"><span class="pre">vtkEventDataAction</span></code> enum class was defined in the module namespace,
+and the <code class="docutils literal notranslate"><span class="pre">Press</span></code> value was defined in the enum class namespace.</p>
+<p>Note that the VTK enum types behave like C++ enums, and not like the Python
+enums types provided by the Python ‘<code class="docutils literal notranslate"><span class="pre">enum</span></code>’ module.  In particular, all VTK
+enum values can be used anywhere that an <code class="docutils literal notranslate"><span class="pre">int</span></code> can be used.</p>
+</section>
+<section id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Link to this heading">#</a></h3>
+<p>Namespaces are currently wrapped in a very limited manner.  The only
+namespace members that are wrapped are enum constants and enum types.
+There is no wrapping of namespaced classes or functions, or of nested
+namespaces.  Currently, the wrappers implement namespaces as Python
+<code class="docutils literal notranslate"><span class="pre">module</span></code> objects.</p>
+</section>
+</section>
+<section id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading">#</a></h2>
+<p>The wrappers automatically generate docstrings from the doxygen comments in
+the header files.  The Python <code class="docutils literal notranslate"><span class="pre">help()</span></code> command can be used to print the
+documentation to the screen, or the <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> attributes of the classes
+and methods can be accessed directly.</p>
+<section id="method-docstrings">
+<h3>Method Docstrings<a class="headerlink" href="#method-docstrings" title="Link to this heading">#</a></h3>
+<p>The method docstrings are formatted with the method signatures first,
+followed by doxygen comments.  The Python method signatures have type
+annotations, and are followed by the C++ method signatures for
+completeness.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">InvokeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">callData</span><span class="p">:</span><span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+    <span class="n">C</span><span class="o">++</span><span class="p">:</span> <span class="nb">int</span> <span class="n">InvokeEvent</span><span class="p">(</span><span class="n">unsigned</span> <span class="n">long</span> <span class="n">event</span><span class="p">,</span> <span class="n">void</span><span class="o">*</span> <span class="n">callData</span><span class="p">)</span>
+    <span class="n">InvokeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">callData</span><span class="p">:</span><span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+    <span class="n">C</span><span class="o">++</span><span class="p">:</span> <span class="nb">int</span> <span class="n">InvokeEvent</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">event</span><span class="p">,</span> <span class="n">void</span><span class="o">*</span> <span class="n">callData</span><span class="p">)</span>
+    <span class="n">InvokeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+    <span class="n">C</span><span class="o">++</span><span class="p">:</span> <span class="nb">int</span> <span class="n">InvokeEvent</span><span class="p">(</span><span class="n">unsigned</span> <span class="n">long</span> <span class="n">event</span><span class="p">)</span>
+    <span class="n">InvokeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span>
+    <span class="n">C</span><span class="o">++</span><span class="p">:</span> <span class="nb">int</span> <span class="n">InvokeEvent</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">event</span><span class="p">)</span>
+
+    <span class="n">This</span> <span class="n">method</span> <span class="n">invokes</span> <span class="n">an</span> <span class="n">event</span> <span class="ow">and</span> <span class="n">returns</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">event</span> <span class="n">was</span>
+    <span class="n">aborted</span> <span class="ow">or</span> <span class="ow">not</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="n">event</span> <span class="n">was</span> <span class="n">aborted</span><span class="p">,</span> <span class="n">the</span> <span class="k">return</span> <span class="n">value</span> <span class="ow">is</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">otherwise</span> <span class="n">it</span> <span class="ow">is</span> <span class="mf">0.</span>
+</pre></div>
+</div>
+<p>Some Python IDEs will automatically show the docstring as soon as you type
+the name of the method.</p>
+</section>
+<section id="class-docstrings">
+<h3>Class Docstrings<a class="headerlink" href="#class-docstrings" title="Link to this heading">#</a></h3>
+<p>The class docstrings include a brief description of the class, followed
+by the name of the superclass, and then the full doxygen documentation,
+including doxygen markup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">vtkMatrix4x4</span> <span class="o">-</span> <span class="n">represent</span> <span class="ow">and</span> <span class="n">manipulate</span> <span class="mi">4</span><span class="n">x4</span> <span class="n">transformation</span> <span class="n">matrices</span>
+
+    <span class="n">Superclass</span><span class="p">:</span> <span class="n">vtkObject</span>
+
+    <span class="n">vtkMatrix4x4</span> <span class="ow">is</span> <span class="n">a</span> <span class="k">class</span> <span class="nc">to</span> <span class="n">represent</span> <span class="ow">and</span> <span class="n">manipulate</span> <span class="mi">4</span><span class="n">x4</span> <span class="n">matrices</span><span class="o">.</span>
+    <span class="n">Specifically</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">designed</span> <span class="n">to</span> <span class="n">work</span> <span class="n">on</span> <span class="mi">4</span><span class="n">x4</span> <span class="n">transformation</span> <span class="n">matrices</span>
+    <span class="n">found</span> <span class="ow">in</span> <span class="mi">3</span><span class="n">D</span> <span class="n">rendering</span> <span class="n">using</span> <span class="n">homogeneous</span> <span class="n">coordinates</span> <span class="p">[</span><span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="n">w</span><span class="p">]</span><span class="o">.</span> <span class="n">Many</span>
+    <span class="n">of</span> <span class="n">the</span> <span class="n">methods</span> <span class="n">take</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="mi">16</span> <span class="n">doubles</span> <span class="ow">in</span> <span class="n">row</span><span class="o">-</span><span class="n">major</span> <span class="nb">format</span><span class="o">.</span> <span class="n">Note</span>
+    <span class="n">that</span> <span class="n">OpenGL</span> <span class="n">stores</span> <span class="n">matrices</span> <span class="ow">in</span> <span class="n">column</span><span class="o">-</span><span class="n">major</span> <span class="nb">format</span><span class="p">,</span> <span class="n">so</span> <span class="n">the</span> <span class="n">matrix</span>
+    <span class="n">contents</span> <span class="n">must</span> <span class="n">be</span> <span class="n">transposed</span> <span class="n">when</span> <span class="n">they</span> <span class="n">are</span> <span class="n">moved</span> <span class="n">between</span> <span class="n">OpenGL</span> <span class="ow">and</span>
+    <span class="n">VTK</span><span class="o">.</span>
+    <span class="nd">@sa</span>
+    <span class="n">vtkTransform</span>
+</pre></div>
+</div>
+<p>If the class is not derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code>, then it will have one or
+more public constructors, and these will be included before the comments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">vtkSimpleCriticalSection</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">vtkSimpleCriticalSection</span>
+    <span class="n">C</span><span class="o">++</span><span class="p">:</span> <span class="n">vtkSimpleCriticalSection</span><span class="p">()</span>
+    <span class="n">vtkSimpleCriticalSection</span><span class="p">(</span><span class="n">isLocked</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">vtkSimpleCriticalSection</span>
+    <span class="n">C</span><span class="o">++</span><span class="p">:</span> <span class="n">vtkSimpleCriticalSection</span><span class="p">(</span><span class="nb">int</span> <span class="n">isLocked</span><span class="p">)</span>
+
+    <span class="n">vtkSimpleCriticalSection</span> <span class="o">-</span> <span class="n">Critical</span> <span class="n">section</span> <span class="n">locking</span> <span class="k">class</span>
+
+    <span class="nc">vtkCriticalSection</span> <span class="n">allows</span> <span class="n">the</span> <span class="n">locking</span> <span class="n">of</span> <span class="n">variables</span> <span class="n">which</span> <span class="n">are</span> <span class="n">accessed</span>
+    <span class="n">through</span> <span class="n">different</span> <span class="n">threads</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="template-docstrings">
+<h3>Template Docstrings<a class="headerlink" href="#template-docstrings" title="Link to this heading">#</a></h3>
+<p>Class templates are documented similar to classes, except that they include
+a ‘Provided Types’ section that lists the available template instantiations
+and the C++ template arguments that they correspond to.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">vtkSOADataArrayTemplate</span> <span class="o">-</span> <span class="n">Struct</span><span class="o">-</span><span class="n">Of</span><span class="o">-</span><span class="n">Arrays</span> <span class="n">implementation</span> <span class="n">of</span>
+    <span class="n">vtkGenericDataArray</span><span class="o">.</span>
+
+    <span class="n">Superclass</span><span class="p">:</span> <span class="n">vtkGenericDataArray</span><span class="p">[</span><span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">ValueTypeT</span><span class="p">],</span><span class="n">ValueTypeT</span><span class="p">]</span>
+
+    <span class="n">vtkSOADataArrayTemplate</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">counterpart</span> <span class="n">of</span> <span class="n">vtkAOSDataArrayTemplate</span><span class="o">.</span>
+    <span class="n">Each</span> <span class="n">component</span> <span class="ow">is</span> <span class="n">stored</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">separate</span> <span class="n">array</span><span class="o">.</span>
+
+    <span class="nd">@sa</span>
+    <span class="n">vtkGenericDataArray</span> <span class="n">vtkAOSDataArrayTemplate</span>
+
+
+    <span class="n">Provided</span> <span class="n">Types</span><span class="p">:</span>
+
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">char</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">int8</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">signed</span> <span class="n">char</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">uint8</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">unsigned</span> <span class="n">char</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">int16</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">short</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">uint16</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">unsigned</span> <span class="n">short</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">int32</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">uint32</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">unsigned</span> <span class="nb">int</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">long</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">uint</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">unsigned</span> <span class="n">long</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">int64</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">long</span> <span class="n">long</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">uint64</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">unsigned</span> <span class="n">long</span> <span class="n">long</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">float32</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="nb">float</span><span class="o">&gt;</span>
+      <span class="n">vtkSOADataArrayTemplate</span><span class="p">[</span><span class="n">float64</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkSOADataArrayTemplate</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Unlike classes, the template documentation is formatted similarly regardless
+of whether the the class template derives from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code> or not:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">vtkVector</span> <span class="o">-</span> <span class="n">templated</span> <span class="n">base</span> <span class="nb">type</span> <span class="k">for</span> <span class="n">storage</span> <span class="n">of</span> <span class="n">vectors</span><span class="o">.</span>
+
+    <span class="n">Superclass</span><span class="p">:</span> <span class="n">vtkTuple</span><span class="p">[</span><span class="n">T</span><span class="p">,</span><span class="n">Size</span><span class="p">]</span>
+
+    <span class="n">This</span> <span class="k">class</span> <span class="nc">is</span> <span class="n">a</span> <span class="n">templated</span> <span class="n">data</span> <span class="nb">type</span> <span class="k">for</span> <span class="n">storing</span> <span class="ow">and</span> <span class="n">manipulating</span> <span class="n">fixed</span>
+    <span class="n">size</span> <span class="n">vectors</span><span class="p">,</span> <span class="n">which</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">represent</span> <span class="n">two</span> <span class="ow">and</span> <span class="n">three</span> <span class="n">dimensional</span>
+    <span class="n">points</span><span class="o">.</span> <span class="n">The</span> <span class="n">memory</span> <span class="n">layout</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">contiguous</span> <span class="n">array</span> <span class="n">of</span> <span class="n">the</span> <span class="n">specified</span> <span class="nb">type</span><span class="p">,</span>
+    <span class="n">such</span> <span class="n">that</span> <span class="n">a</span> <span class="nb">float</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">can</span> <span class="n">be</span> <span class="n">cast</span> <span class="n">to</span> <span class="n">a</span> <span class="n">vtkVector2f</span> <span class="ow">and</span> <span class="n">manipulated</span><span class="o">.</span> <span class="n">Also</span>
+    <span class="n">a</span> <span class="nb">float</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">could</span> <span class="n">be</span> <span class="n">cast</span> <span class="ow">and</span> <span class="n">used</span> <span class="k">as</span> <span class="n">a</span> <span class="n">vtkVector2f</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span>
+
+
+    <span class="n">Provided</span> <span class="n">Types</span><span class="p">:</span>
+
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">float64</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">float32</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="nb">float</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">int32</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">float64</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">float32</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="nb">float</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">int32</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">float64</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">float32</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="nb">float</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span>
+      <span class="n">vtkVector</span><span class="p">[</span><span class="n">int32</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">vtkVector</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="internals-and-advanced-topics">
+<h2>Internals and Advanced Topics<a class="headerlink" href="#internals-and-advanced-topics" title="Link to this heading">#</a></h2>
+<section id="special-attributes">
+<h3>Special Attributes<a class="headerlink" href="#special-attributes" title="Link to this heading">#</a></h3>
+<p>Classes and objects derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code> have special attributes, which
+are only used in very special circumstances.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__vtkname__</span></code> attribute of the class provides the same string that the
+GetClassName() method returns.  With the exception of classes that are
+template instantiations, it is identical to the <code class="docutils literal notranslate"><span class="pre">__name__</span></code> attribute.
+For template instantiations, however, <code class="docutils literal notranslate"><span class="pre">GetClassName()</span></code> and <code class="docutils literal notranslate"><span class="pre">__vtkname__</span></code>
+return the result of calling <code class="docutils literal notranslate"><span class="pre">typeid(cls).name()</span></code> from C++, which provides
+a platform specific result:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; vtkSOADataArrayTemplate[&#39;float32&#39;].__vtkname__
+&#39;23vtkSOADataArrayTemplateIfE&#39;
+</pre></div>
+</div>
+<p>This can be used to get the VTK <code class="docutils literal notranslate"><span class="pre">ClassName</span></code> when you don’t have an
+instantiation to call <code class="docutils literal notranslate"><span class="pre">GetClassName()</span></code> on.  It is useful for checking the
+type of a C++ VTK object against a Python VTK class.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__this__</span></code> attribute of the objects is a bit less esoteric, it provides a
+pointer to the C++ object as a mangled string:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkFloatArray()
+&gt;&gt;&gt; a.__this__
+&#39;_00005653a6a6f700_p_vtkFloatArray&#39;
+</pre></div>
+</div>
+<p>The string provides the hexadecimal address of ‘<code class="docutils literal notranslate"><span class="pre">this</span></code>’, followed by ‘<code class="docutils literal notranslate"><span class="pre">p</span></code>’
+(shorthand for <em>pointer</em>), and the type of the pointer.  You can also
+construct a Python object directly from the C++ address, if the address is
+formatted as described above:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = vtkFloatArray(&#39;_00005653a6a6f700_p_vtkFloatArray&#39;)
+&gt;&gt;&gt; a
+&lt;vtkmodules.vtkCommonCore.vtkFloatArray(0x5653a6a6f700) at 0x7f0e7aecf5e0&gt;
+</pre></div>
+</div>
+<p>If you call the constructor on the string provided by <code class="docutils literal notranslate"><span class="pre">__this__</span></code>, you will
+get exactly the same Python object back again, rather than a new object.
+But this constructor can be useful if you have some VTK code that has been
+wrapped with a different wrapper tool, for example with SWIG.  If you can
+get the VTK pointer from SWIG, you can use it to construct Python object
+that can be used with the native VTK wrappers.</p>
+</section>
+<section id="wrapper-hints">
+<h3>Wrapper Hints<a class="headerlink" href="#wrapper-hints" title="Link to this heading">#</a></h3>
+<p>A wrapper hint is an attribute that can be added to a class, method, or
+parameter declaration in a C++ header file to give extra information to
+the wrappers.  These hints are defined in the <code class="docutils literal notranslate"><span class="pre">vtkWrappingHints.h</span></code> header
+file.</p>
+<p>The following hints can appear before a method declaration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_WRAPEXCLUDE</span></code> excludes a method from the wrappers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_NEWINSTANCE</span></code> passes ownership of a method’s return value to the caller</p></li>
+</ul>
+<p>For convenience, <code class="docutils literal notranslate"><span class="pre">VTK_WRAPEXCLUDE</span></code> can also be used to exclude a whole class.
+The <code class="docutils literal notranslate"><span class="pre">VTK_NEWINSTANCE</span></code> hint is used when the return value is a <code class="docutils literal notranslate"><span class="pre">vtkObjectBase*</span></code>
+and the caller must not increment the reference count upon acceptance of the
+object (but must still decrement the reference count when finished with the
+object).</p>
+<p>The following hints can appear after a method declaration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_EXPECTS(cond)</span></code> provides preconditions for the method call</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_SIZEHINT(expr)</span></code> marks the array size of a return value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_SIZEHINT(name,</span> <span class="pre">expr)</span></code> marks the array size of a parameter</p></li>
+</ul>
+<p>For <code class="docutils literal notranslate"><span class="pre">VTK_EXPECTS(cond)</span></code>, the precondition must be valid C++ code, and can
+use any of the parameter names or <code class="docutils literal notranslate"><span class="pre">this</span></code>.  Even without <code class="docutils literal notranslate"><span class="pre">this</span></code>, any public
+names in the class namespace (including method names) will be resolved.
+See the <a class="reference internal" href="#preconditions">Preconditions</a> section for additional information.</p>
+<p><code class="docutils literal notranslate"><span class="pre">VTK_SIZEHINT(expr)</span></code> is used for methods that return an array as type <code class="docutils literal notranslate"><span class="pre">T*</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">T</span></code> is a numeric data type.  The hint allows the wrappers to convert the
+array to a tuple of the correct size.  Without the size hint, the wrappers
+will return the pointer as a string that provides a mangled memory address
+of the form ‘<code class="docutils literal notranslate"><span class="pre">_hhhhhhhhhhhh_p_void</span></code>’ where ‘<code class="docutils literal notranslate"><span class="pre">hhhhhhhhhhhh</span></code>’ is address
+expressed in hexadecimal.</p>
+<p><code class="docutils literal notranslate"><span class="pre">VTK_SIZEHINT(parameter_name,</span> <span class="pre">expr)</span></code> is used to hint parameters of type
+<code class="docutils literal notranslate"><span class="pre">T*</span></code> or <code class="docutils literal notranslate"><span class="pre">T&amp;*</span></code> (with <code class="docutils literal notranslate"><span class="pre">T</span></code> as a numeric data type) so that the wrappers know
+the size of the array that the pointer is pointing to.  The <code class="docutils literal notranslate"><span class="pre">expr</span></code> can be
+any expression that evaluates to an integer, and it can include parameter
+names, public class members and method calls, or the special name <code class="docutils literal notranslate"><span class="pre">_</span></code>
+(underscore) which indicates the method’s return value.  In the absence
+of a size hint, the wrappers cannot check that the length of the sequence
+passed from Python matches the size of the array required by the method.
+If the method requires a larger array than it receives, a buffer overrun
+will occur.</p>
+<p>The following hints can appear before a parameter declaration:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_FILEPATH</span></code> marks a parameter that accepts a pathlib.Path object</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VTK_ZEROCOPY</span></code> marks a parameter that accepts a buffer object</p></li>
+</ul>
+<p>More specifically, <code class="docutils literal notranslate"><span class="pre">VTK_FILEPATH</span></code> is used with <code class="docutils literal notranslate"><span class="pre">char*</span></code> and <code class="docutils literal notranslate"><span class="pre">std::string</span></code>
+parameters to indicate that the method also accepts any object with a
+<code class="docutils literal notranslate"><span class="pre">__fspath__()</span></code> method that returns a path string.  And <code class="docutils literal notranslate"><span class="pre">VTK_ZEROCOPY</span></code> is
+used with <code class="docutils literal notranslate"><span class="pre">T*</span></code> parameters, for basic integer or float type <code class="docutils literal notranslate"><span class="pre">T</span></code>, to indicate
+that the Python buffer protocol will be used to access the values, rather
+than the Python sequence protocol that is used by default.</p>
+</section>
+<section id="deprecation-warnings">
+<h3>Deprecation Warnings<a class="headerlink" href="#deprecation-warnings" title="Link to this heading">#</a></h3>
+<p>In addition to the wrapping hints, the Python wrappers are also aware of the
+deprecation attributes that have been applied to classes and methods.  When
+a deprecated method is called, a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> is generated and
+information about the deprecation is printed, including the VTK version
+for the deprecation.</p>
+<p>To ignore these warnings, use the following code:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import warnings
+warnings.filterwarnings(&#39;ignore&#39;, category=DeprecationWarning)
+</pre></div>
+</div>
+<p>To see each deprecation warning just once per session,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>warnings.filterwarnings(&#39;once&#39;, category=DeprecationWarning)
+</pre></div>
+</div>
+</section>
+<section id="template-keys">
+<h3>Template Keys<a class="headerlink" href="#template-keys" title="Link to this heading">#</a></h3>
+<p>The following is a table of common template key names, which are the same as
+the numpy dtype names.  Note that you can actually use numpy dtypes as keys,
+as well as the native Python types <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, and <code class="docutils literal notranslate"><span class="pre">float</span></code>.  There is
+some danger in using <code class="docutils literal notranslate"><span class="pre">int</span></code>, however, because it maps to C++ <code class="docutils literal notranslate"><span class="pre">long</span></code> which has
+a platform-dependent size (either 32 bits or 64 bits).  Finally, the char
+codes from the Python <code class="docutils literal notranslate"><span class="pre">array</span></code> module can be used as keys, but they should
+be avoided since more programmers are familiar with numpy than with the
+much older <code class="docutils literal notranslate"><span class="pre">array</span></code> module.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>C++ Type</p></th>
+<th class="head"><p>Template Key</p></th>
+<th class="head"><p>Type Key</p></th>
+<th class="head"><p>Char Key</p></th>
+<th class="head"><p>IA64 ABI Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>bool</p></td>
+<td><p>‘bool’</p></td>
+<td><p>bool</p></td>
+<td><p>‘?’</p></td>
+<td><p>IbE</p></td>
+</tr>
+<tr class="row-odd"><td><p>char</p></td>
+<td><p>‘char’</p></td>
+<td><p></p></td>
+<td><p>‘c’</p></td>
+<td><p>IcE</p></td>
+</tr>
+<tr class="row-even"><td><p>signed char</p></td>
+<td><p>‘int8’</p></td>
+<td><p></p></td>
+<td><p>‘b’</p></td>
+<td><p>IaE</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsigned char</p></td>
+<td><p>‘uint8’</p></td>
+<td><p></p></td>
+<td><p>‘B’</p></td>
+<td><p>IhE</p></td>
+</tr>
+<tr class="row-even"><td><p>short</p></td>
+<td><p>‘int16’</p></td>
+<td><p></p></td>
+<td><p>‘h’</p></td>
+<td><p>IsE</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsigned short</p></td>
+<td><p>‘uint16’</p></td>
+<td><p></p></td>
+<td><p>‘H’</p></td>
+<td><p>ItE</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>‘int32’</p></td>
+<td><p></p></td>
+<td><p>‘i’</p></td>
+<td><p>IiE</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsigned int</p></td>
+<td><p>‘uint32’</p></td>
+<td><p></p></td>
+<td><p>‘I’</p></td>
+<td><p>IjE</p></td>
+</tr>
+<tr class="row-even"><td><p>long</p></td>
+<td><p>‘int’</p></td>
+<td><p>int</p></td>
+<td><p>‘l’</p></td>
+<td><p>IlE</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsigned long</p></td>
+<td><p>‘uint’</p></td>
+<td><p></p></td>
+<td><p>‘L’</p></td>
+<td><p>ImE</p></td>
+</tr>
+<tr class="row-even"><td><p>long long</p></td>
+<td><p>‘int64’</p></td>
+<td><p></p></td>
+<td><p>‘q’</p></td>
+<td><p>IxE</p></td>
+</tr>
+<tr class="row-odd"><td><p>unsigned long long</p></td>
+<td><p>‘uint64’</p></td>
+<td><p></p></td>
+<td><p>‘Q’</p></td>
+<td><p>IyE</p></td>
+</tr>
+<tr class="row-even"><td><p>float</p></td>
+<td><p>‘float32’</p></td>
+<td><p></p></td>
+<td><p>‘f’</p></td>
+<td><p>IfE</p></td>
+</tr>
+<tr class="row-odd"><td><p>double</p></td>
+<td><p>‘float64’</p></td>
+<td><p>float</p></td>
+<td><p>‘d’</p></td>
+<td><p>IdE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Since the size of ‘<code class="docutils literal notranslate"><span class="pre">long</span></code>’ and ‘<code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span></code>’ is platform-dependent, these
+types should generally be avoided.</p>
+</section>
+<section id="exception-handling">
+<h3>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">#</a></h3>
+<p>There are times when an observer might generate a Python exception.  Since
+the observers are called from C++, there is no good way to catch these
+exceptions from within Python.  So, instead, the wrappers simply print a
+traceback to stderr and then clear the error indicator.  The Python program
+will continue running unless the exception was a <code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code> (Ctrl-C),
+in which case the program will exit with an error code of 1.</p>
+</section>
+<section id="deleting-a-vtkobject">
+<h3>Deleting a vtkObject<a class="headerlink" href="#deleting-a-vtkobject" title="Link to this heading">#</a></h3>
+<p>There is no direct equivalent of VTK’s <code class="docutils literal notranslate"><span class="pre">Delete()</span></code> method, since Python does
+garbage collection automatically.  The Python object will be deleted
+when there are no references to it within Python, and the C++ object will
+be deleted when there are no references to it from within either Python
+or C++. Note that references can hide in unexpected places, for example if
+a method of an object is used as an observer callback, the object will not
+be deleted until the observer is disconnected.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DeleteEvent</span></code> can be used to detect object deletion, but note that the
+observer will receive a None for the object, since the observer is called
+after (not before) the deletion occurs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; o = vtkObject()
+&gt;&gt;&gt; o.AddObserver(&#39;DeleteEvent&#39;, lambda o,e: print(e, o))
+1
+&gt;&gt;&gt; del o
+DeleteEvent None
+</pre></div>
+</div>
+<p>If you need to know what object is deleted, the identifying information must
+be extracted before the deletion occurs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; o = vtkObject()
+&gt;&gt;&gt; o.AddObserver(&#39;DeleteEvent&#39;,lambda x,e,r=repr(o): print(e, r))
+1
+&gt;&gt;&gt; del o
+DeleteEvent &lt;vtkmodules.vtkCommonCore.vtkObject(0x55783870f970) at 0x7f1e61678be0&gt;
+</pre></div>
+</div>
+<p>In cases where you need to track down tricky memory issues, you might find
+it useful to call the <code class="docutils literal notranslate"><span class="pre">GetReferenceCount()</span></code> method of the object directly.</p>
+</section>
+<section id="ghosts">
+<h3>Ghosts<a class="headerlink" href="#ghosts" title="Link to this heading">#</a></h3>
+<p>A wrapped VTK object (derived from <code class="docutils literal notranslate"><span class="pre">vtkObjectBase</span></code>) is a Python object that
+holds a pointer to a C++ object (specifically, a <code class="docutils literal notranslate"><span class="pre">vtkObjectBase*</span></code>).  The
+Python object can have attributes that the C++ object knows nothing about.
+So, what happens to these attributes if the Python object is deleted, but
+the C++ object lives on?  Consider this simple example of storing the C++
+object in an array and then deleting the Python object:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>obj = vtkObject()
+obj.tag = &#39;FirstObject&#39;
+va = vtkVariantArray()
+va.InsertNextValue(obj)
+del obj
+</pre></div>
+</div>
+<p>When we retrieve the object from the array, we want it to have the ‘<code class="docutils literal notranslate"><span class="pre">tag</span></code>’
+attributes that it had we stored it.  But you might wonder, aren’t all
+Python-specific attributes deleted along with the Python object?  The
+answer is, no they aren’t, they’re saved until until the C++ object itself
+is deleted.</p>
+<p>The wrappers have a special place, which we will call the graveyard, where
+‘ghosts’ of objects are stored when the objects are deleted. The ghost is not
+an object, but rather a container for the Python attributes of a deceased
+object.  If the object ever reappears within Python, usually as a return
+value from a C++ method call, then the ghost is resurrected as a new Python
+object that has all the attributes of the original Python object.</p>
+<p>The graveyard is only used for objects that have unfinished business.  If a
+Python object has an empty dict and no other special attributes, then it will
+not go to the graveyard.  Also, if the C++ object is deleted at the same time
+as the Python object, then the graveyard will not be used.  Each ghost in the
+graveyard holds a weak pointer to its C++ object and will vanish when the C++
+object is deleted (not immediately, but the next time the graveyard garbage
+collector runs).</p>
+</section>
+<section id="subclassing-a-vtk-class">
+<h3>Subclassing a VTK Class<a class="headerlink" href="#subclassing-a-vtk-class" title="Link to this heading">#</a></h3>
+<p>It is possible to subclass a VTK class from within Python, but this is of
+limited use because the C++ virtual methods are not hooked to the Python
+methods.  In other words, if you make a subclass of <code class="docutils literal notranslate"><span class="pre">vtkPolyDataAlgorithm</span></code>
+and override the <code class="docutils literal notranslate"><span class="pre">Execute()</span></code> method, it will not be automatically called by
+the VTK pipeline. Your <code class="docutils literal notranslate"><span class="pre">Execute()</span></code> method will only be called if the call is
+made from Python.</p>
+<p>The addition of virtual method hooks to the wrappers has been proposed,
+but currently the only way for Python methods to be called from C++ code
+is via callbacks. The <code class="docutils literal notranslate"><span class="pre">vtkProgrammableSource</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkProgrammableFilter</span></code> are
+examples of VTK algorithm classes that use callbacks for execution, while
+<code class="docutils literal notranslate"><span class="pre">vtkInteractionStyleUser</span></code> can use observer callbacks for event handling.</p>
+</section>
+<section id="wrapping-external-vtk-modules">
+<h3>Wrapping External VTK Modules<a class="headerlink" href="#wrapping-external-vtk-modules" title="Link to this heading">#</a></h3>
+<p>If you have your own C++ classes that are based on VTK, and if they are
+placed with a VTK module with a vtk.module file, then they can be wrapped
+as shown in the <a class="reference external" href="https://gitlab.kitware.com/vtk/vtk/-/blob/release/Examples/Modules/Wrapping">Module Wrapping Example</a>.  You will
+also find the cmake documentation on VTK modules to be useful.</p>
+</section>
+<section id="runtime-c-object-wrapping">
+<h3>Runtime C++ object wrapping<a class="headerlink" href="#runtime-c-object-wrapping" title="Link to this heading">#</a></h3>
+<p>VTK allows to declare an object in C++ and to use it in Python. To do so, you
+can simply call <code class="docutils literal notranslate"><span class="pre">vtkPythonUtil::GetObjectFromPointer</span></code> which will create your
+Python object from the pointer to a C++ VTK object. Here is a minimal example:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vtkPythonInterpreter.h&gt;</span>
+<span class="w">  </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vtkPythonUtil.h&gt;</span>
+<span class="w">  </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vtkSmartPyObject.h&gt;</span>
+
+<span class="w">  </span><span class="p">...</span>
+
+<span class="w">  </span><span class="c1">// Create a C++ object</span>
+<span class="w">  </span><span class="n">vtkNew</span><span class="o">&lt;</span><span class="n">vtkPolyData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Initialize interpreter and GIL</span>
+<span class="w">  </span><span class="n">vtkPythonInterpreter</span><span class="o">::</span><span class="n">Initialize</span><span class="p">();</span>
+<span class="w">  </span><span class="n">vtkPythonScopeGilEnsurer</span><span class="w"> </span><span class="nf">gilEnsurer</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Import vtk in Python</span>
+<span class="w">  </span><span class="n">vtkPythonInterpreter</span><span class="o">::</span><span class="n">RunSimpleString</span><span class="p">(</span><span class="s">&quot;import vtkmodules.vtkCommonCore&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Create the python object from the C++ object</span>
+<span class="w">  </span><span class="n">vtkSmartPyObject</span><span class="w"> </span><span class="n">pyDataFromCpp</span><span class="p">;</span>
+<span class="w">  </span><span class="n">pyDataFromCpp</span><span class="p">.</span><span class="n">TakeReference</span><span class="p">(</span><span class="n">vtkPythonUtil</span><span class="o">::</span><span class="n">GetObjectFromPointer</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">GetPointer</span><span class="p">()));</span>
+
+<span class="w">  </span><span class="c1">// Make it visible from python</span>
+<span class="w">  </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">mainModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyImport_AddModule</span><span class="p">(</span><span class="s">&quot;__main__&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">PyObject</span><span class="o">*</span><span class="w"> </span><span class="n">mainDict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PyModule_GetDict</span><span class="p">(</span><span class="n">mainModule</span><span class="p">);</span>
+<span class="w">  </span><span class="n">PyDict_SetItemString</span><span class="p">(</span><span class="n">mainDict</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pyDataFromPython&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pyDataFromCpp</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1">// Run Python script</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">script</span><span class="p">;</span>
+<span class="w">  </span><span class="n">script</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;print(type(pyDataFromPython))</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// available with the name set above</span>
+<span class="w">  </span><span class="n">vtkPythonInterpreter</span><span class="o">::</span><span class="n">RunSimpleString</span><span class="p">(</span><span class="n">script</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="experimental-features">
+<h2>Experimental Features<a class="headerlink" href="#experimental-features" title="Link to this heading">#</a></h2>
+<section id="python-class-overrides">
+<h3>Python Class Overrides<a class="headerlink" href="#python-class-overrides" title="Link to this heading">#</a></h3>
+<p>VTK now supports overriding wrapped classes with Python subclasses.  This
+enables developers to provide more Python friendly interfaces for certain
+classes.  Here is a trivial example of an override:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from vtkmodules.vtkCommonCore import vtkPoints
+@vtkPoints.override
+class CustomPoints(vtkPoints):
+    pass
+</pre></div>
+</div>
+<p>Once the override is in place, any future <code class="docutils literal notranslate"><span class="pre">vtkPoints</span></code> Python object instances
+will be instances of the override class.  This behavior is global.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>points = vtk.vtkPoints() # returns an instance of CustomPoints
+</pre></div>
+</div>
+<p>The override can be reversed by setting an override of <code class="docutils literal notranslate"><span class="pre">None</span></code>, but this will
+not impact instantiations that have already occurred.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints.override(None)
+</pre></div>
+</div>
+<p>If a class is already overridden in C++ via VTK’s object factory mechanism,
+for example the vtkWin32OpenGLRenderWindow override for vtkRenderWindow,
+then directly applying a Python override to the original class will not
+work.  However, the Python override can be chained to the C++ override class.
+For example, here is a chained override of vtkRenderWindow on Windows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@vtkWin32OpenGLRenderWindow.override
+class CustomRenderWindow(vtkWin32OpenGLRenderWindow):
+    ...
+window = vtkRenderWindow() # creates a CustomRenderWindow
+</pre></div>
+</div>
+<p>Please see <a class="reference internal" href="#subclassing-a-vtk-class">Subclassing a VTK Class</a> for additional
+restrictions on subclassing VTK classes through Python.</p>
+</section>
+<section id="overrides-and-initialization">
+<h3>Overrides and initialization<a class="headerlink" href="#overrides-and-initialization" title="Link to this heading">#</a></h3>
+<p>The previous section contained examples of when an overridden VTK class is
+instantiated in Python.  A more interesting case is when the overridden
+class is instantiated in C++ and then, sometime later, becomes visible to
+the Python interpreter:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from vtkmodules.vtkImagingSources import vtkImageGridSource
+from vtkmodules.vtkCommonDataModel import vtkImageData
+
+@vtkImageData.override
+class CustomImageData(vtkImageData):
+    def __init__(self, filename=None):
+        self.filename = filename
+
+source = vtkImageGridSource()
+source.SetDataSpacing(0.1, 0.1, 0.1)
+source.Update()
+data = source.GetOutput()
+</pre></div>
+</div>
+<p>In this example, the vtkImageData object is created by vtkImageGridSource.
+At the time of its creation, it is a C++ object and Python is unaware that
+it has been created.  The corresponding Python object is not created until
+<code class="docutils literal notranslate"><span class="pre">source.GetOutput()</span></code> is called and returns the object.  It is specifically
+at this point that the override mechanism kicks in.  The C++ object remains
+the same, but the Python wrapper around that object is instantiated from the
+override class.  This exemplifies the dual nature of VTK-Python objects.</p>
+<p>The automatic creation of the Python wrapper object is usually transparent,
+and is something that we take for granted.  However, one must be aware that
+the creation of the wrapper object involves calling its <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method,
+which can have unwanted side-effects if the C++ object itself is no longer
+in its initial state.  In the example above, the vtkImageData object will
+already have been modified by the vtkImageGridSource before the <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>
+method adds the new <code class="docutils literal notranslate"><span class="pre">filename</span></code> attribute.</p>
+<p>A situation that we want to avoid, and which is only possible for override
+classes, is when the Python <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method modifies attributes of the
+pre-existing C++ object:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@vtkImageData.override
+class CustomImageData(vtkImageData):
+    def __init__(self, spacing=(1.0, 1.0, 1.0)):
+        self.SetSpacing(spacing)
+</pre></div>
+</div>
+<p>Even though the vtkImageData object has already had its C++ attributes set by
+the vtkImageGridSource prior to the call to <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, this override will
+forcibly reset the spacing upon the call to <code class="docutils literal notranslate"><span class="pre">source.GetOutput()</span></code>.  This is
+not what we want!  In fact, the Python wrappers will raise a RuntimError
+warning when this occurs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; data = source.GetOutput()
+RuntimeWarning: Python method CustomImageData.__init__() unexpectedly
+modified pre-existing C++ base object vtkImageData (0x563cf7ddaf20).
+</pre></div>
+</div>
+<p>During the automated creation of a Python wrapper for a pre-existing C++
+object, <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> is always called with no parameters, so the goal is
+to ensure that default construction never modifies the C++ object.  This
+can be done by making all modifications conditional:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@vtkImageData.override
+class CustomImageData(vtkImageData):
+    def __init__(self, spacing=None):
+        if spacing is not None:
+            self.SetSpacing(spacing)
+</pre></div>
+</div>
+</section>
+<section id="stub-files-for-type-hinting">
+<h3>Stub Files for Type Hinting<a class="headerlink" href="#stub-files-for-type-hinting" title="Link to this heading">#</a></h3>
+<p>VTK includes a script called <a class="reference external" href="https://gitlab.kitware.com/vtk/vtk/-/blob/release/Wrapping/Python/vtkmodules/generate_pyi.py"><code class="docutils literal notranslate"><span class="pre">generate_pyi.py</span></code></a> that
+will generate pyi stub files for each wrapped VTK module.  The purpose of
+these files, as explained in <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/#stub-files">PEP 484</a>, is to provide type
+information for all constants, classes, and methods in the modules.
+Each of these files contain blocks like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>VTK_DOUBLE:int
+VTK_DOUBLE_MAX:float
+VTK_DOUBLE_MIN:float
+...
+
+class vtkObject(vtkObjectBase):
+    def AddObserver(self, event:int, command:Callback, priority:float=0.0) -&gt; int: ...
+    def GetMTime(self) -&gt; int: ...
+    @staticmethod
+    def GetNumberOfGenerationsFromBaseType(type:str) -&gt; int: ...
+    @overload
+    def HasObserver(self, event:int, __b:&#39;vtkCommand&#39;) -&gt; int: ...
+    @overload
+    def HasObserver(self, event:str, __b:&#39;vtkCommand&#39;) -&gt; int: ...
+
+class vtkAbstractArray(vtkObject):
+    class DeleteMethod(int): ...
+    VTK_DATA_ARRAY_ALIGNED_FREE:&#39;DeleteMethod&#39;
+    VTK_DATA_ARRAY_DELETE:&#39;DeleteMethod&#39;
+    VTK_DATA_ARRAY_FREE:&#39;DeleteMethod&#39;
+    VTK_DATA_ARRAY_USER_DEFINED:&#39;DeleteMethod&#39;
+    def Allocate(self, numValues:int, ext:int=1000) -&gt; int: ...
+</pre></div>
+</div>
+<p>Python consoles like ipython and IDEs like PyCharm can use the information in
+these files to provide hints while you edit the code.  These files are
+included in the Python packages for VTK, but they can also be built by
+executing the <code class="docutils literal notranslate"><span class="pre">generate_pyi.py</span></code> script.  To do so, execute the script
+with the <code class="docutils literal notranslate"><span class="pre">vtkpython</span></code> executable (or with the regular python executable,
+if its paths are set for VTK):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>vtkpython -m vtkmodules.generate_pyi
+</pre></div>
+</div>
+<p>This will place build the pyi files and place them inside the <code class="docutils literal notranslate"><span class="pre">vtkmodules</span></code>
+package, where ipython and PyCharm should automatically find them.  The
+help for this script is as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: python generate_pyi.py [-p package] [-o output_dir] [module ...]
+options:
+  -p NAME        Package name [vtkmodules by default].
+  -o OUTPUT      Output directory [package directory by default].
+  -e EXT         Output file suffix [.pyi by default].
+  module         Module or modules to process [all by default].
+</pre></div>
+</div>
+<p>The pyi files are syntactically correct python files, so it is possible to
+load them as such in order to test them and inspect them.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="runtime_settings.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Runtime settings</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="object_serialization.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Object serialization</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Wrappers</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#background">Background</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#importing">Importing</a><ul>
+<li><a class="reference internal" href="#factories-and-implementation-modules">Factories and Implementation Modules</a></li>
+<li><a class="reference internal" href="#classic-vtk-import">Classic VTK Import</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vtk-classes-and-objects">VTK Classes and Objects</a><ul>
+<li><a class="reference internal" href="#classes-derived-from-vtkobjectbase">Classes Derived from vtkObjectBase</a></li>
+<li><a class="reference internal" href="#other-classes-special-types">Other Classes (Special Types)</a></li>
+<li><a class="reference internal" href="#class-templates">Class Templates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#method-calls">Method Calls</a><ul>
+<li><a class="reference internal" href="#wrappable-and-unwrappable-methods">Wrappable and Unwrappable Methods</a></li>
+<li><a class="reference internal" href="#conversion-constructors">Conversion Constructors</a></li>
+<li><a class="reference internal" href="#overloaded-methods">Overloaded Methods</a></li>
+<li><a class="reference internal" href="#static-methods">Static Methods</a></li>
+<li><a class="reference internal" href="#unbound-methods">Unbound Methods</a></li>
+<li><a class="reference internal" href="#operator-methods">Operator Methods</a></li>
+<li><a class="reference internal" href="#strings-and-bytes">Strings and Bytes</a></li>
+<li><a class="reference internal" href="#stl-containers">STL Containers</a></li>
+<li><a class="reference internal" href="#smart-pointers">Smart pointers</a></li>
+<li><a class="reference internal" href="#pass-by-reference">Pass by Reference</a></li>
+<li><a class="reference internal" href="#preconditions">Preconditions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#observer-callbacks">Observer Callbacks</a><ul>
+<li><a class="reference internal" href="#call-data">Call Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-wrapped-entities">Other Wrapped Entities</a><ul>
+<li><a class="reference internal" href="#constants">Constants</a></li>
+<li><a class="reference internal" href="#enum-types">Enum Types</a></li>
+<li><a class="reference internal" href="#namespaces">Namespaces</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#docstrings">Docstrings</a><ul>
+<li><a class="reference internal" href="#method-docstrings">Method Docstrings</a></li>
+<li><a class="reference internal" href="#class-docstrings">Class Docstrings</a></li>
+<li><a class="reference internal" href="#template-docstrings">Template Docstrings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#internals-and-advanced-topics">Internals and Advanced Topics</a><ul>
+<li><a class="reference internal" href="#special-attributes">Special Attributes</a></li>
+<li><a class="reference internal" href="#wrapper-hints">Wrapper Hints</a></li>
+<li><a class="reference internal" href="#deprecation-warnings">Deprecation Warnings</a></li>
+<li><a class="reference internal" href="#template-keys">Template Keys</a></li>
+<li><a class="reference internal" href="#exception-handling">Exception Handling</a></li>
+<li><a class="reference internal" href="#deleting-a-vtkobject">Deleting a vtkObject</a></li>
+<li><a class="reference internal" href="#ghosts">Ghosts</a></li>
+<li><a class="reference internal" href="#subclassing-a-vtk-class">Subclassing a VTK Class</a></li>
+<li><a class="reference internal" href="#wrapping-external-vtk-modules">Wrapping External VTK Modules</a></li>
+<li><a class="reference internal" href="#runtime-c-object-wrapping">Runtime C++ object wrapping</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experimental-features">Experimental Features</a><ul>
+<li><a class="reference internal" href="#python-class-overrides">Python Class Overrides</a></li>
+<li><a class="reference internal" href="#overrides-and-initialization">Overrides and initialization</a></li>
+<li><a class="reference internal" href="#stub-files-for-type-hinting">Stub Files for Type Hinting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=ccd1e645"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

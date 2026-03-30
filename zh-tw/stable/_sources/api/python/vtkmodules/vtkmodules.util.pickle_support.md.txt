@@ -1,0 +1,42 @@
+# {py:mod}`vtkmodules.util.pickle_support`
+
+```{py:module} vtkmodules.util.pickle_support
+```
+
+```{autodoc2-docstring} vtkmodules.util.pickle_support
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`unserialize_VTK_data_object <vtkmodules.util.pickle_support.unserialize_VTK_data_object>`
+  - ```{autodoc2-docstring} vtkmodules.util.pickle_support.unserialize_VTK_data_object
+    :summary:
+    ```
+* - {py:obj}`serialize_VTK_data_object <vtkmodules.util.pickle_support.serialize_VTK_data_object>`
+  - ```{autodoc2-docstring} vtkmodules.util.pickle_support.serialize_VTK_data_object
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} unserialize_VTK_data_object(state)
+:canonical: vtkmodules.util.pickle_support.unserialize_VTK_data_object
+
+```{autodoc2-docstring} vtkmodules.util.pickle_support.unserialize_VTK_data_object
+```
+````
+
+````{py:function} serialize_VTK_data_object(data_object)
+:canonical: vtkmodules.util.pickle_support.serialize_VTK_data_object
+
+```{autodoc2-docstring} vtkmodules.util.pickle_support.serialize_VTK_data_object
+```
+````

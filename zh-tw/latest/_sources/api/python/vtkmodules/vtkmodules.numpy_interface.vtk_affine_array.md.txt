@@ -1,0 +1,592 @@
+# {py:mod}`vtkmodules.numpy_interface.vtk_affine_array`
+
+```{py:module} vtkmodules.numpy_interface.vtk_affine_array
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKAffineArray <vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_affine_sum <vtkmodules.numpy_interface.vtk_affine_array._affine_sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_sum
+    :summary:
+    ```
+* - {py:obj}`_affine_mean <vtkmodules.numpy_interface.vtk_affine_array._affine_mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_mean
+    :summary:
+    ```
+* - {py:obj}`_affine_min <vtkmodules.numpy_interface.vtk_affine_array._affine_min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_min
+    :summary:
+    ```
+* - {py:obj}`_affine_max <vtkmodules.numpy_interface.vtk_affine_array._affine_max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_max
+    :summary:
+    ```
+* - {py:obj}`_affine_std <vtkmodules.numpy_interface.vtk_affine_array._affine_std>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_std
+    :summary:
+    ```
+* - {py:obj}`_affine_var <vtkmodules.numpy_interface.vtk_affine_array._affine_var>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_var
+    :summary:
+    ```
+* - {py:obj}`_affine_any <vtkmodules.numpy_interface.vtk_affine_array._affine_any>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_any
+    :summary:
+    ```
+* - {py:obj}`_affine_all <vtkmodules.numpy_interface.vtk_affine_array._affine_all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_all
+    :summary:
+    ```
+* - {py:obj}`_affine_prod <vtkmodules.numpy_interface.vtk_affine_array._affine_prod>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_prod
+    :summary:
+    ```
+* - {py:obj}`_register_affine_overrides <vtkmodules.numpy_interface.vtk_affine_array._register_affine_overrides>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._register_affine_overrides
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} VTKAffineArray(shape=None, slope=0, intercept=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray
+
+Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__init__
+```
+
+````{py:property} _slope
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._slope
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._slope
+```
+
+````
+
+````{py:property} _intercept
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._intercept
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._intercept
+```
+
+````
+
+````{py:property} _num_values
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._num_values
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._num_values
+```
+
+````
+
+````{py:property} _num_tuples
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._num_tuples
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._num_tuples
+```
+
+````
+
+````{py:property} _num_components
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._num_components
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._num_components
+```
+
+````
+
+````{py:property} _dtype
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._dtype
+```
+
+````
+
+````{py:method} _create_vtk_array(slope, intercept, num_values, dtype, name=None)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._create_vtk_array
+:classmethod:
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._create_vtk_array
+```
+
+````
+
+````{py:method} _from_params(slope, intercept, num_values, dtype)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._from_params
+:classmethod:
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._from_params
+```
+
+````
+
+````{py:property} dtype
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.dtype
+```
+
+````
+
+````{py:property} nbytes
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.nbytes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.nbytes
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__repr__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__repr__
+```
+
+````
+
+````{py:method} __str__()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__str__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__str__
+```
+
+````
+
+````{py:method} __array__(dtype=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__array__
+```
+
+````
+
+````{py:method} __buffer__(flags)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__buffer__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__buffer__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(key, value)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__setitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__setitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__iter__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__array_ufunc__
+```
+
+````
+
+````{py:method} __array_function__(func, types, args, kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__array_function__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__array_function__
+```
+
+````
+
+````{py:method} __add__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__add__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__add__
+```
+
+````
+
+````{py:method} __radd__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__radd__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__radd__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__sub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rsub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rsub__
+```
+
+````
+
+````{py:method} __mul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__mul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__mul__
+```
+
+````
+
+````{py:method} __rmul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rmul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rmul__
+```
+
+````
+
+````{py:method} __truediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__truediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__truediv__
+```
+
+````
+
+````{py:method} __rtruediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rtruediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rtruediv__
+```
+
+````
+
+````{py:method} __floordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__floordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__floordiv__
+```
+
+````
+
+````{py:method} __rfloordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rfloordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rfloordiv__
+```
+
+````
+
+````{py:method} __pow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__pow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__pow__
+```
+
+````
+
+````{py:method} __rpow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rpow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rpow__
+```
+
+````
+
+````{py:method} __mod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__mod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__mod__
+```
+
+````
+
+````{py:method} __rmod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rmod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__rmod__
+```
+
+````
+
+````{py:method} __lt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__lt__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__lt__
+```
+
+````
+
+````{py:method} __le__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__le__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__le__
+```
+
+````
+
+````{py:method} __eq__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__eq__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__eq__
+```
+
+````
+
+````{py:method} __ne__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__ne__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__ne__
+```
+
+````
+
+````{py:method} __ge__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__ge__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__ge__
+```
+
+````
+
+````{py:method} __gt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__gt__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__gt__
+```
+
+````
+
+````{py:method} __neg__()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__neg__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__neg__
+```
+
+````
+
+````{py:method} __pos__()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__pos__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__pos__
+```
+
+````
+
+````{py:method} __abs__()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__abs__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.__abs__
+```
+
+````
+
+````{py:method} _axis_is_flat(axis)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._axis_is_flat
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray._axis_is_flat
+```
+
+````
+
+````{py:method} sum(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.sum
+```
+
+````
+
+````{py:method} mean(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.mean
+```
+
+````
+
+````{py:method} min(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.min
+```
+
+````
+
+````{py:method} max(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.max
+```
+
+````
+
+````{py:method} std(axis=None, ddof=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.std
+```
+
+````
+
+````{py:method} var(axis=None, ddof=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.var
+```
+
+````
+
+````{py:method} any(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.any
+```
+
+````
+
+````{py:method} all(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.all
+```
+
+````
+
+````{py:method} prod(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.prod
+```
+
+````
+
+````{py:method} argmin(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.argmin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.argmin
+```
+
+````
+
+````{py:method} argmax(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.argmax
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array.VTKAffineArray.argmax
+```
+
+````
+
+`````
+
+````{py:function} _affine_sum(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_sum
+```
+````
+
+````{py:function} _affine_mean(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_mean
+```
+````
+
+````{py:function} _affine_min(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_min
+```
+````
+
+````{py:function} _affine_max(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_max
+```
+````
+
+````{py:function} _affine_std(a, axis=None, ddof=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_std
+```
+````
+
+````{py:function} _affine_var(a, axis=None, ddof=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_var
+```
+````
+
+````{py:function} _affine_any(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_any
+```
+````
+
+````{py:function} _affine_all(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_all
+```
+````
+
+````{py:function} _affine_prod(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._affine_prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._affine_prod
+```
+````
+
+````{py:function} _register_affine_overrides()
+:canonical: vtkmodules.numpy_interface.vtk_affine_array._register_affine_overrides
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_affine_array._register_affine_overrides
+```
+````

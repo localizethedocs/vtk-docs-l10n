@@ -1,0 +1,178 @@
+# {py:mod}`vtkmodules.util.vtkImageImportFromArray`
+
+```{py:module} vtkmodules.util.vtkImageImportFromArray
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkImageImportFromArray <vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} vtkImageImportFromArray()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.__init__
+```
+
+````{py:attribute} __typeDict
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.__typeDict
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.__typeDict
+```
+
+````
+
+````{py:attribute} __sizeDict
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.__sizeDict
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.__sizeDict
+```
+
+````
+
+````{py:method} SetConvertIntToUnsignedShort(yesno)
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetConvertIntToUnsignedShort
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetConvertIntToUnsignedShort
+```
+
+````
+
+````{py:method} GetConvertIntToUnsignedShort()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetConvertIntToUnsignedShort
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetConvertIntToUnsignedShort
+```
+
+````
+
+````{py:method} ConvertIntToUnsignedShortOn()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.ConvertIntToUnsignedShortOn
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.ConvertIntToUnsignedShortOn
+```
+
+````
+
+````{py:method} ConvertIntToUnsignedShortOff()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.ConvertIntToUnsignedShortOff
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.ConvertIntToUnsignedShortOff
+```
+
+````
+
+````{py:method} Update()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.Update
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.Update
+```
+
+````
+
+````{py:method} GetOutputPort()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetOutputPort
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetOutputPort
+```
+
+````
+
+````{py:method} GetOutput()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetOutput
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetOutput
+```
+
+````
+
+````{py:method} SetArray(imArray)
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetArray
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetArray
+```
+
+````
+
+````{py:method} GetArray()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetArray
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetArray
+```
+
+````
+
+````{py:method} SetDataExtent(extent)
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetDataExtent
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetDataExtent
+```
+
+````
+
+````{py:method} GetDataExtent()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetDataExtent
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetDataExtent
+```
+
+````
+
+````{py:method} SetDataSpacing(spacing)
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetDataSpacing
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetDataSpacing
+```
+
+````
+
+````{py:method} GetDataSpacing()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetDataSpacing
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetDataSpacing
+```
+
+````
+
+````{py:method} SetDataOrigin(origin)
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetDataOrigin
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.SetDataOrigin
+```
+
+````
+
+````{py:method} GetDataOrigin()
+:canonical: vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetDataOrigin
+
+```{autodoc2-docstring} vtkmodules.util.vtkImageImportFromArray.vtkImageImportFromArray.GetDataOrigin
+```
+
+````
+
+`````

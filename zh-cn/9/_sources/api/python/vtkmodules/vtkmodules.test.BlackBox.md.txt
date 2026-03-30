@@ -1,0 +1,78 @@
+# {py:mod}`vtkmodules.test.BlackBox`
+
+```{py:module} vtkmodules.test.BlackBox
+```
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`Tester <vtkmodules.test.BlackBox.Tester>`
+  - ```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} Tester(debug=0)
+:canonical: vtkmodules.test.BlackBox.Tester
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester.__init__
+```
+
+````{py:method} setDebug(val)
+:canonical: vtkmodules.test.BlackBox.Tester.setDebug
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester.setDebug
+```
+
+````
+
+````{py:method} testParse(obj)
+:canonical: vtkmodules.test.BlackBox.Tester.testParse
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester.testParse
+```
+
+````
+
+````{py:method} testGetSet(obj, excluded_methods=[])
+:canonical: vtkmodules.test.BlackBox.Tester.testGetSet
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester.testGetSet
+```
+
+````
+
+````{py:method} testBoolean(obj, excluded_methods=[])
+:canonical: vtkmodules.test.BlackBox.Tester.testBoolean
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester.testBoolean
+```
+
+````
+
+````{py:method} test(obj)
+:canonical: vtkmodules.test.BlackBox.Tester.test
+
+```{autodoc2-docstring} vtkmodules.test.BlackBox.Tester.test
+```
+
+````
+
+`````

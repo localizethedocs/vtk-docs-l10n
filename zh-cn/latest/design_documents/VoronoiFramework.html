@@ -1,0 +1,750 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="关于此文档" href="../about.html" /><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/design_documents/VoronoiFramework.html" />
+
+    <link rel="shortcut icon" href="../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Voronoi Framework - VTK 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VTK  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_data_formats.html">Supported Data Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">Regular buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#render-buffers">Render buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#buffer-textures-registration">Buffer/Textures registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html#compute-passes">Compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-usage-outside-a-rendering-pipeline">Compute pass &amp; pipeline - Usage outside a rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#chained-compute-passes">Chained compute passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#uniforms">Uniforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#textures">Textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#compute-pass-pipeline-integration-in-an-existing-rendering-pipeline">Compute pass &amp; pipeline - Integration in an existing rendering pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html#using-a-dedicated-gpu-device">Using a dedicated GPU device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build_instructions/index.html">Building</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Building</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.utils</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_soa_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_none_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_aos_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.array_overrides.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.array_overrides</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface._vtk_array_mixin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_partitioned_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_constant_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_implicit_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/ModuleSystem.html">Module System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Advanced Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vtk_file_formats/index.html">VTK File Formats</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK File Formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtkxml_file_format.html">XML File Formats</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF File Format</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF File Format</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="index.html">Design Documents</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Design Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayDispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developers_guide/index.html">Developer’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Developer’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys’ BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="voronoi-framework">
+<h1>Voronoi Framework<a class="headerlink" href="#voronoi-framework" title="Link to this heading">#</a></h1>
+<p>January 2026</p>
+<section id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading">#</a></h2>
+<p>This work originated with the article <em>A Parallel Meshless Voronoi Method for Generalized SurfaceNets</em> [1] . The article describes an algorithm that uses a Voronoi tessellation to generate surface nets contours for unstructured data. In order to implement this work, Voronoi algorithms were needed in VTK. This initial implementation eventually grew into a general computational framework for producing 2D/3D Voronoi tessellations and Delaunay triangulations. The authors hope that this framework will be beneficial to the many Voronoi-based algorithms used in the computational sciences.</p>
+<ul class="simple">
+<li><p>Will Schroeder</p></li>
+<li><p>David Thompson</p></li>
+<li><p>Spiros Tsalikis</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p><img alt="Voronoi tessellation" src="../_images/VoronoiTess.png" />
+Figure 1. Voronoi tessellation of a thousand random points.</p>
+<p>The Voronoi tessellation, and its dual, the Delaunay triangulation, are some of the most important computational constructs in scientific computing (Figure 1). Used in a myriad of important applications including mesh generation, materials analysis, segmentation, path planning, mapping, computer graphics, and data analysis (to name just a few), the literature related to these areas is exhaustive, with the earliest usage found nearly 400 years ago.</p>
+<p>Despite their importance to the computational sciences, VTK has provided minimal support for computing these constructs. While Delaunay 2D and 3D filters, based on variants of relatively simple sequential point insertion approaches have been available for some time, the limited speed of these algorithms, and their numerical fragility, offered only basic capabilities. And it is only with the release of this work that VTK-based Voronoi algorithms have become available.</p>
+<p>To remedy this situation, we have developed a framework and associated algorithms for 2D and 3D Voronoi tessellations. The implementation uses a parallel, shared memory approach, meaning that the algorithm is relatively fast; and is compile-time (via templates) configurable, so that VTK’s Voronoi algorithms can be tailored to the particular computational challenge at hand. Tools for generating the dual Delaunay triangulation, assessing and repairing topological issues, merging coincident points, and generating adjacency graphs, are just a few of the many additional capabilities provided by the framework. Several general-purpose VTK filters have also been implemented, which produce various output VTK types including convex polygons, polyhedra, polygonal and unstructured mesh datasets, and generalized surface nets (i.e., produced by a contouring operation on non-regular, segmented points).</p>
+<p>This document is meant to be a high-level guide to the software composing VTK’s Voronoi framework and related filters. Refer to the tests, examples, and software for further details and information. The document begins by defining some basic Voronoi-related concepts, then describes VTK’s implementation of the associated framework, along with the various filters that use it. Finally, many supporting classes are available to generate and massage the Voronoi input point data—a brief summary of these classes is also provided. Throughout the presentation we adopt an informal communication style. For the more formally inclined, relevant technical papers describing this work can be found here [1,2,3].</p>
+</section>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h2>
+<p><strong>What is the Voronoi Tessellation?</strong> Given an input set P of N (unique) points $p_i$ in D-dimensional space, the Voronoi tessellation partitions space into N convex regions each of which is the region of D-dimensional space nearest a generating point $p_i$. In 2D, the regions are convex polygons; in 3D convex polyhedra. We refer to the 2D Voronoi cells as “tiles”, and the 3D Voronoi cells as “hulls”. These cells are bounded by convex (D-1)-dimensional faces (i.e., edges in 2D and polygonal faces in 3D). These faces are formed by the intersection of the (D-1)-dimensional planes that separate the generating point $p_i$ from the set of nearby neighboring points $p_j$. Note that some Voronoi cells may be unbounded in extent, for example if the input data is two points with a single plane separating them. (Some Voronoi implementations use the concept of weights to control the generation of hulls. This capability is not supported at this time, we expect that this may be added in the future.)</p>
+<p><strong>Generating the Voronoi Tessellation.</strong> While a multitude of algorithms for generating the Voronoi tessellation have been developed, VTK uses a simple method motivated by what is referred to in the literature as “meshless” approaches. That is, each input point $p_i$ independently and in parallel generates its associated Voronoi cell. Consequently, immediately after generation the resulting cells are not connected (i.e., coincident points and faces are produced). However, the VTK Voronoi framework provides tools to extend the meshless method by providing several novel, topologically-based methods to merge coincident geometry, and ensure that the resulting tessellation is topologically valid (more on this later).  So while the resulting algorithm implements a fast, embarrassingly parallel approach motivated by meshless techniques, it has been significantly enhanced so that it can produce a fully formed, topologically valid mesh.</p>
+<p>Each Voronoi cell is generated from an input point $p_i$, and the “nearby” neighboring points $p_j$. Quickly identifying the set of nearby points $p_j$ is the central challenge of creating fast meshless methods. Typically spatial locators such as octrees, or regular binning of space, are used to accelerate the proximal location search. Basically the algorithm proceeds by forming an initial Voronoi hull around the generating point $p_i$ (typically the initial hull is the bounding box surrounding the set of input points P), and then repeatedly clipping the hull with the half spaces formed at the center point of the line connecting $(p_i,p_j)$ and in the direction of ($p_i$ -&gt; $p_j$). These clipping operations continue until the remaining points $p_j$ are far enough away that they can no longer intersect the Voronoi cell. In VTK, this termination condition is defined by use of the Voronoi circumflower (also referred to as the “radius of security” in the literature).</p>
+<p><img alt="Voronoi tile, flower, and circumflower" src="../_images/VoronoiFlower.png" />
+Figure 2. The Voronoi tile, flower and circumflower in 2D (left); the Voronoi hull and flower in 3D (right).</p>
+<p><strong>The Voronoi Flower and Circumflower.</strong> As Figure 2 shows, the Voronoi flower of the point $p_i$ is the collection of D-dimensional spheres (or petals) centered on the Voronoi hill/tile vertices $x_k$, with radius $||p_i - x_k||$, with a bounding sphere, or circumflower, defined as the maximal flower radius $2||p_i - x_k||_{max}$. These petals are simply the Delaunay circumspheres of the dual Delaunay simplexes which use $p_i$.</p>
+<p>The hull/tile vertices $x_k$ are formed by the intersection of the planes separating $p_i$ and face neighboring points $p_j$. Usually D+1 planes intersect at a $x_k$ unless a numerical degeneracy exists (more on this later). For example, in 3D, the four clipping planes formed by the points $(p0,p1,p2,p3)$ intersect at $x_k$; in 2D the three lines formed by $(p0,p1,p2)$ intersect at $x_k$. The set of generating point ids $(p_i, p_j)$ which define the clipping planes meeting at a $x_k$ are called the topological coordinates of $x_k$. Note that the components of the topological coordinates are sorted in increasing order, so that in 3D the four components $(p0,p1,p2,p3)$ are ordered $p0 &lt; p1 &lt; p2 &lt; p3$. This simplifies comparison operations such as equality checks.</p>
+<p><img alt="Topological coordinates" src="../_images/VoronoiTopoCoords.png" />
+Figure 3. Topological coordinates; wheels and spokes.</p>
+<p><strong>Topological Coordinates.</strong> Topological coordinates play a key role in VTK’s Voronoi framework (Figure 3). They are used in several ways to validate local mesh topology, and merge the coincident points $x_k$ (which are independently generated during the parallel construction of the hulls/tiles produced by each of the points in $(p_i,p_j)$. For example, to merge the duplicate points at $x_k$ in 3D, the four hulls generated from the four points $(p0,p1,p2,p3)$ each independently produce an $x_k$ with topological coordinate (p0,p1,p2,p3). By using a simple sorting operation, these topological coordinates (and associated $x_k$) can be gathered and assigned a unique point id, thereby merging the coincident $x_k$ and transforming a disconnected meshless Voronoi tessellation with duplicate vertices into a conformal, connected mesh. (Note: while geometric point merging could also be used to remove duplicates, because of numerical sensitivities, the points are typically not precisely geometrically coincident, meaning tolerances are needed—this is problematic.)</p>
+<p>Topological coordinates are also used to evaluate local topology—a mesh degeneracy exists when the number of topologically coincident $x_k$ does not number (D+1). When combined with the Voronoi adjacency graph G, topological coordinates can be used to validate the resulting mesh, including correcting degenerate situations.</p>
+<p><strong>The Adjacency Graph.</strong> The adjacency graph G is a topological abstraction of the Voronoi tessellation. It is a graph that connects Voronoi cells (i.e., generating points $p_i$) with their face neighbors. It can be used for a variety of purposes including topological validation, and in applications such as path planning. In VTK, G consists of spokes (connections between $p_i$) and wheels, which are just the collection of spokes emanating from a particular $p_i$.</p>
+<p><strong>Computing the Dual Delaunay Triangulation.</strong> The Delaunay triangulation is the dual construct of the Voronoi tessellation. In other words, the Voronoi faces are transformed into edges (i.e. spokes) that connect neighboring point generators; and the Voronoi point generators become the vertices of Delaunay simplices. Remarkably, the topological coordinates enumerate the connectivity of the D-dimensional simplices that make up the Delaunay triangulation. Thus to generate the triangulation, each merged topological coordinate forms a simplex, with some added work necessary to properly order the components of the topological coordinate to produce a valid simplex. (Note that in degenerate cases, extra work is required to form a valid triangulation–more on this later.)</p>
+<p>The Delaunay property—that the circumsphere of each simplex contains only the D+1 points of P defining the simplex—comes into play with the definition of the Voronoi flower. Each flower petal is a Delaunay sphere. In those cases where more than D+1 points lie on the sphere, a degenerate situation exists. This manifests in G as an incomplete subgraph; for example in 3D the components of topological coordinate $(p0,p1,p2,p3)$ are not connected with one another (i.e. one or more of the six spokes $p_i,p_j$ is missing).</p>
+<p><strong>The Use of Region Labels.</strong> A powerful feature of VTK’s Voronoi framework is the use of regions, or labels, associated with each point generator $p_i$. Regions are simply signed integer values that specify membership in a particular set. These are typically used to segment data, or represent membership in a particular data region. By convention, region ids $&lt;0$ indicate that a point is “outside” and should not produce a Voronoi hull. However, outside points can serve as neighbors to “inside” points (region labels $&gt;=0$) affecting the construction of the associated inside point cell. In this way, it is possible to carve away exterior regions, meaning that concave tessellations/triangulations can be created (Figure 5). Outside points also have the important effect of reducing the neighboring search space for $p_j$, speeding up the execution of the Voronoi algorithm.</p>
+<p>Note also that points with ids &lt;0 are considered outside. This special case of negative point ids is used to indicate Voronoi cell boundaries which are on the domain boundary, For example, the initial bounding box has six faces generated by the fictitious exterior points (-1, …, -6). Unless developing Voronoi algorithms, negative point ids are generally invisible to the user.</p>
+<p><strong>Degeneracies and Validation.</strong> In the discussion above, points are assumed to lie in general (i.e., random) position, i.e., points do not violate the Delaunay circumsphere criterion. Unfortunately in practice degenerate points are not unusual. For example, the set of corner points generated from image pixels or volume voxels are inherently degenerate. Much excellent work has been done to address such situations, particularly when generating Delaunay triangulations, including Shewchuk’s adaptive precision predicates [4]. The VTK Voronoi framework does not use such approaches, rather it uses topological reasoning to validate, identify, and repair mesh issues due to numerical precision or degenerate configurations.</p>
+<p>Numerical precision issues are related to degenerate or near degenerate situations. When generating the Voronoi tessellation, this manifests as tile edges (2D) or hull faces of near zero length (2D) or area (3D). Such tiny boundary entities can be deleted (or pruned), which in turn affects the Voronoi adjacency graph G. The adjacency graph should be symmetric, meaning that both the edge (p0,p1) and (p1,p0) should exist. If not, then the singular edge is deleted, which affects neighboring Voronoi cells.</p>
+<p>Degeneracies may also manifest when the number of topological coordinates for a topologically coincident Voronoi cell vertex $(x_k) != (D+1)$. In such cases, a local analysis is performed to produce a valid Voronoi tessellation and/or Delaunay triangulation. This is of course slower as compared to assuming that points are in random/general position. In the VTK framework, a Validate flag is available to enable full topological analysis and repair. For many applications, this is never needed, thus the cost of validation can be omitted.</p>
+<p>Besides performing topological analysis on G, other approaches are used to treat degeneracies. (A deep discussion of imprecision issues is coverted in the QHull documentation [6].) As articulated by QHull, two approaches are used: merging facets, and joggling (i.e., randomly perturbing or jittering) the input. In VTK, point jittering can be performed across all input points using filters like vtkJitterPoints. Alternatively, when producing Voronoi tiles and hulls (via the classes vtkVoronoiTile and vtkVoronoiHull), small facets are merged / discarded (based on a prune tolerance), and degeneracies may be treated by jittering the input.</p>
+</section>
+<section id="the-voronoi-framework">
+<h2>The Voronoi Framework<a class="headerlink" href="#the-voronoi-framework" title="Link to this heading">#</a></h2>
+<p>The framework described below is highly configurable based on templated algorithm classes. This enables the Voronoi classes to be extended for particular application needs. For example, using the framework it is possible to perform simple operations like computing/summing the volume of Voronoi cells, or performing local statistical analysis. However it is also possible to perform complex operations involving parallel compositing of Voronoi cell data (e.g., extract selected Voronoi cell faces, or perform local triangulation).  In the following section, we begin by providing a brief description of the framework classes, followed by a deeper look at extending the framework via templated compositing and classification classes.</p>
+<p><strong>vtkVoronoiCore.h/.txx</strong> defines and implements various high level utility classes for the Voronoi framework. Convenience typedefs and other definitions are also provided.</p>
+<p><strong>vtkVoronoiCore2D.h/.txx</strong> implements VTK’s Voronoi algorithm in 2D. Classes and typedefs specifically in support of 2D Voronoi operations are defined in the header file.</p>
+<p><strong>vtkVoronoiCore3D.h/.txx</strong> implements VTK’s Voronoi algorithm in 3D. Classes and typedefs specifically in support of 3D Voronoi operations are defined in the header file.</p>
+<p>These core Voronoi classes can be extended to support particular computational needs. As mentioned previously, the core 2D and 3D classes use templates to perform two important operations. The first templated class, the compositor, performs operations necessary to support the parallel execution of the Voronoi algorithm. Depending on the particular application requirements, the compositor will accumulate data as each Voronoi cell is computed, and then combine this information into a final, global result after processing all the Voronoi cells. Typically this combining, or compositing process, uses parallel operations such as prefix sums, and parallel copying of accumulated local data from each thread into global output. The second templated class, the classifier, is used to capture the topological relationship of a Voronoi cell to its neighbors. By examining the edges (or spokes) that connect a generating point $p_i$ to each of its face neighbors $p_j$, it is possible to determine whether the associated face is on the domain boundary, separates the two neighboring cells via a region boundary, or captures other topological information relevant to a particular computational task.</p>
+<p>Voronoi cells are computed via the <code class="docutils literal notranslate"><span class="pre">vtkVoronoiTile</span></code> (2D) and <code class="docutils literal notranslate"><span class="pre">vtkVoronoiHull</span></code> (3D) classes. Instances of these objects are used by the <code class="docutils literal notranslate"><span class="pre">vtkVoronoiCore2D</span></code> and <code class="docutils literal notranslate"><span class="pre">vtkVoronoiCore3D</span></code> classes, along with the spatial locator classes (more follows), to perform parallel construction of the Voronoi cells, with the compositor and classifier controlling what data is extracted and combined to produce a final output.</p>
+<p><strong>vtkVoronoiHull.</strong> The <code class="docutils literal notranslate"><span class="pre">vtkVoronoiHull</span></code> class constructs a convex polyhedron from repeated clipping operations. Starting with an initial 3D bounding box surrounding a generator point $p_i$, neighboring points $p_j$ define clipping planes at the halfway location between the generator and neighboring points, with the plane normal in the direction of $p_i$ -&gt; $p_j$. The class also constructs the Voronoi flower and circumflower, which can be used to quickly cull points which do not intersect the hull.</p>
+<p><strong>vtkVoronoiTile.</strong>  The <code class="docutils literal notranslate"><span class="pre">vtkVoronoiTile</span></code> class constructs a convex polygon from repeated clipping operations. Starting with an initial 2D bounding box surrounding a generator point $p_i$, neighboring points $p_j$ define clipping lines at the halfway location between the generator and neighboring points, with the line normal in the direction of $p_i$  -&gt; $p_j$. The class also constructs the Voronoi flower and circumflower, which can be used to quickly cull points which do not intersect the tile.</p>
+<p><img alt="Voronoi iterator" src="../_images/VoronoiIterator.png" />
+Figure 4.  The iterators access locator bins in an increasing distance, ping-pong traversal style, beginning at the generator point. In 3D, the ping-pong order is across opposite faces, as well as within faces.</p>
+<p>In addition to the classes listed above, the vtkStaticPointLocator and vtkStaticPointLocator2D locator classes play a critical role in the Voronoi algorithms. These objects perform local point searches around each generator point $p_i$, identifying nearby points in an expanding search (which ends only when the circumflower criterion is satisfied or the search space is exhausted). This process is facilitated by iterators which grow the search space using a ping-pong traversal from the generating point outward.</p>
+<p><strong>vtkAnnularBinIterator.</strong> The <code class="docutils literal notranslate"><span class="pre">vtkAnnularBinIterator</span></code> is used to iterate over <code class="docutils literal notranslate"><span class="pre">vtkStaticPointLocator2D</span></code> bins (or buckets) surrounding a generating point $p_i$. The iteration proceeds in such a way that locator bins are returned in increasing distance from $p_i$. As each bin is visited, the points contained in the bin (if any) are used by the Voronoi algorithm to perform clips on a <code class="docutils literal notranslate"><span class="pre">vtkVoronoiTile</span></code> instance.</p>
+<p><img alt="Voronoi 2D" src="../_images/Voronoi2D.png" />
+Figure 5. The 2D Voronoi tessellation of random segmented circles. The top image shows the input points including points marked exterior/outside. This enables concave tessellations to be produced.</p>
+<p><strong>vtkShellBinIterator.</strong>  The <code class="docutils literal notranslate"><span class="pre">vtkShellBinIterator</span></code> is used to iterate over <code class="docutils literal notranslate"><span class="pre">vtkStaticPointLocator</span></code> bins (or buckets) surrounding a generating point $p_i$. The iteration proceeds in such a way that locator bins are returned in increasing distance from $p_i$. As each bin is visited, the points contained in the bin (if any) are used by the Voronoi algorithm to perform clips on a <code class="docutils literal notranslate"><span class="pre">vtkVoronoiHull</span></code> instance.
+Conceptually, VTK’s core Voronoi algorithm is simple and embarrassingly parallel. The details of the compositor and classifier, the neighborhood search process, and the cell construction process, add significant implementation complexity. To better understand how these components work together, reviewing the simple <code class="docutils literal notranslate"><span class="pre">TestVoronoiCore2D.cxx</span></code> and <code class="docutils literal notranslate"><span class="pre">TestVoronoiCore3D.cxx</span></code> tests may help. Of course, these framework classes have been instantiated for use by several VTK filters. Reviewing these filters is another good way to learn more about VTK’s Voronoi framework.</p>
+</section>
+<section id="vtk-filters">
+<h2>VTK Filters<a class="headerlink" href="#vtk-filters" title="Link to this heading">#</a></h2>
+<p>Initially three VTK filters have been added as part of the Voronoi framework. More will be added in the future, but these offer basic capabilities applicable to many computational challenges.</p>
+<p><strong>vtkVoronoi2D.</strong> The <code class="docutils literal notranslate"><span class="pre">vtkVoronoi2D</span></code> filter can generate a 2D Voronoi tessellation, Delaunay triangulation, or both, from an input set of points (represented by any <code class="docutils literal notranslate"><span class="pre">vtkPointSet</span></code> or subclass). In addition, the filter has built-in debug features so that the Voronoi flower can be produced for a particular input point (I.e., point of interest).</p>
+<p><strong>vtkVoronoi3D.</strong> The <code class="docutils literal notranslate"><span class="pre">vtkVoronoi3D</span></code> filter can generate either a 3D Voronoi tessellation (<code class="docutils literal notranslate"><span class="pre">vtkPolyhedron</span></code> cells) or a Delaunay tetrahedralization (<code class="docutils literal notranslate"><span class="pre">vtkTetra</span></code> cells) contained in an output unstructured grid. The filter can also be configured to produce an output <code class="docutils literal notranslate"><span class="pre">vtkPolyData</span></code> consisting of one of an adjacency graph, a boundary surface mesh, a polygonal complex (all Voronoi faces are produced), or a surface net (if region labels are provided).</p>
+<p><img alt="Generalized surface net" src="../_images/VoronoiHeart.png" />
+Figure 6. Generalized surface net produced from 14,649,149 points and 21 segmented regions of a human heart.</p>
+<p><strong>vtkGeneralizedSurfaceNets3D.</strong> Surface Nets is a contouring algorithm that is typically used to extract the surfaces of labeled regions; e.g., the surface of objects defined by image segmentation labels [5]. The traditional surface nets algorithm was designed to operate on structured image/volume data. VTK’s Voronoi framework enables the generation of surface nets for unstructured point data. (The algorithm simply generates a Voronoi tessellation, and extracts the shared faces between Voronoi cells whose generating points exist in different regions–Figure 6).</p>
+</section>
+<section id="supporting-filters">
+<h2>Supporting Filters<a class="headerlink" href="#supporting-filters" title="Link to this heading">#</a></h2>
+<p>Several supporting filters exist in VTK to prepare input for the Voronoi framework and filters. These can be used to adjust point distributions through a randomization process, add new points to the input, and convert scalar fields into input point sets,</p>
+<p><strong>vtkThresholdScalars.</strong> This filter converts a continuous scalar field into discrete, labeled regions (essentially a primitive segmentation algorithm). This is useful for selecting and tessellating portions of an input dataset—for example, a sampling of points can be labeled/segmented and provided to the Voronoi filters for processing. While the <code class="docutils literal notranslate"><span class="pre">vtkThresholdScalars</span></code> filter operates on any input <code class="docutils literal notranslate"><span class="pre">vtkDataSet</span></code> type, because the Voronoi framework operates on input <code class="docutils literal notranslate"><span class="pre">vtkPointSet</span></code> (i.e., explicit point representations), point sampling or other transformation may be required to produce input suitable for the Voronoi classes.</p>
+<p><strong>vtkJitterPoints.</strong> The <code class="docutils literal notranslate"><span class="pre">vtkJitterPoints</span></code> filter randomly perturbs point positions. It operates on any input of type <code class="docutils literal notranslate"><span class="pre">vtkPointSet</span></code>, modifying only the point coordinate data. It can be used to evaluate the numerical sensitivity of Voronoi-based algorithms, as well as improving the performance of Voronoi algorithms by removing degeneracies.</p>
+<p><strong>vtkFillPointCloud.</strong> This filter adds points to an existing point cloud (i.e., an instance of a <code class="docutils literal notranslate"><span class="pre">vtkPointSet</span></code>), placing points in regions where no input points exist. The fill operation preserves the input points (and any region labels if available), and adds new points with a specified background label.  <code class="docutils literal notranslate"><span class="pre">vtkFillPointCloud</span></code> can be used to improve the performance of the Voronoi algorithms by reducing the search space for neighboring points. By specifying a background region id (i.e., region label &lt; 0), the added points serve to reduce the search space, and carve out exterior regions–-as a result the Voronoi/Delaunay filters can produce concave tessellations.</p>
+<p><strong>vtkLabeledImagePointSampler.</strong> This filter generates points from a labeled/segmented input 3D volume or 2D x-y image. This can be used to reduce the overall size of the data, and/or convert data (from a segmented image to a sampled <code class="docutils literal notranslate"><span class="pre">vtkPointSet</span></code>) for filters such as vtkVoronoi2D/3D or vtkGeneralizedSurfaceNets3D, which require an input point cloud. The required filter input image data is an integral region id point data array (i.e., segmentation labels).</p>
+<p><strong>vtkProbeFilter.</strong> This filter has long existed in VTK yet offers interesting capabilities in support of the Voronoi framework. By probing with a point cloud (or other type of <code class="docutils literal notranslate"><span class="pre">vtkPointSet</span></code>), it is possible to selectively tessellate probed regions of data.</p>
+</section>
+<section id="usage-building-and-testing">
+<h2>Usage: Building and Testing<a class="headerlink" href="#usage-building-and-testing" title="Link to this heading">#</a></h2>
+<p>This section describes how to begin using the Voronoi framework in VTK. Begin by building VTK on your platform as described in the build instructions. Pay particular attention to the following CMake variables:</p>
+<p><code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> - to obtain maximum performance, use “Release”. Since the Voronoi framework is templated, the optimizations resulting from this build type make a significant impact on performance.
+<code class="docutils literal notranslate"><span class="pre">VTK_SMP_IMPLEMENTATION_TYPE</span></code> - to enable threading, ensure that this is set to a value other than “Sequential”. TBB and STDTHREAD are typically recommended, with TBB (due to load balancing) typically providing the best performance.
+<code class="docutils literal notranslate"><span class="pre">VTK_WRAP_PYTHON</span></code> - Enable Python wrapping since many of the tests and examples are written in Python.</p>
+<p>Note that if the SMP implementation type is set to TBB, then you may have to set the CMake variable TBB_DIR. Similarly, wrapping Python requires that <code class="docutils literal notranslate"><span class="pre">Python3_INCLUDE_DIR</span></code> and <code class="docutils literal notranslate"><span class="pre">Python3_LIBRARY</span></code> are set appropriately. Typically, the values of these CMake variables are discovered during the CMake configure process; however non-typical system configurations may require some assistance to resolve.</p>
+<p>Once CMake is properly configured, and the build process completes, there are many tests and examples that can be run. We recommend starting with the tests found in <code class="docutils literal notranslate"><span class="pre">VTK/Filters/Meshing/Testing/Python/TestVoronoi*.py</span></code> and <code class="docutils literal notranslate"><span class="pre">VTK/Filters/Meshing/Testing/Cxx/TestVoronoi*.cxx</span></code>. To run the Python tests, simply invoke:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd VTK/Filters/Meshing/Testing/Python/
+$ ~/VTK/build/bin/vtkpython TestVoronoi3D2.py
+</pre></div>
+</div>
+<p>assuming that VTK has been built in the <code class="docutils literal notranslate"><span class="pre">~/VTK/build/</span></code> directory. To run a C++ test, invoke:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~/VTK/build/
+$ ./bin/vtkFiltersMeshingCxxTests TestVoronoiCore3D
+</pre></div>
+</div>
+<p>The environment variable <code class="docutils literal notranslate"><span class="pre">VTK_SMP_MAX_THREADS</span></code> can be used to limit the number of computing threads used during execution. For example, export <code class="docutils literal notranslate"><span class="pre">VTK_SMP_MAX_THREADS=48</span></code> limits the number of threads to 48. However, depending on your computing platform, and the size of the problem, this number of threads may not be used. Sequential processing can be enforced by setting <code class="docutils literal notranslate"><span class="pre">VTK_SMP_MAX_THREADS</span></code> to 1.</p>
+<p>Additional help is available from the VTK Discourse list.</p>
+</section>
+<section id="voronoi-framework-template-parameters">
+<h2>Voronoi Framework Template Parameters<a class="headerlink" href="#voronoi-framework-template-parameters" title="Link to this heading">#</a></h2>
+<p>For advanced users and developers, understanding the template parameters which are used to instantiate VTK’s Voronoi framework is essential. The template parameters are the two classes <code class="docutils literal notranslate"><span class="pre">TCompositor</span></code> and <code class="docutils literal notranslate"><span class="pre">TClassifier</span></code>, which define how each thread extracts data, and how the spokes (and other topological information) is determined. For example, the templated class <code class="docutils literal notranslate"><span class="pre">vtkVoronoiCore3D</span></code> is defined as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>template &lt;class TCompositor, class TClassifier=vtkVoronoiClassifier3D&gt;
+class vtkVoronoiCore3D
+{ … };
+</pre></div>
+</div>
+<p>The compositor is used to extract specific information as each Voronoi hull is generated; accumulating this information in thread local storage, and then eventually compositing the data into a global, final output. The classifier is used to extract topological information relative to face-neighboring hulls; in particular this takes the form of spoke classifications; which can be used to extract various, selected portions of the resulting Voronoi mesh (e.g., the polygons forming a surface net). For example, a compositor can be defined which simply computes each Voronoi hull’s volume, and then computes a total volume during the final compositing process. Obviously other information such as statistics relative to the topological and geometric features of generated hulls can be accumulated and composited. As shown, a default class (vtkVoronoiClassifier3D) is provided to classify the Voronoi spokes which enables the extraction of mesh boundaries (including segmented region boundaries). It is possible to extend the classification process so as to capture topological neighborhood information (e.g., the “strength” of connection to neighboring hulls).</p>
+<p>For further information, we recommend studying the vtkVoronoiCore, vtkVoronoiCore2D, and vtkVoronoiCore3D classes found in the VTK/Filters/Meshing directory.</p>
+</section>
+<section id="future-work">
+<h2>Future Work<a class="headerlink" href="#future-work" title="Link to this heading">#</a></h2>
+<p>With the addition of the configurable Voronoi framework, significant potential exists to add new Voronoi-based computational and visualization algorithms to VTK. For example, two filters will be added in the near future: a centroidal Voronoi tessellation (CVT), and segmentation meshing filter. The first will be used to create optimal tessellations corresponding to an ideal distribution of generating points; the second filter will be used to Delaunay mesh segmented regions. We also plan to expand this work to provide mesh generation capabilities for various simulation and modeling applications.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<p>[1] W. Schroeder, D. Thompson, S. Tsalikis. “A Parallel Meshless Voronoi Method for Generalized SurfaceNets.” IEEE Transactions on Visualization and Computer Graphics. (In preparation.)</p>
+<p>[2] C. H. Rycroft. “Voro++: A three-dimensional voronoi cell library in c++.” Chaos: An Interdisciplinary Journal of Nonlinear Science, vol. 19, no. 4, p. 041111, 10 2009.</p>
+<p>[3] J. Lu, E. A. Lazar, and C. H. Rycroft. “An extension to voro++ for multithreaded computation of voronoi cells.” Computer Physics Communications, vol. 291, p. 108832, 2023.</p>
+<p>[4] J. R. Shewchuk, “Triangle: Engineering a 2d quality mesh generator and delaunay triangulator.” in Applied Computational Geometry Towards Geometric Engineering, M. C. Lin and D. Manocha, Eds. Berlin, Heidelberg: Springer Berlin Heidelberg, 1996, pp. 203–222.</p>
+<p>[5] W. Schroeder, S. Tsalikis, M. Halle, and S. Frisken. “A high-performance surfacenets discrete isocontouring algorithm.” 2024. [Online]. Available: <a class="reference external" href="https://doi.org/10.48550/arXiv.2401.14906">https://doi.org/10.48550/arXiv.2401.14906</a>.</p>
+<p>[6] Imprecision in QHull. <a class="reference external" href="http://www.qhull.org/html/qh-impre.htm">http://www.qhull.org/html/qh-impre.htm</a> [Online]</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Voronoi Framework</a><ul>
+<li><a class="reference internal" href="#contributors">Contributors</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#the-voronoi-framework">The Voronoi Framework</a></li>
+<li><a class="reference internal" href="#vtk-filters">VTK Filters</a></li>
+<li><a class="reference internal" href="#supporting-filters">Supporting Filters</a></li>
+<li><a class="reference internal" href="#usage-building-and-testing">Usage: Building and Testing</a></li>
+<li><a class="reference internal" href="#voronoi-framework-template-parameters">Voronoi Framework Template Parameters</a></li>
+<li><a class="reference internal" href="#future-work">Future Work</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

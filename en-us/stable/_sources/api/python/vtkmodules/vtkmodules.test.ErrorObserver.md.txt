@@ -1,0 +1,112 @@
+# {py:mod}`vtkmodules.test.ErrorObserver`
+
+```{py:module} vtkmodules.test.ErrorObserver
+```
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkErrorObserver <vtkmodules.test.ErrorObserver.vtkErrorObserver>`
+  - ```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} vtkErrorObserver()
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.__init__
+```
+
+````{py:method} __call__(caller, event, data)
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.__call__
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.__call__
+```
+
+````
+
+````{py:method} _check(seen, actual, expect, what)
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver._check
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver._check
+```
+
+````
+
+````{py:method} check_error(expect)
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.check_error
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.check_error
+```
+
+````
+
+````{py:method} check_warning(expect)
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.check_warning
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.check_warning
+```
+
+````
+
+````{py:method} reset()
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.reset
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.reset
+```
+
+````
+
+````{py:property} saw_error
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.saw_error
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.saw_error
+```
+
+````
+
+````{py:property} error_message
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.error_message
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.error_message
+```
+
+````
+
+````{py:property} saw_warning
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.saw_warning
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.saw_warning
+```
+
+````
+
+````{py:property} warning_message
+:canonical: vtkmodules.test.ErrorObserver.vtkErrorObserver.warning_message
+
+```{autodoc2-docstring} vtkmodules.test.ErrorObserver.vtkErrorObserver.warning_message
+```
+
+````
+
+`````

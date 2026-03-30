@@ -1,0 +1,102 @@
+# Imported Third Party Projects
+
+This page provides an overview of the imported third-party projects that VTK depends
+on, grouped by import method.
+
+The lists below references project directory name found in either the `ThirdParty`
+or `Utilities` source sub-directory available in the [VTK GitLab][] repository where additional
+details may be found.
+
+[VTK GitLab]: https://gitlab.kitware.com/vtk/vtk
+
+## Using the `update.sh` framework
+
+The following list shows third-party projects that were imported using the `update.sh`
+framework described in the [](thirdparty.md) document:
+
+  * cgns
+  * cli11
+  * diy2
+  * eigen
+  * exodusII
+  * expat
+  * exprtk
+  * fast_float
+  * fides
+  * fmt
+  * freetype
+  * gl2ps
+  * glad
+  * h5hut
+  * hdf5
+  * ioss
+  * jpeg
+  * jsoncpp
+  * kissfft
+  * KWIML
+  * KWSys
+  * libharu
+  * libproj
+  * libxml2
+  * loguru
+  * lz4
+  * lzma
+  * MetaIO
+  * mpi4py
+  * netcdf
+  * nlohmannjson
+  * ogg
+  * pegtl
+  * png
+  * pugixml
+  * scn
+  * sqlite
+  * theora
+  * tiff
+  * token
+  * utf8
+  * verdict
+  * viskores
+  * xdmf3
+  * zlib
+
+<!--
+The list above was generated using the following script:
+
+```
+cd VTK/ThirdParty
+for path in $(ls -d -1 */) $(ls -d -1 ../Utilities/*/); do
+  path=${path%/*}  # "dir1/dir2/Dir3/" -> "dir1/dir2/Dir3"
+  project=${path##*/}  # "dir1/dir2/Dir3" -> "Dir3"
+  if [[ -f "$path/update.sh" ]]; then
+    echo "  * [$project]($path/update.sh)"
+  fi
+done | sort --ignore-case
+```
+-->
+
+## Using `copy`
+
+The following third-party projects were imported by copying the files:
+
+  * glad
+  * vpic
+  * xdmf2
+
+<!--
+The list above was generated using the following script:
+
+```
+root_src_dir=$(git rev-parse --show-toplevel)
+
+for path in $(ls -d -1 */); do
+  path=${path%/*}  # "dir1/dir2/Dir3/" -> "dir1/dir2/Dir3"
+  project=${path##*/}  # "dir1/dir2/Dir3" -> "Dir3"
+
+  # List project that isn't imported through "update.sh"
+  if [ ! -f "$path/update.sh" ]; then
+    echo "  * $project"
+  fi
+done | sort --ignore-case
+```
+-->

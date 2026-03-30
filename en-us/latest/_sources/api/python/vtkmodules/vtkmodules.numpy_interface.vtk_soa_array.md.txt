@@ -1,0 +1,767 @@
+# {py:mod}`vtkmodules.numpy_interface.vtk_soa_array`
+
+```{py:module} vtkmodules.numpy_interface.vtk_soa_array
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKSOAArray <vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_to_ndarray <vtkmodules.numpy_interface.vtk_soa_array._to_ndarray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._to_ndarray
+    :summary:
+    ```
+* - {py:obj}`_soa_to_ndarray_arg <vtkmodules.numpy_interface.vtk_soa_array._soa_to_ndarray_arg>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_to_ndarray_arg
+    :summary:
+    ```
+* - {py:obj}`_soa_as_ndarray <vtkmodules.numpy_interface.vtk_soa_array._soa_as_ndarray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_as_ndarray
+    :summary:
+    ```
+* - {py:obj}`_soa_sum <vtkmodules.numpy_interface.vtk_soa_array._soa_sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_sum
+    :summary:
+    ```
+* - {py:obj}`_soa_mean <vtkmodules.numpy_interface.vtk_soa_array._soa_mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_mean
+    :summary:
+    ```
+* - {py:obj}`_soa_min <vtkmodules.numpy_interface.vtk_soa_array._soa_min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_min
+    :summary:
+    ```
+* - {py:obj}`_soa_max <vtkmodules.numpy_interface.vtk_soa_array._soa_max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_max
+    :summary:
+    ```
+* - {py:obj}`_soa_std <vtkmodules.numpy_interface.vtk_soa_array._soa_std>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_std
+    :summary:
+    ```
+* - {py:obj}`_soa_var <vtkmodules.numpy_interface.vtk_soa_array._soa_var>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_var
+    :summary:
+    ```
+* - {py:obj}`_soa_any <vtkmodules.numpy_interface.vtk_soa_array._soa_any>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_any
+    :summary:
+    ```
+* - {py:obj}`_soa_all <vtkmodules.numpy_interface.vtk_soa_array._soa_all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_all
+    :summary:
+    ```
+* - {py:obj}`_soa_prod <vtkmodules.numpy_interface.vtk_soa_array._soa_prod>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_prod
+    :summary:
+    ```
+* - {py:obj}`_soa_argmin <vtkmodules.numpy_interface.vtk_soa_array._soa_argmin>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_argmin
+    :summary:
+    ```
+* - {py:obj}`_soa_argmax <vtkmodules.numpy_interface.vtk_soa_array._soa_argmax>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_argmax
+    :summary:
+    ```
+* - {py:obj}`_soa_cumsum <vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum
+    :summary:
+    ```
+* - {py:obj}`_soa_cumprod <vtkmodules.numpy_interface.vtk_soa_array._soa_cumprod>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_cumprod
+    :summary:
+    ```
+* - {py:obj}`_soa_concatenate <vtkmodules.numpy_interface.vtk_soa_array._soa_concatenate>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_concatenate
+    :summary:
+    ```
+* - {py:obj}`_soa_clip <vtkmodules.numpy_interface.vtk_soa_array._soa_clip>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_clip
+    :summary:
+    ```
+* - {py:obj}`_soa_sort <vtkmodules.numpy_interface.vtk_soa_array._soa_sort>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_sort
+    :summary:
+    ```
+* - {py:obj}`_soa_where <vtkmodules.numpy_interface.vtk_soa_array._soa_where>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_where
+    :summary:
+    ```
+* - {py:obj}`_soa_isin <vtkmodules.numpy_interface.vtk_soa_array._soa_isin>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_isin
+    :summary:
+    ```
+* - {py:obj}`_soa_round <vtkmodules.numpy_interface.vtk_soa_array._soa_round>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_round
+    :summary:
+    ```
+* - {py:obj}`_soa_dot <vtkmodules.numpy_interface.vtk_soa_array._soa_dot>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_dot
+    :summary:
+    ```
+* - {py:obj}`_register_soa_overrides <vtkmodules.numpy_interface.vtk_soa_array._register_soa_overrides>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._register_soa_overrides
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_soa_array._UNINITIALIZED>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._UNINITIALIZED
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _UNINITIALIZED
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._UNINITIALIZED
+:value: >
+   'object(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._UNINITIALIZED
+```
+
+````
+
+````{py:function} _to_ndarray(x)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._to_ndarray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._to_ndarray
+```
+````
+
+````{py:function} _soa_to_ndarray_arg(arg)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_to_ndarray_arg
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_to_ndarray_arg
+```
+````
+
+````{py:function} _soa_as_ndarray(x)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_as_ndarray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_as_ndarray
+```
+````
+
+`````{py:class} VTKSOAArray(*args, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray
+
+Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__init__
+```
+
+````{py:method} _init_from_data(data)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._init_from_data
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._init_from_data
+```
+
+````
+
+````{py:method} _copy_metadata_to(target)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._copy_metadata_to
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._copy_metadata_to
+```
+
+````
+
+````{py:method} SetArray(comp, array, size, *args, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.SetArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.SetArray
+```
+
+````
+
+````{py:property} _component_arrays
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._component_arrays
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._component_arrays
+```
+
+````
+
+````{py:method} _init_components()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._init_components
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._init_components
+```
+
+````
+
+````{py:method} _setup_observer()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._setup_observer
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._setup_observer
+```
+
+````
+
+````{py:property} _num_tuples
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._num_tuples
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._num_tuples
+```
+
+````
+
+````{py:property} _num_components
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._num_components
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._num_components
+```
+
+````
+
+````{py:property} _dtype
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._dtype
+```
+
+````
+
+````{py:property} dtype
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.dtype
+```
+
+````
+
+````{py:property} components
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.components
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.components
+```
+
+````
+
+````{py:method} to_numpy()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.to_numpy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.to_numpy
+```
+
+````
+
+````{py:method} _from_components(components, dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._from_components
+:staticmethod:
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._from_components
+```
+
+````
+
+````{py:method} __array__(dtype=None, copy=None)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__array__
+```
+
+````
+
+````{py:method} __buffer__(flags)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__buffer__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__buffer__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__array_ufunc__
+```
+
+````
+
+````{py:method} __array_function__(func, types, args, kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__array_function__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__array_function__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(index, value)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__setitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__setitem__
+```
+
+````
+
+````{py:method} __neg__()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__neg__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__neg__
+```
+
+````
+
+````{py:method} __abs__()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__abs__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__abs__
+```
+
+````
+
+````{py:method} _per_component(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._per_component
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._per_component
+```
+
+````
+
+````{py:method} _binop(other, op)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._binop
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._binop
+```
+
+````
+
+````{py:method} _rbinop(other, op)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._rbinop
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray._rbinop
+```
+
+````
+
+````{py:method} __add__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__add__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__add__
+```
+
+````
+
+````{py:method} __radd__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__radd__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__radd__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__sub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rsub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rsub__
+```
+
+````
+
+````{py:method} __mul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__mul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__mul__
+```
+
+````
+
+````{py:method} __rmul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rmul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rmul__
+```
+
+````
+
+````{py:method} __truediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__truediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__truediv__
+```
+
+````
+
+````{py:method} __rtruediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rtruediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rtruediv__
+```
+
+````
+
+````{py:method} __floordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__floordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__floordiv__
+```
+
+````
+
+````{py:method} __rfloordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rfloordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rfloordiv__
+```
+
+````
+
+````{py:method} __pow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__pow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__pow__
+```
+
+````
+
+````{py:method} __rpow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rpow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rpow__
+```
+
+````
+
+````{py:method} __mod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__mod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__mod__
+```
+
+````
+
+````{py:method} __rmod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rmod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__rmod__
+```
+
+````
+
+````{py:method} __lt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__lt__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__lt__
+```
+
+````
+
+````{py:method} __le__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__le__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__le__
+```
+
+````
+
+````{py:method} __eq__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__eq__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__eq__
+```
+
+````
+
+````{py:method} __ne__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__ne__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__ne__
+```
+
+````
+
+````{py:method} __ge__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__ge__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__ge__
+```
+
+````
+
+````{py:method} __gt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__gt__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__gt__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__iter__
+```
+
+````
+
+````{py:method} astype(dtype)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.astype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.astype
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__repr__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__repr__
+```
+
+````
+
+````{py:method} __str__()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__str__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.__str__
+```
+
+````
+
+````{py:property} T
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.T
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.T
+```
+
+````
+
+````{py:property} nbytes
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.nbytes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.nbytes
+```
+
+````
+
+````{py:method} copy(order='C')
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.copy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.copy
+```
+
+````
+
+````{py:method} clip(a_min=None, a_max=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.clip
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.clip
+```
+
+````
+
+````{py:method} round(decimals=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.round
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.round
+```
+
+````
+
+````{py:method} sort(axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.sort
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray.sort
+```
+
+````
+
+`````
+
+````{py:function} _soa_sum(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_sum
+```
+````
+
+````{py:function} _soa_mean(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_mean
+```
+````
+
+````{py:function} _soa_min(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_min
+```
+````
+
+````{py:function} _soa_max(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_max
+```
+````
+
+````{py:function} _soa_std(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_std
+```
+````
+
+````{py:function} _soa_var(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_var
+```
+````
+
+````{py:function} _soa_any(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_any
+```
+````
+
+````{py:function} _soa_all(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_all
+```
+````
+
+````{py:function} _soa_prod(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_prod
+```
+````
+
+````{py:function} _soa_argmin(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_argmin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_argmin
+```
+````
+
+````{py:function} _soa_argmax(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_argmax
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_argmax
+```
+````
+
+````{py:function} _soa_cumsum(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum
+```
+````
+
+````{py:function} _soa_cumprod(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_cumprod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_cumprod
+```
+````
+
+````{py:function} _soa_concatenate(arrays, axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_concatenate
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_concatenate
+```
+````
+
+````{py:function} _soa_clip(a, a_min=None, a_max=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_clip
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_clip
+```
+````
+
+````{py:function} _soa_sort(a, axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_sort
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_sort
+```
+````
+
+````{py:function} _soa_where(condition, x=None, y=None)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_where
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_where
+```
+````
+
+````{py:function} _soa_isin(element, test_elements, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_isin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_isin
+```
+````
+
+````{py:function} _soa_round(a, decimals=0, out=None)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_round
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_round
+```
+````
+
+````{py:function} _soa_dot(a, b)
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._soa_dot
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._soa_dot
+```
+````
+
+````{py:function} _register_soa_overrides()
+:canonical: vtkmodules.numpy_interface.vtk_soa_array._register_soa_overrides
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_soa_array._register_soa_overrides
+```
+````

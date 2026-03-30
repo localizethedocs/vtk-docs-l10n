@@ -1,0 +1,1135 @@
+# {py:mod}`vtkmodules.numpy_interface.vtk_partitioned_array`
+
+```{py:module} vtkmodules.numpy_interface.vtk_partitioned_array
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKPartitionedArray <vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`bitwise_or <vtkmodules.numpy_interface.vtk_partitioned_array.bitwise_or>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.bitwise_or
+    :summary:
+    ```
+* - {py:obj}`sum <vtkmodules.numpy_interface.vtk_partitioned_array.sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.sum
+    :summary:
+    ```
+* - {py:obj}`max <vtkmodules.numpy_interface.vtk_partitioned_array.max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.max
+    :summary:
+    ```
+* - {py:obj}`min <vtkmodules.numpy_interface.vtk_partitioned_array.min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.min
+    :summary:
+    ```
+* - {py:obj}`all <vtkmodules.numpy_interface.vtk_partitioned_array.all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.all
+    :summary:
+    ```
+* - {py:obj}`mean <vtkmodules.numpy_interface.vtk_partitioned_array.mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.mean
+    :summary:
+    ```
+* - {py:obj}`var <vtkmodules.numpy_interface.vtk_partitioned_array.var>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.var
+    :summary:
+    ```
+* - {py:obj}`std <vtkmodules.numpy_interface.vtk_partitioned_array.std>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.std
+    :summary:
+    ```
+* - {py:obj}`shape <vtkmodules.numpy_interface.vtk_partitioned_array.shape>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.shape
+    :summary:
+    ```
+* - {py:obj}`flatnonzero <vtkmodules.numpy_interface.vtk_partitioned_array.flatnonzero>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.flatnonzero
+    :summary:
+    ```
+* - {py:obj}`_like_VTKPartitionedArray <vtkmodules.numpy_interface.vtk_partitioned_array._like_VTKPartitionedArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._like_VTKPartitionedArray
+    :summary:
+    ```
+* - {py:obj}`zeros_like <vtkmodules.numpy_interface.vtk_partitioned_array.zeros_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.zeros_like
+    :summary:
+    ```
+* - {py:obj}`ones_like <vtkmodules.numpy_interface.vtk_partitioned_array.ones_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.ones_like
+    :summary:
+    ```
+* - {py:obj}`empty_like <vtkmodules.numpy_interface.vtk_partitioned_array.empty_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.empty_like
+    :summary:
+    ```
+* - {py:obj}`nonzero <vtkmodules.numpy_interface.vtk_partitioned_array.nonzero>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.nonzero
+    :summary:
+    ```
+* - {py:obj}`where <vtkmodules.numpy_interface.vtk_partitioned_array.where>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.where
+    :summary:
+    ```
+* - {py:obj}`isin <vtkmodules.numpy_interface.vtk_partitioned_array.isin>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.isin
+    :summary:
+    ```
+* - {py:obj}`any <vtkmodules.numpy_interface.vtk_partitioned_array.any>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.any
+    :summary:
+    ```
+* - {py:obj}`prod <vtkmodules.numpy_interface.vtk_partitioned_array.prod>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.prod
+    :summary:
+    ```
+* - {py:obj}`round_ <vtkmodules.numpy_interface.vtk_partitioned_array.round_>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.round_
+    :summary:
+    ```
+* - {py:obj}`clip <vtkmodules.numpy_interface.vtk_partitioned_array.clip>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.clip
+    :summary:
+    ```
+* - {py:obj}`sort <vtkmodules.numpy_interface.vtk_partitioned_array.sort>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.sort
+    :summary:
+    ```
+* - {py:obj}`argmin <vtkmodules.numpy_interface.vtk_partitioned_array.argmin>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.argmin
+    :summary:
+    ```
+* - {py:obj}`argmax <vtkmodules.numpy_interface.vtk_partitioned_array.argmax>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.argmax
+    :summary:
+    ```
+* - {py:obj}`cumsum <vtkmodules.numpy_interface.vtk_partitioned_array.cumsum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.cumsum
+    :summary:
+    ```
+* - {py:obj}`cumprod <vtkmodules.numpy_interface.vtk_partitioned_array.cumprod>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.cumprod
+    :summary:
+    ```
+* - {py:obj}`unique <vtkmodules.numpy_interface.vtk_partitioned_array.unique>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.unique
+    :summary:
+    ```
+* - {py:obj}`concatenate <vtkmodules.numpy_interface.vtk_partitioned_array.concatenate>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.concatenate
+    :summary:
+    ```
+* - {py:obj}`expand_dims <vtkmodules.numpy_interface.vtk_partitioned_array.expand_dims>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.expand_dims
+    :summary:
+    ```
+* - {py:obj}`count_nonzero <vtkmodules.numpy_interface.vtk_partitioned_array.count_nonzero>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.count_nonzero
+    :summary:
+    ```
+* - {py:obj}`full_like <vtkmodules.numpy_interface.vtk_partitioned_array.full_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.full_like
+    :summary:
+    ```
+* - {py:obj}`copy <vtkmodules.numpy_interface.vtk_partitioned_array.copy>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.copy
+    :summary:
+    ```
+* - {py:obj}`average <vtkmodules.numpy_interface.vtk_partitioned_array.average>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.average
+    :summary:
+    ```
+* - {py:obj}`histogram <vtkmodules.numpy_interface.vtk_partitioned_array.histogram>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.histogram
+    :summary:
+    ```
+* - {py:obj}`bincount <vtkmodules.numpy_interface.vtk_partitioned_array.bincount>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.bincount
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_builtin_min <vtkmodules.numpy_interface.vtk_partitioned_array._builtin_min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_min
+    :summary:
+    ```
+* - {py:obj}`_builtin_max <vtkmodules.numpy_interface.vtk_partitioned_array._builtin_max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_max
+    :summary:
+    ```
+* - {py:obj}`_builtin_sum <vtkmodules.numpy_interface.vtk_partitioned_array._builtin_sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_sum
+    :summary:
+    ```
+* - {py:obj}`_builtin_all <vtkmodules.numpy_interface.vtk_partitioned_array._builtin_all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_all
+    :summary:
+    ```
+* - {py:obj}`_builtin_any <vtkmodules.numpy_interface.vtk_partitioned_array._builtin_any>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_any
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _builtin_min
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array._builtin_min
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_min
+```
+
+````
+
+````{py:data} _builtin_max
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array._builtin_max
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_max
+```
+
+````
+
+````{py:data} _builtin_sum
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array._builtin_sum
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_sum
+```
+
+````
+
+````{py:data} _builtin_all
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array._builtin_all
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_all
+```
+
+````
+
+````{py:data} _builtin_any
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array._builtin_any
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._builtin_any
+```
+
+````
+
+`````{py:class} VTKPartitionedArray(arrays=[], dataset=None, name=None, association=None)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__init__
+```
+
+````{py:method} __init_from_composite()
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__init_from_composite
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__init_from_composite
+```
+
+````
+
+````{py:method} _get_size()
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._get_size
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._get_size
+```
+
+````
+
+````{py:attribute} size
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.size
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.size
+```
+
+````
+
+````{py:method} _get_arrays()
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._get_arrays
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._get_arrays
+```
+
+````
+
+````{py:attribute} arrays
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.arrays
+:value: >
+   'property(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.arrays
+```
+
+````
+
+````{py:method} __setitem__(index, value) -> None
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__setitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__setitem__
+```
+
+````
+
+````{py:method} __getitem__(index) -> typing.Union[typing.List, vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray, numpy.ndarray]
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__getitem__
+```
+
+````
+
+````{py:method} _global_to_local_id(global_index, total_size, offsets)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._global_to_local_id
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._global_to_local_id
+```
+
+````
+
+````{py:method} _slice_intersection(global_slice, chunk_offset, chunk_size, total_length)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._slice_intersection
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._slice_intersection
+```
+
+````
+
+````{py:method} _binop(other, op)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._binop
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._binop
+```
+
+````
+
+````{py:method} _rbinop(other, op)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._rbinop
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray._rbinop
+```
+
+````
+
+````{py:method} __add__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__add__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__add__
+```
+
+````
+
+````{py:method} __radd__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__radd__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__radd__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__sub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rsub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rsub__
+```
+
+````
+
+````{py:method} __mul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__mul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__mul__
+```
+
+````
+
+````{py:method} __rmul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rmul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rmul__
+```
+
+````
+
+````{py:method} __truediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__truediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__truediv__
+```
+
+````
+
+````{py:method} __rtruediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rtruediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rtruediv__
+```
+
+````
+
+````{py:method} __floordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__floordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__floordiv__
+```
+
+````
+
+````{py:method} __rfloordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rfloordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rfloordiv__
+```
+
+````
+
+````{py:method} __mod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__mod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__mod__
+```
+
+````
+
+````{py:method} __rmod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rmod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rmod__
+```
+
+````
+
+````{py:method} __pow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__pow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__pow__
+```
+
+````
+
+````{py:method} __rpow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rpow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rpow__
+```
+
+````
+
+````{py:method} __lshift__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__lshift__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__lshift__
+```
+
+````
+
+````{py:method} __rlshift__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rlshift__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rlshift__
+```
+
+````
+
+````{py:method} __rshift__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rshift__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rshift__
+```
+
+````
+
+````{py:method} __rrshift__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rrshift__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rrshift__
+```
+
+````
+
+````{py:method} __and__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__and__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__and__
+```
+
+````
+
+````{py:method} __rand__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rand__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rand__
+```
+
+````
+
+````{py:method} __xor__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__xor__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__xor__
+```
+
+````
+
+````{py:method} __rxor__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rxor__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__rxor__
+```
+
+````
+
+````{py:method} __or__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__or__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__or__
+```
+
+````
+
+````{py:method} __ror__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__ror__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__ror__
+```
+
+````
+
+````{py:method} __lt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__lt__
+
+````
+
+````{py:method} __le__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__le__
+
+````
+
+````{py:method} __eq__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__eq__
+
+````
+
+````{py:method} __ne__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__ne__
+
+````
+
+````{py:method} __ge__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__ge__
+
+````
+
+````{py:method} __gt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__gt__
+
+````
+
+````{py:method} __str__()
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__str__
+
+````
+
+````{py:method} astype(dtype)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.astype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.astype
+```
+
+````
+
+````{py:property} dtype
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.dtype
+```
+
+````
+
+````{py:property} ndim
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.ndim
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.ndim
+```
+
+````
+
+````{py:property} nbytes
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.nbytes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.nbytes
+```
+
+````
+
+````{py:property} T
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.T
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.T
+```
+
+````
+
+````{py:property} range
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.range
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.range
+```
+
+````
+
+````{py:method} sum(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.sum
+```
+
+````
+
+````{py:method} mean(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.mean
+```
+
+````
+
+````{py:method} min(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.min
+```
+
+````
+
+````{py:method} max(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.max
+```
+
+````
+
+````{py:method} std(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.std
+```
+
+````
+
+````{py:method} var(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.var
+```
+
+````
+
+````{py:method} any(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.any
+```
+
+````
+
+````{py:method} all(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.all
+```
+
+````
+
+````{py:method} prod(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.prod
+```
+
+````
+
+````{py:method} argmin(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.argmin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.argmin
+```
+
+````
+
+````{py:method} argmax(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.argmax
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.argmax
+```
+
+````
+
+````{py:method} cumsum(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.cumsum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.cumsum
+```
+
+````
+
+````{py:method} cumprod(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.cumprod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.cumprod
+```
+
+````
+
+````{py:method} reshape(*args, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.reshape
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.reshape
+```
+
+````
+
+````{py:method} flatten(order='C')
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.flatten
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.flatten
+```
+
+````
+
+````{py:method} ravel(order='C')
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.ravel
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.ravel
+```
+
+````
+
+````{py:method} copy(order='C')
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.copy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.copy
+```
+
+````
+
+````{py:method} squeeze(axis=None)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.squeeze
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.squeeze
+```
+
+````
+
+````{py:method} transpose(*axes)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.transpose
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.transpose
+```
+
+````
+
+````{py:method} tolist()
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.tolist
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.tolist
+```
+
+````
+
+````{py:method} clip(a_min=None, a_max=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.clip
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.clip
+```
+
+````
+
+````{py:method} round(decimals=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.round
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.round
+```
+
+````
+
+````{py:method} sort(axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.sort
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.sort
+```
+
+````
+
+````{py:method} dot(other)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.dot
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.dot
+```
+
+````
+
+````{py:property} shape
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.shape
+:type: typing.Tuple[int, ...]
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.shape
+```
+
+````
+
+````{py:method} __len__() -> int
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__len__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__len__
+```
+
+````
+
+````{py:method} __contains__(item) -> bool
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__contains__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__contains__
+```
+
+````
+
+````{py:method} __reversed__() -> typing.Generator[numpy.ndarray, None, None]
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__reversed__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__reversed__
+```
+
+````
+
+````{py:method} __iter__() -> typing.Generator[numpy.ndarray, None, None]
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__iter__
+```
+
+````
+
+````{py:method} __array__(dtype=None, copy=None) -> numpy.ndarray
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__array__
+```
+
+````
+
+````{py:method} __array_function__(func, types, args, kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__array_function__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__array_function__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.VTKPartitionedArray.__array_ufunc__
+```
+
+````
+
+`````
+
+````{py:function} bitwise_or(array1, array2)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.bitwise_or
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.bitwise_or
+```
+````
+
+````{py:function} sum(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.sum
+```
+````
+
+````{py:function} max(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.max
+```
+````
+
+````{py:function} min(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.min
+```
+````
+
+````{py:function} all(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.all
+```
+````
+
+````{py:function} mean(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.mean
+```
+````
+
+````{py:function} var(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.var
+```
+````
+
+````{py:function} std(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.std
+```
+````
+
+````{py:function} shape(array)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.shape
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.shape
+```
+````
+
+````{py:function} flatnonzero(array)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.flatnonzero
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.flatnonzero
+```
+````
+
+````{py:function} _like_VTKPartitionedArray(array, kind, dtype=None, value=None)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array._like_VTKPartitionedArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array._like_VTKPartitionedArray
+```
+````
+
+````{py:function} zeros_like(array, dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.zeros_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.zeros_like
+```
+````
+
+````{py:function} ones_like(array, dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.ones_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.ones_like
+```
+````
+
+````{py:function} empty_like(array, dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.empty_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.empty_like
+```
+````
+
+````{py:function} nonzero(array, *args)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.nonzero
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.nonzero
+```
+````
+
+````{py:function} where(array, *args)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.where
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.where
+```
+````
+
+````{py:function} isin(array, *args)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.isin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.isin
+```
+````
+
+````{py:function} any(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.any
+```
+````
+
+````{py:function} prod(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.prod
+```
+````
+
+````{py:function} round_(array, decimals=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.round_
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.round_
+```
+````
+
+````{py:function} clip(array, a_min=None, a_max=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.clip
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.clip
+```
+````
+
+````{py:function} sort(array, axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.sort
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.sort
+```
+````
+
+````{py:function} argmin(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.argmin
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.argmin
+```
+````
+
+````{py:function} argmax(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.argmax
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.argmax
+```
+````
+
+````{py:function} cumsum(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.cumsum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.cumsum
+```
+````
+
+````{py:function} cumprod(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.cumprod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.cumprod
+```
+````
+
+````{py:function} unique(array, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.unique
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.unique
+```
+````
+
+````{py:function} concatenate(arrays, axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.concatenate
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.concatenate
+```
+````
+
+````{py:function} expand_dims(array1, val2)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.expand_dims
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.expand_dims
+```
+````
+
+````{py:function} count_nonzero(array, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.count_nonzero
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.count_nonzero
+```
+````
+
+````{py:function} full_like(array, fill_value, dtype=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.full_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.full_like
+```
+````
+
+````{py:function} copy(array, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.copy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.copy
+```
+````
+
+````{py:function} average(array, axis=None, weights=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.average
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.average
+```
+````
+
+````{py:function} histogram(array, bins=10, range=None, density=None, weights=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.histogram
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.histogram
+```
+````
+
+````{py:function} bincount(array, weights=None, minlength=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_partitioned_array.bincount
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_partitioned_array.bincount
+```
+````

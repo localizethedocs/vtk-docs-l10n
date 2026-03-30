@@ -1,0 +1,811 @@
+# {py:mod}`vtkmodules.util.data_model`
+
+```{py:module} vtkmodules.util.data_model
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`FieldDataBase <vtkmodules.util.data_model.FieldDataBase>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase
+    :summary:
+    ```
+* - {py:obj}`FieldData <vtkmodules.util.data_model.FieldData>`
+  -
+* - {py:obj}`DataSetAttributesBase <vtkmodules.util.data_model.DataSetAttributesBase>`
+  -
+* - {py:obj}`DataSetAttributes <vtkmodules.util.data_model.DataSetAttributes>`
+  -
+* - {py:obj}`PointData <vtkmodules.util.data_model.PointData>`
+  -
+* - {py:obj}`CellData <vtkmodules.util.data_model.CellData>`
+  -
+* - {py:obj}`CompositeDataSetAttributesIterator <vtkmodules.util.data_model.CompositeDataSetAttributesIterator>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributesIterator
+    :summary:
+    ```
+* - {py:obj}`CompositeDataSetAttributes <vtkmodules.util.data_model.CompositeDataSetAttributes>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes
+    :summary:
+    ```
+* - {py:obj}`DataSet <vtkmodules.util.data_model.DataSet>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.DataSet
+    :summary:
+    ```
+* - {py:obj}`PointSet <vtkmodules.util.data_model.PointSet>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.PointSet
+    :summary:
+    ```
+* - {py:obj}`UnstructuredGrid <vtkmodules.util.data_model.UnstructuredGrid>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.UnstructuredGrid
+    :summary:
+    ```
+* - {py:obj}`ImageData <vtkmodules.util.data_model.ImageData>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.ImageData
+    :summary:
+    ```
+* - {py:obj}`PolyData <vtkmodules.util.data_model.PolyData>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.PolyData
+    :summary:
+    ```
+* - {py:obj}`RectilinearGrid <vtkmodules.util.data_model.RectilinearGrid>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.RectilinearGrid
+    :summary:
+    ```
+* - {py:obj}`CompositeDataIterator <vtkmodules.util.data_model.CompositeDataIterator>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator
+    :summary:
+    ```
+* - {py:obj}`CompositeDataSetBase <vtkmodules.util.data_model.CompositeDataSetBase>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase
+    :summary:
+    ```
+* - {py:obj}`PartitionedDataSet <vtkmodules.util.data_model.PartitionedDataSet>`
+  -
+* - {py:obj}`PartitionedDataSetCollection <vtkmodules.util.data_model.PartitionedDataSetCollection>`
+  -
+* - {py:obj}`OverlappingAMR <vtkmodules.util.data_model.OverlappingAMR>`
+  -
+* - {py:obj}`MultiBlockDataSet <vtkmodules.util.data_model.MultiBlockDataSet>`
+  -
+* - {py:obj}`StructuredGrid <vtkmodules.util.data_model.StructuredGrid>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.StructuredGrid
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`NUMPY_AVAILABLE <vtkmodules.util.data_model.NUMPY_AVAILABLE>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_model.NUMPY_AVAILABLE
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} NUMPY_AVAILABLE
+:canonical: vtkmodules.util.data_model.NUMPY_AVAILABLE
+:value: >
+   False
+
+```{autodoc2-docstring} vtkmodules.util.data_model.NUMPY_AVAILABLE
+```
+
+````
+
+`````{py:class} FieldDataBase(*args)
+:canonical: vtkmodules.util.data_model.FieldDataBase
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__init__
+```
+
+````{py:method} __getitem__(idx)
+:canonical: vtkmodules.util.data_model.FieldDataBase.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(name, value)
+:canonical: vtkmodules.util.data_model.FieldDataBase.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__setitem__
+```
+
+````
+
+````{py:method} get_array(idx)
+:canonical: vtkmodules.util.data_model.FieldDataBase.get_array
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.get_array
+```
+
+````
+
+````{py:method} __contains__(aname)
+:canonical: vtkmodules.util.data_model.FieldDataBase.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__contains__
+```
+
+````
+
+````{py:method} keys()
+:canonical: vtkmodules.util.data_model.FieldDataBase.keys
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.keys
+```
+
+````
+
+````{py:method} values()
+:canonical: vtkmodules.util.data_model.FieldDataBase.values
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.values
+```
+
+````
+
+````{py:method} items()
+:canonical: vtkmodules.util.data_model.FieldDataBase.items
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.items
+```
+
+````
+
+````{py:method} set_array(name, narray)
+:canonical: vtkmodules.util.data_model.FieldDataBase.set_array
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.set_array
+```
+
+````
+
+````{py:method} __eq__(other: object) -> bool
+:canonical: vtkmodules.util.data_model.FieldDataBase.__eq__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__eq__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.data_model.FieldDataBase.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__iter__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.data_model.FieldDataBase.__len__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.FieldDataBase.__len__
+```
+
+````
+
+`````
+
+```{py:class} FieldData(*args)
+:canonical: vtkmodules.util.data_model.FieldData
+
+Bases: {py:obj}`vtkmodules.util.data_model.FieldDataBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkFieldData`
+
+```
+
+```{py:class} DataSetAttributesBase(*args)
+:canonical: vtkmodules.util.data_model.DataSetAttributesBase
+
+Bases: {py:obj}`vtkmodules.util.data_model.FieldDataBase`
+
+```
+
+`````{py:class} DataSetAttributes(*args)
+:canonical: vtkmodules.util.data_model.DataSetAttributes
+
+Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkDataSetAttributes`
+
+````{py:method} __eq__(other: object) -> bool
+:canonical: vtkmodules.util.data_model.DataSetAttributes.__eq__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSetAttributes.__eq__
+```
+
+````
+
+`````
+
+```{py:class} PointData(*args)
+:canonical: vtkmodules.util.data_model.PointData
+
+Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkPointData`
+
+```
+
+```{py:class} CellData(*args)
+:canonical: vtkmodules.util.data_model.CellData
+
+Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkCellData`
+
+```
+
+`````{py:class} CompositeDataSetAttributesIterator(cdsa)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributesIterator
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributesIterator
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributesIterator.__init__
+```
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributesIterator.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributesIterator.__iter__
+```
+
+````
+
+````{py:method} __next__()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributesIterator.__next__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributesIterator.__next__
+```
+
+````
+
+````{py:method} next()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributesIterator.next
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributesIterator.next
+```
+
+````
+
+`````
+
+`````{py:class} CompositeDataSetAttributes(dataset, association)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__init__
+```
+
+````{py:method} __determine_arraynames()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.__determine_arraynames
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__determine_arraynames
+```
+
+````
+
+````{py:method} modified()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.modified
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.modified
+```
+
+````
+
+````{py:method} __contains__(aname)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__contains__
+```
+
+````
+
+````{py:method} keys()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.keys
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.keys
+```
+
+````
+
+````{py:method} values()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.values
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.values
+```
+
+````
+
+````{py:method} items()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.items
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.items
+```
+
+````
+
+````{py:method} __getitem__(idx)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(name, narray)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__setitem__
+```
+
+````
+
+````{py:method} set_array(name, narray)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.set_array
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.set_array
+```
+
+````
+
+````{py:method} get_array(idx)
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.get_array
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.get_array
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__iter__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.data_model.CompositeDataSetAttributes.__len__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetAttributes.__len__
+```
+
+````
+
+`````
+
+`````{py:class} DataSet(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.DataSet
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet.__init__
+```
+
+````{py:property} point_data
+:canonical: vtkmodules.util.data_model.DataSet.point_data
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet.point_data
+```
+
+````
+
+````{py:property} cell_data
+:canonical: vtkmodules.util.data_model.DataSet.cell_data
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet.cell_data
+```
+
+````
+
+````{py:property} field_data
+:canonical: vtkmodules.util.data_model.DataSet.field_data
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet.field_data
+```
+
+````
+
+````{py:method} __eq__(other: object) -> bool
+:canonical: vtkmodules.util.data_model.DataSet.__eq__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet.__eq__
+```
+
+````
+
+````{py:method} convert_to_unstructured_grid()
+:canonical: vtkmodules.util.data_model.DataSet.convert_to_unstructured_grid
+
+```{autodoc2-docstring} vtkmodules.util.data_model.DataSet.convert_to_unstructured_grid
+```
+
+````
+
+`````
+
+`````{py:class} PointSet(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.PointSet
+
+Bases: {py:obj}`vtkmodules.util.data_model.DataSet`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PointSet
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PointSet.__init__
+```
+
+````{py:property} points
+:canonical: vtkmodules.util.data_model.PointSet.points
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PointSet.points
+```
+
+````
+
+`````
+
+`````{py:class} UnstructuredGrid(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.UnstructuredGrid
+
+Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkUnstructuredGrid`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.UnstructuredGrid
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.UnstructuredGrid.__init__
+```
+
+````{py:property} cells
+:canonical: vtkmodules.util.data_model.UnstructuredGrid.cells
+
+```{autodoc2-docstring} vtkmodules.util.data_model.UnstructuredGrid.cells
+```
+
+````
+
+`````
+
+````{py:class} ImageData(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.ImageData
+
+Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkImageData`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.ImageData
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.ImageData.__init__
+```
+
+````
+
+`````{py:class} PolyData(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.PolyData
+
+Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkPolyData`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PolyData
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PolyData.__init__
+```
+
+````{py:property} verts_arrays
+:canonical: vtkmodules.util.data_model.PolyData.verts_arrays
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PolyData.verts_arrays
+```
+
+````
+
+````{py:property} lines_arrays
+:canonical: vtkmodules.util.data_model.PolyData.lines_arrays
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PolyData.lines_arrays
+```
+
+````
+
+````{py:property} strips_arrays
+:canonical: vtkmodules.util.data_model.PolyData.strips_arrays
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PolyData.strips_arrays
+```
+
+````
+
+````{py:property} polys_arrays
+:canonical: vtkmodules.util.data_model.PolyData.polys_arrays
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PolyData.polys_arrays
+```
+
+````
+
+`````
+
+`````{py:class} RectilinearGrid(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.RectilinearGrid
+
+Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkRectilinearGrid`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.RectilinearGrid
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.RectilinearGrid.__init__
+```
+
+````{py:property} x_coordinates
+:canonical: vtkmodules.util.data_model.RectilinearGrid.x_coordinates
+
+```{autodoc2-docstring} vtkmodules.util.data_model.RectilinearGrid.x_coordinates
+```
+
+````
+
+````{py:property} y_coordinates
+:canonical: vtkmodules.util.data_model.RectilinearGrid.y_coordinates
+
+```{autodoc2-docstring} vtkmodules.util.data_model.RectilinearGrid.y_coordinates
+```
+
+````
+
+````{py:property} z_coordinates
+:canonical: vtkmodules.util.data_model.RectilinearGrid.z_coordinates
+
+```{autodoc2-docstring} vtkmodules.util.data_model.RectilinearGrid.z_coordinates
+```
+
+````
+
+`````
+
+`````{py:class} CompositeDataIterator(cds)
+:canonical: vtkmodules.util.data_model.CompositeDataIterator
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator.__init__
+```
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.data_model.CompositeDataIterator.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator.__iter__
+```
+
+````
+
+````{py:method} __next__()
+:canonical: vtkmodules.util.data_model.CompositeDataIterator.__next__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator.__next__
+```
+
+````
+
+````{py:method} next()
+:canonical: vtkmodules.util.data_model.CompositeDataIterator.next
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator.next
+```
+
+````
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.util.data_model.CompositeDataIterator.__getattr__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataIterator.__getattr__
+```
+
+````
+
+`````
+
+`````{py:class} CompositeDataSetBase(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.__init__
+```
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.__iter__
+```
+
+````
+
+````{py:method} get_attributes(type)
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase.get_attributes
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.get_attributes
+```
+
+````
+
+````{py:property} point_data
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase.point_data
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.point_data
+```
+
+````
+
+````{py:property} cell_data
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase.cell_data
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.cell_data
+```
+
+````
+
+````{py:property} field_data
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase.field_data
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.field_data
+```
+
+````
+
+````{py:property} points
+:canonical: vtkmodules.util.data_model.CompositeDataSetBase.points
+
+```{autodoc2-docstring} vtkmodules.util.data_model.CompositeDataSetBase.points
+```
+
+````
+
+`````
+
+`````{py:class} PartitionedDataSet(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.PartitionedDataSet
+
+Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSet`
+
+````{py:method} append(dataset)
+:canonical: vtkmodules.util.data_model.PartitionedDataSet.append
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PartitionedDataSet.append
+```
+
+````
+
+`````
+
+`````{py:class} PartitionedDataSetCollection(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.PartitionedDataSetCollection
+
+Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSetCollection`
+
+````{py:method} append(dataset)
+:canonical: vtkmodules.util.data_model.PartitionedDataSetCollection.append
+
+```{autodoc2-docstring} vtkmodules.util.data_model.PartitionedDataSetCollection.append
+```
+
+````
+
+`````
+
+```{py:class} OverlappingAMR(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.OverlappingAMR
+
+Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkOverlappingAMR`
+
+```
+
+```{py:class} MultiBlockDataSet(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.MultiBlockDataSet
+
+Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkMultiBlockDataSet`
+
+```
+
+`````{py:class} StructuredGrid(*args, **kwargs)
+:canonical: vtkmodules.util.data_model.StructuredGrid
+
+Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkStructuredGrid`
+
+```{autodoc2-docstring} vtkmodules.util.data_model.StructuredGrid
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_model.StructuredGrid.__init__
+```
+
+````{py:property} x_coordinates
+:canonical: vtkmodules.util.data_model.StructuredGrid.x_coordinates
+
+```{autodoc2-docstring} vtkmodules.util.data_model.StructuredGrid.x_coordinates
+```
+
+````
+
+````{py:property} y_coordinates
+:canonical: vtkmodules.util.data_model.StructuredGrid.y_coordinates
+
+```{autodoc2-docstring} vtkmodules.util.data_model.StructuredGrid.y_coordinates
+```
+
+````
+
+````{py:property} z_coordinates
+:canonical: vtkmodules.util.data_model.StructuredGrid.z_coordinates
+
+```{autodoc2-docstring} vtkmodules.util.data_model.StructuredGrid.z_coordinates
+```
+
+````
+
+`````
