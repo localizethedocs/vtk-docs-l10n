@@ -1,0 +1,29 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/fix-vtkFramebufferPass-gles.md:1
+msgid "vtkFramebufferPass GL_INVALID_OPERATION fix for GLES 3.0"
+msgstr ""
+
+#: ../../../release_details/9.6/fix-vtkFramebufferPass-gles.md:3
+msgid ""
+"You can now use vtkFramebufferPass in WebGL2 (GLES 3.0) without "
+"GL_INVALID_OPERATION errors. It automatically detects when blitting to a "
+"multisampled draw framebuffer and uses an alternative copy method to avoid "
+"GL_INVALID_OPERATION errors."
+msgstr ""
