@@ -1,0 +1,385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/spdx_and_sbom.md:1
+msgid "SPDX & SBOM"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:3
+msgid "Overview"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:5
+msgid ""
+"Software Bill of Materials (SBOM) are becoming increasingly important for "
+"software development, especially when it comes to supply chain security. "
+"[Software Package Data Exchange (SPDX)](https://spdx.dev/) is an open "
+"standard for communicating SBOM information that supports accurate "
+"identification of software components, explicit mapping of relationships "
+"between components, and the association of security and licensing "
+"information with each component."
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:12
+msgid ""
+"To support this, each VTK module may be described by a `.spdx` file. See "
+"[examples](#examples)."
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:14
+msgid ""
+"Configuring VTK with the option `VTK_GENERATE_SPDX` set to `ON` enables the "
+"[](/api/cmake/ModuleSystem.md#spdx-files-generation) for each VTK module."
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:18
+msgid ""
+"The generation of SPDX files is considered experimental and both the VTK "
+"Module system API and the `SPDXID` used in the generated files may change."
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:22
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:24
+msgid "How to update your module to generate a valid SPDX file ?"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:26
+msgid ""
+"In the `vtk.module` file, make sure to specify `SPDX_LICENSE_IDENTIFIER` and "
+"`SPDX_COPYRIGHT_TEXT` as follows:"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:29
+msgid ""
+"SPDX_LICENSE_IDENTIFIER\n"
+"  BSD-3-Clause\n"
+"SPDX_COPYRIGHT_TEXT\n"
+"  Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:36
+msgid ""
+"Then add SPDX tags on top of all source files in the module, as follows:"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:38
+msgid ""
+"// SPDX-FileCopyrightText: Copyright (c) Ken Martin, Will Schroeder, Bill "
+"Lorensen\n"
+"// SPDX-FileCopyrightText: Copyright (c) Awesome contributor\n"
+"// SPDX-License-Identifier: BSD-3-Clause\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:45 ../../../advanced/spdx_and_sbom.md:67
+msgid ""
+"Refer to the [limitations](/api/cmake/ModuleSystem.md#limitations) section "
+"for more information on any potential issues that may arise when updating "
+"your module to generate a valid SPDX file."
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:50
+msgid "How to update a third party to generate a valid SPDX file ?"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:52
+msgid ""
+"In the third party `CMakeLists.txt`, make sure to specify, in the "
+"`vtk_module_third_party` call, `SPDX_LICENSE_IDENTIFIER` and "
+"`SPDX_COPYRIGHT_TEXT` as follows:"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:55
+msgid ""
+" vtk_module_third_party(\n"
+"    SPDX_LICENSE_IDENTIFIER\n"
+"      \"BSD-3-Clause\"\n"
+"    SPDX_COPYRIGHT_TEXT\n"
+"      \"Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen\"\n"
+"    SPDX_DOWNLOAD_LOCATION\n"
+"      \"git+https://gitlab.kitware.com/third-party/repo.git@hash_or_tag\"\n"
+"    [...]\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:72
+msgid "How to correctly specify custom license for a module ?"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:74
+msgid ""
+"In the module, provide a file containing the license. Then in `vtk.module` "
+"file, make sure to specify `SPDX_CUSTOM_LICENSE_FILE` with the path of the "
+"license file, `SPDX_CUSTOM_LICENSE_NAME` with the name of the license and "
+"`SPDX_LICENSE_IDENTIFIER`  with a valid SPDX LicenseRef, as follows:"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:79
+msgid ""
+"SPDX_LICENSE_IDENTIFIER\n"
+"  LicenseRef-CustomLicense\n"
+"SPDX_CUSTOM_LICENSE_FILE\n"
+"  LICENSE\n"
+"SPDX_CUSTOM_LICENSE_NAME\n"
+"  CustomLicense\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:88
+msgid ""
+"If needed, you can add SPDX tags on top of all source file specifically "
+"concerned by this license"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:90
+msgid ""
+"// SPDX-FileCopyrightText: Copyright (c) Awesome contributor\n"
+"// SPDX-License-Identifier: LicenseRef-CustomLicense\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:95
+msgid "Examples"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:97
+msgid ""
+"This section lists examples of generated SPDX files for different type of "
+"VTK modules."
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:99
+msgid "VTK Module"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:101
+msgid ""
+"Example of generated SPDX files for a module in VTK (once the module have "
+"been ported to the system):"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:103
+msgid ""
+"SPDXVersion: SPDX-2.2\n"
+"DataLicense: CC0-1.0\n"
+"SPDXID: SPDXRef-DOCUMENT\n"
+"DocumentName: IOPLY\n"
+"DocumentNamespace: https://vtk.org/vtkIOPly\n"
+"Creator: Tool: CMake\n"
+"Created: 2023-05-16T16:08:29Z\n"
+"\n"
+"##### Package: IOPLY\n"
+"\n"
+"PackageName: IOPLY\n"
+"SPDXID: SPDXRef-Package-IOPLY\n"
+"PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/IO/"
+"PLY\n"
+"FilesAnalyzed: true\n"
+"PackageLicenseConcluded: BSD-3-Clause\n"
+"PackageLicenseDeclared: BSD-3-Clause\n"
+"PackageLicenseInfoFromFiles: BSD-3-Clause\n"
+"PackageCopyrightText: <text>\n"
+"Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen\n"
+"</text>\n"
+"\n"
+"Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-IOPLY\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:128
+msgid ""
+"Example of a SPDX file generated without any information for a module that "
+"have not been ported to the system:"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:130
+msgid ""
+"SPDXVersion: SPDX-2.2\n"
+"DataLicense: CC0-1.0\n"
+"SPDXID: SPDXRef-DOCUMENT\n"
+"DocumentName: vtkFiltersVerdict\n"
+"DocumentNamespace: https://vtk.org/vtkFiltersVerdict\n"
+"Creator: Tool: CMake\n"
+"Created: 2023-05-25T15:16:20Z\n"
+"\n"
+"##### Package: vtkFiltersVerdict\n"
+"\n"
+"PackageName: vtkFiltersVerdict\n"
+"SPDXID: SPDXRef-Package-vtkFiltersVerdict\n"
+"PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/"
+"Filters/Verdict\n"
+"FilesAnalyzed: false\n"
+"PackageLicenseConcluded: NOASSERTION\n"
+"PackageLicenseDeclared: NOASSERTION\n"
+"PackageLicenseInfoFromFiles: NOASSERTION\n"
+"PackageCopyrightText: <text>\n"
+"NOASSERTION\n"
+"</text>\n"
+"\n"
+"Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-vtkFiltersVerdict\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:155
+msgid "VTK ThirdParty Module"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:157
+msgid ""
+"Example of a complete SPDX file for a 3rd party in VTK (once the 3rd party "
+"have been ported to the system):"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:159
+msgid ""
+"SPDXVersion: SPDX-2.2\n"
+"DataLicense: CC0-1.0\n"
+"SPDXID: SPDXRef-DOCUMENT\n"
+"DocumentName: VTK::loguru\n"
+"DocumentNamespace: https://vtk.org/vtkloguru\n"
+"Creator: Tool: CMake\n"
+"Created: 2023-05-22T15:56:52Z\n"
+"\n"
+"##### Package: VTK::loguru\n"
+"\n"
+"PackageName: VTK::loguru\n"
+"SPDXID: SPDXRef-Package-VTK::loguru\n"
+"PackageDownloadLocation: https://github.com/Delgan/loguru\n"
+"FilesAnalyzed: no\n"
+"PackageLicenseConcluded: BSD-3-Clause\n"
+"PackageLicenseDeclared: BSD-3-Clause\n"
+"PackageLicenseInfoFromFiles: NOASSERTION\n"
+"PackageCopyrightText: <text>\n"
+"LOGURU Team\n"
+"</text>\n"
+"\n"
+"Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-VTK::loguru\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:184
+msgid "VTK Remote Module"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:186
+msgid ""
+"Example of a complete SPDX file for a VTK module from outside of VTK (once "
+"the module have been ported to the system):"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:188
+msgid ""
+"SPDXVersion: SPDX-2.2\n"
+"DataLicense: CC0-1.0\n"
+"SPDXID: SPDXRef-DOCUMENT\n"
+"DocumentName: MyModule\n"
+"DocumentNamespace: https://my-website/MyModule\n"
+"Creator: Tool: CMake\n"
+"Created: 2023-05-16T16:08:29Z\n"
+"\n"
+"##### Package: MyModule\n"
+"\n"
+"PackageName: MyModule\n"
+"SPDXID: SPDXRef-Package-MyModule\n"
+"PackageDownloadLocation: https://github/myorg/mymodule\n"
+"FilesAnalyzed: true\n"
+"PackageLicenseConcluded: BSD-3-Clause AND MIT\n"
+"PackageLicenseDeclared: BSD-3-Clause\n"
+"PackageLicenseInfoFromFiles: BSD-3-Clause AND MIT\n"
+"PackageCopyrightText: <text>\n"
+"Copyright (c) 2023 Popeye\n"
+"Copyright (c) 2023 Wayne \"The Dock\" Sonjhon\n"
+"</text>\n"
+"\n"
+"Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-MyModule\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:214
+msgid "VTK Module with custom license"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:216
+msgid "Example of a complete SPDX file for a VTK module with a custom license:"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:218
+msgid ""
+"SPDXVersion: SPDX-2.2\n"
+"DataLicense: CC0-1.0\n"
+"SPDXID: SPDXRef-DOCUMENT\n"
+"DocumentName: IOPLY\n"
+"DocumentNamespace: https://vtk.org/vtkCustomModule\n"
+"Creator: Tool: CMake\n"
+"Created: 2023-05-16T16:08:29Z\n"
+"\n"
+"##### Package: CustomModule\n"
+"\n"
+"PackageName: CustomModule\n"
+"SPDXID: SPDXRef-Package-CustomModule\n"
+"PackageDownloadLocation: https://gitlab.kitware.com/vtk/vtk/-/tree/master/"
+"Custom/Module\n"
+"FilesAnalyzed: true\n"
+"PackageLicenseConcluded: BSD-3-Clause\n"
+"PackageLicenseDeclared: BSD-3-Clause AND LicenseRef-CustomLicense\n"
+"PackageLicenseInfoFromFiles: BSD-3-Clause\n"
+"PackageCopyrightText: <text>\n"
+"Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen\n"
+"</text>\n"
+"\n"
+"LicenseID: LicenseRef-CustomLicense\n"
+"ExtractedText: <text>My License\n"
+"\n"
+"This is a custom license that is not more restrictive\n"
+"than BSD license.\n"
+"</text>\n"
+"\n"
+"Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-Package-IOPLY\n"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:250
+msgid "Resources"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:252
+msgid "https://spdx.dev/"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:253
+msgid "https://en.wikipedia.org/wiki/Software_supply_chain"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:254
+msgid ""
+"https://www.linuxfoundation.org/blog/blog/spdx-its-already-in-use-for-global-"
+"software-bill-of-materials-sbom-and-supply-chain-security"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:255
+msgid "https://spdx.dev/specifications/"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:256
+msgid ""
+"https://spdx.dev/wp-content/uploads/sites/41/2020/08/SPDX-specification-2-2."
+"pdf"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:257
+msgid "https://github.com/spdx/spdx-examples"
+msgstr ""
+
+#: ../../../advanced/spdx_and_sbom.md:258
+msgid "https://spdx.dev/wp-content/uploads/sites/41/2017/12/spdx_onepager.pdf"
+msgstr ""

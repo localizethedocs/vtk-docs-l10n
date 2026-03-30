@@ -1,0 +1,1567 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:1
+msgid "XML File Formats"
+msgstr "XML 檔案格式"
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:3
+msgid ""
+"VTK provides an additional set of data formats using XML syntax. While these "
+"formats are much more complicated than the original VTK format described "
+"previously (see [Simple Legacy Formats](vtk_legacy_file_format.md)), they "
+"support many more features. The major motivation for their development was "
+"to facilitate data streaming and parallel I/O. Some features of the format "
+"include support for compression, portable binary encoding, random access, "
+"big endian and little endian byte order, multiple file representation of "
+"piece data, and new file extensions for different VTK dataset types. XML "
+"provides many features as well, especially the ability to extend a file "
+"format with application specific tags."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:5
+msgid ""
+"There are two types of VTK XML data files: serial and parallel, described "
+"below."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:7
+msgid ""
+"**Serial**. File types designed for reading and writing by single-process "
+"applications. All of the data is contained within a single file."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:10
+msgid ""
+"**Parallel**. File types designed for reading and writing by applications "
+"with multiple processes executing in parallel. The dataset is broken into "
+"pieces. Each process is assigned a piece or set of pieces to read or write. "
+"An individual piece is stored in a corresponding serial file type. The "
+"parallel file type does not actually contain any data, but instead describes "
+"structural information and then references other serial files containing the "
+"data for each piece."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:12
+msgid ""
+"In the XML format, VTK datasets are classified into one of two categories."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:14
+msgid ""
+"**Structured**. The dataset is a topologically regular array of cells such "
+"as pixels and voxels (e.g., image data) or quadrilaterals and hexahedra (e."
+"g., structured grid). Rectangular subsets of the data are described through "
+"extents. The structured dataset types are vtkImageData, vtkRectilinearGrid, "
+"and vtkStructuredGrid."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:16
+msgid ""
+"**Unstructured**. The dataset forms a topologically irregular set of points "
+"and cells. Subsets of the data are described using pieces. The unstructured "
+"dataset types are vtkPolyData and vtkUnstructuredGrid."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:18
+msgid ""
+"By convention, each data type and file type is paired with a particular file "
+"extension. The types and corresponding extensions are:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:20
+msgid "ImageData (_.vti_): Serial vtkImageData (structured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:21
+msgid "PolyData (_.vtp_): Serial vtkPolyData (unstructured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:22
+msgid "RectilinearGrid (_.vtr_): Serial vtkRectilinearGrid (structured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:23
+msgid "StructuredGrid (_.vts_): Serial vtkStructuredGrid (structured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:24
+msgid "UnstructuredGrid (_.vtu_): Serial vtkUnstructuredGrid (unstructured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:25
+msgid "PImageData (_.pvti_): Parallel vtkImageData (structured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:26
+msgid "PPolyData (_.pvtp_): Parallel vtkPolyData (unstructured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:27
+msgid "PRectilinearGrid (_.pvtr_): Parallel vtkRectilinearGrid (structured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:28
+msgid "PStructuredGrid (_.pvts_): Parallel vtkStructuredGrid (structured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:29
+msgid ""
+"PUnstructuredGrid (_.pvtu_): Parallel vtkUnstructuredGrid (unstructured)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:31
+msgid "All of the VTK XML file types are valid XML documents."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:33
+msgid "**Note:**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:35
+msgid ""
+"There is one case in which the file is not a valid XML document. When the "
+"AppendedData section is not encoded as base64, raw binary data is present "
+"that may violate the XML specification. This is not default behavior, and "
+"must be explicitly enabled by the user."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:38
+msgid "The document-level element is _VTKFile_:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:40
+msgid ""
+"<VTKFile type=\"ImageData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
+"...\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:47
+msgid "The attributes of the element are:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:49
+msgid "_type_: The type of the file (see the bulleted list above)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:50
+msgid "_version_: File version number in \"major.minor\" format."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:51
+msgid ""
+"_byte_order_: Machine byte order in which data is stored. This is either "
+"\"BigEndian\" or \"LittleEndian\"."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:52
+msgid ""
+"_compressor_: Some data in the file may be compressed. This specifies the "
+"subclass of vtkDataCompressor that was used to compress the data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:54
+msgid ""
+"Nested inside the _VTKFile_ element is an element whose name corresponds to "
+"the value of the _type_ attribute. This element describes the dataset "
+"topology and differs between the serial and parallel formats. The two "
+"formats are described below."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:56
+msgid "**Serial XML File Formats**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:57
+msgid ""
+"The _VTKFile_ element contains one element whose name corresponds to the "
+"type of dataset the file describes. We refer to this as the dataset element, "
+"which is one of _ImageData_, _RectilinearGrid_, _StructuredGrid_, "
+"_PolyData_, or _UnstructuredGrid_. The dataset element contains one or more "
+"_Piece_ elements, each describing a portion of the dataset. Together, the "
+"dataset element and _Piece_ elements specify the entire dataset."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:59
+msgid ""
+"Each piece of a dataset must specify the geometry (points and cells) of that "
+"piece along with the data associated with each point or cell. Geometry is "
+"specified differently for each dataset type, but every piece of every "
+"dataset contains _PointData_ and _CellData_ elements specifying the data for "
+"each point and cell in the piece."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:62
+msgid "The general structure for each serial dataset format is as follows:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:64
+msgid "**ImageData**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:65
+msgid ""
+"Each ImageData piece specifies its extent within the dataset’s whole extent. "
+"The points and cells are described implicitly by the extent, origin, and "
+"spacing. Note that the origin and spacing are constant across all pieces, so "
+"they are specified as attributes of the _ImageData_ XML element as follows."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:67
+msgid ""
+"<VTKFile type=\"ImageData\" ...>\n"
+"  <ImageData WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
+"             Origin=\"x0 y0 z0\" Spacing=\"dx dy dz\">\n"
+"    <Piece Extent=\"x1 x2 y1 y2 z1 z2\">\n"
+"      <PointData>...</PointData>\n"
+"      <CellData>...</CellData>\n"
+"    </Piece>\n"
+"  </ImageData>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:80
+msgid "**RectilinearGrid**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:81
+msgid ""
+"Each RectilinearGrid piece specifies its extent within the dataset’s whole "
+"extent. The points are described by the _Coordinates_ element. The cells are "
+"described implicitly by the extent."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:83
+msgid ""
+"<VTKFile type=\"RectilinearGrid\" ...>\n"
+"  <RectilinearGrid WholeExtent=\"x1 x2 y1 y2 z1 z2\">\n"
+"    <Piece Extent=\"x1 x2 y1 y2 z1 z2\">\n"
+"      <PointData>...</PointData>\n"
+"      <CellData>...</CellData>\n"
+"      <Coordinates>...</Coordinates>\n"
+"    </Piece>\n"
+"  </RectilinearGrid>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:96
+msgid "**StructuredGrid**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:97
+msgid ""
+"Each StructuredGrid piece specifies its extent within the dataset's whole "
+"extent. The points are described explicitly by the _Points_ element. The "
+"cells are described implicitly by the extent."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:99
+msgid ""
+"<VTKFile type=\"StructuredGrid\" ...>\n"
+"  <StructuredGrid WholeExtent=\"x1 x2 y1 y2 z1 z2\">\n"
+"    <Piece Extent=\"x1 x2 y1 y2 z1 z2\">\n"
+"      <PointData>...</PointData>\n"
+"      <CellData>...</CellData>\n"
+"      <Points>...</Points>\n"
+"    </Piece>\n"
+"  </StructuredGrid>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:112
+msgid "**PolyData**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:113
+msgid ""
+"Each PolyData piece specifies a set of points and cells independently from "
+"the other pieces. The points are described explicitly by the _Points_ "
+"element. The cells are described explicitly by the _Verts_, _Lines_, "
+"_Strips_, and _Polys_ elements."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:115
+msgid ""
+"<VTKFile type=\"PolyData\" ...>\n"
+"  <PolyData>\n"
+"    <Piece NumberOfPoints=\"#\" NumberOfVerts=\"#\" NumberOfLines=\"#\"\n"
+"           NumberOfStrips=\"#\" NumberOfPolys=\"#\">\n"
+"      <PointData>...</PointData>\n"
+"      <CellData>...</CellData>\n"
+"      <Points>...</Points>\n"
+"      <Verts>...</Verts>\n"
+"      <Lines>...</Lines>\n"
+"      <Strips>...</Strips>\n"
+"      <Polys>...</Polys>\n"
+"    </Piece>\n"
+"  </PolyData>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:133
+msgid "**UnstructuredGrid**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:134
+msgid ""
+"Each UnstructuredGrid piece specifies a set of points and cells "
+"independently from the other pieces. The points are described explicitly by "
+"the _Points_ element. The cells are described explicitly by the _Cells_ "
+"element."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:136
+msgid ""
+"<VTKFile type=\"UnstructuredGrid\" ...>\n"
+"  <UnstructuredGrid>\n"
+"    <Piece NumberOfPoints=\"#\" NumberOfCells=\"#\">\n"
+"      <PointData>...</PointData>\n"
+"      <CellData>...</CellData>\n"
+"      <Points>...</Points>\n"
+"      <Cells>...</Cells>\n"
+"    </Piece>\n"
+"  </UnstructuredGrid>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:150
+msgid ""
+"Every dataset describes the data associated with its points and cells with "
+"PointData and CellData XML elements as follows:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:151
+msgid ""
+"      <PointData Scalars=\"Temperature\" Vectors=\"Velocity\">\n"
+"        <DataArray Name=\"Velocity\" .../>\n"
+"        <DataArray Name=\"Temperature\" .../>\n"
+"        <DataArray Name=\"Pressure\" .../>\n"
+"      </PointData>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:160
+msgid ""
+"VTK allows an arbitrary number of data arrays to be associated with the "
+"points and cells of a dataset. Each data array is described by a DataArray "
+"element which, among other things, gives each array a name. The following "
+"attributes of PointData and CellData are used to specify the active arrays "
+"by name:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:161
+msgid "_Scalars_: The name of the active scalars array, if any."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:162
+msgid "_Vectors_: The name of the active vectors array, if any."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:163
+msgid "_Normals_: The name of the active normals array, if any."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:164
+msgid "_Tensors_: The name of the active tensors array, if any."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:165
+msgid "_TCoords_: The name of the active texture coordinates array, if any."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:167
+msgid ""
+"Some datasets describe their points and cells using different combinations "
+"of the following common elements:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:169
+msgid ""
+"**Points**. The _Points_ element explicitly defines coordinates for each "
+"point individually. It contains one _DataArray_ element describing an array "
+"with three components per value, each specifying the coordinates of one "
+"point."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:171
+msgid ""
+"      <Points>\n"
+"        <DataArray NumberOfComponents=\"3\" .../>\n"
+"      </Points>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:178
+msgid ""
+"**Coordinates**. The _Coordinates_ element defines point coordinates for an "
+"extent by specifying the ordinate along each axis for each integer value in "
+"the extent’s range. It contains three _DataArray_ elements describing the "
+"ordinates along the x-y-z axes, respectively."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:180
+msgid ""
+"      <Coordinates>\n"
+"        <DataArray .../>\n"
+"        <DataArray .../>\n"
+"        <DataArray .../>\n"
+"      </Coordinates>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:189
+msgid ""
+"**Verts**, **Lines**, **Strips**, and **Polys**. The _Verts_, _Lines_, "
+"_Strips_, and _Polys_ elements define cells explicitly by specifying point "
+"connectivity. Cell types are implicitly known by the type of element in "
+"which they are specified. Each element contains two _DataArray_ elements. "
+"The first array specifies the point connectivity. All the cells’ point lists "
+"are concatenated together. The second array specifies the offset into the "
+"connectivity array for the end of each cell."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:191
+msgid ""
+"      <Verts>\n"
+"        <DataArray type=\"Int32\" Name=\"connectivity\" .../>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" .../>\n"
+"      </Verts>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:199
+msgid ""
+"**Cells**. The _Cells_ element defines cells explicitly by specifying point "
+"connectivity and cell types. It contains three _DataArray_ elements. The "
+"first array specifies the point connectivity. All the cells’ point lists are "
+"concatenated together. The second array specifies the offset into the "
+"connectivity array for the end of each cell. The third array specifies the "
+"type of each cell. (Note: the cell types are defined in Figure 2 and Figure "
+"3.)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:201
+msgid ""
+"      <Cells>\n"
+"        <DataArray type=\"Int32\" Name=\"connectivity\" .../>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" .../>\n"
+"        <DataArray type=\"UInt8\" Name=\"types\" .../>\n"
+"      </Cells>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:210
+msgid ""
+"All of the data and geometry specifications use _DataArray_ elements to "
+"describe their actual content as follows:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:212
+msgid ""
+"**DataArray**. The _DataArray_ element stores a sequence of values of one "
+"type. There may be one or more components per value."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:214
+msgid ""
+"        <DataArray type=\"Float32\" Name=\"vectors\" "
+"NumberOfComponents=\"3\"\n"
+"                   format=\"appended\" offset=\"0\"/>\n"
+"        <DataArray type=\"Float32\" Name=\"scalars\" format=\"binary\">\n"
+"                   bAAAAAAAAAAAAIA/AAAAQAAAQEAAAIBA... </DataArray>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n"
+"                   10 20 30 ... </DataArray>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:225
+msgid "The attributes of the _DataArray_ elements are described as follows:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:227
+msgid ""
+"type: The data type of a single component of the array. This is one of Int8, "
+"UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Float32, Float64. Note: "
+"64-bit integer types are supported only if VTK_USE_64BIT_IDS is enabled (a "
+"CMake variable—see \"CMake\" on [page 10](https://www.kitware.com/products/"
+"books/VTKUsersGuide.pdf#page=24)) or if the platform is 64-bit."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:229
+msgid ""
+"Name: The name of the array. This is usually a brief description of the data "
+"stored in the array."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:231
+msgid "NumberOfComponents: The number of components per value in the array."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:233
+msgid ""
+"format: The means by which the data values themselves are stored in the "
+"file. This is \"ascii\", \"binary\", or \"appended\"."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:235
+msgid ""
+"offset: If the format attribute is \"appended\", this specifies the offset "
+"from the beginning of the appended data section to the beginning of this "
+"array's data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:237
+msgid ""
+"The _format_ attribute chooses among the three ways in which data values can "
+"be stored:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:239
+msgid ""
+"_format=\"ascii\"_ — The data is listed in ASCII directly inside the "
+"_DataArray_ element. Whitespace is used for separation."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:240
+msgid ""
+"_format=\"binary\"_ — The data is encoded in base64 and listed contiguously "
+"inside the _DataArray_ element. Data may also be compressed before encoding "
+"in base64. The byte order of the data matches that specified by the "
+"byte_order attribute of the _VTKFile_ element."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:241
+msgid ""
+"format=\"appended\" — The data is stored in the appended data section. Since "
+"many _DataArray_ elements may store their data in this section, the offset "
+"attribute is used to specify where each DataArray's data begins. This format "
+"is the default used by VTK's writers."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:243
+msgid ""
+"The appended data section is stored in an _AppendedData_ element that is "
+"nested inside _VTKFile_ after the dataset element:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:245
+msgid ""
+"<VTKFile ...>\n"
+"  ...\n"
+"  <AppendedData encoding=\"base64\">\n"
+"                _QMwEAAAAAAAAA...\n"
+"  </AppendedData>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:255
+msgid ""
+"The appended data section begins immediately after the underscore ('_') that "
+"prefixes the content of the _AppendedData_ element; the underscore itself is "
+"not part of the data but is always present. Data in this section is stored "
+"in binary form and may be compressed and/or base64 encoded. The byte order "
+"of the data matches the value of the _byte_order_ attribute of the _VTKFile_ "
+"element. Each _DataArray_'s data is stored contiguously and appended "
+"immediately after the previous _DataArray_'s data without a separator. The "
+"_DataArray_'s _offset_ attribute indicates the file-position offset from the "
+"first character after the underscore to the beginning of its data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:257
+msgid "**Parallel File Formats**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:258
+msgid ""
+"The parallel file formats do not actually store any data in the file. "
+"Instead, the data is broken into pieces, each of which is stored in a serial "
+"file of the same dataset type."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:260
+msgid ""
+"The _VTKFile_ element contains one element whose name corresponds to the "
+"type of dataset the file describes, but with a \"P\" prefix. We refer to "
+"this as the parallel dataset element, which is one of _PImageData_, "
+"_PRectilinearGrid_, _PStructuredGrid_, _PPolyData_, or _PUnstructuredGrid_."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:262
+msgid ""
+"The parallel dataset element and those nested inside specify the data array "
+"types used to store points, point data, and cell data (the type of arrays "
+"used to store cells is fixed by VTK). The element does not actually contain "
+"any data, but instead includes a list of _Piece_ elements that specify the "
+"source from which to read each piece. Individual pieces are stored in the "
+"corresponding serial file format. The parallel file specifies the types and "
+"structural information so that readers can update pipeline information "
+"without reading the pieces' files."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:264
+msgid "The general structure for each parallel dataset format is as follows:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:266
+msgid "**PImageData**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:267
+msgid ""
+"The _PImageData_ element specifies the whole extent of the dataset and the "
+"number of ghost-levels by which the extents in the individual pieces "
+"overlap. The Origin and Spacing attributes implicitly specify the point "
+"locations. Each _Piece_ element describes the extent of one piece and the "
+"file in which it is stored."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:269
+msgid ""
+"<VTKFile type=\"PImageData\" ...>\n"
+"  <PImageData WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
+"              GhostLevel=\"#\" Origin=\"x0 y0 z0\" Spacing=\"dx dy dz\">\n"
+"    <PPointData>...</PPointData>\n"
+"    <PCellData>...</PCellData>\n"
+"    <Piece Extent=\"x1 x2 y1 y2 z1 z2\" Source=\"imageData0.vti\"/>\n"
+"    ...\n"
+"  </PImageData>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:282
+msgid "**PRectilinearGrid**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:283
+msgid ""
+"The _PRectilinearGrid_ element specifies the whole extent of the dataset and "
+"the number of ghost-levels by which the extents in the individual pieces "
+"overlap. The _PCoordinates_ element describes the type of arrays used to "
+"specify the point ordinates along each axis, but does not actually contain "
+"the data. Each _Piece_ element describes the extent of one piece and the "
+"file in which it is stored."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:285
+msgid ""
+"<VTKFile type=\"PRectilinearGrid\" ...>\n"
+"  <PRectilinearGrid WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
+"                    GhostLevel=\"#\">\n"
+"    <PPointData>...</PPointData>\n"
+"    <PCellData>...</PCellData>\n"
+"    <PCoordinates>...</PCoordinates>\n"
+"    <Piece Extent=\"x1 x2 y1 y2 z1 z2\"\n"
+"           Source=\"rectilinearGrid0.vtr\"/>\n"
+"    ...\n"
+"  </PRectilinearGrid>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:300
+msgid "**PStructuredGrid**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:301
+msgid ""
+"The _PStructuredGrid_ element specifies the whole extent of the dataset and "
+"the number of ghost-levels by which the extents in the individual pieces "
+"overlap. The _PPoints_ element describes the type of array used to specify "
+"the point locations, but does not actually contain the data. Each _Piece_ "
+"element describes the extent of one piece and the file in which it is stored."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:303
+msgid ""
+"<VTKFile type=\"PStructuredGrid\" ...>\n"
+"  <PStructuredGrid WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
+"                   GhostLevel=\"#\">\n"
+"    <PPointData>...</PPointData>\n"
+"    <PCellData>...</PCellData>\n"
+"    <PPoints>...</PPoints>\n"
+"    <Piece Extent=\"x1 x2 y1 y2 z1 z2\"\n"
+"           Source=\"structuredGrid0.vts\"/>\n"
+"    ...\n"
+"  </PStructuredGrid>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:318
+msgid "**PPolyData**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:319
+msgid ""
+"The _PPolyData_ element specifies the number of ghost-levels by which the "
+"individual pieces overlap. The _PPoints_ element describes the type of array "
+"used to specify the point locations, but does not actually contain the data. "
+"Each _Piece_ element specifies the file in which the piece is stored."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:321
+msgid ""
+"<VTKFile type=\"PPolyData\" ...>\n"
+"  <PPolyData GhostLevel=\"#\">\n"
+"    <PPointData>...</PPointData>\n"
+"    <PCellData>...</PCellData>\n"
+"    <PPoints>...</PPoints>\n"
+"    <Piece Source=\"polyData0.vtp\"/>\n"
+"    ...\n"
+"  </PPolyData>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:334
+msgid "**PUnstructuredGrid**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:335
+msgid ""
+"The _PUnstructuredGrid_ element specifies the number of ghost-levels by "
+"which the individual pieces overlap. The _PPoints_ element describes the "
+"type of array used to specify the point locations, but does not actually "
+"contain the data. Each _Piece_ element specifies the file in which the piece "
+"is stored."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:337
+msgid ""
+"<VTKFile type=\"PUnstructuredGrid\" ...>\n"
+"  <PUnstructuredGrid GhostLevel=\"0\">\n"
+"    <PPointData>...</PPointData>\n"
+"    <PCellData>...</PCellData>\n"
+"    <PPoints>...</PPoints>\n"
+"    <Piece Source=\"unstructuredGrid0.vtu\"/>\n"
+"    ...\n"
+"  </PUnstructuredGrid>\n"
+"</VTKFile>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:350
+msgid ""
+"Every dataset uses _PPointData_ and _PCellData_ elements to describe the "
+"types of data arrays associated with its points and cells."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:352
+msgid ""
+"**PPointData** and **PCellData**. These elements simply mirror the "
+"_PointData_ and _CellData_ elements from the serial file formats. They "
+"contain _PDataArray_ elements describing the data arrays, but without any "
+"actual data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:354
+msgid ""
+"    <PPointData Scalars=\"Temperature\" Vectors=\"Velocity\">\n"
+"      <PDataArray Name=\"Velocity\" .../>\n"
+"      <PDataArray Name=\"Temperature\" .../>\n"
+"      <PDataArray Name=\"Pressure\" .../>\n"
+"    </PPointData>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:363
+msgid ""
+"For datasets that need specification of points, the following elements "
+"mirror their counterparts from the serial file format:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:365
+msgid ""
+"**PPoints**. The _PPoints_ element contains one _PDataArray_ element "
+"describing an array with three components. The data array does not actually "
+"contain any data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:367
+msgid ""
+"    <PPoints>\n"
+"      <PDataArray NumberOfComponents=\"3\" .../>\n"
+"    </PPoints>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:374
+msgid ""
+"**PCoordinates**. The _PCoordinates_ element contains three _PDataArray_ "
+"elements describing the arrays used to specify ordinates along each axis. "
+"The data arrays do not actually contain any data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:376
+msgid ""
+"    <PCoordinates>\n"
+"      <PDataArray .../>\n"
+"      <PDataArray .../>\n"
+"      <PDataArray .../>\n"
+"    </PCoordinates>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:385
+msgid ""
+"All of the data and geometry specifications use _PDataArray_ elements to "
+"describe the data array types:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:387
+msgid ""
+"**PDataArray**. The _PDataArray_ element specifies the type, Name, and "
+"optionally the NumberOfComponents attributes from the _DataArray_ element. "
+"It does not contain the actual data. This can be used by readers to create "
+"the data array in their output without needing to read any real data, which "
+"is necessary for efficient pipeline updates in some cases."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:389
+msgid ""
+"      <PDataArray type=\"Float32\" Name=\"vectors\" NumberOfComponents=\"3\"/"
+">\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:393
+msgid "**XML File Examples**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:395
+msgid ""
+"Below are some examples for valid XML files for the different file formats. "
+"Each example includes a minimal dataset along with point and cell attributes "
+"to illustrate typical structure, data arrays, and element organization."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:397
+msgid "ImageData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:399
+msgid ""
+"This example shows a 2D image stored as vtkImageData with three pieces. Each "
+"piece defines its own Extent, while Origin and Spacing are shared across the "
+"dataset. Both point and cell scalar fields are included to demonstrate "
+"element layout."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:401
+msgid "ImageData Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:406
+msgid ""
+"<VTKFile type=\"ImageData\"  version=\"0.1\" byte_order=\"LittleEndian\">\n"
+"  <ImageData WholeExtent=\"0 26 0 14 0 0\"\n"
+"             Origin=\"0 0 0\" Spacing=\"1 1 1\">\n"
+"    <Piece Extent=\"0 11 0 14 0 0\">\n"
+"      <PointData Scalars=\"point_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"point_scalars\" "
+"format=\"ascii\">\n"
+"          0 0 0 0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 1 1 1 0 0 0 0\n"
+"          0 0 0 0 0 1 1 1 0 0 0 0\n"
+"          0 0 0 0 1 1 1 1 1 0 0 0\n"
+"          0 0 0 0 1 1 1 1 1 0 0 0\n"
+"          0 0 0 1 1 1 1 1 1 1 0 0\n"
+"          0 0 0 1 1 1 0 1 1 1 0 0\n"
+"          0 0 1 1 1 1 0 1 1 1 1 0\n"
+"          0 0 1 1 1 0 0 0 1 1 1 0\n"
+"          0 1 1 1 1 0 0 0 1 1 1 0\n"
+"          0 1 1 1 0 0 0 0 1 1 1 0\n"
+"          0 1 1 1 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0 0 0 0\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cell_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"cell_scalars\" format=\"ascii\">\n"
+"          0 0 0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 1 1 0 0 0 0\n"
+"          0 0 0 0 0 1 1 0 0 0 0\n"
+"          0 0 0 0 1 1 1 1 0 0 0\n"
+"          0 0 0 0 1 1 1 1 0 0 0\n"
+"          0 0 0 1 1 0 0 1 1 0 0\n"
+"          0 0 0 1 1 0 0 1 1 0 0\n"
+"          0 0 1 1 0 0 0 0 1 1 0\n"
+"          0 0 1 1 0 0 0 0 1 1 0\n"
+"          0 1 1 0 0 0 0 0 1 1 0\n"
+"          0 1 1 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0 0 0\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"    </Piece>\n"
+"    <Piece Extent=\"11 18 0 14 0 0\">\n"
+"      <PointData Scalars=\"point_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"point_scalars\" "
+"format=\"ascii\">\n"
+"          0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          0 0 2 2 2 0 0 0\n"
+"          2 2 2 2 2 2 2 0\n"
+"          2 2 2 2 2 2 2 0\n"
+"          2 2 2 2 2 2 2 0\n"
+"          0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cell_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"cell_scalars\" format=\"ascii\">\n"
+"          0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          0 0 2 2 0 0 0\n"
+"          2 2 2 2 2 2 0\n"
+"          2 2 2 2 2 2 0\n"
+"          0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"    </Piece>\n"
+"    <Piece Extent=\"18 26 0 14 0 0\">\n"
+"      <PointData Scalars=\"point_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"point_scalars\" "
+"format=\"ascii\">\n"
+"          0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 3 3 3 0\n"
+"          0 0 0 0 0 3 3 3 0\n"
+"          3 3 3 0 3 3 3 3 0\n"
+"          3 3 3 0 3 3 3 0 0\n"
+"          3 3 3 3 3 3 3 0 0\n"
+"          3 3 3 3 3 3 0 0 0\n"
+"          3 3 3 3 3 0 0 0 0\n"
+"          3 3 3 3 3 3 0 0 0\n"
+"          3 3 3 3 3 3 0 0 0\n"
+"          3 3 3 3 3 3 3 0 0\n"
+"          3 3 3 0 3 3 3 0 0\n"
+"          3 3 3 0 3 3 3 0 0\n"
+"          0 0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0 0\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cell_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"cell_scalars\" format=\"ascii\">\n"
+"          0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 3 3 0\n"
+"          0 0 0 0 0 3 3 0\n"
+"          3 3 0 0 3 3 0 0\n"
+"          3 3 0 0 3 3 0 0\n"
+"          3 3 0 3 3 0 0 0\n"
+"          3 3 0 3 3 0 0 0\n"
+"          3 3 3 3 0 0 0 0\n"
+"          3 3 3 3 3 0 0 0\n"
+"          3 3 0 3 3 0 0 0\n"
+"          3 3 0 0 3 3 0 0\n"
+"          3 3 0 0 3 3 0 0\n"
+"          0 0 0 0 0 0 0 0\n"
+"          0 0 0 0 0 0 0 0\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"    </Piece>\n"
+"  </ImageData>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:531
+msgid "RectilinearGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:533
+msgid ""
+"This example demonstrates a vtkRectilinearGrid with independent X, Y, and Z "
+"coordinate arrays, and it includes scalar fields on both points and cells."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:535
+msgid "RectilinearGrid Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:540
+msgid ""
+"<VTKFile type=\"RectilinearGrid\" version=\"0.1\" "
+"byte_order=\"LittleEndian\">\n"
+"  <RectilinearGrid WholeExtent=\"0 3 0 5 0 3\">\n"
+"    <Piece Extent=\"0 3 0 5 0 3\">\n"
+"      <PointData Scalars=\"point_scalar\">\n"
+"        <DataArray type=\"Float32\" Name=\"point_scalar\" format=\"ascii\">\n"
+"          0 1 2 3 4 5 6 7 8 9 10 11\n"
+"          12 13 14 15 16 17 18 19 20 21 22 23\n"
+"          24 25 26 27 28 29 30 31 32 33 34 35\n"
+"          36 37 38 39 40 41 42 43 44 45 46 47\n"
+"\n"
+"          48 49 50 51 52 53 54 55 56 57 58 59\n"
+"          60 61 62 63 64 65 66 67 68 69 70 71\n"
+"          72 73 74 75 76 77 78 79 80 81 82 83\n"
+"          84 85 86 87 88 89 90 91 92 93 94 95\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cell_scalar\">\n"
+"        <DataArray type=\"Float32\" Name=\"cell_scalar\" format=\"ascii\">\n"
+"          0 1 2 3 4\n"
+"          5 6 7 8 9\n"
+"          10 11 12 13 14\n"
+"          15 16 17 18 19\n"
+"          20 21 22 23 24\n"
+"\n"
+"          25 26 27 28 29\n"
+"          30 31 32 33 34\n"
+"          35 36 37 38 39\n"
+"          40 41 42 43 44\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"      <Coordinates>\n"
+"        <DataArray type=\"Float32\" Name=\"X\" NumberOfComponents=\"1\" "
+"format=\"ascii\">\n"
+"          0.0 1.0 2.0 3.0\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Float32\" Name=\"Y\" NumberOfComponents=\"1\" "
+"format=\"ascii\">\n"
+"          0.0 1.5 3.0 4.5 6.0 7.5\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Float32\" Name=\"Z\" NumberOfComponents=\"1\" "
+"format=\"ascii\">\n"
+"          0.0 1.0 2.0 3.0\n"
+"        </DataArray>\n"
+"      </Coordinates>\n"
+"    </Piece>\n"
+"  </RectilinearGrid>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:587
+msgid "StructuredGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:589
+msgid ""
+"A vtkStructuredGrid example with explicit point coordinates. The grid is "
+"6×6×2 in extent, with varying Z-coordinates. Point and cell scalar data are "
+"included."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:591
+msgid "StructuredGrid Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:596
+msgid ""
+"<VTKFile type=\"StructuredGrid\" version=\"0.1\" "
+"byte_order=\"LittleEndian\">\n"
+"  <StructuredGrid WholeExtent=\"0 5 0 5 0 1\">\n"
+"    <Piece Extent=\"0 5 0 5 0 1\">\n"
+"      <PointData Scalars=\"temperature\">\n"
+"        <DataArray type=\"Float32\" Name=\"temperature\" format=\"ascii\">\n"
+"          1 2 3 4 5 6\n"
+"          7 8 9 10 11 12\n"
+"          13 14 15 16 17 18\n"
+"          19 20 21 22 23 24\n"
+"          25 26 27 28 29 30\n"
+"          31 32 33 34 35 36\n"
+"\n"
+"          37 38 39 40 41 42\n"
+"          43 44 45 46 47 48\n"
+"          49 50 51 52 53 54\n"
+"          55 56 57 58 59 60\n"
+"          61 62 63 64 65 66\n"
+"          67 68 69 70 71 72\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cell_val\">\n"
+"        <DataArray type=\"Float32\" Name=\"cell_val\" format=\"ascii\">\n"
+"          100 101 102 103 104\n"
+"          105 106 107 108 109\n"
+"          110 111 112 113 114\n"
+"          115 116 117 118 119\n"
+"          120 121 122 123 124\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"      <Points>\n"
+"        <DataArray type=\"Float32\" NumberOfComponents=\"3\" "
+"format=\"ascii\">\n"
+"          0 0 0  1 0 0  2 0 0  3 0 0  4 0 0  5 0 0\n"
+"          0 1 0  1 1 0  2 1 0  3 1 0  4 1 0  5 1 0\n"
+"          0 2 0  1 2 0  2 2 0  3 2 0  4 2 0  5 2 0\n"
+"          0 3 0  1 3 0  2 3 0  3 3 0  4 3 0  5 3 0\n"
+"          0 4 0  1 4 0  2 4 0  3 4 0  4 4 0  5 4 0\n"
+"          0 5 0  1 5 0  2 5 0  3 5 0  4 5 0  5 5 0\n"
+"\n"
+"          0 0 1.0  1 0 1.2  2 0 1.4  3 0 1.2  4 0 1.0  5 0 1.2\n"
+"          0 1 1.1  1 1 1.3  2 1 1.6  3 1 1.5  4 1 1.2  5 1 1.1\n"
+"          0 2 1.3  1 2 1.6  2 2 1.9  3 2 1.7  4 2 1.4  5 2 1.2\n"
+"          0 3 1.2  1 3 1.5  2 3 1.7  3 3 1.6  4 3 1.3  5 3 1.1\n"
+"          0 4 1.1  1 4 1.3  2 4 1.4  3 4 1.3  4 4 1.1  5 4 1.0\n"
+"          0 5 1.0  1 5 1.2  2 5 1.3  3 5 1.2  4 5 1.0  5 5 1.0\n"
+"        </DataArray>\n"
+"      </Points>\n"
+"    </Piece>\n"
+"  </StructuredGrid>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:648
+msgid "PolyData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:650
+msgid ""
+"Demonstrated is a 2D polygonal mesh with 13 points and 6 polygons, including "
+"point-based scalars and vectors, and cell scalar values."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:652
+msgid "PolyData Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:657
+msgid ""
+"<VTKFile type=\"PolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
+"  <PolyData>\n"
+"    <Piece NumberOfPoints=\"13\" NumberOfPolys=\"6\">\n"
+"      <Points>\n"
+"        <DataArray type=\"Float32\" NumberOfComponents=\"3\" "
+"format=\"ascii\">\n"
+"          0.0 0.0 0.0   0.5 0.0 0.0   1.0 0.0 0.0\n"
+"          0.0 0.3 0.0   0.4 0.5 0.0   0.75 0.35 0.0  1.0 0.4 0.0\n"
+"          0.0 0.7 0.0   0.55 0.8 0.0  1.0 0.75 0.0\n"
+"          0.0 1.0 0.0   0.5 1.0 0.0   1.0 1.0 0.0\n"
+"        </DataArray>\n"
+"      </Points>\n"
+"      <Polys>\n"
+"        <DataArray type=\"Int32\" Name=\"connectivity\" format=\"ascii\">\n"
+"          0 1 4 3\n"
+"          1 2 6 5 4\n"
+"          3 4 8 7\n"
+"          4 5 6 9 8\n"
+"          7 8 11 10\n"
+"          8 9 12 11\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n"
+"          4 9 13 18 22 26\n"
+"        </DataArray>\n"
+"      </Polys>\n"
+"      <PointData Scalars=\"PointValue\" Vectors=\"PointVector\">\n"
+"        <DataArray type=\"Float32\" Name=\"PointValue\" "
+"NumberOfComponents=\"1\" format=\"ascii\">\n"
+"          0.0 0.1 0.2\n"
+"          0.3 0.4 0.5 0.6\n"
+"          0.7 0.8 0.9\n"
+"          1.0 1.1 1.2\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Float32\" Name=\"PointVector\" "
+"NumberOfComponents=\"3\" format=\"ascii\">\n"
+"          0.0 0.0 0.0   0.1 0.0 0.0   0.2 0.0 0.0\n"
+"          0.0 0.1 0.0   0.1 0.1 0.0   0.2 0.1 0.0  0.3 0.1 0.0\n"
+"          0.0 0.2 0.0   0.1 0.2 0.0   0.2 0.2 0.0\n"
+"          0.0 0.3 0.0   0.1 0.3 0.0   0.2 0.3 0.0\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"CellValues\">\n"
+"        <DataArray type=\"Float32\" Name=\"CellValues\" "
+"NumberOfComponents=\"1\" format=\"ascii\">\n"
+"          0.95 0.88 0.90 0.85 0.99 0.92\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"    </Piece>\n"
+"  </PolyData>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:706
+msgid "UnstructuredGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:708
+msgid ""
+"This example shows a 3D mesh with 20 points and 12 mixed-type cells (wedges "
+"and pyramids), featuring point scalars and cell-based scalars and normals."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:710
+msgid "UnstructuredGrid Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:715
+msgid ""
+"<VTKFile type=\"UnstructuredGrid\" version=\"1.0\" "
+"byte_order=\"LittleEndian\">\n"
+"  <UnstructuredGrid>\n"
+"    <Piece NumberOfPoints=\"20\" NumberOfCells=\"12\">\n"
+"      <PointData Scalars=\"pointVals\">\n"
+"        <DataArray type=\"Float32\" Name=\"pointVals\" format=\"ascii\">\n"
+"          1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 "
+"16.0 17.0 18.0 19.0 20.0\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cellVals\" Normals=\"cellNormals\">\n"
+"        <DataArray type=\"Int32\" Name=\"cellVals\" format=\"ascii\">\n"
+"          0 1 2 3 4 5 6 7 8 9 10 11\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Float32\" Name=\"cellNormals\" "
+"NumberOfComponents=\"3\" format=\"ascii\">\n"
+"          1.0 0.5 1.0\n"
+"          0.0 1.0 1.0\n"
+"          -1.0 0.5 1.0\n"
+"          -1.0 -0.5 1.0\n"
+"          0.0 -1.0 1.0\n"
+"          1.0 -0.5 1.0\n"
+"          1.0 0.5 2.0\n"
+"          0.0 1.0 2.0\n"
+"          -1.0 0.5 2.0\n"
+"          -1.0 -0.5 2.0\n"
+"          0.0 -1.0 2.0\n"
+"          1.0 -0.5 2.0\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"      <Points>\n"
+"        <DataArray type=\"Float32\" NumberOfComponents=\"3\" "
+"format=\"ascii\">\n"
+"          2.0 0.0 0.0\n"
+"          1.0 2.0 0.0\n"
+"          -1.0 2.0 0.0\n"
+"          -2.0 0.0 0.0\n"
+"          -1.0 -2.0 0.0\n"
+"          1.0 -2.0 0.0\n"
+"          0.0 0.0 0.0\n"
+"          2.0 0.0 2.0\n"
+"          1.0 2.0 2.0\n"
+"          -1.0 2.0 2.0\n"
+"          -2.0 0.0 2.0\n"
+"          -1.0 -2.0 2.0\n"
+"          1.0 -2.0 2.0\n"
+"          0.0 0.0 2.0\n"
+"          2.0 0.0 4.0\n"
+"          1.0 2.0 4.0\n"
+"          -1.0 2.0 4.0\n"
+"          -2.0 0.0 4.0\n"
+"          -1.0 -2.0 4.0\n"
+"          1.0 -2.0 4.0\n"
+"        </DataArray>\n"
+"      </Points>\n"
+"      <Cells>\n"
+"        <DataArray type=\"Int32\" Name=\"connectivity\" format=\"ascii\">\n"
+"          0 1 6 7 8 13\n"
+"          1 2 6 8 9 13\n"
+"          2 3 6 9 10 13\n"
+"          3 4 6 10 11 13\n"
+"          4 5 6 11 12 13\n"
+"          5 0 6 12 7 13\n"
+"          7 8 15 14 13\n"
+"          8 9 16 15 13\n"
+"          9 10 17 16 13\n"
+"          10 11 18 17 13\n"
+"          11 12 19 18 13\n"
+"          12 7 14 19 13\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n"
+"          6 12 18 24 30 36 41 46 51 56 61 66\n"
+"        </DataArray>\n"
+"        <DataArray type=\"UInt8\" Name=\"types\" format=\"ascii\">\n"
+"          13 13 13 13 13 13 14 14 14 14 14 14\n"
+"        </DataArray>\n"
+"      </Cells>\n"
+"    </Piece>\n"
+"  </UnstructuredGrid>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:794
+msgid ""
+"Below is another unstructured grid example, which uses polyhedron cell types."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:796
+msgid "UnstructuredGrid Example with Polyhedron Cell Types"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:801
+msgid "Here we see a few additional ``DataArray`` types:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:803
+msgid ""
+"The ``faces`` array specifies the faces of all the cells. The description "
+"for each cell must first specify the total number of faces, then list each "
+"face, starting with the number of points and followed by the point IDs."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:804
+msgid ""
+"cell0_nFaces\n"
+"cell0_face0_npts p0 p1 ...\n"
+"cell0_face1_npts p0 p1 ...\n"
+"...\n"
+"\n"
+"cell1_nFaces\n"
+"cell1_face0_npts p0 p1 ...\n"
+"cell1_face1_npts p0 p1 ...\n"
+"...\n"
+"\n"
+"cell2_nFaces\n"
+"...\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:819
+msgid ""
+"``faceoffsets`` contains the offsets into the ``faces`` array for the end of "
+"each cell."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:821
+msgid ""
+"``connectivity`` in this case lists all unique point IDs referenced in each "
+"cell."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:823
+msgid ""
+"``offsets`` describes where each cell entry ends in the ``connectivity`` "
+"array."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:825
+msgid ""
+"<VTKFile type=\"UnstructuredGrid\" version=\"0.1\" "
+"byte_order=\"LittleEndian\">\n"
+"  <UnstructuredGrid>\n"
+"    <Piece NumberOfPoints=\"32\" NumberOfCells=\"9\">\n"
+"      <PointData Scalars=\"pointVals\">\n"
+"        <DataArray type=\"Float32\" Name=\"pointVals\" format=\"ascii\">\n"
+"           1.0  2.0  3.0  4.0  5.0  6.0  7.0  8.0  9.0 10.0\n"
+"           11.0  12.0  13.0  14.0  15.0  16.0  17.0  18.0  19.0 20.0\n"
+"           21.0  22.0  23.0  24.0  25.0  26.0  27.0  28.0  29.0 30.0\n"
+"           31.0 32.0\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cellVals\">\n"
+"        <DataArray type=\"Float32\" Name=\"cellVals\" format=\"ascii\">\n"
+"           0.37 -0.88 0.12 0.64 -0.27 0.91 -0.53 -0.05 0.78\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"      <Points>\n"
+"        <DataArray type=\"Float32\" NumberOfComponents=\"3\" "
+"format=\"ascii\">\n"
+"          -1 -1 0  -1 0 0  -1 1 0\n"
+"          0 -1 0  0 0 0  0 1 0\n"
+"          1 -1 0  1 0 0  1 1 0\n"
+"          -1 -1 1  -1 0 1  -1 1 1\n"
+"          0 -1 1  0 1 1  1 -1 1\n"
+"          1 0 1  1 1 1\n"
+"          0 0 0.5  -0.5 0 1  0 -0.5 1\n"
+"          0 0.5 1  0.5 0 1  0 0 1.5\n"
+"          -1 -1 2  -1 0 2  -1 1 2\n"
+"          0 -1 2  0 0 2  0 1 2\n"
+"          1 -1 2  1 0 2  1 1 2\n"
+"        </DataArray>\n"
+"      </Points>\n"
+"      <Cells>\n"
+"        <DataArray type=\"Int32\" Name=\"faces\" format=\"ascii\">\n"
+"          7\n"
+"          4 0 1 4 3\n"
+"          4 0 3 12 9\n"
+"          5 3 4 17 19 12\n"
+"          5 4 1 10 18 17\n"
+"          4 1 0 9 10\n"
+"          3 17 18 19\n"
+"          5 9 12 19 18 10\n"
+"          7\n"
+"          4 3 4 7 6\n"
+"          4 6 7 15 14\n"
+"          5 7 4 17 21 15\n"
+"          5 4 3 12 19 17\n"
+"          4 3 6 14 12\n"
+"          3 17 19 21\n"
+"          5 14 15 21 19 12\n"
+"          7\n"
+"          4 8 7 4 5\n"
+"          4 8 5 13 16\n"
+"          5 5 4 17 20 13\n"
+"          5 4 7 15 21 17\n"
+"          4 7 8 16 15\n"
+"          3 17 21 20\n"
+"          5 16 13 20 21 15\n"
+"          7\n"
+"          4 2 5 4 1\n"
+"          4 2 1 10 11\n"
+"          5 1 4 17 18 10\n"
+"          5 4 5 13 20 17\n"
+"          4 5 2 11 13\n"
+"          3 17 20 18\n"
+"          5 11 10 18 20 13\n"
+"          8\n"
+"          3 17 19 18\n"
+"          3 17 21 19\n"
+"          3 17 20 21\n"
+"          3 17 18 20\n"
+"          3 22 18 19\n"
+"          3 22 19 21\n"
+"          3 22 21 20\n"
+"          3 22 20 18\n"
+"          7\n"
+"          4 23 26 27 24\n"
+"          4 26 23 9 12\n"
+"          5 27 26 12 19 22\n"
+"          5 24 27 22 18 10\n"
+"          4 23 24 10 9\n"
+"          3 22 19 18\n"
+"          5 9 10 18 19 12\n"
+"          7\n"
+"          4 29 30 27 26\n"
+"          4 30 29 14 15\n"
+"          5 27 30 15 21 22\n"
+"          5 26 27 22 19 12\n"
+"          4 29 26 12 14\n"
+"          3 22 21 19\n"
+"          5 14 12 19 21 15\n"
+"          7\n"
+"          4 31 28 27 30\n"
+"          4 28 31 16 13\n"
+"          5 27 28 13 20 22\n"
+"          5 30 27 22 21 15\n"
+"          4 31 30 15 16\n"
+"          3 22 20 21\n"
+"          5 16 15 21 20 13\n"
+"          7\n"
+"          4 25 24 27 28\n"
+"          4 24 25 11 10\n"
+"          5 27 24 10 18 22\n"
+"          5 28 27 22 20 13\n"
+"          4 25 28 13 11\n"
+"          3 22 18 20\n"
+"          5 11 13 20 18 10\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Int64\" Name=\"faceoffsets\" format=\"ascii\">\n"
+"          38 76 114 152 185 223 261 299 337\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Int64\" Name=\"connectivity\" format=\"ascii\">\n"
+"          0 1 3 4 9 10 12 17 18 19\n"
+"          3 4 5 6 7 12 14 15 17 19 21\n"
+"          4 5 7 8 13 15 16 17 20 21\n"
+"          1 2 4 5 10 11 13 17 18 20\n"
+"          17 18 19 20 21 22\n"
+"          9 10 11 12 18 19 22 23 24 26 27\n"
+"          11 12 14 15 19 21 22 26 27 29 30\n"
+"          13 15 16 20 21 22 27 28 30 31\n"
+"          10 11 13 18 20 22 24 25 27 28\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n"
+"          10 21 31 41 47 58 69 79 89\n"
+"        </DataArray>\n"
+"        <DataArray type=\"UInt8\" Name=\"types\" format=\"ascii\">\n"
+"          42 42 42 42 42 42 42 42 42\n"
+"        </DataArray>\n"
+"      </Cells>\n"
+"    </Piece>\n"
+"  </UnstructuredGrid>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:959
+msgid "PPolyData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:961
+msgid ""
+"The following is a complete example specifying a vtkPolyData representing a "
+"cube with some scalar data on its points and faces. <sup>[1](https://kitware."
+"com/products/books/VTKUsersGuide.pdf)</sup>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:961
+msgid "<sup>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:961
+msgid "</sup>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:964
+msgid "PPolyData Cube Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:969
+msgid "``polyEx.pvtp``:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:970
+msgid ""
+"<VTKFile type=\"PPolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
+"  <PPolyData GhostLevel=\"0\">\n"
+"    <PPointData Scalars=\"my_scalars\">\n"
+"      <PDataArray type=\"Float32\" Name=\"my_scalars\"/>\n"
+"    </PPointData>\n"
+"    <PCellData Scalars=\"cell_scalars\" Normals=\"cell_normals\">\n"
+"      <PDataArray type=\"Int32\" Name=\"cell_scalars\"/>\n"
+"      <PDataArray type=\"Float32\" Name=\"cell_normals\" "
+"NumberOfComponents=\"3\"/>\n"
+"    </PCellData>\n"
+"    <PPoints>\n"
+"      <PDataArray type=\"Float32\" NumberOfComponents=\"3\"/>\n"
+"    </PPoints>\n"
+"    <Piece Source=\"polyEx0.vtp\"/>\n"
+"  </PPolyData>\n"
+"</VTKFile>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:988
+msgid "``polyEx0.vtp``:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:989
+msgid ""
+"<VTKFile type=\"PolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
+"  <PolyData>\n"
+"    <Piece NumberOfPoints=\"8\" NumberOfVerts=\"0\" NumberOfLines=\"0\"\n"
+"           NumberOfStrips=\"0\" NumberOfPolys=\"6\">\n"
+"      <Points>\n"
+"        <DataArray type=\"Float32\" NumberOfComponents=\"3\" "
+"format=\"ascii\">\n"
+"          0 0 0 1 0 0 1 1 0 0 1 0 0 0 1 1 0 1 1 1 1 0 1 1\n"
+"        </DataArray>\n"
+"      </Points>\n"
+"      <PointData Scalars=\"my_scalars\">\n"
+"        <DataArray type=\"Float32\" Name=\"my_scalars\" format=\"ascii\">\n"
+"          0 1 2 3 4 5 6 7\n"
+"        </DataArray>\n"
+"      </PointData>\n"
+"      <CellData Scalars=\"cell_scalars\" Normals=\"cell_normals\">\n"
+"        <DataArray type=\"Int32\" Name=\"cell_scalars\" format=\"ascii\">\n"
+"          0 1 2 3 4 5\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Float32\" Name=\"cell_normals\"\n"
+"                   NumberOfComponents=\"3\" format=\"ascii\">\n"
+"          0 0 -1 0 0 1 0 -1 0 0 1 0 -1 0 0 1 0 0\n"
+"        </DataArray>\n"
+"      </CellData>\n"
+"      <Polys>\n"
+"        <DataArray type=\"Int32\" Name=\"connectivity\" format=\"ascii\">\n"
+"          0 1 2 3 4 5 6 7 0 1 5 4 2 3 7 6 0 4 7 3 1 2 6 5\n"
+"        </DataArray>\n"
+"        <DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n"
+"          4 8 12 16 20 24\n"
+"        </DataArray>\n"
+"      </Polys>\n"
+"    </Piece>\n"
+"  </PolyData>\n"
+"</VTKFile>\n"
+msgstr ""

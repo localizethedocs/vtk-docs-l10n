@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/array-api.md:1
+msgid "Integer API for vtkDataArray"
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:3
+msgid ""
+"There has been a long-standing need for access to integer array data without "
+"casting the array to its storage type."
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:6
+msgid ""
+"The `GetTuple()` and `SetTuple()` methods of `vtkDataArray` provide double-"
+"precision floating-point access to arrays regardless of their storage type. "
+"Similarly, the `GetTypedTuple()` and `SetTypedTuple()` methods that are "
+"specific to each array subclass provide array access in the native storage "
+"format but require casting the array to its concrete type. However, there "
+"was no method to reliably fetch large integer values (such as connectivity "
+"entries or global point/cell IDs) without macros or templated code, which "
+"often requires a significant investment of developer time."
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:17
+msgid ""
+"The floating-point API only provides 52-bits for integer values, and in many "
+"cases 64-bit integer data would exceed this because upper bits are used as "
+"flags modifying entries in less-signifcant bits."
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:21
+msgid ""
+"Now, `vtkDataArray` provides the following methods you can use to fetch and "
+"store tuples:"
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:24
+msgid ""
+"void GetIntegerTuple(vtkIdType tupleIdx, vtkTypeInt64* tuple);\n"
+"void SetIntegerTuple(vtkIdType tupleIdx, vtkTypeInt64* tuple);\n"
+"\n"
+"void GetUnsignedTuple(vtkIdType tupleIdx, vtkTypeUInt64* tuple);\n"
+"void SetUnsignedTuple(vtkIdType tupleIdx, vtkTypeUInt64* tuple);\n"
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:32
+msgid ""
+"These methods require you to pass in a pointer to a 64-bit integer array "
+"large enough to hold an entire tuple of values."
+msgstr ""
+
+#: ../../../release_details/9.4/array-api.md:35
+msgid ""
+"You are still encouraged to use vtkSMPTools with templated workers, "
+"`vtkArrayDispatch`, or the legacy `vtkTemplateMacro` where speed is required "
+"but these methods make prototyping much simpler."
+msgstr ""

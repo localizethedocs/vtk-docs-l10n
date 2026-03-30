@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:1
+msgid ""
+"Add support for fallback to EGL or OSMesa in Linux and Windows at runtime"
+msgstr ""
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:3
+msgid ""
+"On Linux, VTK will now automatically fallback to `EGL` when there is no X "
+"display present or it is not capable of OpenGL. In case the system is not "
+"configured for `EGL`, VTK will fallback to OSMesa. The reason for fallback "
+"will be printed to console."
+msgstr ""
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:6
+msgid ""
+"Similarly on Windows, VTK will now automatically fallback to OSMesa if the "
+"OpenGL drivers on Windows system are too old i,e do not support OpenGL 3.2 "
+"or higher."
+msgstr ""
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:9
+msgid ""
+"You can learn about the new behavior of the OpenGL build settings in [OpenGL "
+"related build options](https://docs.vtk.org/en/latest/build_instructions/"
+"build_settings.html#opengl-related-build-options)"
+msgstr ""
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:11
+msgid ""
+"To enable runtime selection, VTK now integrates the modern OpenGL loader "
+"library [glad](https://github.com/Dav1dde/glad) as a [third-party project](/"
+"developers_guide/git/thirdparty-projects.md), replacing `glew`, which did "
+"not support compiling both `GLX` and `EGL` in the same build"
+msgstr ""
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:13
+msgid ""
+"If OSMesa is not installed, VTK prints a warning to the console and suggests "
+"installing OSMesa."
+msgstr ""
+
+#: ../../../release_details/9.4/support-runtime-opengl-window-selection.md:15
+msgid ""
+"You can enforce a specific render window by setting the "
+"`VTK_DEFAULT_OPENGL_WINDOW` environment variable. See [Runtime settings - "
+"OpenGL](https://docs.vtk.org/en/latest/advanced/runtime_settings."
+"html#opengl)."
+msgstr ""

@@ -1,0 +1,678 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/test.md:1
+msgid "Adding Tests"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:4
+msgid ""
+"This page documents how to add test data while developing VTK with [Git][]. "
+"See the [README](README.md) for more information."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:9
+msgid "Setup"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:12
+msgid ""
+"The workflow below depends on local hooks to function properly. Follow the "
+"main [developer setup instructions](../develop_quickstart.md#initial-setup) "
+"before proceeding.  In particular, run [SetupForDevelopment.sh][]:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:16
+msgid "$ ./Utilities/SetupForDevelopment.sh\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:20
+msgid "Workflow"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:23
+msgid ""
+"Our workflow for adding data integrates with our standard Git [development "
+"process](develop.md).  Start by [creating a topic](develop.md#create-a-"
+"topic). Return here when you reach the \"edit files\" step."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:28
+msgid ""
+"These instructions follow a typical use case of adding a new test with a "
+"baseline image."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:31
+msgid "Writing new tests"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:33
+msgid ""
+"All new features that go into VTK must be accompanied by tests. This ensures "
+"that the feature works on many platforms and that it will continue to work "
+"as VTK evolves."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:37
+msgid ""
+"Tests for the classes in each module of VTK are placed underneath the "
+"module's Testing/<Language> subdirectory. Modules that the tests depend upon "
+"beyond those that the module itself depends upon are declared with the "
+"TEST_DEPENDS argument in the `vtk.module`   file. Test executables are added "
+"to VTK's build system by naming them in the `CMakeLists.txt` files in each "
+"Testing/<Language> directory. In those `CMakeLists`, standard "
+"`add_executable()` + `add_test()` command pairs could be used, but the "
+"following macros defined in `vtkModuleTesting.cmake` are preferable as they "
+"consolidate multiple tests together, participate in VTK's modular build "
+"scripts, and ensure consistency:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:37
+msgid "<Language>"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:47
+msgid "{cmake:command}`vtk_add_test_cxx`"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:48
+msgid "{cmake:command}`vtk_add_test_mpi`"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:49
+msgid "{cmake:command}`vtk_add_test_python`"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:51
+msgid ""
+"Tests indicate success to CTest by returning `EXIT_SUCCESS` (0) and failure "
+"by returning `EXIT_FAILURE` (1). How the test determines what result to "
+"return is up to the developer. VTK contains a number of utilities for this "
+"task. For example, vtkRegressionTester is a helper class that does a fuzzy "
+"comparison of images drawn by VTK against known good baseline images and "
+"returns a metric that can be simply compared against a numeric threshold."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:59
+msgid ""
+"Many tests require data files to run. The image comparison tests for example "
+"need baseline images to compare against, and many tests open up one or more "
+"files to visualize."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:63
+msgid ""
+"The source code and data file versions are kept in sync because the Testing/"
+"Data directory contains, instead of the real files, similarly named files "
+"which contain only the SHA512 hash of the matching data files. During the "
+"build process, when CMake sees that a required data file is not available, "
+"it downloads it into the directory defined by the ExternalData_OBJECT_STORES "
+"cmake configuration entry. The test executables read all data from there. "
+"The default setting for ExternalData_OBJECT_STORES is the ExternalData "
+"directory underneath the VTK build tree."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:72
+msgid ""
+"To make a change to VTK that modifies or adds a new test data file, place "
+"the new version in the Testing/Data or directory (for input data files) or "
+"Module/Name/Testing/Data (for regression test images), and build (or run "
+"cmake). CMake will do the work of moving the original out of the way and "
+"replacing it with an SHA512 link file. When you push the new link file to "
+"Gitlab, `git pre-commit` hooks push the original file up to Kitware's data "
+"service, where everyone can retrieve it."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:80
+msgid "Add Test"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:82
+msgid "Write a new test, e.g."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:84
+msgid "$ edit Some/Module/Testing/Cxx/MyTest.cxx\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:86
+msgid "Edit the corresponding `CMakeLists.txt` file:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:88
+msgid "$ edit Some/Module/Testing/Cxx/CMakeLists.txt\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:90
+msgid ""
+"and add the test in a `vtk_add_test_...` call (which references baselines "
+"automatically)."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:93
+msgid ""
+"For tests not using such a call, reference the data file in an "
+"`ExternalData_add_test` call.  Specify the file inside `DATA{...}` using a "
+"path relative to the test directory:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:97
+msgid ""
+"$ edit Some/Module/Testing/Cxx/CMakeLists.txt\n"
+"ExternalData_add_test(\"${_vtk_build_TEST_DATA_TARGET}\"\n"
+"  NAME ${_vtk_build_test}Cxx-MyTest\n"
+"  COMMAND <VTK_MODULE_NAME>CxxTests MyTest\n"
+"          ... -V DATA{../Data/Baseline/MyTest.png,:} ...\n"
+"  )\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:104
+msgid ""
+"Some tests may require additional files not referenced on the command line. "
+"For these files, add references to a `vtk_module_test_data` call (usually in "
+"the `Testing` parent directory). For example, adding `Testing/Data/lines."
+"vtp` would mean adding `Data/lines.vtp` entry to the call (the `Testing` "
+"directory is part of the path that is looked in automatically."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:111
+msgid ""
+"vtk_module_test_data(\n"
+"  Data/lines.vtp)\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:114
+msgid "Notes:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:116
+msgid ""
+"If the data file references other data files, e.g. `.mhd -> .raw`, read the "
+"[ExternalData][] module documentation on \"associated\" files."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:118
+msgid ""
+"Multiple baseline images and other series are handled automatically when the "
+"reference ends in the `,:` option.  Read [ExternalData][] module "
+"documentation for details."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:124
+msgid "Build and Run the Test"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:126
+msgid ""
+"If you already have a data file, skip to the [next step](#add-data) to add "
+"it. Otherwise, use the following steps to produce a test baseline image "
+"file. We assume a build tree has been previously generated by CMake."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:130
+#: ../../../developers_guide/git/test.md:165
+msgid "Switch to the build tree:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:132
+#: ../../../developers_guide/git/test.md:167
+msgid "$ cd ../VTK-build\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:134
+#: ../../../developers_guide/git/test.md:169
+msgid "Run CMake:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:136
+#: ../../../developers_guide/git/test.md:171
+msgid "$ cmake .\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:138
+msgid ""
+"Since we have not yet created the baseline image data file, CMake will warn "
+"that it does not exist but proceed to generate the test anyway."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:142
+#: ../../../developers_guide/git/test.md:185
+msgid "Build"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:144
+#: ../../../developers_guide/git/test.md:187
+msgid "$ make\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:146
+#: ../../../developers_guide/git/test.md:192
+msgid "Run the test"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:148
+#: ../../../developers_guide/git/test.md:194
+msgid "$ ctest -R MyTest\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:150
+msgid "It will fail but place the baseline image in `Testing/Temporary`."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:152
+#: ../../../developers_guide/git/test.md:198
+msgid "Switch back to the source tree:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:154
+#: ../../../developers_guide/git/test.md:200
+msgid "$ cd ../VTK\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:156
+msgid "Add Data"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:158
+msgid "Copy the data file into your local source tree."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:160
+msgid ""
+"$ mkdir -p Some/Module/Testing/Data/Baseline\n"
+"$ cp ../VTK-build/Testing/Temporary/MyTest.png Some/Module/Testing/Data/"
+"Baseline\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:163
+msgid "Run CMake"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:173
+msgid ""
+"CMake will [move the original file](#externaldata).  Keep your own copy if "
+"necessary.  See [below](#recover-data-file) to recover the original file."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:177
+msgid "During configuration CMake will display a message such as:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:179
+msgid ""
+"Linked Some/Module/Testing/Data/Baseline/MyTest.png.sha512 to ExternalData "
+"SHA512/...\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:181
+msgid ""
+"This means that CMake converted the file into a data object referenced by a "
+"\"content link\" named like the original file but with a `.sha512` "
+"extension.  CMake also [renamed the original file](#externaldata)."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:189
+msgid ""
+"During the build, the [ExternalData][] module will make the data file "
+"available where the test expects to find it."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:196
+msgid "It should pass using the new data file."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:202
+msgid "Commit"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:204
+msgid ""
+"Continue to [create the topic](develop.md#create-a-topic) and edit other "
+"files as necessary.  Add the content link and commit it along with the other "
+"changes:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:208
+msgid ""
+"$ git add Some/Module/Testing/Data/Baseline/MyTest.png.sha512\n"
+"$ git add Some/Module/Testing/Data/CMakeLists.txt\n"
+"$ git commit\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:212
+msgid "The local `pre-commit` hook will display a message such as:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:214
+msgid ""
+"Some/Module/Testing/Data/Baseline/MyTest.png.sha512: Added content to Git at "
+"refs/data/SHA512/...\n"
+"Some/Module/Testing/Data/Baseline/MyTest.png.sha512: Added content to local "
+"store at .ExternalData/SHA512/...\n"
+"Content link Some/Module/Testing/Data/Baseline/MyTest.png.sha512 -> ."
+"ExternalData/SHA512/...\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:218
+msgid ""
+"This means that the pre-commit hook recognized that the content link "
+"references a new data object and [prepared it for upload](#pre-commit)."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:221
+msgid "Push"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:223
+msgid ""
+"Follow the instructions to [share the topic](develop.md#share-a-topic). When "
+"you push it to GitLab for review using"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:226
+msgid "$ git gitlab-push\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:228
+msgid "part of the output will be of the form:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:230
+msgid ""
+"*       ...:refs/data/...      [new branch]\n"
+"*       HEAD:refs/heads/my-topic  [new branch]\n"
+"Pushed refs/data/... and removed local ref.\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:234
+msgid ""
+"This means that the `git-gitlab-push` script pushed the topic and [uploaded "
+"the data](#git-gitlab-push) it references."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:237
+msgid "Options for `gitlab-push` include:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:238
+msgid "`--dry-run`: Report push that would occur without actually doing it"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:239
+msgid ""
+"`--no-topic`: Push the data referenced by the topic but not the topic itself"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:241
+msgid ""
+"Note: One must `git gitlab-push` from the same work tree as was used to "
+"create the commit.  Do not `git push` to another computer first and try to "
+"push to GitLab from there because the data will not follow."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:245
+msgid "Building"
+msgstr "建置"
+
+#: ../../../developers_guide/git/test.md:248
+msgid "Download"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:250
+msgid ""
+"For the test data to be downloaded and made available to the tests in your "
+"build tree the `VTKData` target must be built.  One may build the target "
+"directly, e.g. `make VTKData`, to obtain the data without a complete build.  "
+"The output will be something like"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:255
+msgid ""
+"-- Fetching \".../ExternalData/SHA512/...\"\n"
+"-- [download 100% complete]\n"
+"-- Downloaded object: \"VTK-build/ExternalData/Objects/SHA512/...\"\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:259
+msgid "The downloaded files appear in `VTK-build/ExternalData` by default."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:261
+msgid "Local Store"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:263
+msgid ""
+"It is possible to configure one or more local ExternalData object stores "
+"shared among multiple builds.  Configure for each build the advanced cache "
+"entry `ExternalData_OBJECT_STORES` to a directory on your local disk outside "
+"all build trees, e.g. `/home/user/.ExternalData`:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:268
+msgid "$ cmake -DExternalData_OBJECT_STORES=/home/user/.ExternalData ../VTK\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:270
+msgid ""
+"The [ExternalData][] module will store downloaded objects in the local store "
+"instead of the build tree.  Once an object has been downloaded by one build "
+"it will persist in the local store for reuse by other builds without "
+"downloading again."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:275
+msgid "Discussion"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:278
+msgid ""
+"A VTK test data file is not stored in the main source tree under version "
+"control.  Instead the source tree contains a \"content link\" that refers to "
+"a data object by a hash of its content.  At build time the [ExternalData][] "
+"module fetches data needed by enabled tests. This allows arbitrarily large "
+"data to be added and removed without bloating the version control history."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:285
+msgid ""
+"The above [workflow](#workflow) allows developers to add a new data file "
+"almost as if committing it to the source tree.  The following subsections "
+"discuss details of the workflow implementation."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:289
+msgid "ExternalData"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:291
+msgid ""
+"While [CMake runs](#run-cmake) the [ExternalData][] module evaluates [DATA{} "
+"references](#add-test).  VTK sets in [vtkExternalData.cmake][] the "
+"`ExternalData_LINK_CONTENT` option to `SHA512` to enable automatic "
+"conversion of raw data files into content links.  When the module detects a "
+"real data file in the source tree it performs the following transformation "
+"as specified in the module documentation:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:298
+msgid "Compute the SHA512 hash of the file"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:299
+msgid "Store the `${hash}` in a file with the original name plus `.sha512`"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:300
+msgid "Rename the original file to `.ExternalData_SHA512_${hash}`"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:302
+msgid ""
+"The real data now sit in a file that we [tell Git to ignore](/.gitignore). "
+"For example:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:305
+msgid ""
+"$ cat Some/Module/Testing/Data/Baseline/.ExternalData_SHA512_477e6028* |"
+"sha512sum\n"
+"477e6028...  -\n"
+"$ cat Some/Module/Testing/Data/Baseline/MyTest.png.sha512\n"
+"477e6028...\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:312
+msgid "Recover Data File"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:314
+msgid ""
+"To recover the original file after running CMake but before committing, undo "
+"the operation:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:317
+msgid ""
+"$ cd Some/Module/Testing/Data/Baseline\n"
+"$ mv .ExternalData_SHA512_$(cat MyTest.png.sha512) MyTest.png\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:320
+msgid "pre-commit"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:322
+msgid ""
+"While [committing](#commit) a new or modified content link the [pre-commit]"
+"[] hook moves the real data object from the `.ExternalData_SHA512_${hash}` "
+"file left by the [ExternalData][] module to a local object repository stored "
+"in a `.ExternalData` directory at the top of the source tree."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:328
+msgid ""
+"The hook also uses Git plumbing commands to store the data object as a blob "
+"in the local Git repository.  The blob is not referenced by the new commit "
+"but instead by `refs/data/SHA512/${hash}`. This keeps the blob alive in the "
+"local repository but does not add it to the project history.  For example:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:334
+msgid ""
+"$ git for-each-ref --format=\"%(refname)\" refs/data\n"
+"refs/data/SHA512/477e6028...\n"
+"$ git cat-file blob refs/data/SHA512/477e6028... | sha512sum\n"
+"477e6028...  -\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:341
+msgid "git gitlab-push"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:343
+msgid ""
+"The `git gitlab-push` command is actually an alias for the [git-gitlab-push]"
+"[] script. In addition to pushing the topic branch to GitLab the script also "
+"detects content links added or modified by the commits in the topic. It "
+"reads the data object hashes from the content links and looks for matching "
+"`refs/data/` entries in the local Git repository."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:350
+msgid ""
+"The script pushes the matching data objects to your VTK GitLab fork. For "
+"example:"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:353
+msgid ""
+"$ git gitlab-push --dry-run --no-topic\n"
+"*       refs/data/SHA512/477e6028...:refs/data/SHA512/477e6028...   [new "
+"branch]\n"
+"Pushed refs/data/SHA512/477e6028... and removed local ref.\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:357
+msgid ""
+"A GitLab webhook that triggers whenever a topic branch is pushed checks for "
+"`refs/data/` in your VTK GitLab fork, fetches them, erases the refs from "
+"your fork, and uploads them to a location that we tell ExternalData to "
+"search in [vtkExternalData][] at build time."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:362
+msgid ""
+"To verify that the data has been uploaded as expected, you may direct a web "
+"browser to the location where ExternalData has uploaded the files. For VTK, "
+"that location is currently `http://www.vtk.org/files/ExternalData/SHA512/"
+"XXXX` where `XXXX` is the complete SHA512 hash stored in the content link "
+"file (e.g., the text in `MyTest.png.sha512`)."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:371
+msgid "Publishing Data for an External Branch"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:373
+msgid ""
+"The above [workflow](#workflow) works well for developers working on a "
+"single machine to contribute changes directly to upstream VTK.  When working "
+"in an external branch of VTK, perhaps during a long-term topic development "
+"effort, data objects need to be published separately."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:378
+msgid ""
+"The workflow for adding data to an external branch of VTK is the same as the "
+"above through the [commit](#commit) step, but diverges at the [push](#push) "
+"step because one will push to a separate repository. Our ExternalData "
+"infrastructure intentionally hides the real data files from Git so only the "
+"content links (`.sha512` files) will be pushed. The real data objects will "
+"still be left in the `.ExternalData/SHA512` directory at the top of the VTK "
+"source tree by the [pre-commit](#pre-commit) hook."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:387
+msgid ""
+"The `.ExternalData` directory must be published somewhere visible to other "
+"machines that want to use the data, such as on a web server. Once that is "
+"done then other machines can be told where to look for the data, e.g."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:392
+msgid ""
+"cmake ../VTK \"-DExternalData_URL_TEMPLATES=https://username.github.io/VTK/"
+"ExternalData/%(algo)/%(hash)\n"
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:394
+msgid ""
+"In this example we assume the files are published on a [Github Pages][] `gh-"
+"pages` branch in `username`'s fork of VTK."
+msgstr ""
+
+#: ../../../developers_guide/git/test.md:397
+msgid ""
+"Within the `gh-pages` branch the files are placed at `ExternalData/SHA512/"
+"$sha512sum` where `$sha512sum` is the SHA512 hash of the content (these are "
+"the same names they have in the `.ExternalData` directory in the original "
+"source tree)."
+msgstr ""

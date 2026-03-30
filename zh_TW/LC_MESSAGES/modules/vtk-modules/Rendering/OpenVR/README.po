@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:1
+msgid "VTK::RenderingOpenVR"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:3
+msgid ""
+"The `OpenVR` module aims to support PC-based rendering to virtual reality "
+"headsets via Valve's [`OpenVR` API](https://github.com/ValveSoftware/openvr)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:6
+msgid ""
+"The OpenVR standard has been succeeded by the industry-wide [OpenXR](https://"
+"www.khronos.org/openxr/) standard. See the VTK [`OpenXR` module](../OpenXR/"
+"README.md) for modernized support. The VTK `OpenVR` module is preserved for "
+"legacy support."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:10
+msgid "Supported Devices"
+msgstr "支援的裝置"
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:12
+msgid ""
+"Any device that renders with OpenGL and runs from the OpenVR runtime is "
+"theoretically supported. Devices include:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:14
+msgid "HTC Vive (, Pro)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:15
+msgid "Valve Index"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:16
+msgid "Oculus Rift (, S)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:17
+msgid "Meta Quest (1,2,3,Pro)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:18
+msgid ""
+"[Quest Link](https://www.meta.com/help/quest/articles/headsets-and-"
+"accessories/oculus-link/connect-link-with-quest-2/) or [Air Link](https://"
+"www.meta.com/help/quest/articles/headsets-and-accessories/oculus-link/"
+"connect-with-air-link/) only)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:19
+msgid "HP Reverb G2"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:21
+msgid "Supported Controllers"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:23
+msgid ""
+"The VTK `OpenVR` module provides bindings for the following controllers:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:24
+msgid ""
+"HP Motion Controller [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenVR/vtk_openvr_binding_hpmotioncontroller.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:25
+msgid ""
+"Valve Knuckles [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenVR/vtk_openvr_binding_knuckles.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:26
+msgid ""
+"Oculus Touch [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenVR/vtk_openvr_binding_oculus_touch.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:27
+msgid ""
+"HTC Vive Controller [json](https://gitlab.kitware.com/vtk/vtk/-/blob/master/"
+"Rendering/OpenVR/vtk_openvr_binding_vive_controller.json)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:29
+msgid ""
+"The VTK `OpenVR` module is considered legacy and not under active "
+"development. Please see the VTK `OpenXR` module for support for additional "
+"controllers and alternate input mechanisms."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:33
+msgid "Testing"
+msgstr "測試"
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:35
+msgid ""
+"A minimum [OpenVRCone](https://examples.vtk.org/site/Cxx/GeometricObjects/"
+"OpenVRCone/) example is available for download on the [VTK Examples website]"
+"(https://examples.vtk.org/site/)."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/OpenVR/README.md:38
+msgid ""
+"Tests in the [`Testing/Cxx`](https://gitlab.kitware.com/vtk/vtk/-/blob/"
+"master/Rendering/OpenVR/Testing/Cxx) directory may also be run to "
+"demonstrate VTK `RenderingOpenVR` capabilities."
+msgstr ""

@@ -1,0 +1,409 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../about.md:1
+msgid "About"
+msgstr "關於"
+
+#: ../../../about.md:3
+msgid "Overview"
+msgstr "概覽"
+
+#: ../../../about.md:5
+msgid ""
+"The Visualization Toolkit (VTK) is a robust and open-source software system "
+"that provides advanced features in 3D computer graphics, image processing, "
+"modeling, volume rendering, and scientific visualization. It offers threaded "
+"and distributed-memory parallel processing for scalability and better "
+"performance."
+msgstr ""
+
+#: ../../../about.md:11
+msgid ""
+"VTK is a cross-platform library that can run on many operating systems, "
+"including Windows, macOS, Linux, and even the web and mobile devices."
+msgstr ""
+
+#: ../../../about.md:14
+msgid ""
+"VTK is widely used in both academic and commercial settings, as well as in "
+"government institutions such as Los Alamos National Lab and CINECA. The "
+"software was originally published in the textbook titled \"The Visualization "
+"Toolkit, an Object-Oriented Approach to 3D Graphics\" and has grown "
+"significantly since its release in 1994 with an extensive worldwide user "
+"base."
+msgstr ""
+
+#: ../../../about.md:20
+msgid ""
+"VTK maintains a high-quality software process, which includes CMake, CTest, "
+"CDash, and CPack. The software is written in C++ with additional language "
+"bindings to reach a broader audience, with an excellent interoperability "
+"with Python."
+msgstr ""
+
+#: ../../../about.md:25
+msgid ""
+"As open source software, VTK is free to use for any purpose. Technically, "
+"VTK has a BSD-style license, which imposes minimal restrictions for both "
+"open and closed source applications."
+msgstr ""
+
+#: ../../../about.md:29
+msgid ""
+"If you're interested in exploring the growth and usage patterns of VTK, we "
+"provide you with our statistics. The statistics are available on Open Hub, a "
+"platform focused on community-driven software, and PyPI stats, which "
+"provides download statistics for VTK packages. By analyzing these "
+"statistics, you can gain insights into the community's size, VTK's adoption "
+"rates, and popularity. Check out the links below for more information:"
+msgstr ""
+
+#: ../../../about.md:35
+msgid "[Open Hub](https://www.openhub.net/p/vtk)"
+msgstr ""
+
+#: ../../../about.md:36
+msgid "[PyPI stats](https://pypistats.org/packages/vtk)"
+msgstr ""
+
+#: ../../../about.md:38
+msgid "Features"
+msgstr ""
+
+#: ../../../about.md:40
+msgid ""
+"VTK provides a comprehensive set of features that support visualization, "
+"modeling, and data analysis. Here are some highlights:"
+msgstr ""
+
+#: ../../../about.md:45
+msgid "Filters"
+msgstr ""
+
+#: ../../../about.md:46
+msgid ""
+"VTK's filter-based architecture processes data by transforming and "
+"manipulating it through a pipeline of successive filters. This approach "
+"produces derived data that can be rendered using VTK's graphics system. "
+"Filters can be combined into a dataflow network, which enables a flexibly "
+"configurable workflow."
+msgstr ""
+
+#: ../../../about.md:52
+msgid "Graphics System"
+msgstr ""
+
+#: ../../../about.md:53
+msgid ""
+"VTK provides a sophisticated rendering abstraction layer over the underlying "
+"graphics library (OpenGL with experimental support for WebGL), simplifying "
+"the creation of engaging visualizations."
+msgstr ""
+
+#: ../../../about.md:58
+msgid "Data Model"
+msgstr ""
+
+#: ../../../about.md:59
+msgid ""
+"VTK’s core data model has the ability to represent almost any real-world "
+"problem related to physical science. The fundamental data structures are "
+"particularly well-suited to medical imaging and engineering work that "
+"involves finite difference and finite element solutions."
+msgstr ""
+
+#: ../../../about.md:65
+msgid "Data Interaction"
+msgstr ""
+
+#: ../../../about.md:66
+msgid ""
+"VTK provides several tools for interactive data exploration and analysis, "
+"including 3D widgets, interactors, and 2D widget libraries integration like "
+"Qt. These enable powerful user interaction capabilities, making it easier to "
+"understand the content, shape, and meaning of data."
+msgstr ""
+
+#: ../../../about.md:72
+msgid "2D Plots and Charts"
+msgstr ""
+
+#: ../../../about.md:73
+msgid ""
+"VTK supports a full set of 2D plot and chart types for tabular data "
+"visualization. It also includes picking and selection capabilities, allowing "
+"users to query data interactively. VTK's excellent interoperability with "
+"Python and Matplotlib further increases its flexibility."
+msgstr ""
+
+#: ../../../about.md:79
+msgid "Parallel Processing"
+msgstr ""
+
+#: ../../../about.md:80
+msgid ""
+"VTK offers excellent support for scalable distributed-memory parallel "
+"processing under MPI. VTK filters implement finer-grained parallelism using "
+"vtkSMP for coarse-grained threading and viskores for fine-grained processing "
+"on many-core and GPU architectures. These parallel processing capabilities "
+"make VTK highly efficient and suited for processing large data sets."
+msgstr ""
+
+#: ../../../about.md:88
+msgid "License"
+msgstr ""
+
+#: ../../../about.md:90
+msgid ""
+"VTK is distributed under the OSI-approved BSD 3-clause License. See [here]"
+"(https://gitlab.kitware.com/vtk/vtk/-/blob/master/Copyright.txt) for details."
+msgstr ""
+
+#: ../../../about.md:94
+msgid "Citing"
+msgstr ""
+
+#: ../../../about.md:96
+msgid ""
+"When citing VTK in your scientific research, please mention the following "
+"work to support increased visibility and dissemination of our software:"
+msgstr ""
+
+#: ../../../about.md:98
+msgid ""
+"Schroeder, Will; Martin, Ken; Lorensen, Bill (2006), The Visualization "
+"Toolkit (4th ed.), Kitware, ISBN 978-1-930934-19-1\n"
+msgstr ""
+
+#: ../../../about.md:100
+msgid "For your convenience here is a bibtex entry:"
+msgstr ""
+
+#: ../../../about.md:102
+msgid ""
+"@Book{vtkBook,\n"
+"  author    = \"Will Schroeder and Ken Martin and Bill Lorensen\",\n"
+"  title     = \"The Visualization Toolkit (4th ed.)\",\n"
+"  publisher = \"Kitware\",\n"
+"  year      = \"2006\",\n"
+"  isbn      = \"978-1-930934-19-1\",\n"
+"}\n"
+msgstr ""
+
+#: ../../../about.md:112
+msgid ""
+"To cite a specific filter, check for extra references in the included "
+"headers or the [doxygen](https://vtk.org/doc/nightly/html) documentation of "
+"the filter."
+msgstr ""
+
+#: ../../../about.md:114
+msgid "History"
+msgstr ""
+
+#: ../../../about.md:116
+msgid "**2016 - Rendering Backend in ParaView 5.0**"
+msgstr ""
+
+#: ../../../about.md:118
+msgid ""
+"See [Brand-New Rendering Backend in ParaView 5.0](https://www.kitware.com/"
+"kitware-unleashes-brand-new-rendering-backend-in-paraview-5-0/)."
+msgstr ""
+
+#: ../../../about.md:120
+msgid "**2014 - Transition from OpenGL to OpenGL2**"
+msgstr ""
+
+#: ../../../about.md:122
+msgid ""
+"See [New OpenGL Rendering in VTK](https://www.kitware.com/new-opengl-"
+"rendering-in-vtk)."
+msgstr ""
+
+#: ../../../about.md:124
+msgid "**1993 - Origin**"
+msgstr ""
+
+#: ../../../about.md:126
+msgid ""
+"VTK was originally part of the textbook [The Visualization Toolkit An Object-"
+"Oriented Approach to 3D Graphics](https://vtk.org/documentation/#textbook). "
+"Will Schroeder, Ken Martin, and Bill Lorensen—three graphics and "
+"visualization researchers—wrote the book and companion software on their own "
+"time, beginning in December 1993, with legal permission from their then-"
+"employer, GE R&D. The motivation for the book was to collaborate with other "
+"researchers and develop an open framework for creating leading-edge "
+"visualization and graphics applications."
+msgstr ""
+
+#: ../../../about.md:135
+msgid ""
+"VTK grew out of the authors’ experiences at GE, particularly with the LYMB "
+"object-oriented graphics system. Other influences included the VISAGE "
+"visualization system developed by Schroeder et. al; the Clockworks object-"
+"oriented computer animation system developed at Rensselaer Polytechnic "
+"Institute; and the Object-Oriented Modeling and Design book, which Bill "
+"Lorensen co-authored."
+msgstr ""
+
+#: ../../../about.md:142
+msgid ""
+"After the core of VTK was written, users and developers around the world "
+"began to improve and apply the system to real-world problems. In particular, "
+"GE Medical Systems and other GE businesses contributed to the system, and "
+"researchers such as Dr. Penny Rheinghans began to teach with the book. Other "
+"early advocates include Jim Ahrens at Los Alamos National Laboratory and "
+"generous oil and gas supporters."
+msgstr ""
+
+#: ../../../about.md:149
+msgid ""
+"To address what was becoming a large, active, and world-wide community, Ken "
+"and Will—along with Lisa Avila, Charles Law, and Bill Hoffman—left GE in "
+"1998 to found Kitware, Inc. Since that time, hundreds of additional "
+"developers have turned VTK into what is now the premier visualization system "
+"in the world. Sandia National Laboratories, for example, has been a strong "
+"supporter and co-developer, revamping 2D charting and information "
+"visualization in VTK."
+msgstr ""
+
+#: ../../../about.md:156
+msgid "Acknowledgments"
+msgstr ""
+
+#: ../../../about.md:158
+msgid ""
+"Many institutions have taken part in the development of VTK. Some of the "
+"most fundamental work came from the following:"
+msgstr ""
+
+#: ../../../about.md:159
+msgid "[Kitware](https://www.kitware.com)"
+msgstr ""
+
+#: ../../../about.md:160
+msgid "[Los Alamos National Lab (LANL)](http://www.lanl.gov)"
+msgstr ""
+
+#: ../../../about.md:161
+msgid "[National Library of Medicine (NLM)](http://www.nlm.nih.gov)"
+msgstr ""
+
+#: ../../../about.md:162
+msgid ""
+"[Department of Energy (DOE) ASC Program](http://www.cio.energy.gov/high-"
+"performance-computing.htm)"
+msgstr ""
+
+#: ../../../about.md:163
+msgid "[Sandia National Laboratories](http://www.sandia.gov)"
+msgstr ""
+
+#: ../../../about.md:164
+msgid ""
+"[Army Research Laboratory (ARL)](http://www.arl.army.mil/www/default.htm)"
+msgstr ""
+
+#: ../../../about.md:166
+msgid ""
+"Special thanks to all the [contributors](https://github.com/Kitware/VTK/"
+"graphs/contributors) !"
+msgstr ""
+
+#: ../../../about.md:168
+msgid "Commercial Use"
+msgstr ""
+
+#: ../../../about.md:170
+msgid "We invite commercial entities to use VTK."
+msgstr ""
+
+#: ../../../about.md:172
+msgid ""
+"VTK is part of Kitware’s collection of commercially supported open-source "
+"platforms for software development."
+msgstr ""
+
+#: ../../../about.md:174
+msgid "VTK’s License makes Commercial Use Available"
+msgstr ""
+
+#: ../../../about.md:175
+msgid ""
+"VTK is a free open source software distributed under a [BSD style license]"
+"(#license)."
+msgstr ""
+
+#: ../../../about.md:176
+msgid "The license does not impose restrictions on the use of the software."
+msgstr ""
+
+#: ../../../about.md:177
+msgid ""
+"VTK is NOT FDA approved. It is the users responsibility to ensure compliance "
+"with applicable rules and regulations."
+msgstr ""
+
+#: ../../../about.md:179
+msgid "Contact Us"
+msgstr ""
+
+#: ../../../about.md:181
+msgid ""
+"We want to hear from you! If you have any questions, suggestions or bug "
+"reports regarding VTK, there are several communication channels available "
+"for you:"
+msgstr ""
+
+#: ../../../about.md:184
+msgid "**VTK Forum**"
+msgstr ""
+
+#: ../../../about.md:186
+msgid ""
+"Visit the [VTK Discourse](https://discourse.vtk.org) forum for community-"
+"driven support, to share your experiences, exchange ideas and best "
+"practices, and to discuss challenges."
+msgstr ""
+
+#: ../../../about.md:190
+msgid "**Issue Tracker**"
+msgstr ""
+
+#: ../../../about.md:192
+msgid ""
+"Use our [public issue tracker](https://gitlab.kitware.com/vtk/vtk/-/issues) "
+"to report any bugs or request enhancements. This tracker is a ticket-based "
+"system that allows you to keep track of your issues and follow up on their "
+"progress."
+msgstr ""
+
+#: ../../../about.md:196
+msgid "**Commercial and Confidential Consulting**"
+msgstr ""
+
+#: ../../../about.md:198
+msgid ""
+"For commercial or confidential consulting related to VTK or any of our other "
+"products and services, please contact [Kitware's advanced support team]"
+"(https://www.kitware.com/contact/advanced-support/) for personalized "
+"assistance."
+msgstr ""

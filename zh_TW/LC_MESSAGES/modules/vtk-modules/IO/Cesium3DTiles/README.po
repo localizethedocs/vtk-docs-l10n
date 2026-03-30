@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:1
+msgid "VTK::IOCesium3DTiles"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:2
+msgid "vtk3DTilesWriter - Convert a multiblock dataset to the 3D Tiles format."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:4
+msgid ""
+"Currently, to create a valid 3D Tiles dataset we may need additional "
+"conversions: from GLTF to GLB and from GLB to B3DM. We can use JavaScript "
+"tools to do these conversions."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:8
+msgid "Install conversion and validation scripts"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:9
+msgid "Using node and npm installed on Ubuntu 20.04:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:10
+msgid ""
+"`cd ~/external/3d-tiles-tools/;npm install 3d-tiles-tools`. Help at: "
+"<https://github.com/AnalyticalGraphicsInc/3d-tiles-tools/tree/master/tools>"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:11
+msgid ""
+"`cd ~/external/gltf-pipeline;npm install gltf-pipeline`. Help at: <https://"
+"github.com/CesiumGS/gltf-pipeline>"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:12
+msgid ""
+"Clone <https://github.com/CesiumGS/3d-tiles-samples>. and then `npm install.`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:13
+msgid ""
+"Clone <https://github.com/KhronosGroup/glTF-Validator> and then follow "
+"Building section."
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:15
+msgid "Convert data to GLB or B3DM - Optional"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:16
+msgid ""
+"See Testing/Cxx/Test3DTilesWriter for conversions of Jacksonville data "
+"stored in OBJs and or Berlin data stored in CityGML. Note that the test "
+"saves the 3D Tiles data using GLTF files. If needed, you can use GLB or "
+"B3DM, but you'll need to do the following conversions manually: `cd ~/"
+"projects/VTK/build/Testing/Temporary/jacksonville-3dtiles/` `cd ~/projects/"
+"VTK/build/Testing/Temporary/berlin-3dtiles/`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:24
+msgid "Convert gltf to glb"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:25
+msgid ""
+"find . -name '*.gltf' -exec bash -c 'nodejs ~/external/gltf-pipeline/bin/"
+"gltf-pipeline.js -i ${0} -o ${0%.*}.glb' {} \\;\n"
+"find . -name '*.gltf' -exec rm {} \\;\n"
+"find . -name '*.bin' -exec rm {} \\;\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:30
+msgid "Check glb validity"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:31
+msgid ""
+"~/external/glTF-Validator/build/bin/gltf_validator Testing/Temporary/"
+"TestGLTFWriter.glb\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:35
+msgid "Convert glb to b3dm"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:36
+msgid ""
+"find . -name '*.glb' -exec bash -c 'nodejs ~/external/3d-tiles-tools/tools/"
+"bin/3d-tiles-tools.js glbToB3dm ${0} ${0%.*}.b3dm' {} \\;\n"
+"find . -name '*.glb' -exec rm {} \\;\n"
+"\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:41
+msgid "View in Cesium"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:42
+msgid "Use 3d-tiles-samples"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:43
+msgid ""
+"Link the tileset created for previous set: `cd ~/external/3d-tiles-samples/"
+"tilesets; ln -s ~/projects/VTK/build/Testing/Temporary/jacksonville-3dtiles` "
+"`cd ~/external/3d-tiles-samples/tilesets; ln -s ~/projects/VTK/build/Testing/"
+"Temporary/berlin-3dtiles`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:46
+msgid "Start web server: `cd ..;npm start`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:48
+msgid ""
+"`google-chrome jacksonville-3dtiles.html;google-chrome berlin-3dtiles.html`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:50
+msgid "Test the tilesets using 3d-tiles-validator"
+msgstr ""
+
+#: ../../../modules/vtk-modules/IO/Cesium3DTiles/README.md:51
+msgid ""
+"cd ~/external/3d-tiles-validator/validator/\n"
+"node ./bin/3d-tiles-validator.js -i ~/projects/VTK/build/Testing/Temporary/"
+"jacksonville-3dtiles-points/tileset.json\n"
+"node ./bin/3d-tiles-validator.js -i ~/projects/VTK/build/Testing/Temporary/"
+"jacksonville-3dtiles-colorpoints/tileset.json\n"
+msgstr ""

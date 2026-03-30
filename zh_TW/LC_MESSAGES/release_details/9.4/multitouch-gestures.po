@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/multitouch-gestures.md:1
+msgid "Multi-touch gestures in VTK"
+msgstr ""
+
+#: ../../../release_details/9.4/multitouch-gestures.md:3
+msgid ""
+"Multiple improvements have been introduced to the multi-touch event based "
+"gesture handling."
+msgstr ""
+
+#: ../../../release_details/9.4/multitouch-gestures.md:5
+msgid ""
+"Panning was compounding the translation causing a pan that would scale "
+"exponentially as it progresses."
+msgstr ""
+
+#: ../../../release_details/9.4/multitouch-gestures.md:7
+msgid "Pinch gesture was being handled by printing an error message."
+msgstr ""
+
+#: ../../../release_details/9.4/multitouch-gestures.md:8
+msgid "There was no \"end\" to the multi-touch events."
+msgstr ""
+
+#: ../../../release_details/9.4/multitouch-gestures.md:9
+msgid ""
+"The [Set/Get]CurrentGesture methods are moved to the "
+"vtkRenderWindowInteractor from its derived class "
+"vtkVRRenderWindowInteractor. This would allow client applications with "
+"custom interaction styles to redefine these APIs."
+msgstr ""
+
+#: ../../../release_details/9.4/multitouch-gestures.md:12
+msgid ""
+"[BREAKING CHANGE] Dynamic gesture detection   Originally, once a gesture was "
+"detected, VTK would continue processing it for all future mouse   move "
+"(touch move) events until the finger was lifted or mouse was released. This "
+"is fine for   single touch gestures but for multitouch gestures, it is "
+"typically required to switch to   different gestures with different motions. "
+"For example, the user could touch the screen, start   pinching and without "
+"lifting the finger, start panning. Another common interaction is when the   "
+"user starts panning but the pointer math initially guesses the gesture to be "
+"a pinch gesture.   Originally execution would be stuck processing pinch even "
+"if the user's fingers are performing a   pan. This change would ensure that "
+"gesture recognition eventually matches up with the user's   intention."
+msgstr ""

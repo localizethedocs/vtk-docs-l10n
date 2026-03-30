@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-FDSReader.md:1
+msgid "New `vtkFDSReader` for Fire Dynamics Simulator output"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:3
+msgid ""
+"You can now read in output from the Fire Dynamics Simulator (FDS, https://"
+"pages.nist.gov/fds-smv/) into VTK. The reader is based on reading the `*."
+"smv` meta-data file to orchestrate the reading of all the other files. It "
+"supports:"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:5
+msgid "Grids: reading in the extents of the entire simulation domains"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:6
+msgid ""
+"Devices: reading in data from so called \"devices\" and representing it as "
+"point data"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:7
+msgid "HRR: reading in globally integrated data as a table"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:8
+msgid "Slices: subsets of the entire grids with point data on them"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:9
+msgid ""
+"Boundaries: subsets of the grids that represent obstacles or boundaries in "
+"the simulation"
+msgstr ""
+
+#: ../../../release_details/9.4/add-FDSReader.md:11
+msgid ""
+"The output of the reader is a `vtkPartitionedDataSetCollection` divided into "
+"the sections above."
+msgstr ""

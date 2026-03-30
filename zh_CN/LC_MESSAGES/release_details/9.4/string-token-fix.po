@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/string-token-fix.md:1
+msgid "String tokenization"
+msgstr ""
+
+#: ../../../release_details/9.4/string-token-fix.md:3
+msgid ""
+"The `vtkStringManager` class caused issues for static builds of VTK; because "
+"`vtkStringToken` holds a class-static instance of the string manager, static "
+"builds would crash on some platforms during initialization because"
+msgstr ""
+
+#: ../../../release_details/9.4/string-token-fix.md:8
+msgid "The order of initialization of globals is not guaranteed; and"
+msgstr ""
+
+#: ../../../release_details/9.4/string-token-fix.md:9
+msgid ""
+"For some platforms, when a static library with globals (e.g. library A) is "
+"linked to other static libraries (e.g., libraries B and C), each of the "
+"downstream libraries (B and C) would instantiate a separate copy of the "
+"upstream's (A) globals, causing missing entries and crashes."
+msgstr ""
+
+#: ../../../release_details/9.4/string-token-fix.md:15
+msgid ""
+"Because of this, the string tokenization code has been moved into a new "
+"third-party library (`ThirdParty/token`) which is forced to be a dynamic "
+"library. This library also offers a function to fetch or create singleton "
+"objects (since dynamic libraries do not have the issues above) and VTK now "
+"uses it for globals holding `vtkCellGrid` metadata."
+msgstr ""

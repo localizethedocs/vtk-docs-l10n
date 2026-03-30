@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:1
+msgid ""
+"Disable rendering of interior faces that are between cells of different order"
+msgstr ""
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:3
+msgid "Motivation"
+msgstr ""
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:5
+msgid ""
+"Local refinement can produce meshes composed by different cell types and "
+"multiple degrees.So far, when two volumetric cells of different order are "
+"connected by their corners (for instance, a quadratic hexahedron next to a "
+"linear hexahedron ), the internal face is rendered and is not considered as "
+"a ghost cell. One may want to hide the rendering of these internal faces for "
+"multiple reasons:"
+msgstr ""
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:7
+msgid ""
+"When playing with transparency, we don't want to see some faces that can be "
+"located in the middle of the geometry."
+msgstr ""
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:8
+msgid ""
+"For big meshes, the rendering of the interior faces can drastically impact "
+"the performances. So for this reason, we would like to optionally disable "
+"the rendering of internal faces."
+msgstr ""
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:11
+msgid "Implementation"
+msgstr ""
+
+#: ../../../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.md:13
+msgid ""
+"In this work, the option MatchBoundariesIgnoringCellOrder is added to "
+"vtkUnstructuredGridGeometryFilter. The way it's work is that in InsertFace, "
+"if MatchBoundariesIgnoringCellOrder is activated, only the cell corners are "
+"used to check if two cells are superposed."
+msgstr ""
