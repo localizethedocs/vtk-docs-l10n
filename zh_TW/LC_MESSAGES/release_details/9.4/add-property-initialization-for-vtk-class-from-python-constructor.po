@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.md:1
+msgid "Accept keyword arguments in constructor for python wrapped VTK classes"
+msgstr ""
+
+#: ../../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.md:3
+msgid ""
+"In python, you can now initialize the properties of a wrapped VTK class "
+"through specifying keyword arguments in the constructor."
+msgstr ""
+
+#: ../../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.md:6
+msgid "Ex:"
+msgstr ""
+
+#: ../../../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.md:8
+msgid ""
+"s = vtkSphereSource(center=(1, 0, 0), generate_normals=False, radius=10, "
+"theta_resolution=20)\n"
+"e = vtkElevationFilter(low_point=(1, 0, -10), high_point=(1, 0, 10), "
+"input_connection=s.output_port)\n"
+"e.Update()\n"
+"print(e.output.point_data.scalars.range) # prints (0.0, 1.0)\n"
+msgstr ""

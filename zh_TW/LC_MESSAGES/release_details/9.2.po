@@ -1,0 +1,2059 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.2.md:1
+msgid "9.2"
+msgstr ""
+
+#: ../../../release_details/9.2.md:3
+msgid "Released on 2022-09-27."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:2
+msgid "9.2.0 Release Notes"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:4
+msgid "Changes made since VTK 9.1.0 include the following."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:8
+msgid "<a name=\"changes\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:8
+msgid "<a name=\"changes\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:8
+#: ../../../../release/_9.2-stripped.md:11
+#: ../../../../release/_9.2-stripped.md:22
+#: ../../../../release/_9.2-stripped.md:37
+#: ../../../../release/_9.2-stripped.md:46
+#: ../../../../release/_9.2-stripped.md:99
+#: ../../../../release/_9.2-stripped.md:105
+#: ../../../../release/_9.2-stripped.md:126
+#: ../../../../release/_9.2-stripped.md:143
+#: ../../../../release/_9.2-stripped.md:177
+#: ../../../../release/_9.2-stripped.md:189
+#: ../../../../release/_9.2-stripped.md:199
+#: ../../../../release/_9.2-stripped.md:207
+#: ../../../../release/_9.2-stripped.md:210
+#: ../../../../release/_9.2-stripped.md:216
+#: ../../../../release/_9.2-stripped.md:225
+#: ../../../../release/_9.2-stripped.md:234
+#: ../../../../release/_9.2-stripped.md:240
+#: ../../../../release/_9.2-stripped.md:370
+#: ../../../../release/_9.2-stripped.md:411
+#: ../../../../release/_9.2-stripped.md:448
+#: ../../../../release/_9.2-stripped.md:454
+#: ../../../../release/_9.2-stripped.md:480
+#: ../../../../release/_9.2-stripped.md:494
+#: ../../../../release/_9.2-stripped.md:501
+#: ../../../../release/_9.2-stripped.md:510
+#: ../../../../release/_9.2-stripped.md:518
+#: ../../../../release/_9.2-stripped.md:521
+#: ../../../../release/_9.2-stripped.md:633
+#: ../../../../release/_9.2-stripped.md:652
+#: ../../../../release/_9.2-stripped.md:694
+#: ../../../../release/_9.2-stripped.md:703
+#: ../../../../release/_9.2-stripped.md:712
+msgid "</a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:9
+msgid "Changes {#changes}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:11
+#: ../../../../release/_9.2-stripped.md:216
+msgid "<a name=\"build\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:11
+#: ../../../../release/_9.2-stripped.md:216
+msgid "<a name=\"build\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:12
+#: ../../../../release/_9.2-stripped.md:217
+msgid "Build {#build}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:14
+msgid ""
+"The `VTK_USE_MPI` and `VTK_USE_TK` options are more lenient and will not "
+"force any modules in the `MPI` or `Tk` group, respectively, to be built. "
+"Instead, affected modules may be disabled if they are unwanted."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:17
+msgid ""
+"VTK's packages now hint OpenVR locations (for the build tree or "
+"`VTK_RELOCATABLE_INSTALL=OFF` installations)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:19
+msgid "Installation destinations for Python modules is now fixed under MinGW."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:20
+msgid "Compile fixes for older compilers, mainly GCC 4.8."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:22
+#: ../../../../release/_9.2-stripped.md:225
+#: ../../../../release/_9.2-stripped.md:633
+msgid "<a name=\"core\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:22
+#: ../../../../release/_9.2-stripped.md:225
+#: ../../../../release/_9.2-stripped.md:633
+msgid "<a name=\"core\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:23
+#: ../../../../release/_9.2-stripped.md:226
+#: ../../../../release/_9.2-stripped.md:634
+msgid "Core {#core}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:25
+msgid ""
+"`vtkVector`'s `+=` and `-=` operators now return a `vtkVector&` as expected. "
+"Previously they returned uninitialized `vtkVector` instances which is of "
+"little use to anyone."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:28
+msgid ""
+"`vtkSetGet.h` macros which create setters now have `*Override` variants to "
+"use the `override` keyword instead of repeating `virtual`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:30
+msgid ""
+"`vtkObject` instances may now be assigned a name used in reporting. It is "
+"not copied by `ShallowCopy` or `DeepCopy` copies."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:32
+msgid ""
+"`vtkAbstractArray::CreateArray` now prefers creating sized integer arrays "
+"rather than arrays of basic C types. This is intended to help readers  get "
+"the correct size instead of having to remember whether `long` is 32 or 64 "
+"bits on the given platform."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:37
+msgid "<a name=\"data\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:37
+msgid "<a name=\"data\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:38
+msgid "Data {#data}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:40
+msgid ""
+"The `vtkArrayListTemplate` helper class for `vtkDataSetAttributes` "
+"incorrectly held a `vtkDataArray*`. This meant that filters using the class "
+"could not support other arrays such as `vtkStringArray`. Now, it holds a "
+"`vtkAbstractArray*` to support these types. Users may adapt by using "
+"`vtkArrayDownCast` to obtain a `vtkDataArray*` if needed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:46
+#: ../../../../release/_9.2-stripped.md:240
+#: ../../../../release/_9.2-stripped.md:652
+msgid "<a name=\"filters\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:46
+#: ../../../../release/_9.2-stripped.md:240
+#: ../../../../release/_9.2-stripped.md:652
+msgid "<a name=\"filters\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:47
+#: ../../../../release/_9.2-stripped.md:241
+#: ../../../../release/_9.2-stripped.md:653
+msgid "Filters {#filters}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:49
+msgid ""
+"`vtkArrayCalculator`, `vtkmodules.numpy_interface.dataset_adapter`, and "
+"`vtkProgrammableFilter` support for `vtkHyperTreeGrid` has been improved."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:51
+msgid ""
+"`vtkUnstructuredGridQuadricDecimation::NO_ERROR` has been renamed to `::"
+"NON_ERROR` to avoid conflicts with Microsoft Windows SDK headers."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:53
+msgid ""
+"`vtkImprintFilter::ABSOLUTE` has been renamed to `::ABSOLUTE_TOLERANCE` to "
+"avoid conflicts with Microsoft Windows SDK headers."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:55
+msgid ""
+"`vtkMeshQuality` and `vtkCellTypes` now use a `enum class "
+"QualityMeasureTypes` instead of `#define` symbols for metrics."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:57
+msgid "`vtkCheckerboardSplatter` no longer has nested parallelism."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:58
+msgid ""
+"`vtkmProbe` filters now return probed fields as point data rather than cell "
+"data."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:60
+msgid ""
+"`vtkDescriptiveStatistics`'s Kurtosis formula had a mistake which is now "
+"corrected."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:62
+msgid ""
+"`vtkDescriptiveStatistics` previously supported toggling kurtosis, skewness, "
+"and variance over sample or population individually. Now, sample or "
+"population can be selected using the `SampleEstimate` boolean (on by "
+"default). This simplifies interactions with the filter and avoids confusion "
+"by mixing and matching. The previous APIs still exist, but do not do "
+"anything."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:67
+msgid ""
+"`vtkPlaneCutter` now frees the sphere trees if the input changes and can "
+"handle `vtkUniformGridAMR` inputs."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:69
+msgid ""
+"`vtkPlaneCutter` now uses `vtkAppendPolyData` internally to merge internal "
+"results. This avoids complex `vtkMultiBlockDataSet` inputs from creating "
+"complicated sets of `vtkMultiPieceDataSet`. Inputs and outputs are now "
+"transformed as follows:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:73
+msgid "`vtkMultiBlockDataSet` input becomes `vtkMultiBlockDataSet`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:74
+msgid ""
+"`vtkUniformGridAMR` input becomes `vtkPartitionedDataSetCollection` "
+"(previously `vtkMultiBlockDataSet`)"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:76
+msgid ""
+"`vtkPartitionedDataSetCollection` input becomes "
+"`vtkPartitionedDataSetCollection`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:78
+msgid "`vtkPartitionedDataSet` input becomes `vtkPartitionedDataSet`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:79
+msgid ""
+"`vtkDataSet` input becomes `vtkPolyData` (previously `vtkPartitionedDataSet`)"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:81
+msgid ""
+"`vtkCellTreeLocator` has moved from `VTK::FiltersGeneral` to `VTK::"
+"CommonDataModel`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:83
+msgid ""
+"`vtkArrayCalculator` no longer calls `Modified()` on any value setting "
+"because it causes multi-threaded contention."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:85
+msgid ""
+"The `vtkArrayRename` filter may be used to rename data arrays within a data "
+"set."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:87
+msgid ""
+"`vtkGeometryFilter` no longer supports the `vtkUnstructuredGrid::FastMode` "
+"using the `Degree` flag."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:89
+msgid ""
+"`vtkTemporalDataSetCache` no longer crashes when a nonexistent timestep is "
+"requested."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:91
+msgid ""
+"`vtkTableFFT` no longer prefixes output array names with \"FFT_\" like it "
+"was in 9.1 and just keep the same name as the input like it was doing before "
+"9.1. A new API has been added to keep 9.1 behavior when needed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:94
+msgid ""
+"`vtkContourTriangulator` polygon bounds checking now factors in the "
+"tolerance."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:95
+msgid ""
+"`vtkImageDifference` calculations have been fixed. Note that this may affect "
+"testing results."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:97
+msgid "`vtkLagrangianParticleTracker` caching invalidation logic fixed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:99
+#: ../../../../release/_9.2-stripped.md:370
+#: ../../../../release/_9.2-stripped.md:694
+msgid "<a name=\"interaction\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:99
+#: ../../../../release/_9.2-stripped.md:370
+#: ../../../../release/_9.2-stripped.md:694
+msgid "<a name=\"interaction\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:100
+#: ../../../../release/_9.2-stripped.md:371
+#: ../../../../release/_9.2-stripped.md:695
+msgid "Interaction {#interaction}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:102
+msgid "`vtkFrustumSelection` has been optimized."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:103
+msgid "Selection extraction on `vtkUniformGridAMR` has been fixed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:105
+#: ../../../../release/_9.2-stripped.md:411
+msgid "<a name=\"io\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:105
+#: ../../../../release/_9.2-stripped.md:411
+msgid "<a name=\"io\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:106
+#: ../../../../release/_9.2-stripped.md:412
+msgid "I/O {#io}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:108
+msgid ""
+"The `vtkIOSSReader` now provides `DisplacementMagnitude` to scale point "
+"displacement."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:110
+msgid ""
+"The `vtkIOSSReader` now turns off the `LOWER_CASE_VARIABLE_NAMES` IOSS "
+"property."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:112
+msgid ""
+"`vtkIOSSReader` now reads side sets correctly by avoiding a false positive "
+"hit in its internal cache."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:114
+msgid "FFmpeg 5.0 is now supported."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:115
+msgid ""
+"`vtkXdmfReader` no longer caches internal `XdmfGrid` instances to avoid "
+"wasting memory. See #19633."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:117
+msgid "`vtkJSONSceneExporter` no longer overwrites existing files."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:118
+msgid ""
+"`vtkGLTFExporter` now exports the correct camera transformation matrix. "
+"Imported scenes may use `vtkGLTFImporter::SetCamera(0)` prior to `Update()` "
+"to use the original camera location."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:121
+msgid ""
+"`vtkPLYWriter` may now write the point normals of input meshes, if present."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:122
+msgid ""
+"`vtkPIOReader` now requires dump files to begin with the problem name. This "
+"avoids using an unrelated file for partially written dumps."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:124
+msgid "`vtkNetCDFCAMReader` now properly extracts level data."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:126
+#: ../../../../release/_9.2-stripped.md:454
+#: ../../../../release/_9.2-stripped.md:703
+msgid "<a name=\"rendering\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:126
+#: ../../../../release/_9.2-stripped.md:454
+#: ../../../../release/_9.2-stripped.md:703
+msgid "<a name=\"rendering\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:127
+#: ../../../../release/_9.2-stripped.md:455
+#: ../../../../release/_9.2-stripped.md:704
+msgid "Rendering {#rendering}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:129
+msgid ""
+"`vtkProp3D` actors may now be added using different coordinate frames: "
+"`WORLD` (the default), `PHYSICAL` (in VR, the physical room's coordinates, "
+"in meters), and `DEVICE` (relative to the device). When using `PHYSICAL` or "
+"`DEVICE`, a renderer must be provided via the new "
+"`SetCoordinateSystemRenderer()` and `SetCoordinateSystemDevice()` methods. "
+"Such props should typically use `UseBoundsOff()` to ignore their bounds when "
+"resetting the camera."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:136
+msgid "Unstable volume rendering configurations are detected."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:137
+msgid "Volume rendering now supports more than 6 lights."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:138
+msgid ""
+"`vtkXOpenGLRenderWindow` and `vtkXRenderWindowInteractor` now properly "
+"disconnects from the display when it is not owned."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:140
+msgid "Add a missing GIL lock in `vtkMatplotlibMathTextUtilities`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:141
+msgid "Avoid a hard-coded translation when resetting the camera in VR."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:143
+msgid "<a name=\"python\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:143
+msgid "<a name=\"python\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:144
+msgid "Python {#python}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:146
+msgid ""
+"SDKs for each weekly wheels are now available on `vtk.org`. Releases will "
+"also have them available."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:148
+msgid "`vtkmodules.qt` now supports PyQt6."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:149
+msgid "Python 3.10 is now supported by `vtkpython`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:150
+msgid "Python 3.10 wheels are now supported."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:151
+msgid ""
+"VTK's wrapped classes may now be interposed by using the class' `override` "
+"decorator:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:154
+msgid ""
+"from vtkmodules.vtkCommonCore import vtkPoints\n"
+"\n"
+"@vtkPoints.override\n"
+"class foo(vtkPoints):\n"
+"  pass\n"
+"\n"
+"o = vtkPoints() # o is actually an instance of foo\n"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:164
+msgid ""
+"Note that Python subclasses still cannot override C++ `virtual` functions, "
+"cannot alter the C++ class hierarchy, is global, and is ignored when the "
+"class uses `vtkObjectFactory` to provide a subclass from its `::New()` "
+"method."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:168
+msgid ""
+"`.pyi` files for autocompletion and hinting in editors are now available in "
+"VTK builds and wheels. Note that Windows wheels older than 3.8 do not "
+"provide `.pyi` files for platform-specific reasons."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:171
+msgid ""
+"Starting with 9.2.3, Python 3.11 is supported and newly-deprecated APIs are "
+"avoided."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:173
+msgid "Starting with 9.2.3, Matplotlib 3.6 is now supported."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:174
+msgid ""
+"Starting with 9.2.3, `vtk[web]` is required to get web dependencies with the "
+"wheels."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:177
+msgid "<a name=\"web\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:177
+msgid "<a name=\"web\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:178
+msgid "Web {#web}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:180
+msgid "Fix a memory leak in `vtkWebApplication`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:181
+msgid ""
+"The render window serializers were updated to better map VTK options to VTK."
+"js options. This includes font coloring for scalar bars and color transfer "
+"function discretization."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:184
+msgid "`vtkDataSetSurfaceFilter` is used in place of `vtkGeometryFilter`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:185
+msgid ""
+"The generic mapper serializer now uses `vtkDataSetSurfaceFilter` to always "
+"extract a surface from the input dataset."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:187
+msgid "Python `print` statements were changed to DEBUG logging statements."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:189
+msgid "<a name=\"third-party\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:189
+msgid "<a name=\"third-party\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:190
+msgid "Third Party {#third-party}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:192
+msgid "VTK's vendored HDF5 library has been updated to 1.13.1."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:193
+msgid "VTK's vendored `verdict` library has been updated."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:194
+msgid "VTK's vendored `freetype` library has been updated to 2.12.0."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:195
+msgid "VTK's vendored `mpi4py`'s Cython updated to support Python 3.11."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:196
+msgid "Avoidance of deprecated APIs in new FFmpeg releases."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:197
+msgid "VTK's vendored `libproj` better supports cross-compilation."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:199
+msgid "<a name=\"infrastructure\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:199
+msgid "<a name=\"infrastructure\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:200
+msgid "Infrastructure {#infrastructure}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:202
+msgid ""
+"Modules may now specify license files for the module in their `vtk.module` "
+"file. It will automatically be installed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:207
+msgid "<a name=\"new-features\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:207
+msgid "<a name=\"new-features\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:208
+msgid "New Features {#new-features}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:210
+msgid "<a name=\"animation\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:210
+msgid "<a name=\"animation\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:211
+msgid "Animation {#animation}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:213
+msgid ""
+"Animations may now be played in reverse using `vtkAnimationCue`'s direction "
+"to `vtkAnimationCue::PlayDirection::BACKWARD`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:219
+msgid ""
+"When `VTK::AcceleratorsVTKmFilters` is enabled, the "
+"`VTK_ENABLE_VTKM_OVERRIDES` option may be turned on to provide factory "
+"overrides for other VTK filters. Note that for these overrides to be used, "
+"the relevant VTKm modules must be linked (for C++) or imported (for Python) "
+"to be effective."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:228
+msgid ""
+"`vtkMath::Convolve1D` can be used to compute the convolution of two 1D "
+"signals using `full`, `same`, or `valid` boundary conditions."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:230
+msgid ""
+"`vtkReservoirSampler` may be used to perform reservoir sampling. It is "
+"intended for selecting random fixed-size subsets of integer sequences (e.g., "
+"array indices or element IDs)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:234
+msgid "<a name=\"charts\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:234
+msgid "<a name=\"charts\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:235
+msgid "Charts {#charts}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:237
+msgid ""
+"The parallel coordinates chart now supports multiple selections on the same "
+"axis. This includes addition, subtraction, and toggle actions."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:243
+msgid ""
+"The `vtkGenerateTimeSteps` filter may be used to add timesteps to shallow-"
+"copied data within a pipeline."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:245
+msgid ""
+"The `vtkHyperTreeGridGradient` filter may be used to compute a gradient over "
+"a scalar field. The edges of the dual is used, so all neighbors are "
+"considered, but coarse cells are ignored."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:248
+msgid ""
+"The `vtkExtractParticlesOverTime` filter may extract particles over time "
+"that pass through a given volumetric dataset."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:250
+msgid ""
+"`vtkMultiObjectMassProperties` now also computes the centroids of each "
+"object. Centroids are calculated using tetrahedron centroids and uniform "
+"density."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:253
+msgid ""
+"`vtkJoinTables` may perform a SQL-style `JOIN` operation on two `vtkTable` "
+"objects. The columns to keep depend on the mode: `intersection` (keep "
+"columns common to both tables), `union` (keeps columns present in either "
+"table), and `left` and `right` (keeping the keys present in the respective "
+"input table)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:257
+msgid ""
+"`vtkComputeQuantiles` has been split out of `vtkComputeQuartiles` as a new "
+"superclass. It supports arbitrary numbers of buckets."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:259
+msgid "`vtkMeshQuality` and `vtkCellQuality` have:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:260
+msgid "been multithreaded"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:261
+msgid "improved documentation"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:262
+msgid "no longer supports the `AspectBeta` tetrahedron metric"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:263
+msgid "improved pyramid cell metrics:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:264
+#: ../../../../release/_9.2-stripped.md:273
+#: ../../../../release/_9.2-stripped.md:282
+#: ../../../../release/_9.2-stripped.md:285
+#: ../../../../release/_9.2-stripped.md:287
+#: ../../../../release/_9.2-stripped.md:293
+msgid "`EquiangleSkew`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:265
+#: ../../../../release/_9.2-stripped.md:274
+msgid "`Jacobian`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:266
+#: ../../../../release/_9.2-stripped.md:278
+msgid "`ScaledJacobian`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:267
+#: ../../../../release/_9.2-stripped.md:279
+msgid "`Shape`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:268
+#: ../../../../release/_9.2-stripped.md:280
+msgid "`Volume`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:269
+msgid "improved wedge cell metrics:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:270
+msgid "`Condition`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:271
+msgid "`Distortion`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:272
+msgid "`EdgeRatio`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:275
+msgid "`MaxAspectFrobenius`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:276
+msgid "`MaxStretch`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:277
+msgid "`MeanAspectFrobenius`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:281
+msgid "new triangle cell metrics:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:283
+#: ../../../../release/_9.2-stripped.md:290
+msgid "`NormalizedInradius`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:284
+msgid "new quadrilateral cell metrics:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:286
+msgid "new tetrahedron cell metrics:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:288
+msgid "`EquivolumeSkew`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:289
+msgid "`MeanRatio`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:291
+msgid "`SquishIndex`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:292
+msgid "new hexahedron cell metrics:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:294
+msgid "`NodalJacobianRatio`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:295
+msgid ""
+"The new `vtkLinearTransformCellLocator` is a cell locator adaptor which can "
+"calculate a transformation matrix from a base dataset to another dataset. "
+"This matrix is then used to perform cell locator operations. The "
+"`UseAllPoints()` method may be used to use either all dataset points (if the "
+"transformation might not be linear) or, at most, 100 sample points sampled "
+"uniformly from the dataset's point array."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:301
+msgid ""
+"`vtkCellLocator`, `vtkStaticCellLocator`, `vtkCellTreeLocator`, "
+"`vtkModifiedBSPTree`, and `vtkLinearTransformCellLocator` each have numerous "
+"improvements:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:304
+msgid "support for `ShallowCopy()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:305
+msgid "caching cell bounds has been multithreaded"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:306
+msgid "`InsideCellBounds` checks are now cached"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:307
+msgid ""
+"new `IntersectWithLine` methods sorted by a parametric `t`; this also "
+"provides `FindCellsAlongLine` for each locator"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:309
+msgid "the `tolerance` parameter may be used to check cell bound intersections"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:310
+msgid ""
+"The `UseExistingSearchStructure` parameter may be used to not rebuild "
+"locators when component data changes, but the geometry stays the same; use "
+"`ForceBuildLocator` to rebuild as needed in this case"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:313
+msgid "`vtkCellTreeLocator` supports 64bit IDs."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:314
+msgid ""
+"`vtkCellTreeLocator::IntersectWithLine()` and `vtkModifiedBSPTree::"
+"IntersectWithLine()` are now thread-safe."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:316
+msgid "`vtkCellLocator` is now fully thread-safe."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:317
+msgid ""
+"The `vtkAlignImageDataSetFilter` has been added which can align image "
+"datasets to share a single global origin and offset extents in each "
+"component image accordingly. All images must use the same spacing."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:320
+msgid ""
+"The new `vtkLengthDistribution` filter may be used to estimate the range of "
+"geometric length scales preset in a `vtkDataSet`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:322
+msgid ""
+"`vtkImageMathematics` can now perform operations on more than two images. "
+"Rather than connecting a second image to port 1, all connections are made to "
+"port 0 instead. This unifies behavior with other repeatable image filters "
+"such as `vtkImageAppend`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:326
+msgid ""
+"VTKm's `vtkmContour` filter may be used as a factory override for "
+"`vtkContourFilter`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:328
+msgid ""
+"VTKm filter factory overrides may be toggled using `vtkmFilterOverrides::"
+"SetEnabled()`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:330
+msgid "The `vtkExtractHistogram` filter has been moved from ParaView into VTK."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:331
+msgid ""
+"`vtkPointDataToCellData` now handles categorical data using multiple threads."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:332
+msgid "`vtkSuperquadricSource` now creates pieces using multiple threads."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:333
+msgid ""
+"Particle traces now support `vtkDataObjectTree` objects to define seed "
+"points rather than only `vtkDataSet` objects."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:335
+msgid "`vtkStreamTracer` now uses SMP when multiprocessing is not in use."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:336
+msgid "`vtkStreamTracer` performance and quality have been improved."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:337
+msgid "`vtkFindCellStrategy::FindClosestPointWithinRadius()` has been added."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:338
+msgid ""
+"`vtkCompositeInterpolatedVelocityField::SnapPointOnCell()` has been "
+"refactored from the `vtkInterpolatedVelocityField` and "
+"`vtkCellLocatorInterpolatedVelocityField` subclasses."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:341
+msgid ""
+"`vtkParticleTracerBase` is now multithreaded (with one MPI rank or more than "
+"100 particles)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:343
+msgid ""
+"`vtkParticleTracerBase` can now use either use a cell locator (the default) "
+"or point locator for interpolation."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:345
+msgid ""
+"`vtkParticleTracerBase` supports different levels of mesh changes over time:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:346
+msgid "`DIFFERENT`: the mesh changes on every timestep."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:347
+msgid "`SAME`: the mesh is the same on every timestep."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:348
+msgid ""
+"`LINEAR_TRANSFORMATION`: the mesh is a linear transformation of the prior "
+"timesteps (partially applies to point locators as only cell links are "
+"preserved)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:351
+msgid ""
+"`SAME_TOPOLOGY`: the mesh data changes, but its topology is the same every "
+"timestep (only applies to point locators)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:353
+msgid ""
+"`vtkTemporalInterpolatedVelocityField` can now use the `FindCellStrategy` "
+"because it now preserves higher numerical accuracy internally."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:355
+msgid ""
+"`vtkGeometryFilter` is now multi-threaded over more data types including:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:356
+msgid "`vtkUnstructuredGrid`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:357
+msgid "`vtkUnstructuredGridBase`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:358
+msgid "`vtkImageData` (3D)"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:359
+msgid "`vtkRectilinearGrid`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:360
+msgid "`vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:361
+msgid "`vtkGeometryFilter` can now handle ghost and blank cells and points."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:362
+msgid ""
+"`vtkGeometryFilter` can now remove ghost interfaces using the "
+"`RemoveGhostInterfaces` flag (default on)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:364
+msgid ""
+"The `vtkFiniteElementFieldDistributor` filter can now visualize "
+"Discontinuous Galerkin (DG) finite element fields of type `H(Grad)`, "
+"`H(Curl)`, and `H(Div)`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:366
+msgid ""
+"Note that all cells must be of the same type and the field data must contain "
+"a `vtkStringArray` describing the DG fields, basis types, and reference "
+"cells."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:373
+msgid ""
+"`vtkDisplaySizedImplicitPlaneWidget` is now provided. Compared to "
+"`vtkImplicitPlaneWidget2`:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:375
+msgid "the outline is not drawn by default"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:376
+msgid "the intersection edges of the outline and the plane may be drawn"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:377
+msgid "the normal arrow and plane size are relative to the viewport"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:378
+msgid "their sizes may be bounded by the widget bounds"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:379
+msgid ""
+"the origin may be moved freely rather than constrained to the bounding box"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:380
+msgid "the handle sizes are larger"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:381
+msgid "the plane is represented as a disc"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:382
+msgid "the only option for the perimeter is to be tubed or not"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:383
+msgid "the perimeter may be selected and resized to change the disc radius"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:384
+msgid "the actors are highlighted only when hovered"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:385
+msgid ""
+"except the plane surface which is highlighted when any actor is hovered over"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:387
+msgid "a new plane origin may be picked using `P` or `p`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:388
+msgid ""
+"the `ctrl` modifier will snap to the closest point on an object or the "
+"camera plane focal point otherwise"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:390
+msgid "a new plane normal may be picked using `N` or `n`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:391
+msgid ""
+"the `ctrl` modifier will snap to the closest normal on an object or the "
+"camera plane normal otherwise"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:393
+msgid "picking tolerance is relative to the viewport size"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:394
+msgid "`vtkResliceImageViewer` may now apply a factor when scrolling."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:395
+msgid ""
+"`vtkResliceCursorWidgetLineRepresentation` supports `alt+leftclick` to "
+"translate along a single axis."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:397
+msgid ""
+"`vtkVRInteractorStyle` now supports the `Grounded` movement style. The "
+"existing movement style is called `Flying`. `Grounded` movement is "
+"constrained to an `xy` plane in four directions on one joystick. The other "
+"joystick changes elevation."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:401
+msgid "`vtkSelection` now supports the `xor` boolean operator."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:402
+msgid "`vtkSelectionSource` now supports multiple selection nodes."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:403
+msgid ""
+"`vtkSelectionSource` may now define the field option using either "
+"`FieldType` or `ElementType`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:405
+msgid "`vtkSelectionSource` now defines the `ProcessId` of the selection."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:406
+msgid ""
+"`vtkAppendSelection` can now append multiple selections through an "
+"expression using selection input names."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:408
+msgid ""
+"`vtkConvertSelection` may now convert `BLOCK` and `BLOCK_SELECTORS` nodes to "
+"`INDICES`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:414
+msgid ""
+"`vtkFidesReader` reader can now use the `Inline` engine for in-situ "
+"processing."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:416
+msgid ""
+"`vtkCatalystConduit` may be used to adapt [Conduit][conduit] datasets via "
+"the [Catalyst][catalyst] library's [conduit interactions][catalyst-conduit]. "
+"This module requires an external `catalyst` library to be provided. This "
+"module includes:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:420
+msgid ""
+"`vtkConduitSource`: a source filter which generates a `vtkPartionedDataSet` "
+"or `vtkPartitionedDataSetCollection` from a Conduit node (it may also "
+"generate `vtkMultiBlockDataSet` if needed for historical reasons)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:423
+msgid ""
+"`vtkDataObjectToConduit` to convert any `vtkDataObject` into a Conduit node"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:424
+msgid "a Catalyst implementation"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:425
+msgid ""
+"The `vtkHDFReader` filter now supports overlapping AMR datasets. The "
+"specification can be found in the [VTK File Formats documentation][vtk-"
+"examples-file-formats-hdf]."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:428
+msgid ""
+"`vtkCGNSReader` now support reading cell- or face-centered data arrays for "
+"meshes with 3D cells. Note that connectivity must be defined using `NGON_n` "
+"in face-based meshes. Data arrays are then defined with a `GridLocation_t` "
+"of either `CellCenter` or `FaceCenter`. The behavior may be selected by "
+"setting `vtkCGNSReader::DataLocation` to `vtkCGNSReader::CELL_DATA` (the "
+"default and previous behavior) or `vtkCGNSReader::FACE_DATA`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:434
+msgid "`vtkPIOReader` can now read restart block and even/odd dumps."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:435
+msgid ""
+"`vtkPIOReader` will now add the `xdt`, `ydt`, `zdt`, and `rho` derived "
+"variables and calculate them if they are not already present in the restart "
+"file."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:438
+msgid ""
+"`vtkIOSSReader` now caches time values internally to avoid filesystem "
+"contention on HPC systems."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:440
+msgid ""
+"The new `vtkIOSSWriter` can write Exodus files using the IOSS library. For "
+"now, only element blocks, node sets, and side sets are supported."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:448
+msgid "<a name=\"qt\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:448
+msgid "<a name=\"qt\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:449
+msgid "Qt {#qt}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:451
+msgid ""
+"`QVTKTableModelAdapter` may be used to provide a `QAbstractItemModel` model "
+"as a `vtkTable` to use in a pipeline."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:457
+msgid "Basic OpenXR support is supported for virtual reality rendering."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:458
+msgid ""
+"The `vtkHyperTreeGridMapper` mapper may be used to render only visible parts "
+"of a `vtkHyperTreeGrid` in 2D."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:460
+msgid ""
+"Rendering point sets may now use OSPRay's \"Particle Volume\" when using "
+"`vtkPointGaussianMapper`'s ray tracing backend."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:462
+msgid ""
+"`vtkColorTransferFunction::AddRGBPoints` may now be called with points and "
+"colors in batches for much better performance."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:464
+msgid ""
+"The `WindowLocation` API has moved from `vtkTextRepresentation` to "
+"`vtkBorderRepresentation` so that it can be used by more classes."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:466
+msgid ""
+"Volumetric shadows is now supported which allows for a volumetric model to "
+"cast shadows on itself. Requires volumetric shading to be enabled. An "
+"illumination reach parameter controls how accurate the shadows will be, `0` "
+"meaning only local shadows and `1` for shadows across the entire volume."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:471
+msgid ""
+"![TestOSPRayPointGaussianMapper](imgs/9.2/TestOSPRayPointGaussianMapper.png)"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:471
+msgid "TestOSPRayPointGaussianMapper"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:473
+msgid "Interactive rendering of most widgets are now supported with OSPRay."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:475
+msgid ""
+"![TestOSPRayBoxWidget2](imgs/9.2/TestOSPRayBoxWidget2.png) !"
+"[TestOSPRaySplineWidget2](imgs/9.2/TestOSPRaySplineWidget2.png) !"
+"[TestOSPRayImplicitPlaneWidget2](imgs/9.2/TestOSPRayImplicitPlaneWidget2."
+"png) ![TestOSPRayPointHandleRepresentation3D](imgs/9.2/"
+"TestOSPRayPointHandleRepresentation3D.png)"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:475
+msgid "TestOSPRayBoxWidget2"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:475
+msgid "TestOSPRaySplineWidget2"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:475
+msgid "TestOSPRayImplicitPlaneWidget2"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:475
+msgid "TestOSPRayPointHandleRepresentation3D"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:480
+msgid "<a name=\"widgets\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:480
+msgid "<a name=\"widgets\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:481
+msgid "Widgets {#widgets}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:483
+msgid ""
+"The `vtkCoordinateFrameWidget` controls 3 orthogonal right-handed planes. "
+"Axes are rendered proportionally to the viewport size (and is configurable). "
+"Interaction may pick a basis point and choose alignment with a surface "
+"normal or another point. See [this Discourse thread][discourse-cfw] for "
+"discussion."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:487
+msgid ""
+"`vtkHardwarePicker` may be used to pick a point and normal by intersection "
+"with a mesh cell or nearest mesh point."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:490
+msgid ""
+"![Coordinate Frame Widget](imgs/9.2/coordinateFrameWidget.png \"Coordinate "
+"Frame Widget\")"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:490
+msgid "Coordinate Frame Widget"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:494
+msgid "<a name=\"testing\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:494
+msgid "<a name=\"testing\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:495
+msgid "Testing {#testing}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:497
+msgid ""
+"The `vtkHyperTreeGridPreConfiguredSource` may be used to generate different "
+"`vtkHyperTreeGrid` datasets for testing purposes instead of hand-crafting "
+"them."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:501
+msgid "<a name=\"wrapping\"></a>"
+msgstr "<a name=\"wrapping\"></a>"
+
+#: ../../../../release/_9.2-stripped.md:501
+msgid "<a name=\"wrapping\">"
+msgstr "<a name=\"wrapping\">"
+
+#: ../../../../release/_9.2-stripped.md:502
+msgid "Wrapping {#wrapping}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:504
+msgid "Wrapping tools now support Unicode command line arguments."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:505
+msgid ""
+"`vtkSmartPointer<T>` parameters and return values are now supported in "
+"wrapped Python APIs. `std::vector<vtkSmartPointer<T>>` is also supported by "
+"appearing as a `tuple` in Python and conversion from any sequence when "
+"converting to C++."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:510
+msgid "<a name=\"module-system\"></a>"
+msgstr "<a name=\"module-system\"></a>"
+
+#: ../../../../release/_9.2-stripped.md:510
+msgid "<a name=\"module-system\">"
+msgstr "<a name=\"module-system\">"
+
+#: ../../../../release/_9.2-stripped.md:511
+msgid "Module System {#module-system}"
+msgstr "模組系統 {#module-system}"
+
+#: ../../../../release/_9.2-stripped.md:513
+msgid ""
+"`vtk_module_sources` is now provided as a wrapper around `target_sources` "
+"for VTK module targets."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:515
+msgid ""
+"`vtk_module_add_module` now supports a `NOWRAP_TEMPLATE_CLASSES` keyword for "
+"template classes which should not be wrapped."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:518
+msgid "<a name=\"deprecated-and-removed-features\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:518
+msgid "<a name=\"deprecated-and-removed-features\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:519
+msgid "Deprecated and Removed Features {#deprecated-and-removed-features}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:521
+msgid "<a name=\"legacy\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:521
+msgid "<a name=\"legacy\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:522
+msgid "Legacy {#legacy}"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:524
+msgid ""
+"The following APIs were deprecated in 9.0 or earlier and are now removed:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:526
+msgid ""
+"`vtkPlot::GetNearestPoint(const vtkVector2f&, const vtkVector2f&, "
+"vtkVector2f*)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:528
+msgid ""
+"`vtkPlot::LegacyRecursionFlag` (used to help subclasses implement the "
+"replacement for the prior method)"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:530
+msgid ""
+"The following APIs have been replaced by `vtkOutputWindow::SetDisplayMode()`:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:531
+msgid "`vtkOutputWindow::SetUseStdErrorForAllMessages()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:532
+msgid "`vtkOutputWindow::GetUseStdErrorForAllMessages()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:533
+msgid "`vtkOutputWindow::UseStdErrorForAllMessagesOn()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:534
+msgid "`vtkOutputWindow::UseStdErrorForAllMessagesOff()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:535
+msgid "`vtkWin32OutputWindow::SetSendToStdErr()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:536
+msgid "`vtkWin32OutputWindow::GetSendToStdErr()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:537
+msgid "`vtkWin32OutputWindow::SendToStdErrOn()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:538
+msgid "`vtkWin32OutputWindow::SendToStdErrOff()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:539
+msgid ""
+"`vtkArrayDispatcher`, `vtkDispatcher`, `vtkDoubleDispatcher` have been "
+"replaced by `vtkArrayDispatch`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:541
+msgid "Fetching edge and face points via `int` rather than `vtkIdType`:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:542
+msgid "`vtkConvexPointSet::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:543
+msgid "`vtkConvexPointSet::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:544
+msgid "`vtkHexagonalPrism::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:545
+msgid "`vtkHexagonalPrism::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:546
+msgid "`vtkHexahedron::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:547
+msgid "`vtkHexahedron::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:548
+msgid "`vtkPentagonalPrism::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:549
+msgid "`vtkPentagonalPrism::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:550
+msgid "`vtkPolyhedron::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:551
+msgid "`vtkPolyhedron::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:552
+msgid "`vtkPyramid::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:553
+msgid "`vtkPyramid::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:554
+msgid "`vtkTetra::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:555
+msgid "`vtkTetra::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:556
+msgid "`vtkVoxel::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:557
+msgid "`vtkVoxel::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:558
+msgid "`vtkWedge::GetEdgePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:559
+msgid "`vtkWedge::GetFacePoints(int, int*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:560
+msgid "Querying point cells with an `unsigned short` count of cells:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:561
+msgid "`vtkPolyData::GetPointCells(vtkIdType, unsigned short&, vtkIdType*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:562
+msgid ""
+"`vtkUnstructuredGrid::GetPointCells(vtkIdType, unsigned short&, vtkIdType*&)`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:564
+msgid ""
+"`vtkAlgorithm::SetProgress()` has been replaced by `vtkAlgorithm::"
+"UpdateProgress()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:566
+msgid ""
+"The following APIs have been replaced by `vtkResourceFileLocator::"
+"SetLogVerbosity()`:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:568
+msgid "`vtkResourceFileLocator::SetPrintDebugInformation()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:569
+msgid "`vtkResourceFileLocator::GetPrintDebugInformation()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:570
+msgid "`vtkResourceFileLocator::PrintDebugInformationOn()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:571
+msgid "`vtkResourceFileLocator::PrintDebugInformationOff()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:572
+msgid ""
+"`vtkIdFilter::SetIdsArrayName()` has been replaced by `vtkIdFilter::"
+"SetPointIdsArrayName()` and `vtkIdFilter::SetCellIdsArrayName()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:575
+msgid ""
+"`vtkExtractTemporalFieldData` has been replaced by "
+"`vtkExtractExodusGlobalTemporalVariables`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:577
+msgid ""
+"`vtkTemporalStreamTracer` and `vtkPTemporalStreamTracer` have been replaced "
+"by `vtkParticleTracerBase`, `vtkParticleTracer`, `vtkParticlePathFilter`, or "
+"`vtkStreaklineFilter`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:580
+msgid ""
+"`vtkHyperTreeGridSource::GetMaximumLevel()` and `vtkHyperTreeGridSource::"
+"SetMaximumLevel()` have been replaced by `vtkHyperTreeGridSource::"
+"GetMaxDepth()` and `vtkHyperTreeGridSource::SetMaxDepth()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:584
+msgid ""
+"`QVTKOpenGLNativeWidget`, `QVTKOpenGLStereoWidget`, `QVTKOpenGLWindow` "
+"methods have been removed:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:586
+msgid "`::SetRenderWindow()` is now `::setRenderWindow()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:587
+msgid "`::GetRenderWindow()` is now `::renderWindow()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:588
+msgid "`::GetInteractor()` and `GetInteractorAdaptor()` have been removed"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:589
+msgid "`::setQVTKCursor()` is now `QWidget::setCursor()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:590
+msgid "`::setDefaultQVTKCursor()` is now `QWidget::setDefaultCursor()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:591
+msgid "`QVTKOpenGLWidget` is replaced by `QVTKOpenGLStereoWidget`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:592
+msgid ""
+"`vtkJSONDataSetWriter::{Get,Set}FileName()` is now `vtkJSONDataSetWriter::"
+"{Get,Set}ArchiveName()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:594
+msgid "`vtkLineRepresentation::SetRestrictFlag()` has been removed"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:595
+msgid "The following `vtkRenderWindow` methods have been removed:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:596
+msgid "`GetIsPicking()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:597
+msgid "`SetIsPicking()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:598
+msgid "`IsPickingOn()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:599
+msgid "`IsPickingOff()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:600
+msgid ""
+"The following APIs have been replaced by `vtkShaderProperty` methods of the "
+"same names:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:602
+msgid "`vtkOpenGLPolyDataMapper::AddShaderReplacement()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:603
+msgid "`vtkOpenGLPolyDataMapper::ClearShaderReplacement()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:604
+#: ../../../../release/_9.2-stripped.md:605
+msgid "`vtkOpenGLPolyDataMapper::ClearAllShaderReplacements()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:606
+msgid "`vtkOpenGLPolyDataMapper::SetVertexShaderCode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:607
+msgid "`vtkOpenGLPolyDataMapper::GetVertexShaderCode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:608
+msgid "`vtkOpenGLPolyDataMapper::SetFragmentShaderCode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:609
+msgid "`vtkOpenGLPolyDataMapper::GetFragmentShaderCode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:610
+msgid "`vtkOpenGLPolyDataMapper::SetGeometryShaderCode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:611
+msgid "`vtkOpenGLPolyDataMapper::GetGeometryShaderCode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:612
+msgid ""
+"The following APIs have been removed (they supported the legacy shader "
+"replacements):"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:614
+msgid "`vtkOpenGLPolyDataMapper::GetLegacyShaderProperty()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:615
+msgid "`vtkOpenGLPolyDataMapper::LegacyShaderProperty`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:616
+msgid ""
+"The following APIs have been removed since only `FLOATING_POINT` mode is now "
+"supported:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:618
+msgid "`vtkValuePass::SetRenderingMode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:619
+msgid "`vtkValuePass::GetRenderingMode()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:620
+msgid "`vtkValuePass::SetInputArrayToProcess()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:621
+msgid "`vtkValuePass::SetInputComponentToProcess()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:622
+msgid "`vtkValuePass::SetScalarRange()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:623
+msgid "`vtkValuePass::IsFloatingPointModeSupported()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:624
+msgid "`vtkValuePass::ColorToValue()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:625
+msgid ""
+"`vtkPythonInterpreter::GetPythonVerboseFlag()` has been replaced by "
+"`vtkPythonInterpreter::GetLogVerbosity()`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:627
+msgid ""
+"`vtkUnicodeString` and `vtkUnicodeStringArray` have been removed. The "
+"`vtkString` and `vtkStringArray` classes are now fully UTF-8 aware. UTF-16 "
+"conversion is no longer possible through VTK APIs."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:630
+msgid ""
+"`vtkVariant` support for `__int64` and `unsigned __int64` has been removed. "
+"They have returned `false` for years."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:636
+msgid ""
+"`vtkCellTypes` no longer uses `LocationArray`. It was used for "
+"`vtkUnstructuredGrid` but is now stored with the class instead. As of this "
+"deprecation, all supported APIs are now only `static` methods."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:639
+msgid ""
+"`vtkUnstructuredGrid::GetCellTypes` is deprecated. Instead, "
+"`vtkUnstructuredGrid::GetDistinctCellTypesArray` should be used to access "
+"the set of cell types present in the grid."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:642
+msgid ""
+"`vtkHyperTreeGrid::GetNumberOfVertices()` is now `vtkHyperTreeGrid::"
+"GetNumberOfCells()` to align with VTK's usage of the terminology."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:645
+msgid ""
+"Classes may now opt into the garbage collection mechanism by overriding the "
+"`UsesGarbageCollector()` method to return `true` instead of via the "
+"`Register()` and `UnRegister()` methods."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:648
+msgid ""
+"`vtkCriticalSection` is deprecated. `vtkCriticalSection` was intended to be "
+"deprecated in VTK 9.1.0, but a warning was never added to it. VTK now has "
+"the warning present as it was originally intended."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:655
+msgid ""
+"`vtkChemistryConfigure.h` has been deprecated. It previously only provided "
+"information to VTK's test suite which is now routed internally instead. "
+"There is no replacement and any usage can simply be removed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:658
+msgid ""
+"`vtkMFCConfigure.h` has been deprecated. It used to provide information used "
+"during the module's build that is now passed through command line flags "
+"instead. There is no replacement and any usage can simply be removed."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:661
+msgid ""
+"`vtkMeshQuality`'s mechanism to run the filter in legacy mode is deprecated. "
+"In particular the `CompatibilityMode` and `Volume` members are no longer "
+"necessary with the new mode and should not be used anymore."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:664
+msgid "`vtkMeshQuality` method renames:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:665
+msgid ""
+"`SetQuadQualityMeasureToMaxEdgeRatios` to "
+"`SetQuadQualityMeasureToMaxEdgeRatio`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:667
+msgid ""
+"`SetHexQualityMeasureToMaxEdgeRatios` to `SetHexQualityMeasureToMaxEdgeRatio`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:669
+msgid "`QuadMaxEdgeRatios` to `QuadMaxEdgeRatio`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:670
+msgid "`TetShapeandSize` to `TetShapeAndSize`"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:671
+msgid ""
+"`vtkDescriptiveStatistics::UnbiasedVariance`, `vtkDescriptiveStatistics::"
+"G1Skewness`, and `vtkDescriptiveStatistics::G2Kurtosis` are now deprecated "
+"in favor of a single `vtkDescriptiveStatistics::SampleEstimate` instead."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:675
+msgid ""
+"`vtkCellLocator`, `vtkStaticCellLocator`, `vtkCellTreeLocator`, "
+"`vtkModifiedBSPTree`, and `vtkLinearTransformCellLocator` all have "
+"deprecated their `LazyEvaluation` flag due to thread-safety issues. "
+"`BuildLocatorIfNeeded` is also deprecated for those that supported it."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:679
+msgid ""
+"`vtkStaticCellLocator:UseDiagonalLengthTolerance()` has been deprecated "
+"because it no longer uses `Tolerance`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:681
+msgid ""
+"`vtkParticleTracerBase::StaticMesh` is deprecated in preference to "
+"`vtkParticleTracerBase::SetMeshOverTime` (an enumeration rather than a "
+"boolean)."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:684
+msgid ""
+"`vtkCachingInterpolatedVelocityField`, "
+"`vtkCellLocatorInterpolatedVelocityField`, and "
+"`vtkInterpolatedVelocityField` filters have been deprecated. Instead, use:"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:687
+msgid ""
+"`vtkCellLocatorInterpolatedVelocityField` becomes "
+"`vtkCompositeInterpolatedVelocityField` with `vtkCellLocatorStrategy`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:689
+msgid ""
+"`vtkInterpolatedVelocityField` becomes "
+"`vtkCompositeInterpolatedVelocityField` with `vtkClosestPointStrategy`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:691
+msgid ""
+"`vtkCachingInterpolatedVelocityField` becomes "
+"`vtkCompositeInterpolatedVelocityField` with the appropriate strategy."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:697
+msgid ""
+"`vtkExtractSelectedThresholds`, `vtkExtractSelectedPolyDataIds`, "
+"`vtkExtractSelectedLocations`, `vtkExtractSelectedIds`, and "
+"`vtkExtractSelectedBlock` can now be replaced by `vtkExtractSelection`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:700
+msgid ""
+"`vtkHierarchicalBoxDataIterator` is now deprecated in favor of "
+"`vtkUniformGridAMRDataIterator`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:706
+msgid ""
+"`vtkOSPRayRendererNode::VOLUME_ANISOTROPY`, `vtkOSPRayRendererNode::"
+"GetVolumeAnisotropy()`, and `vtkOSPRayRendererNode::SetVolumeAnistropy()` "
+"are deprecated in favor of`vtkVolumeProperty::SetScatteringAnisotropy()` and "
+"`vtkVolumeProperty::GetScatteringAnisotropy()`."
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:712
+msgid "<a name=\"other-changes\"></a>"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:712
+msgid "<a name=\"other-changes\">"
+msgstr ""
+
+#: ../../../../release/_9.2-stripped.md:713
+msgid "Other Changes {#other-changes}"
+msgstr ""

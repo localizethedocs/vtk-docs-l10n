@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:1
+msgid "{py:mod}`vtkmodules.util.misc`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:7
+msgid ""
+"Miscellaneous functions and classes that don't fit into specific categories."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:18
+msgid "{py:obj}`deprecated <vtkmodules.util.misc.deprecated>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:46
+msgid ""
+"Decorator to mark functions as deprecated. When the decorated function is "
+"called, a DeprecationWarning is issued with the provided message."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:22
+msgid "{py:obj}`calldata_type <vtkmodules.util.misc.calldata_type>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:53
+msgid ""
+"set_call_data_type(type) -- convenience decorator to easily set the "
+"CallDataType attribute for python function used as observer callback. For "
+"example:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:26
+msgid "{py:obj}`vtkGetDataRoot <vtkmodules.util.misc.vtkGetDataRoot>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:28
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:60
+msgid "vtkGetDataRoot() -- return vtk example data directory"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:30
+msgid "{py:obj}`vtkGetTempDir <vtkmodules.util.misc.vtkGetTempDir>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:67
+msgid "vtkGetTempDir() -- return vtk testing temp dir"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:34
+msgid ""
+"{py:obj}`vtkRegressionTestImage <vtkmodules.util.misc."
+"vtkRegressionTestImage>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:74
+msgid "vtkRegressionTestImage(renWin) -- produce regression image for window"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:40
+msgid "API"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:49
+msgid ""
+"Example/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/misc.py:49: (INFO/1) Duplicate implicit target name: "
+"\"example\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:51
+msgid ""
+"@deprecated(version=1.2, message=\"Use 'new_function' instead.\") ... def "
+"old_function(): ...     pass"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:55
+msgid ""
+"old_function() DeprecationWarning: Function 'old_function' is deprecated "
+"since 1.2. Use 'new_function' instead."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:58
+msgid ""
+"Note you can filter warning messages, see: https://docs.python.org/3/library/"
+"warnings.html#describing-warning-filters"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:57
+msgid ""
+"import vtkmodules.util.calldata_type import vtkmodules.util.vtkConstants "
+"import vtkmodules.vtkCommonCore import vtkCommand, vtkLookupTable"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:61
+msgid ""
+"@calldata_type(vtkConstants.VTK_STRING) def onError(caller, event, "
+"calldata):     print(\"caller: %s - event: %s - msg: %s\" % (caller."
+"GetClassName(), event, calldata))"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:65
+msgid ""
+"lt = vtkLookupTable() lt.AddObserver(vtkCommand.ErrorEvent, onError) lt."
+"SetTableRange(2,1)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:76
+msgid ""
+"This function writes out a regression .png file for a vtkWindow. Does anyone "
+"involved in testing care to elaborate?"
+msgstr ""

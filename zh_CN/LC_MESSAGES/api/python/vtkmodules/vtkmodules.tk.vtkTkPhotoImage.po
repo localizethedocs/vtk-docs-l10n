@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:1
+msgid "{py:mod}`vtkmodules.tk.vtkTkPhotoImage`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkPhotoImage.py:7
+msgid ""
+"A subclass of tkinter.PhotoImage that connects a vtkImageData to a photo "
+"widget."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkPhotoImage.py:10
+msgid "Created by Daniel Blezek, August 2002"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:18
+msgid ""
+"{py:obj}`vtkTkPhotoImage <vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkPhotoImage.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkPhotoImage.py:33
+msgid ""
+"A subclass of PhotoImage with helper functions for displaying vtkImageData"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:24
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:30
+msgid "Bases: {py:obj}`tkinter.PhotoImage`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:35
+msgid "Initialization"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:39
+msgid "Create an image with NAME."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.md:41
+msgid ""
+"Valid resource names: data, format, file, gamma, height, palette, width."
+msgstr ""

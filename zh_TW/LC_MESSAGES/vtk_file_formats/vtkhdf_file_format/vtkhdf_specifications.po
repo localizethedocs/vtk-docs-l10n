@@ -1,0 +1,873 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:1
+msgid "VTKHDF format specification"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:3
+msgid "General Specification"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:5
+msgid ""
+"VTKHDF files start with a group called `VTKHDF` with two attributes: "
+"`Version` and `Type`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:8
+msgid ""
+"Top-level groups outside of `/VTKHDF` do not contain any information related "
+"to VTK data model and are outside of the scope of this specification. They "
+"can be useful to store meta-information that could be read and written by "
+"custom VTKHDF implementations."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:14
+msgid ""
+"Unless specified otherwise, every mention of \"dataset\" in this doc refers "
+"to a [HDF5 dataset](https://support.hdfgroup.org/documentation/hdf5/latest/"
+"_h5_d__u_g.html) and not a VTK dataset."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:17
+msgid "Versioning"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:19
+msgid ""
+"VTKHDF File format stores the version in the related attribute `Version`. It "
+"is an array of 2 integers `[X,Y]` where `X` is the major and `Y` the minor. "
+"Major version will be updated for any API break. Minor version will be "
+"updated when any new specification is made."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:23
+msgid ""
+"It ensures that any file will be read/write correctly for any different "
+"minor version in the same major by an implementation."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:25
+msgid ""
+"See the [changelog](vtkhdf_introduction.md#changelog) to be up-to-date "
+"regarding any addition or API break."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:27
+msgid "Type"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:29
+msgid ""
+"The attribute `Type` is a string showing the VTK dataset type stored in the "
+"file. It can be : `ImageData`, `PolyData`, `UnstructuredGrid`, "
+"`HyperTreeGrid`, `OverlappingAMR`,  `PartitionedDataSetCollection` or "
+"`MultiBlockDataSet`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:33
+msgid "Dataset type"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:35
+msgid ""
+"The data type for each HDF dataset is part of the dataset and it is "
+"determined at write time. The reader matches the type of the dataset with a "
+"`H5T_NATIVE_` type and creates the VTK array of that type. Consequently, the "
+"type at writing might be different than the type at reading even on the same "
+"machine because for instance `long` can be the same type as `long long` or "
+"`int` can be the same as `long` on certain platforms. Also, `vtkIdType` is "
+"read as the C++ type it represents (`long` or `long long`). Endianness "
+"conversions are done automatically."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:45
+msgid ""
+"In the diagrams that follow, showing the HDF file structure for VTK "
+"datasets, the rounded blue rectangles are HDF groups. Gray rectangles are "
+"HDF datasets and purple rectangle is for symbolic link. Each rectangle shows "
+"the name of the group or dataset and the `Attributes` underneath :"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:64
+msgid "Image data"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:66
+msgid ""
+"The format for image data is detailed in the Figure 1 where the `Type` "
+"attribute of the `VTKHDF` group is `ImageData`.  An ImageData (regular grid) "
+"is not split into partitions for parallel processing. We rely on the writer "
+"to chunk the data to optimize reading for a certain number of MPI ranks. "
+"Attribute data is stored in a PointData or CellData array using hyper slabs. "
+"`WholeExtent`, `Origin`, `Spacing` and `Direction` attributes have the same "
+"meaning as the corresponding attributes for the vtkImageData dataset. "
+"`Scalars`, `Vectors`, ... string attributes for the `PointData` and "
+"`CellData` groups specify the active attributes in the dataset."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:110
+msgid ""
+"<div align=\"center\">\n"
+"Figure 1. - Image Data VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:115
+msgid "Unstructured grid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:117
+msgid ""
+"The format for unstructured grid is shown in Figure 2. In this case the "
+"`Type` attribute of the `VTKHDF` group is `UnstructuredGrid`. The "
+"unstructured grid is split into partitions, with a partition for each MPI "
+"rank. This is reflected in the HDF5 file structure. Each HDF dataset is "
+"obtained by concatenating the data for each partition. The offset O(i) where "
+"we store the data for partition i is computed using:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:124
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:260
+msgid "O(i) = S(0) + ... + S(i-1), i > 1 with O(0) = 0."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:126
+msgid "where S(i) is the size of partition i."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:128
+msgid ""
+"We describe the split into partitions using HDF5 datasets "
+"`NumberOfConnectivityIds`, `NumberOfPoints` and `NumberOfCells`. Let n be "
+"the number of partitions which usually correspond to the number of the MPI "
+"ranks. `NumberOfConnectivityIds` has size n where NumberOfConnectivityIds[i] "
+"represents the size of the `Connectivity` array for partition i. "
+"`NumberOfPoints` and `NumberOfCells` are arrays of size n, where "
+"NumberOfPoints[i] and NumberOfCells[i] are the number of points and number "
+"of cells for partition i. The `Points` array contains the points of the VTK "
+"dataset. `Offsets` is an array of size ∑ (S(i) + 1), where S(i) is the "
+"number of cells in partition i, indicating the index in the `Connectivity` "
+"array where each cell's points start. `Connectivity` stores the lists of "
+"point ids for each cell, and `Types` contain the cell information stored as "
+"described in vtkCellArray documentation. Data for each partition is appended "
+"in a HDF dataset for `Points`, `Connectivity`, `Offsets`, `Types`, "
+"`PointData` and `CellData`. We can compute the size of partition i using the "
+"following formulas:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "Size of partition i"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "Points"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "NumberOfPoints[i] * 3 * sizeof(Points[0][0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "Connectivity"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "NumberOfConnectivityIds[i] * sizeof(Connectivity[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "Offsets"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "(NumberOfCells[i] + 1) * sizeof(Offsets[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "Types"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "NumberOfCells[i] * sizeof(Types[i])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "PointData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "NumberOfPoints[i] * sizeof(point_array_k[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "CellData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:77
+msgid "NumberOfCells[i] * sizeof(cell_array_k[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:204
+msgid ""
+"<div align=\"center\">\n"
+"Figure 2. - Unstructured Grid VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:208
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:352
+msgid ""
+"To read the data for its rank a node reads the information about all "
+"partitions, compute the correct offset and then read data from that offset."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:212
+msgid "Polyhedron support"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:214
+msgid ""
+"Unstructured grids can define polyhedron cells. In VTK, polyhedrons are "
+"defined differently than other cells, using a collection of faces in "
+"addition to vertices."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:218
+msgid ""
+"VTKHDF uses new fields to handle polyhedral cells. These fields should be "
+"defined as long as the dataset has one or more polyhedral cell."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:221
+msgid ""
+"Faces are defined using a separate array of surfacic (2D) cells, using "
+"offsets `FaceOffsets` and connectivity `FaceConnectivity` arrays."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:224
+msgid ""
+"These faces are tied to 3D polyhedral cells using `PolyhedronToFaces` and "
+"`PolyhedronOffsets`. `PolyhedronToFaces` gives the ids of the face cells "
+"defined before, for each polyhedron. `PolyhedronOffsets` defines the read "
+"offset into this array for each polyhedron, which also gives away the number "
+"of faces for the current polyhedron by reading the very next value in the "
+"array and substracting it to the current one. This means that a single "
+"(oriented) face can be used by multiple polyhedrons."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:231
+msgid ""
+"When mixing polyhedral and non-polyhedral cells in the same dataset, the "
+"value of `PolyhedronOffsets` should stay the same as the previous one when "
+"the cell is non-polyhedral, and be incremented when the cell is a polyhedron "
+"and defines faces."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:235
+msgid ""
+"We also define new metadata fields: `NumberOfFaces`, "
+"`NumberOfPolyhedronToFaceIds` and `NumberOfFaceConnectivityIds`. Those are "
+"used for managing multiple partitions and/or time steps. These arrays have "
+"one value for each partition/time step, and give the number of faces/face "
+"connectivity ids/polyhedron to face ids to be read for the current part."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:239
+msgid ""
+"The table below summarizes the new non-metadata fields required for "
+"polyhedral cells in VTKHDF, in addition to the ones used by the \"classic\" "
+"Unstructured Grid model."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "FaceConnectivity"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "NumberOfFaceConnectivityIds[i] * sizeof(FaceConnectivity[i])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "FaceOffsets"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "(NumberOfPolygonalFaces[i] + 1) * sizeof(FaceOffsets[i])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "PolyhedronToFaces"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "NumberOfPolyhedronToFaceIds[i] * sizeof(PolyhedronToFaces[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "PolyhedronOffsets"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "(NumberOfCells[i] + 1) * sizeof(PolyhedronOffsets[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:251
+msgid "Poly data"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:253
+msgid ""
+"The format for poly data is shown in Figure 3. In this case the `Type` "
+"attribute of the `VTKHDF` group is `PolyData`. The poly data is split into "
+"partitions, with a partition for each MPI rank. This is reflected in the "
+"HDF5 file structure. Each HDF dataset is obtained by concatenating the data "
+"for each partition. The offset O(i) where we store the data for partition i "
+"is computed using:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:262
+msgid ""
+"where S(i) is the size of partition i. This is very similar to and "
+"completely inspired by the `UnstructuredGrid` format."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:265
+msgid ""
+"The split into partitions of the point coordinates is exactly the same as in "
+"the `UnstructuredGrid` format above. However, the split into partitions of "
+"each of the category of cells (`Vertices`, `Lines`, `Polygons` and `Strips`) "
+"using HDF5 datasets `NumberOfConnectivityIds` and `NumberOfCells`. Let n be "
+"the number of partitions which usually correspond to the number of the MPI "
+"ranks. `{CellCategory}/NumberOfConnectivityIds` has size n where "
+"NumberOfConnectivityIds[i] represents the size of the `{CellCategory}/"
+"Connectivity` array for partition i. `NumberOfPoints` and `{CellCategory}/"
+"NumberOfCells` are arrays of size n, where NumberOfPoints[i] and "
+"{CellCategory}/NumberOfCells[i] are the number of points and number of cells "
+"for partition i. The `Points` array contains the points of the VTK dataset. "
+"`{CellCategory}/Offsets` is an array of size ∑ (S(i) + 1), where S(i) is the "
+"number of cells in partition i, indicating the index in the `{CellCategory}/"
+"Connectivity` array where each cell's points start. `{CellCategory}/"
+"Connectivity` stores the lists of point ids for each cell. Data for each "
+"partition is appended in a HDF dataset for `Points`, `Connectivity`, "
+"`Offsets`, `PointData` and `CellData`. We can compute the size of partition "
+"i using the following formulas:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "{CellCategory}/Connectivity"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid ""
+"{CellCategory}/NumberOfConnectivityIds[i] * sizeof({CellCategory}/"
+"Connectivity[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "{CellCategory}/Offsets"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid ""
+"({CellCategory}/NumberOfCells[i] + 1) * sizeof({CellCategory}/Offsets[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:155
+msgid "(∑j {CellCategory_j}/NumberOfCells[i]) * sizeof(cell_array_k[0])"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:348
+msgid ""
+"<div align=\"center\">\n"
+"Figure 3. - Poly Data VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:356
+msgid "Overlapping AMR"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:358
+msgid ""
+"The format for Overlapping AMR is shown in Figure 4. In this case the `Type` "
+"attribute of the `VTKHDF` group is `OverlappingAMR`. The mandatory `Origin` "
+"parameter is a double triplet that defines the global origin of the AMR data "
+"set. Each level in an overlapping AMR file format (and data structure) "
+"consists of a list of uniform grids with the same spacing from the Spacing "
+"attribute. The Spacing attribute is a list a three doubles describing the "
+"spacing in each x/y/z direction. The AMRBox dataset contains the bounding "
+"box for each of these grids. Each line in this dataset is expected to "
+"contain 6 integers describing the indexed bounds in i, j, k space (imin/imax/"
+"jmin/jmax/kmin/kmax). The points and cell arrays for these grids are stored "
+"serialized in one dimension and stored in a dataset in the PointData or "
+"CellData group."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:414
+msgid ""
+"<div align=\"center\">\n"
+"Figure 4. Overlapping AMR VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:418
+msgid "HyperTreeGrid"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:420
+msgid ""
+"The schema for the tree-based AMR HyperTreeGrid VTKHDF specification is "
+"shown in Figure 5. This specification is very different from the ones "
+"mentioned above, because its topology is defined as a grid of refined trees."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:423
+msgid ""
+"Root attribute `Dimensions` defines the dimension of the grid. For a `N * M "
+"* P` grid, there are a total of `(N - 1) * (M - 1) * (P - 1)` trees. "
+"Coordinates arrays `XCoordinates` (size `N`), `YCoordinates` (size `M`) and "
+"`ZCoordinates` (size `P`) define the size of trees in each direction. Their "
+"value can change over time. The `BranchFactor` attribute defines the "
+"subdivision factor used for tree decomposition."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:428
+msgid ""
+"HyperTrees are defined from a bit array describing tree decomposition, level "
+"by level. For each tree, the `Descriptor` dataset has one bit for each cell "
+"in the tree, except for its deepest level: 0 if the cell is not refined, and "
+"1 if it is. The descriptor does not describe its deepest level, because we "
+"know that no cell is ever refined."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:430
+msgid ""
+"Each cell can be masked using an optional bit array `Mask`. A decomposed "
+"(refined) cell cannot be masked. The `Descriptors` and `Mask` datasets are "
+"packed bit arrays, stored as unsigned chars."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:433
+msgid ""
+"Each new piece is required to start writing descriptors and mask on a new "
+"byte, even if the previous byte was not completely used, except if the "
+"previous array has a size of 0. `DescriptorsSize` stores the size (in "
+"**bits**) of the descriptors array for each piece."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:436
+msgid ""
+"`DepthPerTree` contains the depth of each tree listed in `TreeIds` the "
+"current piece. The size of both arrays is `NumberOfTrees`, indexed at the "
+"piece id."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:439
+msgid ""
+"`NumberOfCellsPerTreeDepth`'s size is the sum of `DepthPerTree`. For each "
+"depth of each tree, it gives the information of the number of cells for this "
+"depth. For a given piece, we store the size of this dataset as "
+"`NumberOfDepths`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:443
+msgid "The number of cells for the piece is stored as `NumberOfCells`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:445
+msgid ""
+"The size of the (optional) `Mask` dataset corresponds to the number of cells "
+"divided by 8 (because of bit-packed storage), rounded to the next bigger "
+"integer value."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:448
+msgid ""
+"For HyperTreeGrids, edges cannot store information. This means there can be "
+"a `CellData` group containing cell fields, but no `PointData`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:451
+msgid ""
+"Optionally, `InterfaceNormalsName` and `InterfaceInterceptsName` root "
+"attributes can be set to existing cell array names to define HyperTreeGrid "
+"interfaces, used for interpolation at render time."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:454
+msgid ""
+"For temporal HyperTreeGrids, the \"Steps\" group contains read offsets into "
+"the `DepthPerTree`, `NumberOfCellsPerTreeDepth`, `TreeIds`, `Mask` "
+"`Descriptors` and coordinate datasets for each timestep."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:457
+msgid ""
+"If some values do not change over time (for example coordinates), you can "
+"set the offset to the same value as the previous timestep (O),and store data "
+"only once."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:460
+msgid ""
+"Note that for `Mask` and `Descriptors`, the offset is in **bytes** (unlike "
+"`DescriptorSize` which is in bits), because each new piece starts on a new "
+"byte, except if it does not contain any value."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:523
+msgid ""
+"<div align=\"center\">\n"
+"Figure 5. - HyperTreeGrid VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:527
+msgid "PartitionedDataSetCollection and MultiBlockDataSet"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:529
+msgid ""
+"VTKHDF supports composite types, made of multiple datasets of simple types, "
+"organized as a tree. The format currently supports "
+"vtkPartitionedDataSetCollection (PDC) and vtkMultiBlockDataSet (MB) "
+"composite types, as shown in Figure 11. The `Type` attribute of the `VTKHDF` "
+"group for them should be either `PartitionedDataSetCollection` or "
+"`MultiBlockDataSet`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:533
+msgid ""
+"All simple (non composite) datasets are located in the root `VTKHDF` group, "
+"with a unique block name. These blocks can have any `Type` specified above, "
+"or be empty blocks when no `Type` is specified. These top-level data blocks "
+"should not be composite themselves : they can only be simple or partitioned "
+"(multi-piece) types. For temporal datasets, all blocks should have the same "
+"number of time steps and time values."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:538
+msgid ""
+"Then, dataset tree hierarchy is defined in the `Assembly` group, which is "
+"also a direct child of the `VTKHDF` group. Sub-groups in the `Assembly` "
+"group define the dataset(s) they contain using a [HDF5 symbolic link]"
+"(https://davis.lbl.gov/Manuals/HDF5-1.8.7/UG/09_Groups."
+"html#HardAndSymbolicLinks) to the top-level datasets. The name of the link "
+"in the assembly will be the actual name of the block when read. Any group "
+"can have multiple children that are either links to datasets, or nodes that "
+"define datasets deeper in the hierarchy."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:543
+msgid "**Track Creation Order**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:547
+msgid ""
+"VTKHDF group, the Assembly group and its children need to track creation "
+"order to be able to keep subtrees ordered. For this, you need to set H5G "
+"properties `H5P_CRT_ORDER_TRACKED` and `H5P_CRT_ORDER_INDEXED` on each group "
+"when writing the Assembly."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:551
+msgid ""
+"While both MB and PDC share a common structure, there is still a slight "
+"distinction in the format between them. For PDC, a group in the assembly "
+"that is not a softlink represents a node in the vtkDataAssembly associated "
+"to it, and a softlink represents a dataset index associated to its parent "
+"node (similar to what the function `AddDataSetIndex` does in "
+"`vtkDataAssembly`). This way, a single dataset can be used multiple times in "
+"the assembly without any additional storage cost. Top-level datasets need to "
+"set an `Index` attribute to specify their index in the PDC flat structure."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:557
+msgid ""
+"On the other hand, MB structures work a little differently. First, they "
+"don't need no index for their datasets, and secondly, an assembly node that "
+"is not a softlink represents a nested `vtkMultiBlockDataSet`. A softlink in "
+"the assembly represents a dataset nested in its parent "
+"`vtkMultiBlockDataSet`. Again, this MB format can save space when a block is "
+"referenced multiple times."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:596
+msgid ""
+"<div align=\"center\">\n"
+"Figure 6. - PartitionedDataSetCollection/MultiBlockDataset VTKHDF File "
+"Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:601
+msgid ""
+"Each block should describe a valid VTKHDF root node for a supported data "
+"types. Composite data types are not, and will not, be supported."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:604
+msgid "Temporal Data"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:606
+msgid ""
+"The generic format for all `VTKHDF` temporal data is shown in Figure 7. The "
+"general idea is to take the static formats described above and use them as a "
+"base to append all the time dependent data. As such, a file holding static "
+"data has a very similar structure to a file holding dynamic data. For a non-"
+"composite dataset, an additional `Steps` subgroup is added to the `VTKHDF` "
+"main group holding offset information for each of the time steps as well as "
+"the time values. The choice to include offset information as HDF5 datasets "
+"was made to reduce the quantity of meta-data in the file to improve "
+"performance. This `Steps` group has one integer like attribute `NSteps` "
+"indicating the number of steps in the temporal dataset."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:616
+msgid "The `Steps` group is structured as follows:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:617
+msgid ""
+"`Values` [dim = (NSteps)]: each entry indicates the time value for the "
+"associated time step."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:619
+msgid ""
+"`PartOffsets` [dims = (NSteps)]: each entry indicates at which part offset "
+"to start reading the associated time step (relevant for `Unstructured Grid`s "
+"and `Poly Data`)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:622
+msgid ""
+"`NumberOfParts` [dims = (NSteps)]: each entry indicates how many parts the "
+"associated time step has (relevant for `Unstructured Grid`s and `Poly "
+"Data`). This information is optional if there is a constant number of parts "
+"per time steps and the length of `VTKHDF/NumberOfPoints` is equal to "
+"`NumberOfPartsPerTimeStep x NSteps`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:626
+msgid ""
+"`PointOffsets` [dims = (NSteps)]: each entry indicates where in the `VTKHDF/"
+"Points` data set to start reading point coordinates for the associated time "
+"step (relevant for `Unstructured Grid` and `Poly Data`)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:629
+msgid ""
+"`CellOffsets` [dims = (NSteps, NTopologies)]: each entry indicates by how "
+"many cells to offset reading into the connectivity offset structures for the "
+"associated time step (relevant for `Unstructured Grid` and `Poly Data`)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:632
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:638
+msgid ""
+"`Unstructured Grid`s only have one set of connectivity data and NTopologies "
+"= 1."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:633
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:639
+msgid ""
+"`Poly Data`, however, have `Vertices`,`Lines`, `Polygons` and `Strips` in "
+"that order and therefore NTopologies = 4."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:635
+msgid ""
+"`ConnectivityIdOffsets` [dims = (NSteps, NTopologies)]: each entry indicates "
+"by how many values to offset reading into the connectivity indexing "
+"structures for the associated time step (relevant for `Unstructured Grid` "
+"and `Poly Data`)."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:641
+msgid ""
+"`{Point,Cell,Field}DataOffsets/{ArrayName}` [dims = (NSteps)]: each entry "
+"indicates by how many values to offset reading into the given array for the "
+"associated time step. In the absence of a data set, the appropriate geometry "
+"offsetting for the time step is used in its place."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:645
+msgid ""
+"`FieldDataSizes/{ArrayName}` [dims = (NSteps, 2)]: each entry indicates the "
+"field data component and tuple size. In the absence of a data set, the "
+"maximum number of components and one tuple per step are considered."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:695
+msgid ""
+"<div align=\"center\">\n"
+"Figure 7. - Temporal Data VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:700
+msgid ""
+"`VTKHDF` group should look exactly as it does for no time steps except that "
+"the main dimensions of the datasets incorporate the potentially evolving "
+"time data as well. Individual time steps can be accessed in these flattened "
+"arrays through the offset information in the `Steps` group by slicing the "
+"data. Offset value can be repeated for static data."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:703
+msgid ""
+"Writing incrementally to `VTKHDF` temporal datasets is relatively "
+"straightforward using the appending functionality of `HDF5` chunked data "
+"sets ([Chunking in HDF5](https://davis.lbl.gov/Manuals/HDF5-1.8.7/Advanced/"
+"Chunking/index.html))."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:707
+msgid "Temporal UnstructuredGrid and PolyData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:709
+msgid ""
+"Adding data for a new time step works the same way as adding a data for a "
+"new partition: data is added at the end of existing datasets, and a new "
+"value is added to \"count\" elements for `NumberOfPoints`, `NumberOfCells` "
+"and `NumberOfConnectivityIds`. For instance, given an object of 2 partitions "
+"changing over 10 time steps, `NumberOf...` datasets would contain 20 total "
+"values."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:714
+msgid "Temporal UnstructuredGrid with polyhedrons"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:716
+msgid ""
+"Polyhedrons define face cells and a `PolyhedronToFaces` field that links "
+"faces to polyhedrons. When writing a temporal UnstructuredGrid that uses "
+"polyhedrons, you need to define additional fields `Steps/"
+"FaceConnectivityOffsets`, `Steps/FaceOffsetsOffsets` and `Steps/"
+"PolyhedronToFaceIdOffsets`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:720
+msgid ""
+"These fields dictate, for each time step, what the read offset should be "
+"respectively for `FaceConnectivity`, `FaceOffsets` and `PolyhedronToFaceIds`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:723
+msgid "Temporal ImageData"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:725
+msgid ""
+"A particularity of temporal `Image Data` in the format is that the reader "
+"expects an additional prepended dimension considering the time to be the "
+"first dimension in the multidimensional arrays. As such, arrays described in "
+"temporal `Image Data` should have dimensions ordered as `(time, z, y, x)`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:730
+msgid "Temporal OverlappingAMR"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:732
+msgid ""
+"Currently only `AMRBox` and `Point/Cell/Field data` can be temporal, not the "
+"`Spacing`. Due to the structure of the OverlappingAMR format, the format "
+"specify an intermediary group between the `Steps` group and the `Point/Cell/"
+"FieldDataOffsets` group named `LevelX` for each level where `X` is the "
+"number of level. These `Level` groups will also contain 2 other datasets to "
+"retrieve the `AMRBox`:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:737
+msgid ""
+"`AMRBoxOffsets` : each entry indicates by how many AMR box to offset reading "
+"into the `AMRBox`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:738
+msgid ""
+"`NumberOfAMRBoxes` : the number of boxes contained in the `AMRBox` for each "
+"timestep."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:789
+msgid ""
+"<div align=\"center\">\n"
+"Figure 8. - Temporal OverlappingAMR VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:793
+msgid "Temporal composite dataset"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:795
+msgid ""
+"For temporal composite datasets, there is no top-level `/VTKHDF/Steps` "
+"group, but each block defines its time and offset values in its own `Steps` "
+"group, in `/VTKHDF/<BlockName>/Steps` (see Figure 9). Each block should have "
+"the same number of time steps, and the same time values."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:834
+msgid ""
+"<div align=\"center\">\n"
+"Figure 9. - Temporal Composite DataSet VTKHDF File Format\n"
+"</div>\n"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:838
+msgid "**Steps defined in multiple Block**"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:841
+msgid ""
+"Having different value in the attribute `NSteps` of the group `Step` between "
+"Block is not supported."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:845
+msgid ""
+"Not all blocks need to define a `Steps` group, if a block doesn't have it, a "
+"temporal data array will be considered to be a \"partial\" array."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:848
+msgid "Limitations"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:850
+msgid ""
+"Unlike XML formats, VTKHDF does not support field names containing `/` and `."
+"` characters, because of a limitation in the HDF5 format specification."
+msgstr ""

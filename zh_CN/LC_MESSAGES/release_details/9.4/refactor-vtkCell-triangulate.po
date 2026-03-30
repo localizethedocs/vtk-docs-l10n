@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:1
+msgid "vtkCell Triangulate function refactoring"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:3
+msgid "Motivations"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:5
+msgid ""
+"Triangulate function returns both the point ids and point coordinates of the "
+"cells. But most of the time, when this is called, only the ids are used."
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:7
+msgid ""
+"Avoiding to return point coordinates would remove some unnecessary "
+"allocations and point copies. But the most important gains are for Bezier "
+"cells where nodes are not interpolatory, and so returning the points involve "
+"multiple basis evaluations. Thanks to that, vtkDataSetSurfaceFilter is much "
+"faster with Bezier cells, and we can see the effects when rendering in "
+"Paraview."
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:11
+msgid "Implementations"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:13
+msgid "Now, in the vtkCell interfaces, there are three functions:"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:14
+msgid ""
+"Triangulate( ids, points ): Existing function that returns the triangulated "
+"points and global ids (function not deprecated)"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:15
+msgid ""
+"TriangulateIds( ids ): New function that only returns the triangulated "
+"global ids"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:16
+msgid ""
+"TriangulateLocalIds( ids ): New function that only returns the triangulated "
+"local ids. Before, Triangulate was implemented for each cell type. Now "
+"Triangulate is only implemented in the source code of vtkCell, and it is "
+"TriangulateLocalIds that is implemented for each cell type. Triangulate and "
+"TriangulateIds are both called TriangulateLocalIds in the source code of "
+"vtkCell."
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:21
+msgid "Minor additional changes"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:23
+msgid "Fix a bug in vtkQuadraticPolygon::PermuteFromPolygon"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:24
+msgid "Slightly speed up vtkDataSetSurfaceFilter for nonlinear cells."
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:25
+msgid "Slightly speed up vtkPolygon::BoundedTriangulate"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:26
+msgid "Remove a lot of DeepCopy in vtkPolygon"
+msgstr ""
+
+#: ../../../release_details/9.4/refactor-vtkCell-triangulate.md:27
+msgid ""
+"Deprecate vtkPolygon::Triangulate and vtkQuadraticPolygon::Triangulate "
+"function."
+msgstr ""

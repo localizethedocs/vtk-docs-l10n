@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/CellGrid/README.md:1
+msgid "VTK::RenderingCellGrid"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/CellGrid/README.md:3
+msgid ""
+"This module adds support for rendering and hardware-selection of vtkCellGrid "
+"data. Currently, surface (but not volume) rendering is supported; this means "
+"that surfaces of cells may be rendered and they may be colored and semi-"
+"transparent, but that functions defined over volumetric cells will not "
+"affect the attenuation, coloring, or scattering of light interior to the "
+"cell."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/CellGrid/README.md:10
+msgid ""
+"The rendering technique uses the VTK::RenderingOpenGL2 module's "
+"[vtkDrawTexturedElements](https://vtk.org/doc/nightly/html/"
+"classvtkDrawTexturedElements.html) class to upload array data as textures "
+"and use it to determine the location, tessellation subdivision, and color of "
+"triangle vertices and their resulting fragments."
+msgstr ""

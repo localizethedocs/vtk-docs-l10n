@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:1
+msgid ""
+"vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using "
+"structured Points, Cells, CellTypes"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:3
+msgid ""
+"`vtkStructuredPointArray<ValueType>` has been implemented to enable fast "
+"query of structured points."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:5
+msgid ""
+"`vtkStructuredCellArray` has been implemented to enable fast query of "
+"structured cells. `vtkStructuredCellArray` and `vtkCellArray` have "
+"`vtkAbstractCellArray` as their parent class."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:8
+msgid ""
+"`vtkStructuredPointArray<ValueType>`, `vtkStructuredCellArray`, and "
+"`vtkConstantArray<int>` are used to implement the following three functions "
+"in `vtkStructuredData`."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:11
+msgid ""
+"`vtkSmartPointer<vtkPoints> GetPoints(vtkDataArray* xCoords, vtkDataArray* "
+"yCoords, vtkDataArray* zCoords, int extent[6], double dirMatrix[9])`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:13
+msgid ""
+"`vtkSmartPointer<vtkStructuredCellArray> GetCellArray(int extent[6], bool "
+"usePixelVoxelOrientation)`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:14
+msgid ""
+"`vtkSmartPointer<vtkConstantArray<int>> GetCellTypesArray(int extent[6], "
+"bool usePixelVoxelOrientation)`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:16
+msgid ""
+"The above functions are used to build the structured Points, Cells, and "
+"CellTypes for `vtkImageData`/`vtkRectilinearGrid`, and to build the "
+"structured Cells, and CellTypes for `vtkStructuredGrid`."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:20
+msgid ""
+"Using these structured classes, the performance of the following functions "
+"has been optimized."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:22
+msgid "`GetPoint` for `vtkImageData`/`vtkRectilinearGrid`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:23
+msgid ""
+"`GetCellBounds` for `vtkImageData`/`vtkRectilinearGrid`/`vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:24
+msgid ""
+"`GetCellSize` for `vtkImageData`/`vtkRectilinearGrid`/`vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:25
+msgid ""
+"`GetCellType` for `vtkImageData`/`vtkRectilinearGrid`/`vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:26
+msgid ""
+"`GetCellPoints` for `vtkImageData`/`vtkRectilinearGrid`/`vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:27
+msgid "`GetCell` for `vtkImageData`/`vtkRectilinearGrid`/`vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:29
+msgid ""
+"`vtkImageData` and `vtkRectilinearGrid` now check for cell visibility when "
+"using the `GetCell`, `GetCellSize`, and `GetCellType` functions. Also they "
+"have blanking, and un-blanking capabilities of points and cells. Thanks to "
+"these changes, the implementation of `vtkUniformGrid` has been greatly "
+"simplified."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:33
+msgid ""
+"Since `vtkImageData` and `vtkRectilinearGrid` now have structured points, "
+"`vtkDataSet` has a function `GetPoints` that returns the structured/explicit "
+"points, if present, else it creates an internally copy of the points using "
+"`GetPoint` and returns that. Thanks to this addition `void "
+"vtkRectilinearGrid::GetPoints(vtkPoints* points)` has been deprecated."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:37
+msgid ""
+"Additionally, `vtkImageData`/`vtkRectilinearGrid`/`vtkStructuredGrid` now "
+"also have `GetCells` and `GetCellTypesArray` functions."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:40
+msgid ""
+"To effectively utilize the structured Points. `vtkDataArrayRange` now has "
+"`GetTuple` and `SetTuple` functions that can efficiently query the "
+"structured Points when it has been dispatched."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:43
+msgid ""
+"To that end, the following classes/functions have been updated to "
+"efficiently query the structured Points, Cells, and CellTypes."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:46
+msgid "`vtkTableBasedClipDataSet`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:47
+msgid "`vtkStructuredDataPlaneCutter`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:48
+msgid "`vtkExtractGeometry`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:49
+msgid "`vtkExtractCells`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:50
+msgid "`vtkElevationFilter`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:51
+msgid "`vtkPoints::GetPoints`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:52
+msgid "`vtkBoundingBox::ComputeBounds`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:53
+msgid "`vtkIOSSModel::StructuredPointsOperator`"
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:55
+msgid ""
+"Moreover, in `vtkStructuredDataPlaneCutter` when `vtkFlyingEdgesPlaneCutter` "
+"is used, if scalars are not present, then a constant array is created "
+"instead of using `vtkElevationFilter` for better performance. If ghosts are "
+"present, and InterpolateAttributes is on then `vtkFlyingEdgesPlaneCutter` is "
+"used and the ghosts are removed afterward."
+msgstr ""
+
+#: ../../../release_details/9.4/add-structured-points-cells-cellTypes.md:59
+msgid ""
+"Finally, in `vtkContourFilter`, when `vtkFlyingEdges3D` or "
+"`vtkSynchronizedTemplates3D` is used, if ghosts are present. then ghosts "
+"will be removed afterward."
+msgstr ""

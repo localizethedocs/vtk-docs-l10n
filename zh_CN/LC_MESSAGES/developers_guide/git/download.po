@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/download.md:5
+msgid "Download VTK with Git"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:8
+msgid ""
+"This page documents how to download VTK source code through [Git][]. See the "
+"[README](README.md) for more information."
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:13
+msgid "Clone"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:16
+msgid "Clone VTK using the commands:"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:18
+msgid ""
+"$ git clone https://gitlab.kitware.com/vtk/vtk.git VTK\n"
+"$ cd VTK\n"
+"$ git submodule update --init\n"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:22
+msgid "Update"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:25
+msgid ""
+"Users that have made no local changes and simply want to update a clone with "
+"the latest changes may run:"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:28
+msgid "$ git pull\n"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:30
+msgid ""
+"Avoid making local changes unless you have read our [developer instructions]"
+"[]."
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:34
+msgid "Release"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:37
+msgid ""
+"After cloning your local repository will be configured to follow the "
+"upstream `master` branch by default.  One may create a local branch to track "
+"the upstream `release` branch instead, which should guarantee only bug fixes "
+"to the functionality available in the latest release:"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:42
+msgid "$ git checkout --track -b release origin/release\n"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:44
+msgid ""
+"This local branch will always follow the latest release. Use the [above "
+"instructions](#update) to update it. Alternatively one may checkout a "
+"specific release tag:"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:48
+msgid "$ git checkout v6.2.0\n"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:50
+msgid ""
+"Release tags never move.  Repeat the command with a different tag to get a "
+"different release.  One may list available tags:"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:53
+msgid "$ git tag\n"
+msgstr ""
+
+#: ../../../developers_guide/git/download.md:55
+msgid "and then checkout any tag listed."
+msgstr ""

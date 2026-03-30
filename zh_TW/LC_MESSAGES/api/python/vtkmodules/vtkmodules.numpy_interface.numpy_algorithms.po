@@ -1,0 +1,503 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.numpy_algorithms`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:7
+msgid ""
+"This internal module provides a number of algorithms designed to be "
+"compatible with and used by numpy. In particular, some algorithms required "
+"to be adapted to handle VTKCompositeDataArray. Note that the decorated "
+"functions (by _override_numpy) are not meant to be called directly from here "
+"but directly through the Numpy API."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:18
+msgid ""
+"{py:obj}`_apply_func2 <vtkmodules.numpy_interface.numpy_algorithms."
+"_apply_func2>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:134
+msgid ""
+"Apply a function to each member of a VTKCompositeDataArray. Returns a list "
+"of arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:22
+msgid ""
+"{py:obj}`apply_ufunc <vtkmodules.numpy_interface.numpy_algorithms."
+"apply_ufunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:141
+msgid ""
+"Apply a function to each member of a VTKCompositeDataArray. VTKArray and "
+"numpy arrays are also supported."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:26
+msgid ""
+"{py:obj}`_make_ufunc <vtkmodules.numpy_interface.numpy_algorithms."
+"_make_ufunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:28
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:148
+msgid ""
+"Given a ufunc, creates a closure that applies it to each member of a "
+"VTKCompositeDataArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:30
+msgid ""
+"{py:obj}`apply_dfunc <vtkmodules.numpy_interface.numpy_algorithms."
+"apply_dfunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:155
+msgid ""
+"Apply a two argument function to each member of a VTKCompositeDataArray and "
+"another argument The second argument can be a VTKCompositeDataArray, in "
+"which case a one-to-one match between arrays is assumed. Otherwise, the "
+"function is applied to the composite array with the second argument "
+"repeated. VTKArray and numpy arrays are also supported."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:34
+msgid ""
+"{py:obj}`_make_dfunc <vtkmodules.numpy_interface.numpy_algorithms."
+"_make_dfunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:162
+msgid ""
+"Given a function that requires two arguments, creates a closure that applies "
+"it to each member of a VTKCompositeDataArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:38
+msgid ""
+"{py:obj}`_make_dsfunc <vtkmodules.numpy_interface.numpy_algorithms."
+"_make_dsfunc>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:169
+msgid ""
+"Given a function that requires two arguments (one array, one dataset), "
+"creates a closure that applies it to each member of a VTKCompositeDataArray. "
+"Note that this function is mainly for internal use by this module."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:42
+msgid ""
+"{py:obj}`_make_dsfunc2 <vtkmodules.numpy_interface.numpy_algorithms."
+"_make_dsfunc2>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:176
+msgid ""
+"Given a function that requires a dataset, creates a closure that applies it "
+"to each member of a VTKCompositeDataArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:46
+msgid ""
+"{py:obj}`bitwise_or <vtkmodules.numpy_interface.numpy_algorithms.bitwise_or>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:183
+msgid ""
+"Implements element by element or (bitwise, | in C/C++) operation. If one of "
+"the arrays is a NoneArray, this will return the array that is not NoneArray, "
+"treating NoneArray as 0 in the or operation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:50
+msgid "{py:obj}`sum <vtkmodules.numpy_interface.numpy_algorithms.sum>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:190
+msgid ""
+"Returns the sum of all values along a particular axis (dimension). Given an "
+"array of m tuples and n components:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:54
+msgid "{py:obj}`max <vtkmodules.numpy_interface.numpy_algorithms.max>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:197
+msgid ""
+"Returns the max of all values along a particular axis (dimension). Given an "
+"array of m tuples and n components:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:58
+msgid "{py:obj}`min <vtkmodules.numpy_interface.numpy_algorithms.min>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:204
+msgid ""
+"Returns the min of all values along a particular axis (dimension). Given an "
+"array of m tuples and n components:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:62
+msgid "{py:obj}`all <vtkmodules.numpy_interface.numpy_algorithms.all>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:211
+msgid ""
+"Returns True if all values of an array evaluate to True, returns False "
+"otherwise. This is useful to check if all values of an array match a certain "
+"condition such as:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:66
+msgid "{py:obj}`mean <vtkmodules.numpy_interface.numpy_algorithms.mean>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:218
+msgid ""
+"Returns the mean of all values along a particular axis (dimension). Given an "
+"array of m tuples and n components:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:70
+msgid "{py:obj}`var <vtkmodules.numpy_interface.numpy_algorithms.var>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:225
+msgid ""
+"Returns the variance of all values along a particular axis (dimension). "
+"Given an array of m tuples and n components:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:74
+msgid "{py:obj}`std <vtkmodules.numpy_interface.numpy_algorithms.std>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:232
+msgid ""
+"Returns the standard deviation of all values along a particular axis "
+"(dimension). Given an array of m tuples and n components:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:78
+msgid "{py:obj}`shape <vtkmodules.numpy_interface.numpy_algorithms.shape>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:239
+msgid "Returns the shape (dimensions) of an array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:82
+msgid ""
+"{py:obj}`flatnonzero <vtkmodules.numpy_interface.numpy_algorithms."
+"flatnonzero>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:84
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:246
+msgid ""
+"Return indices that are non-zero in the flattened version of the input array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:86
+msgid ""
+"{py:obj}`_like_VTKCompositeDataArray <vtkmodules.numpy_interface."
+"numpy_algorithms._like_VTKCompositeDataArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:253
+msgid "Helper to construct like-structured VTKCompositeDataArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:90
+msgid ""
+"{py:obj}`zeros_like <vtkmodules.numpy_interface.numpy_algorithms.zeros_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:92
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:260
+msgid ""
+"Create a new VTKCompositeDataArray filled with 0 of the same shape as array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:94
+msgid ""
+"{py:obj}`ones_like <vtkmodules.numpy_interface.numpy_algorithms.ones_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:267
+msgid ""
+"Create a new VTKCompositeDataArray filled with 1 of the same shape as array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:98
+msgid ""
+"{py:obj}`empty_like <vtkmodules.numpy_interface.numpy_algorithms.empty_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:274
+msgid ""
+"Create a new uninitialized VTKCompositeDataArray of the same shape as array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:104
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:110
+msgid "{py:obj}`nonzero <vtkmodules.numpy_interface.numpy_algorithms.nonzero>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:114
+msgid "{py:obj}`where <vtkmodules.numpy_interface.numpy_algorithms.where>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:118
+msgid "{py:obj}`isin <vtkmodules.numpy_interface.numpy_algorithms.isin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:122
+msgid ""
+"{py:obj}`expand_dims <vtkmodules.numpy_interface.numpy_algorithms."
+"expand_dims>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:128
+msgid "API"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:137
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:151
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:165
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:179
+msgid "Note that this function is mainly for internal use by this module."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:192
+msgid "Default is to return the sum of all values in an array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:193
+msgid ""
+"axis=0: Sum values of all components and return a one tuple, n-component "
+"array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:195
+msgid ""
+"axis=1: Sum values of all components of each tuple and return an m-tuple, 1-"
+"component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:198
+msgid ""
+"When called in parallel, this function will sum across processes when a "
+"controller argument is passed or the global controller is defined. To "
+"disable parallel summing when running in parallel, pass a dummy controller "
+"as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:203
+msgid "sum(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:199
+msgid "Default is to return the max of all values in an array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:200
+msgid ""
+"axis=0: Return the max values of all tuples and return a one tuple, n-"
+"component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:202
+msgid ""
+"axis=1: Return the max values of all components of each tuple and return an "
+"m-tuple, 1-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:205
+msgid ""
+"When called in parallel, this function will compute the max across processes "
+"when a controller argument is passed or the global controller is defined. To "
+"disable parallel summing when running in parallel, pass a dummy controller "
+"as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:210
+msgid "max(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:206
+msgid "Default is to return the min of all values in an array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:207
+msgid ""
+"axis=0: Return the min values of all tuples and return a one tuple, n-"
+"component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:209
+msgid ""
+"axis=1: Return the min values of all components of each tuple and return an "
+"m-tuple, 1-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:212
+msgid ""
+"When called in parallel, this function will compute the min across processes "
+"when a controller argument is passed or the global controller is defined. To "
+"disable parallel summing when running in parallel, pass a dummy controller "
+"as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:216
+msgid "min(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:216
+msgid "algorithms.all(array > 5)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:220
+msgid "Default is to return the mean of all values in an array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:221
+msgid ""
+"axis=0: Return the mean values of all components and return a one tuple, n-"
+"component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:223
+msgid ""
+"axis=1: Return the mean values of all components of each tuple and return an "
+"m-tuple, 1-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:226
+msgid ""
+"When called in parallel, this function will compute the mean across "
+"processes when a controller argument is passed or the global controller is "
+"defined. To disable parallel summing when running in parallel, pass a dummy "
+"controller as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:231
+msgid ""
+"mean(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:227
+msgid "Default is to return the variance of all values in an array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:228
+msgid ""
+"axis=0: Return the variance values of all components and return a one tuple, "
+"n-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:230
+msgid ""
+"axis=1: Return the variance values of all components of each tuple and "
+"return an m-tuple, 1-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:233
+msgid ""
+"When called in parallel, this function will compute the variance across "
+"processes when a controller argument is passed or the global controller is "
+"defined. To disable parallel summing when running in parallel, pass a dummy "
+"controller as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:238
+msgid "var(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:235
+msgid "Default is to return the standard deviation of all values in an array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:236
+msgid ""
+"axis=0: Return the standard deviation values of all components and return a "
+"one tuple, n-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:238
+msgid ""
+"axis=1: Return the standard deviation values of all components of each tuple "
+"and return an m-tuple, 1-component array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:241
+msgid ""
+"When called in parallel, this function will compute the standard deviation "
+"across processes when a controller argument is passed or the global "
+"controller is defined. To disable parallel summing when running in parallel, "
+"pass a dummy controller as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/numpy_algorithms.py:246
+msgid "std(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:281
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:291
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:301
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.md:311
+msgid "'(...)'"
+msgstr ""

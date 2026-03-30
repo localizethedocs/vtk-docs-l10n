@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-new-polyline-decimation-strategies.md:1
+msgid "Add new polyline decimation strategies"
+msgstr ""
+
+#: ../../../release_details/9.4/add-new-polyline-decimation-strategies.md:3
+msgid ""
+"The `vtkDecimatePolylineFilter` has been refactored to use a strategy "
+"pattern. It used a default strategy based on eulerian distances. This change "
+"brings 2 new available strategies :"
+msgstr ""
+
+#: ../../../release_details/9.4/add-new-polyline-decimation-strategies.md:6
+msgid ""
+"`vtkDecimatePolylineAngleStrategy` which uses the angle between 3 "
+"consecutive points to perform the decimation."
+msgstr ""
+
+#: ../../../release_details/9.4/add-new-polyline-decimation-strategies.md:7
+msgid ""
+"`vtkDecimatePolylineCustomFieldStrategy` which uses a specified `PointData` "
+"array to gather the values used for the decimation."
+msgstr ""
+
+#: ../../../release_details/9.4/add-new-polyline-decimation-strategies.md:9
+msgid ""
+"It is also possible to make custom strategies by inheriting  the "
+"`vtkDecimatePolylineStrategy` class."
+msgstr ""
+
+#: ../../../release_details/9.4/add-new-polyline-decimation-strategies.md:11
+msgid ""
+"The new default strategy for the `vtkDecimatePolylineFilter` is the "
+"`vtkDecimatePolylineDistanceStrategy` which implements the old eulerian "
+"distance computation."
+msgstr ""

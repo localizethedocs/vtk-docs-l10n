@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:1
+msgid "ANARI Rendering Module"
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:3
+msgid ""
+"You can now use [ANARI](https://www.khronos.org/anari), by enabling the "
+"`vtkRenderingANARI` module, for rendering. At least one [ANARI](https://www."
+"khronos.org/anari) back-end needs to be in your `LIBRARY_PATH` and the "
+"`ANARI_LIBRARY` environment variable needs to be set with the correct back-"
+"end name (e.g. `export ANARI_LIBRARY=visrtx`)."
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:5
+msgid ""
+"Any back-end compatible with **ANARI-SDK version 0.9.1** will work. [NVIDIA "
+"VisRTX](https://github.com/NVIDIA/VisRTX) version 0.7.1 has been tested and "
+"is compatible with this release."
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:7
+msgid "Here's the list of other publicly available back-ends:"
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:9
+msgid ""
+"[AMD RadeonProRender](https://github.com/GPUOpen-LibrariesAndSDKs/"
+"RadeonProRenderANARI)"
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:10
+msgid "[Intel OSPRay](https://github.com/ospray/anari-ospray)"
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:11
+msgid "[NVIDIA USD](https://github.com/NVIDIA-Omniverse/AnariUsdDevice)"
+msgstr ""
+
+#: ../../../release_details/9.4/add-anari-rendering-capability.md:13
+msgid ""
+"⚠️ Before using any back-end, check that the version is compatible with "
+"**ANARI-SDK version 0.9.1**."
+msgstr ""

@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-14 17:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:1
+msgid "Support collaboration among CAVEs"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:3
+msgid ""
+"The RenderingParallel module now provides support for synchronizing "
+"collections of actors among the synchronized renderers.  The first such "
+"supported actor type is vtkOpenGLAvatar, which lays the foundation for "
+"supporting collaboration among users of HMD-based VR and CAVEs."
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:5
+msgid ""
+"To add a new type of synchronizable actor in the future, you can simply "
+"subclass vtkSynchronizableActors and implement the four api methods:"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:7
+msgid "InitializeRenderer"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:8
+msgid "CleanUpRenderer"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:9
+msgid "SaveToStream"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:10
+msgid "RestoreFromStream"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:12
+msgid ""
+"And then update vtkSynchronizedRenderers::EnableSynchronizableActors to "
+"instantiate your new class."
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:14
+msgid "Other minor improvements supporting collaboration in CAVEs include:"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:16
+msgid ""
+"vtkFlagpoleLabel now supports CAVEs by making the label face the camera eye "
+"point (rather than the desktop camera position) when in off-axis projection "
+"mode"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:17
+msgid ""
+"vtkVRCollaborationClient now allows customizing the default initial avatar "
+"up vector from the new default of [0, 1, 0]"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:18
+msgid ""
+"vtkVRCollaborationClient now allows specifying an arbitrary object as the "
+"source of Move3DEvents used to share local pose with collaborators"
+msgstr ""
+
+#: ../../../release_details/9.4/hmd-cave-collaboration.md:19
+msgid ""
+"vtkOpenGLAvatar now provides api access to get the associated avatar label"
+msgstr ""
