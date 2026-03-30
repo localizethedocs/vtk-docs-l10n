@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,7 +123,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:68
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:509
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:525
 msgid ""
 "Register VTKConstantArray mixin as override for all vtkConstantArray "
 "template types."
@@ -346,18 +346,22 @@ msgid "The constant scalar value."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:126
-msgid "Materialize the full array when numpy needs it explicitly."
+msgid "Return the full materialized array as a numpy ndarray."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:134
-msgid "Override C-level buffer protocol to materialize via numpy.full."
+msgid "Materialize the full array when numpy needs it explicitly."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:142
+msgid "Override C-level buffer protocol to materialize via numpy.full."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:150
 msgid "Handle numpy ufuncs by substituting the scalar constant."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:144
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:152
 msgid ""
 "When all operands are VTKConstantArrays or plain scalars, the result is "
 "wrapped back into a VTKConstantArray of the same shape.  When mixed with a "
@@ -365,20 +369,24 @@ msgid ""
 "wrapped as VTKAOSArray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:150
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:158
 msgid "Dispatch numpy functions with O(1) overrides where possible."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:158
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:166
 msgid "Index into the virtual constant array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:160
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:168
 msgid ""
 "Returns a scalar for element access, or a new VTKConstantArray for slices / "
 "fancy indexing."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:340
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:348
+msgid "Raise if backend is not constructed."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:356
 msgid "Build a result array of the correct shape for a reduction."
 msgstr ""

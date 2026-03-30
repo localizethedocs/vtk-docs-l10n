@@ -1,0 +1,30 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/fix-EGL-warning.md:1
+msgid "Fix harmless EGL render window initialization warning"
+msgstr ""
+
+#: ../../../release_details/9.6/fix-EGL-warning.md:3
+msgid ""
+"VTK now removes unused OpenGL point sprite enabling code from the EGL render "
+"window initialization. Point sprites are available by default in core OpenGL "
+"profiles and do not require explicit enabling. This removes a harmless "
+"warning during window setup on some systems."
+msgstr ""

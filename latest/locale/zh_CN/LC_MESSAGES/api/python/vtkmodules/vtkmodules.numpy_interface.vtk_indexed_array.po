@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_indexed_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:7
+msgid "VTKIndexedArray — numpy-compatible mixin for vtkIndexedArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:9
+msgid ""
+"This module provides the VTKIndexedArray mixin class and registers overrides "
+"for all vtkIndexedArray instantiations so that indexed arrays coming from "
+"VTK automatically have numpy-compatible operations."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:13
+msgid ""
+"A vtkIndexedArray provides reindexed access to a base array via an index "
+"list: ``result[i] = base_array[index_array[i]]``.  It is used in HyperTree "
+"filters and probe filters for zero-copy subset views."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:17
+msgid ""
+"Materialization uses efficient numpy fancy indexing: ``numpy.asarray(base)"
+"[numpy.asarray(indexes)]``.  Reductions delegate to the materialized array "
+"since there is no closed-form shortcut for arbitrary index subsets."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:18
+msgid ""
+"{py:obj}`VTKIndexedArray <vtkmodules.numpy_interface.vtk_indexed_array."
+"VTKIndexedArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:85
+msgid ""
+"A numpy-compatible mixin for indexed (reindexed subset) implicit arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:30
+msgid ""
+"{py:obj}`_indexed_sum <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:34
+msgid ""
+"{py:obj}`_indexed_mean <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_mean>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:38
+msgid ""
+"{py:obj}`_indexed_min <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:42
+msgid ""
+"{py:obj}`_indexed_max <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:46
+msgid ""
+"{py:obj}`_indexed_std <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_std>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:50
+msgid ""
+"{py:obj}`_indexed_var <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_var>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:54
+msgid ""
+"{py:obj}`_indexed_any <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_any>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:58
+msgid ""
+"{py:obj}`_indexed_all <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:62
+msgid ""
+"{py:obj}`_indexed_prod <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_prod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:66
+msgid ""
+"{py:obj}`_indexed_concatenate <vtkmodules.numpy_interface.vtk_indexed_array."
+"_indexed_concatenate>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:70
+msgid ""
+"{py:obj}`_register_indexed_overrides <vtkmodules.numpy_interface."
+"vtk_indexed_array._register_indexed_overrides>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:560
+msgid ""
+"Register VTKIndexedArray mixin as override for all vtkIndexedArray template "
+"types."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:76
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:82
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:87
+msgid ""
+"``vtkIndexedArray`` stores a base array and an index array, presenting "
+"``base[indexes[i]]`` as a virtual array.  This Python mixin adds numpy "
+"integration: arithmetic, reductions, indexing, and ``to_numpy()``."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.md:87
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:91
+msgid "Create an indexed array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:93
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:95
+msgid ""
+"indexes : vtkDataArray, optional     Index array for indirection. array : "
+"vtkDataArray, optional     Base array to index into. **kwargs     Forwarded "
+"to the VTK base-class initializer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:98
+msgid "Return the original base array used for value lookup."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:106
+msgid "Return the original index array used for indirection."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:130
+msgid "Materialize the full array as a numpy ndarray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:138
+msgid "Materialize the full array via numpy fancy indexing."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:146
+msgid "Override C-level buffer protocol to materialize via __array__."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:154
+msgid "Create a new VTKIndexedArray with the same indexes but a new base."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:156
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_indexed_array.py:156: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:158
+msgid ""
+"new_base_np : numpy.ndarray     The transformed base array (flat values)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:161
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:163
+msgid ""
+"VTKIndexedArray or None     A new indexed array, or None if the dtype is "
+"unsupported."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:162
+msgid "Handle numpy ufuncs, staying lazy when possible."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:164
+msgid ""
+"For unary ufuncs and binary ufuncs with a scalar operand, the ufunc is "
+"applied to the base array and a new indexed array is returned with the same "
+"index mapping — no materialization needed."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:169
+msgid ""
+"For binary ufuncs with another array operand, the indexed array is "
+"materialized since the other array's elements don't align with the base."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:170
+msgid "Dispatch numpy functions via override registry."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:178
+msgid "Build a new value-level index array for the given tuple indices."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:180
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_indexed_array.py:180: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:182
+msgid "tuple_indices : array-like of int     Which tuples to select."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:185
+msgid ""
+"Returns/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_indexed_array.py:185: (INFO/1) "
+"Duplicate implicit target name: \"returns\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:187
+msgid "numpy.ndarray     Flat value-level indices into the base array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:186
+msgid "Create a new VTKIndexedArray with sub-selected indexes, same base."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:188
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_indexed_array.py:188: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:190
+msgid "new_idx_np : numpy.ndarray     New value-level index array (flat)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:193
+msgid ""
+"Returns/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_indexed_array.py:193: (INFO/1) "
+"Duplicate implicit target name: \"returns\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:195
+msgid "VTKIndexedArray or None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:194
+msgid "Index into the indexed array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_indexed_array.py:196
+msgid ""
+"Scalar index: direct lookup, no materialization. Slice / fancy int / boolean "
+"mask on axis 0: compose a new index array pointing at the same base — stays "
+"lazy. Tuple indexing (row, col) or other: materialize."
+msgstr ""

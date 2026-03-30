@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,13 +75,6 @@ msgstr ""
 msgid "Bases: {py:obj}`vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/vtkAlgorithm.py:65
-msgid ""
-"Sets up default NumberOfInputPorts, NumberOfOutputPorts, InputType and "
-"OutputType that are used by various methods. Make sure to call this method "
-"from any subclass' __init__"
-msgstr ""
-
 #: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:71
 #: ../../../api/python/vtkmodules/vtkmodules.util.xarray_support.md:81
 msgid "None"
@@ -91,10 +84,10 @@ msgstr ""
 msgid "Specify filename for the file to read."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:177
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:189
 msgid "Returns a nc_type given a numpy array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:209
+#: ../../../../../Wrapping/Python/vtkmodules/util/xarray_support.py:221
 msgid "Special data_vars associated coords"
 msgstr ""

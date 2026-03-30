@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -173,12 +173,12 @@ msgstr ""
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:121
 msgid ""
 "<details>\n"
-"<summary>can-pvtu.hdf</summary>\n"
+"<summary>can-pvtu.vtkhdf</summary>\n"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:124
 msgid ""
-"HDF5 \"ExternalData/Testing/Data/can-pvtu.hdf\" {\n"
+"HDF5 \"ExternalData/Testing/Data/vtkHDF/can-pvtu.vtkhdf\" {\n"
 "GROUP \"/\" {\n"
 "   GROUP \"VTKHDF\" {\n"
 "      ATTRIBUTE \"Type\" {\n"
@@ -329,18 +329,19 @@ msgid "PolyData"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:274
-msgid "The poly data is the `test_poly_data.hdf` from the `VTK` testing data:"
+msgid ""
+"The poly data is the `test_poly_data.vtkhdf` from the `VTK` testing data:"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:276
 msgid ""
 "<details>\n"
-"<summary>test_poly_data.hdf</summary>\n"
+"<summary>test_poly_data.vtkhdf</summary>\n"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:279
 msgid ""
-"HDF5 \"ExternalData/Testing/Data/test_poly_data.hdf\" {\n"
+"HDF5 \"ExternalData/Testing/Data/vtkHDF/test_poly_data.vtkhdf\" {\n"
 "GROUP \"/\" {\n"
 "   GROUP \"VTKHDF\" {\n"
 "      ATTRIBUTE \"Type\" {\n"
@@ -471,12 +472,12 @@ msgstr ""
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:404
 msgid ""
 "<details>\n"
-"<summary>amr_gaussian_pulse.hdf</summary>\n"
+"<summary>amr_gaussian_pulse.vtkhdf</summary>\n"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.md:407
 msgid ""
-"HDF5 \"ExternalData/Testing/Data/amr_gaussian_pulse.hdf\" {\n"
+"HDF5 \"ExternalData/Testing/Data/vtkHDF/amr_gaussian_pulse.vtkhdf\" {\n"
 "GROUP \"/\" {\n"
 "   GROUP \"VTKHDF\" {\n"
 "      ATTRIBUTE \"Origin\" {\n"

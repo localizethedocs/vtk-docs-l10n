@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,7 +96,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:44
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:426
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:434
 msgid "Register VTKAOSArray mixin as override for all AOS template types."
 msgstr ""
 
@@ -303,11 +303,15 @@ msgstr ""
 msgid "Set up BufferChangedEvent observer for memory safety."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:418
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:161
+msgid "Return the array as a numpy ndarray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:426
 msgid "Create a VTK-backed AOS array from a numpy array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:420
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:428
 msgid ""
 "Returns a VTKAOSArray-overridden VTK array with the numpy data. The VTK "
 "array holds a reference to the numpy array to prevent GC."

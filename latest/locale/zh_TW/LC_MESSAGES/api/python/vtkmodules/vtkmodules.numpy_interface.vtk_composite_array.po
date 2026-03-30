@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_composite_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:7
+msgid "VTKCompositeArray — numpy-compatible mixin for vtkCompositeArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:9
+msgid ""
+"This module provides the VTKCompositeArray mixin class and registers "
+"overrides for all vtkCompositeArray instantiations so that composite arrays "
+"coming from VTK automatically have numpy-compatible operations."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:13
+msgid ""
+"A vtkCompositeArray concatenates multiple sub-arrays into a single virtual "
+"array.  Each sub-array already has its own numpy mixin, so operations are "
+"delegated per-sub-array and combined, minimizing materialization.  "
+"Reductions (sum, min, max, mean, std, var) operate in O(n_arrays) rather "
+"than O(n_elements)."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:18
+msgid ""
+"{py:obj}`VTKCompositeArray <vtkmodules.numpy_interface.vtk_composite_array."
+"VTKCompositeArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:85
+msgid "A numpy-compatible mixin for composite (concatenated) implicit arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:30
+msgid ""
+"{py:obj}`_composite_sum <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:34
+msgid ""
+"{py:obj}`_composite_mean <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_mean>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:38
+msgid ""
+"{py:obj}`_composite_min <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:42
+msgid ""
+"{py:obj}`_composite_max <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:46
+msgid ""
+"{py:obj}`_composite_std <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_std>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:50
+msgid ""
+"{py:obj}`_composite_var <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_var>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:54
+msgid ""
+"{py:obj}`_composite_any <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_any>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:58
+msgid ""
+"{py:obj}`_composite_all <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:62
+msgid ""
+"{py:obj}`_composite_prod <vtkmodules.numpy_interface.vtk_composite_array."
+"_composite_prod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:66
+msgid ""
+"{py:obj}`_composite_concatenate <vtkmodules.numpy_interface."
+"vtk_composite_array._composite_concatenate>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:70
+msgid ""
+"{py:obj}`_register_composite_overrides <vtkmodules.numpy_interface."
+"vtk_composite_array._register_composite_overrides>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:512
+msgid ""
+"Register VTKCompositeArray mixin as override for all vtkCompositeArray "
+"template types."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:76
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:82
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:87
+msgid ""
+"``vtkCompositeArray`` stores multiple sub-arrays and presents them as a "
+"single virtual array using O(log n) binary search for element access. This "
+"Python mixin adds numpy integration: arithmetic, reductions, indexing, and "
+"``to_numpy()`` — delegating to per-sub-array operations to minimize "
+"materialization."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:87
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:91
+msgid "Create a composite array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:93
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:95
+msgid ""
+"arrays : iterable of vtkDataArray, optional     Sub-arrays to concatenate.  "
+"All must have the same number of     components.  When omitted, creates an "
+"empty composite that     can be populated later via the C++ API. "
+"**kwargs     Forwarded to the VTK base-class initializer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:98
+msgid "Return the list of original sub-arrays (with their own mixins)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:100
+msgid ""
+"Each sub-array is the original vtkDataArray passed to the backend, enhanced "
+"with whatever mixin it has (VTKAOSArray, VTKConstantArray, etc.)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:106
+msgid "Return the list of tuple offsets for each sub-array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:130
+msgid "Materialize the full array as a numpy ndarray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:138
+msgid "Materialize the full array by concatenating sub-arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:146
+msgid "Override C-level buffer protocol to materialize via concatenation."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:154
+msgid "Handle numpy ufuncs by applying per-sub-array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:162
+msgid "Dispatch numpy functions with per-sub-array overrides where possible."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:170
+msgid "Index into the composite array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:172
+msgid ""
+"Scalar index delegates to the appropriate sub-array. Slices map to sub-array "
+"ranges and concatenate. Fancy/boolean indexing materializes."
+msgstr ""

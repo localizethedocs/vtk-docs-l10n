@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-03-30 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:528
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:544
 msgid "sum = n*intercept + slope*n*(n-1)/2."
 msgstr ""
 
@@ -86,7 +86,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:36
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:535
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:551
 msgid "mean = intercept + slope*(n-1)/2."
 msgstr ""
 
@@ -97,7 +97,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:40
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:542
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:558
 msgid "min depends on slope sign."
 msgstr ""
 
@@ -108,7 +108,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:44
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:549
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:565
 msgid "max depends on slope sign."
 msgstr ""
 
@@ -119,7 +119,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:48
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:556
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:572
 msgid "std using closed-form: |slope| * sqrt((n^2-1)/12)."
 msgstr ""
 
@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:52
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:563
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:579
 msgid "var using closed-form: slope^2 * (n^2-1) / 12."
 msgstr ""
 
@@ -141,7 +141,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:56
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:570
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:586
 msgid ""
 "O(1): any is True unless all values are zero (slope==0 and intercept==0)."
 msgstr ""
@@ -153,7 +153,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:60
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:577
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:593
 msgid "O(1) when possible: check if any value in the sequence is zero."
 msgstr ""
 
@@ -164,7 +164,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:64
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:584
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:600
 msgid "No useful closed form — materialize."
 msgstr ""
 
@@ -175,7 +175,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:68
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:591
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:607
 msgid ""
 "Register VTKAffineArray mixin as override for all vtkAffineArray template "
 "types."
@@ -394,34 +394,42 @@ msgid ""
 "initializer."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:143
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:94
+msgid "Raise if backend is not constructed."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:151
 msgid "Create a vtkAffineArray with the given parameters."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:152
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:160
 msgid "Create a new affine array from parameters."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:192
-msgid "Materialize the full array."
-msgstr ""
-
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:200
-msgid "Override C-level buffer protocol to materialize via __array__."
+msgid "Return the full materialized array as a numpy ndarray."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:208
+msgid "Materialize the full array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:216
+msgid "Override C-level buffer protocol to materialize via __array__."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:224
 msgid "Index into the array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:232
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:248
 msgid "Handle numpy ufuncs. Many operations stay lazy."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:240
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:256
 msgid "Handle numpy functions like sum, min, max, mean with optimized paths."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:432
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:448
 msgid "True when axis reduces the entire 1-component array (axis=0 ≡ None)."
 msgstr ""
