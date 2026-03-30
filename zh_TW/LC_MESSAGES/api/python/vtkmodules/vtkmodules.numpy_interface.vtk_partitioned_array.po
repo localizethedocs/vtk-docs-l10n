@@ -1,0 +1,665 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_partitioned_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:7
+msgid "VTKPartitionedArray — numpy-compatible wrapper for composite datasets."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:9
+msgid ""
+"This module provides the VTKPartitionedArray class that manages a set of "
+"arrays of the same name contained within a composite dataset.  Its main "
+"purpose is to provide a Numpy-type interface to composite data arrays which "
+"are naturally nothing but a collection of vtkDataArrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:14
+msgid ""
+"It also registers __array_function__ overrides so that standard numpy calls "
+"(``numpy.sum``, ``numpy.max``, etc.) are dispatched correctly when handed a "
+"VTKPartitionedArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:12
+msgid "Classes"
+msgstr "類別"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:18
+msgid ""
+"{py:obj}`VTKPartitionedArray <vtkmodules.numpy_interface."
+"vtk_partitioned_array.VTKPartitionedArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:259
+msgid ""
+"This class manages a set of arrays of the same name contained within a "
+"composite dataset. Its main purpose is to provide a Numpy-type interface to "
+"composite data arrays which are naturally nothing but a collection of "
+"vtkDataArrays. A VTKPartitionedArray makes such a collection appear as a "
+"single Numpy array and support all array operations that this module and the "
+"associated algorithm module support. Note that this is not a subclass of a "
+"Numpy array and as such cannot be passed to native Numpy functions. Instead "
+"VTK modules should be used to process composite arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:30
+msgid ""
+"{py:obj}`bitwise_or <vtkmodules.numpy_interface.vtk_partitioned_array."
+"bitwise_or>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:896
+msgid ""
+"Implements element by element or (bitwise, | in C/C++) operation. If one of "
+"the arrays is a NoneArray, this will return the array that is not NoneArray, "
+"treating NoneArray as 0 in the or operation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:34
+msgid "{py:obj}`sum <vtkmodules.numpy_interface.vtk_partitioned_array.sum>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:903
+msgid "Local (non-parallel) sum dispatched from numpy.sum()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:38
+msgid "{py:obj}`max <vtkmodules.numpy_interface.vtk_partitioned_array.max>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:910
+msgid "Local (non-parallel) max dispatched from numpy.max()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:42
+msgid "{py:obj}`min <vtkmodules.numpy_interface.vtk_partitioned_array.min>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:917
+msgid "Local (non-parallel) min dispatched from numpy.min()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:46
+msgid "{py:obj}`all <vtkmodules.numpy_interface.vtk_partitioned_array.all>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:924
+msgid "Local (non-parallel) all dispatched from numpy.all()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:50
+msgid "{py:obj}`mean <vtkmodules.numpy_interface.vtk_partitioned_array.mean>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:931
+msgid "Local (non-parallel) mean dispatched from numpy.mean()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:54
+msgid "{py:obj}`var <vtkmodules.numpy_interface.vtk_partitioned_array.var>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:938
+msgid "Local (non-parallel) var dispatched from numpy.var()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:58
+msgid "{py:obj}`std <vtkmodules.numpy_interface.vtk_partitioned_array.std>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:945
+msgid "Local (non-parallel) std dispatched from numpy.std()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:62
+msgid ""
+"{py:obj}`shape <vtkmodules.numpy_interface.vtk_partitioned_array.shape>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:952
+msgid "Returns the shape (dimensions) of an array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:66
+msgid ""
+"{py:obj}`flatnonzero <vtkmodules.numpy_interface.vtk_partitioned_array."
+"flatnonzero>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:959
+msgid ""
+"Return indices that are non-zero in the flattened version of the input array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:70
+msgid ""
+"{py:obj}`_like_VTKPartitionedArray <vtkmodules.numpy_interface."
+"vtk_partitioned_array._like_VTKPartitionedArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:966
+msgid "Helper to construct like-structured VTKPartitionedArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:74
+msgid ""
+"{py:obj}`zeros_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"zeros_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:973
+msgid ""
+"Create a new VTKPartitionedArray filled with 0 of the same shape as array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:78
+msgid ""
+"{py:obj}`ones_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"ones_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:980
+msgid ""
+"Create a new VTKPartitionedArray filled with 1 of the same shape as array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:82
+msgid ""
+"{py:obj}`empty_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"empty_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:84
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:987
+msgid ""
+"Create a new uninitialized VTKPartitionedArray of the same shape as array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:86
+msgid ""
+"{py:obj}`nonzero <vtkmodules.numpy_interface.vtk_partitioned_array.nonzero>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:994
+msgid ""
+"Return the indices of the non-zero elements of the input array. Indices are "
+"local to each chunk."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:90
+msgid ""
+"{py:obj}`where <vtkmodules.numpy_interface.vtk_partitioned_array.where>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:92
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1001
+msgid ""
+"Returns the location (indices) of an array where the given expression is "
+"true. Indices are local to each chunk. For scalars, it returns a single "
+"array of indices. For vectors and matrices, it returns two arrays: first "
+"with tuple indices, second with component indices. The output of this method "
+"can be used to extract the values from the array also by using it as the "
+"index of the [] operator."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:94
+msgid "{py:obj}`isin <vtkmodules.numpy_interface.vtk_partitioned_array.isin>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1008
+msgid ""
+"Test whether each element of a 1-D array is also present in a second array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:98
+msgid "{py:obj}`any <vtkmodules.numpy_interface.vtk_partitioned_array.any>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1015
+msgid "Local (non-parallel) any dispatched from numpy.any()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:102
+msgid "{py:obj}`prod <vtkmodules.numpy_interface.vtk_partitioned_array.prod>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1022
+msgid "Local (non-parallel) prod dispatched from numpy.prod()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:106
+msgid ""
+"{py:obj}`round_ <vtkmodules.numpy_interface.vtk_partitioned_array.round_>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:108
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1029
+msgid "Per-block round dispatched from numpy.round()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:110
+msgid "{py:obj}`clip <vtkmodules.numpy_interface.vtk_partitioned_array.clip>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:112
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1036
+msgid "Per-block clip dispatched from numpy.clip()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:114
+msgid "{py:obj}`sort <vtkmodules.numpy_interface.vtk_partitioned_array.sort>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:116
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1043
+msgid "Sort dispatched from numpy.sort(). Per-block for axis != 0."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:118
+msgid ""
+"{py:obj}`argmin <vtkmodules.numpy_interface.vtk_partitioned_array.argmin>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1050
+msgid "argmin dispatched from numpy.argmin(). Per-block for axis > 0."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:122
+msgid ""
+"{py:obj}`argmax <vtkmodules.numpy_interface.vtk_partitioned_array.argmax>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:124
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1057
+msgid "argmax dispatched from numpy.argmax(). Per-block for axis > 0."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:126
+msgid ""
+"{py:obj}`cumsum <vtkmodules.numpy_interface.vtk_partitioned_array.cumsum>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:128
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1064
+msgid "cumsum dispatched from numpy.cumsum(). Per-block for axis > 0."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:130
+msgid ""
+"{py:obj}`cumprod <vtkmodules.numpy_interface.vtk_partitioned_array.cumprod>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:132
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1071
+msgid "cumprod dispatched from numpy.cumprod(). Per-block for axis > 0."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:134
+msgid ""
+"{py:obj}`unique <vtkmodules.numpy_interface.vtk_partitioned_array.unique>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:136
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1078
+msgid "unique dispatched from numpy.unique()."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:138
+msgid ""
+"{py:obj}`concatenate <vtkmodules.numpy_interface.vtk_partitioned_array."
+"concatenate>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:140
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1085
+msgid "Concatenate all blocks of composite arrays into a flat array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:142
+msgid ""
+"{py:obj}`expand_dims <vtkmodules.numpy_interface.vtk_partitioned_array."
+"expand_dims>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:144
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1092
+msgid ""
+"Insert a new dimension, corresponding to a given position in the array "
+"shape. In VTK, this function's main use is to enable an operator to work on "
+"a vector and a scalar field. For example, say you want to divide each "
+"component of a vector by the magnitude of that vector. You might try this:"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:146
+msgid ""
+"{py:obj}`count_nonzero <vtkmodules.numpy_interface.vtk_partitioned_array."
+"count_nonzero>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:148
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1099
+msgid "Per-block count_nonzero, results summed."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:150
+msgid ""
+"{py:obj}`full_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"full_like>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:152
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1106
+msgid "Per-block full_like."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:154
+msgid "{py:obj}`copy <vtkmodules.numpy_interface.vtk_partitioned_array.copy>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:156
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1113
+msgid "Per-block copy."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:158
+msgid ""
+"{py:obj}`average <vtkmodules.numpy_interface.vtk_partitioned_array.average>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:160
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1120
+msgid "Per-block weighted average."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:162
+msgid ""
+"{py:obj}`histogram <vtkmodules.numpy_interface.vtk_partitioned_array."
+"histogram>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:164
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1127
+msgid "Per-block histogram with consistent bins, counts summed."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:166
+msgid ""
+"{py:obj}`bincount <vtkmodules.numpy_interface.vtk_partitioned_array."
+"bincount>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:168
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1134
+msgid "Per-block bincount, counts summed."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:172
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:178
+msgid ""
+"{py:obj}`_builtin_min <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:182
+msgid ""
+"{py:obj}`_builtin_max <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:186
+msgid ""
+"{py:obj}`_builtin_sum <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:190
+msgid ""
+"{py:obj}`_builtin_all <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:194
+msgid ""
+"{py:obj}`_builtin_any <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_any>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:200
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:206
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:216
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:226
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:236
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:246
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:256
+msgid "Bases: {py:obj}`object`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:261
+msgid "Initialization"
+msgstr "初始化"
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:265
+msgid ""
+"Construct a composite array given a container of arrays, a dataset, name and "
+"association. It is sufficient to define a container of arrays to define a "
+"composite array. It is also possible to initialize an array by defining the "
+"dataset, name and array association. In that case, the underlying arrays "
+"will be created lazily when they are needed. It is recommended to use the "
+"latter method when initializing from an existing composite dataset."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:280
+msgid "Returns the number of elements in the array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:287
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:305
+msgid "'property(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:298
+msgid ""
+"Returns the internal container of VTKArrays. If necessary, this will "
+"populate the array list from a composite dataset."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:316
+msgid ""
+"Setter overwritten to defer indexing to underlying VTKArrays. For the most "
+"part, this will behave like Numpy."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:324
+msgid ""
+"Getter overwritten to refer indexing to underlying VTKArrays. For the most "
+"part, this will behave like Numpy."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:332
+msgid ""
+"Returns the chunk index and the local index of the chunk from the global "
+"index"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:340
+msgid ""
+"Returns a local slice into the chunk for the global_slice, or None if no "
+"overlap. Handles both positive and negative steps."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:348
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:356
+msgid ""
+"Used to implement numpy-style numerical operations such as __add__, __mul__, "
+"etc."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:591
+msgid "Implements numpy array's as array method."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:599
+msgid "Return the dtype of the first non-NoneArray block."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:607
+msgid "Return the number of dimensions."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:615
+msgid "Return the total number of bytes consumed by all blocks."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:623
+msgid "Return the transpose of the materialized array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:631
+msgid "Return the (min, max) range across all blocks."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:832
+msgid "Return a tuple representing the shape of the composite array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:840
+msgid "Return the total number of elements in the composite array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:848
+msgid "Check if the item exists in any of the non-null sub-arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:856
+msgid "Iterate over all subarrays in the composite array in backward order."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:864
+msgid "Iterate over all subarrays in the composite array in forward order."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:872
+msgid "Convert the composite array into a single NumPy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:880
+msgid ""
+"Implements Numpy dispatch mechanism. Functions registered in "
+"PARTITIONED_OVERRIDE are captured here. See: https://numpy.org/doc/stable/"
+"user/basics.interoperability.html#the-array-function-protocol"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:888
+msgid ""
+"Handles Numpy functions calls that takes a fixed number of specific inputs "
+"and outputs."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1008
+msgid "For example:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1010
+msgid "algs.where(algs.array([1,2,3]) == 2) (array([1]),)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1013
+msgid ""
+"algs.where(algs.array([[1,2,3], [2,1,1]]) == 2) (array([0, 1]), array([1, "
+"0]))"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1016
+msgid ""
+"a = array([[1,2,3], [2,1,1]]) indices = algs.where(a > 2) a[indices] "
+"array([3])"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1098
+msgid ""
+"v VTKArray([[ 1.,  1.,  1.],        [ 1.,  1.,  1.],        [ 1.,  1.,  "
+"1.],        [ 1.,  1.,  1.],        [ 1.,  1.,  1.]]) algs.mag(v) "
+"VTKArray([ 1.73205081,  1.73205081,  1.73205081,  1.73205081,  1.73205081]) "
+"v / algs.mag(v) Traceback (most recent call last):   File \"<stdin>\", line "
+"1, in <module> ValueError: operands could not be broadcast together with "
+"shapes (5,3) (5)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1098
+msgid "<stdin>"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1098
+msgid "<module>"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1111
+msgid ""
+"The division operator does not know how to map a scalar to a vector due to a "
+"mismatch in dimensions. This can be solved by making the scalar a vector of "
+"1 component (increasing its dimension to 2) as follows:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1115
+msgid ""
+"v / np.expand_dims(algs.mag(v), 1) VTKArray([[ 0.57735027,  0.57735027,  "
+"0.57735027],        [ 0.57735027,  0.57735027,  0.57735027],        "
+"[ 0.57735027,  0.57735027,  0.57735027],        [ 0.57735027,  0.57735027,  "
+"0.57735027],        [ 0.57735027,  0.57735027,  0.57735027]])"
+msgstr ""

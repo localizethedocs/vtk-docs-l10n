@@ -1,0 +1,945 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.dataset_adapter`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:7
+msgid ""
+"This module provides classes that allow Numpy-type access to VTK datasets "
+"and arrays. This is best described with some examples."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:10
+msgid "To normalize a VTK array:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:12
+msgid ""
+"from vtkmodules.vtkImagingCore vtkRTAnalyticSource import vtkmodules."
+"numpy_interface.dataset_adapter as dsa import vtkmodules.numpy_interface."
+"algorithms as algs"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:16
+msgid ""
+"rt = vtkRTAnalyticSource() rt.Update() image = dsa.WrapDataObject(rt."
+"GetOutput()) rtdata = image.PointData['RTData'] rtmin = algs.min(rtdata) "
+"rtmax = algs.max(rtdata) rtnorm = (rtdata - rtmin) / (rtmax - rtmin) image."
+"PointData.append(rtnorm, 'RTData - normalized') print image.GetPointData()."
+"GetArray('RTData - normalized').GetRange()"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:26
+msgid "To calculate gradient:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:28
+msgid "grad= algs.gradient(rtnorm)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:30
+msgid "To access subsets:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:32
+msgid ""
+"grad[0:10] VTKArray([[ 0.10729134,  0.03763443,  0.03136338],        "
+"[ 0.02754352,  0.03886006,  0.032589  ],        [ 0.02248248,  0.04127144,  "
+"0.03500038],        [ 0.02678365,  0.04357527,  0.03730421],        "
+"[ 0.01765099,  0.04571581,  0.03944477],        [ 0.02344007,  0.04763837,  "
+"0.04136734],        [ 0.01089381,  0.04929155,  0.04302051],        "
+"[ 0.01769151,  0.05062952,  0.04435848],        [ 0.002764  ,  0.05161414,  "
+"0.04534309],        [ 0.01010841,  0.05221677,  0.04594573]])"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:44
+msgid ""
+"grad[:, 0] VTKArray([ 0.10729134,  0.02754352,  0.02248248, ..., "
+"-0.02748174,        -0.02410045,  0.05509736])"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:48
+msgid ""
+"All of this functionality is also supported for composite datasets even "
+"though their data arrays may be spread across multiple datasets. We have "
+"implemented a VTKCompositeDataArray class that handles many Numpy style "
+"operators and is supported by all algorithms in the algorithms module."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:54
+msgid ""
+"This module also provides an API to access composite datasets. For example:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:57
+msgid ""
+"from vtkmodules.vtkCommonDataModel import vtkMultiBlockDataSet mb = "
+"vtkMultiBlockDataSet() mb.SetBlock(0, image.VTKObject) mb.SetBlock(1e, image."
+"VTKObject) cds = dsa.WrapDataObject(mb) for block in cds:     print block"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:65
+msgid ""
+"Note that this module implements only the wrappers for datasets and arrays. "
+"The classes implement many useful operators. However, to make best use of "
+"these classes, take a look at the algorithms module."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:12
+msgid "Classes"
+msgstr "類別"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:18
+msgid ""
+"{py:obj}`ArrayAssociation <vtkmodules.numpy_interface.dataset_adapter."
+"ArrayAssociation>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:205
+msgid "Easy access to vtkDataObject.AttributeTypes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:22
+msgid ""
+"{py:obj}`VTKObjectWrapper <vtkmodules.numpy_interface.dataset_adapter."
+"VTKObjectWrapper>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:255
+msgid ""
+"Superclass for classes that wrap VTK objects with Python objects. This class "
+"holds a reference to the wrapped VTK object. It also forwards unresolved "
+"methods to the underlying object by overloading __get__attr."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:26
+msgid ""
+"{py:obj}`VTKArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter."
+"VTKArrayMetaClass>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:30
+msgid ""
+"{py:obj}`VTKArray <vtkmodules.numpy_interface.dataset_adapter.VTKArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:325
+msgid ""
+"This is a sub-class of numpy ndarray that stores a reference to a vtk array "
+"as well as the owning dataset. The numpy array and vtk array should point to "
+"the same memory location."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:34
+msgid ""
+"{py:obj}`VTKNoneArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter."
+"VTKNoneArrayMetaClass>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:38
+msgid ""
+"{py:obj}`VTKNoneArray <vtkmodules.numpy_interface.dataset_adapter."
+"VTKNoneArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:415
+msgid ""
+"VTKNoneArray is used to represent a \"void\" array. An instance of this "
+"class (NoneArray) is returned instead of None when an array that doesn't "
+"exist in a DataSetAttributes is requested. All operations on the NoneArray "
+"return NoneArray. The main reason for this is to support operations in "
+"parallel where one of the processes may be working on an empty dataset. In "
+"such cases, the process is still expected to evaluate a whole expression "
+"because some of the functions may perform bulk MPI communication. None "
+"cannot be used in these instances because it cannot properly override "
+"operators such as __add__, __sub__ etc. This is the main raison d'etre for "
+"VTKNoneArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:42
+msgid ""
+"{py:obj}`VTKCompositeDataArrayMetaClass <vtkmodules.numpy_interface."
+"dataset_adapter.VTKCompositeDataArrayMetaClass>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:46
+msgid ""
+"{py:obj}`VTKCompositeDataArray <vtkmodules.numpy_interface.dataset_adapter."
+"VTKCompositeDataArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:486
+msgid ""
+"This class manages a set of arrays of the same name contained within a "
+"composite dataset. Its main purpose is to provide a Numpy-type interface to "
+"composite data arrays which are naturally nothing but a collection of "
+"vtkDataArrays. A VTKCompositeDataArray makes such a collection appear as a "
+"single Numpy array and support all array operations that this module and the "
+"associated algorithm module support. Note that this is not a subclass of a "
+"Numpy array and as such cannot be passed to native Numpy functions. Instead "
+"VTK modules should be used to process composite arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:50
+msgid ""
+"{py:obj}`DataSetAttributes <vtkmodules.numpy_interface.dataset_adapter."
+"DataSetAttributes>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:672
+msgid ""
+"This is a python friendly wrapper of vtkDataSetAttributes. It returns "
+"VTKArrays. It also provides the dictionary interface. Note that the stored "
+"array should have a shape that matches the number of elements. E.g. for a "
+"PointData, narray.shape[0] should be equal to dataset.GetNumberOfPoints()"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:54
+msgid ""
+"{py:obj}`CompositeDataSetAttributes <vtkmodules.numpy_interface."
+"dataset_adapter.CompositeDataSetAttributes>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:734
+msgid ""
+"This is a python friendly wrapper for vtkDataSetAttributes for composite "
+"datasets. Since composite datasets themselves don't have attribute data, but "
+"the attribute data is associated with the leaf nodes in the composite "
+"dataset, this class simulates a DataSetAttributes interface by taking a "
+"union of DataSetAttributes associated with all leaf nodes."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:58
+msgid ""
+"{py:obj}`CompositeDataIterator <vtkmodules.numpy_interface.dataset_adapter."
+"CompositeDataIterator>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:798
+msgid ""
+"Wrapper for a vtkCompositeDataIterator class to satisfy the python iterator "
+"protocol. This iterator iterates over non-empty leaf nodes. To iterate over "
+"empty or non-leaf nodes, use the vtkCompositeDataIterator directly."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:62
+msgid ""
+"{py:obj}`MultiCompositeDataIterator <vtkmodules.numpy_interface."
+"dataset_adapter.MultiCompositeDataIterator>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:846
+msgid ""
+"Iterator that can be used to iterate over multiple composite datasets "
+"together. This iterator works only with arrays that were copied from an "
+"original using CopyStructured. The most common use case is to use "
+"CopyStructure, then iterate over input and output together while creating "
+"output datasets from corresponding input datasets."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:66
+msgid ""
+"{py:obj}`DataObject <vtkmodules.numpy_interface.dataset_adapter.DataObject>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:878
+msgid ""
+"A wrapper for vtkDataObject that makes it easier to access FielData arrays "
+"as VTKArrays"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:70
+msgid "{py:obj}`Table <vtkmodules.numpy_interface.dataset_adapter.Table>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:928
+msgid ""
+"A wrapper for vtkTable that makes it easier to access RowData array as "
+"VTKArrays"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:74
+msgid ""
+"{py:obj}`HyperTreeGrid <vtkmodules.numpy_interface.dataset_adapter."
+"HyperTreeGrid>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:970
+msgid ""
+"A wrapper for vtkHyperTreeGrid that makes it easier to access CellData "
+"arrays as VTKArrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:78
+msgid ""
+"{py:obj}`CompositeDataSet <vtkmodules.numpy_interface.dataset_adapter."
+"CompositeDataSet>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1012
+msgid ""
+"A wrapper for vtkCompositeData and subclasses that makes it easier to access "
+"Point/Cell/Field data as VTKCompositeDataArrays. It also provides a Python "
+"type iterator."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:82
+msgid "{py:obj}`DataSet <vtkmodules.numpy_interface.dataset_adapter.DataSet>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:84
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1166
+msgid ""
+"This is a python friendly wrapper of a vtkDataSet that defines a few useful "
+"properties."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:86
+msgid ""
+"{py:obj}`PointSet <vtkmodules.numpy_interface.dataset_adapter.PointSet>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1226
+msgid ""
+"This is a python friendly wrapper of a vtkPointSet that defines a few useful "
+"properties."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:90
+msgid ""
+"{py:obj}`PolyData <vtkmodules.numpy_interface.dataset_adapter.PolyData>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:92
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1268
+msgid ""
+"This is a python friendly wrapper of a vtkPolyData that defines a few useful "
+"properties."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:94
+msgid ""
+"{py:obj}`UnstructuredGrid <vtkmodules.numpy_interface.dataset_adapter."
+"UnstructuredGrid>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1302
+msgid ""
+"This is a python friendly wrapper of a vtkUnstructuredGrid that defines a "
+"few useful properties."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:98
+msgid "{py:obj}`Graph <vtkmodules.numpy_interface.dataset_adapter.Graph>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1380
+msgid ""
+"This is a python friendly wrapper of a vtkGraph that defines a few useful "
+"properties."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:102
+msgid ""
+"{py:obj}`Molecule <vtkmodules.numpy_interface.dataset_adapter.Molecule>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1432
+msgid ""
+"This is a python friendly wrapper of a vtkMolecule that defines a few useful "
+"properties."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:108
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:114
+msgid ""
+"{py:obj}`_override_numpy <vtkmodules.numpy_interface.dataset_adapter."
+"_override_numpy>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:116
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:190
+msgid ""
+"Register an __array_function__ implementation for VTKCompositeDataArray "
+"objects."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:118
+msgid ""
+"{py:obj}`reshape_append_ones <vtkmodules.numpy_interface.dataset_adapter."
+"reshape_append_ones>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:197
+msgid ""
+"Returns a list with the two arguments, any of them may be processed.  If the "
+"arguments are numpy.ndarrays, append 1s to the shape of the array with the "
+"smallest number of dimensions until the arrays have the same number of "
+"dimensions. Does nothing if the arguments are not ndarrays or the arrays "
+"have the same number of dimensions."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:122
+msgid ""
+"{py:obj}`vtkDataArrayToVTKArray <vtkmodules.numpy_interface.dataset_adapter."
+"vtkDataArrayToVTKArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:124
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:276
+msgid "Given a vtkDataArray and a dataset owning it, returns a VTKArray."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:126
+msgid ""
+"{py:obj}`numpyTovtkDataArray <vtkmodules.numpy_interface.dataset_adapter."
+"numpyTovtkDataArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:128
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:283
+msgid ""
+"Given a numpy array or a VTKArray and a name, returns a vtkDataArray. The "
+"resulting vtkDataArray will store a reference to the numpy array: the numpy "
+"array is released only when the vtkDataArray is destroyed."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:130
+msgid ""
+"{py:obj}`_make_tensor_array_contiguous <vtkmodules.numpy_interface."
+"dataset_adapter._make_tensor_array_contiguous>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:134
+msgid ""
+"{py:obj}`_metaclass <vtkmodules.numpy_interface.dataset_adapter._metaclass>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:136
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:297
+msgid "For compatibility between python 2 and python 3."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:138
+msgid ""
+"{py:obj}`WrapDataObject <vtkmodules.numpy_interface.dataset_adapter."
+"WrapDataObject>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:140
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1481
+msgid "Returns a Numpy friendly wrapper of a vtkDataObject."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:144
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:150
+msgid ""
+"{py:obj}`NUMPY_MAJOR_VERSION <vtkmodules.numpy_interface.dataset_adapter."
+"NUMPY_MAJOR_VERSION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:154
+msgid ""
+"{py:obj}`COMPOSITE_OVERRIDE <vtkmodules.numpy_interface.dataset_adapter."
+"COMPOSITE_OVERRIDE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:158
+msgid ""
+"{py:obj}`NoneArray <vtkmodules.numpy_interface.dataset_adapter.NoneArray>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:164
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:170
+msgid "'int(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:180
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:211
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:221
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:231
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:241
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:252
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:412
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:483
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:795
+msgid "Bases: {py:obj}`object`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:257
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:327
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:488
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:674
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:736
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:800
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:848
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:880
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:930
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:972
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1014
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1168
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1228
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1270
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1304
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1382
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1434
+msgid "Initialization"
+msgstr "初始化"
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:268
+msgid "Forwards unknown attribute requests to VTK object."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:304
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:394
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:465
+msgid "Bases: {py:obj}`type`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:314
+msgid ""
+"We overwrite numerical/comparison operators because we might need to reshape "
+"one of the arrays to perform the operation without broadcast errors. For "
+"instance:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:318
+msgid ""
+"An array G of shape (n,3) resulted from computing the gradient on a scalar "
+"array S of shape (n,) cannot be added together without reshaping. G + "
+"expand_dims(S,1) works, G + S gives an error: ValueError: operands could not "
+"be broadcast together with shapes (n,3) (n,)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:325
+msgid ""
+"This metaclass overwrites operators such that it computes this reshape "
+"operation automatically by appending 1s to the dimensions of the array with "
+"fewer dimensions."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:322
+msgid "Bases: {py:obj}`numpy.ndarray`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:338
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:346
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:430
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:575
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:583
+msgid ""
+"Used to implement numpy-style numerical operations such as __add__, __mul__, "
+"etc."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:370
+msgid "Forwards unknown attribute requests to VTK array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:386
+msgid ""
+"Get the dataset this array is associated with. The reference to the dataset "
+"is held through a vtkWeakReference to ensure it doesn't prevent the dataset "
+"from being collected if necessary."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:404
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:475
+msgid "Simplify the implementation of the numeric/logical sequence API."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:438
+msgid "Implements numpy array's astype method."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:447
+msgid "Return a tuple representing the shape of the none array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:455
+msgid "'VTKNoneArray(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:492
+msgid ""
+"Construct a composite array given a container of arrays, a dataset, name and "
+"association. It is sufficient to define a container of arrays to define a "
+"composite array. It is also possible to initialize an array by defining the "
+"dataset, name and array association. In that case, the underlying arrays "
+"will be created lazily when they are needed. It is recommended to use the "
+"latter method when initializing from an existing composite dataset."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:507
+msgid "Returns the number of elements in the array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:514
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:532
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:914
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:956
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:998
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1112
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1122
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1132
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1142
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1152
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1202
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1212
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1254
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1288
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1346
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1356
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1366
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1408
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1418
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1460
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1470
+msgid "'property(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:525
+msgid ""
+"Returns the internal container of VTKArrays. If necessary, this will "
+"populate the array list from a composite dataset."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:543
+msgid ""
+"Setter overwritten to defer indexing to underlying VTKArrays. For the most "
+"part, this will behave like Numpy."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:551
+msgid ""
+"Getter overwritten to refer indexing to underlying VTKArrays. For the most "
+"part, this will behave like Numpy."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:559
+msgid ""
+"Returns the chunk index and the local index of the chunk from the global "
+"index"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:567
+msgid ""
+"Returns a local slice into the chunk for the global_slice, or None if no "
+"overlap. Handles both positive and negative steps."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:596
+msgid "Implements numpy array's as array method."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:605
+msgid "Return a tuple representing the shape of the composite array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:613
+msgid "Return the total number of elements in the composite array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:621
+msgid "Check if the item exists in any of the non-null sub-arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:629
+msgid "Iterate over all subarrays in the composite array in backward order."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:637
+msgid "Iterate over all subarrays in the composite array in forward order."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:645
+msgid "Convert the composite array into a single NumPy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:653
+msgid ""
+"Implements Numpy dispatch mechanism. Functions registered in "
+"COMPOSITE_OVERRIDE are captured here. See: https://numpy.org/doc/stable/user/"
+"basics.interoperability.html#the-array-function-protocol"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:661
+msgid ""
+"Handles Numpy functions calls that takes a fixed number of specific inputs "
+"and outputs."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:669
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:875
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:685
+msgid "Implements the [] operator. Accepts an array name or index."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:693
+msgid "Given an index or name, returns a VTKArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:701
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:755
+msgid "Returns the names of the arrays as a list."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:709
+msgid "Returns the arrays as a list."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:717
+msgid "A wrapper for vtkDataSet.PassData."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:725
+msgid "Appends narray to the dataset attributes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:727
+msgid ""
+"If narray is a scalar, create an array with this scalar for each element. If "
+"narray is an array with a size not matching the array association (e.g. size "
+"should be equal to GetNumberOfPoints() for PointData), copy the input narray "
+"for each element. This is intended to ease initialization, typically using "
+"same 3d vector for each element. In any case, be careful about memory "
+"explosion."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:763
+msgid "Implements the [] operator. Accepts an array name."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:771
+msgid "Appends a new array to the composite dataset attributes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:779
+msgid "Given a name, returns a VTKCompositeArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:787
+msgid "Emulate PassData for composite datasets."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:835
+msgid "Returns attributes from the vtkCompositeDataIterator."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:843
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter."
+"CompositeDataIterator`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:891
+msgid ""
+"Returns the attributes specified by the type as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:899
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:949
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:991
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1195
+msgid "Returns if current object support this attributes type"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:907
+msgid "Returns the field data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:925
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:967
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1009
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1163
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1377
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1429
+msgid "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:941
+msgid "Returns the row data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:983
+msgid "Returns the cell data as DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1025
+msgid "Creates an iterator for the contained datasets."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1033
+msgid ""
+"Returns the total number of cells or points depending on the value of assoc "
+"which can be ArrayAssociation.POINT or ArrayAssociation.CELL."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1041
+msgid ""
+"Returns the total number of points of all datasets in the composite dataset. "
+"Note that this traverses the whole composite dataset every time and should "
+"not be called repeatedly for large composite datasets."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1049
+msgid ""
+"Returns the total number of cells of all datasets in the composite dataset. "
+"Note that this traverses the whole composite dataset every time and should "
+"not be called repeatedly for large composite datasets."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1057
+msgid ""
+"Returns the attributes specified by the type as a CompositeDataSetAttributes "
+"instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1065
+msgid ""
+"Returns true if every leaves of current composite object support this "
+"attributes type"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1073
+msgid "Returns the point data as a CompositeDataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1081
+msgid "Returns the cell data as a CompositeDataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1089
+msgid "\"Returns the field data as a CompositeDataSetAttributes instance.\""
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1097
+msgid ""
+"Returns the global data (field data of the root) as a DataSetAttributes "
+"instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1105
+msgid "Returns the points as a VTKCompositeDataArray instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1179
+msgid "Returns the point data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1187
+msgid "Returns the cell data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1223
+msgid "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataSet`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1239
+msgid ""
+"Returns the points as a VTKArray instance. Returns None if the dataset has "
+"implicit points."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1247
+msgid "Given a VTKArray instance, sets the points of the dataset."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1265
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1299
+msgid "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.PointSet`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1281
+msgid "Returns the polys as a VTKArray instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1315
+msgid "Returns the cell types as a VTKArray instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1323
+msgid "Returns the cell locations as a VTKArray instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1331
+msgid "Returns the cells as a VTKArray instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1339
+msgid ""
+"Given cellTypes, cellLocations, cells as VTKArrays, populates the "
+"unstructured grid data structures."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1393
+msgid "Returns the vertex data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1401
+msgid "Returns the edge data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1445
+msgid "Returns the atom data as a DataSetAttributes instance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1453
+msgid "Returns the bond data as a DataSetAttributes instance."
+msgstr ""

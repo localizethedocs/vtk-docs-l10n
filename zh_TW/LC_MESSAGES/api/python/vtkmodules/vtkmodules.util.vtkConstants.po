@@ -1,0 +1,969 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1
+msgid "{py:mod}`vtkmodules.util.vtkConstants`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/vtkConstants.py:7
+msgid ""
+"This file is obsolete. All the constants are part of the base vtk module."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:12
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:18
+msgid ""
+"{py:obj}`vtkImageScalarTypeNameMacro <vtkmodules.util.vtkConstants."
+"vtkImageScalarTypeNameMacro>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:24
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:30
+msgid "{py:obj}`_VTK_FLOAT_MAX <vtkmodules.util.vtkConstants._VTK_FLOAT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:34
+msgid "{py:obj}`_VTK_INT_MAX <vtkmodules.util.vtkConstants._VTK_INT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:38
+msgid "{py:obj}`VTK_VOID <vtkmodules.util.vtkConstants.VTK_VOID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:42
+msgid "{py:obj}`VTK_BIT <vtkmodules.util.vtkConstants.VTK_BIT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:46
+msgid "{py:obj}`VTK_CHAR <vtkmodules.util.vtkConstants.VTK_CHAR>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:50
+msgid ""
+"{py:obj}`VTK_SIGNED_CHAR <vtkmodules.util.vtkConstants.VTK_SIGNED_CHAR>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:54
+msgid ""
+"{py:obj}`VTK_UNSIGNED_CHAR <vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:58
+msgid "{py:obj}`VTK_SHORT <vtkmodules.util.vtkConstants.VTK_SHORT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:62
+msgid ""
+"{py:obj}`VTK_UNSIGNED_SHORT <vtkmodules.util.vtkConstants."
+"VTK_UNSIGNED_SHORT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:66
+msgid "{py:obj}`VTK_INT <vtkmodules.util.vtkConstants.VTK_INT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:70
+msgid ""
+"{py:obj}`VTK_UNSIGNED_INT <vtkmodules.util.vtkConstants.VTK_UNSIGNED_INT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:74
+msgid "{py:obj}`VTK_LONG <vtkmodules.util.vtkConstants.VTK_LONG>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:78
+msgid ""
+"{py:obj}`VTK_UNSIGNED_LONG <vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:82
+msgid "{py:obj}`VTK_FLOAT <vtkmodules.util.vtkConstants.VTK_FLOAT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:86
+msgid "{py:obj}`VTK_DOUBLE <vtkmodules.util.vtkConstants.VTK_DOUBLE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:90
+msgid "{py:obj}`VTK_ID_TYPE <vtkmodules.util.vtkConstants.VTK_ID_TYPE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:94
+msgid "{py:obj}`VTK_STRING <vtkmodules.util.vtkConstants.VTK_STRING>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:98
+msgid "{py:obj}`VTK_OPAQUE <vtkmodules.util.vtkConstants.VTK_OPAQUE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:102
+msgid "{py:obj}`VTK_LONG_LONG <vtkmodules.util.vtkConstants.VTK_LONG_LONG>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:106
+msgid ""
+"{py:obj}`VTK_UNSIGNED_LONG_LONG <vtkmodules.util.vtkConstants."
+"VTK_UNSIGNED_LONG_LONG>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:110
+msgid "{py:obj}`VTK_VARIANT <vtkmodules.util.vtkConstants.VTK_VARIANT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:114
+msgid "{py:obj}`VTK_OBJECT <vtkmodules.util.vtkConstants.VTK_OBJECT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:118
+msgid "{py:obj}`VTK_BIT_MIN <vtkmodules.util.vtkConstants.VTK_BIT_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:122
+msgid "{py:obj}`VTK_BIT_MAX <vtkmodules.util.vtkConstants.VTK_BIT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:126
+msgid "{py:obj}`VTK_CHAR_MIN <vtkmodules.util.vtkConstants.VTK_CHAR_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:130
+msgid "{py:obj}`VTK_CHAR_MAX <vtkmodules.util.vtkConstants.VTK_CHAR_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:134
+msgid ""
+"{py:obj}`VTK_UNSIGNED_CHAR_MIN <vtkmodules.util.vtkConstants."
+"VTK_UNSIGNED_CHAR_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:138
+msgid ""
+"{py:obj}`VTK_UNSIGNED_CHAR_MAX <vtkmodules.util.vtkConstants."
+"VTK_UNSIGNED_CHAR_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:142
+msgid "{py:obj}`VTK_SHORT_MIN <vtkmodules.util.vtkConstants.VTK_SHORT_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:146
+msgid "{py:obj}`VTK_SHORT_MAX <vtkmodules.util.vtkConstants.VTK_SHORT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:150
+msgid ""
+"{py:obj}`VTK_UNSIGNED_SHORT_MIN <vtkmodules.util.vtkConstants."
+"VTK_UNSIGNED_SHORT_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:154
+msgid ""
+"{py:obj}`VTK_UNSIGNED_SHORT_MAX <vtkmodules.util.vtkConstants."
+"VTK_UNSIGNED_SHORT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:158
+msgid "{py:obj}`VTK_INT_MIN <vtkmodules.util.vtkConstants.VTK_INT_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:162
+msgid "{py:obj}`VTK_INT_MAX <vtkmodules.util.vtkConstants.VTK_INT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:166
+msgid "{py:obj}`VTK_LONG_MIN <vtkmodules.util.vtkConstants.VTK_LONG_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:170
+msgid "{py:obj}`VTK_LONG_MAX <vtkmodules.util.vtkConstants.VTK_LONG_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:174
+msgid "{py:obj}`VTK_FLOAT_MIN <vtkmodules.util.vtkConstants.VTK_FLOAT_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:178
+msgid "{py:obj}`VTK_FLOAT_MAX <vtkmodules.util.vtkConstants.VTK_FLOAT_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:182
+msgid "{py:obj}`VTK_DOUBLE_MIN <vtkmodules.util.vtkConstants.VTK_DOUBLE_MIN>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:186
+msgid "{py:obj}`VTK_DOUBLE_MAX <vtkmodules.util.vtkConstants.VTK_DOUBLE_MAX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:190
+msgid "{py:obj}`VTK_POLY_DATA <vtkmodules.util.vtkConstants.VTK_POLY_DATA>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:194
+msgid ""
+"{py:obj}`VTK_STRUCTURED_POINTS <vtkmodules.util.vtkConstants."
+"VTK_STRUCTURED_POINTS>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:198
+msgid ""
+"{py:obj}`VTK_STRUCTURED_GRID <vtkmodules.util.vtkConstants."
+"VTK_STRUCTURED_GRID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:202
+msgid ""
+"{py:obj}`VTK_RECTILINEAR_GRID <vtkmodules.util.vtkConstants."
+"VTK_RECTILINEAR_GRID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:206
+msgid ""
+"{py:obj}`VTK_UNSTRUCTURED_GRID <vtkmodules.util.vtkConstants."
+"VTK_UNSTRUCTURED_GRID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:210
+msgid ""
+"{py:obj}`VTK_PIECEWISE_FUNCTION <vtkmodules.util.vtkConstants."
+"VTK_PIECEWISE_FUNCTION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:214
+msgid "{py:obj}`VTK_IMAGE_DATA <vtkmodules.util.vtkConstants.VTK_IMAGE_DATA>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:218
+msgid ""
+"{py:obj}`VTK_DATA_OBJECT <vtkmodules.util.vtkConstants.VTK_DATA_OBJECT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:222
+msgid "{py:obj}`VTK_DATA_SET <vtkmodules.util.vtkConstants.VTK_DATA_SET>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:226
+msgid "{py:obj}`VTK_POINT_SET <vtkmodules.util.vtkConstants.VTK_POINT_SET>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:230
+msgid ""
+"{py:obj}`VTK_UNIFORM_GRID <vtkmodules.util.vtkConstants.VTK_UNIFORM_GRID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:234
+msgid ""
+"{py:obj}`VTK_COMPOSITE_DATA_SET <vtkmodules.util.vtkConstants."
+"VTK_COMPOSITE_DATA_SET>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:238
+msgid ""
+"{py:obj}`VTK_MULTIBLOCK_DATA_SET <vtkmodules.util.vtkConstants."
+"VTK_MULTIBLOCK_DATA_SET>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:242
+msgid ""
+"{py:obj}`VTK_GENERIC_DATA_SET <vtkmodules.util.vtkConstants."
+"VTK_GENERIC_DATA_SET>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:246
+msgid "{py:obj}`VTK_TABLE <vtkmodules.util.vtkConstants.VTK_TABLE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:250
+msgid "{py:obj}`VTK_GRAPH <vtkmodules.util.vtkConstants.VTK_GRAPH>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:254
+msgid "{py:obj}`VTK_TREE <vtkmodules.util.vtkConstants.VTK_TREE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:258
+msgid "{py:obj}`VTK_SELECTION <vtkmodules.util.vtkConstants.VTK_SELECTION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:262
+msgid "{py:obj}`VTK_OK <vtkmodules.util.vtkConstants.VTK_OK>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:266
+msgid "{py:obj}`VTK_ERROR <vtkmodules.util.vtkConstants.VTK_ERROR>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:270
+msgid "{py:obj}`VTK_ARIAL <vtkmodules.util.vtkConstants.VTK_ARIAL>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:274
+msgid "{py:obj}`VTK_COURIER <vtkmodules.util.vtkConstants.VTK_COURIER>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:278
+msgid "{py:obj}`VTK_TIMES <vtkmodules.util.vtkConstants.VTK_TIMES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:282
+msgid ""
+"{py:obj}`VTK_UNKNOWN_FONT <vtkmodules.util.vtkConstants.VTK_UNKNOWN_FONT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:286
+msgid "{py:obj}`VTK_TEXT_LEFT <vtkmodules.util.vtkConstants.VTK_TEXT_LEFT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:290
+msgid ""
+"{py:obj}`VTK_TEXT_CENTERED <vtkmodules.util.vtkConstants.VTK_TEXT_CENTERED>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:294
+msgid "{py:obj}`VTK_TEXT_RIGHT <vtkmodules.util.vtkConstants.VTK_TEXT_RIGHT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:298
+msgid ""
+"{py:obj}`VTK_TEXT_BOTTOM <vtkmodules.util.vtkConstants.VTK_TEXT_BOTTOM>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:302
+msgid "{py:obj}`VTK_TEXT_TOP <vtkmodules.util.vtkConstants.VTK_TEXT_TOP>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:306
+msgid ""
+"{py:obj}`VTK_TEXT_GLOBAL_ANTIALIASING_SOME <vtkmodules.util.vtkConstants."
+"VTK_TEXT_GLOBAL_ANTIALIASING_SOME>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:310
+msgid ""
+"{py:obj}`VTK_TEXT_GLOBAL_ANTIALIASING_NONE <vtkmodules.util.vtkConstants."
+"VTK_TEXT_GLOBAL_ANTIALIASING_NONE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:314
+msgid ""
+"{py:obj}`VTK_TEXT_GLOBAL_ANTIALIASING_ALL <vtkmodules.util.vtkConstants."
+"VTK_TEXT_GLOBAL_ANTIALIASING_ALL>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:318
+msgid "{py:obj}`VTK_LUMINANCE <vtkmodules.util.vtkConstants.VTK_LUMINANCE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:322
+msgid ""
+"{py:obj}`VTK_LUMINANCE_ALPHA <vtkmodules.util.vtkConstants."
+"VTK_LUMINANCE_ALPHA>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:326
+msgid "{py:obj}`VTK_RGB <vtkmodules.util.vtkConstants.VTK_RGB>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:330
+msgid "{py:obj}`VTK_RGBA <vtkmodules.util.vtkConstants.VTK_RGBA>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:334
+msgid ""
+"{py:obj}`VTK_COLOR_MODE_DEFAULT <vtkmodules.util.vtkConstants."
+"VTK_COLOR_MODE_DEFAULT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:338
+msgid ""
+"{py:obj}`VTK_COLOR_MODE_MAP_SCALARS <vtkmodules.util.vtkConstants."
+"VTK_COLOR_MODE_MAP_SCALARS>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:342
+msgid ""
+"{py:obj}`VTK_NEAREST_INTERPOLATION <vtkmodules.util.vtkConstants."
+"VTK_NEAREST_INTERPOLATION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:346
+msgid ""
+"{py:obj}`VTK_LINEAR_INTERPOLATION <vtkmodules.util.vtkConstants."
+"VTK_LINEAR_INTERPOLATION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:350
+msgid "{py:obj}`VTK_MAX_VRCOMP <vtkmodules.util.vtkConstants.VTK_MAX_VRCOMP>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:354
+msgid "{py:obj}`VTK_EMPTY_CELL <vtkmodules.util.vtkConstants.VTK_EMPTY_CELL>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:358
+msgid "{py:obj}`VTK_VERTEX <vtkmodules.util.vtkConstants.VTK_VERTEX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:362
+msgid ""
+"{py:obj}`VTK_POLY_VERTEX <vtkmodules.util.vtkConstants.VTK_POLY_VERTEX>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:366
+msgid "{py:obj}`VTK_LINE <vtkmodules.util.vtkConstants.VTK_LINE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:370
+msgid "{py:obj}`VTK_POLY_LINE <vtkmodules.util.vtkConstants.VTK_POLY_LINE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:374
+msgid "{py:obj}`VTK_TRIANGLE <vtkmodules.util.vtkConstants.VTK_TRIANGLE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:378
+msgid ""
+"{py:obj}`VTK_TRIANGLE_STRIP <vtkmodules.util.vtkConstants."
+"VTK_TRIANGLE_STRIP>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:382
+msgid "{py:obj}`VTK_POLYGON <vtkmodules.util.vtkConstants.VTK_POLYGON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:386
+msgid "{py:obj}`VTK_PIXEL <vtkmodules.util.vtkConstants.VTK_PIXEL>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:390
+msgid "{py:obj}`VTK_QUAD <vtkmodules.util.vtkConstants.VTK_QUAD>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:394
+msgid "{py:obj}`VTK_TETRA <vtkmodules.util.vtkConstants.VTK_TETRA>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:398
+msgid "{py:obj}`VTK_VOXEL <vtkmodules.util.vtkConstants.VTK_VOXEL>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:402
+msgid "{py:obj}`VTK_HEXAHEDRON <vtkmodules.util.vtkConstants.VTK_HEXAHEDRON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:406
+msgid "{py:obj}`VTK_WEDGE <vtkmodules.util.vtkConstants.VTK_WEDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:410
+msgid "{py:obj}`VTK_PYRAMID <vtkmodules.util.vtkConstants.VTK_PYRAMID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:414
+msgid ""
+"{py:obj}`VTK_PENTAGONAL_PRISM <vtkmodules.util.vtkConstants."
+"VTK_PENTAGONAL_PRISM>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:418
+msgid ""
+"{py:obj}`VTK_HEXAGONAL_PRISM <vtkmodules.util.vtkConstants."
+"VTK_HEXAGONAL_PRISM>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:422
+msgid ""
+"{py:obj}`VTK_QUADRATIC_EDGE <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_EDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:426
+msgid ""
+"{py:obj}`VTK_QUADRATIC_TRIANGLE <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_TRIANGLE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:430
+msgid ""
+"{py:obj}`VTK_QUADRATIC_QUAD <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_QUAD>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:434
+msgid ""
+"{py:obj}`VTK_QUADRATIC_TETRA <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_TETRA>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:438
+msgid ""
+"{py:obj}`VTK_QUADRATIC_HEXAHEDRON <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_HEXAHEDRON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:442
+msgid ""
+"{py:obj}`VTK_QUADRATIC_WEDGE <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_WEDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:446
+msgid ""
+"{py:obj}`VTK_QUADRATIC_PYRAMID <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_PYRAMID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:450
+msgid ""
+"{py:obj}`VTK_BIQUADRATIC_QUAD <vtkmodules.util.vtkConstants."
+"VTK_BIQUADRATIC_QUAD>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:454
+msgid ""
+"{py:obj}`VTK_TRIQUADRATIC_HEXAHEDRON <vtkmodules.util.vtkConstants."
+"VTK_TRIQUADRATIC_HEXAHEDRON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:458
+msgid ""
+"{py:obj}`VTK_QUADRATIC_LINEAR_QUAD <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_LINEAR_QUAD>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:462
+msgid ""
+"{py:obj}`VTK_QUADRATIC_LINEAR_WEDGE <vtkmodules.util.vtkConstants."
+"VTK_QUADRATIC_LINEAR_WEDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:466
+msgid ""
+"{py:obj}`VTK_BIQUADRATIC_QUADRATIC_WEDGE <vtkmodules.util.vtkConstants."
+"VTK_BIQUADRATIC_QUADRATIC_WEDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:470
+msgid ""
+"{py:obj}`VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON <vtkmodules.util.vtkConstants."
+"VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:474
+msgid ""
+"{py:obj}`VTK_CONVEX_POINT_SET <vtkmodules.util.vtkConstants."
+"VTK_CONVEX_POINT_SET>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:478
+msgid ""
+"{py:obj}`VTK_PARAMETRIC_CURVE <vtkmodules.util.vtkConstants."
+"VTK_PARAMETRIC_CURVE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:482
+msgid ""
+"{py:obj}`VTK_PARAMETRIC_SURFACE <vtkmodules.util.vtkConstants."
+"VTK_PARAMETRIC_SURFACE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:486
+msgid ""
+"{py:obj}`VTK_PARAMETRIC_TRI_SURFACE <vtkmodules.util.vtkConstants."
+"VTK_PARAMETRIC_TRI_SURFACE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:490
+msgid ""
+"{py:obj}`VTK_PARAMETRIC_QUAD_SURFACE <vtkmodules.util.vtkConstants."
+"VTK_PARAMETRIC_QUAD_SURFACE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:494
+msgid ""
+"{py:obj}`VTK_PARAMETRIC_TETRA_REGION <vtkmodules.util.vtkConstants."
+"VTK_PARAMETRIC_TETRA_REGION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:498
+msgid ""
+"{py:obj}`VTK_PARAMETRIC_HEX_REGION <vtkmodules.util.vtkConstants."
+"VTK_PARAMETRIC_HEX_REGION>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:502
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_EDGE <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_EDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:506
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_TRIANGLE <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_TRIANGLE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:510
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_QUAD <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_QUAD>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:514
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_POLYGON <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_POLYGON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:518
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_TETRAHEDRON <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_TETRAHEDRON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:522
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_WEDGE <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_WEDGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:526
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_PYRAMID <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_PYRAMID>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:530
+msgid ""
+"{py:obj}`VTK_HIGHER_ORDER_HEXAHEDRON <vtkmodules.util.vtkConstants."
+"VTK_HIGHER_ORDER_HEXAHEDRON>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:534
+msgid ""
+"{py:obj}`__vtkTypeNameDict <vtkmodules.util.vtkConstants.__vtkTypeNameDict>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:540
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:546
+msgid "1e+38"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:556
+msgid "2147483647"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:566
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:766
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:806
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:846
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:946
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1146
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1186
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1216
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1236
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1306
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1326
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1356
+msgid "0"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:576
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:776
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:956
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1126
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1156
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1196
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1246
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1266
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1316
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1336
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1366
+msgid "1"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:586
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:966
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1136
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1166
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1206
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1226
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1256
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1276
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1376
+msgid "2"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:596
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1506
+msgid "15"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:606
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:976
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1176
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1286
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1386
+msgid "3"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:616
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:986
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1296
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1346
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1396
+msgid "4"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:626
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:996
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1406
+msgid "5"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:636
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1006
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1416
+msgid "6"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:646
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1016
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1426
+msgid "7"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:656
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1026
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1436
+msgid "8"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:666
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1036
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1446
+msgid "9"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:676
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1046
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1456
+msgid "10"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:686
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1056
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1466
+msgid "11"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:696
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1476
+msgid "12"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:706
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1066
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1486
+msgid "13"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:716
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1496
+msgid "14"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:726
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1076
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1516
+msgid "16"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:736
+msgid "17"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:746
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1096
+msgid "20"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:756
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1106
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1526
+msgid "21"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:786
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:826
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:866
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:876
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:886
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:896
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:906
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:916
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:926
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1806
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:796
+msgid "127"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:816
+msgid "255"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:836
+msgid "32767"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:856
+msgid "65535"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:936
+msgid "1e+99"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1086
+msgid "19"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1116
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1536
+msgid "22"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1546
+msgid "23"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1556
+msgid "24"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1566
+msgid "25"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1576
+msgid "26"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1586
+msgid "27"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1596
+msgid "28"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1606
+msgid "29"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1616
+msgid "30"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1626
+msgid "31"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1636
+msgid "32"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1646
+msgid "33"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1656
+msgid "41"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1666
+msgid "51"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1676
+msgid "52"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1686
+msgid "53"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1696
+msgid "54"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1706
+msgid "55"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1716
+msgid "56"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1726
+msgid "60"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1736
+msgid "61"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1746
+msgid "62"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1756
+msgid "63"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1766
+msgid "64"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1776
+msgid "65"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1786
+msgid "66"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.vtkConstants.md:1796
+msgid "67"
+msgstr ""

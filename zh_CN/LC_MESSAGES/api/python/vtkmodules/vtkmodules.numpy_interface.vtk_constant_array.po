@@ -1,0 +1,384 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.vtk_constant_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:7
+msgid "VTKConstantArray — numpy-compatible mixin for vtkConstantArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:9
+msgid ""
+"This module provides the VTKConstantArray mixin class and registers "
+"overrides for all vtkConstantArray instantiations so that constant arrays "
+"coming from VTK automatically have numpy-compatible operations."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:13
+msgid ""
+"Arithmetic between constant arrays produces new constant arrays; mixed "
+"operations with real arrays return VTKAOSArray results.  The constant value "
+"is never materialized into a full array unless explicitly requested."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:18
+msgid ""
+"{py:obj}`VTKConstantArray <vtkmodules.numpy_interface.vtk_constant_array."
+"VTKConstantArray>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:81
+msgid "A memory-efficient array where every element has the same value."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:30
+msgid ""
+"{py:obj}`_constant_sum <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_sum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:34
+msgid ""
+"{py:obj}`_constant_mean <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_mean>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:38
+msgid ""
+"{py:obj}`_constant_min <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_min>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:42
+msgid ""
+"{py:obj}`_constant_max <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_max>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:46
+msgid ""
+"{py:obj}`_constant_std <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_std>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:50
+msgid ""
+"{py:obj}`_constant_var <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_var>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:54
+msgid ""
+"{py:obj}`_constant_any <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_any>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:58
+msgid ""
+"{py:obj}`_constant_all <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_all>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:62
+msgid ""
+"{py:obj}`_constant_prod <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_prod>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:66
+msgid ""
+"{py:obj}`_register_constant_overrides <vtkmodules.numpy_interface."
+"vtk_constant_array._register_constant_overrides>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:509
+msgid ""
+"Register VTKConstantArray mixin as override for all vtkConstantArray "
+"template types."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:72
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:78
+msgid ""
+"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:83
+msgid ""
+"``vtkConstantArray`` stores a single scalar value and a shape, using O(1) "
+"memory regardless of the number of elements.  This Python mixin adds a numpy-"
+"compatible interface so that constant arrays can be used in arithmetic "
+"expressions, numpy functions, and VTK pipelines without ever materializing "
+"the full array into memory."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:89
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_constant_array.py:89: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:91
+msgid ""
+"shape : int or tuple of int, optional     Number of tuples (single int or 1-"
+"tuple), or ``(ntuples, ncomps)``     for a multi-component array.  When "
+"omitted, creates an empty array     with zero tuples that can be resized "
+"later with the C++ API. value : scalar, optional     The constant value for "
+"every element.  Default is ``0``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:98
+msgid ""
+"Construction/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_constant_array.py:98: (INFO/1) "
+"Duplicate implicit target name: \"construction\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:100
+msgid "Create with bracket notation and positional arguments::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:102
+msgid ""
+"from vtkmodules.vtkCommonCore import vtkConstantArray\n"
+"\n"
+"# 1-component, 1 million tuples, all 5.0\n"
+"a = vtkConstantArray[numpy.float64](1000000, 5.0)\n"
+"\n"
+"# 3-component, 100 tuples, all 5.0\n"
+"b = vtkConstantArray[numpy.float64]((100, 3), 5.0)\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:110
+msgid ""
+"Available dtypes: ``'float32'``, ``'float64'``, ``'int8'``, ``'int16'``, "
+"``'int32'``, ``'int64'``, ``'uint8'``, ``'uint16'``, ``'uint32'``, "
+"``'uint64'``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:114
+msgid ""
+"Properties/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_constant_array.py:114: (INFO/1) "
+"Duplicate implicit target name: \"properties\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:116
+msgid ""
+"value : scalar     The constant value stored by the array. shape : tuple of "
+"int     ``(ntuples,)`` for 1-component, ``(ntuples, ncomps)`` otherwise. "
+"dtype : numpy.dtype     The element data type. dataset : vtkDataSet or "
+"None     The owning VTK dataset, when the array is attached to one. "
+"association : int or None     The attribute association (POINT, CELL, etc.)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:127
+msgid ""
+"Arithmetic/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_constant_array.py:127: (INFO/1) "
+"Duplicate implicit target name: \"arithmetic\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:129
+msgid ""
+"All element-wise operations (``+``, ``-``, ``*``, ``/``, ``**``, "
+"comparisons, unary ``-``, ``abs``, and numpy ufuncs) operate on the scalar "
+"constant value without allocating a full array:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:133
+msgid "**Constant + constant** returns a new ``VTKConstantArray``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:134
+msgid ""
+"**Constant + regular array** substitutes the scalar and returns a "
+"``VTKAOSArray`` with metadata (dataset, association) propagated."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:137
+msgid ""
+"Reductions (``sum``, ``mean``, ``min``, ``max``, ``std``, ``var``, ``prod``, "
+"``any``, ``all``) are computed in O(1) from the constant value and array "
+"shape."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:141
+msgid ""
+"NumPy Integration/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/"
+"Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:141: "
+"(INFO/1) Duplicate implicit target name: \"numpy integration\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:143
+msgid "Constant arrays implement the numpy array protocol:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:145
+msgid ""
+"``numpy.asarray(arr)`` materializes the full array via ``numpy.full()``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:147
+msgid ""
+"``numpy.sum(arr)``, ``numpy.mean(arr)``, etc. are intercepted and computed "
+"in O(1)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:149
+msgid ""
+"Ufuncs (``numpy.sin``, ``numpy.sqrt``, etc.) substitute the scalar value."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:151
+msgid ""
+"Unoptimized numpy functions trigger a warning and fall back to "
+"materialization."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:154
+msgid ""
+"Indexing/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_constant_array.py:154: (INFO/1) "
+"Duplicate implicit target name: \"indexing\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:156
+msgid ""
+"Scalar indexing returns the constant value.  Slices and fancy indexing "
+"return a new ``VTKConstantArray`` of the appropriate shape, still using O(1) "
+"memory.  The array is read-only; ``__setitem__`` raises ``TypeError``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:161
+msgid ""
+"Dataset Integration/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/"
+"Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:161: "
+"(INFO/1) Duplicate implicit target name: \"dataset integration\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:163
+msgid ""
+"Constant arrays retrieved from a VTK dataset (via ``data_model``) "
+"automatically carry ``dataset`` and ``association`` metadata::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:166
+msgid ""
+"arr = polydata.point_data[\"my_constant_array\"]\n"
+"print(arr.value)       # the constant\n"
+"print(arr.dataset)     # the owning vtkPolyData\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:170
+msgid ""
+"See Also/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/vtk_constant_array.py:170: (INFO/1) "
+"Duplicate implicit target name: \"see also\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:172
+msgid ""
+"vtkConstantArray : The underlying C++ implicit array class. VTKAffineArray : "
+"Similar lazy evaluation for affine (slope*i + intercept)     arrays. "
+"VTKAOSArray : Mixin for regular (array-of-structures) VTK arrays."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:83
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:87
+msgid "Create a new constant array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:91
+msgid ""
+"shape : int or tuple of int, optional     Number of tuples, or ``(ntuples, "
+"ncomps)`` tuple. value : scalar, optional     The constant value (default "
+"``0``). **kwargs     Forwarded to the VTK base-class initializer (e.g. "
+"property     setters like ``name=\"MyArray\"``)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:94
+msgid "Create a new VTKConstantArray of same shape with given value."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:102
+msgid "The constant scalar value."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:126
+msgid "Materialize the full array when numpy needs it explicitly."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:134
+msgid "Override C-level buffer protocol to materialize via numpy.full."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:142
+msgid "Handle numpy ufuncs by substituting the scalar constant."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:144
+msgid ""
+"When all operands are VTKConstantArrays or plain scalars, the result is "
+"wrapped back into a VTKConstantArray of the same shape.  When mixed with a "
+"real numpy array, the constant is passed as a scalar and the result is "
+"wrapped as VTKAOSArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:150
+msgid "Dispatch numpy functions with O(1) overrides where possible."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:158
+msgid "Index into the virtual constant array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:160
+msgid ""
+"Returns a scalar for element access, or a new VTKConstantArray for slices / "
+"fancy indexing."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:340
+msgid "Build a result array of the correct shape for a reduction."
+msgstr ""

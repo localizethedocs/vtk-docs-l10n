@@ -1,0 +1,1230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/develop.md:1
+msgid "Develop"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:4
+msgid ""
+"This page documents how to develop VTK using [GitLab][] and [Git][]. See the "
+"[README](README.md) for more information."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:10
+msgid ""
+"Git is an extremely powerful version control tool that supports many "
+"different \"workflows\" for individual development and collaboration. Here "
+"we document procedures used by the VTK development community. In the "
+"interest of simplicity and brevity we do *not* provide an explanation of why "
+"we use this approach."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:16
+msgid "For a quickstart guide see [here](../develop_quickstart.md)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:18
+msgid "Workflow"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:21
+msgid ""
+"VTK development uses a [branchy workflow][] based on topic branches. Our "
+"collaboration workflow consists of three main steps:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:24
+msgid "Local Development:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:25
+msgid "[Update](#update)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:26
+msgid "[Create a Topic](#create-a-topic)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:28
+msgid "Code Review (requires [GitLab Access][]):"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:29
+msgid "[Share a Topic](#share-a-topic)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:30
+msgid "[Create a Merge Request](#create-a-merge-request)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:31
+msgid "[Review a Merge Request](#review-a-merge-request)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:32
+msgid "[Revise a Topic](#revise-a-topic)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:34
+msgid "Integrate Changes:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:35
+msgid "[Merge a Topic](#merge-a-topic) (requires permission in GitLab)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:36
+msgid "[Delete a Topic](#delete-a-topic)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:41
+msgid "Update"
+msgstr "更新"
+
+#: ../../../developers_guide/git/develop.md:44
+msgid "Update your local `master` branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:46
+#: ../../../developers_guide/git/develop.md:582
+msgid ""
+"$ git checkout master\n"
+"$ git pull\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:49
+msgid "Optionally push `master` to your fork in GitLab:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:51
+msgid "$ git push gitlab master\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:52
+msgid ""
+"to keep it in sync.  The `git gitlab-push` script used to [Share a Topic]"
+"(#share-a-topic) below will also do this."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:55
+msgid "Create a Topic"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:58
+msgid ""
+"All new work must be committed on topic branches. Name topics like you might "
+"name functions: concise but precise. A reader should have a general idea of "
+"the feature or fix to be developed given just the branch name."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:62
+msgid "To start a new topic branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:64
+msgid "$ git fetch origin\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:66
+msgid "For new development, start the topic from `origin/master`:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:68
+msgid "$ git checkout -b my-topic origin/master\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:70
+msgid ""
+"For release branch fixes, start the topic from `origin/release`, and by "
+"convention use a topic name starting in `release-`:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:73
+msgid "$ git checkout -b release-my-topic origin/release\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:75
+msgid ""
+"If backporting a change, you may rebase the branch back onto `origin/"
+"release`:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:78
+msgid ""
+"$ git checkout -b release-my-topic my-topic\n"
+"$ git rebase --onto origin/release origin/master\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:81
+msgid ""
+"Alternatively, for more targeted or aggregate backports, use the `-x` flag "
+"when performing `git cherry-pick` so that a reference to the original commit "
+"is added to the commit message:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:85
+msgid ""
+"$ git checkout -b release-my-topic origin/release\n"
+"$ git cherry-pick -x $hash_a $hash_b $hash_c\n"
+"$ git cherry-pick -x $hash_d $hash_e $hash_f\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:89
+msgid "Edit files and create commits (repeat as needed):"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:91
+msgid ""
+"$ edit file1 file2 file3\n"
+"$ git add file1 file2 file3\n"
+"$ git commit\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:95
+msgid "Caveats:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:96
+msgid "To add data follow [these instructions](test.md#add-data)."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:97
+msgid ""
+"If your change modifies third party code, see [Updating Third Party Projects]"
+"(thirdparty.md)."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:98
+msgid "To deprecate APIs, see [Deprecation Process](deprecation.md)."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:100
+msgid "Guidelines for Commit logs"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:103
+msgid ""
+"Remember to *motivate & summarize*. When writing commit logs, make sure that "
+"there is enough information there for any developer to read and glean "
+"relevant information such as:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:107
+msgid "Is this change important and why?"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:108
+#: ../../../developers_guide/git/develop.md:234
+msgid "If addressing an issue, which issue(s)?"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:109
+#: ../../../developers_guide/git/develop.md:235
+msgid "If a new feature, why is it useful and/or necessary?"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:110
+#: ../../../developers_guide/git/develop.md:236
+msgid "Are there background references or documentation?"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:112
+msgid ""
+"A short description of what the issue being addressed and how will go a long "
+"way towards making the log more readable and the software more maintainable."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:115
+msgid "Style guidelines for commit logs are as follows:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:117
+msgid "Separate subject from body with a blank line"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:118
+msgid "Limit the subject line to 60 characters"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:119
+msgid "Capitalize the subject line"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:120
+msgid ""
+"Use the imperative mood in the subject line e.g. \"Refactor foo\" or \"Fix "
+"Issue #12322\", instead of \"Refactoring foo\", or \"Fixing issue #12322\"."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:122
+msgid "Wrap the body at 80 characters"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:123
+msgid ""
+"Use the body to explain `what` and `why` and if applicable a brief `how`."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:125
+msgid "Share a Topic"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:128
+msgid ""
+"When a topic is ready for review and possible inclusion, share it by pushing "
+"to a fork of your repository in GitLab.  Be sure you have registered and "
+"signed in for [GitLab Access][] and created your fork by visiting the main "
+"[VTK GitLab][] repository page and using the \"Fork\" button in the upper "
+"right."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:135
+#: ../../../developers_guide/git/develop.md:489
+msgid "Checkout the topic if it is not your current branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:137
+#: ../../../developers_guide/git/develop.md:491
+msgid "$ git checkout my-topic\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:139
+msgid "Check what commits will be pushed to your fork in GitLab:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:141
+msgid "$ git prepush\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:143
+msgid "Push commits in your topic branch to your fork in GitLab:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:145
+msgid "$ git gitlab-push\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:147
+msgid "Notes:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:148
+msgid ""
+"If you are revising a previously pushed topic and have rewritten the topic "
+"history, add `-f` or `--force` to overwrite the destination."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:150
+msgid "If the topic adds data see [this note](test.md#push)."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:151
+msgid ""
+"The `gitlab-push` script also pushes the `master` branch to your fork in "
+"GitLab to keep it in sync with the upstream `master`."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:154
+msgid ""
+"The output will include a link to the topic branch in your fork in GitLab "
+"and a link to a page for creating a Merge Request."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:157
+msgid "Create a Merge Request"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:160
+msgid ""
+"(If you already created a merge request for a given topic and have reached "
+"this step after revising it, skip to the [next step](#review-a-merge-"
+"request).)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:163
+msgid ""
+"Visit your fork in GitLab, browse to the \"**Merge Requests**\" link on the "
+"left, and use the \"**New Merge Request**\" button in the upper right to "
+"reach the URL printed at the end of the [previous step](#share-a-topic). It "
+"should be of the form:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:168
+msgid "https://gitlab.kitware.com/<username>/vtk/-/merge_requests/new\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:170
+msgid "Follow these steps:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:172
+msgid ""
+"In the \"**Source branch**\" box select the `<username>/vtk` repository and "
+"the `my-topic` branch."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:175
+msgid ""
+"In the \"**Target branch**\" box select the `vtk/vtk` repository and the "
+"`master` branch.  It should be the default."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:178
+msgid ""
+"If your change is a fix for the `release` branch, you should still select "
+"the `master` branch as the target because the change needs to end up there "
+"too."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:182
+msgid ""
+"For other `release` branches (e.g., `release-6.3`), merge requests should go "
+"directly to the branch (they are not tied with `master` in our workflow)."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:186
+msgid ""
+"Use the \"**Compare branches**\" button to proceed to the next page and fill "
+"out the merge request creation form."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:189
+msgid ""
+"In the \"**Title**\" field provide a one-line summary of the entire topic.  "
+"This will become the title of the Merge Request."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:192
+msgid "Example Merge Request Title:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:194
+msgid "Wrapping: Add Java 1.x support\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:196
+msgid ""
+"In the \"**Description**\" field provide a high-level description of the "
+"change the topic makes and any relevant information about how to try it."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:199
+msgid ""
+"Use `@username` syntax to draw attention of specific developers. This syntax "
+"may be used anywhere outside literal text and code blocks.  Or, wait until "
+"the [next step](#review-a-merge-request) and add comments to draw attention "
+"of developers."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:203
+msgid ""
+"If your change is a fix for the `release` branch, indicate this so that a "
+"maintainer knows it should be merged to `release`."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:205
+msgid ""
+"Optionally use a fenced code block with type `message` to specify text to be "
+"included in the generated merge commit message when the topic is [merged]"
+"(#merge-a-topic)."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:209
+msgid "Example Merge Request Description:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:211
+msgid ""
+"This branch requires Java 1.x which is not generally available yet.\n"
+"Get Java 1.x from ... in order to try these changes.\n"
+"\n"
+"```message\n"
+"Add support for Java 1.x to the wrapping infrastructure.\n"
+"```\n"
+"\n"
+"Cc: @user1 @user2\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:220
+msgid ""
+"The \"**Assign to**\", \"**Milestone**\", and \"**Labels**\" fields may be "
+"left blank."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:223
+msgid ""
+"Use the \"**Submit merge request**\" button to create the merge request and "
+"visit its page."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:226
+msgid "Guidelines for Merge Requests"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:229
+msgid ""
+"Remember to *motivate & summarize*. When creating a merge request, consider "
+"the reviewers and future perusers of the software. Provide enough "
+"information to motivate the merge request such as:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:233
+msgid "Is this merge request important and why?"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:238
+msgid ""
+"Also provide a summary statement expressing what you did and if there is a "
+"choice in implementation or design pattern, the rationale for choosing a "
+"certain path. Notable software or data features should be mentioned as well."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:242
+msgid ""
+"A well written merge request will motivate your reviewers, and bring them up "
+"to speed faster. Future software developers will be able to understand the "
+"reasons why something was done, and possibly avoid chasing down dead ends, "
+"Although it may take you a little more time to write a good merge request, "
+"you'll likely see payback in faster reviews and better understood and "
+"maintainable software."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:249
+msgid "Review a Merge Request"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:252
+msgid ""
+"Add comments mentioning specific developers using `@username` syntax to draw "
+"their attention and have the topic reviewed.  After typing `@` and some "
+"text, GitLab will offer completions for developers whose real names or user "
+"names match."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:257
+msgid ""
+"Here is a list of developers usernames and their specific area of expertise. "
+"A merge request without a developer tagged has very low chance to be merged "
+"in a reasonable timeframe."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:261
+msgid "@mwestphal: Qt, filters, data Model, widgets, parallel, anything else."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:262
+msgid ""
+"@charles.gueunet: filters, data model, SMP, events, pipeline, computational "
+"geometry, distributed algorithms."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:263
+msgid "@kmorel: General VTK Expertise, Viskores accelerators."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:264
+msgid ""
+"@will.schroeder: algorithms, computational geometry, filters, SPH, SMP, "
+"widgets,  point cloud, spatial locators."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:265
+msgid "@sebastien.jourdain: web, WebAssembly, Python, Java."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:266
+msgid ""
+"@sankhesh: volume rendering, Qt, OpenGL, widgets, vtkImageData, DICOM, VR, "
+"Raytracing, webgpu, QtQuick, QtQml, OpenXR"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:267
+msgid "@ben.boeckel: CMake, module system, third-parties."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:268
+msgid ""
+"@cory.quammen: readers, filters, data modeling, general usage, documentation."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:269
+msgid "@seanm: macOS, Cocoa, cppcheck, clang."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:270
+msgid "@spiros.tsalikis: filters, SMP, computational geometry."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:271
+msgid "@louis.gombert: VTKHDF, HyperTreeGrid, Catalyst"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:272
+msgid "@jaswant.panchumarti: Rendering, WASM, WebGPU, emscripten"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:273
+msgid "@dcthomp: CellGrid"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:275
+msgid ""
+"If you would like to be included in this list, juste create a merge request."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:277
+msgid "Human Reviews"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:279
+msgid ""
+"Reviewers may add comments providing feedback or to acknowledge their "
+"approval. When a human reviewers suggest a change, please take it into "
+"account or discuss your choices with the reviewers until an agreement is "
+"reached. At this point, please `resolve` the discussion by clicking on the "
+"dedicated button."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:285
+msgid ""
+"When all discussion have been addressed, the reviewers will either do "
+"another pass of comment or acknowledge their approval in some form."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:288
+msgid ""
+"Please be swift to address or discuss comments, it will increase the speed "
+"at which your changes will be merged."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:291
+msgid "Comments Formatting"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:293
+msgid ""
+"Comments use [GitLab Flavored Markdown][] for formatting.  See GitLab "
+"documentation on [Special GitLab References][] to add links to things like "
+"merge requests and commits in other repositories."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:300
+msgid ""
+"Lines of specific forms will be extracted during [merging](#merge-a-topic) "
+"and included as trailing lines of the generated merge commit message."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:304
+msgid ""
+"A commit message consists of up to three parts which must be specified in "
+"the following order: the [leading line](#leading-line), then [middle lines]"
+"(#middle-lines), then [trailing lines](#trailing-lines). Each part is "
+"optional, but they must be specified in this order."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:309
+msgid "Leading Line"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:311
+msgid ""
+"The *leading* line of a comment may optionally be exactly one of the "
+"following votes followed by nothing but whitespace before the end of the "
+"line:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:315
+msgid "`-1` or `:-1:` indicates \"the change is not ready for integration\"."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:316
+msgid ""
+"`+1` or `:+1:` indicates \"I like the change\". This adds an `Acked-by:` "
+"trailer to the merge commit message."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:318
+msgid ""
+"`+2` indicates \"the change is ready for integration\". This adds a "
+"`Reviewed-by:` trailer to the merge commit message."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:320
+msgid ""
+"`+3` indicates \"I have tested the change and verified it works\". This adds "
+"a `Tested-by:` trailer to the merge commit message."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:323
+msgid "Middle Lines"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:325
+msgid ""
+"The middle lines of a comment may be free-form [GitLab Flavored Markdown][]."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:327
+msgid "Trailing Lines"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:329
+msgid ""
+"Zero or more *trailing* lines in the last section of a comment may each "
+"contain exactly one of the following votes followed by nothing but "
+"whitespace before the end of the line:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:333
+msgid "`Rejected-by: me` means \"The change is not ready for integration.\""
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:334
+msgid "`Acked-by: me` means \"I like the change but defer to others.\""
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:335
+msgid "`Reviewed-by: me` means \"The change is ready for integration.\""
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:336
+msgid ""
+"`Tested-by: me` means \"I have tested the change and verified it works.\""
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:338
+msgid ""
+"Each `me` reference may instead be an `@username` reference or a full `Real "
+"Name <user@domain>` reference to credit someone else for performing the "
+"review.  References to `me` and `@username` will automatically be "
+"transformed into a real name and email address according to the user's "
+"GitLab account profile."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:344
+msgid "Fetching Changes"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:346
+msgid ""
+"One may fetch the changes associated with a merge request by using the `git "
+"fetch` command line shown at the top of the Merge Request page.  It is of "
+"the form:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:350
+msgid "$ git fetch https://gitlab.kitware.com/$username/vtk.git $branch\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:352
+msgid "This updates the local `FETCH_HEAD` to refer to the branch."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:354
+msgid "There are a few options for checking out the changes in a work tree:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:356
+msgid "One may checkout the branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:358
+msgid "$ git checkout FETCH_HEAD -b $branch\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:359
+msgid "or checkout the commit without creating a local branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:361
+msgid "$ git checkout FETCH_HEAD\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:363
+msgid "Or, one may cherry-pick the commits to minimize rebuild time:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:365
+msgid "$ git cherry-pick ..FETCH_HEAD\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:367
+msgid "Robot Reviews"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:369
+msgid ""
+"The \"Kitware Robot\" automatically performs basic checks on the commits and "
+"adds a comment acknowledging or rejecting the topic.  This will be repeated "
+"automatically whenever the topic is pushed to your fork again. A re-check "
+"may be explicitly requested by adding a comment with a single [*trailing* "
+"line](#trailing-lines):"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:375
+msgid "Do: check\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:377
+msgid ""
+"A topic cannot be [merged](#merge-a-topic) until the automatic review "
+"succeeds."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:380
+msgid "Continuous Integration"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:382
+msgid ""
+"VTK uses [GitLab CI](https://gitlab.kitware.com/help/ci/examples/README.md) "
+"to test its functionality. CI results are published to CDash and a link is "
+"added to the `External` stage of the CI pipeline by `@kwrobot`. Developers "
+"and reviewers should start jobs which make sense for the change using the "
+"following methods:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:388
+msgid "The first thing to check is that CI is enabled in your fork of VTK."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:390
+msgid ""
+"Navigate to your fork (change the username in the URL): (https://gitlab."
+"kitware.com/username/vtk/)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:391
+msgid ""
+"Click on `Settings > General`, then expand \"Visibility, project features, "
+"permissions\""
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:392
+msgid ""
+"Make sure `Project Visibility` is `Public` and `CI/CD` is enabled for "
+"`Everyone With Access`"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:393
+msgid "Click on `Settings > CI/CD`, then expand `General`"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:394
+msgid "Make sure `Public Pipelines` is enabled"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:396
+msgid ""
+"The simplest way to trigger CI on a merge request is by adding a comment "
+"with a command among the [trailing lines](#trailing-lines):"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:399
+msgid "Do: test"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:401
+msgid ""
+"`@kwrobot` will add an award emoji to the comment to indicate that it was "
+"processed and trigger all jobs that are awaiting manual interaction in the "
+"merge request's pipelines."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:405
+msgid "The `Do: test` command accepts the following arguments:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:407
+msgid ""
+"`--named <regex>` or `-n <regex>`: Trigger jobs matching `<regex>` anywhere "
+"in their name. Job names may be seen on the merge request's Pipelines tab."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:409
+msgid ""
+"`--stage <stage>` or `-s <stage>`: Only affect jobs in a given stage. Stage "
+"names may be seen on the merge request's Pipelines tab. Note that the stage "
+"names are determined by what is in the `.gitlab-ci.yml` file and may be "
+"capitalized in the web page, so lowercasing the webpage's display name for "
+"stages may be required."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:414
+msgid ""
+"`--action <action>` or `-a <action>`: The action to perform on the jobs. "
+"Possible actions:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:417
+msgid "`manual` (the default): Start jobs awaiting manual interaction."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:418
+msgid ""
+"`unsuccessful`: Start or restart jobs which have not completed successfully."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:420
+msgid "`failed`: Restart jobs which have completed, but without success."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:421
+msgid "`completed`: Restart all completed jobs."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:422
+msgid ""
+"There is a `quick` stage, so unless you are confident the CI will pass, it "
+"is preferable to run only that by doing:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:425
+msgid "Do: test -s quick"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:427
+msgid ""
+"It is even possible to start a single job be navigating in the merge "
+"request's pipeline and click on individual play button. This is a great way "
+"to test quickly run a smoke test or debug CI issues without wasting CI "
+"resources."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:431
+msgid ""
+"If the merge request topic branch is updated by a push, a new manual trigger "
+"using one of the above methods is needed to start CI again."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:434
+msgid ""
+"Before the merge, all the jobs, including tidy, must be run and reviewed, "
+"see below."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:436
+msgid ""
+"If you have any question about the CI process, do not hesitate to ask a CI "
+"maintainer:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:437
+msgid "@ben.boeckel"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:438
+msgid "@mwestphal"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:440
+msgid "Reading CI Results"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:442
+msgid ""
+"Reading CI results is a very important part of the merge request process and "
+"is the responsibility of the author of the merge request, although reviewers "
+"can usually help. There are two locations to read the results, GitLab CI and "
+"CDash. Both should be checked and considered clean before merging."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:447
+msgid ""
+"To read GitLab CI result, click on the Pipelines tab then on the last "
+"pipeline. It is expected to be fully green. If there is a yellow warning "
+"job, please consult CDash. If there is a red failed job, click on it to see "
+"the reason for the failure. It should clearly appears at the bottom of the "
+"log. Possible failures are:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:452
+msgid "Timeouts: please rerun the job and report to CI maintainers"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:453
+msgid ""
+"Memory related errors: please rerun the job and report to CI maintainers"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:454
+msgid ""
+"Testing errors: please consult CDash for more information, usually an issue "
+"in your code"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:455
+msgid ""
+"Non disclosed error: please consult CDash, usually a build error in your code"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:457
+msgid ""
+"To read CDash results, on the job page, click on the \"cdash-commit\" "
+"external job which will open the commit-specific CDash page. Once it is "
+"open, make sure to show \"All Build\" on the bottom left of the page. CDash "
+"results displays error, warnings, and test failures for all the jobs. It is "
+"expected to be green *except* for the \"NoRun\" and \"Test Timings\" "
+"categories, which can be ignored."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:462
+msgid "Configure warnings: there **must** not be any; to fix before the merge"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:463
+msgid "Configure errors: there **must** not be any; to fix before the merge"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:464
+msgid ""
+"Build warnings: there **must** not be any; to fix before the merge. If "
+"unrelated to your code, report to CI maintainers."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:465
+msgid ""
+"Build errors: there **must** not be any; to fix before the merge. If "
+"unrelated to your code, rerun the job and report to CI maintainers."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:466
+msgid ""
+"NotRun test : ignore; these tests have self-diagnosed that they are not "
+"relevant on the testing machine."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:467
+msgid ""
+"Testing failure: there **should** not be any, ideally, to fix before the "
+"merge. If unrelated to your code, check the test history to see if it is a "
+"flaky test and report to CI maintainers."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:468
+msgid ""
+"Testing success: if your MR creates or modifies tests, please check that "
+"your test are listed there."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:469
+msgid ""
+"Test timings errors: can be ignored, but if it is all red, you may want to "
+"report it to CI maintainers."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:471
+msgid ""
+"To check the history of a failing test, on the test page, click on the "
+"\"Summary\" link to see a summary of the test for the day, then click on the "
+"date controls on the top of the page to go back in time. If the test fails "
+"on other MRs or on master, this is probably a flaky test, currently in the "
+"process of being fixed or excluded. A flaky test can be ignored."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:476
+msgid ""
+"As a reminder, here is our current policy regarding CI results. All the jobs "
+"must be run before merging, *including tidy*. Configure warnings and errors "
+"are not acceptable to merge and must be fixed. Build warning and errors are "
+"not acceptable to merge and must be fixed. Testing failure should be fixed "
+"before merging but can be accepted if a flaky test has been clearly "
+"identified."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:482
+msgid "Revise a Topic"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:485
+msgid ""
+"If a topic is approved during GitLab review, skip to the [next step](#merge-"
+"a-topic).  Otherwise, revise the topic and push it back to GitLab for "
+"another review as follows:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:493
+msgid "To revise the `3`rd commit back on the topic:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:495
+msgid "$ git rebase -i HEAD~3\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:497
+msgid ""
+"(Substitute the correct number of commits back, as low as `1`.) Follow Git's "
+"interactive instructions."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:500
+#: ../../../developers_guide/git/develop.md:568
+msgid "Return to the [above step](#share-a-topic) to share the revised topic."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:502
+msgid "Merge a Topic"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:505
+msgid ""
+"Once review has concluded that the MR topic is ready for integration (at "
+"least one `+2`), authorized developers may add a comment with a single "
+"[*trailing* line](#trailing-lines):"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:509
+msgid "Do: merge\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:511
+msgid "in order for your change to be merged into the upstream repository."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:513
+msgid ""
+"If your merge request has been already approved by developers but not merged "
+"yet, do not hesitate to tag an authorized developer and ask for a merge."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:517
+msgid ""
+"By convention, do not request a merge if any `-1` or `Rejected-by:` review "
+"comments have not been resolved and superseded by at least `+1` or `Acked-by:"
+"` review comments from the same user."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:521
+msgid "The `Do: merge` command accepts the following arguments:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:523
+msgid ""
+"`-t <topic>`: substitute `<topic>` for the name of the MR topic branch in "
+"the constructed merge commit message."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:526
+msgid ""
+"Additionally, `Do: merge` extracts configuration from trailing lines in the "
+"MR description (the following have no effect if used in a MR comment "
+"instead):"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:530
+msgid ""
+"`Backport: release[:<commit-ish>]`: merge the topic branch into the "
+"`release` branch to backport the change.  This is allowed only if the topic "
+"branch is based on a commit in `release` already. If only part of the topic "
+"branch should be backported, specify it as `:<commit-ish>`.  The `<commit-"
+"ish>` may use [git rev-parse](https://git-scm.com/docs/git-rev-parse) syntax "
+"to reference commits relative to the topic `HEAD`. See additional [backport "
+"instructions](https://gitlab.kitware.com/utils/git-workflow/-/wikis/Backport-"
+"topics) for details. For example:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:539
+msgid ""
+"`Backport: release`  Merge the topic branch head into both `release` and "
+"`master`."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:541
+msgid ""
+"`Backport: release:HEAD~1^2`  Merge the topic branch head's parent's second "
+"parent commit into  the `release` branch.  Merge the topic branch head to "
+"`master`."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:545
+msgid ""
+"`Topic-rename: <topic>`: substitute `<topic>` for the name of the MR topic "
+"branch in the constructed merge commit message. It is also used in merge "
+"commits constructed by `Do: stage`. The `-t` option to a `Do: merge` command "
+"overrides any topic rename set in the MR description."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:551
+msgid "Merge Success"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:553
+msgid ""
+"If the merge succeeds the topic will appear in the upstream repository "
+"`master` branch and the Merge Request will be closed automatically."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:556
+msgid "Merge Failure"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:558
+msgid ""
+"If the merge fails (likely due to a conflict), a comment will be added "
+"describing the failure.  In the case of a conflict, fetch the latest "
+"upstream history and rebase on it:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:562
+msgid ""
+"$ git fetch origin\n"
+"$ git rebase origin/master\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:565
+msgid ""
+"(If you are fixing a bug in the latest release then substitute `origin/"
+"release` for `origin/master`.)"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:570
+msgid "Delete a Topic"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:573
+msgid ""
+"After a topic has been merged upstream the Merge Request will be closed. Now "
+"you may delete your copies of the branch."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:576
+msgid ""
+"In the GitLab Merge Request page a \"**Remove Source Branch**\" button will "
+"appear.  Use it to delete the `my-topic` branch from your fork in GitLab."
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:580
+msgid "In your work tree checkout and update the `master` branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:585
+msgid "Delete the local topic branch:"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:587
+msgid "$ git branch -d my-topic\n"
+msgstr ""
+
+#: ../../../developers_guide/git/develop.md:589
+msgid ""
+"The `branch -d` command works only when the topic branch has been correctly "
+"merged.  Use `-D` instead of `-d` to force the deletion of an unmerged topic "
+"branch (warning - you could lose commits)."
+msgstr ""

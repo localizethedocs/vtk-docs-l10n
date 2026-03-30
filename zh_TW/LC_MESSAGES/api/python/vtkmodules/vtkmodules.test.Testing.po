@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:1
+msgid "{py:mod}`vtkmodules.test.Testing`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:7
+msgid ""
+"This module attempts to make it easy to create VTK-Python unittests.  The "
+"module uses unittest for the test interface.  For more documentation on what "
+"unittests are and how to use them, please read these:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:12
+msgid "https://docs.python.org/3/library/unittest.html"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:14
+msgid "https://diveintopython3.net/unit-testing.html"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:17
+msgid ""
+"This VTK-Python test module supports image based tests with multiple images "
+"per test suite and multiple images per individual test as well. It also "
+"prints information appropriate for CDash (https://www.cdash.org/)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:22
+msgid ""
+"This module defines several useful classes and functions to make writing "
+"tests easy.  The most important of these are:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:25
+msgid ""
+"class vtkTest:    Subclass this for your tests.  It also has a few useful "
+"internal    functions that can be used to do some simple blackbox testing."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:29
+msgid ""
+"compareImage(renwin, img_fname, threshold=0.05):    Compares renwin with "
+"image and generates image if it does not    exist.  The threshold determines "
+"how closely the images must match.    The function also handles multiple "
+"images and finds the best    matching image."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:35
+msgid ""
+"compareImageWithSavedImage(src_img, img_fname, threshold=0.05):    Compares "
+"given source image (in the form of a vtkImageData) with    saved image and "
+"generates the image if it does not exist.  The    threshold determines how "
+"closely the images must match.  The    function also handles multiple images "
+"and finds the best matching    image."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:42
+msgid ""
+"getAbsImagePath(img_basename):    Returns the full path to the image given "
+"the basic image name."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:45
+msgid ""
+"main(cases):    Does the testing given a list of tuples containing test "
+"classes and    the starting string of the functions used for testing."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:49
+msgid ""
+"interact():     Interacts with the user if necessary.  The behavior of this "
+"is     rather trivial and works best when using Tkinter.  It does not do     "
+"anything by default and stops to interact with the user when given     the "
+"appropriate command line arguments."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:55
+msgid ""
+"isInteractive():     If interact() is not good enough, use this to find if "
+"the mode is     interactive or not and do whatever is necessary to generate "
+"an     interactive view."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:60
+msgid "Examples:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:62
+msgid ""
+"The best way to learn on how to use this module is to look at a few   "
+"examples.  The end of this file contains a trivial example.  Please   also "
+"look at the following examples:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:66
+msgid ""
+"Rendering/Testing/Python/TestTkRenderWidget.py,\n"
+"Rendering/Testing/Python/TestTkRenderWindowInteractor.py\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:69
+msgid "Created: September, 2002"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:71
+msgid "Prabhu Ramachandran <prabhu@aero.iitb.ac.in>"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:12
+msgid "Classes"
+msgstr "類別"
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:18
+msgid "{py:obj}`vtkTest <vtkmodules.test.Testing.vtkTest>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:217
+msgid ""
+"A simple default VTK test class that defines a few useful blackbox tests "
+"that can be readily used.  Derive your test cases from this class and use "
+"the following if you'd like to."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:30
+msgid "{py:obj}`skip <vtkmodules.test.Testing.skip>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:207
+msgid "Cause the test to be skipped due to insufficient requirements."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:34
+msgid "{py:obj}`interact <vtkmodules.test.Testing.interact>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:306
+msgid "Interacts with the user if necessary."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:38
+msgid "{py:obj}`isInteractive <vtkmodules.test.Testing.isInteractive>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:313
+msgid ""
+"Returns if the currently chosen mode is interactive or not based on command "
+"line options."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:42
+msgid "{py:obj}`getAbsImagePath <vtkmodules.test.Testing.getAbsImagePath>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:320
+msgid "Returns the full path to the image given the basic image name."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:46
+msgid "{py:obj}`_getTempImagePath <vtkmodules.test.Testing._getTempImagePath>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:50
+msgid "{py:obj}`_GetController <vtkmodules.test.Testing._GetController>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:54
+msgid ""
+"{py:obj}`compareImageWithSavedImage <vtkmodules.test.Testing."
+"compareImageWithSavedImage>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:341
+msgid ""
+"Compares a source image (src_img, which is a vtkImageData) with the saved "
+"image file whose name is given in the second argument. If the image file "
+"does not exist the image is generated and stored.  If not the source image "
+"is compared to that of the figure.  This function also handles multiple "
+"images and finds the best matching image."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:58
+msgid "{py:obj}`compareImage <vtkmodules.test.Testing.compareImage>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:348
+msgid ""
+"Compares renwin's (a vtkRenderWindow) contents with the image file whose "
+"name is given in the second argument.  If the image file does not exist the "
+"image is generated and stored.  If not the image in the render window is "
+"compared to that of the figure. This function also handles multiple images "
+"and finds the best matching image."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:62
+msgid "{py:obj}`main <vtkmodules.test.Testing.main>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:355
+msgid ""
+"Pass a list of tuples containing test classes and the starting string of the "
+"functions used for testing."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:66
+msgid "{py:obj}`test <vtkmodules.test.Testing.test>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:362
+msgid ""
+"Pass a list of tuples containing test classes and the functions used for "
+"testing."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:70
+msgid "{py:obj}`usage <vtkmodules.test.Testing.usage>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:74
+msgid "{py:obj}`parseCmdLine <vtkmodules.test.Testing.parseCmdLine>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:78
+msgid "{py:obj}`processCmdLine <vtkmodules.test.Testing.processCmdLine>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:84
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:90
+msgid "{py:obj}`VTK_DATA_ROOT <vtkmodules.test.Testing.VTK_DATA_ROOT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:94
+msgid "{py:obj}`VTK_DATA_PATHS <vtkmodules.test.Testing.VTK_DATA_PATHS>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:98
+msgid "{py:obj}`VTK_BASELINE_ROOT <vtkmodules.test.Testing.VTK_BASELINE_ROOT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:102
+msgid "{py:obj}`VTK_TEMP_DIR <vtkmodules.test.Testing.VTK_TEMP_DIR>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:106
+msgid ""
+"{py:obj}`VTK_BASELINE_PATHS <vtkmodules.test.Testing.VTK_BASELINE_PATHS>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:110
+msgid "{py:obj}`_VERBOSE <vtkmodules.test.Testing._VERBOSE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:114
+msgid "{py:obj}`_INTERACT <vtkmodules.test.Testing._INTERACT>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:118
+msgid "{py:obj}`_NO_IMAGE <vtkmodules.test.Testing._NO_IMAGE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:124
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:139
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:167
+msgid "[]"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:177
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:187
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:197
+msgid "0"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:214
+msgid "Bases: {py:obj}`unittest.TestCase`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:221
+msgid ""
+"Note: Unittest instantiates this class (or your subclass) each time it tests "
+"a method.  So if you do not want that to happen when generating VTK "
+"pipelines you should create the pipeline in the class definition as done "
+"below for _blackbox."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:219
+msgid "Initialization"
+msgstr "初始化"
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:223
+msgid ""
+"Create an instance of the class that will use the named test method when "
+"executed. Raises a ValueError if the instance does not have a method with "
+"the specified name."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:229
+msgid "'Tester(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:239
+msgid "'vtkDebugLeaks(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:250
+msgid ""
+"Does a blackbox test by attempting to parse the class for its various "
+"methods using vtkMethodParser.  This is a useful test because it gets all "
+"the methods of the vtkObject, parses them and sorts them into different "
+"classes of objects."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:258
+msgid ""
+"Checks the Get/Set method pairs by setting the value using the current state "
+"and making sure that it equals the value it was originally.  This "
+"effectively calls _testParse internally."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:266
+msgid ""
+"Checks the Boolean methods by setting the value on and off and making sure "
+"that the GetMethod returns the set value. This effectively calls _testParse "
+"internally."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:274
+msgid ""
+"Given a filename with no path (i.e., no leading directories prepended), "
+"return the full path to a file as specified on the command line with a '-D' "
+"option."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:278
+msgid ""
+"As an example, if a test is run with \"-D /path/to/grid.vtu\" then calling"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:281
+msgid "self.pathToData('grid.vtu')\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:283
+msgid ""
+"in your test will return \"/path/to/grid.vtu\". This is useful in "
+"combination with ExternalData, where data may be staged by CTest to a user-"
+"configured directory at build time."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:287
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:295
+msgid ""
+"In order for this method to work, you must specify the JUST_VALID option for "
+"your test in CMake."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:282
+msgid ""
+"Given a filename with no path (i.e., no leading directories prepended), "
+"return the full path to a file as specified on the command line with a '-V' "
+"option."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:286
+msgid ""
+"As an example, if a test is run with \"-V /path/to/validImage.png\" then "
+"calling"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:289
+msgid "self.pathToData('validImage.png')\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:291
+msgid ""
+"in your test will return \"/path/to/validImage.png\". This is useful in "
+"combination with ExternalData, where data may be staged by CTest to a user-"
+"configured directory at build time."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:298
+msgid ""
+"Throw an error if a rendering in the render window does not match the "
+"baseline image."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:300
+msgid ""
+"This method accepts a threshold keyword argument (with a default of 0.15) "
+"that specifies how different a baseline may be before causing a failure."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:358
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:367
+msgid "Example:"
+msgstr "範例："
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:360
+msgid "main ([(vtkTestClass, 'test'), (vtkTestClass1, 'test')])"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:365
+msgid "It returns a unittest._TextTestResult object."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:369
+msgid ""
+"test = test_suite([(vtkTestClass, 'test'),                     "
+"(vtkTestClass1, 'test')])"
+msgstr ""

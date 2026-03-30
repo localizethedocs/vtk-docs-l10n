@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface.utils`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:7
+msgid "Shared utilities for the new VTK array classes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:9
+msgid ""
+"This module provides common definitions used across VTKAOSArray, "
+"VTKSOAArray, VTKCompositeArray, and VTKNoneArray.  It is intentionally "
+"independent of ``dataset_adapter`` so that the new array classes do not "
+"depend on the legacy module."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:12
+msgid "Classes"
+msgstr "類別"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:18
+msgid ""
+"{py:obj}`ArrayAssociation <vtkmodules.numpy_interface.utils."
+"ArrayAssociation>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:43
+msgid "Easy access to vtkDataObject.AttributeTypes."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:30
+msgid ""
+"{py:obj}`reshape_append_ones <vtkmodules.numpy_interface.utils."
+"reshape_append_ones>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:90
+msgid "Append trailing 1s to the shorter shape for broadcasting."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:36
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:49
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:59
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:69
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.utils.md:79
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:92
+msgid ""
+"Given two ndarrays, append 1s to the shape of the array with fewer "
+"dimensions until both have the same number of dimensions.  This allows "
+"operations like ``(n,3) + (n,)`` that would otherwise fail with a broadcast "
+"error."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/utils.py:97
+msgid "Returns a list ``[a1, a2]`` where one may have been reshaped."
+msgstr ""

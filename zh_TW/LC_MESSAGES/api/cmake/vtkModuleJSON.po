@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/vtkModuleJson.cmake:4
+msgid "vtkModuleJSON"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:9
+msgid "Output a boolean to JSON. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:11
+msgid ""
+"Appends a condition as a JSON boolean with the given dictionary key name to "
+"the given string variable."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:14
+msgid "_vtk_json_bool(<output> <name> <cond>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:32
+msgid "Output a string list to JSON. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:34
+msgid ""
+"Appends a variable as a JSON list of strings with the given dictionary key "
+"name to the given string variable."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:37
+msgid "_vtk_json_string_list(<output> <name> <cond>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:57
+msgid "JSON metadata representation of modules. |module-support|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:59
+msgid ""
+"Information about the modules built and/or available may be dumped to a JSON "
+"file."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:62
+msgid ""
+"vtk_module_json(\n"
+"   MODULES   <module>...\n"
+"   OUTPUT    <path>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:69
+msgid "``MODULES``: (Required) The modules to output information for."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:71
+msgid "``OUTPUT``: (Required) A JSON file describing the modules built will"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:71
+msgid ""
+"be output to this path. Relative paths are rooted to :cmake:variable:"
+"`CMAKE_BINARY_DIR`."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:73
+msgid "Example output:"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleJson.cmake:75
+msgid ""
+"{\n"
+"  \"modules\": [\n"
+"    {\n"
+"      \"name\": \"...\",\n"
+"      \"library_name\": \"...\",\n"
+"      \"enabled\": <bool>,\n"
+"      \"implementable\": <bool>,\n"
+"      \"third_party\": <bool>,\n"
+"      \"wrap_exclude\": <bool>,\n"
+"      \"kit\": \"...\",\n"
+"      \"depends\": [\n"
+"        \"...\"\n"
+"      ],\n"
+"      \"optional_depends\": [\n"
+"        \"...\"\n"
+"      ],\n"
+"      \"private_depends\": [\n"
+"        \"...\"\n"
+"      ],\n"
+"      \"implements\": [\n"
+"        \"...\"\n"
+"      ],\n"
+"      \"headers\": [\n"
+"        \"...\"\n"
+"      ]\n"
+"    }\n"
+"  ],\n"
+"  \"kits\": [\n"
+"    {\n"
+"      \"name\": \"...\",\n"
+"      \"enabled\": <bool>,\n"
+"      \"modules\": [\n"
+"      ]\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""

@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:1
+msgid "VTK::RenderingVR"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:2
+msgid "vtkRenderingVR - Virtual reality support for VTK"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:4
+msgid "Introduction"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:6
+msgid ""
+"The VR module defines an API and support classes for adding virtual reality "
+"support to VTK. The OpenVR and OpenXR modules are both subclassed off of "
+"this module. For a list of todos and development issues please see"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:10
+msgid "https://gitlab.kitware.com/vtk/vtk/-/issues/18302"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:12
+msgid "Supported Devices"
+msgstr "支援的裝置"
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:14
+msgid ""
+"The VR module aims to support runtimes that implement the OpenXR or OpenVR "
+"standards."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:17
+msgid ""
+"See [`VTK::RenderingOpenXR` documentation](../OpenXR/README.md) for "
+"information on rendering with the modern OpenXR specification."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:20
+msgid ""
+"See [`VTK::RenderingOpenVR` documentation](../OpenVR/README.md) for "
+"information on rendering with the legacy OpenVR specification."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:23
+msgid "Coordinate Systems"
+msgstr "座標系統"
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:25
+msgid ""
+"With VR the transformations between coordinate systems can quickly become "
+"confusing. To help with this note that most matrices in the VR code are "
+"stored in vtk convention. That is `a = Mx` where x is a column vector in "
+"homogeneous coordinates. Matrices are named according to what spaces they "
+"transform between. For example PhysicalToLeftEyeMatrix. Some common "
+"coordinate systems are listed below in order of coordinate flow."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:32
+msgid ""
+"Note that in vtkMatrix4x4 multiplcations are done from right to left so to "
+"compute a matrix from spaces A to C you would do"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:35
+msgid ""
+"`vtkMatrix4x4::Multiply4x4(BtoCMatrixInput, AtoBMatrixInput, "
+"AtoCMatrixOutput)`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:37
+msgid "Model -> World -> Physical -> Left/RightEye -> Projection"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:39
+msgid "Model - what an actor's data is in"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:40
+msgid "World - common coordinate system for all actors"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:41
+msgid ""
+"Physical - the physical VR space in meters with 0,0,0 being the center of "
+"the floor of the room"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:43
+msgid ""
+"Device - the viewpoint (position and orientation) of a device such as a "
+"controller"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:45
+msgid "LeftEye (and RightEye) - the viewpoint of the left and right eye"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:46
+msgid ""
+"Projection - in clip space, the expected output space for vertex shaders"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:48
+msgid ""
+"The matrices that go between these spaces are as follows and they can be "
+"inverted as desired. You will also find some additional matrices that "
+"combine some of these transformations into a single matrix for convenience "
+"such as VRHMDCamera->WorldToLeftEyeMatrix."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:53
+msgid "Model -> World = the actor's matrix"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:54
+msgid ""
+"World -> Physical = inverse of VRRenderWindow->GetPhysicalToWorldMatrix()"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:55
+msgid "Physical -> LeftEye = VRHMDCamera->PhysicalToLeftEyeMatrix"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:56
+msgid "LeftEye -> Projection = VRHMDCamera->LeftEyeToProjectionMatrix"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:57
+msgid ""
+"Physical -> Device = inverse of VRRenderWindow-"
+">GetDeviceToPhysicalMatrixForDevice()"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:60
+msgid ""
+"There are some other matrices used in the camera that are stored in OpenGL "
+"format (transpose of VTK format) using an older naming convention. These are "
+"names such as WCDCMatrix, the names correspond to"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:64
+msgid "MC = model coordinates (same as above)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:65
+msgid "WC = world coordinates (same as above)"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:66
+msgid ""
+"VC = view coordinates, world coordinates translated and rotated to the "
+"camera, similar to the LeftEye space"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/VR/README.md:68
+msgid ""
+"DC = device coordinates (device in this context is a GPU, so same as "
+"projection coordinates above)"
+msgstr ""

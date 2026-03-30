@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:1
+msgid "{py:mod}`vtkmodules.numpy_interface._vtk_array_mixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:7
+msgid "Shared base mixin and utilities for VTK data array Python wrappers."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:9
+msgid "Provides:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:10
+msgid ""
+"``VTKDataArrayMixin`` — base class with metadata management, shape "
+"properties, reduction method stubs, and shape/layout methods shared across "
+"the VTK array mixins (AOS, SOA)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:13
+msgid ""
+"``make_override_registry()`` — create an ``__array_function__`` override "
+"dict and decorator pair."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:15
+msgid ""
+"``register_template_overrides()`` — register a mixin as override for all "
+"dtype instantiations of a VTK template class."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:18
+msgid ""
+"{py:obj}`VTKDataArrayMixin <vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:47
+msgid "Shared base for VTK data array Python mixins (AOS, SOA)."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:24
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:30
+msgid ""
+"{py:obj}`make_override_registry <vtkmodules.numpy_interface._vtk_array_mixin."
+"make_override_registry>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:336
+msgid ""
+"Create an override dict + decorator for ``__array_function__`` dispatch."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:34
+msgid ""
+"{py:obj}`register_template_overrides <vtkmodules.numpy_interface."
+"_vtk_array_mixin.register_template_overrides>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:343
+msgid ""
+"Register a mixin as override for all dtype instantiations of a VTK template."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:40
+msgid "API"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:49
+msgid ""
+"Subclasses must provide ``__array__()``, ``GetNumberOfTuples()``, "
+"``GetNumberOfComponents()``, and ``GetDataType()`` (inherited from the VTK "
+"base class in the MRO)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:54
+msgid "Store a weak reference to the owning dataset."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:62
+msgid "Return the owning dataset (dereferenced from weak ref)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:70
+msgid "Return the association type (POINT, CELL, etc.)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:78
+msgid "Wrap a numpy result as VTKAOSArray preserving metadata."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:80
+msgid ""
+"Only wraps if result is an ndarray with same number of tuples. Returns plain "
+"ndarray/scalar otherwise."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:117
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:338
+msgid "Returns ``(registry_dict, register_decorator)``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:340
+msgid "Usage::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:342
+msgid ""
+"MY_OVERRIDE, _override_mine = make_override_registry()\n"
+"\n"
+"@_override_mine(numpy.sum)\n"
+"def _my_sum(a, axis=None, **kw): ...\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:345
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:345: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:347
+msgid ""
+"mixin_cls : type     The Python mixin class (e.g. VTKAOSArray). "
+"template_cls : VTK template class     The VTK template (e.g. "
+"vtkAOSDataArrayTemplate). name_prefix : str     Prefix for the generated "
+"class names (e.g. 'VTKAOSArray'). concrete_classes : list of type, "
+"optional     Additional concrete VTK classes to override (e.g. "
+"vtkFloatArray)."
+msgstr ""
