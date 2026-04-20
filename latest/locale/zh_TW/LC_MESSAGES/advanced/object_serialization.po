@@ -101,6 +101,7 @@ msgstr ""
 msgid ""
 "static nlohmann:json Serialize_vtkClassName(vtkObjectBase*, vtkSerializer*)\n"
 msgstr ""
+"static nlohmann:json Serialize_vtkClassName(vtkObjectBase*, vtkSerializer*)\n"
 
 #: ../../../advanced/object_serialization.md:43
 msgid "A deserializer function with signature:"
@@ -127,6 +128,8 @@ msgid ""
 "static nlohmann::json Invoke_vtkClassName(vtkInvoker* invoker, "
 "vtkObjectBase* objectBase, const char* methodName, nlohmann::json args)\n"
 msgstr ""
+"static nlohmann::json Invoke_vtkClassName(vtkInvoker* invoker, "
+"vtkObjectBase* objectBase, const char* methodName, nlohmann::json args)\n"
 
 #: ../../../advanced/object_serialization.md:63
 msgid "A registrar function that registers"

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:1
 msgid "{py:mod}`vtkmodules.numpy_interface.vtk_soa_array`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.numpy_interface.vtk_soa_array`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:7
 msgid "VTKSOAArray — numpy-compatible mixin for vtkSOADataArrayTemplate."
@@ -46,6 +46,7 @@ msgstr "類別"
 msgid ""
 "{py:obj}`VTKSOAArray <vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray>`"
 msgstr ""
+"{py:obj}`VTKSOAArray <vtkmodules.numpy_interface.vtk_soa_array.VTKSOAArray>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:180
@@ -60,6 +61,7 @@ msgstr ""
 msgid ""
 "{py:obj}`_to_ndarray <vtkmodules.numpy_interface.vtk_soa_array._to_ndarray>`"
 msgstr ""
+"{py:obj}`_to_ndarray <vtkmodules.numpy_interface.vtk_soa_array._to_ndarray>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:32
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:156
@@ -71,6 +73,8 @@ msgid ""
 "{py:obj}`_soa_to_ndarray_arg <vtkmodules.numpy_interface.vtk_soa_array."
 "_soa_to_ndarray_arg>`"
 msgstr ""
+"{py:obj}`_soa_to_ndarray_arg <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_to_ndarray_arg>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:36
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:163
@@ -82,6 +86,8 @@ msgid ""
 "{py:obj}`_soa_as_ndarray <vtkmodules.numpy_interface.vtk_soa_array."
 "_soa_as_ndarray>`"
 msgstr ""
+"{py:obj}`_soa_as_ndarray <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_as_ndarray>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:40
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:170
@@ -90,103 +96,119 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:42
 msgid "{py:obj}`_soa_sum <vtkmodules.numpy_interface.vtk_soa_array._soa_sum>`"
-msgstr ""
+msgstr "{py:obj}`_soa_sum <vtkmodules.numpy_interface.vtk_soa_array._soa_sum>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:46
 msgid ""
 "{py:obj}`_soa_mean <vtkmodules.numpy_interface.vtk_soa_array._soa_mean>`"
 msgstr ""
+"{py:obj}`_soa_mean <vtkmodules.numpy_interface.vtk_soa_array._soa_mean>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:50
 msgid "{py:obj}`_soa_min <vtkmodules.numpy_interface.vtk_soa_array._soa_min>`"
-msgstr ""
+msgstr "{py:obj}`_soa_min <vtkmodules.numpy_interface.vtk_soa_array._soa_min>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:54
 msgid "{py:obj}`_soa_max <vtkmodules.numpy_interface.vtk_soa_array._soa_max>`"
-msgstr ""
+msgstr "{py:obj}`_soa_max <vtkmodules.numpy_interface.vtk_soa_array._soa_max>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:58
 msgid "{py:obj}`_soa_std <vtkmodules.numpy_interface.vtk_soa_array._soa_std>`"
-msgstr ""
+msgstr "{py:obj}`_soa_std <vtkmodules.numpy_interface.vtk_soa_array._soa_std>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:62
 msgid "{py:obj}`_soa_var <vtkmodules.numpy_interface.vtk_soa_array._soa_var>`"
-msgstr ""
+msgstr "{py:obj}`_soa_var <vtkmodules.numpy_interface.vtk_soa_array._soa_var>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:66
 msgid "{py:obj}`_soa_any <vtkmodules.numpy_interface.vtk_soa_array._soa_any>`"
-msgstr ""
+msgstr "{py:obj}`_soa_any <vtkmodules.numpy_interface.vtk_soa_array._soa_any>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:70
 msgid "{py:obj}`_soa_all <vtkmodules.numpy_interface.vtk_soa_array._soa_all>`"
-msgstr ""
+msgstr "{py:obj}`_soa_all <vtkmodules.numpy_interface.vtk_soa_array._soa_all>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:74
 msgid ""
 "{py:obj}`_soa_prod <vtkmodules.numpy_interface.vtk_soa_array._soa_prod>`"
 msgstr ""
+"{py:obj}`_soa_prod <vtkmodules.numpy_interface.vtk_soa_array._soa_prod>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:78
 msgid ""
 "{py:obj}`_soa_argmin <vtkmodules.numpy_interface.vtk_soa_array._soa_argmin>`"
 msgstr ""
+"{py:obj}`_soa_argmin <vtkmodules.numpy_interface.vtk_soa_array._soa_argmin>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:82
 msgid ""
 "{py:obj}`_soa_argmax <vtkmodules.numpy_interface.vtk_soa_array._soa_argmax>`"
 msgstr ""
+"{py:obj}`_soa_argmax <vtkmodules.numpy_interface.vtk_soa_array._soa_argmax>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:86
 msgid ""
 "{py:obj}`_soa_cumsum <vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum>`"
 msgstr ""
+"{py:obj}`_soa_cumsum <vtkmodules.numpy_interface.vtk_soa_array._soa_cumsum>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:90
 msgid ""
 "{py:obj}`_soa_cumprod <vtkmodules.numpy_interface.vtk_soa_array."
 "_soa_cumprod>`"
 msgstr ""
+"{py:obj}`_soa_cumprod <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_cumprod>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:94
 msgid ""
 "{py:obj}`_soa_concatenate <vtkmodules.numpy_interface.vtk_soa_array."
 "_soa_concatenate>`"
 msgstr ""
+"{py:obj}`_soa_concatenate <vtkmodules.numpy_interface.vtk_soa_array."
+"_soa_concatenate>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:98
 msgid ""
 "{py:obj}`_soa_clip <vtkmodules.numpy_interface.vtk_soa_array._soa_clip>`"
 msgstr ""
+"{py:obj}`_soa_clip <vtkmodules.numpy_interface.vtk_soa_array._soa_clip>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:102
 msgid ""
 "{py:obj}`_soa_sort <vtkmodules.numpy_interface.vtk_soa_array._soa_sort>`"
 msgstr ""
+"{py:obj}`_soa_sort <vtkmodules.numpy_interface.vtk_soa_array._soa_sort>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:106
 msgid ""
 "{py:obj}`_soa_where <vtkmodules.numpy_interface.vtk_soa_array._soa_where>`"
 msgstr ""
+"{py:obj}`_soa_where <vtkmodules.numpy_interface.vtk_soa_array._soa_where>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:110
 msgid ""
 "{py:obj}`_soa_isin <vtkmodules.numpy_interface.vtk_soa_array._soa_isin>`"
 msgstr ""
+"{py:obj}`_soa_isin <vtkmodules.numpy_interface.vtk_soa_array._soa_isin>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:114
 msgid ""
 "{py:obj}`_soa_round <vtkmodules.numpy_interface.vtk_soa_array._soa_round>`"
 msgstr ""
+"{py:obj}`_soa_round <vtkmodules.numpy_interface.vtk_soa_array._soa_round>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:118
 msgid "{py:obj}`_soa_dot <vtkmodules.numpy_interface.vtk_soa_array._soa_dot>`"
-msgstr ""
+msgstr "{py:obj}`_soa_dot <vtkmodules.numpy_interface.vtk_soa_array._soa_dot>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:122
 msgid ""
 "{py:obj}`_register_soa_overrides <vtkmodules.numpy_interface.vtk_soa_array."
 "_register_soa_overrides>`"
 msgstr ""
+"{py:obj}`_register_soa_overrides <vtkmodules.numpy_interface.vtk_soa_array."
+"_register_soa_overrides>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:124
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:766
@@ -202,6 +224,8 @@ msgid ""
 "{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_soa_array."
 "_UNINITIALIZED>`"
 msgstr ""
+"{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_soa_array."
+"_UNINITIALIZED>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:140
 msgid "API"
@@ -222,6 +246,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
 "VTKDataArrayMixin`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:182
 msgid ""

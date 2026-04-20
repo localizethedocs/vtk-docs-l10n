@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:1
 msgid "{py:mod}`vtkmodules.numpy_interface.vtk_constant_array`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.numpy_interface.vtk_constant_array`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:7
 msgid "VTKConstantArray — numpy-compatible mixin for vtkConstantArray."
@@ -52,6 +52,8 @@ msgid ""
 "{py:obj}`VTKConstantArray <vtkmodules.numpy_interface.vtk_constant_array."
 "VTKConstantArray>`"
 msgstr ""
+"{py:obj}`VTKConstantArray <vtkmodules.numpy_interface.vtk_constant_array."
+"VTKConstantArray>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:81
@@ -67,60 +69,80 @@ msgid ""
 "{py:obj}`_constant_sum <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_sum>`"
 msgstr ""
+"{py:obj}`_constant_sum <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_sum>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:34
 msgid ""
 "{py:obj}`_constant_mean <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_mean>`"
 msgstr ""
+"{py:obj}`_constant_mean <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_mean>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:38
 msgid ""
 "{py:obj}`_constant_min <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_min>`"
 msgstr ""
+"{py:obj}`_constant_min <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_min>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:42
 msgid ""
 "{py:obj}`_constant_max <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_max>`"
 msgstr ""
+"{py:obj}`_constant_max <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_max>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:46
 msgid ""
 "{py:obj}`_constant_std <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_std>`"
 msgstr ""
+"{py:obj}`_constant_std <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_std>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:50
 msgid ""
 "{py:obj}`_constant_var <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_var>`"
 msgstr ""
+"{py:obj}`_constant_var <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_var>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:54
 msgid ""
 "{py:obj}`_constant_any <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_any>`"
 msgstr ""
+"{py:obj}`_constant_any <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_any>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:58
 msgid ""
 "{py:obj}`_constant_all <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_all>`"
 msgstr ""
+"{py:obj}`_constant_all <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_all>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:62
 msgid ""
 "{py:obj}`_constant_prod <vtkmodules.numpy_interface.vtk_constant_array."
 "_constant_prod>`"
 msgstr ""
+"{py:obj}`_constant_prod <vtkmodules.numpy_interface.vtk_constant_array."
+"_constant_prod>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.md:66
 msgid ""
 "{py:obj}`_register_constant_overrides <vtkmodules.numpy_interface."
 "vtk_constant_array._register_constant_overrides>`"
 msgstr ""
+"{py:obj}`_register_constant_overrides <vtkmodules.numpy_interface."
+"vtk_constant_array._register_constant_overrides>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:68
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:525
@@ -138,6 +160,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
 "VTKDataArrayMixin`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:83
 msgid ""

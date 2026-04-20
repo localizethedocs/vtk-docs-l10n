@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:1
 msgid "{py:mod}`vtkmodules.test.Testing`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.test.Testing`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:7
 msgid ""
@@ -134,7 +134,7 @@ msgstr "類別"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:18
 msgid "{py:obj}`vtkTest <vtkmodules.test.Testing.vtkTest>`"
-msgstr ""
+msgstr "{py:obj}`vtkTest <vtkmodules.test.Testing.vtkTest>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:217
@@ -150,7 +150,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:30
 msgid "{py:obj}`skip <vtkmodules.test.Testing.skip>`"
-msgstr ""
+msgstr "{py:obj}`skip <vtkmodules.test.Testing.skip>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:32
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:207
@@ -159,7 +159,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:34
 msgid "{py:obj}`interact <vtkmodules.test.Testing.interact>`"
-msgstr ""
+msgstr "{py:obj}`interact <vtkmodules.test.Testing.interact>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:36
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:306
@@ -168,7 +168,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:38
 msgid "{py:obj}`isInteractive <vtkmodules.test.Testing.isInteractive>`"
-msgstr ""
+msgstr "{py:obj}`isInteractive <vtkmodules.test.Testing.isInteractive>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:40
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:313
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:42
 msgid "{py:obj}`getAbsImagePath <vtkmodules.test.Testing.getAbsImagePath>`"
-msgstr ""
+msgstr "{py:obj}`getAbsImagePath <vtkmodules.test.Testing.getAbsImagePath>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:44
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:320
@@ -189,16 +189,19 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:46
 msgid "{py:obj}`_getTempImagePath <vtkmodules.test.Testing._getTempImagePath>`"
 msgstr ""
+"{py:obj}`_getTempImagePath <vtkmodules.test.Testing._getTempImagePath>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:50
 msgid "{py:obj}`_GetController <vtkmodules.test.Testing._GetController>`"
-msgstr ""
+msgstr "{py:obj}`_GetController <vtkmodules.test.Testing._GetController>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:54
 msgid ""
 "{py:obj}`compareImageWithSavedImage <vtkmodules.test.Testing."
 "compareImageWithSavedImage>`"
 msgstr ""
+"{py:obj}`compareImageWithSavedImage <vtkmodules.test.Testing."
+"compareImageWithSavedImage>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:56
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:341
@@ -212,7 +215,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:58
 msgid "{py:obj}`compareImage <vtkmodules.test.Testing.compareImage>`"
-msgstr ""
+msgstr "{py:obj}`compareImage <vtkmodules.test.Testing.compareImage>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:60
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:348
@@ -226,7 +229,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:62
 msgid "{py:obj}`main <vtkmodules.test.Testing.main>`"
-msgstr ""
+msgstr "{py:obj}`main <vtkmodules.test.Testing.main>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:64
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:355
@@ -237,7 +240,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:66
 msgid "{py:obj}`test <vtkmodules.test.Testing.test>`"
-msgstr ""
+msgstr "{py:obj}`test <vtkmodules.test.Testing.test>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:68
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:362
@@ -248,15 +251,15 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:70
 msgid "{py:obj}`usage <vtkmodules.test.Testing.usage>`"
-msgstr ""
+msgstr "{py:obj}`usage <vtkmodules.test.Testing.usage>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:74
 msgid "{py:obj}`parseCmdLine <vtkmodules.test.Testing.parseCmdLine>`"
-msgstr ""
+msgstr "{py:obj}`parseCmdLine <vtkmodules.test.Testing.parseCmdLine>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:78
 msgid "{py:obj}`processCmdLine <vtkmodules.test.Testing.processCmdLine>`"
-msgstr ""
+msgstr "{py:obj}`processCmdLine <vtkmodules.test.Testing.processCmdLine>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:84
 msgid "Data"
@@ -264,36 +267,38 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:90
 msgid "{py:obj}`VTK_DATA_ROOT <vtkmodules.test.Testing.VTK_DATA_ROOT>`"
-msgstr ""
+msgstr "{py:obj}`VTK_DATA_ROOT <vtkmodules.test.Testing.VTK_DATA_ROOT>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:94
 msgid "{py:obj}`VTK_DATA_PATHS <vtkmodules.test.Testing.VTK_DATA_PATHS>`"
-msgstr ""
+msgstr "{py:obj}`VTK_DATA_PATHS <vtkmodules.test.Testing.VTK_DATA_PATHS>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:98
 msgid "{py:obj}`VTK_BASELINE_ROOT <vtkmodules.test.Testing.VTK_BASELINE_ROOT>`"
 msgstr ""
+"{py:obj}`VTK_BASELINE_ROOT <vtkmodules.test.Testing.VTK_BASELINE_ROOT>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:102
 msgid "{py:obj}`VTK_TEMP_DIR <vtkmodules.test.Testing.VTK_TEMP_DIR>`"
-msgstr ""
+msgstr "{py:obj}`VTK_TEMP_DIR <vtkmodules.test.Testing.VTK_TEMP_DIR>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:106
 msgid ""
 "{py:obj}`VTK_BASELINE_PATHS <vtkmodules.test.Testing.VTK_BASELINE_PATHS>`"
 msgstr ""
+"{py:obj}`VTK_BASELINE_PATHS <vtkmodules.test.Testing.VTK_BASELINE_PATHS>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:110
 msgid "{py:obj}`_VERBOSE <vtkmodules.test.Testing._VERBOSE>`"
-msgstr ""
+msgstr "{py:obj}`_VERBOSE <vtkmodules.test.Testing._VERBOSE>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:114
 msgid "{py:obj}`_INTERACT <vtkmodules.test.Testing._INTERACT>`"
-msgstr ""
+msgstr "{py:obj}`_INTERACT <vtkmodules.test.Testing._INTERACT>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:118
 msgid "{py:obj}`_NO_IMAGE <vtkmodules.test.Testing._NO_IMAGE>`"
-msgstr ""
+msgstr "{py:obj}`_NO_IMAGE <vtkmodules.test.Testing._NO_IMAGE>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:124
 msgid "API"
@@ -312,7 +317,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.test.Testing.md:214
 msgid "Bases: {py:obj}`unittest.TestCase`"
-msgstr ""
+msgstr "基底類別：{py:obj}`unittest.TestCase`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/test/Testing.py:221
 msgid ""

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.md:1
 msgid "{py:mod}`vtkmodules.tk.vtkTkImageViewerWidget`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.tk.vtkTkImageViewerWidget`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkImageViewerWidget.py:7
 msgid ""
@@ -48,6 +48,8 @@ msgid ""
 "{py:obj}`vtkTkImageViewerWidget <vtkmodules.tk.vtkTkImageViewerWidget."
 "vtkTkImageViewerWidget>`"
 msgstr ""
+"{py:obj}`vtkTkImageViewerWidget <vtkmodules.tk.vtkTkImageViewerWidget."
+"vtkTkImageViewerWidget>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkImageViewerWidget.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkImageViewerWidget.py:33
@@ -60,7 +62,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.md:30
 msgid "Bases: {py:obj}`tkinter.Widget`"
-msgstr ""
+msgstr "基底類別：{py:obj}`tkinter.Widget`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkImageViewerWidget.py:35
 msgid "Use GetImageViewer() to get the vtkImageViewer."

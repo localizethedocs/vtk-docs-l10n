@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:1
 msgid "{py:mod}`vtkmodules.util.data_model`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.util.data_model`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:7
 msgid ""
@@ -221,7 +221,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:669
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:717
 msgid "Bases: {py:obj}`object`"
-msgstr ""
+msgstr "基底類別：{py:obj}`object`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:119
 msgid ""
@@ -332,28 +332,36 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.FieldDataBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkFieldData`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.FieldDataBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkFieldData`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:257
 msgid "Bases: {py:obj}`vtkmodules.util.data_model.FieldDataBase`"
-msgstr ""
+msgstr "基底類別：{py:obj}`vtkmodules.util.data_model.FieldDataBase`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:264
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkDataSetAttributes`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:"
+"obj}`vtkmodules.vtkCommonDataModel.vtkDataSetAttributes`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:279
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkPointData`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:"
+"obj}`vtkmodules.vtkCommonDataModel.vtkPointData`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:286
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkCellData`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.DataSetAttributesBase`, {py:"
+"obj}`vtkmodules.vtkCommonDataModel.vtkCellData`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:357
 msgid "Rescans the contained dataset to update the internal list of arrays."
@@ -427,7 +435,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:501
 msgid "Bases: {py:obj}`vtkmodules.util.data_model.DataSet`"
-msgstr ""
+msgstr "基底類別：{py:obj}`vtkmodules.util.data_model.DataSet`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:506
 msgid ""
@@ -441,6 +449,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
 "vtkCommonDataModel.vtkUnstructuredGrid`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkUnstructuredGrid`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:530
 msgid ""
@@ -454,6 +464,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
 "vtkCommonDataModel.vtkImageData`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkImageData`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:554
 msgid ""
@@ -473,6 +485,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
 "vtkCommonDataModel.vtkPolyData`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkPolyData`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:578
 msgid ""
@@ -486,6 +500,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
 "vtkCommonDataModel.vtkRectilinearGrid`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkRectilinearGrid`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:626
 msgid ""
@@ -545,30 +561,40 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSet`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSet`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:796
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSetCollection`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkPartitionedDataSetCollection`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:811
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkOverlappingAMR`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkOverlappingAMR`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:818
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
 "`vtkmodules.vtkCommonDataModel.vtkMultiBlockDataSet`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.CompositeDataSetBase`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkMultiBlockDataSet`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:825
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
 "vtkCommonDataModel.vtkStructuredGrid`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkStructuredGrid`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:830
 msgid ""

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:1
 msgid "{py:mod}`vtkmodules.numpy_interface.vtk_partitioned_array`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.numpy_interface.vtk_partitioned_array`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:7
 msgid "VTKPartitionedArray — numpy-compatible wrapper for composite datasets."
@@ -53,6 +53,8 @@ msgid ""
 "{py:obj}`VTKPartitionedArray <vtkmodules.numpy_interface."
 "vtk_partitioned_array.VTKPartitionedArray>`"
 msgstr ""
+"{py:obj}`VTKPartitionedArray <vtkmodules.numpy_interface."
+"vtk_partitioned_array.VTKPartitionedArray>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:259
@@ -76,6 +78,8 @@ msgid ""
 "{py:obj}`bitwise_or <vtkmodules.numpy_interface.vtk_partitioned_array."
 "bitwise_or>`"
 msgstr ""
+"{py:obj}`bitwise_or <vtkmodules.numpy_interface.vtk_partitioned_array."
+"bitwise_or>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:32
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:896
@@ -87,7 +91,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:34
 msgid "{py:obj}`sum <vtkmodules.numpy_interface.vtk_partitioned_array.sum>`"
-msgstr ""
+msgstr "{py:obj}`sum <vtkmodules.numpy_interface.vtk_partitioned_array.sum>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:36
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:903
@@ -96,7 +100,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:38
 msgid "{py:obj}`max <vtkmodules.numpy_interface.vtk_partitioned_array.max>`"
-msgstr ""
+msgstr "{py:obj}`max <vtkmodules.numpy_interface.vtk_partitioned_array.max>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:40
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:910
@@ -105,7 +109,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:42
 msgid "{py:obj}`min <vtkmodules.numpy_interface.vtk_partitioned_array.min>`"
-msgstr ""
+msgstr "{py:obj}`min <vtkmodules.numpy_interface.vtk_partitioned_array.min>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:44
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:917
@@ -114,7 +118,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:46
 msgid "{py:obj}`all <vtkmodules.numpy_interface.vtk_partitioned_array.all>`"
-msgstr ""
+msgstr "{py:obj}`all <vtkmodules.numpy_interface.vtk_partitioned_array.all>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:48
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:924
@@ -123,7 +127,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:50
 msgid "{py:obj}`mean <vtkmodules.numpy_interface.vtk_partitioned_array.mean>`"
-msgstr ""
+msgstr "{py:obj}`mean <vtkmodules.numpy_interface.vtk_partitioned_array.mean>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:52
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:931
@@ -132,7 +136,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:54
 msgid "{py:obj}`var <vtkmodules.numpy_interface.vtk_partitioned_array.var>`"
-msgstr ""
+msgstr "{py:obj}`var <vtkmodules.numpy_interface.vtk_partitioned_array.var>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:56
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:938
@@ -141,7 +145,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:58
 msgid "{py:obj}`std <vtkmodules.numpy_interface.vtk_partitioned_array.std>`"
-msgstr ""
+msgstr "{py:obj}`std <vtkmodules.numpy_interface.vtk_partitioned_array.std>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:60
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:945
@@ -152,6 +156,7 @@ msgstr ""
 msgid ""
 "{py:obj}`shape <vtkmodules.numpy_interface.vtk_partitioned_array.shape>`"
 msgstr ""
+"{py:obj}`shape <vtkmodules.numpy_interface.vtk_partitioned_array.shape>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:64
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:952
@@ -163,6 +168,8 @@ msgid ""
 "{py:obj}`flatnonzero <vtkmodules.numpy_interface.vtk_partitioned_array."
 "flatnonzero>`"
 msgstr ""
+"{py:obj}`flatnonzero <vtkmodules.numpy_interface.vtk_partitioned_array."
+"flatnonzero>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:68
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:959
@@ -175,6 +182,8 @@ msgid ""
 "{py:obj}`_like_VTKPartitionedArray <vtkmodules.numpy_interface."
 "vtk_partitioned_array._like_VTKPartitionedArray>`"
 msgstr ""
+"{py:obj}`_like_VTKPartitionedArray <vtkmodules.numpy_interface."
+"vtk_partitioned_array._like_VTKPartitionedArray>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:72
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:966
@@ -186,6 +195,8 @@ msgid ""
 "{py:obj}`zeros_like <vtkmodules.numpy_interface.vtk_partitioned_array."
 "zeros_like>`"
 msgstr ""
+"{py:obj}`zeros_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"zeros_like>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:76
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:973
@@ -198,6 +209,8 @@ msgid ""
 "{py:obj}`ones_like <vtkmodules.numpy_interface.vtk_partitioned_array."
 "ones_like>`"
 msgstr ""
+"{py:obj}`ones_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"ones_like>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:80
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:980
@@ -210,6 +223,8 @@ msgid ""
 "{py:obj}`empty_like <vtkmodules.numpy_interface.vtk_partitioned_array."
 "empty_like>`"
 msgstr ""
+"{py:obj}`empty_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"empty_like>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:84
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:987
@@ -221,6 +236,7 @@ msgstr ""
 msgid ""
 "{py:obj}`nonzero <vtkmodules.numpy_interface.vtk_partitioned_array.nonzero>`"
 msgstr ""
+"{py:obj}`nonzero <vtkmodules.numpy_interface.vtk_partitioned_array.nonzero>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:88
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:994
@@ -233,6 +249,7 @@ msgstr ""
 msgid ""
 "{py:obj}`where <vtkmodules.numpy_interface.vtk_partitioned_array.where>`"
 msgstr ""
+"{py:obj}`where <vtkmodules.numpy_interface.vtk_partitioned_array.where>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:92
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1001
@@ -247,7 +264,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:94
 msgid "{py:obj}`isin <vtkmodules.numpy_interface.vtk_partitioned_array.isin>`"
-msgstr ""
+msgstr "{py:obj}`isin <vtkmodules.numpy_interface.vtk_partitioned_array.isin>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:96
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1008
@@ -257,7 +274,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:98
 msgid "{py:obj}`any <vtkmodules.numpy_interface.vtk_partitioned_array.any>`"
-msgstr ""
+msgstr "{py:obj}`any <vtkmodules.numpy_interface.vtk_partitioned_array.any>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:100
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1015
@@ -266,7 +283,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:102
 msgid "{py:obj}`prod <vtkmodules.numpy_interface.vtk_partitioned_array.prod>`"
-msgstr ""
+msgstr "{py:obj}`prod <vtkmodules.numpy_interface.vtk_partitioned_array.prod>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:104
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1022
@@ -277,6 +294,7 @@ msgstr ""
 msgid ""
 "{py:obj}`round_ <vtkmodules.numpy_interface.vtk_partitioned_array.round_>`"
 msgstr ""
+"{py:obj}`round_ <vtkmodules.numpy_interface.vtk_partitioned_array.round_>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:108
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1029
@@ -285,7 +303,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:110
 msgid "{py:obj}`clip <vtkmodules.numpy_interface.vtk_partitioned_array.clip>`"
-msgstr ""
+msgstr "{py:obj}`clip <vtkmodules.numpy_interface.vtk_partitioned_array.clip>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:112
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1036
@@ -294,7 +312,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:114
 msgid "{py:obj}`sort <vtkmodules.numpy_interface.vtk_partitioned_array.sort>`"
-msgstr ""
+msgstr "{py:obj}`sort <vtkmodules.numpy_interface.vtk_partitioned_array.sort>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:116
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1043
@@ -305,6 +323,7 @@ msgstr ""
 msgid ""
 "{py:obj}`argmin <vtkmodules.numpy_interface.vtk_partitioned_array.argmin>`"
 msgstr ""
+"{py:obj}`argmin <vtkmodules.numpy_interface.vtk_partitioned_array.argmin>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:120
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1050
@@ -315,6 +334,7 @@ msgstr ""
 msgid ""
 "{py:obj}`argmax <vtkmodules.numpy_interface.vtk_partitioned_array.argmax>`"
 msgstr ""
+"{py:obj}`argmax <vtkmodules.numpy_interface.vtk_partitioned_array.argmax>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:124
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1057
@@ -325,6 +345,7 @@ msgstr ""
 msgid ""
 "{py:obj}`cumsum <vtkmodules.numpy_interface.vtk_partitioned_array.cumsum>`"
 msgstr ""
+"{py:obj}`cumsum <vtkmodules.numpy_interface.vtk_partitioned_array.cumsum>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:128
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1064
@@ -335,6 +356,7 @@ msgstr ""
 msgid ""
 "{py:obj}`cumprod <vtkmodules.numpy_interface.vtk_partitioned_array.cumprod>`"
 msgstr ""
+"{py:obj}`cumprod <vtkmodules.numpy_interface.vtk_partitioned_array.cumprod>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:132
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1071
@@ -345,6 +367,7 @@ msgstr ""
 msgid ""
 "{py:obj}`unique <vtkmodules.numpy_interface.vtk_partitioned_array.unique>`"
 msgstr ""
+"{py:obj}`unique <vtkmodules.numpy_interface.vtk_partitioned_array.unique>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:136
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1078
@@ -356,6 +379,8 @@ msgid ""
 "{py:obj}`concatenate <vtkmodules.numpy_interface.vtk_partitioned_array."
 "concatenate>`"
 msgstr ""
+"{py:obj}`concatenate <vtkmodules.numpy_interface.vtk_partitioned_array."
+"concatenate>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:140
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1085
@@ -367,6 +392,8 @@ msgid ""
 "{py:obj}`expand_dims <vtkmodules.numpy_interface.vtk_partitioned_array."
 "expand_dims>`"
 msgstr ""
+"{py:obj}`expand_dims <vtkmodules.numpy_interface.vtk_partitioned_array."
+"expand_dims>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:144
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1092
@@ -382,6 +409,8 @@ msgid ""
 "{py:obj}`count_nonzero <vtkmodules.numpy_interface.vtk_partitioned_array."
 "count_nonzero>`"
 msgstr ""
+"{py:obj}`count_nonzero <vtkmodules.numpy_interface.vtk_partitioned_array."
+"count_nonzero>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:148
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1099
@@ -393,6 +422,8 @@ msgid ""
 "{py:obj}`full_like <vtkmodules.numpy_interface.vtk_partitioned_array."
 "full_like>`"
 msgstr ""
+"{py:obj}`full_like <vtkmodules.numpy_interface.vtk_partitioned_array."
+"full_like>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:152
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1106
@@ -401,7 +432,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:154
 msgid "{py:obj}`copy <vtkmodules.numpy_interface.vtk_partitioned_array.copy>`"
-msgstr ""
+msgstr "{py:obj}`copy <vtkmodules.numpy_interface.vtk_partitioned_array.copy>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:156
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1113
@@ -412,6 +443,7 @@ msgstr ""
 msgid ""
 "{py:obj}`average <vtkmodules.numpy_interface.vtk_partitioned_array.average>`"
 msgstr ""
+"{py:obj}`average <vtkmodules.numpy_interface.vtk_partitioned_array.average>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:160
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1120
@@ -423,6 +455,8 @@ msgid ""
 "{py:obj}`histogram <vtkmodules.numpy_interface.vtk_partitioned_array."
 "histogram>`"
 msgstr ""
+"{py:obj}`histogram <vtkmodules.numpy_interface.vtk_partitioned_array."
+"histogram>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:164
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1127
@@ -434,6 +468,8 @@ msgid ""
 "{py:obj}`bincount <vtkmodules.numpy_interface.vtk_partitioned_array."
 "bincount>`"
 msgstr ""
+"{py:obj}`bincount <vtkmodules.numpy_interface.vtk_partitioned_array."
+"bincount>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:168
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_partitioned_array.py:1134
@@ -449,30 +485,40 @@ msgid ""
 "{py:obj}`_builtin_min <vtkmodules.numpy_interface.vtk_partitioned_array."
 "_builtin_min>`"
 msgstr ""
+"{py:obj}`_builtin_min <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_min>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:182
 msgid ""
 "{py:obj}`_builtin_max <vtkmodules.numpy_interface.vtk_partitioned_array."
 "_builtin_max>`"
 msgstr ""
+"{py:obj}`_builtin_max <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_max>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:186
 msgid ""
 "{py:obj}`_builtin_sum <vtkmodules.numpy_interface.vtk_partitioned_array."
 "_builtin_sum>`"
 msgstr ""
+"{py:obj}`_builtin_sum <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_sum>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:190
 msgid ""
 "{py:obj}`_builtin_all <vtkmodules.numpy_interface.vtk_partitioned_array."
 "_builtin_all>`"
 msgstr ""
+"{py:obj}`_builtin_all <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_all>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:194
 msgid ""
 "{py:obj}`_builtin_any <vtkmodules.numpy_interface.vtk_partitioned_array."
 "_builtin_any>`"
 msgstr ""
+"{py:obj}`_builtin_any <vtkmodules.numpy_interface.vtk_partitioned_array."
+"_builtin_any>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:200
 msgid "API"
@@ -488,7 +534,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:256
 msgid "Bases: {py:obj}`object`"
-msgstr ""
+msgstr "基底類別：{py:obj}`object`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.md:261
 msgid "Initialization"

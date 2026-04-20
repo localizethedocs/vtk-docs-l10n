@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.md:1
 msgid "{py:mod}`vtkmodules.tk.vtkTkRenderWindowInteractor`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.tk.vtkTkRenderWindowInteractor`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWindowInteractor.py:7
 msgid ""
@@ -46,6 +46,8 @@ msgid ""
 "{py:obj}`vtkTkRenderWindowInteractor <vtkmodules.tk."
 "vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor>`"
 msgstr ""
+"{py:obj}`vtkTkRenderWindowInteractor <vtkmodules.tk."
+"vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWindowInteractor.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWindowInteractor.py:45
@@ -61,6 +63,8 @@ msgid ""
 "{py:obj}`vtkRenderWindowInteractorConeExample <vtkmodules.tk."
 "vtkTkRenderWindowInteractor.vtkRenderWindowInteractorConeExample>`"
 msgstr ""
+"{py:obj}`vtkRenderWindowInteractorConeExample <vtkmodules.tk."
+"vtkTkRenderWindowInteractor.vtkRenderWindowInteractorConeExample>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWindowInteractor.py:32
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWindowInteractor.py:242
@@ -73,7 +77,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.md:42
 msgid "Bases: {py:obj}`tkinter.Widget`"
-msgstr ""
+msgstr "基底類別：{py:obj}`tkinter.Widget`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWindowInteractor.py:47
 msgid "Use GetRenderWindow() to get the vtkRenderWindow."

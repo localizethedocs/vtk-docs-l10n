@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:1
 msgid "Build Settings"
-msgstr ""
+msgstr "建置設定"
 
 #: ../../../build_instructions/build_settings.md:3
 msgid ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:76
 msgid "OpenGL related build options:"
-msgstr ""
+msgstr "OpenGL 相關的建置選項："
 
 #: ../../../build_instructions/build_settings.md:78
 msgid ""
@@ -213,15 +213,15 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:82
 msgid "Android: `vtkEGLRenderWindow` is the default."
-msgstr ""
+msgstr "Android：`vtkEGLRenderWindow` 為默認值。"
 
 #: ../../../build_instructions/build_settings.md:83
 msgid "macOS: `vtkCocoaRenderWindow` is the default."
-msgstr ""
+msgstr "macOS：`vtkCocoaRenderWindow` 為默認值。"
 
 #: ../../../build_instructions/build_settings.md:84
 msgid "iOS: `vtkIOSRenderWindow` is the default."
-msgstr ""
+msgstr "iOS：`vtkIOSRenderWindow` 為默認值。"
 
 #: ../../../build_instructions/build_settings.md:85
 msgid "WebAssembly: `vtkWebAssemblyOpenGLRenderWindow` is the default."
@@ -243,16 +243,16 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:92
 msgid "`vtkXOpenGLRenderWindow`"
-msgstr ""
+msgstr "`vtkXOpenGLRenderWindow`"
 
 #: ../../../build_instructions/build_settings.md:93
 msgid "`vtkEGLRenderWindow`"
-msgstr ""
+msgstr "`vtkEGLRenderWindow`"
 
 #: ../../../build_instructions/build_settings.md:94
 #: ../../../build_instructions/build_settings.md:99
 msgid "`vtkOSOpenGLRenderWindow`"
-msgstr ""
+msgstr "`vtkOSOpenGLRenderWindow`"
 
 #: ../../../build_instructions/build_settings.md:96
 msgid "On Windows:"
@@ -260,7 +260,7 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:98
 msgid "`vtkWin32OpenGLRenderWindow`"
-msgstr ""
+msgstr "`vtkWin32OpenGLRenderWindow`"
 
 #: ../../../build_instructions/build_settings.md:101
 msgid ""
@@ -697,7 +697,7 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:282
 msgid "`vtkArrayDispatch` related options:"
-msgstr ""
+msgstr "`vtkArrayDispatch` 相關的選項："
 
 #: ../../../build_instructions/build_settings.md:284
 msgid ""
@@ -789,7 +789,7 @@ msgstr "範例："
 
 #: ../../../build_instructions/build_settings.md:326
 msgid "ccmake -D HDF5_ROOT:PATH=/home/user/myhdf5 ../vtk/sources\n"
-msgstr ""
+msgstr "ccmake -D HDF5_ROOT:PATH=/home/user/myhdf5 ../vtk/sources\n"
 
 #: ../../../build_instructions/build_settings.md:331
 msgid ""
@@ -831,7 +831,7 @@ msgstr ""
 
 #: ../../../build_instructions/build_settings.md:345
 msgid "`NO`: Do not build the module."
-msgstr ""
+msgstr "`NO`：不要建置此模組。"
 
 #: ../../../build_instructions/build_settings.md:347
 msgid "If any `YES` module requires a `NO` module, an error is raised."
