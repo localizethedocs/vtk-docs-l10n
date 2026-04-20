@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/Rendering/VR/README.md:1
 msgid "VTK::RenderingVR"
-msgstr ""
+msgstr "VTK::RenderingVR"
 
 #: ../../../modules/vtk-modules/Rendering/VR/README.md:2
 msgid "vtkRenderingVR - Virtual reality support for VTK"
@@ -87,6 +87,8 @@ msgid ""
 "`vtkMatrix4x4::Multiply4x4(BtoCMatrixInput, AtoBMatrixInput, "
 "AtoCMatrixOutput)`"
 msgstr ""
+"`vtkMatrix4x4::Multiply4x4(BtoCMatrixInput, AtoBMatrixInput, "
+"AtoCMatrixOutput)`"
 
 #: ../../../modules/vtk-modules/Rendering/VR/README.md:37
 msgid "Model -> World -> Physical -> Left/RightEye -> Projection"

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:1
 msgid "{py:mod}`vtkmodules.tk.vtkTkRenderWidget`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.tk.vtkTkRenderWidget`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:7
 msgid "A simple vtkTkRenderWidget for tkinter."
@@ -100,6 +100,8 @@ msgid ""
 "{py:obj}`vtkTkRenderWidget <vtkmodules.tk.vtkTkRenderWidget."
 "vtkTkRenderWidget>`"
 msgstr ""
+"{py:obj}`vtkTkRenderWidget <vtkmodules.tk.vtkTkRenderWidget."
+"vtkTkRenderWidget>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:20
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:45
@@ -115,6 +117,8 @@ msgid ""
 "{py:obj}`vtkRenderWidgetConeExample <vtkmodules.tk.vtkTkRenderWidget."
 "vtkRenderWidgetConeExample>`"
 msgstr ""
+"{py:obj}`vtkRenderWidgetConeExample <vtkmodules.tk.vtkTkRenderWidget."
+"vtkRenderWidgetConeExample>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:32
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:250
@@ -127,7 +131,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.md:42
 msgid "Bases: {py:obj}`tkinter.Widget`"
-msgstr ""
+msgstr "基底類別：{py:obj}`tkinter.Widget`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/tk/vtkTkRenderWidget.py:47
 msgid "Use GetRenderWindow() to get the vtkRenderWindow."

@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1
 msgid "{py:mod}`vtkmodules.numpy_interface.dataset_adapter`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.numpy_interface.dataset_adapter`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:7
 msgid ""
@@ -516,7 +516,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:483
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:795
 msgid "Bases: {py:obj}`object`"
-msgstr ""
+msgstr "基底類別：{py:obj}`object`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:257
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:327
@@ -546,7 +546,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:394
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:465
 msgid "Bases: {py:obj}`type`"
-msgstr ""
+msgstr "基底類別：{py:obj}`type`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:314
 msgid ""
@@ -572,7 +572,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:322
 msgid "Bases: {py:obj}`numpy.ndarray`"
-msgstr ""
+msgstr "基底類別：{py:obj}`numpy.ndarray`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:338
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:346
@@ -726,6 +726,8 @@ msgstr ""
 msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface.dataset_adapter."
+"VTKObjectWrapper`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:685
 msgid "Implements the [] operator. Accepts an array name or index."
@@ -787,6 +789,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter."
 "CompositeDataIterator`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface.dataset_adapter."
+"CompositeDataIterator`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:891
 msgid ""
@@ -812,6 +816,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1429
 msgid "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataObject`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:941
 msgid "Returns the row data as a DataSetAttributes instance."
@@ -889,7 +894,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1223
 msgid "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataSet`"
-msgstr ""
+msgstr "基底類別：{py:obj}`vtkmodules.numpy_interface.dataset_adapter.DataSet`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1239
 msgid ""
@@ -905,6 +910,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:1299
 msgid "Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter.PointSet`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface.dataset_adapter.PointSet`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:1281
 msgid "Returns the polys as a VTKArray instance."
