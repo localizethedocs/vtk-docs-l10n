@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:4
 msgid "vtkModuleWrapPython"
-msgstr ""
+msgstr "vtkModuleWrapPython"
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:6
 msgid "APIs for wrapping modules for Python"
@@ -340,6 +340,11 @@ msgid ""
 "  [MODULE_DESTINATION <destination>]\n"
 "  [COMPONENT <component>])"
 msgstr ""
+"vtk_module_add_python_package(<module>\n"
+"  PACKAGE <package>\n"
+"  FILES <files>...\n"
+"  [MODULE_DESTINATION <destination>]\n"
+"  [COMPONENT <component>])"
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:1255
 msgid ""

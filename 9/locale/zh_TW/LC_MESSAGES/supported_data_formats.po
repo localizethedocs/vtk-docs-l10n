@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:30
 msgid "Extension: .H"
-msgstr ""
+msgstr "副檔名：.H"
 
 #: ../../../supported_data_formats.md:32
 msgid ""
@@ -96,7 +96,7 @@ msgstr ""
 #: ../../../supported_data_formats.md:461
 #: ../../../supported_data_formats.md:493
 msgid "module: {bdg-primary-line}`VTK::IOImage`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOImage`"
 
 #: ../../../supported_data_formats.md:36
 msgid "[Alembic](http://www.alembic.io/) scene format:"
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:37
 msgid "Extension: .abc"
-msgstr ""
+msgstr "副檔名：.abc"
 
 #: ../../../supported_data_formats.md:39
 msgid ""
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:41
 msgid "module: {bdg-primary-line}`VTK::IOAlembic`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOAlembic`"
 
 #: ../../../supported_data_formats.md:43
 msgid "AVI video files (Windows only):"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:44
 msgid "Extension: .avi"
-msgstr ""
+msgstr "副檔名：.avi"
 
 #: ../../../supported_data_formats.md:46
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:48 ../../../supported_data_formats.md:256
 msgid "module: {bdg-primary-line}`VTK::IOMovie`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOMovie`"
 
 #: ../../../supported_data_formats.md:50
 msgid "LIDAR data using [PDAL](https://pdal.io/en/latest/stages/readers.html):"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:55
 msgid "module: {bdg-primary-line}`VTK::IOPDAL`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOPDAL`"
 
 #: ../../../supported_data_formats.md:57
 msgid "Windows BMP file:"
@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:58
 msgid "Extension: .bmp"
-msgstr ""
+msgstr "副檔名：.bmp"
 
 #: ../../../supported_data_formats.md:60
 msgid ""
@@ -195,7 +195,7 @@ msgstr ""
 #: ../../../supported_data_formats.md:215
 #: ../../../supported_data_formats.md:321
 msgid "module: {bdg-primary-line}`VTK::IOGeometry`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOGeometry`"
 
 #: ../../../supported_data_formats.md:73
 msgid "MotionFX motion definitions cfg files:"
@@ -203,7 +203,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:74
 msgid "Extension: .cfg"
-msgstr ""
+msgstr "副檔名：.cfg"
 
 #: ../../../supported_data_formats.md:76
 msgid ""
@@ -213,7 +213,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:78
 msgid "module: {bdg-primary-line}`VTK::IOMotionFX`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOMotionFX`"
 
 #: ../../../supported_data_formats.md:80
 msgid "Computer Graphics Metafile:"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:81
 msgid "Extension: .cgm"
-msgstr ""
+msgstr "副檔名：.cgm"
 
 #: ../../../supported_data_formats.md:83
 msgid ""
@@ -235,7 +235,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:88 ../../../supported_data_formats.md:95
 msgid "Extension: .cgns"
-msgstr ""
+msgstr "副檔名：.cgns"
 
 #: ../../../supported_data_formats.md:90
 msgid ""
@@ -245,7 +245,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:92 ../../../supported_data_formats.md:99
 msgid "module: {bdg-primary-line}`VTK::IOCGNSReader`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOCGNSReader`"
 
 #: ../../../supported_data_formats.md:94
 msgid "[CGNS](https://cgns.github.io/cgns-modern.github.io/index.html) format:"
@@ -263,7 +263,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:102
 msgid "Extension: .d3plot"
-msgstr ""
+msgstr "副檔名：.d3plot"
 
 #: ../../../supported_data_formats.md:104
 msgid ""
@@ -273,7 +273,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:106
 msgid "module: {bdg-primary-line}`VTK::IOLSDyna`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOLSDyna`"
 
 #: ../../../supported_data_formats.md:108
 msgid "Tabulat data in Tecplot ascii format:"
@@ -291,7 +291,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:113
 msgid "module: {bdg-primary-line}`VTK::IOTecplotTable`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOTecplotTable`"
 
 #: ../../../supported_data_formats.md:115
 msgid "FLUENT CFF format:"
@@ -309,7 +309,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:120
 msgid "module: {bdg-primary-line}`VTK::IOFLUENTCFF`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOFLUENTCFF`"
 
 #: ../../../supported_data_formats.md:122
 msgid "DICOM medical images:"
@@ -317,7 +317,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:123
 msgid "Extension: .dcm"
-msgstr ""
+msgstr "副檔名：.dcm"
 
 #: ../../../supported_data_formats.md:125
 msgid ""
@@ -331,7 +331,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:130
 msgid "Extension: .dem"
-msgstr ""
+msgstr "副檔名：.dem"
 
 #: ../../../supported_data_formats.md:132
 msgid ""
@@ -345,7 +345,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:137
 msgid "Extension: .exdg"
-msgstr ""
+msgstr "副檔名：.exdg"
 
 #: ../../../supported_data_formats.md:139
 msgid ""
@@ -356,7 +356,7 @@ msgstr ""
 #: ../../../supported_data_formats.md:141
 #: ../../../supported_data_formats.md:159
 msgid "module: {bdg-primary-line}`VTK::IOIOSS`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOIOSS`"
 
 #: ../../../supported_data_formats.md:143
 msgid "Movie.BYU files:"
@@ -364,7 +364,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:144
 msgid "Extension: .g"
-msgstr ""
+msgstr "副檔名：.g"
 
 #: ../../../supported_data_formats.md:146
 msgid ""
@@ -387,6 +387,8 @@ msgid ""
 "Extension: .g .e .h .gc .ex2 .ex2v2 .exo .gen .par .exoII .exii .ex-"
 "timeseries .cgns"
 msgstr ""
+"副檔名：.g .e .h .gc .ex2 .ex2v2 .exo .gen .par .exoII .exii .ex-timeseries ."
+"cgns"
 
 #: ../../../supported_data_formats.md:155
 msgid ""
@@ -421,7 +423,7 @@ msgstr ""
 #: ../../../supported_data_formats.md:169
 #: ../../../supported_data_formats.md:176
 msgid "Extension: .h5"
-msgstr ""
+msgstr "副檔名：.h5"
 
 #: ../../../supported_data_formats.md:171
 msgid ""
@@ -431,7 +433,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:173
 msgid "module: {bdg-primary-line}`VTK::IOVeraOut`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOVeraOut`"
 
 #: ../../../supported_data_formats.md:175
 msgid "[CONVERGE CFD](https://convergecfd.com) format:"
@@ -445,7 +447,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:180
 msgid "module: {bdg-primary-line}`VTK::IOCONVERGECFD`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOCONVERGECFD`"
 
 #: ../../../supported_data_formats.md:182
 msgid "H5Part particle files:"
@@ -453,7 +455,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:183
 msgid "Extension: .h5part"
-msgstr ""
+msgstr "副檔名：.h5part"
 
 #: ../../../supported_data_formats.md:185
 msgid ""
@@ -463,7 +465,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:187
 msgid "module: {bdg-primary-line}`VTK::IOH5Part`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOH5Part`"
 
 #: ../../../supported_data_formats.md:189
 msgid "hdf files generated from xRage, a LANL physics code:"
@@ -471,7 +473,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:190
 msgid "Extension: .h5rage"
-msgstr ""
+msgstr "副檔名：.h5rage"
 
 #: ../../../supported_data_formats.md:192
 msgid ""
@@ -481,7 +483,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:194
 msgid "module: {bdg-primary-line}`VTK::IOH5Rage`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOH5Rage`"
 
 #: ../../../supported_data_formats.md:196
 msgid "GE TRUCHAS format:"
@@ -499,7 +501,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:201
 msgid "module: {bdg-primary-line}`VTK::IOTRUCHAS`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOTRUCHAS`"
 
 #: ../../../supported_data_formats.md:203
 msgid "Radiance HDR file:"
@@ -507,7 +509,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:204
 msgid "Extension: .hdr"
-msgstr ""
+msgstr "副檔名：.hdr"
 
 #: ../../../supported_data_formats.md:206
 msgid ""
@@ -521,7 +523,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:211
 msgid "Extension: .inp"
-msgstr ""
+msgstr "副檔名：.inp"
 
 #: ../../../supported_data_formats.md:213
 msgid ""
@@ -555,7 +557,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:227
 msgid "Extension: .las"
-msgstr ""
+msgstr "副檔名：.las"
 
 #: ../../../supported_data_formats.md:229
 msgid ""
@@ -565,7 +567,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:231
 msgid "module: {bdg-primary-line}`VTK::IOLAS`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOLAS`"
 
 #: ../../../supported_data_formats.md:233
 msgid "binary UNC meta image data:"
@@ -593,7 +595,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:243
 msgid "Extension: .mnc"
-msgstr ""
+msgstr "副檔名：.mnc"
 
 #: ../../../supported_data_formats.md:245
 msgid ""
@@ -612,7 +614,7 @@ msgstr ""
 #: ../../../supported_data_formats.md:445
 #: ../../../supported_data_formats.md:486
 msgid "module: {bdg-primary-line}`VTK::IOMINC`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOMINC`"
 
 #: ../../../supported_data_formats.md:251
 msgid "H.264-encoded MP4 files (Windows only):"
@@ -620,7 +622,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:252
 msgid "Extension: .mp4"
-msgstr ""
+msgstr "副檔名：.mp4"
 
 #: ../../../supported_data_formats.md:254
 msgid ""
@@ -672,7 +674,7 @@ msgstr ""
 #: ../../../supported_data_formats.md:314
 #: ../../../supported_data_formats.md:408
 msgid "module: {bdg-primary-line}`VTK::IONetCDF`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IONetCDF`"
 
 #: ../../../supported_data_formats.md:272
 msgid "CAM NetCDF (Unstructured):"
@@ -746,7 +748,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:317
 msgid "Extension: .neu"
-msgstr ""
+msgstr "副檔名：.neu"
 
 #: ../../../supported_data_formats.md:319
 msgid ""
@@ -794,7 +796,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:340
 msgid "Extension: .obj"
-msgstr ""
+msgstr "副檔名：.obj"
 
 #: ../../../supported_data_formats.md:342
 msgid ""
@@ -814,7 +816,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:349
 msgid "Extension: .ogv"
-msgstr ""
+msgstr "副檔名：.ogv"
 
 #: ../../../supported_data_formats.md:351
 msgid ""
@@ -824,7 +826,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:353
 msgid "module: {bdg-primary-line}`VTK::IOOggTheora`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOOggTheora`"
 
 #: ../../../supported_data_formats.md:355
 msgid ""
@@ -848,7 +850,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:363
 msgid "Extension: .omf"
-msgstr ""
+msgstr "副檔名：.omf"
 
 #: ../../../supported_data_formats.md:365
 msgid ""
@@ -858,7 +860,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:367
 msgid "module: {bdg-primary-line}`VTK::IOOMF`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOOMF`"
 
 #: ../../../supported_data_formats.md:369
 msgid "PIO (Parallel Input Output) data files:"
@@ -866,7 +868,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:370
 msgid "Extension: .pio"
-msgstr ""
+msgstr "副檔名：.pio"
 
 #: ../../../supported_data_formats.md:372
 msgid ""
@@ -876,7 +878,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:374
 msgid "module: {bdg-primary-line}`VTK::IOPIO`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOPIO`"
 
 #: ../../../supported_data_formats.md:376
 msgid "Stanford University PLY format:"
@@ -884,7 +886,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:377
 msgid "Extension: .ply"
-msgstr ""
+msgstr "副檔名：.ply"
 
 #: ../../../supported_data_formats.md:379
 msgid ""
@@ -900,7 +902,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:383
 msgid "module: {bdg-primary-line}`VTK::IOPLY`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOPLY`"
 
 #: ../../../supported_data_formats.md:385
 msgid "PNG file:"
@@ -908,7 +910,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:386
 msgid "Extension: .png"
-msgstr ""
+msgstr "副檔名：.png"
 
 #: ../../../supported_data_formats.md:388
 msgid ""
@@ -948,7 +950,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:404
 msgid "Extension: .pop.ncdf .pop.nc"
-msgstr ""
+msgstr "副檔名：.pop.ncdf .pop.nc"
 
 #: ../../../supported_data_formats.md:406
 msgid ""
@@ -962,7 +964,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:411
 msgid "Extension: .ps"
-msgstr ""
+msgstr "副檔名：.ps"
 
 #: ../../../supported_data_formats.md:413
 msgid ""
@@ -986,7 +988,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:422
 msgid "module: {bdg-primary-line}`VTK::IOSegY`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOSegY`"
 
 #: ../../../supported_data_formats.md:424
 msgid "SLC volume file:"
@@ -994,7 +996,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:425
 msgid "Extension: .slc"
-msgstr ""
+msgstr "副檔名：.slc"
 
 #: ../../../supported_data_formats.md:427
 msgid ""
@@ -1018,7 +1020,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:436
 msgid "module: {bdg-primary-line}`VTK::IOOCCT`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOOCCT`"
 
 #: ../../../supported_data_formats.md:438
 msgid "[MNI](https://github.com/BIC-MNI) tag files:"
@@ -1026,7 +1028,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:439
 msgid "Extension: .tag"
-msgstr ""
+msgstr "副檔名：.tag"
 
 #: ../../../supported_data_formats.md:441
 msgid ""
@@ -1046,7 +1048,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:448
 msgid "Extension: .tga"
-msgstr ""
+msgstr "副檔名：.tga"
 
 #: ../../../supported_data_formats.md:450
 msgid ""
@@ -1080,7 +1082,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:464
 msgid "Extension: .vdb"
-msgstr ""
+msgstr "副檔名：.vdb"
 
 #: ../../../supported_data_formats.md:466
 msgid ""
@@ -1096,7 +1098,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:470
 msgid "module: {bdg-primary-line}`VTK::IOOpenVDB`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOOpenVDB`"
 
 #: ../../../supported_data_formats.md:472
 msgid "[VPIC](https://github.com/lanl/vpic):"
@@ -1104,7 +1106,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:473
 msgid "Extension: .vpc"
-msgstr ""
+msgstr "副檔名：.vpc"
 
 #: ../../../supported_data_formats.md:475
 msgid ""
@@ -1114,7 +1116,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:477
 msgid "module: {bdg-primary-line}`VTK::IOVPIC`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOVPIC`"
 
 #: ../../../supported_data_formats.md:479
 msgid "[MNI](https://github.com/BIC-MNI) transformation files:"
@@ -1122,7 +1124,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:480
 msgid "Extension: .xfm"
-msgstr ""
+msgstr "副檔名：.xfm"
 
 #: ../../../supported_data_formats.md:482
 msgid ""
@@ -1142,7 +1144,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:489
 msgid "Extension: .ximg"
-msgstr ""
+msgstr "副檔名：.ximg"
 
 #: ../../../supported_data_formats.md:491
 msgid ""
@@ -1173,7 +1175,7 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:502
 msgid "module: {bdg-primary-line}`VTK::IOXdmf2`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOXdmf2`"
 
 #: ../../../supported_data_formats.md:505
 msgid "Extensions: .xmf, .xdmf, .xmf3, .xdmf3"
@@ -1193,4 +1195,4 @@ msgstr ""
 
 #: ../../../supported_data_formats.md:511
 msgid "module: {bdg-primary-line}`VTK::IOXdmf3`"
-msgstr ""
+msgstr "模組：{bdg-primary-line}`VTK::IOXdmf3`"

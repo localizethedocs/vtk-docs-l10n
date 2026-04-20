@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:1
 msgid "{py:mod}`vtkmodules.numpy_interface.algorithms`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.numpy_interface.algorithms`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:7
 msgid ""
@@ -44,16 +44,20 @@ msgid ""
 "{py:obj}`_lookup_mpi_type <vtkmodules.numpy_interface.algorithms."
 "_lookup_mpi_type>`"
 msgstr ""
+"{py:obj}`_lookup_mpi_type <vtkmodules.numpy_interface.algorithms."
+"_lookup_mpi_type>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:22
 msgid ""
 "{py:obj}`_reduce_dims <vtkmodules.numpy_interface.algorithms._reduce_dims>`"
 msgstr ""
+"{py:obj}`_reduce_dims <vtkmodules.numpy_interface.algorithms._reduce_dims>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:26
 msgid ""
 "{py:obj}`global_func <vtkmodules.numpy_interface.algorithms.global_func>`"
 msgstr ""
+"{py:obj}`global_func <vtkmodules.numpy_interface.algorithms.global_func>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:28
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:432
@@ -65,6 +69,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:30
 msgid "{py:obj}`bitwise_or <vtkmodules.numpy_interface.algorithms.bitwise_or>`"
 msgstr ""
+"{py:obj}`bitwise_or <vtkmodules.numpy_interface.algorithms.bitwise_or>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:32
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:439
@@ -79,6 +84,8 @@ msgid ""
 "{py:obj}`make_point_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
 "make_point_mask_from_NaNs>`"
 msgstr ""
+"{py:obj}`make_point_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
+"make_point_mask_from_NaNs>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:36
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:446
@@ -94,6 +101,8 @@ msgid ""
 "{py:obj}`make_cell_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
 "make_cell_mask_from_NaNs>`"
 msgstr ""
+"{py:obj}`make_cell_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
+"make_cell_mask_from_NaNs>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:40
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:453
@@ -109,6 +118,8 @@ msgid ""
 "{py:obj}`make_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
 "make_mask_from_NaNs>`"
 msgstr ""
+"{py:obj}`make_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
+"make_mask_from_NaNs>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:44
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:460
@@ -123,7 +134,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:46
 msgid "{py:obj}`sum <vtkmodules.numpy_interface.algorithms.sum>`"
-msgstr ""
+msgstr "{py:obj}`sum <vtkmodules.numpy_interface.algorithms.sum>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:48
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:467
@@ -134,7 +145,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:50
 msgid "{py:obj}`max <vtkmodules.numpy_interface.algorithms.max>`"
-msgstr ""
+msgstr "{py:obj}`max <vtkmodules.numpy_interface.algorithms.max>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:52
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:474
@@ -145,7 +156,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:54
 msgid "{py:obj}`min <vtkmodules.numpy_interface.algorithms.min>`"
-msgstr ""
+msgstr "{py:obj}`min <vtkmodules.numpy_interface.algorithms.min>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:56
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:481
@@ -180,6 +191,8 @@ msgid ""
 "{py:obj}`count_per_block <vtkmodules.numpy_interface.algorithms."
 "count_per_block>`"
 msgstr ""
+"{py:obj}`count_per_block <vtkmodules.numpy_interface.algorithms."
+"count_per_block>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:68
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:502
@@ -193,6 +206,8 @@ msgid ""
 "{py:obj}`mean_per_block <vtkmodules.numpy_interface.algorithms."
 "mean_per_block>`"
 msgstr ""
+"{py:obj}`mean_per_block <vtkmodules.numpy_interface.algorithms."
+"mean_per_block>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:72
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:509
@@ -205,6 +220,7 @@ msgstr ""
 msgid ""
 "{py:obj}`max_per_block <vtkmodules.numpy_interface.algorithms.max_per_block>`"
 msgstr ""
+"{py:obj}`max_per_block <vtkmodules.numpy_interface.algorithms.max_per_block>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:76
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:516
@@ -218,6 +234,7 @@ msgstr ""
 msgid ""
 "{py:obj}`min_per_block <vtkmodules.numpy_interface.algorithms.min_per_block>`"
 msgstr ""
+"{py:obj}`min_per_block <vtkmodules.numpy_interface.algorithms.min_per_block>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:80
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:523
@@ -229,7 +246,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:82
 msgid "{py:obj}`all <vtkmodules.numpy_interface.algorithms.all>`"
-msgstr ""
+msgstr "{py:obj}`all <vtkmodules.numpy_interface.algorithms.all>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:84
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:530
@@ -244,11 +261,14 @@ msgid ""
 "{py:obj}`_local_array_count <vtkmodules.numpy_interface.algorithms."
 "_local_array_count>`"
 msgstr ""
+"{py:obj}`_local_array_count <vtkmodules.numpy_interface.algorithms."
+"_local_array_count>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:90
 msgid ""
 "{py:obj}`array_count <vtkmodules.numpy_interface.algorithms.array_count>`"
 msgstr ""
+"{py:obj}`array_count <vtkmodules.numpy_interface.algorithms.array_count>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:92
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:544
@@ -259,7 +279,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:94
 msgid "{py:obj}`mean <vtkmodules.numpy_interface.algorithms.mean>`"
-msgstr ""
+msgstr "{py:obj}`mean <vtkmodules.numpy_interface.algorithms.mean>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:96
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:551
@@ -270,7 +290,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:98
 msgid "{py:obj}`var <vtkmodules.numpy_interface.algorithms.var>`"
-msgstr ""
+msgstr "{py:obj}`var <vtkmodules.numpy_interface.algorithms.var>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:100
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:558
@@ -281,7 +301,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:102
 msgid "{py:obj}`std <vtkmodules.numpy_interface.algorithms.std>`"
-msgstr ""
+msgstr "{py:obj}`std <vtkmodules.numpy_interface.algorithms.std>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:104
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:565
@@ -292,7 +312,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:106
 msgid "{py:obj}`shape <vtkmodules.numpy_interface.algorithms.shape>`"
-msgstr ""
+msgstr "{py:obj}`shape <vtkmodules.numpy_interface.algorithms.shape>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:108
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:572
@@ -303,6 +323,7 @@ msgstr ""
 msgid ""
 "{py:obj}`make_vector <vtkmodules.numpy_interface.algorithms.make_vector>`"
 msgstr ""
+"{py:obj}`make_vector <vtkmodules.numpy_interface.algorithms.make_vector>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:112
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:579
@@ -316,6 +337,8 @@ msgid ""
 "{py:obj}`unstructured_from_composite_arrays <vtkmodules.numpy_interface."
 "algorithms.unstructured_from_composite_arrays>`"
 msgstr ""
+"{py:obj}`unstructured_from_composite_arrays <vtkmodules.numpy_interface."
+"algorithms.unstructured_from_composite_arrays>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:116
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:586
@@ -331,6 +354,7 @@ msgstr ""
 msgid ""
 "{py:obj}`flatnonzero <vtkmodules.numpy_interface.algorithms.flatnonzero>`"
 msgstr ""
+"{py:obj}`flatnonzero <vtkmodules.numpy_interface.algorithms.flatnonzero>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:120
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:593
@@ -340,7 +364,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:122
 msgid "{py:obj}`nonzero <vtkmodules.numpy_interface.algorithms.nonzero>`"
-msgstr ""
+msgstr "{py:obj}`nonzero <vtkmodules.numpy_interface.algorithms.nonzero>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:124
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:600
@@ -349,7 +373,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:126
 msgid "{py:obj}`where <vtkmodules.numpy_interface.algorithms.where>`"
-msgstr ""
+msgstr "{py:obj}`where <vtkmodules.numpy_interface.algorithms.where>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:128
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:607
@@ -367,283 +391,294 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:138
 msgid "{py:obj}`isin <vtkmodules.numpy_interface.algorithms.isin>`"
-msgstr ""
+msgstr "{py:obj}`isin <vtkmodules.numpy_interface.algorithms.isin>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:142
 msgid "{py:obj}`isnan <vtkmodules.numpy_interface.algorithms.isnan>`"
-msgstr ""
+msgstr "{py:obj}`isnan <vtkmodules.numpy_interface.algorithms.isnan>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:146
 msgid "{py:obj}`sqrt <vtkmodules.numpy_interface.algorithms.sqrt>`"
-msgstr ""
+msgstr "{py:obj}`sqrt <vtkmodules.numpy_interface.algorithms.sqrt>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:150
 msgid "{py:obj}`negative <vtkmodules.numpy_interface.algorithms.negative>`"
-msgstr ""
+msgstr "{py:obj}`negative <vtkmodules.numpy_interface.algorithms.negative>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:154
 msgid "{py:obj}`reciprocal <vtkmodules.numpy_interface.algorithms.reciprocal>`"
 msgstr ""
+"{py:obj}`reciprocal <vtkmodules.numpy_interface.algorithms.reciprocal>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:158
 msgid "{py:obj}`square <vtkmodules.numpy_interface.algorithms.square>`"
-msgstr ""
+msgstr "{py:obj}`square <vtkmodules.numpy_interface.algorithms.square>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:162
 msgid "{py:obj}`exp <vtkmodules.numpy_interface.algorithms.exp>`"
-msgstr ""
+msgstr "{py:obj}`exp <vtkmodules.numpy_interface.algorithms.exp>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:166
 msgid "{py:obj}`floor <vtkmodules.numpy_interface.algorithms.floor>`"
-msgstr ""
+msgstr "{py:obj}`floor <vtkmodules.numpy_interface.algorithms.floor>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:170
 msgid "{py:obj}`ceil <vtkmodules.numpy_interface.algorithms.ceil>`"
-msgstr ""
+msgstr "{py:obj}`ceil <vtkmodules.numpy_interface.algorithms.ceil>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:174
 msgid "{py:obj}`rint <vtkmodules.numpy_interface.algorithms.rint>`"
-msgstr ""
+msgstr "{py:obj}`rint <vtkmodules.numpy_interface.algorithms.rint>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:178
 msgid "{py:obj}`sin <vtkmodules.numpy_interface.algorithms.sin>`"
-msgstr ""
+msgstr "{py:obj}`sin <vtkmodules.numpy_interface.algorithms.sin>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:182
 msgid "{py:obj}`cos <vtkmodules.numpy_interface.algorithms.cos>`"
-msgstr ""
+msgstr "{py:obj}`cos <vtkmodules.numpy_interface.algorithms.cos>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:186
 msgid "{py:obj}`tan <vtkmodules.numpy_interface.algorithms.tan>`"
-msgstr ""
+msgstr "{py:obj}`tan <vtkmodules.numpy_interface.algorithms.tan>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:190
 msgid "{py:obj}`arcsin <vtkmodules.numpy_interface.algorithms.arcsin>`"
-msgstr ""
+msgstr "{py:obj}`arcsin <vtkmodules.numpy_interface.algorithms.arcsin>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:194
 msgid "{py:obj}`arccos <vtkmodules.numpy_interface.algorithms.arccos>`"
-msgstr ""
+msgstr "{py:obj}`arccos <vtkmodules.numpy_interface.algorithms.arccos>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:198
 msgid "{py:obj}`arctan <vtkmodules.numpy_interface.algorithms.arctan>`"
-msgstr ""
+msgstr "{py:obj}`arctan <vtkmodules.numpy_interface.algorithms.arctan>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:202
 msgid "{py:obj}`arctan2 <vtkmodules.numpy_interface.algorithms.arctan2>`"
-msgstr ""
+msgstr "{py:obj}`arctan2 <vtkmodules.numpy_interface.algorithms.arctan2>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:206
 msgid "{py:obj}`sinh <vtkmodules.numpy_interface.algorithms.sinh>`"
-msgstr ""
+msgstr "{py:obj}`sinh <vtkmodules.numpy_interface.algorithms.sinh>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:210
 msgid "{py:obj}`cosh <vtkmodules.numpy_interface.algorithms.cosh>`"
-msgstr ""
+msgstr "{py:obj}`cosh <vtkmodules.numpy_interface.algorithms.cosh>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:214
 msgid "{py:obj}`tanh <vtkmodules.numpy_interface.algorithms.tanh>`"
-msgstr ""
+msgstr "{py:obj}`tanh <vtkmodules.numpy_interface.algorithms.tanh>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:218
 msgid "{py:obj}`arcsinh <vtkmodules.numpy_interface.algorithms.arcsinh>`"
-msgstr ""
+msgstr "{py:obj}`arcsinh <vtkmodules.numpy_interface.algorithms.arcsinh>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:222
 msgid "{py:obj}`arccosh <vtkmodules.numpy_interface.algorithms.arccosh>`"
-msgstr ""
+msgstr "{py:obj}`arccosh <vtkmodules.numpy_interface.algorithms.arccosh>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:226
 msgid "{py:obj}`arctanh <vtkmodules.numpy_interface.algorithms.arctanh>`"
-msgstr ""
+msgstr "{py:obj}`arctanh <vtkmodules.numpy_interface.algorithms.arctanh>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:230
 msgid ""
 "{py:obj}`expand_dims <vtkmodules.numpy_interface.algorithms.expand_dims>`"
 msgstr ""
+"{py:obj}`expand_dims <vtkmodules.numpy_interface.algorithms.expand_dims>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:234
 msgid "{py:obj}`abs <vtkmodules.numpy_interface.algorithms.abs>`"
-msgstr ""
+msgstr "{py:obj}`abs <vtkmodules.numpy_interface.algorithms.abs>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:238
 msgid "{py:obj}`area <vtkmodules.numpy_interface.algorithms.area>`"
-msgstr ""
+msgstr "{py:obj}`area <vtkmodules.numpy_interface.algorithms.area>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:242
 msgid "{py:obj}`aspect <vtkmodules.numpy_interface.algorithms.aspect>`"
-msgstr ""
+msgstr "{py:obj}`aspect <vtkmodules.numpy_interface.algorithms.aspect>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:246
 msgid ""
 "{py:obj}`aspect_gamma <vtkmodules.numpy_interface.algorithms.aspect_gamma>`"
 msgstr ""
+"{py:obj}`aspect_gamma <vtkmodules.numpy_interface.algorithms.aspect_gamma>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:250
 msgid "{py:obj}`condition <vtkmodules.numpy_interface.algorithms.condition>`"
-msgstr ""
+msgstr "{py:obj}`condition <vtkmodules.numpy_interface.algorithms.condition>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:254
 msgid "{py:obj}`cross <vtkmodules.numpy_interface.algorithms.cross>`"
-msgstr ""
+msgstr "{py:obj}`cross <vtkmodules.numpy_interface.algorithms.cross>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:258
 msgid "{py:obj}`curl <vtkmodules.numpy_interface.algorithms.curl>`"
-msgstr ""
+msgstr "{py:obj}`curl <vtkmodules.numpy_interface.algorithms.curl>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:262
 msgid "{py:obj}`divergence <vtkmodules.numpy_interface.algorithms.divergence>`"
 msgstr ""
+"{py:obj}`divergence <vtkmodules.numpy_interface.algorithms.divergence>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:266
 msgid "{py:obj}`det <vtkmodules.numpy_interface.algorithms.det>`"
-msgstr ""
+msgstr "{py:obj}`det <vtkmodules.numpy_interface.algorithms.det>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:270
 msgid ""
 "{py:obj}`determinant <vtkmodules.numpy_interface.algorithms.determinant>`"
 msgstr ""
+"{py:obj}`determinant <vtkmodules.numpy_interface.algorithms.determinant>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:274
 msgid "{py:obj}`diagonal <vtkmodules.numpy_interface.algorithms.diagonal>`"
-msgstr ""
+msgstr "{py:obj}`diagonal <vtkmodules.numpy_interface.algorithms.diagonal>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:278
 msgid "{py:obj}`dot <vtkmodules.numpy_interface.algorithms.dot>`"
-msgstr ""
+msgstr "{py:obj}`dot <vtkmodules.numpy_interface.algorithms.dot>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:282
 msgid "{py:obj}`eigenvalue <vtkmodules.numpy_interface.algorithms.eigenvalue>`"
 msgstr ""
+"{py:obj}`eigenvalue <vtkmodules.numpy_interface.algorithms.eigenvalue>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:286
 msgid ""
 "{py:obj}`eigenvector <vtkmodules.numpy_interface.algorithms.eigenvector>`"
 msgstr ""
+"{py:obj}`eigenvector <vtkmodules.numpy_interface.algorithms.eigenvector>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:290
 msgid "{py:obj}`gradient <vtkmodules.numpy_interface.algorithms.gradient>`"
-msgstr ""
+msgstr "{py:obj}`gradient <vtkmodules.numpy_interface.algorithms.gradient>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:294
 msgid "{py:obj}`inv <vtkmodules.numpy_interface.algorithms.inv>`"
-msgstr ""
+msgstr "{py:obj}`inv <vtkmodules.numpy_interface.algorithms.inv>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:298
 msgid "{py:obj}`inverse <vtkmodules.numpy_interface.algorithms.inverse>`"
-msgstr ""
+msgstr "{py:obj}`inverse <vtkmodules.numpy_interface.algorithms.inverse>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:302
 msgid "{py:obj}`jacobian <vtkmodules.numpy_interface.algorithms.jacobian>`"
-msgstr ""
+msgstr "{py:obj}`jacobian <vtkmodules.numpy_interface.algorithms.jacobian>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:306
 msgid "{py:obj}`laplacian <vtkmodules.numpy_interface.algorithms.laplacian>`"
-msgstr ""
+msgstr "{py:obj}`laplacian <vtkmodules.numpy_interface.algorithms.laplacian>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:310
 msgid "{py:obj}`ln <vtkmodules.numpy_interface.algorithms.ln>`"
-msgstr ""
+msgstr "{py:obj}`ln <vtkmodules.numpy_interface.algorithms.ln>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:314
 msgid "{py:obj}`log <vtkmodules.numpy_interface.algorithms.log>`"
-msgstr ""
+msgstr "{py:obj}`log <vtkmodules.numpy_interface.algorithms.log>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:318
 msgid "{py:obj}`log10 <vtkmodules.numpy_interface.algorithms.log10>`"
-msgstr ""
+msgstr "{py:obj}`log10 <vtkmodules.numpy_interface.algorithms.log10>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:322
 msgid "{py:obj}`max_angle <vtkmodules.numpy_interface.algorithms.max_angle>`"
-msgstr ""
+msgstr "{py:obj}`max_angle <vtkmodules.numpy_interface.algorithms.max_angle>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:326
 msgid "{py:obj}`mag <vtkmodules.numpy_interface.algorithms.mag>`"
-msgstr ""
+msgstr "{py:obj}`mag <vtkmodules.numpy_interface.algorithms.mag>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:330
 msgid "{py:obj}`matmul <vtkmodules.numpy_interface.algorithms.matmul>`"
-msgstr ""
+msgstr "{py:obj}`matmul <vtkmodules.numpy_interface.algorithms.matmul>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:334
 msgid "{py:obj}`min_angle <vtkmodules.numpy_interface.algorithms.min_angle>`"
-msgstr ""
+msgstr "{py:obj}`min_angle <vtkmodules.numpy_interface.algorithms.min_angle>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:338
 msgid "{py:obj}`norm <vtkmodules.numpy_interface.algorithms.norm>`"
-msgstr ""
+msgstr "{py:obj}`norm <vtkmodules.numpy_interface.algorithms.norm>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:342
 msgid "{py:obj}`shear <vtkmodules.numpy_interface.algorithms.shear>`"
-msgstr ""
+msgstr "{py:obj}`shear <vtkmodules.numpy_interface.algorithms.shear>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:346
 msgid "{py:obj}`skew <vtkmodules.numpy_interface.algorithms.skew>`"
-msgstr ""
+msgstr "{py:obj}`skew <vtkmodules.numpy_interface.algorithms.skew>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:350
 msgid "{py:obj}`strain <vtkmodules.numpy_interface.algorithms.strain>`"
-msgstr ""
+msgstr "{py:obj}`strain <vtkmodules.numpy_interface.algorithms.strain>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:354
 msgid ""
 "{py:obj}`surface_normal <vtkmodules.numpy_interface.algorithms."
 "surface_normal>`"
 msgstr ""
+"{py:obj}`surface_normal <vtkmodules.numpy_interface.algorithms."
+"surface_normal>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:358
 msgid "{py:obj}`trace <vtkmodules.numpy_interface.algorithms.trace>`"
-msgstr ""
+msgstr "{py:obj}`trace <vtkmodules.numpy_interface.algorithms.trace>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:362
 msgid "{py:obj}`volume <vtkmodules.numpy_interface.algorithms.volume>`"
-msgstr ""
+msgstr "{py:obj}`volume <vtkmodules.numpy_interface.algorithms.volume>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:366
 msgid "{py:obj}`vorticity <vtkmodules.numpy_interface.algorithms.vorticity>`"
-msgstr ""
+msgstr "{py:obj}`vorticity <vtkmodules.numpy_interface.algorithms.vorticity>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:370
 msgid ""
 "{py:obj}`vertex_normal <vtkmodules.numpy_interface.algorithms.vertex_normal>`"
 msgstr ""
+"{py:obj}`vertex_normal <vtkmodules.numpy_interface.algorithms.vertex_normal>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:374
 msgid ""
 "{py:obj}`logical_not <vtkmodules.numpy_interface.algorithms.logical_not>`"
 msgstr ""
+"{py:obj}`logical_not <vtkmodules.numpy_interface.algorithms.logical_not>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:378
 msgid "{py:obj}`divide <vtkmodules.numpy_interface.algorithms.divide>`"
-msgstr ""
+msgstr "{py:obj}`divide <vtkmodules.numpy_interface.algorithms.divide>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:382
 msgid "{py:obj}`multiply <vtkmodules.numpy_interface.algorithms.multiply>`"
-msgstr ""
+msgstr "{py:obj}`multiply <vtkmodules.numpy_interface.algorithms.multiply>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:386
 msgid "{py:obj}`add <vtkmodules.numpy_interface.algorithms.add>`"
-msgstr ""
+msgstr "{py:obj}`add <vtkmodules.numpy_interface.algorithms.add>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:390
 msgid "{py:obj}`subtract <vtkmodules.numpy_interface.algorithms.subtract>`"
-msgstr ""
+msgstr "{py:obj}`subtract <vtkmodules.numpy_interface.algorithms.subtract>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:394
 msgid "{py:obj}`mod <vtkmodules.numpy_interface.algorithms.mod>`"
-msgstr ""
+msgstr "{py:obj}`mod <vtkmodules.numpy_interface.algorithms.mod>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:398
 msgid "{py:obj}`remainder <vtkmodules.numpy_interface.algorithms.remainder>`"
-msgstr ""
+msgstr "{py:obj}`remainder <vtkmodules.numpy_interface.algorithms.remainder>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:402
 msgid "{py:obj}`power <vtkmodules.numpy_interface.algorithms.power>`"
-msgstr ""
+msgstr "{py:obj}`power <vtkmodules.numpy_interface.algorithms.power>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:406
 msgid "{py:obj}`hypot <vtkmodules.numpy_interface.algorithms.hypot>`"
-msgstr ""
+msgstr "{py:obj}`hypot <vtkmodules.numpy_interface.algorithms.hypot>`"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:412
 msgid "API"
@@ -797,6 +832,7 @@ msgstr ""
 msgid ""
 "mean(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())."
 msgstr ""
+"mean(array, controller=vtkmodules.vtkParallelCore.vtkDummyController())。"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:520
 msgid ""
@@ -821,6 +857,8 @@ msgid ""
 "min_per_block(array, controller=vtkmodules.vtkParallelCore."
 "vtkDummyController())."
 msgstr ""
+"min_per_block(array, controller=vtkmodules.vtkParallelCore."
+"vtkDummyController())。"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:535
 msgid "algorithms.all(array > 5)"
