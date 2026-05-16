@@ -1,4 +1,10 @@
 <div align="center">
+<picture>
+  <img height="100" src="https://cdn.jsdelivr.net/gh/localizethedocs/static/logo/vtk.svg">
+</picture>
+</div>
+
+<div align="center">
 <h1 id="localization-of-the-vtk-documentation">Localization of The VTK Documentation</h1>
 </div>
 
