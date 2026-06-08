@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-<h1 id="localization-of-the-vtk-documentation">Localization of The VTK Documentation</h1>
+<h1 id="localization-of-the-vtk-documentation">VTK 文件的在地化</h1>
 </div>
 
 <details><summary><strong>切換語言</strong></summary>
