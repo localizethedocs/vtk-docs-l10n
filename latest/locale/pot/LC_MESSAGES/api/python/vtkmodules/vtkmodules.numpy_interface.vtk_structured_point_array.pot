@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-06-15 13:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,21 +29,24 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:9
 msgid ""
-"This module provides VTKStructuredPointArray and VTKStructuredAxisArray "
-"classes that lazily represent the point coordinates of vtkImageData and "
-"vtkRectilinearGrid datasets without materializing the full (N, 3) array."
+"This module provides VTKStructuredPointArray and VTKStructuredAxisArray. "
+"VTKStructuredPointArray is registered as an override on the "
+"``vtkStructuredPointArray`` template so that the coordinate array returned "
+"by ``vtkImageData.points.data`` and ``vtkRectilinearGrid.points.data`` "
+"exposes a numpy-compatible surface without materializing the full (N, 3) "
+"array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:13
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:16
 msgid ""
 "For a grid with dimensions (nx, ny, nz), only O(nx + ny + nz) storage is "
 "needed instead of O(nx * ny * nz * 3).  Ufuncs and scalar arithmetic operate "
-"per-axis and stay lazy.  Reductions (sum, min, max, mean) use optimized "
-"O(nx+ny+nz) formulas."
+"per-axis and stay lazy, producing another VTKStructuredPointArray whose "
+"backend is built via ``ConstructBackend``.  Reductions (sum, min, max, mean) "
+"use optimized O(nx+ny+nz) formulas."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:18
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:329
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:22
 msgid ""
 "VTK uses Fortran ordering where i increases fastest:     flat_idx = i + j * "
 "nx + k * nx * ny"
@@ -63,7 +67,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:20
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:149
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:104
 msgid ""
 "A lazy 1D array representing one coordinate component (X, Y, or Z) of a "
 "structured point array."
@@ -76,189 +80,131 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:24
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:320
-msgid ""
-"A lazy array wrapper for structured point arrays that stores three 1D axis "
-"arrays and computes points without materializing the full (N, 3) grid."
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:26
-msgid ""
-"{py:obj}`VTKStructuredPointArrayMixin <vtkmodules.numpy_interface."
-"vtk_structured_point_array.VTKStructuredPointArrayMixin>`"
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:28
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:588
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:277
 msgid "Numpy-compatible mixin for vtkStructuredPointArray template instances."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:32
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:28
 msgid "Functions"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:38
-msgid ""
-"{py:obj}`_override_mixin_numpy <vtkmodules.numpy_interface."
-"vtk_structured_point_array._override_mixin_numpy>`"
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:40
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:134
-msgid ""
-"Register an __array_function__ override for VTKStructuredPointArrayMixin."
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:42
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:34
 msgid ""
 "{py:obj}`_override_structured_point_numpy <vtkmodules.numpy_interface."
 "vtk_structured_point_array._override_structured_point_numpy>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:44
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:141
-msgid ""
-"Register an __array_function__ implementation for VTKStructuredPointArray."
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:96
+msgid "Register an __array_function__ override for VTKStructuredPointArray."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:46
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:38
 msgid ""
 "{py:obj}`_sp_sum <vtkmodules.numpy_interface.vtk_structured_point_array."
 "_sp_sum>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:50
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:42
 msgid ""
 "{py:obj}`_sp_min <vtkmodules.numpy_interface.vtk_structured_point_array."
 "_sp_min>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:54
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:46
 msgid ""
 "{py:obj}`_sp_max <vtkmodules.numpy_interface.vtk_structured_point_array."
 "_sp_max>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:58
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:50
 msgid ""
 "{py:obj}`_sp_mean <vtkmodules.numpy_interface.vtk_structured_point_array."
 "_sp_mean>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:62
-msgid ""
-"{py:obj}`_mixin_sum <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_mixin_sum>`"
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:66
-msgid ""
-"{py:obj}`_mixin_min <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_mixin_min>`"
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:70
-msgid ""
-"{py:obj}`_mixin_max <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_mixin_max>`"
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:74
-msgid ""
-"{py:obj}`_mixin_mean <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_mixin_mean>`"
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:78
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:54
 msgid ""
 "{py:obj}`_add_template_type_aliases <vtkmodules.numpy_interface."
 "vtk_structured_point_array._add_template_type_aliases>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:80
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:903
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:601
 msgid "Add native-type aliases so template['float64'] etc. work."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:82
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:58
 msgid ""
 "{py:obj}`_register_structured_point_overrides <vtkmodules.numpy_interface."
 "vtk_structured_point_array._register_structured_point_overrides>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:84
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:910
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:608
 msgid ""
-"Register VTKStructuredPointArrayMixin for all vtkStructuredPointArray "
-"template instantiations."
+"Register VTKStructuredPointArray for all vtkStructuredPointArray template "
+"instantiations."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:88
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:64
 msgid "Data"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:94
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:70
 msgid ""
 "{py:obj}`_STRUCTURED_POINT_OVERRIDE <vtkmodules.numpy_interface."
 "vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:98
-msgid ""
-"{py:obj}`_STRUCTURED_POINT_MIXIN_OVERRIDE <vtkmodules.numpy_interface."
-"vtk_structured_point_array._STRUCTURED_POINT_MIXIN_OVERRIDE>`"
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:102
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:74
 msgid ""
 "{py:obj}`_VTKTYPE_TO_MANGLING <vtkmodules.numpy_interface."
 "vtk_structured_point_array._VTKTYPE_TO_MANGLING>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:108
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:80
 msgid "API"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:114
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:124
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:893
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:86
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:591
 msgid "None"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:152
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:107
 msgid ""
 "For a structured grid with dims (nx, ny, nz), there are only nx unique X "
 "values, ny unique Y values, and nz unique Z values.  This class stores just "
 "the unique values and expands them lazily when needed."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:156
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:111
 msgid "Repeat patterns (Fortran ordering, i fastest):"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:157
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:112
 msgid "Axis 0 (X): X[i] appears at indices where flat_idx % nx == i"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:158
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:113
 msgid "Axis 1 (Y): Y[j] appears at indices where (flat_idx // nx) % ny == j"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:159
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:114
 msgid "Axis 2 (Z): Z[k] appears at indices where flat_idx // (nx * ny) == k"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:151
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:322
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:590
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:106
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:279
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:155
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:110
 msgid "Parameters"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:157
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:112
 msgid ""
 "values : numpy array     The unique coordinate values for this axis. axis : "
 "int     Which axis (0=X, 1=Y, 2=Z). dims : tuple of 3 ints     Grid "
@@ -266,153 +212,89 @@ msgid ""
 "dataset (kept as weak reference)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:207
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:162
 msgid "Materialize the full 1D array using Fortran ordering (i fastest)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:215
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:170
 msgid "Index into the array using Fortran ordering."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:223
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:178
 msgid "Handle numpy ufuncs.  Unary ufuncs and scalar operations stay lazy."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:324
-msgid ""
-"When the direction matrix is identity (common case for vtkImageData and all "
-"vtkRectilinearGrid), ufuncs and arithmetic operate per-axis and stay lazy.  "
-"When a non-identity direction matrix is used, operations fall back to full "
-"materialization."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:334
-msgid "Create from vtkImageData."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:336
-msgid ""
-"Computes axis arrays from origin, spacing, and dimensions. Detects non-"
-"identity direction matrices."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:343
-msgid "Create from vtkRectilinearGrid."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:345
-msgid ""
-"Uses the X/Y/Z coordinate arrays directly. RectilinearGrid never has a "
-"direction matrix."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:352
-msgid "Create from axis arrays for intermediate results (no VTK backing)."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:360
-msgid "Get the dataset from the weak reference."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:368
-msgid "Get axis arrays, computing from dataset if needed."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:376
-msgid "Get dimensions from axis arrays or dataset."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:384
-msgid "Check if a non-identity direction matrix is used."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:392
-msgid "Get the underlying VTK point data array from the dataset."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:445
-msgid "Convert a flat index to (i, j, k) structured indices."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:447
-msgid ""
-"VTK uses Fortran ordering (i fastest):     flat_idx = i + j * nx + k * nx * "
-"ny"
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:453
-msgid "Materialize the full (N, 3) array."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:461
-msgid "Index into the structured point array."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:469
-msgid ""
-"Handle numpy ufuncs.  For identity-matrix arrays, apply per-axis and stay "
-"lazy."
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:477
-msgid "Handle numpy functions with optimized paths."
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:585
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:274
 msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
 "VTKDataArrayMixin`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:590
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:279
 msgid ""
-"This mixin is automatically applied to all ``vtkStructuredPointArray`` "
-"instantiations (e.g. ``vtkStructuredPointTypeFloat64Array``).  It provides "
-"``__array__``, ``__buffer__``, indexing, and basic numpy protocol so that "
-"structured point arrays returned by VTK are directly usable with numpy."
+"Registered as an override for every ``vtkStructuredPointArray[dtype]`` "
+"instantiation.  Every structured-point array returned by VTK (such as "
+"``vtkImageData.points.data`` or ``vtkRectilinearGrid.points.data``) is an "
+"instance of this class.  Ufunc and scalar results also come back as "
+"instances of this class, built in-place via ``ConstructBackend``."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:596
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:285
 msgid ""
-"The mixin retrieves axis coordinate arrays directly from the C++ backend via "
-"``GetXCoordinates()``, ``GetYCoordinates()``, and ``GetZCoordinates()``, "
-"enabling lazy per-axis operations and O(nx+ny+nz) reductions.  When no "
-"backend is available, it materializes via ``DeepCopy`` to an AOS array."
+"Axis coordinates are read through the C++ ``GetXCoordinates()`` / "
+"``GetYCoordinates()`` / ``GetZCoordinates()`` accessors so the wrapper stays "
+"in lockstep with the backing array.  With an identity direction matrix (the "
+"common case), indexing and ufuncs operate per-axis and stay lazy; reductions "
+"use O(nx+ny+nz) formulas.  With a non-identity direction matrix, operations "
+"fall back to a full materialization."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:601
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:291
+msgid "Build a structured-point array from three 1D axis arrays."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:293
+msgid ""
+"Picks a ``vtkStructuredPointArray[dtype]`` instantiation matching the input "
+"axes' dtype, wraps the axes as VTK data arrays, and calls "
+"``ConstructBackend`` to set up the lazy backend.  The returned array is an "
+"instance of ``VTKStructuredPointArray`` (via the registered override) and "
+"has identity direction matrix."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:299
 msgid "Get the X, Y, Z coordinate arrays directly from the backend."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:603
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:301
 msgid ""
 "Returns a list of 3 numpy arrays [X, Y, Z], or None if the backend has not "
 "been constructed yet."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:609
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:307
 msgid "Get grid dimensions from axis arrays."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:617
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:315
 msgid "Check if a non-identity direction matrix is being used."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:641
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:339
 msgid "Materialize the full array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:643
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:341
 msgid ""
 "When axis arrays are available and no direction matrix is used, materializes "
 "via meshgrid (efficient).  Otherwise, uses DeepCopy to an AOS array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:649
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:347
 msgid "Return the full (N, 3) array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:905
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:603
 msgid ""
 "Templates that only have vtkType-based instantiations (e.g. vtkTypeFloat64) "
 "need aliases under the native IA64 mangled names (e.g. _IdE for double) so "
