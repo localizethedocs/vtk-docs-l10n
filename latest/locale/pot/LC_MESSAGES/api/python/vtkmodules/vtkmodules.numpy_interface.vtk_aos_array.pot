@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-06-15 13:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -297,6 +297,15 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:129
 msgid "Extract a zero-copy numpy array view from the VTK buffer."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:131
+msgid ""
+"Source the buffer protocol from the underlying ``vtkBuffer`` rather than "
+"from ``self`` — numpy would otherwise stash a reference to the array in its "
+"internal ``managedbuffer``, and since ``managedbuffer`` is not GC-tracked "
+"the resulting ``array → _array_cache → managedbuffer → array`` cycle is "
+"uncollectable."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:137
