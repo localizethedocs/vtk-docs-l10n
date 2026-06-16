@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-06-15 13:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,7 +145,7 @@ msgstr ""
 "vtk_constant_array._register_constant_overrides>`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:68
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:525
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:549
 msgid ""
 "Register VTKConstantArray mixin as override for all vtkConstantArray "
 "template types."
@@ -407,10 +407,10 @@ msgid ""
 "fancy indexing."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:348
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:366
 msgid "Raise if backend is not constructed."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:356
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_constant_array.py:374
 msgid "Build a result array of the correct shape for a reduction."
 msgstr ""
