@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:1
+msgid "{py:mod}`vtkmodules.util.selection`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:7
+msgid "Pythonic API for vtkSelection and vtkSelectionNode."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:9
+msgid "Simplifies selection construction and composition::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:11
+msgid ""
+"from vtkmodules.vtkCommonDataModel import vtkSelection, vtkSelectionNode\n"
+"import numpy as np\n"
+"\n"
+"# One-line index selection (creates a single-node selection):\n"
+"sel = vtkSelection(content_type=\"INDICES\", field_type=\"CELL\",\n"
+"                   selection_list=np.array([0, 5, 10]))\n"
+"\n"
+"# Threshold selection via populate helper:\n"
+"temp_sel = vtkSelection().from_thresholds(\"Temperature\", (0, 100))\n"
+"\n"
+"# Boolean composition — produces multi-node selections:\n"
+"combined = sel & temp_sel          # AND\n"
+"either   = sel | temp_sel          # OR\n"
+"inverted = ~sel                    # NOT\n"
+"compound = sel & (temp_sel | ~inverted)\n"
+"\n"
+"# Container interface:\n"
+"len(sel)                           # number of nodes\n"
+"sel[0]                             # node by index\n"
+"sel[\"NodeName\"]                    # node by name\n"
+"for node in sel: ...               # iterate nodes\n"
+"sel.expression                     # get/set expression string\n"
+"\n"
+"# SelectionNode properties:\n"
+"node = sel[0]\n"
+"node.content_type                  # \"INDICES\"\n"
+"node.field_type                    # \"CELL\"\n"
+"node.selection_list                # vtkAbstractArray\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:18
+msgid ""
+"{py:obj}`_SelectionNodeMixin <vtkmodules.util.selection._SelectionNodeMixin>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:177
+msgid "Pythonic properties for vtkSelectionNode."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:22
+msgid "{py:obj}`_SelectionMixin <vtkmodules.util.selection._SelectionMixin>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:284
+msgid "Pythonic container and operator interface for vtkSelection."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:26
+msgid "{py:obj}`SelectionNode <vtkmodules.util.selection.SelectionNode>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:28
+msgid "{py:obj}`Selection <vtkmodules.util.selection.Selection>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:32
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:38
+msgid ""
+"{py:obj}`_resolve_content_type <vtkmodules.util.selection."
+"_resolve_content_type>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:148
+msgid "Accept string or int, return int content type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:42
+msgid ""
+"{py:obj}`_resolve_field_type <vtkmodules.util.selection._resolve_field_type>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:155
+msgid "Accept string or int, return int field type."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:46
+msgid "{py:obj}`_set_qualifiers <vtkmodules.util.selection._set_qualifiers>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:162
+msgid "Set qualifier properties on a vtkSelectionNode from a dict."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:50
+msgid "{py:obj}`_to_vtk_array <vtkmodules.util.selection._to_vtk_array>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:169
+msgid "Convert a Python sequence or numpy array to a VTK array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:54
+msgid "{py:obj}`_next_label <vtkmodules.util.selection._next_label>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:269
+msgid "Return the next unused label."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:58
+msgid "{py:obj}`_remap_expr <vtkmodules.util.selection._remap_expr>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:276
+msgid "Replace node names in an expression simultaneously."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:64
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:70
+msgid ""
+"{py:obj}`_CONTENT_TYPE_MAP <vtkmodules.util.selection._CONTENT_TYPE_MAP>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:74
+msgid ""
+"{py:obj}`_CONTENT_TYPE_REVERSE <vtkmodules.util.selection."
+"_CONTENT_TYPE_REVERSE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:78
+msgid "{py:obj}`_FIELD_TYPE_MAP <vtkmodules.util.selection._FIELD_TYPE_MAP>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:82
+msgid ""
+"{py:obj}`_FIELD_TYPE_REVERSE <vtkmodules.util.selection._FIELD_TYPE_REVERSE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:86
+msgid ""
+"{py:obj}`_INT_QUALIFIER_KEYS <vtkmodules.util.selection._INT_QUALIFIER_KEYS>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:92
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:98
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:108
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:118
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:128
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:138
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:296
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:184
+msgid "Content type as a string (e.g. 'INDICES', 'THRESHOLDS')."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:192
+msgid "Field type as a string (e.g. 'CELL', 'POINT')."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:200
+msgid "The selection list array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:248
+msgid "Distance tolerance for LOCATIONS selections."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:256
+msgid "Data assembly name for BLOCK_SELECTORS selections."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:278
+msgid ""
+"Uses regex word-boundary matching to avoid partial replacements, and "
+"replaces all names in a single pass to prevent collisions when a new name "
+"equals another old name."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:286
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:307
+msgid "Create, configure, and append a vtkSelectionNode to this selection."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:309
+msgid "Returns the assigned node name."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:339
+msgid "Add a node and return its assigned name."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:347
+msgid "Remove all nodes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:355
+msgid "The boolean expression combining nodes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:363
+msgid "List of node names."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:371
+msgid "Get the expression label for this selection."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:379
+msgid "Combine two selections with a boolean operator."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:419
+msgid "Select elements whose array values fall within ranges."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:421
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:423
+msgid ""
+"array_name : str     Name of the data array to threshold on. ranges : tuple "
+"or list of tuples     A single (min, max) pair or a list of (min, max) "
+"pairs. field_type : str or int     Field type (default \"CELL\"). "
+"**qualifiers     Optional qualifiers (inverse, composite_index, etc.)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:427
+msgid "Select elements with exact array values."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:429
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/selection.py:429: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:431
+msgid ""
+"array_name : str     Name of the data array to match. values : array-"
+"like     Values to match. field_type : str or int     Field type (default "
+"\"CELL\"). component : int     Component to compare (-1 for magnitude). "
+"**qualifiers     Optional qualifiers."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:435
+msgid "Select elements near world coordinates."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:437
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/selection.py:437: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:439
+msgid ""
+"points : array-like     (N, 3) array of world coordinates. field_type : str "
+"or int     Field type (default \"POINT\"). epsilon : float, optional     "
+"Distance tolerance. **qualifiers     Optional qualifiers."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:443
+msgid "Select elements within a viewing frustum."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:445
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/selection.py:445: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:447
+msgid ""
+"corners : array-like     (8, 4) array of frustum corners in homogeneous "
+"coordinates,     flattened to 32 values. field_type : str or int     Field "
+"type (default \"CELL\"). **qualifiers     Optional qualifiers."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:451
+msgid "Select blocks in a composite dataset by flat index."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:453
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/selection.py:453: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:455
+msgid ""
+"block_indices : array-like     List or array of block indices. "
+"**qualifiers     Optional qualifiers."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:459
+msgid "Select blocks using selector expressions."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:461
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/selection.py:461: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/selection.py:463
+msgid ""
+"selectors : list of str     Selector expression strings. assembly_name : "
+"str, optional     Name of the data assembly to apply selectors to. "
+"**qualifiers     Optional qualifiers."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:472
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.selection._SelectionNodeMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkSelectionNode`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.selection.md:479
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.selection._SelectionMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkSelection`"
+msgstr ""
