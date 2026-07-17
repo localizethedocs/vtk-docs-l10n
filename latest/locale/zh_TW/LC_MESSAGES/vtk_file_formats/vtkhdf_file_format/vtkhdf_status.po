@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid "File Format Specifications Status"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:8
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:39
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:40
 msgid "Data Types"
 msgstr ""
 
@@ -104,29 +104,23 @@ msgid "vtkRectilinearGrid"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
-msgid "[not specified](https://gitlab.kitware.com/vtk/vtk/-/issues/19379)"
-msgstr ""
-
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
 msgid "vtkStructuredGrid"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
-msgid ""
-"[not specified](https://discourse.vtk.org/t/vtkhdf-vtkstructuredgrid-"
-"support/15920)"
+msgid "vtkTable"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
 msgid "vtkUnstructuredGrid"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:28
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:52
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:29
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:58
 msgid "Additional Features"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:30
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:31
 msgid ""
 "Here is the list of supported feature which doesn't depends on a VTK data "
 "type:"
@@ -148,7 +142,7 @@ msgstr ""
 msgid "Temporal"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:37
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:38
 msgid "Implementation Status in VTK"
 msgstr ""
 
@@ -161,7 +155,17 @@ msgid "vtkHDFWriter"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
+msgid "supported¹"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
 msgid "not supported"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:56
+msgid ""
+"¹: Parallel writing using extents is [not supported](https://gitlab.kitware."
+"com/vtk/vtk/-/work_items/20093)."
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:0
@@ -177,7 +181,7 @@ msgstr ""
 msgid "[not supported](https://gitlab.kitware.com/vtk/vtk/-/issues/19888)"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:60
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.md:66
 msgid ""
 "¹: ability to reuse data instead of duplicating it to save disk space and "
 "performance. ²: missing for vtkHyperTreeGrid."

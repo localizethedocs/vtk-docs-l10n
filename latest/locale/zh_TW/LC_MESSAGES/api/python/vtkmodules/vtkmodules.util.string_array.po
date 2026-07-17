@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:1
+msgid "{py:mod}`vtkmodules.util.string_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:7
+msgid "Pythonic interface for vtkStringArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:9
+msgid "Makes vtkStringArray behave like a Python list of strings::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:11
+msgid ""
+"arr = vtkStringArray()\n"
+"arr.append(\"hello\")           # InsertNextValue\n"
+"arr.extend([\"a\", \"b\", \"c\"])   # InsertNextValue loop\n"
+"len(arr)                      # 4\n"
+"arr[0]                        # \"hello\"\n"
+"arr[-1]                       # \"c\"\n"
+"arr[1] = \"world\"              # SetValue\n"
+"\"hello\" in arr                # True\n"
+"list(arr)                     # [\"hello\", \"world\", \"b\", \"c\"]\n"
+"repr(arr)                     # vtkStringArray(['hello', 'world', 'b', "
+"'c'])\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:18
+msgid ""
+"{py:obj}`_StringArrayMixin <vtkmodules.util.string_array._StringArrayMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:22
+msgid "{py:obj}`StringArray <vtkmodules.util.string_array.StringArray>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:28
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:37
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:130
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:48
+msgid "Populate the array from an iterable of strings."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:101
+msgid "Append a string to the end of the array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:109
+msgid "Extend the array with strings from an iterable."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/string_array.py:117
+msgid "Remove all strings from the array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.string_array.md:125
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.string_array._StringArrayMixin`, {py:obj}"
+"`vtkmodules.vtkCommonCore.vtkStringArray`"
+msgstr ""

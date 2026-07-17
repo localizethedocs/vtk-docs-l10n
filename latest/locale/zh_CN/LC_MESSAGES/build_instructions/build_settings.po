@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,72 +210,80 @@ msgid ""
 "the job pool for linking wasm targets. Adjust as needed to avoid OOM errors."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:86
+#: ../../../build_instructions/build_settings.md:85
+msgid ""
+"`VTK_JPEG_ENABLE_SIMD` (default `OFF`): Whether the libjpeg-turbo library "
+"should be compiled with SIMD extensions or not. On x86(-64) targets, [NASM]"
+"[nasm] must be installed (or set its path by setting the "
+"`CMAKE_ASM_NASM_COMPILER` variable). This is not compatible with WASM builds."
+msgstr ""
+
+#: ../../../build_instructions/build_settings.md:91
 msgid "OpenGL related build options:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:88
+#: ../../../build_instructions/build_settings.md:93
 msgid ""
 "When OpenGL is used, a valid rendering environment (e.g., X, Cocoa, OSMesa, "
 "EGL) must be available. Sanity checks are in place to prevent a broken build."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:91
+#: ../../../build_instructions/build_settings.md:96
 msgid "For specific platforms:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:92
+#: ../../../build_instructions/build_settings.md:97
 msgid "Android: `vtkEGLRenderWindow` is the default."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:93
+#: ../../../build_instructions/build_settings.md:98
 msgid "macOS: `vtkCocoaRenderWindow` is the default."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:94
+#: ../../../build_instructions/build_settings.md:99
 msgid "iOS: `vtkIOSRenderWindow` is the default."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:95
+#: ../../../build_instructions/build_settings.md:100
 msgid "WebAssembly: `vtkWebAssemblyOpenGLRenderWindow` is the default."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:97
+#: ../../../build_instructions/build_settings.md:102
 msgid ""
 "Please learn more about how you can influence the render window selection "
 "process in [](/advanced/runtime_settings.md#opengl)"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:99
+#: ../../../build_instructions/build_settings.md:104
 msgid "Additional Rendering related build options:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:100
+#: ../../../build_instructions/build_settings.md:105
 msgid "On Linux, the order of render window attempts is:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:102
+#: ../../../build_instructions/build_settings.md:107
 msgid "`vtkXOpenGLRenderWindow`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:103
+#: ../../../build_instructions/build_settings.md:108
 msgid "`vtkEGLRenderWindow`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:104
 #: ../../../build_instructions/build_settings.md:109
+#: ../../../build_instructions/build_settings.md:114
 msgid "`vtkOSOpenGLRenderWindow`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:106
+#: ../../../build_instructions/build_settings.md:111
 msgid "On Windows:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:108
+#: ../../../build_instructions/build_settings.md:113
 msgid "`vtkWin32OpenGLRenderWindow`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:111
+#: ../../../build_instructions/build_settings.md:116
 msgid ""
 "By default, VTK automatically selects the most appropriate render window "
 "class at runtime. This selection process uses the `Initialize` method of the "
@@ -284,85 +292,85 @@ msgid ""
 "returned."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:113
+#: ../../../build_instructions/build_settings.md:118
 msgid ""
 "The default values of the following CMake `VTK_OPENGL_HAS_*` knobs are "
 "already configured so that the above condition is always met on all "
 "supported platforms."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:116
+#: ../../../build_instructions/build_settings.md:121
 msgid ""
 "`VTK_USE_COCOA` (default `ON`; requires macOS): Use Cocoa for render windows."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:118
+#: ../../../build_instructions/build_settings.md:123
 msgid ""
 "`VTK_USE_X` (default `ON` for Unix-like platforms except macOS, iOS, and "
 "Emscripten, `OFF` otherwise): Use X for render windows."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:120
+#: ../../../build_instructions/build_settings.md:125
 msgid ""
 "`VTK_OPENGL_USE_GLES` (default `OFF`; forced `ON` for Android): Whether to "
 "use OpenGL ES API for OpenGL or not."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:122
+#: ../../../build_instructions/build_settings.md:127
 msgid ""
 "`VTK_OPENGL_HAS_EGL` (default `ON` for Android and Linux, `OFF` otherwise): "
 "Use to indicate that the OpenGL library being used supports EGL context "
 "management."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:125
+#: ../../../build_instructions/build_settings.md:130
 msgid ""
 "`VTK_DEFAULT_EGL_DEVICE_INDEX` (default `0`; requires `VTK_OPENGL_HAS_EGL`): "
 "The default EGL device to use for EGL render windows."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:128
+#: ../../../build_instructions/build_settings.md:133
 msgid ""
 "`VTK_USE_WAYLAND_OPENGL` (default `OFF`; requires `VTK_OPENGL_HAS_EGL`): Use "
 "Wayland as backend for EGL render windows instead of X."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:130
+#: ../../../build_instructions/build_settings.md:135
 msgid ""
 "`VTK_ENABLE_WEBGPU` (default `OFF`; required if using Emscripten): Enable "
 "WebGPU rendering support."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:132
+#: ../../../build_instructions/build_settings.md:137
 msgid ""
 "`VTK_DEFAULT_RENDER_WINDOW_OFFSCREEN` (default `OFF`): Whether to default to "
 "offscreen render windows by default or not."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:134
+#: ../../../build_instructions/build_settings.md:139
 msgid ""
 "`VTK_USE_OPENGL_DELAYED_LOAD` (default `OFF`; requires Windows and CMake >= "
 "3.13): If set, use delayed loading to load the OpenGL DLL at runtime."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:136
+#: ../../../build_instructions/build_settings.md:141
 msgid ""
 "`VTK_DEFAULT_RENDER_WINDOW_HEADLESS` (default `OFF`; only available if "
 "applicable): Default to a headless render window."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:138
+#: ../../../build_instructions/build_settings.md:143
 msgid ""
 "`VTK_USE_WIN32_OPENGL` (default `ON` for Windows, forced `OFF` otherwise): "
 "Use Win32 APIs for render windows (typically only relevant for OSMesa on "
 "Windows builds)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:142
+#: ../../../build_instructions/build_settings.md:147
 msgid "More advanced options:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:144
+#: ../../../build_instructions/build_settings.md:149
 msgid ""
 "`VTK_ABI_NAMESPACE_NAME` (default `<DEFAULT>` aka `\"\"`): If set, VTK will  "
 "wrap all VTK public symbols in an  `inline namespace "
@@ -371,7 +379,7 @@ msgid ""
 "expansion  `#define c_abi VTK_ABI_NAMESPACE_MANGLE(c_abi)`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:150
+#: ../../../build_instructions/build_settings.md:155
 msgid ""
 "`VTK_ABI_NAMESPACE_ATTRIBUTES` (default `<DEFAULT>` aka `\"\"`): If set, VTK "
 "will  inject these attributes into the `inline namespace`. i.e.  `inline "
@@ -380,64 +388,64 @@ msgid ""
 "namespace, not to C APIs."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:155
+#: ../../../build_instructions/build_settings.md:160
 msgid ""
 "`VTK_BUILD_DOCUMENTATION` (default `OFF`): If set, VTK will build its API "
 "documentation using Doxygen."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:157
+#: ../../../build_instructions/build_settings.md:162
 msgid ""
 "`VTK_BUILD_SPHINX_DOCUMENTATION` (default `OFF`): If set, VTK will build its "
 "sphinx documentation website."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:159
+#: ../../../build_instructions/build_settings.md:164
 msgid ""
 "`VTK_BUILD_ALL_MODULES` (default `OFF`): If set, VTK will enable all modules "
 "not disabled by other features."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:161
+#: ../../../build_instructions/build_settings.md:166
 msgid ""
 "`VTK_ENABLE_REMOTE_MODULES` (default `ON`): If set, VTK will try to build "
 "remote modules (the `Remote` directory). If unset, no remote modules will "
 "build."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:164
+#: ../../../build_instructions/build_settings.md:169
 msgid ""
 "`VTK_ENABLE_EXTRA_BUILD_WARNINGS` (default `OFF`; requires CMake >= 3.19): "
 "If set, VTK will enable additional build warnings."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:166
+#: ../../../build_instructions/build_settings.md:171
 msgid ""
 "`VTK_ENABLE_EXTRA_BUILD_WARNINGS_EVERYTHING` (default `OFF`; requires "
 "`VTK_ENABLE_EXTRA_BUILD_WARNINGS` and `-Weverything` support): If set, VTK "
 "will enable all build warnings (with some explicitly turned off)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:169
+#: ../../../build_instructions/build_settings.md:174
 msgid ""
 "`VTK_USE_EXTERNAL` (default `OFF`): Whether to prefer external third party "
 "libraries or the versions VTK's source contains."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:171
+#: ../../../build_instructions/build_settings.md:176
 msgid ""
 "`VTK_TARGET_SPECIFIC_COMPONENTS` (default `OFF`): Whether to install files "
 "into target-specific components (`<TARGET>-runtime`, `<TARGET>-development`, "
 "etc.) or general components (`runtime`, `development`, etc.)"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:175
+#: ../../../build_instructions/build_settings.md:180
 msgid ""
 "`VTK_VERSIONED_INSTALL` (default `ON`): Whether to add version numbers to "
 "VTK's include directories and library names in the install tree."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:177
+#: ../../../build_instructions/build_settings.md:182
 msgid ""
 "`VTK_CUSTOM_LIBRARY_SUFFIX` (default depends on `VTK_VERSIONED_INSTALL`): "
 "The custom suffix for libraries built by VTK. Defaults to either an empty "
@@ -445,7 +453,7 @@ msgid ""
 "components, respectively."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:181
+#: ../../../build_instructions/build_settings.md:186
 msgid ""
 "`VTK_CUSTOM_LIBRARY_VERSION` (default depends on `VTK_VERSIONED_INSTALL`): "
 "The custom version for libraries built by VTK. Defaults to either an empty "
@@ -453,33 +461,33 @@ msgid ""
 "VTK_VERSIONED_INSTALL is ON."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:185
+#: ../../../build_instructions/build_settings.md:190
 msgid ""
 "`VTK_INSTALL_SDK` (default `ON`): If set, VTK will install its headers, "
 "CMake API, etc. into its install tree for use."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:187
+#: ../../../build_instructions/build_settings.md:192
 msgid ""
 "`VTK_FORBID_DOWNLOADS` (default `OFF`): If set, VTK will error on any "
 "network activity required during the build (namely remote modules and "
 "testing data)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:190
+#: ../../../build_instructions/build_settings.md:195
 msgid ""
 "`VTK_DATA_STORE` (default is complicated): If set or detected, points to "
 "where VTK external data will be stored or looked up."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:192
+#: ../../../build_instructions/build_settings.md:197
 msgid ""
 "`VTK_DATA_EXCLUDE_FROM_ALL` (default is complicated, but generally `OFF`): "
 "If set or detected, data downloads will only happen upon explicit request "
 "rather than through the build's default target."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:196
+#: ../../../build_instructions/build_settings.md:201
 msgid ""
 "`VTK_RELOCATABLE_INSTALL` (default `ON`): If set, the install tree will be "
 "relocatable to another path. If unset, the install tree may be tied to the "
@@ -488,7 +496,7 @@ msgid ""
 "VTK."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:201
+#: ../../../build_instructions/build_settings.md:206
 msgid ""
 "`VTK_UNIFIED_INSTALL_TREE` (default `OFF`): If set, the install tree is "
 "stipulated to be a unified install tree of VTK and all of its dependencies; "
@@ -499,44 +507,44 @@ msgid ""
 "mechanism such as modules)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:208
+#: ../../../build_instructions/build_settings.md:213
 msgid ""
 "`VTK_ENABLE_SANITIZER` (default `OFF`): Whether to enable sanitization of "
 "the VTK codebase or not."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:210
+#: ../../../build_instructions/build_settings.md:215
 msgid ""
 "`VTK_SANITIZER` (default `address`; requires `VTK_ENABLE_SANITIZER`): The "
 "sanitizer to use."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:212
+#: ../../../build_instructions/build_settings.md:217
 msgid ""
 "`VTK_USE_LARGE_DATA` (default `OFF`; requires `VTK_BUILD_TESTING`): Whether "
 "to enable tests which use \"large\" data or not (usually used to reduce the "
 "amount of data downloading required for the test suite)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:215
+#: ../../../build_instructions/build_settings.md:220
 msgid ""
 "`VTK_USE_HIP` (default `OFF`; requires CMAKE >= 3.21 and NOT `VTK_USE_CUDA`) "
 "Whether [HIP][hip] support will be available or not."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:217
+#: ../../../build_instructions/build_settings.md:222
 msgid ""
 "`VTK_LEGACY_REMOVE` (default `OFF`): If set, VTK will disable legacy, "
 "deprecated APIs."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:219
+#: ../../../build_instructions/build_settings.md:224
 msgid ""
 "`VTK_LEGACY_SILENT` (default `OFF`; requires `VTK_LEGACY_REMOVE` to be "
 "`OFF`): If set, usage of legacy, deprecated APIs will not cause warnings."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:221
+#: ../../../build_instructions/build_settings.md:226
 msgid ""
 "`VTK_USE_FUTURE_CONST` (default `OFF`): If set, the `VTK_FUTURE_CONST` macro "
 "expands to `const`; otherwise it expands to nothing. This is used to "
@@ -544,7 +552,7 @@ msgid ""
 "in for backwards compatibility."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:225
+#: ../../../build_instructions/build_settings.md:230
 msgid ""
 "`VTK_USE_FUTURE_BOOL` (default `OFF`): If set, the `vtkTypeBool` typedef is "
 "defined to `bool`; otherwise it's `int`. VTK was created before C++ even had "
@@ -552,31 +560,31 @@ msgid ""
 "more real `bool`s, set to `OFF` only if required for backwards compatibility."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:230
+#: ../../../build_instructions/build_settings.md:235
 msgid ""
 "`VTK_USE_TK` (default `OFF`; requires `VTK_WRAP_PYTHON`): If set, VTK will "
 "enable Tkinter support for VTK widgets."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:232
+#: ../../../build_instructions/build_settings.md:237
 msgid ""
 "`VTK_BUILD_COMPILE_TOOLS_ONLY` (default `OFF`): If set, VTK will compile "
 "just its compile tools for use in a cross-compile build."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:234
+#: ../../../build_instructions/build_settings.md:239
 msgid ""
 "`VTK_NO_PYTHON_THREADS` (default `OFF`): If set, then all Python threading "
 "in VTK will be disabled."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:236
+#: ../../../build_instructions/build_settings.md:241
 msgid ""
 "`VTK_PYTHON_FULL_THREADSAFE` (default `ON`): If set, lock the Python GIL for "
 "Python C API calls, to make it safe to allow Python thread concurrency."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:238
+#: ../../../build_instructions/build_settings.md:243
 msgid ""
 "`VTK_SERIAL_TESTS_USE_MPIEXEC` (default `OFF`): Used on HPC to run serial "
 "tests on compute nodes. If set, it prefixes serial tests with "
@@ -584,25 +592,25 @@ msgid ""
 "${MPIEXEC_PREFLAGS}"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:241
+#: ../../../build_instructions/build_settings.md:246
 msgid ""
 "`VTK_WINDOWS_PYTHON_DEBUGGABLE` (default `OFF`): Set to `ON` if using a "
 "debug build of Python."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:243
+#: ../../../build_instructions/build_settings.md:248
 msgid ""
 "`VTK_WINDOWS_PYTHON_DEBUGGABLE_REPLACE_SUFFIX` (default `OFF`): Set to `ON` "
 "to use just a `_d` suffix for Python modules."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:245
+#: ../../../build_instructions/build_settings.md:250
 msgid ""
 "`VTK_BUILD_PYI_FILES` (default `OFF`): Set to `ON` to build `.pyi` type hint "
 "files for VTK's Python interfaces."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:247
+#: ../../../build_instructions/build_settings.md:252
 msgid ""
 "`VTK_DLL_PATHS` (default `\"\"` or `VTK_DLL_PATHS` from the environment): If "
 "set, these paths will be added via Python 3.8's `os.add_dll_directory` "
@@ -611,13 +619,13 @@ msgid ""
 "in the environment are a path list in the platform's preferred format."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:253
+#: ../../../build_instructions/build_settings.md:258
 msgid ""
 "`VTK_ENABLE_VR_COLLABORATION` (default `OFF`): If `ON`, includes support for "
 "multi client VR collaboration. Requires libzmq and cppzmq external libraries."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:255
+#: ../../../build_instructions/build_settings.md:260
 msgid ""
 "`VTK_SMP_ENABLE_<backend_name>` (default `OFF` if needs an external library "
 "otherwise `ON`): If set, builds with the specified SMPTools backend "
@@ -625,57 +633,57 @@ msgid ""
 "environment variable."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:258
+#: ../../../build_instructions/build_settings.md:263
 msgid ""
 "`VTK_USE_VIDEO_FOR_WINDOWS` (default `OFF`; requires Windows): Enable the "
 "`vtkAVIWriter` class in the `VTK::IOMovie` module."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:260
+#: ../../../build_instructions/build_settings.md:265
 msgid ""
 "`VTK_USE_VIDEO_FOR_WINDOWS_CAPTURE` (default `OFF`; requires Windows): "
 "Enable the `vtkWin32VideoSource` class in the `VTK::IOVideo` module."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:262
+#: ../../../build_instructions/build_settings.md:267
 msgid ""
 "`VTK_USE_MICROSOFT_MEDIA_FOUNDATION` (default `OFF`; requires Windows): "
 "Enable the `vtkMP4Writer` class in the `VTK::IOMovie` module."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:264
+#: ../../../build_instructions/build_settings.md:269
 msgid ""
 "`VTK_USE_64BIT_TIMESTAMPS` (default `OFF`; forced on for 64-bit builds): "
 "Build with 64-bit `vtkMTimeType`."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:266
+#: ../../../build_instructions/build_settings.md:271
 msgid ""
 "`VTK_USE_64BIT_IDS` (default `OFF` for 32-bit builds; `ON` for 64-bit "
 "builds): Whether `vtkIdType` should be 32-bit or 64-bit."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:268
+#: ../../../build_instructions/build_settings.md:273
 msgid ""
 "`VTK_DEBUG_LEAKS` (default `OFF`): Whether VTK will report leaked "
 "`vtkObject` instances at process destruction or not."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:270
+#: ../../../build_instructions/build_settings.md:275
 msgid ""
 "`VTK_DEBUG_RANGE_ITERATORS` (default `OFF`; requires a `Debug` build): "
 "Detect errors with `for-range` iterators in VTK (note that this is very "
 "slow)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:273
+#: ../../../build_instructions/build_settings.md:278
 msgid ""
 "`VTK_ALWAYS_OPTIMIZE_ARRAY_ITERATORS` (default `OFF`; requires `NOT "
 "VTK_DEBUG_RANGE_ITERATORS`): Optimize `for-range` array iterators even in "
 "`Debug` builds."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:276
+#: ../../../build_instructions/build_settings.md:281
 msgid ""
 "`VTK_ALL_NEW_OBJECT_FACTORY` (default `OFF`): If `ON`, classes using "
 "`vtkStandardNewMacro` will use `vtkObjectFactoryNewMacro` allowing overrides "
@@ -683,7 +691,7 @@ msgid ""
 "`vtkObjectFactoryNewMacro` or `vtkAbstractObjectFactoryNewMacro`."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:280
+#: ../../../build_instructions/build_settings.md:285
 msgid ""
 "`VTK_ENABLE_VISKORES_OVERRIDES` (default `OFF`): If `ON`, enables factory "
 "override  of certain VTK filters by their Viskores counterparts. There is "
@@ -692,7 +700,7 @@ msgid ""
 "`viskoresFilterOverrides::SetEnabled(bool)`."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:284
+#: ../../../build_instructions/build_settings.md:289
 msgid ""
 "`VTK_GENERATE_SPDX` (default `OFF`): If `ON`, SPDX file will be generated at "
 "build time  and installed for each module and third party, in order to be "
@@ -700,7 +708,7 @@ msgid ""
 "generation) and  [](/advanced/spdx_and_sbom.md) for more info."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:288
+#: ../../../build_instructions/build_settings.md:293
 msgid ""
 "`VTK_ANARI_ENABLE_NVTX` (default `OFF`; requires CUDA Toolkit): If `ON`, "
 "enables the NVIDIA  Tools Extension Library (NVTX) for profiling the ANARI "
@@ -708,11 +716,11 @@ msgid ""
 "[nsight]."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:292
+#: ../../../build_instructions/build_settings.md:297
 msgid "`vtkArrayDispatch` related options:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:294
+#: ../../../build_instructions/build_settings.md:299
 msgid ""
 "The `VTK_DISPATCH_<array_type>_ARRAYS` options (default `OFF` for all but "
 "AOS) enable the specified type of array to be included in a dispatch type "
@@ -722,71 +730,71 @@ msgid ""
 "exist for use with the VTK dispatch mechanism:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:300
+#: ../../../build_instructions/build_settings.md:305
 msgid ""
 "`VTK_DISPATCH_AOS_ARRAYS` (default `ON`): includes dispatching for the "
 "commonly used \"array-of-structure\" ordered arrays derived from "
 "`vtkAOSDataArrayTemplate`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:302
+#: ../../../build_instructions/build_settings.md:307
 msgid ""
 "`VTK_DISPATCH_SOA_ARRAYS` (default `OFF`): includes dispatching for "
 "\"structure-of-array\" ordered arrays derived from `vtkSOADataArrayTemplate`"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:304
+#: ../../../build_instructions/build_settings.md:309
 msgid ""
 "`VTK_DISPATCH_AFFINE_ARRAYS` (default `OFF`): includes dispatching for "
 "linearly varying `vtkAffineArray`s as part of the implicit array framework"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:306
+#: ../../../build_instructions/build_settings.md:311
 msgid ""
 "`VTK_DISPATCH_CONSTANT_ARRAYS` (default `OFF`): includes dispatching for "
 "constant arrays `vtkConstantArray` as part of the implicit array framework"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:308
+#: ../../../build_instructions/build_settings.md:313
 msgid ""
 "`VTK_DISPATCH_STRIDED_ARRAYS` (default `OFF`): includes dispatching for "
 "strided arrays `vtkStridedArray` as part of the implicit array framework"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:310
+#: ../../../build_instructions/build_settings.md:315
 msgid ""
 "`VTK_DISPATCH_STRUCTURED_POINT_ARRAYS` (default `OFF`): includes dispatching "
 "for structured point arrays `vtkStructuredPointArray` as part of the "
 "implicit array framework"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:314
+#: ../../../build_instructions/build_settings.md:319
 msgid ""
 "Adding increasing numbers of arrays in the dispatch mechanism can greatly "
 "slow down compile times."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:317
+#: ../../../build_instructions/build_settings.md:322
 msgid ""
 "The VTK module system provides a number of variables to control modules "
 "which are not otherwise controlled by the other options provided."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:320
+#: ../../../build_instructions/build_settings.md:325
 msgid ""
 "`VTK_MODULE_USE_EXTERNAL_<name>` (default depends on `VTK_USE_EXTERNAL`): "
 "Use an external source for the named third-party module rather than the copy "
 "contained within the VTK source tree."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:325
+#: ../../../build_instructions/build_settings.md:330
 msgid ""
 "Activating this option within an interactive cmake configuration (i.e. "
 "ccmake, cmake-gui)   could end up finding libraries in the standard "
 "locations rather than copies   in non-standard locations."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:329
+#: ../../../build_instructions/build_settings.md:334
 msgid ""
 "It is recommended to pass the variables necessary to find the intended "
 "external package to   the first configure to avoid finding unintended copies "
@@ -796,56 +804,56 @@ msgid ""
 "`_ROOT` are likely candidates."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:335
+#: ../../../build_instructions/build_settings.md:340
 msgid "Example:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:336
+#: ../../../build_instructions/build_settings.md:341
 msgid "ccmake -D HDF5_ROOT:PATH=/home/user/myhdf5 ../vtk/sources\n"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:341
+#: ../../../build_instructions/build_settings.md:346
 msgid ""
 "`VTK_MODULE_ENABLE_<name>` (default `DEFAULT`): Change the build settings "
 "for the named module. Valid values are those for the module system's build "
 "settings (see below)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:344
+#: ../../../build_instructions/build_settings.md:349
 msgid ""
 "`VTK_GROUP_ENABLE_<name>` (default `DEFAULT`): Change the default build "
 "settings for modules belonging to the named group. Valid values are those "
 "for the module system's build settings (see below)."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:348
+#: ../../../build_instructions/build_settings.md:353
 msgid ""
 "For variables which use the module system's build settings, the valid values "
 "are as follows:"
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:350
+#: ../../../build_instructions/build_settings.md:355
 msgid "`YES`: Require the module to be built."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:351
+#: ../../../build_instructions/build_settings.md:356
 msgid "`WANT`: Build the module if possible."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:352
+#: ../../../build_instructions/build_settings.md:357
 msgid ""
 "`DEFAULT`: Use the settings by the module's groups and "
 "`VTK_BUILD_ALL_MODULES`."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:354
+#: ../../../build_instructions/build_settings.md:359
 msgid "`DONT_WANT`: Don't build the module unless required as a dependency."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:355
+#: ../../../build_instructions/build_settings.md:360
 msgid "`NO`: Do not build the module."
 msgstr ""
 
-#: ../../../build_instructions/build_settings.md:357
+#: ../../../build_instructions/build_settings.md:362
 msgid "If any `YES` module requires a `NO` module, an error is raised."
 msgstr ""
