@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:1
+msgid ""
+"VTK Wedge Cell Types: Fix Point Ordering, Triangulation and Volume "
+"Correctness"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:3
+msgid ""
+"This series of commits fixes long-standing issues with wedge cell types in "
+"VTK, where point orderings were inconsistent with parametric coordinates, "
+"leading to incorrect volume computations, negative volume tetrahedra in "
+"triangulations, and faces with incorrect outward normals. The fixes are "
+"mentioned below:"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:8
+msgid "`vtkWedge`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:9
+msgid ""
+"Fix documentation and drawing: the point ordering in the vtk-examples and "
+"vtk-book was wrong and did not match the cell's parametric coordinates; this "
+"has been corrected"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:11
+msgid ""
+"Wrong Wedge Point Ordering: ![Old Wedge Point Ordering](../imgs/9.7/"
+"WedgeWrong.png)"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:11
+msgid "Old Wedge Point Ordering"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:12
+msgid ""
+"Corrected Wedge Point Ordering: ![New Wedge Point Ordering](../imgs/9.7/"
+"WedgeCorrected.png)"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:12
+msgid "New Wedge Point Ordering"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:13
+msgid ""
+"Use outward normal winding for each face, which was broken as a result of "
+"the incorrect point ordering"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:15
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:23
+msgid "`TriangulateLocalIds` now generates positive volume tetrahedrons"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:16
+msgid "Fix tests generating wrong point ordering"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:17
+msgid ""
+"Fix Clip Tables to produce correct point/edge ordering with positive volume "
+"wedges"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:18
+msgid "Fix Contour Tables to produce correct point/edge ordering"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:20
+msgid "`vtkQuadraticWedge`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:21
+msgid ""
+"Fix documentation and add topology drawing to match parametric coordinates"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:22
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:28
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:33
+msgid "`LinearWedges` now produce positive volume wedges"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:24
+msgid "Fix mesh with wrong point ordering used by a test"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:26
+msgid "`vtkBiQuadraticQuadraticWedge`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:27
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:32
+msgid "Add topology drawing"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:29
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:34
+msgid ""
+"`TriangulateLocalIds` now generates tetrahedrons (previously generated "
+"linear wedges)"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:31
+msgid "`vtkQuadraticLinearWedge`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:36
+msgid "`vtkHigherOrderWedge`/`vtkBezierWedge`/`vtkLagrangeWedge`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:37
+msgid ""
+"Fix documentation to mention that it now shares the same point ordering as "
+"`vtkWedge`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:39
+msgid "`vtkBiQuadraticQuadraticHexahedron`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:40
+msgid "`TriangulateLocalIds` now generates tetrahedrons with valid points."
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:42
+msgid "`vtkCellTypeSource`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:43
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:47
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:51
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:54
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:60
+msgid "Fix `vtkWedge` point ordering to match parametric coordinates"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:44
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:48
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:55
+msgid ""
+"Fix `vtkQuadraticWedge` wedge point ordering to match parametric coordinates"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:46
+msgid "`vtkEnsigh*Reader`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:50
+msgid "`vtkAvmeshReader`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:53
+msgid "`vtkIOSSReader/Writer`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:56
+msgid ""
+"Fix `vtkBiQuadraticQuadraticWedge` point ordering to match parametric "
+"coordinates"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:57
+msgid "Fix `vtkLagrangeWedge` point ordering to match parametric coordinates"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:59
+msgid "`vtkTRUCHASReader`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:62
+msgid "`vtkMeshQuality`"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:63
+msgid ""
+"Revert previous `vtkWedge` point ordering fix, superseded by the above "
+"changes"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-wedge-point-ordering.md:64
+msgid ""
+"Fix `vtkQuadraticHexahedron`/`vtkTriQuadraticHexahedron` point ordering to "
+"account for differing conventions between VTK and Exodus/Patran (used by "
+"verdict)"
+msgstr ""

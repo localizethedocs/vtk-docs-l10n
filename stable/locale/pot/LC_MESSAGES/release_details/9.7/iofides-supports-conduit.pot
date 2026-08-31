@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:1
+msgid "`vtkFidesReader` supports reading from `Conduit` nodes"
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:3
+msgid ""
+"The `vtkFidesReader`, which historically only supported reading from ADIOS2 "
+"files, now allows you to pass in-memory Conduit nodes directly into the "
+"`vtkFidesReader`, bypassing the filesystem entirely."
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:5
+msgid ""
+"**Expected Usage** You can provide data sources via both C++ and Python. The "
+"reader relies on a JSON data model where the data source type is explicitly "
+"given as `\"conduit\"`."
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:8
+msgid "In C++ (using the Conduit C-API):"
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:10
+msgid ""
+"conduit_node* c_node = conduit::c_node(&my_cpp_node);\n"
+"reader->SetDataSourceNode(\"source\", c_node);\n"
+"reader->Update();\n"
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:16
+msgid "In Python:"
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:18
+msgid ""
+"# node is a standard conduit.Node populated with numpy arrays\n"
+"reader.SetDataSourceNode(\"source\", node)\n"
+"reader.Update()\n"
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:24
+msgid ""
+"To clear a previously set resource, you can pass `nullptr` (or `None` in "
+"Python). Note that doing so will leave the reader in an invalid state until "
+"a new, valid data source is provided for the pipeline to update."
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:26
+msgid "**Known Issues and Caveats**"
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:27
+msgid ""
+"**Memory Ownership (C++):** The reader **does not** take ownership of the "
+"memory backing the `conduit_node`. You are strictly responsible for ensuring "
+"the data backing the node remains valid and unmodified until the VTK "
+"pipeline execution (`Update()`) has completely finished."
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:28
+msgid ""
+"**Memory Ownership (Python):** The reader will automatically increment the "
+"reference count of the provided Python `conduit.Node`, preventing standard "
+"garbage collection. However, if your Conduit node is just a view into "
+"externally managed memory (like a C++ simulation array or a volatile NumPy "
+"view), you must ensure that external memory is not freed while the reader "
+"holds the reference."
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:29
+msgid ""
+"**Partition Indexing:** Because Conduit nodes represent local in-memory "
+"snapshots, the resulting `vtkPartitionedDataSet` uses local index geometries "
+"(starting at `0`) rather than ADIOS2's globally offset indices."
+msgstr ""
+
+#: ../../../release_details/9.7/iofides-supports-conduit.md:30
+msgid ""
+"**Build Requirements:** While still present in the api, the Python overload "
+"of `SetDataSourceNode` is disabled if VTK is compiled without Python "
+"wrapping (`VTK_WRAP_PYTHON=OFF`) or if the underlying Conduit library was "
+"built without Python support. Similarly, the C++ overload of "
+"`SetDataSourceNode` is disabled if VTK is compiled without Conduit support."
+msgstr ""

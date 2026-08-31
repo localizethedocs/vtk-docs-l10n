@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:1
+msgid "Geometry and Feature Edges Dispatcher Filters"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:3
+msgid ""
+"Two new dispatcher filters provide unified geometry extraction and feature "
+"edge detection across all VTK data types. These filters were previously part "
+"of ParaView's rendering infrastructure and are now available as standalone "
+"VTK components."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:8
+msgid "vtkGeometryFilterDispatcher"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:10
+msgid ""
+"`vtkGeometryFilterDispatcher` extracts renderable geometry (surfaces or "
+"outlines) from any VTK data object, automatically dispatching to the "
+"appropriate type-specific implementation. It accepts all major VTK data "
+"types as input:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:14
+msgid "`vtkImageData`, `vtkRectilinearGrid`, `vtkStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:15
+msgid "`vtkUnstructuredGrid`, `vtkPolyData`"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:16
+msgid "`vtkHyperTreeGrid`, `vtkExplicitStructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:17
+msgid "`vtkCellGrid`, `vtkGenericDataSet`"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:18
+msgid ""
+"Composite datasets (`vtkMultiBlockDataSet`, "
+"`vtkPartitionedDataSetCollection`, `vtkUniformGridAMR`)"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:21
+msgid "Key capabilities:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:23
+msgid ""
+"**Surface or outline extraction** controlled by the `UseOutline` flag. When "
+"enabled (the default), structured volumes produce a bounding box outline; "
+"when disabled, a full surface is extracted."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:26
+msgid ""
+"**Feature edge generation** via `GenerateFeatureEdges`. For HyperTreeGrid "
+"inputs, this delegates to `vtkHyperTreeGridFeatureEdges` rather than "
+"operating on the extracted polydata."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:29
+msgid ""
+"**Normal computation** with `GeneratePointNormals` and "
+"`GenerateCellNormals`, including `FeatureAngle` and `Splitting` controls for "
+"sharp edge handling."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:31
+msgid ""
+"**Nonlinear subdivision** for higher-order cells, controlled by "
+"`NonlinearSubdivisionLevel`."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:33
+msgid ""
+"**Cell/point ID passthrough** with `PassThroughCellIds` and "
+"`PassThroughPointIds` for selection and picking workflows."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:35
+msgid ""
+"**Parallel support** via `SetController()` for distributed-memory execution, "
+"with optional `GenerateProcessIds` arrays."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:37
+msgid ""
+"**AMR-specific options** including `HideInternalAMRFaces` and "
+"`UseNonOverlappingAMRMetaDataForOutlines`."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:39
+msgid "**Mesh caching** for improved performance on repeated updates."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:41
+msgid ""
+"vtkNew<vtkGeometryFilterDispatcher> geometry;\n"
+"geometry->SetInputConnection(reader->GetOutputPort());\n"
+"geometry->SetUseOutline(0);           // extract surface, not outline\n"
+"geometry->SetGeneratePointNormals(true);\n"
+"geometry->Update();\n"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:49
+msgid "vtkFeatureEdgesDispatcher"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:51
+msgid ""
+"`vtkFeatureEdgesDispatcher` extracts feature edges from either `vtkPolyData` "
+"or `vtkHyperTreeGrid` input, dispatching to `vtkFeatureEdges` or "
+"`vtkHyperTreeGridFeatureEdges` respectively."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:55
+msgid ""
+"For polydata input, the following edge types can be extracted independently:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:57
+msgid "`BoundaryEdges` — edges used by only one cell"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:58
+msgid "`FeatureEdges` — edges where the dihedral angle exceeds `FeatureAngle`"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:59
+msgid "`NonManifoldEdges` — edges shared by more than two cells"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:60
+msgid "`ManifoldEdges` — interior edges shared by exactly two cells"
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:62
+msgid ""
+"For HyperTreeGrid input, `MergePoints` controls whether coincident points "
+"are merged using a locator."
+msgstr ""
+
+#: ../../../release_details/9.7/add-geometry-and-feature-edges-dispatchers.md:65
+msgid ""
+"vtkNew<vtkFeatureEdgesDispatcher> edges;\n"
+"edges->SetInputConnection(source->GetOutputPort());\n"
+"edges->SetFeatureAngle(45.0);\n"
+"edges->SetBoundaryEdges(true);\n"
+"edges->SetNonManifoldEdges(false);\n"
+"edges->Update();\n"
+msgstr ""

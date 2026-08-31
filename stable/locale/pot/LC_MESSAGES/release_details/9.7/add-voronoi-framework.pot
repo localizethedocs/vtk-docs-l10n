@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:1
+msgid "Voronoi Framework"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:3
+msgid ""
+"A parallel, general framework for computing 2D and 3D Voronoi tessellations "
+"and Delaunay triangulations has been added. In addition, three filters "
+"(which use the framework) are now available. Most of these additions are "
+"available in the new Filters/Meshing/ module."
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:8
+msgid ""
+"The framework and filters expect as input a set of explicit generator points "
+"(i.e., vtkPointSet) and optionally, integral point data defining a "
+"segmentation label map that identifies each point as belonging to a "
+"particular region, including regions identified as \"outside\". This enables "
+"the algorithm to generate concave as well as convex output tessellations."
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:14
+msgid ""
+"Extensive, detailed information is available from VTK's Design Documentation."
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:16
+msgid "Framework"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:18
+msgid ""
+"The framework consists of several templated classes that enable users to "
+"customize the information generated during processing. For example, "
+"statistics in the neighborhood of each generator point can be gathered and "
+"(parallel composited) to produce (invariant to the order of thread "
+"execution) global output. Template parameters are used to control the "
+"parallel compositing process, as well as the classification of the spokes (i."
+"e., the connections between neighboring point generators). Spokes are used "
+"to form topological relationships between Voronoi cells, enabling "
+"topological validity checks, and extraction of mesh features such as "
+"boundary faces, or faces between regions (e.g., form a surface net)."
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:29
+msgid "The framework classes consist of:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:31
+msgid "vtkVoronoiCore.h/.txx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:32
+msgid "vtkVoronoiCore2D.h/.txx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:33
+msgid "vtkVoronoiCore3D.h/.txx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:34
+msgid "vtkVoronoiTile.h/.cxx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:35
+msgid "vtkVoronoiHull.h/.cxx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:38
+msgid "Filters"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:40
+msgid ""
+"The filters provide basic capabilities to generate the Voronoi tessellation "
+"in 2D and 3D, as well as unconstrained Delaunay triangulations. Options "
+"exist to produce output in different forms, for example boundary meshes, "
+"unstructured grids, and surface nets can be generated."
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:45
+msgid "The filter classes consist of:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:47
+msgid "vtkVoronoiFlower2D.h/.cxx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:48
+msgid "vtkVoronoiFlower3D.h/.cxx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:49
+msgid "vtkGeneralizedSurfaceNets3D.h/.cxx"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:52
+msgid "Roadmap"
+msgstr ""
+
+#: ../../../release_details/9.7/add-voronoi-framework.md:54
+msgid ""
+"This is an initial implementation of a general purpose meshing framework. We "
+"expect active development to continue: for example meshing segmented "
+"volumes, and supporting constrained triangulations.  This initial "
+"implementation will also grow to better handle important numerical "
+"challenges, such as the degeneracies often found in the Voronoi and Delaunay "
+"literature, and improving the performance of the algorithms."
+msgstr ""

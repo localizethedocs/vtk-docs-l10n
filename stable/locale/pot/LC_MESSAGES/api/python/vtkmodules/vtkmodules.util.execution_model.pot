@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgid "{py:obj}`Output <vtkmodules.util.execution_model.Output>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:28
-#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:266
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:274
 msgid ""
 "Helper object to represent the output of an algorithms as returned by the "
 "update() method. Implements the output property enabling calling update()."
@@ -104,7 +104,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:79
 #: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:159
-#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:263
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:271
 msgid "Bases: {py:obj}`object`"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:84
 #: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:164
-#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:268
+#: ../../../api/python/vtkmodules/vtkmodules.util.execution_model.md:276
 msgid "Initialization"
 msgstr ""
 
@@ -227,27 +227,42 @@ msgid "3"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:231
-msgid "Update the pipeline and return the last algorithm's output."
+msgid "Find an algorithm in the pipeline by its object_name."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:233
+msgid ""
+"Traverses the full pipeline graph from last to first, following all input "
+"ports and all connections per port. Returns the first algorithm whose "
+"``GetObjectName()`` matches *name*."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:237
+msgid "Raises KeyError if no match is found."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:239
+msgid "Update the pipeline and return the last algorithm's output."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:247
 msgid ""
 "Sets the input of the first filter, update the pipeline and returns the "
 "output. A single data object or a tuple of data objects (when there are "
 "multiple outputs) are returned."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:247
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:255
 msgid ""
 "Used to connect two pipeline items. The left side can be a data object, an "
 "algorithm or a pipeline. The right side can be an algorithm or a pipeline."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:255
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:263
 msgid "Creates a pipeline between a sequence input and a pipeline."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:279
+#: ../../../../../Wrapping/Python/vtkmodules/util/execution_model.py:287
 msgid ""
 "Returns a single data object or a tuple of data objects if there are "
 "multiple outputs."
