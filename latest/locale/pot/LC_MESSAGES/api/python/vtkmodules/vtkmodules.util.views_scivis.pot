@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:1
+msgid "{py:mod}`vtkmodules.util.views_scivis`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:7
+msgid "Pythonic overrides for the ``vtkViewsScivis`` module."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:9
+msgid ""
+"The wrapping layer already exposes snake_case properties (``color``, "
+"``opacity``, ``representation`` ...) for every class in this module, and "
+"enum properties backed by ``Set<Prop>To<Name>()`` methods already accept "
+"strings (e.g. ``rep.representation = \"wireframe\"``, ``view.selector.mode = "
+"\"frustum\"``). These overrides add the few things the wrapping does not "
+"provide on its own:"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:15
+msgid ""
+"named colors -- ``color=\"tomato\"``, resolved via :mod:`vtkmodules.util."
+"colors`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:16
+msgid ""
+"delegation of properties the C++ classes deliberately do not carry -- "
+"setting ``rep.specular`` or ``view.key_light_intensity`` reaches the "
+"property, geometry filter or light kit that owns it, so the flat spelling "
+"that makes keyword arguments natural survives the smaller C++ API"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:20
+msgid ""
+"the same in the constructor, including a dict per sub-object -- "
+"``vtkScivisView(selector={\"mode\": \"frustum\"})``"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:22
+msgid ""
+"a fluent ``view.show(source, color=...)`` helper that creates, configures, "
+"and adds a representation in one call"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:24
+msgid "``view += representation`` / ``view -= representation``"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:25
+msgid "``view.size = (width, height)``"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:27
+msgid ""
+"The layer is registered for ``vtkViewsScivis`` in ``vtkmodules/__init__.py."
+"in`` and loaded automatically when that module is imported."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:18
+msgid "{py:obj}`_Delegating <vtkmodules.util.views_scivis._Delegating>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:106
+msgid "Route properties to the object that owns them."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:22
+msgid ""
+"{py:obj}`SurfaceRepresentation <vtkmodules.util.views_scivis."
+"SurfaceRepresentation>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:153
+msgid "``vtkSurfaceRepresentation`` with named colors and property delegation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:26
+msgid "{py:obj}`ScivisView <vtkmodules.util.views_scivis.ScivisView>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:28
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:195
+msgid "``vtkScivisView`` with named colors, ``size``, ``show()``."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:30
+msgid ""
+"{py:obj}`VolumeRepresentation <vtkmodules.util.views_scivis."
+"VolumeRepresentation>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:269
+msgid "``vtkVolumeRepresentation`` with property delegation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:36
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:42
+msgid ""
+"{py:obj}`_make_representation <vtkmodules.util.views_scivis."
+"_make_representation>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:84
+msgid "Build a representation for *representation_type*."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:46
+msgid "{py:obj}`_resolve_color <vtkmodules.util.views_scivis._resolve_color>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:91
+msgid "Return an ``(r, g, b)`` tuple for *color*."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:50
+msgid ""
+"{py:obj}`_check_property <vtkmodules.util.views_scivis._check_property>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:98
+msgid "Raise for a keyword argument nothing on *obj* owns."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:56
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:62
+msgid ""
+"{py:obj}`REPRESENTATION_TYPES <vtkmodules.util.views_scivis."
+"REPRESENTATION_TYPES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:68
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:74
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:86
+msgid ""
+"Accepts ``None`` (a surface representation), a name from :data:"
+"`REPRESENTATION_TYPES`, or a representation class."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:93
+msgid ""
+"*color* is either a 3-sequence with components in ``[0, 1]`` or a snake_case "
+"named color from :mod:`vtkmodules.util.colors` (e.g. ``\"tomato\"``, "
+"``\"steel_blue\"``)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:100
+msgid ""
+"Attribute assignment on a Python subclass of a VTK object quietly creates an "
+"instance attribute, which would turn a misspelled keyword argument into a "
+"property that silently does nothing.  Keyword arguments are checked here so "
+"that they fail where the mistake was made."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:108
+msgid ""
+"The C++ classes carry only what it takes to make data visible and legible; "
+"everything else lives on the actor, property, mapper or filter underneath. "
+"That is the right shape for C++, where reaching one object further is a "
+"method call, but it would spoil ``view.show(src, specular=0.3)`` in Python, "
+"where flat keyword arguments are the whole point."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:114
+msgid ""
+"So an attribute this class does not define is looked for on each delegate in "
+"turn, and set on the first that has it.  ``rep.specular = 0.3`` and ``rep."
+"property.specular = 0.3`` are then the same thing, and an attribute nobody "
+"owns still fails, naming the delegates it looked in."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:108
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:155
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:197
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:271
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:112
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:159
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:201
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:275
+msgid "Accept in the constructor everything assignment accepts."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:114
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:161
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:203
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:277
+msgid ""
+"VTK builds its own constructor keyword handling from the properties a class "
+"declares, and it runs before any Python attribute assignment -- so it never "
+"reaches the delegation below, and ``view.specular = 0.3`` would work while "
+"``Class(specular=0.3)`` did not.  Anything VTK does not recognise is applied "
+"here instead, which puts the two back in step."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:167
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:209
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:283
+msgid ""
+"A dict value configures the sub-object of that name, so the grouping the C++ "
+"API has is available at construction too::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:123
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:170
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:212
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:286
+msgid ""
+"view = vtkScivisView(\n"
+"    window_title=\"demo\",\n"
+"    selector={\"mode\": \"frustum\"},\n"
+"    light_kit={\"key_light_intensity\": 0.8},\n"
+")\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:129
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:176
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:218
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:292
+msgid ""
+"There is no way to spell that as a keyword name -- ``selector.mode=`` is a "
+"syntax error -- and a dict means nothing to an ordinary VTK property, so "
+"there is nothing for it to collide with."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:118
+msgid "()"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:150
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
+"`vtkmodules.vtkViewsScivis.vtkSurfaceRepresentation`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:165
+msgid "('GetProperty', 'GetGeometryFilter', 'GetActor')"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:192
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
+"`vtkmodules.vtkViewsScivis.vtkScivisView`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:207
+msgid "('GetLightKit', 'GetOrientationMarkerWidget', 'GetRenderer')"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:258
+msgid "Add a representation for *input* to the view and return it."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:260
+msgid ""
+"*input* is a ``vtkAlgorithm`` (its output port is connected) or a "
+"``vtkDataObject``.  Keyword arguments are applied as properties on the "
+"created representation::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:264
+msgid ""
+"view.show(sphere, color=\"tomato\", opacity=0.8,\n"
+"          representation=\"surfacewithedges\")\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:267
+msgid ""
+"*representation_type* selects what to build: a name from :data:"
+"`REPRESENTATION_TYPES`, a representation class, or ``None`` for a surface "
+"representation::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:271
+msgid ""
+"view.show(wavelet, \"volume\", scalar_opacity_unit_distance=0.8)\n"
+"view.show(wavelet, MyRepresentation)\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:266
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
+"`vtkmodules.vtkViewsScivis.vtkVolumeRepresentation`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:281
+msgid "('GetVolumeProperty', 'GetVolumeMapper', 'GetVolume')"
+msgstr ""

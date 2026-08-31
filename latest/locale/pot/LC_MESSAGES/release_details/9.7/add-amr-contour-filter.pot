@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:1
+msgid "Add vtkAMRContourFilter"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:3
+msgid ""
+"A vtkAMRContourFilter has been added. It computes a perfectly watertight "
+"contour on vtkOverlappingAMR by creating an interface between non-refined "
+"and refined grid of an AMR, interpolating data on the interface wherever "
+"needed and then running contour on that interface. The result is a "
+"vtkPartitionedDataSet of vtkPolyData."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:9
+msgid "Assumption:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:10
+msgid ""
+"A single voxel in a non-refined grid is not supposed to have points in "
+"common with grid of two other refinements levels."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:11
+msgid ""
+"A single edge should not be shared between grids of more than two different "
+"refinement level."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:13
+msgid "Implementation details"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:15
+msgid "Iterate over each grid."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:16
+msgid "If grid is of the highest refinement, just run a contour filter on it."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:17
+msgid ""
+"If not, identify the \"interface\", which are cells that are neighbors with "
+"a more refined cell."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:18
+msgid ""
+"Blank interface cells and keep a note of them, then run contour filter on "
+"the non-refined grid."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:19
+msgid ""
+"Split each interface cell into multiple unstructured cells to create an "
+"actual interface between high resolution grid and low resolution grid."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:20
+msgid "Interpolate data on the interface wherever needed."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:21
+msgid "Run the contour on the interface."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:22
+msgid "Put each contour part in a partitioned dataset, this is the output."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:24
+msgid ""
+"The complex part is obviously the splitting of low resolution grid cells "
+"into interface cells, The idea is to create pyramids and tetrahedrons out of "
+"the cells, by adding points on the edges (from the refined grid) as well as "
+"in the center of the faces and center of the voxel."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:28
+msgid "Iterate over each cells of the interface."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:29
+msgid ""
+"Check each edges of the cell and store the number of \"split points\", 2 "
+"means not split, more mean split."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:30
+msgid "Check each face of the cell."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:31
+msgid ""
+"If no edges are split, the face is facing a non-refined grid, then create a "
+"simple pyramid using the 4 face point and the voxel center."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:32
+msgid ""
+"If all edges are split (equally), the face is facing a refined grid, recover "
+"the refined point of the refined grid and create many pyramids between these "
+"quads and the voxel center."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:33
+msgid ""
+"Else, its an \"interface\" face, create tetrahedrons beween each \"split\" "
+"edges, the face center and the voxel center."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:35
+msgid ""
+"This creates a perfect paving of the interface, connecting the refined grid "
+"with the non refined grid. The data on the interface points matters for the "
+"contour. We obviously first take data from the refined grid when available, "
+"then data from the non-refined grid. If no data is available (interface face "
+"centers and voxel center), then a simple shepherd interpolation is used "
+"using all the points on the face or the voxel respectively."
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:40
+msgid "Rough face:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:42
+msgid "![image](../imgs/9.7/add-amr-contour-filter_rough.png)"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:42
+#: ../../../release_details/9.7/add-amr-contour-filter.md:46
+#: ../../../release_details/9.7/add-amr-contour-filter.md:50
+msgid "image"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:44
+msgid "Refined face"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:46
+msgid "![image](../imgs/9.7/add-amr-contour-filter_refined.png)"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:48
+msgid "Interface face:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-amr-contour-filter.md:50
+msgid "![image](../imgs/9.7/add-amr-contour-filter_interface.png)"
+msgstr ""

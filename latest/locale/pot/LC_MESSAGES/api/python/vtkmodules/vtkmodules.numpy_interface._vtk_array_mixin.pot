@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:344
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:364
 msgid ""
 "Create an override dict + decorator for ``__array_function__`` dispatch."
 msgstr ""
@@ -90,7 +90,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:36
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:351
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:371
 msgid ""
 "Register a mixin as override for all dtype instantiations of a VTK template."
 msgstr ""
@@ -106,41 +106,50 @@ msgid ""
 "base class in the MRO)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:54
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:53
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:63
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:137
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:74
 msgid "Store a weak reference to the owning dataset."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:62
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:76
+msgid ""
+"The reference must stay weak: this is a child-to-parent back reference, and "
+"a strong one would be pinned in vtkPythonUtil's ghost map once this wrapper "
+"is released, leaking the whole dataset."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:82
 msgid "Return the owning dataset (dereferenced from weak ref)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:70
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:90
 msgid "Return the association type (POINT, CELL, etc.)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:78
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:98
 msgid "Wrap a numpy result as VTKAOSArray preserving metadata."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:100
 msgid ""
 "Only wraps if result is an ndarray with same number of tuples. Returns plain "
 "ndarray/scalar otherwise."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.md:117
-msgid "None"
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:346
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:366
 msgid "Returns ``(registry_dict, register_decorator)``."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:348
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:368
 msgid "Usage::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:350
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:370
 msgid ""
 "MY_OVERRIDE, _override_mine = make_override_registry()\n"
 "\n"
@@ -148,14 +157,14 @@ msgid ""
 "def _my_sum(a, axis=None, **kw): ...\n"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:353
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:373
 msgid ""
 "Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:353: (INFO/1) "
+"Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:373: (INFO/1) "
 "Duplicate implicit target name: \"parameters\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:355
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/_vtk_array_mixin.py:375
 msgid ""
 "mixin_cls : type     The Python mixin class (e.g. VTKAOSArray). "
 "template_cls : VTK template class     The VTK template (e.g. "

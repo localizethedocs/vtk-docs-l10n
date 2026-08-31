@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,6 +131,11 @@ msgid ""
 "numpy_to_vtkIdTypeArray>`"
 msgstr ""
 
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:133
+msgid "Converts a numpy array into a vtkIdTypeArray."
+msgstr ""
+
 #: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:42
 msgid "{py:obj}`vtk_to_numpy <vtkmodules.util.numpy_support.vtk_to_numpy>`"
 msgstr ""
@@ -167,14 +172,11 @@ msgid "Data"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:62
-msgid ""
-"{py:obj}`VTK_ID_TYPE_SIZE <vtkmodules.util.numpy_support.VTK_ID_TYPE_SIZE>`"
+msgid "{py:obj}`_np_vtk <vtkmodules.util.numpy_support._np_vtk>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:66
-msgid ""
-"{py:obj}`VTK_LONG_TYPE_SIZE <vtkmodules.util.numpy_support."
-"VTK_LONG_TYPE_SIZE>`"
+msgid "{py:obj}`_vtk_np <vtkmodules.util.numpy_support._vtk_np>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:72
@@ -183,7 +185,13 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:78
 #: ../../../api/python/vtkmodules/vtkmodules.util.numpy_support.md:88
-msgid "'GetDataTypeSize(...)'"
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:107
+msgid ""
+"The result is a copy, so mutating it does not affect the mapping used by "
+"this module."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:128
@@ -215,6 +223,11 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:145
 msgid "num_array   a 1D or 2D, real numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:135
+msgid ""
+"ValueError is raised if the numpy array type is incompatible with vtkIdType."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/numpy_support.py:142

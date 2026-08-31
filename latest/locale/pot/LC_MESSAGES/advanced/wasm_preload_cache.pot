@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/wasm/PreloadCache.md:2
+msgid "Harvesting the Emscripten platform-check cache"
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:4
+msgid ""
+"A fresh VTK configure runs hundreds of serial `try_compile`/`try_run` "
+"checks. Each one starts `emcc`'s Python driver for both compilation and "
+"linking, which dominates configure time for the wasm builds. "
+"`vtkEmscriptenCache-<version>-wasm32.cmake` and `vtkEmscriptenCache-"
+"<version>-wasm64.cmake` preload the results of those checks as `CACHE "
+"INTERNAL` entries, so CMake's check modules see them already answered and "
+"skip the probe. They're consumed by `vtkEmscriptenPreloadCache.cmake` "
+"(included from both `vtkEmscriptenToolchain.cmake` and the `.gitlab/ci/"
+"configure_wasm*.cmake` CI files) whenever `VTK_EMSCRIPTEN_PRELOAD_CACHE` is "
+"on."
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:13
+msgid ""
+"These files are specific to one `(emsdk version, architecture)` pair. The "
+"wasm32 and wasm64 need separate files because their ABI sizes (`long`, "
+"`size_t`, `ptrdiff_t`, `uintptr_t`, ...) differ. Regenerate both whenever "
+"`vtk_emsdk_version` in `vtkToolVersions.cmake` is bumped; a version with no "
+"matching cache file is simply not preloaded."
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:18
+msgid "1. Run a real configure and harvest it, inside the CI container"
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:20
+msgid ""
+"Do this once per architecture, using the CI container so the environment "
+"matches what CI actually runs with. The image name and tag are whatever the "
+"wasm CI jobs currently use: in `.gitlab/os-linux.yml`, the `."
+"wasm32_emscripten_linux`/`.wasm64_emscripten_linux` jobs extend `."
+"fedora44_x86_64`, whose `image:` line names it (e.g. `kitware/vtk:ci-"
+"fedora44-<tag>`). Check there rather than trusting the example below to be "
+"current."
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:28
+msgid ""
+"git diff .gitlab/ci/configure_wasm_common.cmake   # should be empty before "
+"you start\n"
+"# comment out the VTK_EMSCRIPTEN_PRELOAD_CACHE set() and the two "
+"include()s,\n"
+"# run the harvest below, then:\n"
+"git checkout .gitlab/ci/configure_wasm_common.cmake\n"
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:35
+msgid ""
+"SCRATCH=$HOME/vtk-wasm-cacheprobe\n"
+"mkdir -p \"$SCRATCH\"\n"
+"docker run --rm \\\n"
+"  -v /path/to/vtk:/work:Z \\\n"
+"  -v \"$SCRATCH\":/output:Z \\\n"
+"  -w /work \\\n"
+"  kitware/vtk:ci-fedora44-<tag> \\\n"
+"  bash -c '\n"
+"    set -e\n"
+"    export CMAKE_CONFIGURATION=wasm64_emscripten_linux   # or "
+"wasm32_emscripten_linux\n"
+"    # ... bootstrap cmake/ninja/node/emsdk as needed (installs into /work/."
+"gitlab)\n"
+"    export PATH=\"/tmp/shim:$PATH\"                        # sccache "
+"passthrough shim\n"
+"    export CMAKE_BUILD_TYPE=Release\n"
+"    BUILD=/output/build-${CMAKE_CONFIGURATION}-cacheprobe\n"
+"    emcmake cmake -G Ninja -S /work -B \"$BUILD\" \\\n"
+"      -C /work/.gitlab/ci/configure_${CMAKE_CONFIGURATION}.cmake \\\n"
+"      -DVTK_BUILD_TESTING=OFF\n"
+"    python3 /work/CMake/wasm/generate_emscripten_cache.py --build-dir "
+"\"$BUILD\"\n"
+"  '\n"
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:57
+msgid "2. What `generate_emscripten_cache.py` does"
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:59
+msgid ""
+"`generate_emscripten_cache.py`, next to this document, scans the fresh "
+"`CMakeCache.txt` for the `INTERNAL` entries CMake's check modules use to "
+"record a probe result, and writes `vtkEmscriptenCache-<version>-<arch>."
+"cmake` into `CMake/wasm/`."
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:64
+msgid ""
+"With `--build-dir` it works out `<version>` and `<arch>` from the configure "
+"itself: the architecture from `VTK_WEBASSEMBLY_64_BIT` in the cache, and the "
+"version from the `emscripten-version.txt` next to the emsdk toolchain file "
+"the cache points at (which is why the script is best run inside the "
+"container, where that path exists)."
+msgstr ""
+
+#: ../../../../../CMake/wasm/PreloadCache.md:70
+msgid ""
+"Run the harvest once per architecture. The auto-detected version is whatever "
+"emsdk actually installed. Please confirm it matches the `vtk_emsdk_version` "
+"you're pinning in `vtkToolVersions.cmake` before committing the result."
+msgstr ""

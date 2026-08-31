@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,169 +65,169 @@ msgid ""
 "and are assumed to be relative paths from the input data directory."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:99
+#: ../../../../../CMake/vtkModuleTesting.cmake:106
 msgid "Creating test executables"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:103
+#: ../../../../../CMake/vtkModuleTesting.cmake:110
 msgid ""
 "This function creates an executable from the list of sources passed to it. "
 "It is automatically linked to the module the tests are intended for as well "
 "as any declared test dependencies of the module."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:107
+#: ../../../../../CMake/vtkModuleTesting.cmake:114
 msgid "vtk_module_test_executable(<NAME> <SOURCE>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:111
+#: ../../../../../CMake/vtkModuleTesting.cmake:118
 msgid ""
 "This function is not usually used directly, but instead through the other "
 "convenience functions."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:162
+#: ../../../../../CMake/vtkModuleTesting.cmake:169
 msgid "Test name parsing"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:164
+#: ../../../../../CMake/vtkModuleTesting.cmake:171
 msgid ""
 "Test names default to using the basename of the filename which contains the "
 "test. Two tests may share the same file by prefixing with a custom name for "
 "the test and a comma."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:168
+#: ../../../../../CMake/vtkModuleTesting.cmake:175
 msgid ""
 "The two parsed syntaxes are: - ``CustomTestName,TestFile`` - ``TestFile``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:172
+#: ../../../../../CMake/vtkModuleTesting.cmake:179
 msgid ""
 "Note that ``TestFile`` should already have had its extension stripped "
 "(usually done by ``_vtk_test_parse_args``)."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:175
+#: ../../../../../CMake/vtkModuleTesting.cmake:182
 msgid ""
 "In general, the name of a test will be ``<EXENAME>-<TESTNAME>``, however, by "
 "setting ``vtk_test_prefix``, the test name will instead be ``<EXENAME>-"
 "<PREFIX><TESTNAME>``."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:212
+#: ../../../../../CMake/vtkModuleTesting.cmake:219
 msgid "Test function arguments"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:214
+#: ../../../../../CMake/vtkModuleTesting.cmake:221
 msgid "Each test is specified  using one of the two following syntaxes"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:216
+#: ../../../../../CMake/vtkModuleTesting.cmake:223
 msgid "``<NAME>.<SOURCE_EXT>``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:217
+#: ../../../../../CMake/vtkModuleTesting.cmake:224
 msgid "``<NAME>.<SOURCE_EXT>,<OPTIONS>``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:219
+#: ../../../../../CMake/vtkModuleTesting.cmake:226
 msgid ""
 "Where ``NAME`` is a valid test name. If present, the specified ``OPTIONS`` "
 "are only for the associated test. The expected extension is specified by the "
 "associated test function."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:228
+#: ../../../../../CMake/vtkModuleTesting.cmake:235
 msgid ""
 "|module-internal| Given a list of valid \"options\", this function will "
 "parse out a the following variables:"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:232
+#: ../../../../../CMake/vtkModuleTesting.cmake:239
 msgid ""
 "``args``: Unrecognized arguments. These should be interpreted as arguments "
 "that should be passed on the command line to all tests in this parse group."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:234
+#: ../../../../../CMake/vtkModuleTesting.cmake:241
 msgid "``options``: Options specified globally (for all tests in this group)."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:235
+#: ../../../../../CMake/vtkModuleTesting.cmake:242
 msgid ""
 "``names``: A list containing all named tests. These should be parsed by "
 "``_vtk_test_parse_name``."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:237
+#: ../../../../../CMake/vtkModuleTesting.cmake:244
 msgid "``_<NAME>_options``: Options specific to a certain test."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:239
+#: ../../../../../CMake/vtkModuleTesting.cmake:246
 msgid "_vtk_test_parse_args(<OPTIONS> <SOURCE_EXT> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:243
+#: ../../../../../CMake/vtkModuleTesting.cmake:250
 msgid ""
 "In order to be recognized as a source file, the ``SOURCE_EXT`` must be used. "
 "Without it, all non-option arguments are placed into ``args``. Each test is "
 "parsed out matching these:"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:287
+#: ../../../../../CMake/vtkModuleTesting.cmake:294
 msgid ""
 "For handling global option settings |module-internal|, this function sets "
 "variables in the calling scoped named `<PREFIX><OPTION>` to either `0` or "
 "`1` if the option is present in the remaining argument list."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:291
+#: ../../../../../CMake/vtkModuleTesting.cmake:298
 msgid "_vtk_test_set_options(<OPTIONS> <PREFIX> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:295
+#: ../../../../../CMake/vtkModuleTesting.cmake:302
 msgid ""
 "Additionally, a non-`0` default for a given option may be specified by a "
 "variable with the same name as the option and specifying a prefix for the "
 "output variables."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:330
+#: ../../../../../CMake/vtkModuleTesting.cmake:337
 msgid "C++ tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:334
+#: ../../../../../CMake/vtkModuleTesting.cmake:341
 msgid ""
 "This function declares C++ tests |module|. Source files are required to use "
 "the `cxx` extension."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:337
+#: ../../../../../CMake/vtkModuleTesting.cmake:344
 msgid "vtk_add_test_cxx(<EXENAME> <VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:341
-#: ../../../../../CMake/vtkModuleTesting.cmake:536
+#: ../../../../../CMake/vtkModuleTesting.cmake:348
+#: ../../../../../CMake/vtkModuleTesting.cmake:566
 msgid ""
 "Each argument should be either an option, a test specification, or it is "
 "passed as flags to all tests declared in the group. The list of tests is set "
 "in the ``<VARNAME>`` variable in the calling scope."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:345
-#: ../../../../../CMake/vtkModuleTesting.cmake:540
-#: ../../../../../CMake/vtkModuleTesting.cmake:1068
+#: ../../../../../CMake/vtkModuleTesting.cmake:352
+#: ../../../../../CMake/vtkModuleTesting.cmake:570
+#: ../../../../../CMake/vtkModuleTesting.cmake:1098
 msgid "Options:"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:347
+#: ../../../../../CMake/vtkModuleTesting.cmake:354
 msgid ""
 "``NO_DATA``: The test does not need to know the test input data directory. "
 "If it does, it is passed on the command line via the ``-D`` flag."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:349
+#: ../../../../../CMake/vtkModuleTesting.cmake:356
 msgid ""
 "``NO_VALID``: The test does not have a valid baseline image. If it does, the "
 "baseline is assumed to be in ``../Data/Baseline/<NAME>.png`` relative to the "
@@ -242,14 +242,14 @@ msgid ""
 "false negatives. It is recommended not to use it."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:361
+#: ../../../../../CMake/vtkModuleTesting.cmake:368
 msgid ""
 "``NO_OUTPUT``: The test does not need to write out any data to the "
 "filesystem. If it does, a directory which may be written to is passed via "
 "the ``-T`` flag."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:364
+#: ../../../../../CMake/vtkModuleTesting.cmake:371
 msgid ""
 "``NO_SERDES``: The test does not do serialization/deserialization testing. "
 "If it does, a second test with the suffix ``SerDes` is created which passes "
@@ -257,32 +257,32 @@ msgid ""
 "render window and pass ``--serdes`` will do serdes testing."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:369
+#: ../../../../../CMake/vtkModuleTesting.cmake:376
 msgid ""
 "Additional flags may be passed to tests using the ``${_vtk_build_test}"
 "_ARGS`` variable or the ``<NAME>_ARGS`` variable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:525
-#: ../../../../../CMake/vtkModuleTesting.cmake:1014
+#: ../../../../../CMake/vtkModuleTesting.cmake:555
+#: ../../../../../CMake/vtkModuleTesting.cmake:1044
 msgid "MPI tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:529
+#: ../../../../../CMake/vtkModuleTesting.cmake:559
 msgid ""
 "This function declares C++ tests which should be run under an MPI "
 "environment. |module| Source files are required to use the `cxx` extension."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:532
+#: ../../../../../CMake/vtkModuleTesting.cmake:562
 msgid "vtk_add_test_mpi(<EXENAME> <VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:542
+#: ../../../../../CMake/vtkModuleTesting.cmake:572
 msgid "``TESTING_DATA``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:543
+#: ../../../../../CMake/vtkModuleTesting.cmake:573
 msgid ""
 "``NO_VALID``: The test does not have a valid baseline image. If it does, the "
 "baseline is assumed to be in ``../Data/Baseline/<NAME>.png`` relative to the "
@@ -291,40 +291,40 @@ msgid ""
 "via the ``-V`` flag."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:549
+#: ../../../../../CMake/vtkModuleTesting.cmake:579
 msgid ""
 "Each test is run using the number of processors specified by the following "
 "variables (using the first one which is set):"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:552
+#: ../../../../../CMake/vtkModuleTesting.cmake:582
 msgid "``<NAME>_NUMPROCS``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:553
+#: ../../../../../CMake/vtkModuleTesting.cmake:583
 msgid "``<EXENAME>_NUMPROCS``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:554
+#: ../../../../../CMake/vtkModuleTesting.cmake:584
 msgid "``VTK_MPI_NUMPROCS`` (defaults to ``2``)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:556
+#: ../../../../../CMake/vtkModuleTesting.cmake:586
 msgid ""
 "Additional flags may be passed to tests using the ``${_vtk_build_test}"
 "_ARGS`` variable or the `<NAME>_ARGS` variable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:653
+#: ../../../../../CMake/vtkModuleTesting.cmake:683
 msgid "C++ test executable"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:657
+#: ../../../../../CMake/vtkModuleTesting.cmake:687
 msgid ""
 "vtk_test_cxx_executable(<EXENAME> <VARNAME> [RENDERING_FACTORY] [<SRC>...])"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:661
+#: ../../../../../CMake/vtkModuleTesting.cmake:691
 msgid ""
 "Creates an executable named ``EXENAME`` which contains the tests listed in "
 "the variable named in the ``VARNAME`` argument. The ``EXENAME`` must match "
@@ -332,13 +332,13 @@ msgid ""
 "tests."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:665
+#: ../../../../../CMake/vtkModuleTesting.cmake:695
 msgid ""
 "If ``RENDERING_FACTORY`` is provided, VTK's rendering factories are "
 "initialized during the test."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:668
+#: ../../../../../CMake/vtkModuleTesting.cmake:698
 msgid ""
 "By default, VTK's rendering tests enable FP exceptions to find floating "
 "point errors in debug builds. If ``DISABLE_FLOATING_POINT_EXCEPTIONS`` is "
@@ -346,87 +346,87 @@ msgid ""
 "testing against external libraries to ignore exceptions in third-party code."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:673
+#: ../../../../../CMake/vtkModuleTesting.cmake:703
 msgid ""
 "Any additional arguments are added as additional sources for the executable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:712
+#: ../../../../../CMake/vtkModuleTesting.cmake:742
 msgid ""
 "MPI executables used to have their own test executable function.|module-"
 "internal| This is no longer necessary and is deprecated. Instead, "
 "`vtk_test_cxx_executable` should be used instead."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:726
+#: ../../../../../CMake/vtkModuleTesting.cmake:756
 msgid "Python tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:730
+#: ../../../../../CMake/vtkModuleTesting.cmake:760
 msgid ""
 "This function declares Python tests.|module| Test files are required to use "
 "the `py` extension."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:733
+#: ../../../../../CMake/vtkModuleTesting.cmake:763
 msgid "vtk_add_test_python(<EXENAME> <VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:739
+#: ../../../../../CMake/vtkModuleTesting.cmake:769
 msgid ""
 "If the ``_vtk_testing_python_exe`` variable is not set, the ``vtkpython`` "
 "binary is used by default. Additional arguments may be passed in this "
 "variable as well."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:742
+#: ../../../../../CMake/vtkModuleTesting.cmake:772
 msgid ""
 "If the given Python executable supports VTK's ``--enable-bt`` flag, setting "
 "``_vtk_testing_python_exe_supports_bt`` to ``1`` is required to enable it."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:928
+#: ../../../../../CMake/vtkModuleTesting.cmake:958
 msgid "JavaScript tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:932
+#: ../../../../../CMake/vtkModuleTesting.cmake:962
 msgid ""
 "This function declares JavaScript tests run with NodeJS. Test files are "
 "required to use the `mjs` extension. Additional arguments to `node` can be "
 "passed via `_vtk_node_args` variable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:936
+#: ../../../../../CMake/vtkModuleTesting.cmake:966
 msgid "vtk_add_test_module_javascript_node(<VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:942
+#: ../../../../../CMake/vtkModuleTesting.cmake:972
 msgid ""
 "The ``_vtk_testing_nodejs_exe`` variable must point to the path of a `node` "
 "interpreter."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1018
+#: ../../../../../CMake/vtkModuleTesting.cmake:1048
 msgid ""
 "A small wrapper around ``vtk_add_test_python`` which adds support for "
 "running MPI-aware tests written in Python."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1021
+#: ../../../../../CMake/vtkModuleTesting.cmake:1051
 msgid ""
 "The ``$<module library name>_NUMPROCS`` variable may be used to use a non-"
 "default number of processors for a test."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1024
+#: ../../../../../CMake/vtkModuleTesting.cmake:1054
 msgid "This forces running with the ``pvtkpython`` executable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1051
+#: ../../../../../CMake/vtkModuleTesting.cmake:1081
 msgid "ABI Mangling tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1055
+#: ../../../../../CMake/vtkModuleTesting.cmake:1085
 msgid ""
 "This function declares a test to verify that all of the exported symbols in "
 "the VTK module library contain the correct ABI mangling prefix. This test "
@@ -434,18 +434,18 @@ msgid ""
 "\"<DEFAULT>\"."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1059
+#: ../../../../../CMake/vtkModuleTesting.cmake:1089
 msgid ""
 "Current limitations of this test are: - Does not run on non-UNIX platforms - "
 "Is not compatible with the option \"VTK_ENABLE_KITS\" - May not work outside "
 "of VTK itself"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1064
+#: ../../../../../CMake/vtkModuleTesting.cmake:1094
 msgid "vtk_add_test_mangling(module_name [EXEMPTIONS ...])"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1070
+#: ../../../../../CMake/vtkModuleTesting.cmake:1100
 msgid ""
 "``EXEMPTIONS``: List of symbol patterns to excluded from the ABI mangling "
 "test where it is known that the symbols do not support the ABI mangling but "

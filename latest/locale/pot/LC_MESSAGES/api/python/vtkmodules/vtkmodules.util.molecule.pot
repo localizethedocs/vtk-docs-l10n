@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:1
+msgid "{py:mod}`vtkmodules.util.molecule`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:7
+msgid "Pythonic API for vtkMolecule."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:9
+msgid "Adds iteration, len, array properties, and interop with ASE and RDKit::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:11
+msgid ""
+"from vtkmodules.vtkCommonDataModel import vtkMolecule\n"
+"\n"
+"# Construction from arrays:\n"
+"mol = vtkMolecule(atomic_numbers=[1, 1, 8],\n"
+"                  positions=[[0, 0, 0], [1, 0, 0], [0.5, 0.8, 0]])\n"
+"mol = vtkMolecule(symbols=['H', 'H', 'O'],\n"
+"                  positions=[[0, 0, 0], [1, 0, 0], [0.5, 0.8, 0]])\n"
+"\n"
+"# Sequence protocol:\n"
+"len(mol)                 # atom count\n"
+"mol[0]                   # vtkAtom proxy\n"
+"for atom in mol: ...     # iterate atoms\n"
+"\n"
+"# Array properties:\n"
+"mol.positions            # (N, 3) float32 numpy array\n"
+"mol.atomic_numbers       # (N,) uint16 numpy array\n"
+"mol.bond_orders          # (N_bonds,) uint16 numpy array\n"
+"\n"
+"# Views:\n"
+"mol.atoms[2]             # indexable atom view\n"
+"mol.bonds[0]             # indexable bond view\n"
+"\n"
+"# Data:\n"
+"mol.atom_data            # vtkDataSetAttributes\n"
+"mol.bond_data            # vtkDataSetAttributes\n"
+"\n"
+"# Interop:\n"
+"ase_atoms = mol.to_ase()\n"
+"mol2 = vtkMolecule().from_ase(ase_atoms)\n"
+"rdmol = mol.to_rdkit()\n"
+"mol3 = vtkMolecule().from_rdkit(rdmol)\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:18
+msgid "{py:obj}`_AtomView <vtkmodules.util.molecule._AtomView>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:20
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:112
+msgid "Indexable, iterable view of atoms in a vtkMolecule."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:22
+msgid "{py:obj}`_BondView <vtkmodules.util.molecule._BondView>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:24
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:165
+msgid "Indexable, iterable view of bonds in a vtkMolecule."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:26
+msgid "{py:obj}`_MoleculeMixin <vtkmodules.util.molecule._MoleculeMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:30
+msgid "{py:obj}`Molecule <vtkmodules.util.molecule.Molecule>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:36
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:42
+msgid ""
+"{py:obj}`_get_periodic_table <vtkmodules.util.molecule._get_periodic_table>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:84
+msgid "Return a lazily-created singleton vtkPeriodicTable."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:48
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:54
+msgid "{py:obj}`_periodic_table <vtkmodules.util.molecule._periodic_table>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:58
+msgid ""
+"{py:obj}`_RDKIT_BOND_TYPE_TO_VTK_ORDER <vtkmodules.util.molecule."
+"_RDKIT_BOND_TYPE_TO_VTK_ORDER>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:62
+msgid ""
+"{py:obj}`_VTK_ORDER_TO_RDKIT_BOND_TYPE <vtkmodules.util.molecule."
+"_VTK_ORDER_TO_RDKIT_BOND_TYPE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:68
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:74
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:91
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:101
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:114
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:167
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:220
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:401
+msgid "Initialization"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:124
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:177
+msgid "('_mol',)"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:255
+msgid "Indexable, iterable view of atoms."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:263
+msgid "Indexable, iterable view of bonds."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:271
+msgid "Atom positions as an (N, 3) float32 numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:273
+msgid ""
+"This is a live view into VTK memory; mutating it changes the molecule in "
+"place (call ``Modified()`` afterwards to notify the pipeline). The view is "
+"invalidated if the atom array is reallocated (e.g. by ``AppendAtom``), so do "
+"not hold onto it across mutations. Use the ``positions`` setter for a safe, "
+"length-checked bulk assignment."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:279
+msgid "Atomic numbers as an (N,) uint16 numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:281
+msgid ""
+"This is a live view into VTK memory; mutating it changes the molecule in "
+"place (call ``Modified()`` afterwards to notify the pipeline). The view is "
+"invalidated if the atom array is reallocated (e.g. by ``AppendAtom``), so do "
+"not hold onto it across mutations. Use the ``atomic_numbers`` setter for a "
+"safe, length-checked bulk assignment."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:287
+msgid "Bond orders as an (N_bonds,) uint16 numpy array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:289
+msgid ""
+"This is a live view into VTK memory; mutating it changes the molecule in "
+"place (call ``Modified()`` afterwards to notify the pipeline). The view is "
+"invalidated if the bond array is reallocated (e.g. by ``AppendBond``), so do "
+"not hold onto it across mutations."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:295
+msgid "Element symbols as a list of strings."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:297
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:305
+msgid "Requires vtkDomainsChemistry."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:303
+msgid "Molecular formula in Hill system order."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:311
+msgid "Atom data arrays (vtkDataSetAttributes)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:319
+msgid "Bond data arrays (vtkDataSetAttributes)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:327
+msgid "Append an atom and return the vtkAtom proxy."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:329
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:331
+msgid ""
+"atomic_number_or_symbol : int or str     Atomic number or element symbol. "
+"position : sequence of 3 floats     (x, y, z) position."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:335
+msgid "Add a bond between two atoms."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:337
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/molecule.py:337: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:339
+msgid ""
+"atom1, atom2 : int     Atom indices. order : int     Bond order (1=single, "
+"2=double, 3=triple)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:343
+msgid "Unit cell lattice as a 3x3 numpy array, or None if not set."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:345
+msgid "VTK stores lattice vectors as columns of a 3x3 matrix."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:351
+msgid "Lattice origin as a (3,) numpy array, or None if no lattice is set."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:353
+msgid ""
+"The origin is only meaningful together with a lattice, so this mirrors "
+"``lattice`` and returns None when ``HasLattice()`` is false."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:364
+msgid "Convert to an ASE Atoms object."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:366
+msgid ""
+"Positions and atomic numbers are copied. If a lattice is set, it is "
+"transferred as the ASE cell (transposed, since VTK stores vectors as columns "
+"and ASE as rows) and ``pbc=True``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:370
+msgid "Bonds are not transferred (ASE does not store bonds)."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:372
+msgid "Populate this molecule from an ASE Atoms object."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:374
+msgid ""
+"Existing atoms and bonds are cleared first. Bonds are not set (use "
+"``vtkSimpleBondPerceiver`` to infer them). Returns ``self`` so it can be "
+"chained, e.g. ``vtkMolecule().from_ase(atoms)``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:380
+msgid "Convert to an RDKit Mol object."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:382
+msgid ""
+"Atoms, bonds, and 3D coordinates (as a conformer) are transferred. Bond "
+"order mapping: 1→SINGLE, 2→DOUBLE, 3→TRIPLE, 4→AROMATIC."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:385
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/molecule.py:385: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:387
+msgid ""
+"sanitize : bool     If True, run ``Chem.SanitizeMol`` on the result. The "
+"returned     mol is otherwise unsanitized: perception of rings, valence, "
+"and     aromaticity has not been run, and some downstream RDKit     "
+"operations require a sanitized mol. Sanitization is off by     default "
+"because molecules derived from geometry or bond     perceivers need not "
+"satisfy RDKit's valence model, and     ``SanitizeMol`` would raise on them."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:388
+msgid "Populate this molecule from an RDKit Mol object."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:390
+msgid ""
+"Existing atoms and bonds are cleared first. Returns ``self`` so it can be "
+"chained, e.g. ``vtkMolecule().from_rdkit(rdmol)``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:393
+msgid ""
+"Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
+"Python/vtkmodules/util/molecule.py:393: (INFO/1) Duplicate implicit target "
+"name: \"parameters\"."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/molecule.py:395
+msgid ""
+"rdkit_mol : rdkit.Chem.Mol     Source molecule. conformer_id : int     Which "
+"conformer to use for positions (-1 = first/default).     If no conformer "
+"exists, positions default to (0, 0, 0)."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.molecule.md:396
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.molecule._MoleculeMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkMolecule`"
+msgstr ""

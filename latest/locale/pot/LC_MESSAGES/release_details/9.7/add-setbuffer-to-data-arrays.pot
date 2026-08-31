@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:1
+msgid "SetBuffer for AOS and SOA Data Array Templates"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:3
+msgid ""
+"`vtkAOSDataArrayTemplate` and `vtkSOADataArrayTemplate` now provide a "
+"`SetBuffer()` method that accepts a `vtkBuffer` (or `vtkAbstractBuffer` in "
+"Python) to replace the array's internal storage. This enables zero-copy "
+"buffer transfers between arrays without going through raw pointers."
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:8
+msgid "AOS Arrays"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:10
+msgid ""
+"vtkNew<vtkBuffer<double>> buffer;\n"
+"buffer->Allocate(100);\n"
+"// ... fill buffer ...\n"
+"\n"
+"vtkNew<vtkDoubleArray> arr;\n"
+"arr->SetNumberOfComponents(3);\n"
+"arr->SetBuffer(buffer, true); // true = update MaxId from buffer size\n"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:20
+msgid "SOA Arrays"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:22
+msgid ""
+"For SOA arrays, `SetBuffer()` takes a component index since each component "
+"is stored separately:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:25
+msgid ""
+"vtkNew<vtkBuffer<double>> buf0;\n"
+"buf0->Allocate(100);\n"
+"\n"
+"vtkNew<vtkSOADataArrayTemplate<double>> arr;\n"
+"arr->SetNumberOfComponents(2);\n"
+"arr->SetBuffer(0, buf0, true);  // set buffer for component 0\n"
+"arr->SetBuffer(1, buf1, false); // set buffer for component 1\n"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:35
+msgid "Python"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:37
+msgid "`SetBuffer()` is fully wrapped for Python using `vtkAbstractBuffer`:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:39
+msgid ""
+"src = vtkFloatArray()\n"
+"src.SetNumberOfTuples(100)\n"
+"\n"
+"dst = vtkFloatArray()\n"
+"dst.SetNumberOfComponents(1)\n"
+"dst.SetBuffer(src.GetBuffer(), True)\n"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:48
+msgid "BufferChangedEvent"
+msgstr ""
+
+#: ../../../release_details/9.7/add-setbuffer-to-data-arrays.md:50
+msgid ""
+"`SetBuffer()`, `SetArray()`, and `ShallowCopy()` now fire "
+"`BufferChangedEvent` on both AOS and SOA array templates, matching the "
+"existing behavior of `Resize()` and `InsertNextTuple()`. This ensures that "
+"external consumers (such as NumPy views) are notified whenever the "
+"underlying buffer changes."
+msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,38 +29,79 @@ msgid ""
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:6
-msgid ""
-"It currently supports basic types: `PolyData`, `UnstructuredGrid`, "
-"`ImageData`, `HyperTreeGrid` and composite types such as `OverlappingAMR`, "
-"`MultiBlockDataSet` and the `PartitionedDataSetCollection`."
+msgid "It currently supports basic types:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:7
+msgid "`PolyData`"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:8
-msgid "The current file format version is **2.5**."
+msgid "`UnstructuredGrid`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:9
+msgid "`ImageData`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:10
+msgid "`RectilinearGrid`"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:11
-msgid "Python examples and tutorial"
+msgid "`StructuredGrid`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:12
+msgid "`HyperTreeGrid`"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:13
+msgid "`Table`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:15
+msgid "For composite types, it supports:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:16
+msgid "`OverlappingAMR`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:17
+msgid "`MultiBlockDataSet`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:18
+msgid "`PartitionedDataSetCollection`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:20
+msgid "The current file format version is **2.8**."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:23
+msgid "Python examples and tutorial"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:25
 msgid ""
 "To help adopters use the VTKHDF File Format, we provide a repository : "
 "[vtkhdf-script](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-scripts)."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:15
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:27
 msgid "It contains several folders:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:16
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:28
 msgid ""
 "[tutorial](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-scripts/-/"
 "tree/main/tutorial): a complete tutorial showing how to create VTKHDF files "
 "from scratch, incrementally adding more features."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:17
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:29
 msgid ""
 "[scripts](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-scripts/-/tree/"
 "main/scripts): sample python scripts showing how to create VTKHDF files "
@@ -68,28 +109,28 @@ msgid ""
 "including temporal files."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:18
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:30
 msgid ""
 "[vtkxml-to-vtkhdf](https://gitlab.kitware.com/keu-public/vtkhdf/vtkhdf-"
 "scripts/-/tree/main/vtkxml-to-vtkhdf) folder which contains script to "
 "convert vtkxml file into vtk using the `vtkHDFWriter`."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:21
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:33
 msgid "Valuable documentation from blog posts"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:23
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:35
 msgid ""
 "[an overview of the first version and the motivation behind HDF5 in VTK]"
 "(https://www.kitware.com/vtk-hdf-reader/)."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:26
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:38
 msgid "Extension"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:28
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:40
 msgid ""
 "The ` VTKHDF` format generally uses the `.vtkhdf` extension. The `.hdf` "
 "extension is also supported but is not preferred. There are no specific "
@@ -97,15 +138,15 @@ msgid ""
 "distributed data or static vs. temporal data."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:34
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:46
 msgid "FAQ"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:36
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:48
 msgid "How to stay informed?"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:38
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:50
 msgid ""
 "We keep a [status](vtkhdf_status.md) page up to date, that tracks current "
 "status of the VTKHDF specification and implementation in the `vtkHDFReader` "
@@ -117,11 +158,11 @@ msgid ""
 "as `area:VTKHDF`."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:40
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:52
 msgid "Where should we create a proposal for the file format?"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:42
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:54
 msgid ""
 "The VTKHDF File Format is not considered complete, and lacks support for "
 "some VTK data types. This specification is led by the community; please post "
@@ -130,27 +171,27 @@ msgid ""
 "contributors have agreed on a design."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:44
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:56
 msgid "Who maintains this specification?"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:46
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:58
 msgid "Current maintainer of this file format are :"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:47
-msgid "Lucas Givord (gitlab: @lucas.givord, discourse: @lgivord)"
-msgstr ""
-
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:48
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:59
 msgid "Louis Gombert (gitlab: @louis.gombert, discourse: @Louis_Gombert)"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:49
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:60
+msgid "Lucas Givord (gitlab: @lucas.givord, discourse: @lgivord)"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:61
 msgid "Mathieu Westphal (gitlab: @mwestphal, discourse: @mwestphal)"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:51
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_introduction.md:63
 msgid ""
 "Do not hesitate to reach out on [discourse](https://discourse.vtk.org/) or "
 "[gitlab](https://gitlab.kitware.com/vtk/vtk/)."

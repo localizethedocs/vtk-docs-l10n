@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:1
+msgid "Polyhedron faces lost when cells are handed to SetCells()"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:3
+msgid ""
+"`vtkUnstructuredGrid::SetCells(cellTypes, cells)` interprets its cell array "
+"as a legacy face stream (`[nCell0Faces, nFace0Pts, i, j, k, ...]`) as soon "
+"as any cell is a `VTK_POLYHEDRON`, and decomposes it. `GetCells()`, however, "
+"returns point lists. A caller that copies cells out of one grid and hands "
+"them to another therefore has the point list read back as face descriptions: "
+"the first point id is taken as a face count. The result is invalid topology, "
+"and on larger meshes very long runtimes inside `DecomposeAPolyhedronCell`."
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:11
+msgid ""
+"Three callers did exactly this, and each now copies the polyhedron faces "
+"alongside the connectivity and builds its output through "
+"`SetPolyhedralCells()`:"
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:14
+msgid ""
+"`vtkExtractCellsAlongPolyLine`, which backs Plot Over Line. Faces are "
+"remapped through the same input to output point map already used for the "
+"connectivity."
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:16
+msgid ""
+"`vtkOverlappingCellsDetector`, which gathers candidate cells with `vtkCell::"
+"GetPointIds()` before exchanging them between ranks. The faces now travel "
+"with the candidates and are remapped with them."
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:19
+msgid ""
+"The `vtkUnstructuredGrid` (de)serialization helper, which wrote only `Cells` "
+"and `CellTypes`. It now writes `PolyhedronFaces` and "
+"`PolyhedronFaceLocations` as well. States written without them still load."
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:23
+msgid ""
+"Grids containing no polyhedra take the previous code path in every case."
+msgstr ""
+
+#: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:25
+msgid ""
+"Each fix comes with a test that fails without it. The existing tests could "
+"not have caught any of these: they assert on point counts, cell counts and "
+"bounds, all of which survive the loss of a polyhedron's faces."
+msgstr ""

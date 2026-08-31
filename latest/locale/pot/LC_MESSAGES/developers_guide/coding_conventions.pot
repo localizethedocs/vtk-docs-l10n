@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,25 +508,45 @@ msgid ""
 msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:211
+msgid "Avoid static construction and destruction where possible."
+msgstr ""
+
+#: ../../../developers_guide/coding_conventions.md:213
+msgid ""
+"Instead of `static std::string`, prefer `static const char*` or `static std::"
+"string_view` where possible. In many cases, VTK APIs want a `const char*` "
+"anyways, so any allocation is excessive. Instead of `static std::vector<T>`, "
+"use `std::array<T, N>` if random access is necessary or `std::"
+"initializer_list<T>` if not."
+msgstr ""
+
+#: ../../../developers_guide/coding_conventions.md:219
+msgid ""
+"Rationale: Faster load time of VTK libraries when code does not need to run "
+"at library initialization time. Static destructors also lack a simple "
+"mechanism for ordered destruction, so it is best to avoid it when possible."
+msgstr ""
+
+#: ../../../developers_guide/coding_conventions.md:223
 msgid "Specific C++  Language Guidelines"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:212
+#: ../../../developers_guide/coding_conventions.md:224
 msgid "C++ Standard Library"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:214
+#: ../../../developers_guide/coding_conventions.md:226
 msgid "Do not use vtkStdString in new API; prefer std::string"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:216
+#: ../../../developers_guide/coding_conventions.md:228
 msgid ""
 "Rationale: vtkStdString was introduced as a workaround for compilers that "
 "couldn’t handle the long symbol name for the expanded std::string type. It "
 "is no longer needed on modern platforms."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:218
+#: ../../../developers_guide/coding_conventions.md:230
 msgid ""
 "STL usage in the Common modules' public API is discouraged when possible, "
 "Common modules are free to use STL in  implementation files. The other "
@@ -534,86 +554,86 @@ msgid ""
 "appropriate VTK class."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:220
+#: ../../../developers_guide/coding_conventions.md:232
 msgid ""
 "Rationale: limits header inclusion bloat, wrappers are not capable of "
 "handling many non-`vtkObject` derived classes."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:222
+#: ../../../developers_guide/coding_conventions.md:234
 msgid "C++ Language Features Required when using VTK"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:224
+#: ../../../developers_guide/coding_conventions.md:236
 msgid ""
 "[*nullptr*](http://en.cppreference.com/w/cpp/language/nullptr) Use `nullptr` "
 "instead of `0` and `NULL` when dealing with pointer types"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:225
+#: ../../../developers_guide/coding_conventions.md:237
 msgid ""
 "[*override*](http://en.cppreference.com/w/cpp/language/override)  "
 "`VTK_OVERRIDE` will be replaced with the override keyword"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:226
+#: ../../../developers_guide/coding_conventions.md:238
 msgid ""
 "[*final*](http://en.cppreference.com/w/cpp/language/final)  `VTK_FINAL` will "
 "be replaced with the final keyword"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:227
+#: ../../../developers_guide/coding_conventions.md:239
 msgid ""
 "[*delete*](http://en.cppreference.com/w/cpp/language/"
 "function#Deleted_functions) The use of delete is preferred over making "
 "default members private and unimplemented."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:228
+#: ../../../developers_guide/coding_conventions.md:240
 msgid ""
 "[*non static data member initializers*](http://en.cppreference.com/w/cpp/"
 "language/data_members)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:230
+#: ../../../developers_guide/coding_conventions.md:242
 msgid "C++ Features allowed throughout VTK"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:232
+#: ../../../developers_guide/coding_conventions.md:244
 msgid ""
 "[*default*](http://en.cppreference.com/w/cpp/language/default_constructor)  "
 "The use of default is encouraged in preference to empty destructor "
 "implementations"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:233
+#: ../../../developers_guide/coding_conventions.md:245
 msgid ""
 "[*static_assert*](http://en.cppreference.com/w/cpp/language/static_assert) "
 "Must use the static_assert ( `bool_constexpr` ) signature."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:234
+#: ../../../developers_guide/coding_conventions.md:246
 msgid ""
 "[*strongly typed enums*](http://en.cppreference.com/w/cpp/language/enum) VTK "
 "prefers the usage of strongly typed enums over classic weakly typed enums."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:238
+#: ../../../developers_guide/coding_conventions.md:250
 msgid ""
 "Weakly typed enums conversion to integers is undesirable, and the ability "
 "for strongly typed enums to specify explicit storage size make it the "
 "preferred form of enums."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:242
+#: ../../../developers_guide/coding_conventions.md:254
 msgid "strongly typed: `enum class Color { red, blue };`"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:244
+#: ../../../developers_guide/coding_conventions.md:256
 msgid "weakly typed: `enum Color { red, blue };`"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:246
+#: ../../../developers_guide/coding_conventions.md:258
 msgid ""
 "While VTK is aware that conversion of all enums over to strongly typed enums "
 "will uncover a collection of subtle faults and incorrect assumptions. "
@@ -623,68 +643,68 @@ msgid ""
 "changes to users VTK code."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:253
+#: ../../../developers_guide/coding_conventions.md:265
 msgid ""
 "[*attributes*](http://en.cppreference.com/w/cpp/language/attributes)  The "
 "use of attribute is encouraged and should be used wisely depending on the "
 "attribute:"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:254
+#: ../../../developers_guide/coding_conventions.md:266
 msgid ""
 "[*fallthough*](https://en.cppreference.com/w/cpp/language/attributes/"
 "fallthrough.html) should be used instead of `VTK_FALLTHROUGH`."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:255
+#: ../../../developers_guide/coding_conventions.md:267
 msgid ""
 "[*maybe_unused*](https://en.cppreference.com/w/cpp/language/attributes/"
 "maybe_unused.html) should be used."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:256
+#: ../../../developers_guide/coding_conventions.md:268
 msgid ""
 "[*nodiscard*](https://en.cppreference.com/w/cpp/language/attributes/"
 "nodiscard.html) should be used."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:258
+#: ../../../developers_guide/coding_conventions.md:270
 msgid ""
 "[*std::optional*](https://en.cppreference.com/w/cpp/utility/optional.html) "
 "should be used for returned value of method to simplify method signature and "
 "to factorize code."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:260
+#: ../../../developers_guide/coding_conventions.md:272
 msgid ""
 "[*std::string_view*](http://www.en.cppreference.com/w/cpp/header/string_view."
 "html) should be used to avoid string copy especially for IO treatment."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:262
+#: ../../../developers_guide/coding_conventions.md:274
 msgid ""
 "[*class template argument deduction*](https://en.cppreference.com/w/cpp/"
 "language/class_template_argument_deduction.html)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:264
+#: ../../../developers_guide/coding_conventions.md:276
 msgid ""
 "Usage of class template argument deduction can be used for trivial type "
 "deduction like:"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:265
+#: ../../../developers_guide/coding_conventions.md:277
 msgid ""
 "std::pair p(2, 4.5);     // deduces to std::pair<int, double> p(2, 4.5);\n"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:269
+#: ../../../developers_guide/coding_conventions.md:281
 msgid ""
 "C++ Features acceptable in VTK implementation files, private headers, and "
 "template implementations"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:271
+#: ../../../developers_guide/coding_conventions.md:283
 msgid ""
 "[*braced initializer list*](http://en.cppreference.com/w/cpp/language/"
 "list_initialization)  Braced initializer list are allowed as they prevent "
@@ -692,151 +712,151 @@ msgid ""
 "used when constructing POD’s  and other containers."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:274
+#: ../../../developers_guide/coding_conventions.md:286
 msgid ""
 "**Braced initializer lists are not allowed to be used as the right hand side "
 "for auto:**"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:276
+#: ../../../developers_guide/coding_conventions.md:288
 msgid ""
 "  auto a = { 10, 20 }; //not allowed as a is std::initializer_list<int>\n"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:280
+#: ../../../developers_guide/coding_conventions.md:292
 msgid "[*shared_ptr*](http://en.cppreference.com/w/cpp/memory/shared_ptr)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:281
+#: ../../../developers_guide/coding_conventions.md:293
 msgid ""
 "**Do not combine shared_ptr and vtk derived objects.** VTK internal "
 "reference counting makes the shared_ptr reference counting ( and destructor "
 "tracking ) pointless."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:283
+#: ../../../developers_guide/coding_conventions.md:295
 msgid ""
 "[*template alias*](http://en.cppreference.com/w/cpp/language/type_alias)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:284
+#: ../../../developers_guide/coding_conventions.md:296
 msgid ""
 "The use of alias templates is preferred over using 'typedefs'. They provide "
 "the same language pattern of normal declarations, and reduce the need for "
 "helper template structs. For example ( Scott Meyers, Effective Modern C++ )"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:286
+#: ../../../developers_guide/coding_conventions.md:298
 msgid "template<typename T> using MyAllocList = std::list<T, MyAlloc<T>>;\n"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:290
+#: ../../../developers_guide/coding_conventions.md:302
 msgid "universal references (&&) / std::move / std::forward"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:292
+#: ../../../developers_guide/coding_conventions.md:304
 msgid ""
 "[*extern templates*](http://en.cppreference.com/w/cpp/language/"
 "class_template)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:294
+#: ../../../developers_guide/coding_conventions.md:306
 msgid "Used in the `vtkDataArray` for example."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:296
+#: ../../../developers_guide/coding_conventions.md:308
 msgid ""
 "[*unordered maps*](http://en.cppreference.com/w/cpp/concept/"
 "UnorderedAssociativeContainer)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:298
+#: ../../../developers_guide/coding_conventions.md:310
 msgid "[*std::array* ](http://en.cppreference.com/w/cpp/container/array)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:300
+#: ../../../developers_guide/coding_conventions.md:312
 msgid ""
 "The use of std::array is preferred over using raw fixed sized arrays. They "
 "offer compile time bounds checking without any runtime cost."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:302
+#: ../../../developers_guide/coding_conventions.md:314
 msgid ""
 "[*range based for loop*](http://en.cppreference.com/w/cpp/language/range-for)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:304
+#: ../../../developers_guide/coding_conventions.md:316
 msgid ""
 "[*std::variant*](https://en.cppreference.com/w/cpp/utility/variant.html) can "
 "be used in internal API."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:306
+#: ../../../developers_guide/coding_conventions.md:318
 msgid "C++ Features allowed under certain conditions"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:308
+#: ../../../developers_guide/coding_conventions.md:320
 msgid "[*concurrency*](https://isocpp.org/wiki/faq/cpp11-library-concurrency)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:310
+#: ../../../developers_guide/coding_conventions.md:322
 msgid ""
 "Concurrency inside of vtk should be handled by using or extending the "
 "already existing collection of support classes like vtkAtomic and "
 "vtkSMPThreadLocal."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:312
+#: ../../../developers_guide/coding_conventions.md:324
 msgid ""
 "Instead of directly using new c++11 constructs such as std::"
 "compare_exchange_weak instead extend the functionality of vtk core "
 "concurrency classes."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:314
+#: ../../../developers_guide/coding_conventions.md:326
 msgid ""
 "Note: Thread local storage has not been supported on OSX previously to XCode "
 "8. VTK offers the following classes that should be used instead:"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:316
+#: ../../../developers_guide/coding_conventions.md:328
 msgid ""
 "[vtkSMPThreadLocalObject](http://www.vtk.org/doc/release/7.0/html/"
 "classvtkSMPThreadLocalObject.html)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:318
+#: ../../../developers_guide/coding_conventions.md:330
 msgid ""
 "[vtkSMPThreadLocal](http://www.vtk.org/doc/release/6.3/html/"
 "classvtkSMPThreadLocal.html)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:320
+#: ../../../developers_guide/coding_conventions.md:332
 msgid ""
 "[*std::isnan*](http://en.cppreference.com/w/cpp/numeric/math/isnan), [*std::"
 "isfinite*](http://en.cppreference.com/w/cpp/numeric/math/isfinite), [*std::"
 "isinf*](http://en.cppreference.com/w/cpp/numeric/math/isinf)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:322
+#: ../../../developers_guide/coding_conventions.md:334
 msgid ""
 "These functions should not be called directly,  instead the wrapped versions "
 "provided by vtk should be used instead."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:324
+#: ../../../developers_guide/coding_conventions.md:336
 msgid "vtk::isnan -> std::isnan"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:326
+#: ../../../developers_guide/coding_conventions.md:338
 msgid "vtk::isfinite -> std::isfinite"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:328
+#: ../../../developers_guide/coding_conventions.md:340
 msgid "vtk::isisinfnan -> std::isinf"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:330
+#: ../../../developers_guide/coding_conventions.md:342
 msgid ""
 "The reason for these wrappings is to work around compiler performance "
 "issues. For example,  some clang version would convert integral types to "
@@ -844,13 +864,13 @@ msgid ""
 "false/true."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:332
+#: ../../../developers_guide/coding_conventions.md:344
 msgid ""
 "[*std::future*](http://en.cppreference.com/w/cpp/thread/future)/ [*std::"
 "async*](http://en.cppreference.com/w/cpp/thread/async)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:334
+#: ../../../developers_guide/coding_conventions.md:346
 msgid ""
 "Future/Async based programming inside of vtk should be handled on a case by "
 "case basis. In general the use cases for this kind of execution model is "
@@ -858,20 +878,20 @@ msgid ""
 "level."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:336
+#: ../../../developers_guide/coding_conventions.md:348
 msgid ""
 "In these cases the recommendation is to extending or adding support classes "
 "so that these design patterns can be utilized in the future."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:338
+#: ../../../developers_guide/coding_conventions.md:350
 msgid ""
 "[*constexpr*](https://en.cppreference.com/w/cpp/language/constexpr.html) "
 "should be used for constant (instead of `#define`, `const ...`) and wisely "
 "used for function depending on your use case."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:340
+#: ../../../developers_guide/coding_conventions.md:352
 msgid ""
 "[*auto*](http://en.cppreference.com/w/cpp/language/auto) Use auto to avoid "
 "type names that are noisy, obvious, or unimportant - cases where the type "
@@ -880,18 +900,18 @@ msgid ""
 "typed variable with a braced initializer list.**"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:344
+#: ../../../developers_guide/coding_conventions.md:356
 msgid "Specific cases where auto is allowed or encouraged:"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:345
+#: ../../../developers_guide/coding_conventions.md:357
 msgid ""
 "(Encouraged) For iterators and other long/convoluted type names, "
 "particularly when the type is clear from context (calls to find, begin, or "
 "end for instance)."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:346
+#: ../../../developers_guide/coding_conventions.md:358
 msgid ""
 "(Allowed) When the type is clear from local context (in the same expression "
 "or within a few lines). Initialization of a pointer or smart pointer with "
@@ -899,13 +919,13 @@ msgid ""
 "range-based loop over a container whose type is spelled out nearby."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:347
+#: ../../../developers_guide/coding_conventions.md:359
 msgid ""
 "(Allowed) When the type doesn't matter because it isn't being used for "
 "anything other than equality comparison."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:348
+#: ../../../developers_guide/coding_conventions.md:360
 msgid ""
 "(Encouraged) When iterating over a map with a range-based loop (because it "
 "is often assumed that the correct type is std::pair<KeyType, ValueType> "
@@ -914,7 +934,7 @@ msgid ""
 "second (often const-ref)."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:349
+#: ../../../developers_guide/coding_conventions.md:361
 msgid ""
 "for (const auto& [key, value] : some_map) {\n"
 "// The rest of the loop can now just refer to key and value,\n"
@@ -923,13 +943,13 @@ msgid ""
 "}\n"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:356
+#: ../../../developers_guide/coding_conventions.md:368
 msgid ""
 "(Allowed) [structure binding](https://cppreference.com/w/cpp/language/"
 "structured_binding.html) can be used for trivial type deduction."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:357
+#: ../../../developers_guide/coding_conventions.md:369
 msgid ""
 "(Prohibited) When iterating in integer space. `for (auto i=0; i < grid-"
 ">GetNumberOfPoints(); ++i)`. Because vtk data structures usually contain "
@@ -937,31 +957,31 @@ msgid ""
 "these use case (and often doesn’t match the type used)."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:359
+#: ../../../developers_guide/coding_conventions.md:371
 msgid "[*unique_ptr*](http://en.cppreference.com/w/cpp/memory/unique_ptr)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:360
+#: ../../../developers_guide/coding_conventions.md:372
 msgid ""
 "Do not use unique_ptr with vtk-derived objects. We recommend using `vtkNew` "
 "because VTK objects have their own internal reference counting and custom "
 "deletion logic, making unique_ptr's ownership semantics invalid."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:361
+#: ../../../developers_guide/coding_conventions.md:373
 msgid "`std::unique_ptr` should be created with `make_unique`."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:363
+#: ../../../developers_guide/coding_conventions.md:375
 msgid ""
 "[*lambda expressions*](http://en.cppreference.com/w/cpp/language/lambda)"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:365
+#: ../../../developers_guide/coding_conventions.md:377
 msgid "Usage of lambda expressions are allowed with the following guidelines."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:367
+#: ../../../developers_guide/coding_conventions.md:379
 msgid ""
 "Use default capture by value ([=]) only as a means of binding a few "
 "variables for a short lambda, where the set of captured variables is obvious "
@@ -969,51 +989,51 @@ msgid ""
 "capture by value."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:368
+#: ../../../developers_guide/coding_conventions.md:380
 msgid ""
 "All capture arguments must be explicitly defined. Using the default capture "
 "by reference ([&]) is not permitted. This ensures easier evaluation of "
 "lifespan and reference ownership."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:369
+#: ../../../developers_guide/coding_conventions.md:381
 msgid "lambda expression should be `constexpr`."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:370
+#: ../../../developers_guide/coding_conventions.md:382
 msgid ""
 "Keep unnamed lambdas short. If a lambda body is more than maybe five lines "
 "long, prefer using a named function instead of a lambda."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:371
+#: ../../../developers_guide/coding_conventions.md:383
 msgid ""
 "Specify the return type of the lambda explicitly if that will make it more "
 "obvious to readers."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:373
+#: ../../../developers_guide/coding_conventions.md:385
 msgid ""
 "[*variadic templates*](http://en.cppreference.com/w/cpp/language/"
 "parameter_pack) and [*fold expression*](https://en.cppreference.com/w/cpp/"
 "language/fold.html)."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:375
+#: ../../../developers_guide/coding_conventions.md:387
 msgid ""
 "Variadic Templates and fold expression are not allowed in VTK unless they "
 "are the only solution to the given problem (e.g. `vtkArrayDispatch.txx`)."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:377
+#: ../../../developers_guide/coding_conventions.md:389
 msgid "VTK’s commit hook enforced style checks"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:379
+#: ../../../developers_guide/coding_conventions.md:391
 msgid "Well formed commit message"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:381
+#: ../../../developers_guide/coding_conventions.md:393
 msgid ""
 "Every commit message should consist of a one line summary optionally "
 "followed by a blank line and further details. This is most easily "
@@ -1021,45 +1041,45 @@ msgid ""
 "paragraphs."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:383
+#: ../../../developers_guide/coding_conventions.md:395
 msgid ""
 "Valid committer username and email address Every developer must have a valid "
 "name and email configured in git.\\"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:386
+#: ../../../developers_guide/coding_conventions.md:398
 msgid "ASCII filename check All file names must contain only ASCII characters."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:389
+#: ../../../developers_guide/coding_conventions.md:401
 msgid "No tabs"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:391
+#: ../../../developers_guide/coding_conventions.md:403
 msgid "No trailing whitespace"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:393
+#: ../../../developers_guide/coding_conventions.md:405
 msgid "No empty line at end of file"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:395
+#: ../../../developers_guide/coding_conventions.md:407
 msgid "Proper file access mode"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:397
+#: ../../../developers_guide/coding_conventions.md:409
 msgid "Files must be committed with sensible access modes."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:399
+#: ../../../developers_guide/coding_conventions.md:411
 msgid "One megabyte maximum file size"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:401
+#: ../../../developers_guide/coding_conventions.md:413
 msgid "No submodules"
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:403
+#: ../../../developers_guide/coding_conventions.md:415
 msgid ""
 "For required third party dependencies, the recommended scheme is to use "
 "git's subtree merge strategy to reproducibly import code and thereby "
@@ -1069,7 +1089,7 @@ msgid ""
 "space."
 msgstr ""
 
-#: ../../../developers_guide/coding_conventions.md:405
+#: ../../../developers_guide/coding_conventions.md:417
 msgid ""
 "Additionally, new developers should be aware that the regression test "
 "machines have fairly strict compiler warnings enabled and usually have "

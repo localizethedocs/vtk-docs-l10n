@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/add-vtkGetConstObjectMacro.md:1
+msgid "vtkGetConstObjectMacro for const object getters"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkGetConstObjectMacro.md:3
+msgid ""
+"VTK now provides `vtkGetConstObjectMacro`, a new macro in `vtkSetGet.h` that "
+"generates const getter methods for `vtkObject` member variables. This macro "
+"complements the existing `vtkGetObjectMacro` by providing const-correct "
+"access to object pointers."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkGetConstObjectMacro.md:8
+msgid "Usage"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkGetConstObjectMacro.md:10
+msgid ""
+"The macro generates a virtual const method that returns a const pointer:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkGetConstObjectMacro.md:12
+msgid ""
+"class vtkMyClass : public vtkObject\n"
+"{\n"
+"public:\n"
+"  vtkSetObjectMacro(Points, vtkPoints);\n"
+"  vtkGetConstObjectMacro(Points, vtkPoints);  // Generates: virtual const "
+"vtkPoints* GetPoints() const\n"
+"\n"
+"protected:\n"
+"  vtkPoints* Points = nullptr;\n"
+"};\n"
+msgstr ""

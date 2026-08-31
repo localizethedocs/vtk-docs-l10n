@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -185,10 +185,22 @@ msgid ""
 msgstr ""
 
 #: ../../../advanced/object_serialization.md:102
-msgid "Manual marshal code"
+msgid "JSON type manifests"
 msgstr ""
 
 #: ../../../advanced/object_serialization.md:104
+msgid ""
+"When configured with `VTK_BUILD_TYPES_JSON=ON`, `vtkWrapSerDes` additionally "
+"emits a per-class JSON type manifest describing the marshalled properties "
+"and methods. These feed downstream TypeScript-definition generation for the "
+"WebAssembly object proxy. See {doc}`json_type_manifests`."
+msgstr ""
+
+#: ../../../advanced/object_serialization.md:109
+msgid "Manual marshal code"
+msgstr ""
+
+#: ../../../advanced/object_serialization.md:111
 msgid ""
 "On the other hand, the `VTK_MARSHALMANUAL` macro is used to indicate that a "
 "class will take part in marshalling, but it cannot trivially (de)serialize "
@@ -197,31 +209,31 @@ msgid ""
 "property parser."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:109
+#: ../../../advanced/object_serialization.md:116
 msgid ""
 "For such classes, a developer is expected to provide the code to serialize "
 "and deserialize the class in `vtkClassNameSerDesHelper.cxx` That file must "
 "satisfy these conditions:"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:112
+#: ../../../advanced/object_serialization.md:119
 msgid "It must live in the same module as `vtkClassName`."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:113
+#: ../../../advanced/object_serialization.md:120
 msgid ""
 "It must export a function `int "
 "RegisterHandlers_vtkClassNameSerDesHelper(void*, void*, void*)` with C "
 "linkage."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:114
+#: ../../../advanced/object_serialization.md:121
 msgid ""
 "It must define and declare the `static` functions from [automated-code-"
 "generation](#automated-code-generation)."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:115
+#: ../../../advanced/object_serialization.md:122
 msgid ""
 "Finally, it must implement the helper function "
 "`RegisterHandlers_vtkClassNameSerDesHelper` to register your handlers with "
@@ -230,11 +242,11 @@ msgid ""
 "on implementing this helper."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:118
+#: ../../../advanced/object_serialization.md:125
 msgid "Example:"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:120
+#: ../../../advanced/object_serialization.md:127
 msgid ""
 "int RegisterHandlers_vtkClassNameSerDesHelper(void* ser, void* deser, void* "
 "invoker)\n"
@@ -243,23 +255,23 @@ msgid ""
 "}\n"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:127
+#: ../../../advanced/object_serialization.md:134
 msgid "that registers:"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:128
+#: ../../../advanced/object_serialization.md:135
 msgid "a serializer function with a serializer instance"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:129
+#: ../../../advanced/object_serialization.md:136
 msgid "a deserializer function with a deserializer instance"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:130
+#: ../../../advanced/object_serialization.md:137
 msgid "a constructor of the VTK class with a deserializer instance"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:131
+#: ../../../advanced/object_serialization.md:138
 msgid ""
 "Optionally, a function that can call methods by name on an object with an "
 "invoker instance. The wrapping tool automatically generates this code even "
@@ -267,38 +279,38 @@ msgid ""
 "custom `RegisterHandlers_vtkClassNameSerDesHelper`."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:135
+#: ../../../advanced/object_serialization.md:142
 msgid "Marshal hint macro"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:136
+#: ../../../advanced/object_serialization.md:143
 msgid ""
 "Classes which are annotated with `VTK_MARSHALAUTO` are considered by the "
 "`vtkWrapSerDes` executable."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:137
+#: ../../../advanced/object_serialization.md:144
 msgid ""
 "Classes annotated with `VTK_MARSHALMANUAL` are hand coded in the same "
 "module. Here are some examples:"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:138
+#: ../../../advanced/object_serialization.md:145
 msgid ""
 "`Common/Core/vtkCollectionSerDesHelper.cxx` for `Common/Core/vtkCollection.h`"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:139
+#: ../../../advanced/object_serialization.md:146
 msgid ""
 "`Common/DataModel/vtkCellArraySerDesHelper.cxx` for `Common/DataModel/"
 "vtkCellArray.h`"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:141
+#: ../../../advanced/object_serialization.md:148
 msgid "Convenient script to annotate headers and module"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:142
+#: ../../../advanced/object_serialization.md:149
 msgid ""
 "The [Utilities/Marshalling/marshal_macro_annotate_headers.py](https://gitlab."
 "kitware.com/vtk/vtk/-/blob/master//Utilities/Marshalling/"
@@ -312,24 +324,24 @@ msgid ""
 "Marshalling/ignore.txt)."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:144
+#: ../../../advanced/object_serialization.md:151
 msgid ""
 "When the `-u, --update` argument is used, headers are in-place edited to use "
 "the `VTK_MARSHAL(AUTO|MANUAL)` wrapping hint. Files that already have this "
 "hint are untouched."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:146
+#: ../../../advanced/object_serialization.md:153
 msgid ""
 "When the `-t, --test` argument is used, the source tree is checked for "
 "inconsistent use of marshal macros."
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:148
+#: ../../../advanced/object_serialization.md:155
 msgid "Testing serialization code"
 msgstr ""
 
-#: ../../../advanced/object_serialization.md:150
+#: ../../../advanced/object_serialization.md:157
 msgid ""
 "Serialization testing can be run on top of regular VTK C++ regression tests "
 "by performing an image comparison test after serializing and deserializing "

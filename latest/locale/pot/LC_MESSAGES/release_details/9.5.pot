@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,16 +33,16 @@ msgstr ""
 msgid "Changes made since VTK 9.4.2 include the following."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:10
+#: ../../../../release/_9.5-stripped.md:11
 msgid "New Features"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:12
-#: ../../../../release/_9.5-stripped.md:350
+#: ../../../../release/_9.5-stripped.md:13
+#: ../../../../release/_9.5-stripped.md:351
 msgid "Annotation"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:14
+#: ../../../../release/_9.5-stripped.md:15
 msgid ""
 "**Grid Axes in VTK**   VTK now has the `vtkGridAxesActor3D` that is the "
 "successor to the `vtkCubeAxesActor` for cube axes annotation. This new actor "
@@ -52,44 +52,44 @@ msgid ""
 "SHA512/70e9ad194620080a3f194edf08a8b726af2d39f019b61169a66a07a7ff71024bfefa9b0919dac0924e637169564ef0d11d50c31c0e318e72b3df9e2ca459d433)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:14
+#: ../../../../release/_9.5-stripped.md:15
 msgid "Grid Axes Actor 3D"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:18
-#: ../../../../release/_9.5-stripped.md:474
+#: ../../../../release/_9.5-stripped.md:19
+#: ../../../../release/_9.5-stripped.md:475
 msgid "DataModel"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:20
+#: ../../../../release/_9.5-stripped.md:21
 msgid ""
 "**Add AxisAligned and Offset options to vtkPlane**   vtkPlane now has "
 "AxisAligned and Offset options."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:22
+#: ../../../../release/_9.5-stripped.md:23
 msgid ""
 "AxisAligned: if On, locks normal to plane to be aligned with x, y, or z axis."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:23
+#: ../../../../release/_9.5-stripped.md:24
 msgid ""
 "Offset: the origin is shifted in the direction of the normal by the offset."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:25
+#: ../../../../release/_9.5-stripped.md:26
 msgid "**Introduce implicit Frustum and widget**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:27
+#: ../../../../release/_9.5-stripped.md:28
 msgid "![Implicit Frustum Widget](imgs/9.5/implicit-frustum-widget.png)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:27
+#: ../../../../release/_9.5-stripped.md:28
 msgid "Implicit Frustum Widget"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:29
+#: ../../../../release/_9.5-stripped.md:30
 msgid ""
 "The new `vtkFrustum` implicit function represents a frustum resembling a "
 "pyramid with a clipped top. You can shape it by using setters for its "
@@ -98,14 +98,14 @@ msgid ""
 "frustum-implicit-widget.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:32
+#: ../../../../release/_9.5-stripped.md:33
 msgid ""
 "**vtkDataSet: Add GetMinSpatialDimension**   `vtkDataSet` has a new method "
 "`GetMinSpatialDimension` that returns the minimum spatial dimension of the "
 "dataset."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:35
+#: ../../../../release/_9.5-stripped.md:36
 msgid ""
 "**Added new class to manually create a Cocoa NSAutoreleasePool**   The new "
 "class `vtkCocoaAutoreleasePool` allows manually creating and draining a "
@@ -113,17 +113,17 @@ msgid ""
 "md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:39
-#: ../../../../release/_9.5-stripped.md:367
-#: ../../../../release/_9.5-stripped.md:495
+#: ../../../../release/_9.5-stripped.md:40
+#: ../../../../release/_9.5-stripped.md:368
+#: ../../../../release/_9.5-stripped.md:496
 msgid "Filters"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:41
+#: ../../../../release/_9.5-stripped.md:42
 msgid "**Add AxisAlignedReflectionFilter**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:43
+#: ../../../../release/_9.5-stripped.md:44
 msgid ""
 "The Axis Aligned Reflection filter reflects the input dataset across the "
 "specified plane.   This filter operates on any type of data set or hyper "
@@ -134,11 +134,11 @@ msgid ""
 "reflected, otherwise, all 3, 6 and 9-component data arrays are reflected)."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:47
+#: ../../../../release/_9.5-stripped.md:48
 msgid "**Add AxisAlignedTransformFilter**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:49
+#: ../../../../release/_9.5-stripped.md:50
 msgid ""
 "The Axis Aligned Transform Filter performs axis aligned affine "
 "transformation on the input (translation, scaling, rotation). The filter "
@@ -146,7 +146,7 @@ msgid ""
 "type matches the input."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:51
+#: ../../../../release/_9.5-stripped.md:52
 msgid ""
 "**Add FillMaterial option to HTG Geometry filter**   "
 "`vtkHyperTreeGridGeometry` now has a `FillMaterial` option. Enabled by "
@@ -154,11 +154,11 @@ msgid ""
 "interface lines are added to the resulting polydata."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:54
+#: ../../../../release/_9.5-stripped.md:55
 msgid "**Add option to add cells to the output of vtkPCANormalEstimation**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:56
+#: ../../../../release/_9.5-stripped.md:57
 msgid ""
 "The vtkPCANormalEstimation support now adding cells to the output "
 "`vtkPolyData` to enable the visualization on paraview, the user can set the "
@@ -167,11 +167,11 @@ msgid ""
 "each point."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:58
+#: ../../../../release/_9.5-stripped.md:59
 msgid "**Add Gaussian integration strategy**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:60
+#: ../../../../release/_9.5-stripped.md:61
 msgid ""
 "The `vtkIntegrateAttributes` filter now accepts different integration "
 "strategies. The original way of integration is now called Linear and the "
@@ -182,25 +182,25 @@ msgid ""
 "specified for each cell are maintained."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:62
+#: ../../../../release/_9.5-stripped.md:63
 msgid "**Add support for oriented images in vtkProbeFilter**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:64
+#: ../../../../release/_9.5-stripped.md:65
 msgid ""
 "vtkProbeFilter has been improved to support oriented images.   The "
 "implementation now rely on the native support of orientation   in the API of "
 "vtkImageData."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:68
+#: ../../../../release/_9.5-stripped.md:69
 msgid ""
 "**Add vtkQuadricDecimation::Set/GetMaximumError()**   `vtkQuadricDecimation` "
 "now has `SetMaximumError()` and `GetMaximumError()` methods. This allows "
 "stopping decimation when the node error exceeds a specified upper limit."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:71
+#: ../../../../release/_9.5-stripped.md:72
 msgid ""
 "**Append filters: Multithread and Improve Performance**   The "
 "`vtkAppendFilter` and `vtkAppendPolyData` filters have been re-written and "
@@ -209,19 +209,19 @@ msgid ""
 "improved."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:74
+#: ../../../../release/_9.5-stripped.md:75
 msgid "💥**Introduce vtkExplodeDataSet filter**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:76
+#: ../../../../release/_9.5-stripped.md:77
 msgid "![Blocks from FeatureEdges Region Ids](imgs/9.5/ExplodeDataSet.png)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:76
+#: ../../../../release/_9.5-stripped.md:77
 msgid "Blocks from FeatureEdges Region Ids"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:78
+#: ../../../../release/_9.5-stripped.md:79
 msgid ""
 "`vtkExplodeDataSet` creates a `vtkPartitionedDataSetCollection` from any "
 "input dataset according to a cell scalar isovalue criteria. Each partition "
@@ -231,7 +231,7 @@ msgid ""
 "ExplodeDataSet.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:81
+#: ../../../../release/_9.5-stripped.md:82
 msgid ""
 "**vtkGenerateRegionIds**   `vtkGenerateRegionIds` is a new polydata filter "
 "that adds a CellData array containing a region identifier. A region is "
@@ -240,25 +240,25 @@ msgid ""
 "is `vtkRegionIds` by default.   ([Author notes](9.5/region-id-filter.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:85
-#: ../../../../release/_9.5-stripped.md:386
-#: ../../../../release/_9.5-stripped.md:527
+#: ../../../../release/_9.5-stripped.md:86
+#: ../../../../release/_9.5-stripped.md:387
+#: ../../../../release/_9.5-stripped.md:528
 msgid "I/O"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:87
+#: ../../../../release/_9.5-stripped.md:88
 msgid "**Add AVMESH reader**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:89
+#: ../../../../release/_9.5-stripped.md:90
 msgid "AVMESH is the unstructured format used in CREATE-AV Kestrel and Helios."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:91
+#: ../../../../release/_9.5-stripped.md:92
 msgid "**Add external memory support for vtkConduitSource**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:93
+#: ../../../../release/_9.5-stripped.md:94
 msgid ""
 "`vtkConduitSource` can now keep point coordinates, cell connectivity   and "
 "field values from conduit on an accelerator device such as CUDA or   HIP. "
@@ -268,11 +268,11 @@ msgid ""
 "transferred to the host memory."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:100
+#: ../../../../release/_9.5-stripped.md:101
 msgid "**Add vtkFidesWriter for writing out data in ADIOS2 BP format**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:102
+#: ../../../../release/_9.5-stripped.md:103
 msgid ""
 "This adds `vtkFidesWriter` which uses the Fides library to write data to "
 "ADIOS2 BP files.   This initial version only provides support for the BP "
@@ -281,7 +281,7 @@ msgid ""
 "read back in with `vtkFidesReader`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:107
+#: ../../../../release/_9.5-stripped.md:108
 msgid ""
 "**Add zone section selection to FLUENT Reader**   You can now select zone "
 "sections to load when reading a FLUENT file, and the output multiblock will "
@@ -291,7 +291,7 @@ msgid ""
 "md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:111
+#: ../../../../release/_9.5-stripped.md:112
 msgid ""
 "**CGNSReader: Load surface elements stored as Element_t entries**   The CGNS "
 "reader has a new option `LoadSurfacePatch` that allows to read 2D elements "
@@ -300,7 +300,7 @@ msgid ""
 "assigned boundary conditions."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:114
+#: ../../../../release/_9.5-stripped.md:115
 msgid ""
 "**GLTF document loader selectively toggle model data**   The "
 "`vtkGLTFDocumentLoader` can now selectively enable/disable loading of "
@@ -309,32 +309,32 @@ msgid ""
 "by default.   ([Author notes](9.5/gltf-toggle-data.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:118
+#: ../../../../release/_9.5-stripped.md:119
 msgid "**Import GLTF scenes from in-memory streams**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:120
+#: ../../../../release/_9.5-stripped.md:121
 msgid ""
 "![GLTF Stream Import Example](https://vtk.org/files/ExternalData/SHA512/"
 "a40ba06e652140ed031e7cda5597b2cfa84b42ab2ae05ca068c015432e5302f00c72bea03b2bb9e6532181fb0a33ec4abc7f178ad2292d57cb82d6bc9ee97bf7)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:120
+#: ../../../../release/_9.5-stripped.md:121
 msgid "GLTF Stream Import Example"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:122
+#: ../../../../release/_9.5-stripped.md:123
 msgid ""
 "The `vtkGLTFImporter` now accepts a resource stream to load the scene from."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:124
+#: ../../../../release/_9.5-stripped.md:125
 msgid ""
 "**netcdf: Enable CDF5 format**   VTK's internal netcdf now enables the CDF5 "
 "format."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:127
+#: ../../../../release/_9.5-stripped.md:128
 msgid ""
 "**OpenFOAM reader: allow `_0` files**   The OpenFOAM file reader in VTK now "
 "provides an option to load file names which ends with `_0`. This was "
@@ -343,25 +343,25 @@ msgid ""
 "([Author notes](9.5/openfoam-restart-files.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:131
+#: ../../../../release/_9.5-stripped.md:132
 msgid ""
 "**Support reading XGC files in Fides format**   Recent changes to Fides "
 "allow loading XGC files without specifying paths to all of the input files. "
 "The VTK Fides reader is updated to support reading these files."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:134
+#: ../../../../release/_9.5-stripped.md:135
 msgid ""
 "**Support unsigned integers in netCDF files**   NetCDF readers like "
 "`vtkNetCDFCFReader` now support unsigned integer data types, loading these "
 "variables into the correct VTK array type."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:137
+#: ../../../../release/_9.5-stripped.md:138
 msgid "**vtkConduitSource: Add state/metadata/vtk_fields node**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:139
+#: ../../../../release/_9.5-stripped.md:140
 msgid ""
 "A new Conduit tree node, `state/metadata/vtk_fields`, has been introduced to "
 "store VTK-interpretable field metadata, including `attribute_type` and data "
@@ -369,7 +369,7 @@ msgid ""
 "(9.5/add-state_metadata_vtk_fields-vtkConduitSource.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:142
+#: ../../../../release/_9.5-stripped.md:143
 msgid ""
 "**vtkDelimitedTextReader improvements: Preview, SkippedRecords, Comments**   "
 "`vtkDelimitedTextReader` now offers a `GetPreview()` method to inspect the "
@@ -379,14 +379,14 @@ msgid ""
 "reader-options.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:146
+#: ../../../../release/_9.5-stripped.md:147
 msgid ""
 "**vtkLANLX3DReader: Import from ParaView**   `vtkLANLX3DReader` is a reader "
 "for LANL X3D files. This reader used to be available in ParaView, but it has "
 "been moved to VTK now."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:149
+#: ../../../../release/_9.5-stripped.md:150
 msgid ""
 "**vtkOpenFOAMReader: Multithreaded Reading of case files**   "
 "`vtkOpenFOAMReader` now supports multithreaded reading of case files (on by "
@@ -397,7 +397,7 @@ msgid ""
 "(9.5/multithread-vtkOpenFOAMReader.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:153
+#: ../../../../release/_9.5-stripped.md:154
 msgid ""
 "**VTK Conduit now supports pyramids and wedges**   VTK_PYRAMID and VTK_WEDGE "
 "cell types are now supported by `vtkDataObjectToConduit`. These cell types "
@@ -405,12 +405,12 @@ msgid ""
 "\"wedge\" respectively."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:156
+#: ../../../../release/_9.5-stripped.md:157
 msgid ""
 "**VTK Conduit now supports Blueprint implicit topology using point set**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:158
+#: ../../../../release/_9.5-stripped.md:159
 msgid ""
 "Catalyst Conduit now supports Blueprint's implicit topology using point "
 "sets, enabling meshes defined by points without cells. This is achieved by "
@@ -418,27 +418,27 @@ msgid ""
 "notes](9.5/vtk-Catalyst-Implicit-Topology.md)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:161
+#: ../../../../release/_9.5-stripped.md:162
 msgid "**VTKHDF: Add support for HyperTreeGrid**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:163
+#: ../../../../release/_9.5-stripped.md:164
 msgid ""
 "HyperTreeGrid support has been added to the VTKHDF specification and reader. "
 "It supports temporal & multi-piece reading."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:165
+#: ../../../../release/_9.5-stripped.md:166
 msgid "VTKHDF Specification is now version 2.4."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:167
+#: ../../../../release/_9.5-stripped.md:168
 msgid ""
 "**VTKHDF: Support reading and writing composite distributed temporal "
 "datasets**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:169
+#: ../../../../release/_9.5-stripped.md:170
 msgid ""
 "The vtkHDFWriter support now extends to composite temporal datasets "
 "(multiblock and partitioned dataset collection), all written in a same "
@@ -446,39 +446,39 @@ msgid ""
 "in parallel using MPI, and support static meshes."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:172
+#: ../../../../release/_9.5-stripped.md:173
 msgid ""
 "Support for reading composite structures containing ImageData has been "
 "fixed. `vtkHDFReader` protected members `WholeExtent`, `Origin` and "
 "`Spacing` have been deleted."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:174
+#: ../../../../release/_9.5-stripped.md:175
 msgid "Module System"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:176
+#: ../../../../release/_9.5-stripped.md:177
 msgid "**vtk_module_wrap_python**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:178
+#: ../../../../release/_9.5-stripped.md:179
 msgid ""
 "Added argument `vtk_module_wrap_python(WRAP_TARGET)`. This argument names a "
 "target to be created that depends upon all wrapping work done in the call."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:180
-#: ../../../../release/_9.5-stripped.md:393
+#: ../../../../release/_9.5-stripped.md:181
+#: ../../../../release/_9.5-stripped.md:394
 msgid "Interaction"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:182
+#: ../../../../release/_9.5-stripped.md:183
 msgid ""
 "**Add getter and setter functions for the text on the buttons of "
 "vtkCameraOrientationRepresentation**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:184
+#: ../../../../release/_9.5-stripped.md:185
 msgid ""
 "You can now customize the text displayed on top of the buttons of a "
 "`vtkCameraOrientationRepresentation` using functions like "
@@ -489,73 +489,73 @@ msgid ""
 "widget-buttons.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:188
+#: ../../../../release/_9.5-stripped.md:189
 msgid "**Add function Stop Select to vtkInteractorStyleRubberBandPick**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:190
+#: ../../../../release/_9.5-stripped.md:191
 msgid ""
 "As the already existing \"StartSelect()\" function allows user to start "
 "picking, the new function \"StopSelect()\" allows to interrupt picking."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:192
+#: ../../../../release/_9.5-stripped.md:193
 msgid ""
 "**Add option to independently set the thickness of reslice cursor widget "
 "axes**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:194
+#: ../../../../release/_9.5-stripped.md:195
 msgid ""
 "You can now set the thickness of reslice cursor axes independently by "
 "turning on the vtkResliceCursorRepresentation::IndependentThickness flag."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:196
-#: ../../../../release/_9.5-stripped.md:583
+#: ../../../../release/_9.5-stripped.md:197
+#: ../../../../release/_9.5-stripped.md:584
 msgid "Python"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:198
+#: ../../../../release/_9.5-stripped.md:199
 msgid "**Wheels for linux aarch64 available on PyPi**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:200
+#: ../../../../release/_9.5-stripped.md:201
 msgid ""
 "VTK now provides wheels for Linux aarch64. See https://pypi.org/project/"
 "vtk/9.5.0/"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:202
+#: ../../../../release/_9.5-stripped.md:203
 msgid ""
 "**Add `vtkBitArray` support to `numpy_support`**   Array conversion between "
 "vtk and numpy (using `vtk_to_numpy`) now supports `vtkBitArray`. Converting "
 "a `vtkBitArray` to numpy results in an array of uint8."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:205
+#: ../../../../release/_9.5-stripped.md:206
 msgid "**Add deprecated decorator to Python**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:207
+#: ../../../../release/_9.5-stripped.md:208
 msgid ""
 "VTK now provides a `@deprecated` decorator that emits a `DeprecationWarning` "
 "when a decorated function is called. You can edit the message shown to the "
 "user."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:209
+#: ../../../../release/_9.5-stripped.md:210
 msgid "To mark a function as deprecated, use:"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:210
+#: ../../../../release/_9.5-stripped.md:211
 msgid ""
 "@deprecated(version=1.2, message=\"Use 'new_function' instead.\")\n"
 "def old_function():\n"
 "    pass\n"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:216
+#: ../../../../release/_9.5-stripped.md:217
 msgid ""
 "**Add to the NetCDFCFReader the ability to use data from an XArray**   An "
 "XArray can create a vtkNetCDFCFReader that uses its data, using zero copy "
@@ -564,22 +564,22 @@ msgid ""
 "ignored), and the reader can be used as usual in a VTK pipeline."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:219
+#: ../../../../release/_9.5-stripped.md:220
 msgid ""
 "**OpenXR and OpenXRRemoting modules are now wrapped in Python and shipped in "
 "Windows VTK wheels!**   OpenXR loader is shipped with the wheel, but OpenXR "
 "runtimes have to be installed by the end user for their specific devices."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:222
+#: ../../../../release/_9.5-stripped.md:223
 msgid "Qt"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:224
+#: ../../../../release/_9.5-stripped.md:225
 msgid "**Generate ConfigureEvent for Qt QResizeEvent**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:226
+#: ../../../../release/_9.5-stripped.md:227
 msgid ""
 "The `QVTKInteractorAdapter` now translates QResizeEvent into   a VTK "
 "ConfigureEvent. This brings its behavior in line with   the native X11/"
@@ -587,13 +587,13 @@ msgid ""
 "the native UI resize events."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:231
+#: ../../../../release/_9.5-stripped.md:232
 msgid ""
 "**Add EnableTouchEventProcessing flag to QVTKOpenGL*Widgets & "
 "QVTKOpenGLWindow**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:233
+#: ../../../../release/_9.5-stripped.md:234
 msgid ""
 "As Qt touch event will automatically be translated to mouse event, so the "
 "mouse event will be processed twice for one touch in VTK interactor.   With "
@@ -601,7 +601,7 @@ msgid ""
 "off the Qt touch event processing by purpose."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:236
+#: ../../../../release/_9.5-stripped.md:237
 msgid ""
 "**Multi-touch gestures in QtQuick/QML**   Added support for multi-touch "
 "interaction to `QQuickVTKItem` using the `PinchHandler` QML component. "
@@ -610,16 +610,16 @@ msgid ""
 "multitouch.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:240
-#: ../../../../release/_9.5-stripped.md:590
+#: ../../../../release/_9.5-stripped.md:241
+#: ../../../../release/_9.5-stripped.md:591
 msgid "Rendering"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:242
+#: ../../../../release/_9.5-stripped.md:243
 msgid "**Add new setting to specify 2D point shape in vtkProperty**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:244
+#: ../../../../release/_9.5-stripped.md:245
 msgid ""
 "You can now draw round points by calling `vtkProperty::"
 "SetPoint2DShape(vtkProperty::Point2DShapeType::Round)`. The default is "
@@ -627,43 +627,43 @@ msgid ""
 "module.   ([Author notes](9.5/add-point-2d-shape-setting-for-vtkProperty.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:247
+#: ../../../../release/_9.5-stripped.md:248
 msgid "**Add option to independently set thickness of cell edges and lines**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:249
+#: ../../../../release/_9.5-stripped.md:250
 msgid ""
 "You can now set the thickness of cell edges independently without altering "
 "the   thickness of lines. This feature is useful to emphasize either edges "
 "or lines in a scene   with different widths."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:253
+#: ../../../../release/_9.5-stripped.md:254
 msgid ""
 "![Image showing different edge and line widths](imgs/9.5/add-edge-width-"
 "property.png)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:253
+#: ../../../../release/_9.5-stripped.md:254
 msgid "Image showing different edge and line widths"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:255
+#: ../../../../release/_9.5-stripped.md:256
 msgid "([Author notes](9.5/add-edge-width-property.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:257
+#: ../../../../release/_9.5-stripped.md:258
 msgid "**Add Prolab Transfer function interpolation support**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:259
+#: ../../../../release/_9.5-stripped.md:260
 msgid ""
 "The `vtkColorTransferFunction` now supports Prolab color space for "
 "interpolation via `vtkColorTransferFunction::SetColorSpaceToProlab()`.   "
 "([Author notes](9.5/add-prolab-transferfunction-interpolation.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:262
+#: ../../../../release/_9.5-stripped.md:263
 msgid ""
 "**Add SurfaceProbeVolumeMapper**   `vtkOpenGLSurfaceProbeVolumeMapper` is a "
 "PolyDataMapper colored with probed volume data. It accepts Input (rendered "
@@ -672,67 +672,67 @@ msgid ""
 "texture coordinates.   ([Author notes](9.5/addSurfaceProbeVolumeMapper.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:266
+#: ../../../../release/_9.5-stripped.md:267
 msgid "**Add vtkFastLabeledDataMapper**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:268
+#: ../../../../release/_9.5-stripped.md:269
 msgid ""
 "The new `vtkFastLabeledDataMapper` uses GPU texture acceleration to draw "
 "labels at much   higher frame rates, designed to render thousands of labels "
 "at over 60 fps."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:271
+#: ../../../../release/_9.5-stripped.md:272
 msgid "**Add vtkLightWidget to path-traced environments**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:273
+#: ../../../../release/_9.5-stripped.md:274
 msgid ""
 "The `vtkRenderingRayTracing` module now supports rendering and interaction "
 "with the `vtkLightWidget` for interactive light placement and modification."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:275
+#: ../../../../release/_9.5-stripped.md:276
 msgid ""
 "![](https://vtk.org/files/ExternalData/"
 "SHA512/53b5e6ab5f30f59915be20da76fb415181d7fba709964f0d78de60bcc24abb860d2f339dfeaad26da8dfbe4f674617a65132ec442955c9ba9768d9c630693a8b)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:277
+#: ../../../../release/_9.5-stripped.md:278
 msgid "![LightWidget in Path Tracing](imgs/9.5/lightwidget_pathtracing.png)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:277
+#: ../../../../release/_9.5-stripped.md:278
 msgid "LightWidget in Path Tracing"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:279
+#: ../../../../release/_9.5-stripped.md:280
 msgid "**Add webgpu implementation for vtkGlyph3DMapper**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:281
+#: ../../../../release/_9.5-stripped.md:282
 msgid ""
 "The VTK::RenderingWebGPU module now provides an implementation for the "
 "abstract `vtkGlyph3DMapper` class."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:283
+#: ../../../../release/_9.5-stripped.md:284
 msgid "**Add webgpu implementation for vtkPolyDataMapper2D**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:285
+#: ../../../../release/_9.5-stripped.md:286
 msgid ""
 "The VTK::RenderingWebGPU module now provides an implementation for the "
 "abstract `vtkPolyDataMapper2D` class. This allows rendering geometry in the "
 "2D viewport plane using webgpu."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:287
+#: ../../../../release/_9.5-stripped.md:288
 msgid "**Improved OpenGL Debug Logging**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:289
+#: ../../../../release/_9.5-stripped.md:290
 msgid ""
 "You can now see detailed debug messages from OpenGL when VTK is built with "
 "`VTK_REPORT_OPENGL_ERRORS=ON`. The `vtkOpenGLRenderWindow` utilizes the "
@@ -741,11 +741,11 @@ msgid ""
 "option is enabled."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:291
+#: ../../../../release/_9.5-stripped.md:292
 msgid "**Memory Statistics For WebGPU Rendering Backend**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:293
+#: ../../../../release/_9.5-stripped.md:294
 msgid ""
 "You can now view detailed information about the GPU memory usage   of "
 "individual textures and buffers by setting the "
@@ -754,83 +754,83 @@ msgid ""
 "SetGPUMemoryLogVerbosity`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:298
+#: ../../../../release/_9.5-stripped.md:299
 msgid "**Order Indepedent Translucency with MSAA**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:300
+#: ../../../../release/_9.5-stripped.md:301
 msgid ""
 "![](https://vtk.org/files/ExternalData/SHA512/"
 "b5dce5a56db0d685c638e3383536bcbb1cbf0b71040989c7fad040f221f4527f761d7cd22c7e4dd63aaf368cc236e366d37c4832b07f59f50b6928d223f7da9e)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:302
+#: ../../../../release/_9.5-stripped.md:303
 msgid ""
 "The new `vtkRenderer::UseOIT` flag helps resolve conflicts between OIT and "
 "MSAA.   ([Author notes](9.5/useoit_translucent.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:305
+#: ../../../../release/_9.5-stripped.md:306
 msgid "ThirdParty"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:307
+#: ../../../../release/_9.5-stripped.md:308
 msgid "**Add scnlib third-party library**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:309
+#: ../../../../release/_9.5-stripped.md:310
 msgid ""
 "The `scnlib` third-party library (v4.0.1) has been added to VTK for fast and "
 "efficient parsing of numbers from strings."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:311
-#: ../../../../release/_9.5-stripped.md:657
+#: ../../../../release/_9.5-stripped.md:312
+#: ../../../../release/_9.5-stripped.md:658
 msgid "WebAssembly"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:313
+#: ../../../../release/_9.5-stripped.md:314
 msgid "**Allow binding a WASM scene manager render window to a HTML canvas**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:315
+#: ../../../../release/_9.5-stripped.md:316
 msgid ""
 "You can now call `sceneManager.bindRenderWindow(vtkTypeUInt32 id, const "
 "char* canvasSelector)` method from JavaScript   in order to bind a render "
 "window to a HTML canvas element."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:318
+#: ../../../../release/_9.5-stripped.md:319
 msgid "**Add exception support for WebAssembly builds**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:320
+#: ../../../../release/_9.5-stripped.md:321
 msgid ""
 "You can now enable exceptions in VTK wasm build with the "
 "`VTK_WEBASSEMBLY_EXCEPTIONS` option. Default value is `OFF`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:322
-#: ../../../../release/_9.5-stripped.md:460
+#: ../../../../release/_9.5-stripped.md:323
+#: ../../../../release/_9.5-stripped.md:461
 msgid "Wrapping"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:324
+#: ../../../../release/_9.5-stripped.md:325
 msgid "**Add function call feature in vtkObjectManager**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:326
+#: ../../../../release/_9.5-stripped.md:327
 msgid ""
 "You can now invoke methods on a registered object using the   new `nlohmann::"
 "json vtkObjectManager::Invoke(vtkTypeUInt32 identifier, const std::string& "
 "methodName, const nlohmann::json& args)`   function."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:330
+#: ../../../../release/_9.5-stripped.md:331
 msgid "**Add method that allows updating states of specific objects.**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:332
+#: ../../../../release/_9.5-stripped.md:333
 msgid ""
 "You can now call the `void UpdateStatesFromObjects(const std::"
 "vector<vtkTypeUInt32>& identifiers)` method on the `vtkObjectManager`   to "
@@ -839,11 +839,11 @@ msgid ""
 "dependencies without touching other unrelated objects."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:336
+#: ../../../../release/_9.5-stripped.md:337
 msgid "**Add new verbosity setting for log messages related to marshalling**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:338
+#: ../../../../release/_9.5-stripped.md:339
 msgid ""
 "You can now configure the verbosity level for log messages in the core "
 "marshalling classes `vtkDeserializer`, `vtkSerializer` and "
@@ -851,21 +851,21 @@ msgid ""
 "release builds on the desktop and even in wasm."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:341
+#: ../../../../release/_9.5-stripped.md:342
 msgid "Changes"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:343
+#: ../../../../release/_9.5-stripped.md:344
 msgid "API"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:345
+#: ../../../../release/_9.5-stripped.md:346
 msgid ""
 "**Remove usage of the nlohmannjson library from public facing API** :"
 "warning: **BREAKING_CHANGES**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:347
+#: ../../../../release/_9.5-stripped.md:348
 msgid ""
 "The `nlohmann::json vtkAbstractArray::SerializeValues()` method is removed "
 "due to conflicts with downstream projects using different nlohmannjson "
@@ -873,13 +873,13 @@ msgid ""
 "(9.5/breaking-change-remove-nlohmann-json-from-public-API.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:352
+#: ../../../../release/_9.5-stripped.md:353
 msgid ""
 "**vtkAxisActor and vtkPolarAxesActor breaking changes** :warning: "
 "**BREAKING_CHANGES**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:354
+#: ../../../../release/_9.5-stripped.md:355
 msgid ""
 "Protected members of `vtkAxisActor` and `vtkPolarAxesActor` classes were "
 "moved to private. Please use appropriate Getter/Setter to use them instead. "
@@ -888,26 +888,26 @@ msgid ""
 "GetPolarAxisTitle()`.   ([Author notes](9.5/axes-actors-breaking-change.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:357
+#: ../../../../release/_9.5-stripped.md:358
 msgid "Build"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:359
+#: ../../../../release/_9.5-stripped.md:360
 msgid "**C++17 is now required for VTK** :warning: **BREAKING_CHANGES**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:361
+#: ../../../../release/_9.5-stripped.md:362
 msgid ""
 "VTK now requires C++17 compiler support. Minimum required compiler versions "
 "have been updated (e.g., GCC 8.0, Clang 5.0, MSVC 2017, Apple Clang 10.0, "
 "Intel ICC 19.0)."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:363
+#: ../../../../release/_9.5-stripped.md:364
 msgid "**Simplify the customization for Kokkos backend**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:365
+#: ../../../../release/_9.5-stripped.md:366
 msgid ""
 "When using Kokkos, setting up compilers for devices/backends requiring "
 "specific languages (like CUDA or HIP) is simplified. VTK now gets Kokkos "
@@ -915,23 +915,23 @@ msgid ""
 "removing the need to set `VTK_KOKKOS_BACKEND`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:369
+#: ../../../../release/_9.5-stripped.md:370
 msgid "**Rename HTG filter VisibleLeavesSize to GenerateFields**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:371
+#: ../../../../release/_9.5-stripped.md:372
 msgid ""
 "`vtkHyperTreeGridVisibleLeavesSize` is renamed to "
 "`vtkHyperTreeGridGenerateFields`. The new class is more generic, allowing "
 "easier addition of new fields by inheriting `vtkHyperTreeGridGenerateField`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:373
+#: ../../../../release/_9.5-stripped.md:374
 msgid ""
 "**HTG Surface Representation improvements** :warning: **BREAKING_CHANGES**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:375
+#: ../../../../release/_9.5-stripped.md:376
 msgid ""
 "Cells outside the camera frustum are now decimated in 3D/2D/1D in HTG "
 "Surface Representation, working in all cases including non-parallel "
@@ -940,35 +940,35 @@ msgid ""
 "([Author notes](9.5/htg-representation-decimation.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:378
+#: ../../../../release/_9.5-stripped.md:379
 msgid "**vtkParticleTracer::CachedData private**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:380
+#: ../../../../release/_9.5-stripped.md:381
 msgid ""
 "Previously protected member `vtkParticleTracer::CachedData` is now a private "
 "member. It is not intended to be used by classes inheriting "
 "`vtkParticleTracer`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:382
+#: ../../../../release/_9.5-stripped.md:383
 msgid "**vtkQuadricDecimation now handles id attributes**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:384
+#: ../../../../release/_9.5-stripped.md:385
 msgid ""
 "The quadric decimation filter has been updated for `vtkIdTypeArray` point "
 "attributes. These are no longer interpolated during edge collapse; instead, "
 "one ID is kept, and the other is discarded."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:388
+#: ../../../../release/_9.5-stripped.md:389
 msgid ""
 "**JSONSceneExporter: Support exporting a list of named actors and arrays "
 "selections**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:390
+#: ../../../../release/_9.5-stripped.md:391
 msgid ""
 "`vtkJSONSceneExporter` can now export a list of named actors and select "
 "which arrays are exported per actor. `vtkJSONDataSetWriter` also supports "
@@ -976,11 +976,11 @@ msgid ""
 "are now private."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:395
+#: ../../../../release/_9.5-stripped.md:396
 msgid "**High precision timers for Windows interactor**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:397
+#: ../../../../release/_9.5-stripped.md:398
 msgid ""
 "The Windows interactor was creating timers using the native Win32 API "
 "`SetTimer`.   However, this timer isn't precise and the duration wasn't "
@@ -988,15 +988,15 @@ msgid ""
 "which is much more precise."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:401
+#: ../../../../release/_9.5-stripped.md:402
 msgid "Thirdparty"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:403
+#: ../../../../release/_9.5-stripped.md:404
 msgid "**Transition from VTKm to Viskores**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:405
+#: ../../../../release/_9.5-stripped.md:406
 msgid ""
 "VTK has transitioned its dependency from [VTKm](https://gitlab.kitware.com/"
 "vtk/vtk-m) to [Viskores](https://github.com/viskores/viskores).   VTK "
@@ -1005,180 +1005,180 @@ msgid ""
 "API.   ([Author notes](9.5/transition-from-vtkm-to-viskores.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:410
+#: ../../../../release/_9.5-stripped.md:411
 msgid "**cli11**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:412
+#: ../../../../release/_9.5-stripped.md:413
 msgid ""
 "Updated to be based on [v2.5.0](https://github.com/CLIUtils/CLI11/tree/"
 "v2.5.0) for security updates and bug fixes."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:414
+#: ../../../../release/_9.5-stripped.md:415
 msgid "**diy**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:416
+#: ../../../../release/_9.5-stripped.md:417
 msgid ""
 "Updated to use the internal `fmt` library. This change is necessary to avoid "
 "conflicts with diy's `fmt`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:418
+#: ../../../../release/_9.5-stripped.md:419
 msgid "**expat**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:420
+#: ../../../../release/_9.5-stripped.md:421
 msgid ""
 "Updated to be based on [2.7.0](https://github.com/libexpat/libexpat/releases/"
 "tag/R_2_7_0). Using expat older than 2.6.3 now causes a warning."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:422
+#: ../../../../release/_9.5-stripped.md:423
 msgid "**exprtk**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:424
+#: ../../../../release/_9.5-stripped.md:425
 msgid ""
 "Update to be based on [0.0.3-cmake](https://github.com/ArashPartow/exprtk/"
 "releases/tag/0.0.3-cmake)."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:426
+#: ../../../../release/_9.5-stripped.md:427
 msgid "**fast_float**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:428
+#: ../../../../release/_9.5-stripped.md:429
 msgid ""
 "Updated to be based on [v8.0.2](https://github.com/fastfloat/fast_float/"
 "releases/tag/v8.0.2). The minimum version has been upgraded to 7.0.0 to "
 "support int parsing and have C++17 compliant results."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:430
+#: ../../../../release/_9.5-stripped.md:431
 msgid "**fmt**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:432
+#: ../../../../release/_9.5-stripped.md:433
 msgid ""
 "Updated to be based on [11.1.4](https://github.com/fmtlib/fmt/releases/"
 "tag/11.1.4). The minimal external fmt version is now 11.0.0."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:434
+#: ../../../../release/_9.5-stripped.md:435
 msgid "**libharu**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:436
+#: ../../../../release/_9.5-stripped.md:437
 msgid ""
 "Updated to be based on [v2.4.5](https://github.com/libharu/libharu/tree/"
 "v2.4.5) to obtain the latest security and bug fix patches."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:438
+#: ../../../../release/_9.5-stripped.md:439
 msgid "**lz4**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:440
+#: ../../../../release/_9.5-stripped.md:441
 msgid ""
 "Updated to be based on [v1.10.0](https://github.com/lz4/lz4/tree/v1.10.0) "
 "for security updates and bug fixes."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:442
+#: ../../../../release/_9.5-stripped.md:443
 msgid "**lzma**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:444
+#: ../../../../release/_9.5-stripped.md:445
 msgid ""
 "Updated to be based on [v2.6.4](https://github.com/tukaani-project/xz/tree/"
 "v5.6.4) to obtain the latest security and bug fix patches."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:446
+#: ../../../../release/_9.5-stripped.md:447
 msgid "**exodusII and Ioss**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:448
+#: ../../../../release/_9.5-stripped.md:449
 msgid ""
 "Updated `exodusII` and `Ioss`  to be based on [SEACAS 2025-02-27](https://"
 "github.com/sandialabs/seacas/releases/tag/v2025-02-27)."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:450
+#: ../../../../release/_9.5-stripped.md:451
 msgid "VR"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:452
+#: ../../../../release/_9.5-stripped.md:453
 msgid ""
 "**`vtkOpenXRManager::Initialize` and `vtkOpenXRManager::Finalize` marked as "
 "internal APIs**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:454
+#: ../../../../release/_9.5-stripped.md:455
 msgid ""
 "These functions are now treated as internal to `vtkOpenXRRenderWindow`. The "
 "signature of `vtkOpenXRManager::Initialize` has changed."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:456
+#: ../../../../release/_9.5-stripped.md:457
 msgid ""
 "**`vtkOpenXRManager::(Set|Get)UseDepthExtension` moved to "
 "`vtkOpenXRRenderWindow`**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:458
+#: ../../../../release/_9.5-stripped.md:459
 msgid ""
 "These methods have been moved to `vtkOpenXRRenderWindow`. The "
 "`vtkOpenXRManager` versions are now no-op and deprecated."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:462
+#: ../../../../release/_9.5-stripped.md:463
 msgid "**Change Java build flags**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:464
+#: ../../../../release/_9.5-stripped.md:465
 msgid ""
 "`VTK_JAVA_SOURCE_VERSION` and `VTK_JAVA_TARGET_VERSION` CMake flags are "
 "superseded by `VTK_JAVA_RELEASE_VERSION`. This aligns with newer JDK `javac` "
 "versions that provide the `-release` flag, simplifying build configuration."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:466
+#: ../../../../release/_9.5-stripped.md:467
 msgid "Fixes/improvements"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:468
+#: ../../../../release/_9.5-stripped.md:469
 msgid "Charts"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:470
+#: ../../../../release/_9.5-stripped.md:471
 msgid "**Fix vtkPlotBar::GetBounds logic when log scale is enabled**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:472
+#: ../../../../release/_9.5-stripped.md:473
 msgid ""
 "The `vtkPlotBar::GetBounds(double*, bool unscaled)` now correctly returns "
 "unscaled bounds when `unscaled` is true and scaled bounds when `unscaled` is "
 "false."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:476
+#: ../../../../release/_9.5-stripped.md:477
 msgid "**Fix CellTreeLocator for 2D grids**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:478
+#: ../../../../release/_9.5-stripped.md:479
 msgid ""
 "A `std::vector` out of bounds access has been fixed when building the "
 "locator for meshes whose x, y or z extent is zero."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:480
+#: ../../../../release/_9.5-stripped.md:481
 msgid "**Polygon centroid computation fixed**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:482
+#: ../../../../release/_9.5-stripped.md:483
 msgid ""
 "An issue with `vtkPolygon::ComputeCentroid()` has been fixed. It now uses a "
 "composite weighted-area triangulation for robustness with non-planar "
@@ -1186,12 +1186,12 @@ msgid ""
 "polygon-centroid.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:485
+#: ../../../../release/_9.5-stripped.md:486
 msgid ""
 "**vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:487
+#: ../../../../release/_9.5-stripped.md:488
 msgid ""
 "In VTK 9.5.1, the `vtkPolyhedron` class introduces the `GetCentroid` "
 "function, which computes the signed-volume weighted centroid of a polyhedron "
@@ -1201,11 +1201,11 @@ msgid ""
 "polyhedron-parametric-center.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:490
+#: ../../../../release/_9.5-stripped.md:491
 msgid "**Implicit Widget Representations Improvements**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:492
+#: ../../../../release/_9.5-stripped.md:493
 msgid ""
 "Improved interaction and intuitiveness in VTK's implicit widget "
 "representations, including enhanced picking and mouse-based control for "
@@ -1214,78 +1214,78 @@ msgid ""
 "([Author notes](9.5/widget-representations-improvements.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:497
+#: ../../../../release/_9.5-stripped.md:498
 msgid "**Fix vtkBandedPolyDataContourFilter scalars**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:499
+#: ../../../../release/_9.5-stripped.md:500
 msgid ""
 "You can now select scalars used by `vtkBandedPolyDataContourFilter` using "
 "the `SetInputArrayToProcess` method instead of changing the scalars on the "
 "input data."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:501
+#: ../../../../release/_9.5-stripped.md:502
 msgid "**Fix vtkParticleTracer with unstructured data**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:503
+#: ../../../../release/_9.5-stripped.md:504
 msgid ""
 "Fixed an issue leading to a crash in `vtkParticleTracer` where locators for "
 "unstructured data would not have been created."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:505
+#: ../../../../release/_9.5-stripped.md:506
 msgid "**Fix UMR in vtkDataSetTriangleFilter**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:507
+#: ../../../../release/_9.5-stripped.md:508
 msgid ""
 "For a `vtkUnstructuredGrid` input consisting of only tetrahedrons, "
 "`vtkDataSetTriangleFilter` could give non-deterministic results due to an "
 "uninitialized memory read (UMR)."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:509
+#: ../../../../release/_9.5-stripped.md:510
 msgid "**Support Partitioned Input in HyperTreeGridGhostCellsGenerator**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:511
+#: ../../../../release/_9.5-stripped.md:512
 msgid ""
 "The HTG GhostCellsGenerator now natively supports Partitioned inputs, using "
 "the first non-null partition found as the HTG to process, fixing issues with "
 "multi-partition data."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:513
+#: ../../../../release/_9.5-stripped.md:514
 msgid "**vtkGeometryFilter: Improve performance for polyhedron**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:515
+#: ../../../../release/_9.5-stripped.md:516
 msgid ""
 "`vtkGeometryFilter` now efficiently extracts polyhedron faces using "
 "`GetPolyhedronFaces` and `GetPolyhedronFaceLocations` methods, improving "
 "performance."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:517
+#: ../../../../release/_9.5-stripped.md:518
 msgid "**vtkRandomAttributesFilter: Prevent deletion of actives attributes**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:519
+#: ../../../../release/_9.5-stripped.md:520
 msgid ""
 "When using `vtkRandomAttributesGenerator`, the filter no longer replaces "
 "active attributes; it now appends the new random array and flags it as "
 "active. Random normals and tcoords are now correctly named."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:521
+#: ../../../../release/_9.5-stripped.md:522
 msgid ""
 "**Relative Mode for vtkTemporalArrayOperatorFilter** :warning: "
 "**BREAKING_CHANGES**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:523
+#: ../../../../release/_9.5-stripped.md:524
 msgid ""
 "`vtkTemporalArrayOperatorFilter` now supports a `RelativeMode` that uses the "
 "current `UPDATE_TIME_STEP` and a shifted time step for temporal operations. "
@@ -1294,11 +1294,11 @@ msgid ""
 "([Author notes](9.5/relative-temporal-array-operator.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:529
+#: ../../../../release/_9.5-stripped.md:530
 msgid "**EnsightCombinedReader: Performance improvements pass**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:531
+#: ../../../../release/_9.5-stripped.md:532
 msgid ""
 "Performance of `vtkEnSightGoldCombinedReader` improved, especially for large "
 "binary files with nfaced/tetrahedron cells. Fixes include tetrahedron-"
@@ -1307,77 +1307,77 @@ msgid ""
 "reader-improvements.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:534
+#: ../../../../release/_9.5-stripped.md:535
 msgid "**Fix AMReX particle reader for files without top-level header**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:536
+#: ../../../../release/_9.5-stripped.md:537
 msgid ""
 "The `vtkAMReXParticlesReader` now continues to read particles if a top-level "
 "header is missing, initializing the time step to 0 in such cases."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:538
+#: ../../../../release/_9.5-stripped.md:539
 msgid "**Fix ordering of DICOM pixel spacing**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:540
+#: ../../../../release/_9.5-stripped.md:541
 msgid ""
 "The `vtkDICOMImageReader` used to provide the vertical and horizontal pixel "
 "spacing in the wrong order. This issue was only discovered recently because "
 "DICOM pixels are nearly always square."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:542
+#: ../../../../release/_9.5-stripped.md:543
 msgid "**Fix issue with Fides not initializing HIP before using it**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:544
+#: ../../../../release/_9.5-stripped.md:545
 msgid ""
 "Addressed a crash in Fides caused by attempting HIP memory allocation before "
 "HIP initialization. This was fixed by updating VTK-m.   ([Author notes](9.5/"
 "fides-init.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:547
+#: ../../../../release/_9.5-stripped.md:548
 msgid ""
 "**Fix vtkAMReXGridReader when reading larger than 2GB files in Windows**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:549
+#: ../../../../release/_9.5-stripped.md:550
 msgid ""
 "You can now open grid files larger than 2GB on Windows using the "
 "`vtkAMReXGridReader`. Previously, a bug prevented loading arrays stored "
 "beyond the 2GB offset."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:551
+#: ../../../../release/_9.5-stripped.md:552
 msgid "**Fix vtkAMReXParticlesReader when using MPI**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:553
+#: ../../../../release/_9.5-stripped.md:554
 msgid ""
 "The `vtkAMReXParticlesReader` now functions correctly in parallel MPI mode, "
 "fixing a bug that caused incorrect output when the number of grids was not "
 "evenly divisible by the number of MPI processes."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:555
+#: ../../../../release/_9.5-stripped.md:556
 msgid "**GLTF document loader default scene**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:557
+#: ../../../../release/_9.5-stripped.md:558
 msgid ""
 "The `vtkGLTFDocumentLoader` ensures that the internal cache of scenes is non-"
 "empty for consumer code that relies on checking the validity of the default "
 "scene."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:559
+#: ../../../../release/_9.5-stripped.md:560
 msgid "**Remove error for missing Fides timestep**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:561
+#: ../../../../release/_9.5-stripped.md:562
 msgid ""
 "The Fides reader no longer errors if a requested timestep is not found, "
 "especially when the Fides file has no specified timesteps. It now sets an "
@@ -1385,12 +1385,12 @@ msgid ""
 "like ParaView.   ([Author notes](9.5/fides-timestep-error.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:564
+#: ../../../../release/_9.5-stripped.md:565
 msgid ""
 "**vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:566
+#: ../../../../release/_9.5-stripped.md:567
 msgid ""
 "Improvements to `vtkDIYUtilities` and `vtkDIYGhostUtilities` for stricter "
 "loading, correct saving of array types, ensuring dequeued arrays are valid, "
@@ -1398,36 +1398,36 @@ msgid ""
 "(9.5/fix-ghost-cells-polyhedrons.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:569
+#: ../../../../release/_9.5-stripped.md:570
 msgid "**vtkAlembicExporter: Fixed export of textures**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:571
+#: ../../../../release/_9.5-stripped.md:572
 msgid ""
 "Previously, textures were unintentionally being saved to the current working "
 "directory of the executable. Now, they are saved alongside the exported "
 "Alembic file."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:573
+#: ../../../../release/_9.5-stripped.md:574
 msgid "**VRML export of cell data colors**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:575
+#: ../../../../release/_9.5-stripped.md:576
 msgid ""
 "Colors of polydata colored by cell data arrays are now designated as such in "
 "the exported VRML file."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:577
+#: ../../../../release/_9.5-stripped.md:578
 msgid "MPI"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:579
+#: ../../../../release/_9.5-stripped.md:580
 msgid "**Fix: MPI Gather function hanging when data size was invalid**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:581
+#: ../../../../release/_9.5-stripped.md:582
 msgid ""
 "`vtkMPICommunicator::GatherVVoidArray` could hang due to a size check "
 "causing an early return for only the failing process. Now, `recvLengths` and "
@@ -1435,11 +1435,11 @@ msgid ""
 "GatherV` to prevent this."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:585
+#: ../../../../release/_9.5-stripped.md:586
 msgid "**Python VTK data model improvements**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:587
+#: ../../../../release/_9.5-stripped.md:588
 msgid ""
 "Further cleaned up field array handling in Python for homogeneous behavior "
 "between `vtkDataSet` and composite datasets. This includes better support "
@@ -1447,11 +1447,11 @@ msgid ""
 "(9.5/fix-py-data-model.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:592
+#: ../../../../release/_9.5-stripped.md:593
 msgid "**ANARI renderer warnings**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:594
+#: ../../../../release/_9.5-stripped.md:595
 msgid ""
 "The ANARI scenegraph implementation has been fixed so that missing backend "
 "feature warnings are only issued once per renderer per device, reducing "
@@ -1459,37 +1459,37 @@ msgid ""
 "have also been fixed."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:596
+#: ../../../../release/_9.5-stripped.md:597
 msgid "**Fix actor lighting flag for WASM and cell grid rendering**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:598
+#: ../../../../release/_9.5-stripped.md:599
 msgid ""
 "Fixed a bug that caused an actor to disappear when lighting was disabled on "
 "an actor in WASM with the WebGL2 backend."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:600
+#: ../../../../release/_9.5-stripped.md:601
 msgid "**Fix wide line rendering in GLES default polydata mapper**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:602
+#: ../../../../release/_9.5-stripped.md:603
 msgid ""
 "The `vtkOpenGLLowMemoryPolyDataMapper` rendered thick lines incorrectly. It "
 "appeared as an extruded cross. This issue is now fixed in the mapper."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:604
+#: ../../../../release/_9.5-stripped.md:605
 msgid "**Fix lighting calculations for PBR interpolation**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:606
+#: ../../../../release/_9.5-stripped.md:607
 msgid ""
 "![](https://vtk.org/files/ExternalData/"
 "SHA512/01b2f3261b9dc1550b1dae1abcc32ab45c170964500115ee66efba9200ff46485d2bee6efe1e13c6972630661c29dfac5abc83de7ac88b21d566a3db215936d4)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:608
+#: ../../../../release/_9.5-stripped.md:609
 msgid ""
 "When both directional and positional lights were intermixed, the polydata "
 "mapper treated directional lights as positional, generating incorrect "
@@ -1497,60 +1497,60 @@ msgid ""
 "vtk/vtk/-/tree/master/Documentation/release/9.5/pbr-lighting.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:611
+#: ../../../../release/_9.5-stripped.md:612
 msgid ""
 "**Fix low memory polydata mapper when an actor is added after another is "
 "removed from a renderer**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:613
+#: ../../../../release/_9.5-stripped.md:614
 msgid ""
 "Fixed a bug in `vtkOpenGLLowMemoryPolyDataMapper` where an actor, if added, "
 "removed, and then re-added, would not become visible the second time."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:615
+#: ../../../../release/_9.5-stripped.md:616
 msgid "**Fix OpenGL error in OSMesa backend**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:617
+#: ../../../../release/_9.5-stripped.md:618
 msgid ""
 "Fixed a `GL_INVALID_ENUM` error in `vtkOSOpenGLRenderWindow::"
 "ReportCapabilities` caused by using an unsupported method for querying "
 "`GL_EXTENSIONS`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:619
+#: ../../../../release/_9.5-stripped.md:620
 msgid "**Fix vtkCompositePolyDataMapper opacity override**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:621
+#: ../../../../release/_9.5-stripped.md:622
 msgid "![](imgs/9.5/fix-composite-mapper-opacity-override.png)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:623
+#: ../../../../release/_9.5-stripped.md:624
 msgid ""
 "You can now render opaque blocks in a composite dataset even when the actor "
 "has an `opacity < 1.0` by setting the opacity of the block to 1.0.   "
 "([Author notes](9.5/fix-composite-mapper-opacity-override.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:626
+#: ../../../../release/_9.5-stripped.md:627
 msgid "**Fix vertex visibility in OpenGL mappers**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:628
+#: ../../../../release/_9.5-stripped.md:629
 msgid ""
 "Vertices of a mesh are now correctly displayed when `actor-"
 ">SetVertexVisibility(true)` is called, fixing a bug where they only showed "
 "if edge visibility was also on."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:630
+#: ../../../../release/_9.5-stripped.md:631
 msgid "**Fix wide lines with cell colors for Apple silicon**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:632
+#: ../../../../release/_9.5-stripped.md:633
 msgid ""
 "Thick lines with cell scalar colors now render correctly on Apple silicon. "
 "VTK patches the shader code at runtime for the Apple OpenGL over Metal "
@@ -1558,11 +1558,11 @@ msgid ""
 "IsPrimIDBugPresent()` to check for this driver bug."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:634
+#: ../../../../release/_9.5-stripped.md:635
 msgid "**Improve IBO construction performances in vtkOpenGLIndexBufferObject**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:636
+#: ../../../../release/_9.5-stripped.md:637
 msgid ""
 "For common cases of triangles-only polydata, IBO construction time has been "
 "reduced by about 25%. Performance is further improved if polydata cell "
@@ -1570,11 +1570,11 @@ msgid ""
 "creation-performances.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:639
+#: ../../../../release/_9.5-stripped.md:640
 msgid "**Rectilinear Grid Volume Rendering with Cell Data**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:641
+#: ../../../../release/_9.5-stripped.md:642
 msgid ""
 "Fixed an issue in the volume mapper for rectilinear grids with cell scalars "
 "where the bounds of the dataset were incorrectly mapped to the texture space."
@@ -1596,21 +1596,21 @@ msgstr ""
 msgid "![](imgs/9.5/rectgrid_celldata_fixed.png)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:647
+#: ../../../../release/_9.5-stripped.md:648
 msgid "**Fix X error about maximum clients reached**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:649
+#: ../../../../release/_9.5-stripped.md:650
 msgid ""
 "Fixes a bug in `vtkXOpenGLRenderWindow` that prevented users from "
 "instantiating more than about 300 render windows on Linux with X11."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:651
+#: ../../../../release/_9.5-stripped.md:652
 msgid "**Fix light transforms when computing shadow maps**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:653
+#: ../../../../release/_9.5-stripped.md:654
 msgid ""
 "The `vtkShadowMapBakerPass` computes shadow maps for each light by "
 "simulating a `vtkCamera` for each light and compositing the rendered images. "
@@ -1621,53 +1621,53 @@ msgid ""
 "after."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:655
+#: ../../../../release/_9.5-stripped.md:656
 msgid ""
 "![](http://vtk.org/files/ExternalData/"
 "SHA512/9412ed54080c7a972d786a269538a3dbd56a5aa070f2b35ba448dfd3cca211e7e4b4d196e07c8ff2d56ff4bb7b0855e5584758c09457d3d6f3c760ee47a4dded)"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:659
+#: ../../../../release/_9.5-stripped.md:660
 msgid ""
 "**Patch state that refers to OSMesa OpenGL window into a WASM OpenGL window "
 "class.**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:661
+#: ../../../../release/_9.5-stripped.md:662
 msgid ""
 "The `vtkWasmSceneManager` now automatically patches the state provided to "
 "`RegisterState` and `UpdateObjectFromState` methods to replace 'ClassName' "
 "entry of `vtkOSOpenGLRenderWindow` with `vtkWebAssemblyOpenGLRenderWindow`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:663
+#: ../../../../release/_9.5-stripped.md:664
 msgid "Deprecations/Removals"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:665
+#: ../../../../release/_9.5-stripped.md:666
 msgid "All APIs that were deprecated in 9.3 are now removed."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:666
+#: ../../../../release/_9.5-stripped.md:667
 msgid ""
 "`vtkExtentSplitter::Min` and `::Max` have been deprecated in favor of `std::"
 "min` and `std::max`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:667
+#: ../../../../release/_9.5-stripped.md:668
 msgid ""
 "`vtkXMLReader::Min` and `::Max` have been deprecated in favor of `std::min` "
 "and `std::max`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:668
+#: ../../../../release/_9.5-stripped.md:669
 msgid ""
 "Classes like `vtkHierarchicalBoxDataSet`, "
 "`vtkHierarchicalBoxDataSetAlgorithm`, related geometry filters, and XML "
 "readers/writers are deprecated. Use `vtkOverlappingAMR` versions instead."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:669
+#: ../../../../release/_9.5-stripped.md:670
 msgid ""
 "`vtkTypedDataArray`, `vtkTypedDataArrayIterator`, `vtkMappedDataArray`, "
 "`vtkCPExodusIINodalCoordinatesTemplate`, and "
@@ -1676,13 +1676,13 @@ msgid ""
 "alternatives."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:670
+#: ../../../../release/_9.5-stripped.md:671
 msgid ""
 "`vtkHyperTreeGridVisibleLeavesSize` is deprecated in favor of "
 "`vtkHyperTreeGridGenerateFields`."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:671
+#: ../../../../release/_9.5-stripped.md:672
 msgid ""
 "Several public members related to selection and decimation level in "
 "`vtkAdaptiveDataSetSurfaceFilter` (used by HTG Surface Representation) are "
@@ -1691,17 +1691,17 @@ msgid ""
 "decimation.md))"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:673
+#: ../../../../release/_9.5-stripped.md:674
 msgid ""
 "`vtkOpenXRManager::(Set|Get)UseDepthExtension` are deprecated and now no-op. "
 "Use the versions in `vtkOpenXRRenderWindow` instead."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:675
+#: ../../../../release/_9.5-stripped.md:676
 msgid "**VTKHDF Reader: Remove the MergeParts option**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:677
+#: ../../../../release/_9.5-stripped.md:678
 msgid ""
 "The `MergeParts` option of the vtkHDFReader allowed getting a unique "
 "Unstructured Grid or PolyData dataset after reading multiple parts. This "
@@ -1717,29 +1717,29 @@ msgid ""
 "type, Unstructured Grid or PolyData."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:679
+#: ../../../../release/_9.5-stripped.md:680
 msgid ""
 "Users should replace the use of `MergeParts` by manually merging parts using "
 "the `vtkMergeBlocks` or `vtkAppendDatasets` manually instead."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:681
+#: ../../../../release/_9.5-stripped.md:682
 msgid "Updates"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:683
+#: ../../../../release/_9.5-stripped.md:684
 msgid "The following changes have been made since v9.5.1"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:685
+#: ../../../../release/_9.5-stripped.md:686
 msgid "9.5.2"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:687
+#: ../../../../release/_9.5-stripped.md:688
 msgid "**Fix HyperTree initialization routine**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:689
+#: ../../../../release/_9.5-stripped.md:690
 msgid ""
 "`vtkHyperTree::Initialize` used to incorrectly set up a internal data "
 "structure, causing incorrect iterations indices for "
@@ -1748,22 +1748,22 @@ msgid ""
 "correct values."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:691
+#: ../../../../release/_9.5-stripped.md:692
 msgid "**Fix serialization for vtkPlane**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:693
+#: ../../../../release/_9.5-stripped.md:694
 msgid ""
 "Resolved an issue with `vtkPlane` serialization where plane parameters were "
 "not correctly saved and restored. This ensures consistent behavior when "
 "serializing and deserializing `vtkPlane` objects."
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:695
+#: ../../../../release/_9.5-stripped.md:696
 msgid "**Fix MouseWheel events in WASM for multi-viewport setups**"
 msgstr ""
 
-#: ../../../../release/_9.5-stripped.md:697
+#: ../../../../release/_9.5-stripped.md:698
 msgid ""
 "Fixed an issue where mouse wheel event coordinates were incorrectly scaled "
 "in `vtkWebAssemblyRenderWindowInteractor`. When the `window."
