@@ -1,0 +1,1661 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="author" title="关于此文档" href="../about.html" /><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Developer’s Guide" href="../developers_guide/index.html" /><link rel="prev" title="VTK WASM regression test suite architecture" href="WebAssemblyTestSuiteArchitecture.html" />
+        <link rel="canonical" href="https://projects.localizethedocs.org/vtk-docs-l10n/design_documents/PolyhedronAlgorithms.html" />
+
+    <link rel="shortcut icon" href="../_static/vtk_favicon.png"/><!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>vtkPolyhedron Contour, Clip, and IsInside Algorithms - VTK 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style>
+
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+</head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">VTK  文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/vtkLogo.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">VTK  文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning.html">Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_data_formats.html">Supported Data Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_hardware.html">Supported Hardware</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules/index.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Modules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Domains/Microscopy/readme.html">VTK::DomainsMicroscopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/CellGrid/README.html">VTK::FiltersCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Filters/OpenTURNS/README.html">VTK::FiltersOpenTURNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/GUISupport/Qt/README.html">VTK::GUISupportQt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/ADIOS2/README.html">VTK::IOADIOS2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/CellGrid/README.html">VTK::IOCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Cesium3DTiles/README.html">VTK::IOCesium3DTiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/FLUENTCFF/README.html">VTK::IOFLUENTCFF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/OCCT/README.html">VTK::IOOCCT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/IO/Xdmf2/README.html">VTK::IOXDMF2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/ANARI/README.html">VTK::RenderingANARI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/CellGrid/README.html">VTK::RenderingCellGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenVR/README.html">VTK::RenderingOpenVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXR/README.html">VTK::RenderingOpenXR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/OpenXRRemoting/README.html">VTK::RenderingOpenXRRemoting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/VR/README.html">VTK::RenderingVR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/README.html">VTK::RenderingWebGPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-dev.html">WebGPU compute API - Developer guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-compute-api-user.html">WebGPU compute API - User guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/ThirdParty/glad/README.html">Updating the GLAD library sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Utilities/X11/README.html">vtkX11Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/PythonCore/README.html">VTK::WrappingPythonCore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/vtk-modules/Wrapping/Tools/README.html">Wrapping Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build_instructions/index.html">Building</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Building</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build_instructions/build_settings.html">Build Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cpp.html">C++</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of vtkmodules</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of vtkmodules.qt</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.qt.QVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.qt.QVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of vtkmodules.gtk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkGLExtVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.gtk.GtkVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.gtk.GtkVTKRenderWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of vtkmodules.wx</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindow.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindow</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.wx.wxVTKRenderWindowInteractor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of vtkmodules.test</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.rtImageTest.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.rtImageTest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.Testing.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.Testing</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.ErrorObserver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.ErrorObserver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.test.BlackBox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.test.BlackBox</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of vtkmodules.util</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.numpy_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.numpy_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.widgets.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.widgets</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.matrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.matrix</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.string_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.string_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.selection.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.selection</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.misc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.misc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkAlgorithm</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.pickle_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.pickle_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkMethodParser.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkMethodParser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.keys.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.keys</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkVariant.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkVariant</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.implicit_functions.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.implicit_functions</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.xarray_support.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.xarray_support</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageImportFromArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageImportFromArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkConstants.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkConstants</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.information.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.information</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.execution_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.execution_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.vtkImageExportToArray.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.vtkImageExportToArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.data_model.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.colors.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.colors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.graph.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.graph</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.data_array_selection.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.data_array_selection</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.util.variant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.util.variant_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of vtkmodules.tk</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWindowInteractor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWindowInteractor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkImageViewerWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkImageViewerWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkRenderWidget.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkRenderWidget</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.tk.vtkTkPhotoImage.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.tk.vtkTkPhotoImage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of vtkmodules.numpy_interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.utils</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_strided_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_strided_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.dataset_adapter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.internal_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.internal_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.array_overrides.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.array_overrides</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_implicit_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_aos_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_soa_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_indexed_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_indexed_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_partitioned_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_partitioned_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.numpy_algorithms.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.numpy_algorithms</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_constant_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_constant_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface._vtk_array_mixin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface._vtk_array_mixin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_composite_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_affine_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_none_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_none_array</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.numpy_interface.vtk_structured_point_array</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/python/vtkmodules/vtkmodules.generate_pyi.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vtkmodules.generate_pyi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/cmake/cmake-modules.html">CMake</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of CMake</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/ModuleSystem.html">Module System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModule.html">vtkModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleSerialization.html">vtkModuleSerialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleTesting.html">vtkModuleTesting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapPython.html">vtkModuleWrapPython</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJava.html">vtkModuleWrapJava</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleWrapJavaScript.html">vtkModuleWrapJavaScript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleJSON.html">vtkModuleJSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/cmake/vtkModuleGraphviz.html">vtkModuleGraphviz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Advanced Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/available_python_wheels.html">Additional Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/spdx_and_sbom.html">SPDX &amp; SBOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_python_wheels.html">Building Python Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_wasm_emscripten.html">Building using emscripten for WebAssembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_for_mobile.html">Cross-compiling for Mobile devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/build_documentation.html">Building documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_manager.html">Object manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/object_serialization.html">Object serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/observer_invocation_order.html">vtkObject Observers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/PythonWrappers.html">Python Wrappers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/runtime_settings.html">Runtime settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/WrappingTools.html">Wrapping Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/wheel_sdks.html">VTK Wheel SDKs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../advanced/migration_guides/index.html">Migration Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Migration Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/migration_guides/ModuleMigration.html">Module Migration from VTK 8.2 to 9+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vtk_file_formats/index.html">VTK File Formats</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of VTK File Formats</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtk_legacy_file_format.html">Simple Legacy Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vtk_file_formats/vtkxml_file_format.html">XML File Formats</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/index.html">VTKHDF File Format</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of VTKHDF File Format</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.html">VTKHDF format specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_status.html">VTKHDF: Implementation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_examples.html">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.html">Changelog</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Design Documents</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Design Documents</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="smptools.html">Parallel Processing with VTK’s SMP Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ArrayDispatch.html">vtkArrayDispatch and Related Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_assembly.html">Data Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOLegacyInformationFormat.html">VTK Legacy Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOXMLInformationFormat.html">VTK XML Reader/Writer Information Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOXMLTimeInFieldData.html">Field Data as Time Meta-Data in VTK XML File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MomentInvariantsArchitecture.html">MomentInvariants Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VoronoiFramework.html">Voronoi Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WebAssemblyTestSuiteArchitecture.html">VTK WASM regression test suite architecture</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">vtkPolyhedron Contour, Clip, and IsInside Algorithms</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developers_guide/index.html">Developer’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Developer’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/develop.html">Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/testing.html">Regression Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/test.html">Adding Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/dashboard.html">Dashboard Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty.html">Updating Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/thirdparty-projects.html">Imported Third Party Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/git/deprecation.html">Deprecation Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/release_process.html">Release Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/coding_conventions.html">Coding Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers_guide/about_this_documentation.html">About this documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Resources</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../release_details/index.html">Release Details</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Release Details</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.7.html">9.7</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 9.7</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-amr-contour-filter.html">Add vtkAMRContourFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-camera-manipulators.html">Camera Manipulators Enhanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-geometry-and-feature-edges-dispatchers.html">Geometry and Feature Edges Dispatcher Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-setbuffer-to-data-arrays.html">SetBuffer for AOS and SOA Data Array Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-voronoi-framework.html">Voronoi Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-voronoi-framework.html#framework">Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-voronoi-framework.html#filters">Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-voronoi-framework.html#roadmap">Roadmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-vtkAbstractArray-reserve-and-capacity.html">vtkAbstractArray: Deprecate GetSize(), Resize() and Allocate(); Add GetCapacity(), ReserveTuples(), and ReserveValues()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-vtkGetConstObjectMacro.html">vtkGetConstObjectMacro for const object getters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-vtkJumpAndWalkCellLocator.html">vtkJumpAndWalkCellLocator: A new cell locator based on the Jump and Walk algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-vtkSurfaceNetsAtlas.html">Add <code class="docutils literal notranslate"><span class="pre">vtkSurfaceNetsAtlas</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add-vtkWeakPtr.html">vtkWeakPtr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/add_pch_option_in_build.html">New option to build with PCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/amr-ghost-cell-support.html">AMR ghost cell support and blanking fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/anari-materials-library-support.html">ANARI material library support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/cell-locators-tolerance.html">CellLocators: Make sure that when a tolerance parameter is available it can be used</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.html">Deprecate classes/functions that use vtkAbstractArray::GetVoidPointer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/deprecation-removals.html">Deprecations/Removals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/fix-wedge-point-ordering.html">VTK Wedge Cell Types: Fix Point Ordering, Triangulation and Volume Correctness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/hardware-windows-and-wayland.html">Architectural Update: Hardware Window, Wayland, and WebGPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/improve-cell-grid-probing.html">Improved <code class="docutils literal notranslate"><span class="pre">vtkCellGrid</span></code> evaluation performance and API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/iofides-supports-conduit.html"><code class="docutils literal notranslate"><span class="pre">vtkFidesReader</span></code> supports reading from <code class="docutils literal notranslate"><span class="pre">Conduit</span></code> nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/linear-cells-improvements.html">Linear vtkCell: Add Drawing, Add Clip, use contour tables, and Cleanup code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/mesh-cache-improvements.html">Mesh cache improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/mpas-primary-grid.html">Read primary grid from MPAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/numpy-compatible-array-mixins.html">NumPy-compatible array mixins for VTK data arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/polyhedron-lopez-algorithm.html">Polyhedron clipping and contouring now uses López polygon-tracing algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances (Part 2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/volume-rendering-16bit-wasm.html">Support 16-bit Textures on GLES 3.0 and WebAssembly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.html">vtkBatchedLabeledDataMapper: Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkBuffer-in-python.html">vtkBuffer Python Integration and NumPy Memory Safety</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkCellGrid-improvements.html">Improved vtkCellGrid support in data model and filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.html">Range-based for loops for <code class="docutils literal notranslate"><span class="pre">vtkCollection</span></code>; deprecation of <code class="docutils literal notranslate"><span class="pre">vtkCollectionIterator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkCollection-refactor-to-use-stdvector.html">Refactor <code class="docutils literal notranslate"><span class="pre">vtkCollection</span></code> to use <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> instead of a linked list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkCollection-sequence-protocol.html">vtkCollection now supports Python sequence protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkSurfaceNets3D-non-manifold-improvements.html">vtkSurfaceNets3D: Identify and correct non-manifold points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html">Proper caching in vtkHDFReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#proper-distributed-support-in-vtkhdfreader">Proper distributed support in vtkHDFReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#piece-distribution-configuration-in-vtkhdfreader">Piece distribution configuration in vtkHDFReader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#better-support-for-partitioned-data-writing-in-vtkhdfwriter">Better support for partitioned data writing in vtkHDFWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#removal-of-unspecified-temporal-fielddata-behavior-with-vtkoverlappingamr">Removal of unspecified Temporal FieldData behavior with vtkOverlappingAMR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#quiet-support-in-vtkhdfutilities-open">Quiet support in vtkHDFUtilities::Open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#vtkhypertreegrid-support-in-vtkhdfwriter">vtkHyperTreeGrid support in vtkHDFWriter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#new-data-types-specified-vtkrectilineargrid-vtkstructuredgrid-and-vtktable">New data types specified: vtkRectilinearGrid, vtkStructuredGrid and vtkTable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.7/vtkhdf-improvements.html#vtkhdfutilities-and-vtkhdfreader-deprecations">vtkHDFUtilities and vtkHDFReader deprecations</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.6.html">9.6</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 9.6</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-arrays-deprecate-arrays.html">Arrays have been added and deprecated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-javascript-wrapper-frontend.html">Add JavaScript wrappers with Emscripten</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-missing-selection-behavior-parallel-coordinates-view.html">Add missing selection mode behavior in parallel coordinates chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-numpy-support-for-composite-arrays.html">Add numpy support for composite arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-onnx-support.html">Add support for ONNX runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-stream-support.html">Adding stream support to various readers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-usd-exporter.html">New USD exporter added</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/add-vtkCartesianGrid.html">Add an abstract vtkCartesianGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html">Querying and resetting arrays to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#specify-array-components-to-process">Specify array components to process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/algorithm-array-components.html#modified-vtkdataarray-copycomponents-signature">Modified vtkDataArray::CopyComponents signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/fix-EGL-warning.html">Fix harmless EGL render window initialization warning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/fix-Rendering_Matplotlib_image_null_pointer.html">Fix handling of image null pointer in Rendering/Matplotlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/fix-batch-rendering-for-overlapped-images.html">Fix inconsistency batch rendering for overlapped images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/fix-opengl-version-check-warning.html">Fix OpenGL initialization error handling and version check</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/fix-vtkFramebufferPass-gles.html">vtkFramebufferPass GL_INVALID_OPERATION fix for GLES 3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/fix-vtkSSAAPass-null-program-error.html">Fix vtkSSAAPass null program error when changing renderers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/hip-type-attrib.html">Fixed compile errors for IsHipDevicePointer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/maintain-focal-point-in-camera-orientation-widget.html">Maintaining Focal Point Consistency in <code class="docutils literal notranslate"><span class="pre">vtkCameraOrientationWidget</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/multiscatter-ibl.html">Multiple Scattering Approximation for Image-Based Lighting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/optimize-vtkObserver.html">Performance: Faster observer operations in <code class="docutils literal notranslate"><span class="pre">vtkObject</span></code>.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/python-qt-missing-keys.html">Update Python-Qt key map to include PageUp and PageDown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html">Refactor of the AMR data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#add-support-for-amr-of-vtkrectilineargrid">Add Support for AMR of vtkRectilinearGrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-amr-datamodel.html#changes">Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/refactor-statistics.html">Statistics algorithms refactored</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-GetVoidPointer-usages.html">vtkAbstractArray: Replace most of GetVoidPointer instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/replace-unsafe-c-from-to-string-functions.html">Replace unsafe c from/to string functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/strided-array.html">Introduce the implicit vtkStridedArray: a strided view on a buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/update-fmt-12.1.0.html">fmt: Update to 12.1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/viskores-const-count-array.html">Convert constant and affine arrays to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.6/vtkCellArray-generic-vtkDataArray.html">vtkCellArray: Support offsets/connectivity as vtkDataArray including vtkAffineArray for Offsets</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.5.html">9.5</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 9.5</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ExplodeDataSet.html">Introduce vtkExplodeDataSet filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-edge-width-property.html">Add option to independently set thickness of cell edges and lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-getter-setter-for-camera-orientation-widget-buttons.html">Add getter and setter functions for the text on the buttons of vtkCameraOrientationRepresentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.html">Add new setting to specify 2D point shape in vtkProperty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-prolab-transferfunction-interpolation.html">Add Prolab Transfer function interpolation support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-state_metadata_vtk_fields-vtkConduitSource.html">vtkConduitSource: Add state/metadata/vtk_fields node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/add-vtkCocoaAutoreleasePool.html">Added new class to manually create a Cocoa NSAutoreleasePool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/addSurfaceProbeVolumeMapper.html">Add SurfaceProbeVolumeMapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/axes-actors-breaking-change.html">vtkAxisActor and vtkPolarAxesActor breaking changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/breaking-change-remove-nlohmann-json-from-public-API.html">Remove usage of the nlohmannjson library from public facing API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/delimited-text-reader-options.html">vtkDelimitedTextReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/ensight-reader-improvements.html">EnsightCombinedReader: Performance improvements pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-init.html">Fix issue with Fides not initializing HIP before using it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fides-timestep-error.html">Remove error for missing Fides timestep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-composite-mapper-opacity-override.html">Fix vtkCompositePolyDataMapper opacity override</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-ghost-cells-polyhedrons.html">vtkDIYGhostUtilities: Ensure arrays are enqueued and dequeued properly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polygon-centroid.html">Polygon centroid computation fixed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-polyhedron-parametric-center.html">vtkPolyhedron: Implement GetCentroid and use it in GetParametricCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fix-py-data-model.html">Python VTK data model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/fluentReaderImprovements.html">Add zone section selection to FLUENT Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/frustum-implicit-widget.html">Introduce New vtkFrustum Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/gltf-toggle-data.html">GLTF document loader selectively toggle model data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/htg-representation-decimation.html">HTG Surface Representation improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/index-buffer-creation-performances.html">Improve IBO construction performances in vtkOpenGLIndexBufferObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/multithread-vtkOpenFOAMReader.html">vtkOpenFOAMReader: Multithreaded Reading of case files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/openfoam-restart-files.html">OpenFOAM reader: allow <code class="docutils literal notranslate"><span class="pre">_0</span></code> files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/pbr-lighting.html">Fix lighting calculations for PBR interpolation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/qml-multitouch.html">Multi-touch gestures in QtQuick/QML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/region-id-filter.html">vtkGenerateRegionIds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/relative-temporal-array-operator.html">Relative Mode for vtkTemporalArrayOperatorFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/transition-from-vtkm-to-viskores.html">Transition from VTKm to Viskores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/useoit_translucent.html">Add UseOIT flag to vtkRenderer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/vtk-Catalyst-Implicit-Topology.html">Support for Blueprint implicit topology using point set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.5/widget-representations-improvements.html">Implicit Widget Representations Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.4.html">9.4</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 9.4</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/abi-mangling-extension.html">ABI Mangling extension for C/C++ ABI in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-BTSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkBTSReader</span></code> for Engys’ BTS (Binary Triangulated Surface) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ERFReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkERFReader</span></code> for ERF HDF5 File Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-FDSReader.html">New <code class="docutils literal notranslate"><span class="pre">vtkFDSReader</span></code> for Fire Dynamics Simulator output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForEach.html">Introduce vtkForEach filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-ForceStaticMeshFilter.html">Introduce vtkForceStaticMesh filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-InteractorManagesTheEventLoop-flag.html">New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MatchBoundariesIgnoringCellOrder.html">Disable rendering of interior faces that are between cells of different order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-MemoryStrategiesHTGThreshold.html"><code class="docutils literal notranslate"><span class="pre">vtkHyperTreeGridThreshold</span></code> now supports multiple strategies for representing its output in memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-anari-rendering-capability.html">ANARI Rendering Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-append-PDC.html">Add vtkAppendPartitionedDataSetCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-catalyst-module.html">Add VTK::catalyst module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-critical-time-threshold-filter.html">Add the vtkCriticalTime filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-fluent-reader-zones-support.html">FLUENT Reader handles zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-graphics-backend-preference-for-webgpu-rendering.html">Add Graphics Backend Preference Option For WebGPU Render Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-harmonics-filter-source.html">Add spatio-temporal harmonics filter/source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-more-SMP-transforms.html">Add SMP support to more transform classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-new-polyline-decimation-strategies.html">Add new polyline decimation strategies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-opengl-tessellation-shader-support.html">Support OpenGL tessellation shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-property-initialization-for-vtk-class-from-python-constructor.html">Accept keyword arguments in constructor for python wrapped VTK classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-static-mesh-cache.html">Introduce vtkDataObjectMeshCache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-structured-points-cells-cellTypes.html">vtkImageData/vtkRectilinearGrid/vtkStructuredGrid: Improve performance using structured Points, Cells, CellTypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-support-for-arbitrary-polyhedra-to-Xdmf2.html">Add support for arbitrary polyhedra to Xdmf2.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkBatch-and-improve-table-based-clip.html">Add vtkBatch/vtkBatches and improve vtkTablaBasedClipDataSet’s performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkHDFWriter.html">Support writing VTKHDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/add-vtkImplicitArrays.html">New vtkImplicitArrays!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/adios2-vtx-reader-changes.html">ADIOS2 VTX reader changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/alembic-exporter.html">Add Alembic scene exporter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/annulus-implicit-widget.html">New vtkAnnulus Implicit Function and Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-api.html">Integer API for vtkDataArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/array-renderer.html">New renderer for shader prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/catalyst2-amr-support.html">Add support for AMReX derived overlapping AMR datasets in situ with Catalyst 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-changes.html">Cell Grid Data-object Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cell-grid-initialization.html">Fix cell-grid initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/cocoa-backspace-keysym.html">Fixed Cocoa incorrect KeySym</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/corrected-vtk-vtkm-transfers.html">Fix issues with VTK / VTK-m array conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/delimited-text-reader-performances.html">Delimited Text Reader Performances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/disable-sdl2-by-default.html">SDL2 usage is now disabled by default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/ensight-gold-rewrite.html">Rewrite reader for EnSight Gold files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/filters-sources-ball.html">Golden Ball Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-backface-color-for-glyph3d-mapper.html">Fix backface color in glyph 3D mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-deserialization-bug-in-vtkCollection.html">Fix deserialization bug in vtkCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-vtkOrientationMarkerWidget-remove-and-add-bug.html">Fix bug with removing and adding a new vtkOrientationMarkerWidget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-windowedsinc-scaling-error.html">Fix scaling error in vtkWindowedSincPolyDataFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/fix-x-error-maximum-clients-reached.html">Fix X error about maximum clients reached</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/hmd-cave-collaboration.html">Support collaboration among CAVEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/image-testing-framework.html">Image testing framework in <code class="docutils literal notranslate"><span class="pre">vtkTesting</span></code> has a new opt-in backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/improve-vtkCesium3DTilesReader.html">vtkCesium3DTilesReader improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/legend-scale-actor.html">vtkLegendScaleActor improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/macro-semi-colons.html">Some function-like macros now require trailing semi-colons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/multitouch-gestures.html">Multi-touch gestures in VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/new-python-api-for-pipelines.html">Added new Python API for connecting pipelines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/no-prior-temporal-access.html">Added a new information key for in situ use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-char-length.html">C++ char parameters only take Python chars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-hint-unblock.html">Add Hint to Improve Python Concurrency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/python-numpy-integration.html">Numpy integration improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkCell-triangulate.html">vtkCell Triangulate function refactoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/refactor-vtkRedistributeDataSetFilter.html">Refactor the <code class="docutils literal notranslate"><span class="pre">vtkRedistributeDataSetFilter</span></code> for more modularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/skybox-floor-projection.html">Infinite floor plane with vtkSkybox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/speed-vtkUnstructuredGridGeometryFilter.html">Improve speed of vtkUnstructuredGridGeometryFilter for higher order cells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/split-vtkPolyDataNormals.html">vtkPolyDataNormals: Split into separate classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/string-token-fix.html">String tokenization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-openxr-controller-models.html">OpenXR Controller Model Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/support-runtime-opengl-window-selection.html">Add support for fallback to EGL or OSMesa in Linux and Windows at runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vr-viewfrustum.html">Virtual/Mixed Reality rendering improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtk-polyhedral-cells-storage.html">Improvements related to vtk Polyhedral cell storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/vtkPolygons-quad-triangulation-quick-path.html">vtkPolygon: EarCutTriangulation function change.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_details/9.4/webgpu-occlusion-culler.html">WebGPU Compute API - Hierarchical two-pass occlusion culling</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.3.html">9.3</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 9.3</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.2.html">9.2</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 9.2</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.1.html">9.1</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 9.1</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release_details/9.0.html">9.0</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of 9.0</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.2.html">8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.1.html">8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/8.0.html">8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.1.html">7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/7.0.html">7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.3.html">6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.2.html">6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.1.html">6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/6.0.html">6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.10.html">5.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.8.html">5.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.6.html">5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.4.html">5.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.2.html">5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_details/5.0.html">5.0</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="vtkpolyhedron-contour-clip-and-isinside-algorithms">
+<h1>vtkPolyhedron Contour, Clip, and IsInside Algorithms<a class="headerlink" href="#vtkpolyhedron-contour-clip-and-isinside-algorithms" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This document describes the algorithms used by <code class="docutils literal notranslate"><span class="pre">vtkPolyhedron</span></code> for contouring
+(isosurface extraction), clipping, and inside/outside classification.</p>
+<p><strong>Reference:</strong></p>
+<blockquote>
+<div><p>J. López, A. Esteban, J. Hernández, P. Gómez, R. Zamora, C. Zanzi, F. Faura,
+“A new isosurface extraction method on arbitrary grids”,
+Journal of Computational Physics, Volume 444, 2021, 110579.
+<a class="reference external" href="https://doi.org/10.1016/j.jcp.2021.110579">https://doi.org/10.1016/j.jcp.2021.110579</a></p>
+</div></blockquote>
+<p>The open-source isoap library implementing this algorithm is available at:
+<a class="reference external" href="https://doi.org/10.17632/4rcf98s74c.1">https://doi.org/10.17632/4rcf98s74c.1</a></p>
+</section>
+<section id="face-winding-requirement">
+<h2>Face Winding Requirement<a class="headerlink" href="#face-winding-requirement" title="Link to this heading">#</a></h2>
+<p>All algorithms below require that polyhedron faces have <strong>outward-pointing
+normals</strong>: vertices must be ordered counter-clockwise when viewed from outside
+the cell (right-hand rule). This requirement is documented in <code class="docutils literal notranslate"><span class="pre">vtkPolyhedron.h</span></code>.</p>
+<p>The solid-angle <code class="docutils literal notranslate"><span class="pre">IsInside()</span></code> depends on this for correct sign of the winding
+number. The López contour/clip algorithm depends on this for correct
+“key face” assignment (outside→inside edge transitions).</p>
+</section>
+<section id="isinside-solid-angle-summation">
+<h2>IsInside: Solid Angle Summation<a class="headerlink" href="#isinside-solid-angle-summation" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::IsInside()</span></code> determines whether a query point lies inside or
+outside the polyhedron using the winding number computed via solid angle
+summation.</p>
+<section id="algorithm">
+<h3>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">#</a></h3>
+<p>A closed surface subtends exactly <strong>4π steradians</strong> when viewed from any
+interior point, and <strong>0 steradians</strong> from any exterior point. This is the 3D
+generalization of the 2D winding number.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>total_solid_angle = 0
+for each face:
+    triangulate face (fan from minimum-index vertex)
+    for each triangle (a, b, c):
+        total_solid_angle += solid_angle(a, b, c, query_point)
+
+if |total_solid_angle| ≈ 4π → INSIDE
+if |total_solid_angle| ≈ 0  → OUTSIDE
+</pre></div>
+</div>
+<p>The solid angle of a triangle is computed using the Van Oosterom–Strackee
+formula:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tan</span><span class="p">(</span><span class="n">Ω</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">det</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">rb</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="o">|</span><span class="n">ra</span><span class="o">||</span><span class="n">rb</span><span class="o">||</span><span class="n">rc</span><span class="o">|</span> <span class="o">+</span> <span class="o">|</span><span class="n">ra</span><span class="o">|</span><span class="p">(</span><span class="n">rb·rc</span><span class="p">)</span> <span class="o">+</span> <span class="o">|</span><span class="n">rb</span><span class="o">|</span><span class="p">(</span><span class="n">ra·rc</span><span class="p">)</span> <span class="o">+</span> <span class="o">|</span><span class="n">rc</span><span class="o">|</span><span class="p">(</span><span class="n">ra·rb</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">ra</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">−</span> <span class="pre">x</span></code>, etc.</p>
+<p>A near-surface tolerance provides an early-out for points very close to faces,
+treating them as inside. This avoids numerical ambiguity at the boundary.</p>
+</section>
+<section id="comparison-with-previous-implementation">
+<h3>Comparison with Previous Implementation<a class="headerlink" href="#comparison-with-previous-implementation" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Old (Random Ray Casting)</p></th>
+<th class="head"><p>New (Solid Angle)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Determinism</p></td>
+<td><p>Non-deterministic</p></td>
+<td><p>Deterministic</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edge cases</p></td>
+<td><p>Ray hits vertex → retry</p></td>
+<td><p>No special cases</p></td>
+</tr>
+<tr class="row-even"><td><p>Iterations</p></td>
+<td><p>Up to 10 with voting</p></td>
+<td><p>Single pass</p></td>
+</tr>
+<tr class="row-odd"><td><p>Winding dependence</p></td>
+<td><p>None (counts intersections)</p></td>
+<td><p>Requires outward normals</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="contour-lopez-polygon-tracing-algorithm">
+<h2>Contour: López Polygon-Tracing Algorithm<a class="headerlink" href="#contour-lopez-polygon-tracing-algorithm" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::Contour()</span></code> extracts isosurface polygons using the López
+polygon-tracing method, implemented in <code class="docutils literal notranslate"><span class="pre">vtkPolyhedronContour</span></code>.</p>
+<section id="id1">
+<h3>Algorithm<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Classify vertices</strong> as inside (scalar &gt; isoValue) or outside.</p></li>
+<li><p><strong>Find iso-vertices</strong> on edges that cross the isosurface. Each iso-vertex
+lies on an edge shared by exactly two faces. One face sees the edge as
+outside→inside (the <strong>key face</strong>); the other sees inside→outside.</p></li>
+<li><p><strong>Trace iso-polygons</strong> by walking through key faces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="n">at</span> <span class="nb">any</span> <span class="n">unvisited</span> <span class="n">iso</span><span class="o">-</span><span class="n">vertex</span>
+<span class="n">repeat</span><span class="p">:</span>
+    <span class="n">face</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">KeyFace</span>
+    <span class="nb">next</span> <span class="o">=</span> <span class="nb">next</span> <span class="n">iso</span><span class="o">-</span><span class="n">vertex</span> <span class="n">on</span> <span class="n">this</span> <span class="n">face</span> <span class="p">(</span><span class="n">circular</span> <span class="n">order</span><span class="p">)</span>
+<span class="n">until</span> <span class="nb">next</span> <span class="o">==</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>The next-iso-vertex-on-key-face rule produces closed polygons
+that form the isosurface contour without any post-processing.</p>
+</li>
+<li><p><strong>Interpolate</strong> positions linearly along the crossing edges.</p></li>
+</ol>
+</section>
+<section id="key-insight">
+<h3>Key Insight<a class="headerlink" href="#key-insight" title="Link to this heading">#</a></h3>
+<p>Each iso-vertex has a “key face” (where the edge goes outside→inside in face
+traversal order). Tracing through key faces to the next iso-vertex
+automatically produces closed contour polygons. No triangulation, no edge
+merging, no fragment assembly.</p>
+</section>
+<section id="id2">
+<h3>Comparison with Previous Implementation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Old (Triangulate-and-Merge)</p></th>
+<th class="head"><p>New (López)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Face handling</p></td>
+<td><p>Triangulates all faces</p></td>
+<td><p>Works on original faces</p></td>
+</tr>
+<tr class="row-odd"><td><p>Internal edges</p></td>
+<td><p>Created then removed</p></td>
+<td><p>Never created</p></td>
+</tr>
+<tr class="row-even"><td><p>Post-processing</p></td>
+<td><p>Complex MergeTriFacePolygons</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Winding dependence</p></td>
+<td><p>None</p></td>
+<td><p>Requires outward normals</p></td>
+</tr>
+<tr class="row-even"><td><p>Code complexity</p></td>
+<td><p>~800 lines, 20+ functions</p></td>
+<td><p>~550 lines, 1 class</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="clip">
+<h2>Clip<a class="headerlink" href="#clip" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::Clip()</span></code> reuses the contour infrastructure with an additional
+face-building step:</p>
+<ol class="arabic simple">
+<li><p>Steps 1–3 from Contour (classify, find iso-vertices, trace iso-polygons).</p></li>
+<li><p><strong>Build clipped faces</strong>: for each original face, walk vertices keeping those
+on the retained side, inserting iso-vertices at cut edges.</p></li>
+<li><p><strong>Add cap faces</strong>: the traced iso-polygons become cap faces that close the
+clipped polyhedron (with reversed winding for <code class="docutils literal notranslate"><span class="pre">insideOut</span></code>).</p></li>
+<li><p><strong>Output</strong> as a polyhedron face stream.</p></li>
+</ol>
+</section>
+<section id="implementation-structure">
+<h2>Implementation Structure<a class="headerlink" href="#implementation-structure" title="Link to this heading">#</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron.h/.cxx</span></code></p></td>
+<td><p>Cell class; delegates to <code class="docutils literal notranslate"><span class="pre">vtkPolyhedronContour</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedronContour.h/.cxx</span></code></p></td>
+<td><p>López algorithm: per-cell and bulk threaded API</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid.cxx</span></code></p></td>
+<td><p>Threaded contour: polyhedron handling in fast + general paths</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet.cxx</span></code></p></td>
+<td><p>Threaded clip: polyhedron handling with face stream output</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="centroid-divergence-theorem">
+<h2>Centroid: Divergence Theorem<a class="headerlink" href="#centroid-divergence-theorem" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::GetCentroid()</span></code> computes the volume and centroid simultaneously
+using the divergence theorem. Each face is fan-triangulated from its first
+vertex. Each triangle (v0, v1, v2) forms a signed tetrahedron with the origin
+whose volume is <code class="docutils literal notranslate"><span class="pre">v0</span> <span class="pre">.</span> <span class="pre">(v1</span> <span class="pre">x</span> <span class="pre">v2)</span> <span class="pre">/</span> <span class="pre">6</span></code>. The centroid is the volume-weighted
+average of tet centroids <code class="docutils literal notranslate"><span class="pre">(v0</span> <span class="pre">+</span> <span class="pre">v1</span> <span class="pre">+</span> <span class="pre">v2)</span> <span class="pre">/</span> <span class="pre">4</span></code>.</p>
+<p>This replaces the previous pyramid-decomposition approach that required an
+arbitrary apex point, per-face normal/area computation via <code class="docutils literal notranslate"><span class="pre">vtkPolygon</span></code>, and
+face centroid calculations.</p>
+</section>
+<section id="computational-complexity">
+<h2>Computational Complexity<a class="headerlink" href="#computational-complexity" title="Link to this heading">#</a></h2>
+<p>Let E = total edge count across all faces (equivalently, sum of face vertex
+counts). For typical polyhedra E is O(F·k) where F = faces and k = average
+vertices per face.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Old</p></th>
+<th class="head"><p>New</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contour</p></td>
+<td><p>O(F·k²) — per-face triangle merge with linear-search edge ordering</p></td>
+<td><p>O(E) — single-pass polygon tracing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clip</p></td>
+<td><p>O(F·k²) — same contour + face rebuild</p></td>
+<td><p>O(E) — trace + linear face walk</p></td>
+</tr>
+<tr class="row-even"><td><p>IsInside</p></td>
+<td><p>O(F) with up to 10 non-deterministic retries</p></td>
+<td><p>O(E) single deterministic pass</p></td>
+</tr>
+<tr class="row-odd"><td><p>GetCentroid</p></td>
+<td><p>O(E) with per-face vtkPolygon dispatch</p></td>
+<td><p>O(E) direct arithmetic</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The old contour/clip bottleneck was <code class="docutils literal notranslate"><span class="pre">OrderEdgePolygon</span></code>, which performs a linear
+scan plus <code class="docutils literal notranslate"><span class="pre">std::vector::erase</span></code> (both O(n)) for each edge in a face’s contour
+fragment, giving O(k²) per face. The new López algorithm visits each iso-vertex
+exactly once during polygon tracing.</p>
+<p>The constant-factor improvement is also significant: the old implementation
+creates ~20 intermediate data structures (vectors of edge vectors, edge-face
+maps, point-edge multimaps, edge count maps) and converts between
+representations multiple times. The new implementation uses one hash map for
+edge-to-iso-vertex lookup and traces directly.</p>
+</section>
+<section id="bulk-threaded-api">
+<h2>Bulk Threaded API<a class="headerlink" href="#bulk-threaded-api" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedronContour</span></code> provides a per-cell static API for integration with
+VTK’s threaded contour and clip filters. The API takes the cell’s
+<code class="docutils literal notranslate"><span class="pre">vtkCellArray</span></code> face stream and a <code class="docutils literal notranslate"><span class="pre">vtkDataArray</span></code> scalar field directly, without
+instantiating <code class="docutils literal notranslate"><span class="pre">vtkPolyhedron</span></code> objects.</p>
+<section id="contour-single-call-per-cell-helper">
+<h3>Contour: single-call per-cell helper<a class="headerlink" href="#contour-single-call-per-cell-helper" title="Link to this heading">#</a></h3>
+<p>Contour extraction uses a single-pass cell helper, <code class="docutils literal notranslate"><span class="pre">ContourCell</span></code>. The helper
+runs the full López trace for one polyhedron and reports the intersected
+edges as <code class="docutils literal notranslate"><span class="pre">(globalPtId0,</span> <span class="pre">globalPtId1,</span> <span class="pre">t)</span></code> tuples plus a per-polygon
+vertex-count array. Iso-vertex deduplication is performed by the calling
+filter through its shared edge locator (<code class="docutils literal notranslate"><span class="pre">vtkStaticEdgeLocatorTemplate</span></code>); the
+helper does not write final iso-vertex coordinates. There is no separate
+count phase because <code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> does not prefix-sum polyhedron
+cell sizes before running the trace: the point merger absorbs per-cell
+output into thread-local buffers, and the fast path emits triangle vertex
+coordinates directly.</p>
+</section>
+<section id="clip-two-pass-count-emit">
+<h3>Clip: two-pass Count/Emit<a class="headerlink" href="#clip-two-pass-count-emit" title="Link to this heading">#</a></h3>
+<p>Clip uses the classic two-pass pattern required to deduplicate iso-vertices
+through a shared edge locator:</p>
+<ol class="arabic simple">
+<li><p><strong>Count pass</strong> (parallel): Each thread calls <code class="docutils literal notranslate"><span class="pre">CountClip</span></code> per cell to
+determine output sizes and to record the set of intersected edges.</p></li>
+<li><p><strong>Prefix sum + edge locator build</strong> (serial): Global offsets are computed
+from per-cell counts, and the collected edge list is fed into a shared
+<code class="docutils literal notranslate"><span class="pre">vtkStaticEdgeLocatorTemplate</span></code> that assigns unique iso-vertex IDs.</p></li>
+<li><p><strong>Emit pass</strong> (parallel): Each thread calls <code class="docutils literal notranslate"><span class="pre">EmitClip</span></code> per cell, writing
+geometry into pre-allocated output arrays at the computed offsets.</p></li>
+</ol>
+<p>Both Count and Emit internally call the same <code class="docutils literal notranslate"><span class="pre">RunLopezTrace</span></code> function. The
+trace is O(E). Running it twice per cell (once for Count, once for Emit) is
+the canonical price paid for the two-pass parallel structure, and the
+thread-local trace workspace keeps the constant factor low.</p>
+</section>
+<section id="shared-core">
+<h3>Shared Core<a class="headerlink" href="#shared-core" title="Link to this heading">#</a></h3>
+<p>A single <code class="docutils literal notranslate"><span class="pre">RunLopezTrace</span></code> function in an anonymous namespace implements the
+López algorithm on raw arrays. The per-cell <code class="docutils literal notranslate"><span class="pre">Execute</span></code> path and the bulk
+entry points (<code class="docutils literal notranslate"><span class="pre">ContourCell</span></code>, <code class="docutils literal notranslate"><span class="pre">CountClip</span></code>, <code class="docutils literal notranslate"><span class="pre">EmitClip</span></code>) all dispatch through
+this function. There is one algorithm implementation, not two.</p>
+</section>
+<section id="api-summary">
+<h3>API Summary<a class="headerlink" href="#api-summary" title="Link to this heading">#</a></h3>
+<p>All entry points take the cell’s <code class="docutils literal notranslate"><span class="pre">vtkCellArray</span></code> face stream and a
+<code class="docutils literal notranslate"><span class="pre">vtkDataArray</span></code> scalar directly, and report intersected edges as
+<code class="docutils literal notranslate"><span class="pre">(globalPtId0,</span> <span class="pre">globalPtId1,</span> <span class="pre">t)</span></code> tuples for downstream deduplication via a
+shared edge locator.</p>
+<p><strong>Contour — single-call helper.</strong> Used by <code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> in both
+fast and general paths.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">void</span> <span class="n">ContourCell</span><span class="p">(</span><span class="n">numPointIds</span><span class="p">,</span> <span class="n">pointIds</span><span class="p">,</span> <span class="n">polyhedronFaces</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span>
+    <span class="n">isoValue</span><span class="p">,</span> <span class="n">generateTriangles</span><span class="p">,</span>
+    <span class="n">polygonsSize</span><span class="p">,</span> <span class="n">intersectedEdges</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">polygonsSize</span></code> is a per-output-polygon vertex count (3 for each triangle
+when <code class="docutils literal notranslate"><span class="pre">generateTriangles=true</span></code>); <code class="docutils literal notranslate"><span class="pre">intersectedEdges</span></code> holds the edge tuples in
+polygon traversal order so the caller can build polygon connectivity by
+looking up each edge’s deduplicated iso-vertex ID.</p>
+<p><strong>Clip — two-pass Count/Emit.</strong> Used by <code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code>. Output
+point IDs are written directly (combining the kept-point <code class="docutils literal notranslate"><span class="pre">pointMap</span></code> lookup
+with the iso-vertex <code class="docutils literal notranslate"><span class="pre">numberOfKeptPoints</span> <span class="pre">+</span> <span class="pre">edgeId</span></code> offset) so the caller can
+copy the resulting cell arrays into pre-reserved global offsets without a
+second remapping pass.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">static</span> <span class="n">void</span> <span class="n">CountClip</span><span class="p">(</span><span class="n">numPointIds</span><span class="p">,</span> <span class="n">pointIds</span><span class="p">,</span> <span class="n">polyhedronFaces</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span>
+    <span class="n">isoValue</span><span class="p">,</span> <span class="n">insideOut</span><span class="p">,</span>
+    <span class="o">&amp;</span><span class="n">numOutputCells</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numOutputCellConnectivity</span><span class="p">,</span>
+    <span class="o">&amp;</span><span class="n">numOutputFaces</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numOutputFacesConnectivity</span><span class="p">,</span>
+    <span class="n">intersectedEdges</span><span class="p">);</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="n">EmitClip</span><span class="p">(</span><span class="n">numPointIds</span><span class="p">,</span> <span class="n">pointIds</span><span class="p">,</span> <span class="n">polyhedronFaces</span><span class="p">,</span> <span class="n">scalars</span><span class="p">,</span>
+    <span class="n">isoValue</span><span class="p">,</span> <span class="n">insideOut</span><span class="p">,</span> <span class="n">pointMap</span><span class="p">,</span> <span class="n">numberOfKeptPoints</span><span class="p">,</span> <span class="n">edgeLocator</span><span class="p">,</span>
+    <span class="n">outputCells</span><span class="p">,</span> <span class="n">outputFaces</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The clip Count/Emit functions return edge endpoint pairs and interpolation
+weights rather than interpolated point data, so the calling filter can perform
+point data interpolation externally in bulk, matching the pattern used by
+existing VTK threaded filters.</p>
+</section>
+<section id="filter-integration">
+<h3>Filter Integration<a class="headerlink" href="#filter-integration" title="Link to this heading">#</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Filter</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>How polyhedra are handled</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContourFilter</span></code></p></td>
+<td><p>Delegates to <code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code></p></td>
+<td><p>Threaded fast + general paths</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> (fast)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ContourCells::operator()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ContourCell</span></code> with <code class="docutils literal notranslate"><span class="pre">generateTriangles=true</span></code>; edge tuples deduplicated via the shared <code class="docutils literal notranslate"><span class="pre">vtkStaticEdgeLocatorTemplate</span></code> and triangle vertex coords emitted into thread-local point buffers</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> (general)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ExtractEdges::operator()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ContourCell</span></code> producing edge tuples <code class="docutils literal notranslate"><span class="pre">(v0,</span> <span class="pre">v1,</span> <span class="pre">t)</span></code> for the shared <code class="docutils literal notranslate"><span class="pre">vtkStaticEdgeLocatorTemplate</span></code>; per-polygon vertex counts retained for the post-merge polygon emit pass when <code class="docutils literal notranslate"><span class="pre">GenerateTriangles=OFF</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ExtractCells</span></code> (integrated with MC batch pipeline)</p></td>
+<td><p>Polyhedra flow through the same batch / prefix-sum / extract pipeline as other cell types, using the cell-array <code class="docutils literal notranslate"><span class="pre">CountClip</span></code> (classify phase) and <code class="docutils literal notranslate"><span class="pre">EmitClip</span></code> (extract phase). Fast-kept/discarded cells use sentinel case values; intersected cells go through Count/Emit with the shared edge locator.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkClipDataSet</span></code></p></td>
+<td><p>Per-cell fallback</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">vtkPolyhedron::Clip</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Execute</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">RunLopezTrace</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="batch-data-extension-vtktablebasedclipdataset">
+<h3>Batch Data Extension (vtkTableBasedClipDataSet)<a class="headerlink" href="#batch-data-extension-vtktablebasedclipdataset" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code> batch framework uses <code class="docutils literal notranslate"><span class="pre">TableBasedCellBatchData</span></code>
+with an <code class="docutils literal notranslate"><span class="pre">operator+=</span></code> that accumulates per-batch counts across threads via
+prefix sum. Polyhedron support required adding two new fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PolyhedronFacesOffset</span></code>: total face connectivity entries (vertices per face)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PolyhedronFaceLocsOffset</span></code>: total face count entries (number of faces per cell)</p></li>
+</ul>
+<p>These accumulate through the existing <code class="docutils literal notranslate"><span class="pre">operator+=</span></code> / <code class="docutils literal notranslate"><span class="pre">BuildOffsetsAndGetGlobalSum</span></code>
+machinery alongside <code class="docutils literal notranslate"><span class="pre">CellsOffset</span></code>, <code class="docutils literal notranslate"><span class="pre">CellsConnectivityOffset</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">CentroidsOffset</span></code>. The prefix sum converts per-batch counts into global offsets
+that <code class="docutils literal notranslate"><span class="pre">ExtractCells</span></code> uses to write face data at the correct positions.</p>
+<p>Polyhedron cells reuse the existing sentinel case values that
+<code class="docutils literal notranslate"><span class="pre">vtkMarchingCellsClipCases.h</span></code> defines for all cell types: <code class="docutils literal notranslate"><span class="pre">KEPT_CELL_CASE</span></code>
+(fast-kept, all vertices on the retained side) and <code class="docutils literal notranslate"><span class="pre">DISCARDED_CELL_CASE</span></code>
+(fast-discarded, no vertices on the retained side). Cells that actually
+intersect the isosurface get the case value <code class="docutils literal notranslate"><span class="pre">1</span></code>, indicating “handled by the
+Count/Emit path.” These values are distinct from the 8-bit MC case indices
+used by other cell types, so there is no collision.</p>
+</section>
+</section>
+<section id="performance">
+<h2>Performance<a class="headerlink" href="#performance" title="Link to this heading">#</a></h2>
+<p>Benchmarks on an 8-core machine with polyhedron grids (hexahedral cells stored
+as <code class="docutils literal notranslate"><span class="pre">VTK_POLYHEDRON</span></code>), comparing the threaded <code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code> against the legacy per-cell <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code> and
+<code class="docutils literal notranslate"><span class="pre">vtkClipDataSet</span></code> paths:</p>
+<p><strong>Contour</strong> (<code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> with MergePoints + InterpolateAttributes
+vs <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code>):</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Grid size</p></th>
+<th class="head"><p>Legacy (ms)</p></th>
+<th class="head"><p>Threaded (ms)</p></th>
+<th class="head"><p>Speedup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>30³ (27K)</p></td>
+<td><p>68</p></td>
+<td><p>15</p></td>
+<td><p>4.4x</p></td>
+</tr>
+<tr class="row-odd"><td><p>50³ (125K)</p></td>
+<td><p>194</p></td>
+<td><p>63</p></td>
+<td><p>3.1x</p></td>
+</tr>
+<tr class="row-even"><td><p>70³ (343K)</p></td>
+<td><p>400</p></td>
+<td><p>183</p></td>
+<td><p>2.2x</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Clip</strong> (<code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code> vs <code class="docutils literal notranslate"><span class="pre">vtkClipDataSet</span></code>):</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Grid size</p></th>
+<th class="head"><p>Legacy (ms)</p></th>
+<th class="head"><p>Threaded (ms)</p></th>
+<th class="head"><p>Speedup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20³ (8K)</p></td>
+<td><p>36</p></td>
+<td><p>14</p></td>
+<td><p>2.6x</p></td>
+</tr>
+<tr class="row-odd"><td><p>30³ (27K)</p></td>
+<td><p>67</p></td>
+<td><p>32</p></td>
+<td><p>2.1x</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>See the production CFD mesh section below for detailed clip benchmarks across
+multiple cut scenarios on a 2.88M-cell mesh.</p>
+<p>Key optimizations: direct grid array access when points and scalars are
+<code class="docutils literal notranslate"><span class="pre">double</span></code> (eliminates per-cell copy), <code class="docutils literal notranslate"><span class="pre">thread_local</span></code> trace workspace (reuses
+hash maps and vectors across cells within each thread), and a compact-remap
+path that keeps the per-cell scratch buffers dense in local indices.</p>
+<p>When input points are not <code class="docutils literal notranslate"><span class="pre">double</span></code>, a compact-remap path is used: a per-thread
+<code class="docutils literal notranslate"><span class="pre">globalToLocal</span></code> map remaps cell point IDs to dense local indices <code class="docutils literal notranslate"><span class="pre">0..nCellPts-1</span></code>,
+the face stream is remapped to local indices, and <code class="docutils literal notranslate"><span class="pre">cellPts</span></code>/<code class="docutils literal notranslate"><span class="pre">cellScalars</span></code> buffers
+of size <code class="docutils literal notranslate"><span class="pre">nCellPts</span></code> are filled. Performance is comparable to the <code class="docutils literal notranslate"><span class="pre">double</span></code> path
+(68 ms vs 61 ms on the 2.88M-cell drone mesh).</p>
+<section id="production-cfd-mesh-drone-results-cgns">
+<h3>Production CFD Mesh (drone_results.cgns)<a class="headerlink" href="#production-cfd-mesh-drone-results-cgns" title="Link to this heading">#</a></h3>
+<p>A production all-polyhedra CFD mesh with <strong>2.88M VTK_POLYHEDRON cells</strong> and
+6.5M points (CGNS NFACE/NGON format). Benchmarks run on an 8-core Linux
+workstation. Each reported number is the median wall-time across 5
+consecutive <code class="docutils literal notranslate"><span class="pre">Update()</span></code> calls, after one warmup <code class="docutils literal notranslate"><span class="pre">Update()</span></code>, measured with
+<code class="docutils literal notranslate"><span class="pre">time.perf_counter()</span></code> around the filter <code class="docutils literal notranslate"><span class="pre">Update()</span></code>. Baseline is the
+released ParaView 6.1.0 binary (pvpython) on the same Linux machine,
+against the same mesh and pipeline.</p>
+<p><strong>Contour</strong> — PRES isocontour at value=0:</p>
+<p>The speedup comes from two independent contributions:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Change</p></th>
+<th class="head"><p>Baseline</p></th>
+<th class="head"><p>Result</p></th>
+<th class="head"><p>Speedup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>López algorithm alone (serial <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code>)</p></td>
+<td><p>~10,300 ms (PV 6.1.0 baseline)</p></td>
+<td><p>~1,300 ms (Linux, warning-free)</p></td>
+<td><p><strong>~8x</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Threading + C3DLG infrastructure</p></td>
+<td><p>~1,300 ms (serial López)</p></td>
+<td><p><strong>59 ms</strong> (C3DLG, 8 cores, no normals)</p></td>
+<td><p><strong>~22x</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Combined vs PV 6.1.0 baseline (no normals)</strong></p></td>
+<td><p>~10,300 ms</p></td>
+<td><p><strong>59 ms</strong></p></td>
+<td><p><strong>~175x</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Combined vs PV 6.1.0 baseline (ComputeNormals=ON)</strong></p></td>
+<td><p>~10,400 ms</p></td>
+<td><p><strong>73 ms</strong></p></td>
+<td><p><strong>~143x</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The old algorithm emits hundreds of topology-defect warnings per run via
+mutex-serialized <code class="docutils literal notranslate"><span class="pre">vtkGenericWarningMacro</span></code>, which dominates wall-clock time
+in a warning-heavy environment. The López algorithm handles the same defective
+cells silently and correctly, so warning overhead is not a factor in the new
+path.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Time (ms)</p></th>
+<th class="head"><p>Output cells</p></th>
+<th class="head"><p>Output size</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ParaView 6.1.0 baseline, GT=ON, ComputeNormals=OFF</p></td>
+<td><p>10,309</p></td>
+<td><p>438K triangles</p></td>
+<td><p>18.6 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>ParaView 6.1.0 baseline, GT=OFF, ComputeNormals=OFF</p></td>
+<td><p>11,247</p></td>
+<td><p>438K triangles</p></td>
+<td><p>18.6 MB</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> GT=ON, ComputeNormals=OFF</p></td>
+<td><p><strong>59</strong></p></td>
+<td><p>439K triangles</p></td>
+<td><p>18.6 MB</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> GT=ON, ComputeNormals=ON</p></td>
+<td><p><strong>73</strong></p></td>
+<td><p>439K triangles</p></td>
+<td><p>18.6 MB</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> GT=OFF, ComputeNormals=OFF</p></td>
+<td><p><strong>51</strong></p></td>
+<td><p>175K polygons</p></td>
+<td><p><strong>12.6 MB</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> GT=OFF, ComputeNormals=ON</p></td>
+<td><p><strong>55</strong></p></td>
+<td><p>175K polygons</p></td>
+<td><p><strong>12.6 MB</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ComputeNormals=ON adds only a few milliseconds (cell-normal compute and
+point-normal averaging at merged vertices). The previous orientation pass via
+<code class="docutils literal notranslate"><span class="pre">vtkOrientPolyData</span></code> is no longer needed because the López trace produces
+consistently oriented iso-polygons directly, so polygon-mode contours no
+longer pay an orientation cost. Linux, 8-core workstation, 2.88M-cell drone
+mesh, PRES=0.</p>
+<p>The GenerateTriangles=OFF path uses <code class="docutils literal notranslate"><span class="pre">ContourCell(generateTriangles=false)</span></code> to
+extract polygon connectivity directly, bypassing fan-triangulation. Output
+polygons carry correct cell data and point normals. The 175K polygon count vs
+439K triangle count reflects that polyhedron iso-polygons are typically quads
+or pentagons that would otherwise each be split into 2-3 triangles. The 6 MB
+output size reduction (32%) is meaningful in time-series workflows. With the
+orientation pass removed, GT=OFF is now strictly faster than GT=ON on this
+mesh (51 ms vs 59 ms with no normals).</p>
+<p><strong>Contour memory</strong> — on Windows, the old <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code> working set peaks at
+<strong>3,310 MB</strong> during processing vs a 2,703 MB baseline — a ~600 MB transient
+spike from per-cell <code class="docutils literal notranslate"><span class="pre">vtkPolyhedron</span></code> intermediate allocations. The new C3DLG
+path uses thread-local workspace that stabilizes at high-water mark after the
+first few cells and shows no measurable spike.</p>
+<p><strong>Clip</strong> — plane y=0 (half-domain, ~50% cells kept), 5 reps, median:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Time (ms)</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ParaView 6.1.0 baseline (<code class="docutils literal notranslate"><span class="pre">vtkClipDataSet</span></code> fallback for polyhedra)</p></td>
+<td><p>4,822</p></td>
+<td><p>1,450,017 cells, 3,406,651 pts</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code> with first-class López polyhedron support</p></td>
+<td><p><strong>194</strong></p></td>
+<td><p>1,449,631 cells, 3,283,329 pts</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is a <strong>~25x speedup</strong> at the user-visible Clip filter level. The
+dominant contribution is that <code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code> now handles
+polyhedra directly via <code class="docutils literal notranslate"><span class="pre">CountClip</span></code>/<code class="docutils literal notranslate"><span class="pre">EmitClip</span></code> instead of falling back to a
+contour-based clip pipeline; the unified inside/outside classification
+(shared with <code class="docutils literal notranslate"><span class="pre">ContourCell</span></code>) avoids redundant per-cell vertex tagging across
+the count and emit passes.</p>
+<p>Edge-locator sizing is bounded by the set of edges actually intersected by
+the plane (O(N_intersected × avg_edges_per_cell)) rather than the full input
+edge set, which keeps small-cut scenarios fast and avoids the half-domain
+slowdown seen in earlier clip implementations that pre-populated the locator
+with all input points.</p>
+<p><strong>Summary</strong>: on this all-polyhedra CFD mesh, <code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> is
+<strong>~22x faster</strong> than serial López contour and <strong>~175x faster</strong> than the
+ParaView 6.1.0 baseline (no normals). With ComputeNormals=ON the speedup vs
+baseline is ~143x. <code class="docutils literal notranslate"><span class="pre">vtkTableBasedClipDataSet</span></code> with first-class polyhedron
+support is <strong>~25x faster</strong> than the ParaView 6.1.0 baseline on the y=0 plane
+cut. All numbers are PRES=0 contour and y=0 plane clip on the 2.88M-cell
+drone mesh, 8-core Linux workstation, comparing to ParaView 6.1.0 (released)
+on the same hardware.</p>
+</section>
+<section id="synthetic-all-polyhedra-scaling-study">
+<h3>Synthetic All-Polyhedra Scaling Study<a class="headerlink" href="#synthetic-all-polyhedra-scaling-study" title="Link to this heading">#</a></h3>
+<p>To characterize how wall-time scales with mesh size, we run the same
+contour and clip operations on synthetic all-polyhedra grids generated by
+<code class="docutils literal notranslate"><span class="pre">vtkCellTypeSource(VTK_POLYHEDRON)</span></code> with a wavelet scalar field
+(<code class="docutils literal notranslate"><span class="pre">vtkRTAnalyticSource</span></code> formula evaluated analytically on the polyhedral
+mesh’s points; no auxiliary image or resampler). Isovalue is the field
+midrange; clip plane is <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">D/2</span></code> (half-domain).</p>
+<p><strong>Timing methodology</strong>: each reported number is the arithmetic mean of 5
+consecutive <code class="docutils literal notranslate"><span class="pre">Update()</span></code> calls on the same filter instance, after a single
+warmup <code class="docutils literal notranslate"><span class="pre">Update()</span></code> to absorb any one-time scheduling or allocation costs.
+Each <code class="docutils literal notranslate"><span class="pre">Update()</span></code> runs the full filter end-to-end (<code class="docutils literal notranslate"><span class="pre">RequestData()</span></code> to
+output ready). Wall-time is measured with <code class="docutils literal notranslate"><span class="pre">time.perf_counter()</span></code> around
+the <code class="docutils literal notranslate"><span class="pre">Update()</span></code> call. Input dataset construction, scalar field evaluation,
+and any pipeline plumbing happen once before timing starts and are not
+included in the reported numbers.</p>
+<p>This is a problem-size scaling study at fixed thread count: every row uses
+the same Linux 8-core workstation as the drone benchmark, with VTK SMP
+running at its default thread count (8). Threads are not varied. The
+timings therefore reflect how total work grows with mesh size on a fixed
+machine, not parallel efficiency (strong scaling) or per-thread efficiency
+under proportional growth (weak scaling).</p>
+<p><img alt="Wavelet scaling, contour and clip vs input cells" src="../_images/PolyhedronAlgorithms_wavelet_scaling.svg" /></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Grid</p></th>
+<th class="head text-right"><p>Input cells</p></th>
+<th class="head text-right"><p>Output cells (contour)</p></th>
+<th class="head text-right"><p>Contour GT=ON (ms)</p></th>
+<th class="head text-right"><p>Contour GT=OFF (ms)</p></th>
+<th class="head text-right"><p>Clip y=mid (ms)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>100³</p></td>
+<td class="text-right"><p>1.0 M</p></td>
+<td class="text-right"><p>167 K</p></td>
+<td class="text-right"><p>18</p></td>
+<td class="text-right"><p>16</p></td>
+<td class="text-right"><p>39</p></td>
+</tr>
+<tr class="row-odd"><td><p>200³</p></td>
+<td class="text-right"><p>8.0 M</p></td>
+<td class="text-right"><p>673 K</p></td>
+<td class="text-right"><p>90</p></td>
+<td class="text-right"><p>76</p></td>
+<td class="text-right"><p>309</p></td>
+</tr>
+<tr class="row-even"><td><p>300³</p></td>
+<td class="text-right"><p>27.0 M</p></td>
+<td class="text-right"><p>1.52 M</p></td>
+<td class="text-right"><p>230</p></td>
+<td class="text-right"><p>200</p></td>
+<td class="text-right"><p>1,077</p></td>
+</tr>
+<tr class="row-odd"><td><p>400³</p></td>
+<td class="text-right"><p>64.0 M</p></td>
+<td class="text-right"><p>2.69 M</p></td>
+<td class="text-right"><p>463</p></td>
+<td class="text-right"><p>435</p></td>
+<td class="text-right"><p>2,656</p></td>
+</tr>
+<tr class="row-even"><td><p>500³</p></td>
+<td class="text-right"><p>125.0 M</p></td>
+<td class="text-right"><p>4.21 M</p></td>
+<td class="text-right"><p>761</p></td>
+<td class="text-right"><p>720</p></td>
+<td class="text-right"><p>5,180</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The plot above is log-log; the dashed line is slope-1 (linear) for
+reference. Contour wall-time scales sublinearly with input cells: 125x
+input growth from 100³ to 500³ produces only ~42x growth in contour
+time. The reason is dimensional: contour input is volumetric (<code class="docutils literal notranslate"><span class="pre">O(D³)</span></code>)
+but contour output is the iso-surface, which is <code class="docutils literal notranslate"><span class="pre">O(D²)</span></code>. The output-bounded
+portion of the algorithm therefore grows more slowly than total input
+work. Clip output is also volumetric (a fraction of the input mesh), so
+its cost scales close to linearly with input.</p>
+<p>The drone production benchmark (2.88 M cells, 51-73 ms contour, 194 ms
+clip) sits comfortably within the linear regime of this scaling curve.
+The 125 M-cell point demonstrates that the algorithm contours nine-figure
+polyhedral meshes in under one second on commodity hardware.</p>
+</section>
+<section id="generatetriangles-off-for-linear-cells">
+<h3>GenerateTriangles=OFF for Linear Cells<a class="headerlink" href="#generatetriangles-off-for-linear-cells" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> now handles <code class="docutils literal notranslate"><span class="pre">GenerateTriangles=OFF</span></code> for all supported
+linear cell types (VTK_HEXAHEDRON, VTK_TETRA, VTK_WEDGE, VTK_PYRAMID) via a
+<code class="docutils literal notranslate"><span class="pre">vtkPolygonBuilder</span></code> post-process on the merged triangle output. Previously,
+<code class="docutils literal notranslate"><span class="pre">vtkContourFilter</span></code> with <code class="docutils literal notranslate"><span class="pre">GenerateTriangles=OFF</span></code> fell back to <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code>
+(serial, per-cell) for all these types. Now the full threaded C3DLG pipeline
+handles them end-to-end — <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code> is no longer involved.</p>
+<p>The polygon builder groups merged triangles by input cell ID and uses edge
+interior/boundary counting to reconstruct the iso-polygon boundary. This
+reproduces what <code class="docutils literal notranslate"><span class="pre">vtkContourHelper</span></code> does inside <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code>, but applied
+once on the globally merged output rather than per cell.</p>
+<p>Benchmarks on a 30×30×30 synthetic grid (<code class="docutils literal notranslate"><span class="pre">vtkCellTypeSource</span></code>),
+<code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> vs <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code>:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cell type</p></th>
+<th class="head"><p>CGrid ON (ms)</p></th>
+<th class="head"><p>C3DLG ON (ms)</p></th>
+<th class="head"><p>CGrid OFF (ms)</p></th>
+<th class="head"><p>C3DLG OFF (ms)</p></th>
+<th class="head"><p>OFF speedup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HEX (27K cells)</p></td>
+<td><p>12.8</p></td>
+<td><p>1.7</p></td>
+<td><p>6.0</p></td>
+<td><p>3.4</p></td>
+<td><p><strong>1.8x</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>TET (324K cells)</p></td>
+<td><p>26.0</p></td>
+<td><p>2.1</p></td>
+<td><p>40.0</p></td>
+<td><p>17.0</p></td>
+<td><p><strong>2.4x</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>WEDGE (54K cells)</p></td>
+<td><p>5.5</p></td>
+<td><p>0.8</p></td>
+<td><p>9.5</p></td>
+<td><p>4.7</p></td>
+<td><p><strong>2.0x</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>PYRAMID (162K cells)</p></td>
+<td><p>15.1</p></td>
+<td><p>2.0</p></td>
+<td><p>24.6</p></td>
+<td><p>13.1</p></td>
+<td><p><strong>1.9x</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">vtkContourFilter</span></code> now unconditionally routes all supported cell types to
+<code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> regardless of <code class="docutils literal notranslate"><span class="pre">GenerateTriangles</span></code>, passing the flag
+through via <code class="docutils literal notranslate"><span class="pre">SetGenerateTriangles()</span></code>. <code class="docutils literal notranslate"><span class="pre">vtkContourGrid</span></code> is no longer used for
+any mesh that <code class="docutils literal notranslate"><span class="pre">CanFullyProcessDataObject</span></code> accepts.</p>
+</section>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<p>These are inherent to vertex-based isosurface extraction, shared with the
+previous implementation:</p>
+<ul class="simple">
+<li><p><strong>Vertex-based sampling</strong>: only vertex scalar values are considered</p></li>
+<li><p><strong>Linear interpolation</strong>: iso-vertex position is linearly interpolated</p></li>
+<li><p><strong>One crossing per edge</strong>: an edge can have at most one iso-vertex</p></li>
+<li><p><strong>Manifold assumption</strong>: each edge must be shared by exactly two faces</p></li>
+<li><p><strong>Outward normals required</strong>: faces must be wound with outward-pointing normals</p></li>
+</ul>
+</section>
+<section id="normal-computation-computenormals-on">
+<h2>Normal Computation (<code class="docutils literal notranslate"><span class="pre">ComputeNormals=ON</span></code>)<a class="headerlink" href="#normal-computation-computenormals-on" title="Link to this heading">#</a></h2>
+<p>When <code class="docutils literal notranslate"><span class="pre">ComputeNormals=ON</span></code>, <code class="docutils literal notranslate"><span class="pre">vtkContour3DLinearGrid</span></code> computes per-cell normals
+on the contour output and averages them at each merged vertex:</p>
+<ol class="arabic simple">
+<li><p><strong>Cell normals</strong> — <code class="docutils literal notranslate"><span class="pre">vtkTriangle::ComputeNormal</span></code> for triangles,
+<code class="docutils literal notranslate"><span class="pre">vtkPolygon::ComputeNormal</span></code> over all polygon vertices for native
+iso-polygons (<code class="docutils literal notranslate"><span class="pre">GenerateTriangles=OFF</span></code>).</p></li>
+<li><p><strong>Point normals</strong> — unweighted average of adjacent cell normals at each
+merged vertex, normalized. Identical to <code class="docutils literal notranslate"><span class="pre">vtkPolyDataNormals::GetPointNormals</span></code>.</p></li>
+</ol>
+<p>This relies on the López trace and the marching case tables producing
+consistently wound output for the cell types they handle. Polyhedron
+generation paths that may emit reordered faces (e.g. the wedge decomposition
+in <code class="docutils literal notranslate"><span class="pre">vtkUnstructuredGrid</span></code>) are corrected at the source so the contour output
+is consistent without a post-pass orientation step.</p>
+</section>
+<section id="future-work">
+<h2>Future Work<a class="headerlink" href="#future-work" title="Link to this heading">#</a></h2>
+<section id="face-based-algorithm-and-gpu-execution">
+<h3>Face-Based Algorithm and GPU Execution<a class="headerlink" href="#face-based-algorithm-and-gpu-execution" title="Link to this heading">#</a></h3>
+<p>The current implementation operates cell-by-cell: for each polyhedron,
+it unpacks the face stream, builds a global-to-local index map, copies
+coordinates and scalars into a compact local buffer, and runs the López
+trace. This is efficient on CPU but does not map well to GPU execution,
+where irregular per-cell control flow and per-cell memory allocation are
+costly.</p>
+<p>We have developed a face-based reformulation of the López algorithm that
+eliminates all cell-level bookkeeping and exposes the computation as two
+purely data-parallel phases.</p>
+<section id="id3">
+<h4>Key Insight<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>In a face-based mesh (the native format of CFD solvers such as Fluent and
+OpenFOAM), each internal face stores its vertex list wound CCW for the
+owner cell (c0), and a neighbour cell ID (c1). The López polygon trace,
+which walks cell faces in CCW order to assign key vertices, is equivalent
+to walking each face once for each of its two cells — forward for c0,
+reversed for c1. The owner/neighbour direction flag encodes all the
+cell-level orientation information López needs; no cell topology is
+accessed during the algorithm.</p>
+</section>
+<section id="id4">
+<h4>Algorithm<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p><strong>Phase 1</strong> runs in parallel over all (face, cell) pairs. For each face,
+walk its vertices in the CCW direction for the given cell. Collect crossing
+edges in walk order to form the IPVINT list. For each key edge (a crossing
+where the walk steps outside-to-inside), pair it with the immediately
+preceding crossing edge in the IPVINT list (circular). Emit that pair as a
+polygon graph edge attributed to the cell. For faces with four crossing
+edges (saddle configurations), this rule resolves the topological ambiguity
+identically to the original López Algorithm 3.</p>
+<p><strong>Phase 2</strong> runs in parallel over cells. Each cell accumulates a small
+polygon adjacency graph from Phase 1. Since every iso-vertex has degree two
+in this graph, the polygon is recovered by following the chain until it
+closes. Multiple disconnected cycles produce separate output polygons.</p>
+<p>This reformulation has been verified to produce bit-for-bit identical
+polygon vertex sets and cyclic orderings to the original López algorithm
+across 300 test cases including random scalar fields and deliberately
+constructed ambiguous face configurations.</p>
+<p>Phase 1 maps directly to a GPU compute shader or Viskores worklet: one
+thread per (face, cell) pair, no shared state during emission. Phase 2
+maps to one thread per intersected cell executing a short sequential loop
+of 3 to 20 steps. The compact local index remap required by the current
+CPU implementation disappears entirely since the algorithm operates on
+global vertex IDs throughout.</p>
+</section>
+<section id="implications-for-vtkpolyhedroncontour">
+<h4>Implications for vtkPolyhedronContour<a class="headerlink" href="#implications-for-vtkpolyhedroncontour" title="Link to this heading">#</a></h4>
+<p>The face-based reformulation could replace the current <code class="docutils literal notranslate"><span class="pre">ContourCell</span></code> and
+<code class="docutils literal notranslate"><span class="pre">CountClip</span></code>/<code class="docutils literal notranslate"><span class="pre">EmitClip</span></code> implementations, removing the per-cell scratch
+buffers (<code class="docutils literal notranslate"><span class="pre">ScratchGlobalToLocal</span></code>, <code class="docutils literal notranslate"><span class="pre">ScratchFaceStream</span></code>, <code class="docutils literal notranslate"><span class="pre">ScratchCoords</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ScratchScalars</span></code>) and the global-to-local hash map build. The public API
+surface would change to accept a face list with owner/neighbour
+assignments rather than a per-cell face stream. For meshes already stored
+in face-based format no preprocessing would be required.</p>
+</section>
+</section>
+<section id="native-face-based-storage-for-polyhedral-datasets">
+<h3>Native Face-Based Storage for Polyhedral Datasets<a class="headerlink" href="#native-face-based-storage-for-polyhedral-datasets" title="Link to this heading">#</a></h3>
+<p>The current VTK unstructured grid stores polyhedra via a face stream
+embedded in <code class="docutils literal notranslate"><span class="pre">vtkCellArray</span></code>: for each polyhedron cell, the face stream
+encodes face count, then for each face its vertex count followed by global
+vertex IDs. This format requires unpacking the full face stream to access
+any single face, and does not directly expose the owner/neighbour
+relationship between adjacent cells.</p>
+<p>A more efficient representation for polyhedral CFD data would store faces
+as first-class entities:</p>
+<ul class="simple">
+<li><p><strong>Face list</strong>: one entry per unique face, storing vertex IDs wound CCW
+for the owner cell, the owner cell ID (c0), and the neighbour cell ID
+(c1, or -1 for boundary faces).</p></li>
+<li><p><strong>Cell-to-face map</strong>: for each cell, the list of face IDs that bound it.
+Used only for cell reconstruction — not needed during isosurface
+extraction.</p></li>
+</ul>
+<p>This representation matches the native format of OpenFOAM
+(<code class="docutils literal notranslate"><span class="pre">owner</span></code>/<code class="docutils literal notranslate"><span class="pre">neighbour</span></code>/<code class="docutils literal notranslate"><span class="pre">faces</span></code> files) and Fluent polyhedral meshes. It
+enables the face-based isosurface algorithm to operate directly on the
+stored data without any intermediate unpacking or reformatting.</p>
+<section id="cell-reconstruction-from-faces">
+<h4>Cell Reconstruction from Faces<a class="headerlink" href="#cell-reconstruction-from-faces" title="Link to this heading">#</a></h4>
+<p>When cell-level output is required (e.g. for clip operations that output
+a clipped unstructured grid rather than a surface), cells can be
+reconstructed from the face list using the cell-to-face map. Each output
+polyhedron is described by collecting its bounding face IDs, remapping
+face vertices to local indices, and writing the VTK face stream. This
+reconstruction pass is a straightforward map over cells and is independent
+of the isosurface extraction.</p>
+<p>For some in-situ and GPU use cases, cell reconstruction may not be needed
+at all: the isosurface output is a surface mesh of polygons, which is
+already in the correct form for GPU rendering without any cell-level
+structure.</p>
+</section>
+</section>
+<section id="gpu-execution-paths">
+<h3>GPU Execution Paths<a class="headerlink" href="#gpu-execution-paths" title="Link to this heading">#</a></h3>
+<p>Three implementation strategies are being considered for GPU execution of
+the face-based algorithm:</p>
+<p><strong>Viskores worklets</strong> provide GPU portability across CUDA, HIP, and
+OpenMP backends. Phase 1 maps to a scatter worklet over faces; Phase 2
+maps to a small gather worklet over cells. Viskores does not currently
+have a native face-based mesh representation and would require either a
+new dataset type or a face-array adapter.</p>
+<p><strong>Direct CUDA kernels</strong> give full control and are appropriate for use
+cases committed to NVIDIA hardware. The face-based algorithm’s two-phase
+structure maps directly: a CUDA kernel over (face, cell) pairs for Phase
+1, a prefix sum for output sizing, and a second kernel over cells for
+Phase 2. This path requires no new VTK data structures but is not
+portable to AMD or Intel GPUs.</p>
+<p><strong>Compute shaders</strong> (GLSL/WGSL via VTK’s WebGPU or OpenGL backends) are
+the most forward-looking option for browser-delivered rendering where
+output is streamed to a JavaScript frontend. Phase 1 is a compute pass
+with atomic append or two-pass count/emit; Phase 2 can be skipped by
+rendering polygon edges directly from the Phase 1 output and
+fan-triangulating from a centroid.</p>
+<p>For CFD meshes dominated by polyhedra with smooth scalar fields, ambiguous
+faces (four crossing edges on a single face) are rare. The IPVINT
+circular-previous rule handles them correctly in all cases without any
+geometric test, so all three GPU paths can use the same branch-free
+per-face kernel.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../developers_guide/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Developer’s Guide</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="WebAssemblyTestSuiteArchitecture.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">VTK WASM regression test suite architecture</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, VTK Developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">vtkPolyhedron Contour, Clip, and IsInside Algorithms</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#face-winding-requirement">Face Winding Requirement</a></li>
+<li><a class="reference internal" href="#isinside-solid-angle-summation">IsInside: Solid Angle Summation</a><ul>
+<li><a class="reference internal" href="#algorithm">Algorithm</a></li>
+<li><a class="reference internal" href="#comparison-with-previous-implementation">Comparison with Previous Implementation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contour-lopez-polygon-tracing-algorithm">Contour: López Polygon-Tracing Algorithm</a><ul>
+<li><a class="reference internal" href="#id1">Algorithm</a></li>
+<li><a class="reference internal" href="#key-insight">Key Insight</a></li>
+<li><a class="reference internal" href="#id2">Comparison with Previous Implementation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clip">Clip</a></li>
+<li><a class="reference internal" href="#implementation-structure">Implementation Structure</a></li>
+<li><a class="reference internal" href="#centroid-divergence-theorem">Centroid: Divergence Theorem</a></li>
+<li><a class="reference internal" href="#computational-complexity">Computational Complexity</a></li>
+<li><a class="reference internal" href="#bulk-threaded-api">Bulk Threaded API</a><ul>
+<li><a class="reference internal" href="#contour-single-call-per-cell-helper">Contour: single-call per-cell helper</a></li>
+<li><a class="reference internal" href="#clip-two-pass-count-emit">Clip: two-pass Count/Emit</a></li>
+<li><a class="reference internal" href="#shared-core">Shared Core</a></li>
+<li><a class="reference internal" href="#api-summary">API Summary</a></li>
+<li><a class="reference internal" href="#filter-integration">Filter Integration</a></li>
+<li><a class="reference internal" href="#batch-data-extension-vtktablebasedclipdataset">Batch Data Extension (vtkTableBasedClipDataSet)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#performance">Performance</a><ul>
+<li><a class="reference internal" href="#production-cfd-mesh-drone-results-cgns">Production CFD Mesh (drone_results.cgns)</a></li>
+<li><a class="reference internal" href="#synthetic-all-polyhedra-scaling-study">Synthetic All-Polyhedra Scaling Study</a></li>
+<li><a class="reference internal" href="#generatetriangles-off-for-linear-cells">GenerateTriangles=OFF for Linear Cells</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#limitations">Limitations</a></li>
+<li><a class="reference internal" href="#normal-computation-computenormals-on">Normal Computation (<code class="docutils literal notranslate"><span class="pre">ComputeNormals=ON</span></code>)</a></li>
+<li><a class="reference internal" href="#future-work">Future Work</a><ul>
+<li><a class="reference internal" href="#face-based-algorithm-and-gpu-execution">Face-Based Algorithm and GPU Execution</a><ul>
+<li><a class="reference internal" href="#id3">Key Insight</a></li>
+<li><a class="reference internal" href="#id4">Algorithm</a></li>
+<li><a class="reference internal" href="#implications-for-vtkpolyhedroncontour">Implications for vtkPolyhedronContour</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#native-face-based-storage-for-polyhedral-datasets">Native Face-Based Storage for Polyhedral Datasets</a><ul>
+<li><a class="reference internal" href="#cell-reconstruction-from-faces">Cell Reconstruction from Faces</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gpu-execution-paths">GPU Execution Paths</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=60a0e41e"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

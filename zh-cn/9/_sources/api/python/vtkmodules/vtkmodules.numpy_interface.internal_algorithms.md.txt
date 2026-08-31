@@ -1,0 +1,515 @@
+# {py:mod}`vtkmodules.numpy_interface.internal_algorithms`
+
+```{py:module} vtkmodules.numpy_interface.internal_algorithms
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_cell_derivatives <vtkmodules.numpy_interface.internal_algorithms._cell_derivatives>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms._cell_derivatives
+    :summary:
+    ```
+* - {py:obj}`_cell_quality <vtkmodules.numpy_interface.internal_algorithms._cell_quality>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms._cell_quality
+    :summary:
+    ```
+* - {py:obj}`_matrix_math_filter <vtkmodules.numpy_interface.internal_algorithms._matrix_math_filter>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms._matrix_math_filter
+    :summary:
+    ```
+* - {py:obj}`abs <vtkmodules.numpy_interface.internal_algorithms.abs>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.abs
+    :summary:
+    ```
+* - {py:obj}`all <vtkmodules.numpy_interface.internal_algorithms.all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.all
+    :summary:
+    ```
+* - {py:obj}`area <vtkmodules.numpy_interface.internal_algorithms.area>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.area
+    :summary:
+    ```
+* - {py:obj}`aspect <vtkmodules.numpy_interface.internal_algorithms.aspect>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.aspect
+    :summary:
+    ```
+* - {py:obj}`aspect_gamma <vtkmodules.numpy_interface.internal_algorithms.aspect_gamma>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.aspect_gamma
+    :summary:
+    ```
+* - {py:obj}`condition <vtkmodules.numpy_interface.internal_algorithms.condition>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.condition
+    :summary:
+    ```
+* - {py:obj}`cross <vtkmodules.numpy_interface.internal_algorithms.cross>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.cross
+    :summary:
+    ```
+* - {py:obj}`curl <vtkmodules.numpy_interface.internal_algorithms.curl>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.curl
+    :summary:
+    ```
+* - {py:obj}`divergence <vtkmodules.numpy_interface.internal_algorithms.divergence>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.divergence
+    :summary:
+    ```
+* - {py:obj}`det <vtkmodules.numpy_interface.internal_algorithms.det>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.det
+    :summary:
+    ```
+* - {py:obj}`determinant <vtkmodules.numpy_interface.internal_algorithms.determinant>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.determinant
+    :summary:
+    ```
+* - {py:obj}`diagonal <vtkmodules.numpy_interface.internal_algorithms.diagonal>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.diagonal
+    :summary:
+    ```
+* - {py:obj}`dot <vtkmodules.numpy_interface.internal_algorithms.dot>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.dot
+    :summary:
+    ```
+* - {py:obj}`eigenvalue <vtkmodules.numpy_interface.internal_algorithms.eigenvalue>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.eigenvalue
+    :summary:
+    ```
+* - {py:obj}`eigenvector <vtkmodules.numpy_interface.internal_algorithms.eigenvector>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.eigenvector
+    :summary:
+    ```
+* - {py:obj}`gradient <vtkmodules.numpy_interface.internal_algorithms.gradient>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.gradient
+    :summary:
+    ```
+* - {py:obj}`inv <vtkmodules.numpy_interface.internal_algorithms.inv>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.inv
+    :summary:
+    ```
+* - {py:obj}`inverse <vtkmodules.numpy_interface.internal_algorithms.inverse>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.inverse
+    :summary:
+    ```
+* - {py:obj}`jacobian <vtkmodules.numpy_interface.internal_algorithms.jacobian>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.jacobian
+    :summary:
+    ```
+* - {py:obj}`laplacian <vtkmodules.numpy_interface.internal_algorithms.laplacian>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.laplacian
+    :summary:
+    ```
+* - {py:obj}`ln <vtkmodules.numpy_interface.internal_algorithms.ln>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.ln
+    :summary:
+    ```
+* - {py:obj}`log <vtkmodules.numpy_interface.internal_algorithms.log>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.log
+    :summary:
+    ```
+* - {py:obj}`log10 <vtkmodules.numpy_interface.internal_algorithms.log10>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.log10
+    :summary:
+    ```
+* - {py:obj}`max <vtkmodules.numpy_interface.internal_algorithms.max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.max
+    :summary:
+    ```
+* - {py:obj}`max_angle <vtkmodules.numpy_interface.internal_algorithms.max_angle>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.max_angle
+    :summary:
+    ```
+* - {py:obj}`mag <vtkmodules.numpy_interface.internal_algorithms.mag>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.mag
+    :summary:
+    ```
+* - {py:obj}`matmul <vtkmodules.numpy_interface.internal_algorithms.matmul>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.matmul
+    :summary:
+    ```
+* - {py:obj}`mean <vtkmodules.numpy_interface.internal_algorithms.mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.mean
+    :summary:
+    ```
+* - {py:obj}`min <vtkmodules.numpy_interface.internal_algorithms.min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.min
+    :summary:
+    ```
+* - {py:obj}`min_angle <vtkmodules.numpy_interface.internal_algorithms.min_angle>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.min_angle
+    :summary:
+    ```
+* - {py:obj}`norm <vtkmodules.numpy_interface.internal_algorithms.norm>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.norm
+    :summary:
+    ```
+* - {py:obj}`shear <vtkmodules.numpy_interface.internal_algorithms.shear>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.shear
+    :summary:
+    ```
+* - {py:obj}`skew <vtkmodules.numpy_interface.internal_algorithms.skew>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.skew
+    :summary:
+    ```
+* - {py:obj}`strain <vtkmodules.numpy_interface.internal_algorithms.strain>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.strain
+    :summary:
+    ```
+* - {py:obj}`sum <vtkmodules.numpy_interface.internal_algorithms.sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.sum
+    :summary:
+    ```
+* - {py:obj}`surface_normal <vtkmodules.numpy_interface.internal_algorithms.surface_normal>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.surface_normal
+    :summary:
+    ```
+* - {py:obj}`trace <vtkmodules.numpy_interface.internal_algorithms.trace>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.trace
+    :summary:
+    ```
+* - {py:obj}`var <vtkmodules.numpy_interface.internal_algorithms.var>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.var
+    :summary:
+    ```
+* - {py:obj}`volume <vtkmodules.numpy_interface.internal_algorithms.volume>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.volume
+    :summary:
+    ```
+* - {py:obj}`vorticity <vtkmodules.numpy_interface.internal_algorithms.vorticity>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.vorticity
+    :summary:
+    ```
+* - {py:obj}`vertex_normal <vtkmodules.numpy_interface.internal_algorithms.vertex_normal>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.vertex_normal
+    :summary:
+    ```
+* - {py:obj}`make_vector <vtkmodules.numpy_interface.internal_algorithms.make_vector>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.make_vector
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} _cell_derivatives(narray, dataset, attribute_type, filter)
+:canonical: vtkmodules.numpy_interface.internal_algorithms._cell_derivatives
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms._cell_derivatives
+```
+````
+
+````{py:function} _cell_quality(dataset, quality)
+:canonical: vtkmodules.numpy_interface.internal_algorithms._cell_quality
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms._cell_quality
+```
+````
+
+````{py:function} _matrix_math_filter(narray, operation)
+:canonical: vtkmodules.numpy_interface.internal_algorithms._matrix_math_filter
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms._matrix_math_filter
+```
+````
+
+````{py:function} abs(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.abs
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.abs
+```
+````
+
+````{py:function} all(narray, axis=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.all
+```
+````
+
+````{py:function} area(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.area
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.area
+```
+````
+
+````{py:function} aspect(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.aspect
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.aspect
+```
+````
+
+````{py:function} aspect_gamma(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.aspect_gamma
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.aspect_gamma
+```
+````
+
+````{py:function} condition(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.condition
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.condition
+```
+````
+
+````{py:function} cross(x, y)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.cross
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.cross
+```
+````
+
+````{py:function} curl(narray, dataset=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.curl
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.curl
+```
+````
+
+````{py:function} divergence(narray, dataset=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.divergence
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.divergence
+```
+````
+
+````{py:function} det(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.det
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.det
+```
+````
+
+````{py:function} determinant(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.determinant
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.determinant
+```
+````
+
+````{py:function} diagonal(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.diagonal
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.diagonal
+```
+````
+
+````{py:function} dot(a1, a2)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.dot
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.dot
+```
+````
+
+````{py:function} eigenvalue(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.eigenvalue
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.eigenvalue
+```
+````
+
+````{py:function} eigenvector(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.eigenvector
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.eigenvector
+```
+````
+
+````{py:function} gradient(narray, dataset=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.gradient
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.gradient
+```
+````
+
+````{py:function} inv(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.inv
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.inv
+```
+````
+
+````{py:function} inverse(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.inverse
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.inverse
+```
+````
+
+````{py:function} jacobian(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.jacobian
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.jacobian
+```
+````
+
+````{py:function} laplacian(narray, dataset=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.laplacian
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.laplacian
+```
+````
+
+````{py:function} ln(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.ln
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.ln
+```
+````
+
+````{py:function} log(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.log
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.log
+```
+````
+
+````{py:function} log10(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.log10
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.log10
+```
+````
+
+````{py:function} max(narray, axis=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.max
+```
+````
+
+````{py:function} max_angle(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.max_angle
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.max_angle
+```
+````
+
+````{py:function} mag(a)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.mag
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.mag
+```
+````
+
+````{py:function} matmul(a, b)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.matmul
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.matmul
+```
+````
+
+````{py:function} mean(narray, axis=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.mean
+```
+````
+
+````{py:function} min(narray, axis=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.min
+```
+````
+
+````{py:function} min_angle(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.min_angle
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.min_angle
+```
+````
+
+````{py:function} norm(a)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.norm
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.norm
+```
+````
+
+````{py:function} shear(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.shear
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.shear
+```
+````
+
+````{py:function} skew(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.skew
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.skew
+```
+````
+
+````{py:function} strain(narray, dataset=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.strain
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.strain
+```
+````
+
+````{py:function} sum(narray, axis=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.sum
+```
+````
+
+````{py:function} surface_normal(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.surface_normal
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.surface_normal
+```
+````
+
+````{py:function} trace(narray)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.trace
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.trace
+```
+````
+
+````{py:function} var(narray, axis=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.var
+```
+````
+
+````{py:function} volume(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.volume
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.volume
+```
+````
+
+````{py:function} vorticity(narray, dataset=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.vorticity
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.vorticity
+```
+````
+
+````{py:function} vertex_normal(dataset)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.vertex_normal
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.vertex_normal
+```
+````
+
+````{py:function} make_vector(ax, ay, az=None)
+:canonical: vtkmodules.numpy_interface.internal_algorithms.make_vector
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.internal_algorithms.make_vector
+```
+````

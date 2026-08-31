@@ -1,0 +1,381 @@
+# {py:mod}`vtkmodules.gtk.GtkVTKRenderWindow`
+
+```{py:module} vtkmodules.gtk.GtkVTKRenderWindow
+```
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`GtkVTKRenderWindowBase <vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase>`
+  - ```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase
+    :summary:
+    ```
+* - {py:obj}`GtkVTKRenderWindow <vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow>`
+  - ```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`main <vtkmodules.gtk.GtkVTKRenderWindow.main>`
+  - ```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.main
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} GtkVTKRenderWindowBase(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase
+
+Bases: {py:obj}`gtkgl.GtkGLArea`
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.__init__
+```
+
+````{py:method} ConnectSignals()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.ConnectSignals
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.ConnectSignals
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetRenderWindow
+```
+
+````
+
+````{py:method} GetRenderer()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetRenderer
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetRenderer
+```
+
+````
+
+````{py:method} SetDesiredUpdateRate(rate)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.SetDesiredUpdateRate
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.SetDesiredUpdateRate
+```
+
+````
+
+````{py:method} GetDesiredUpdateRate()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetDesiredUpdateRate
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetDesiredUpdateRate
+```
+
+````
+
+````{py:method} SetStillUpdateRate(rate)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.SetStillUpdateRate
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.SetStillUpdateRate
+```
+
+````
+
+````{py:method} GetStillUpdateRate()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetStillUpdateRate
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.GetStillUpdateRate
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.Render
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.Render
+```
+
+````
+
+````{py:method} OnRealize(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnRealize
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnRealize
+```
+
+````
+
+````{py:method} OnConfigure(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnConfigure
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnConfigure
+```
+
+````
+
+````{py:method} OnExpose(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnExpose
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnExpose
+```
+
+````
+
+````{py:method} OnDestroy(event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnDestroy
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnDestroy
+```
+
+````
+
+````{py:method} OnButtonDown(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnButtonDown
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnButtonDown
+```
+
+````
+
+````{py:method} OnButtonUp(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnButtonUp
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnButtonUp
+```
+
+````
+
+````{py:method} OnMouseMove(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnMouseMove
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnMouseMove
+```
+
+````
+
+````{py:method} OnEnter(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnEnter
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnEnter
+```
+
+````
+
+````{py:method} OnLeave(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnLeave
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnLeave
+```
+
+````
+
+````{py:method} OnKeyPress(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnKeyPress
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnKeyPress
+```
+
+````
+
+````{py:method} OnKeyRelease(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnKeyRelease
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase.OnKeyRelease
+```
+
+````
+
+`````
+
+`````{py:class} GtkVTKRenderWindow(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow
+
+Bases: {py:obj}`vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindowBase`
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.__init__
+```
+
+````{py:method} OnButtonDown(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.OnButtonDown
+
+````
+
+````{py:method} OnButtonUp(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.OnButtonUp
+
+````
+
+````{py:method} OnMouseMove(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.OnMouseMove
+
+````
+
+````{py:method} OnEnter(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.OnEnter
+
+````
+
+````{py:method} OnLeave(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.OnLeave
+
+````
+
+````{py:method} OnKeyPress(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.OnKeyPress
+
+````
+
+````{py:method} GetZoomFactor()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.GetZoomFactor
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.GetZoomFactor
+```
+
+````
+
+````{py:method} SetZoomFactor(zf)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.SetZoomFactor
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.SetZoomFactor
+```
+
+````
+
+````{py:method} GetPicker()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.GetPicker
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.GetPicker
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Render
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Render
+```
+
+````
+
+````{py:method} UpdateRenderer(x, y)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.UpdateRenderer
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.UpdateRenderer
+```
+
+````
+
+````{py:method} GetCurrentRenderer()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.GetCurrentRenderer
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.GetCurrentRenderer
+```
+
+````
+
+````{py:method} StartMotion(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.StartMotion
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.StartMotion
+```
+
+````
+
+````{py:method} EndMotion(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.EndMotion
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.EndMotion
+```
+
+````
+
+````{py:method} Rotate(x, y)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Rotate
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Rotate
+```
+
+````
+
+````{py:method} Pan(x, y)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Pan
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Pan
+```
+
+````
+
+````{py:method} Zoom(x, y)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Zoom
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Zoom
+```
+
+````
+
+````{py:method} Reset()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Reset
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Reset
+```
+
+````
+
+````{py:method} Wireframe()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Wireframe
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Wireframe
+```
+
+````
+
+````{py:method} Surface()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Surface
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.Surface
+```
+
+````
+
+````{py:method} PickActor(x, y)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.PickActor
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.GtkVTKRenderWindow.PickActor
+```
+
+````
+
+`````
+
+````{py:function} main()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindow.main
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindow.main
+```
+````

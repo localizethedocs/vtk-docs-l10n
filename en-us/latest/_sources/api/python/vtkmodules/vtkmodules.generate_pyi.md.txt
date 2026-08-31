@@ -1,0 +1,459 @@
+# {py:mod}`vtkmodules.generate_pyi`
+
+```{py:module} vtkmodules.generate_pyi
+```
+
+```{autodoc2-docstring} vtkmodules.generate_pyi
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`Graph <vtkmodules.generate_pyi.Graph>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.Graph
+    :summary:
+    ```
+* - {py:obj}`Node <vtkmodules.generate_pyi.Node>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.Node
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`isvtkmethod <vtkmodules.generate_pyi.isvtkmethod>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.isvtkmethod
+    :summary:
+    ```
+* - {py:obj}`isnamespace <vtkmodules.generate_pyi.isnamespace>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.isnamespace
+    :summary:
+    ```
+* - {py:obj}`isenum <vtkmodules.generate_pyi.isenum>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.isenum
+    :summary:
+    ```
+* - {py:obj}`typename <vtkmodules.generate_pyi.typename>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.typename
+    :summary:
+    ```
+* - {py:obj}`typename_forward <vtkmodules.generate_pyi.typename_forward>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.typename_forward
+    :summary:
+    ```
+* - {py:obj}`build_graph <vtkmodules.generate_pyi.build_graph>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.build_graph
+    :summary:
+    ```
+* - {py:obj}`sorted_graph_helper <vtkmodules.generate_pyi.sorted_graph_helper>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.sorted_graph_helper
+    :summary:
+    ```
+* - {py:obj}`sorted_graph <vtkmodules.generate_pyi.sorted_graph>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.sorted_graph
+    :summary:
+    ```
+* - {py:obj}`topologically_sorted_items <vtkmodules.generate_pyi.topologically_sorted_items>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.topologically_sorted_items
+    :summary:
+    ```
+* - {py:obj}`parse_error <vtkmodules.generate_pyi.parse_error>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.parse_error
+    :summary:
+    ```
+* - {py:obj}`annotation_text <vtkmodules.generate_pyi.annotation_text>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.annotation_text
+    :summary:
+    ```
+* - {py:obj}`fix_annotations <vtkmodules.generate_pyi.fix_annotations>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.fix_annotations
+    :summary:
+    ```
+* - {py:obj}`push_signature <vtkmodules.generate_pyi.push_signature>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.push_signature
+    :summary:
+    ```
+* - {py:obj}`get_signatures <vtkmodules.generate_pyi.get_signatures>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.get_signatures
+    :summary:
+    ```
+* - {py:obj}`get_constructors <vtkmodules.generate_pyi.get_constructors>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.get_constructors
+    :summary:
+    ```
+* - {py:obj}`handle_static <vtkmodules.generate_pyi.handle_static>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.handle_static
+    :summary:
+    ```
+* - {py:obj}`add_indent <vtkmodules.generate_pyi.add_indent>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.add_indent
+    :summary:
+    ```
+* - {py:obj}`namespace_pyi <vtkmodules.generate_pyi.namespace_pyi>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.namespace_pyi
+    :summary:
+    ```
+* - {py:obj}`class_pyi <vtkmodules.generate_pyi.class_pyi>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.class_pyi
+    :summary:
+    ```
+* - {py:obj}`module_pyi <vtkmodules.generate_pyi.module_pyi>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.module_pyi
+    :summary:
+    ```
+* - {py:obj}`main <vtkmodules.generate_pyi.main>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.main
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`types <vtkmodules.generate_pyi.types>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.types
+    :summary:
+    ```
+* - {py:obj}`ismethod <vtkmodules.generate_pyi.ismethod>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.ismethod
+    :summary:
+    ```
+* - {py:obj}`isclass <vtkmodules.generate_pyi.isclass>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.isclass
+    :summary:
+    ```
+* - {py:obj}`vtkmethod <vtkmodules.generate_pyi.vtkmethod>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.vtkmethod
+    :summary:
+    ```
+* - {py:obj}`template <vtkmodules.generate_pyi.template>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.template
+    :summary:
+    ```
+* - {py:obj}`string <vtkmodules.generate_pyi.string>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.string
+    :summary:
+    ```
+* - {py:obj}`identifier <vtkmodules.generate_pyi.identifier>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.identifier
+    :summary:
+    ```
+* - {py:obj}`indent <vtkmodules.generate_pyi.indent>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.indent
+    :summary:
+    ```
+* - {py:obj}`has_self <vtkmodules.generate_pyi.has_self>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.has_self
+    :summary:
+    ```
+* - {py:obj}`keychar <vtkmodules.generate_pyi.keychar>`
+  - ```{autodoc2-docstring} vtkmodules.generate_pyi.keychar
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} types
+:canonical: vtkmodules.generate_pyi.types
+:value: >
+   'set(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.types
+```
+
+````
+
+````{py:data} ismethod
+:canonical: vtkmodules.generate_pyi.ismethod
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.ismethod
+```
+
+````
+
+````{py:data} isclass
+:canonical: vtkmodules.generate_pyi.isclass
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.isclass
+```
+
+````
+
+````{py:data} vtkmethod
+:canonical: vtkmodules.generate_pyi.vtkmethod
+:value: >
+   'type(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.vtkmethod
+```
+
+````
+
+````{py:data} template
+:canonical: vtkmodules.generate_pyi.template
+:value: >
+   'type(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.template
+```
+
+````
+
+````{py:function} isvtkmethod(m)
+:canonical: vtkmodules.generate_pyi.isvtkmethod
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.isvtkmethod
+```
+````
+
+````{py:function} isnamespace(m)
+:canonical: vtkmodules.generate_pyi.isnamespace
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.isnamespace
+```
+````
+
+````{py:function} isenum(m)
+:canonical: vtkmodules.generate_pyi.isenum
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.isenum
+```
+````
+
+````{py:function} typename(o)
+:canonical: vtkmodules.generate_pyi.typename
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.typename
+```
+````
+
+````{py:function} typename_forward(o)
+:canonical: vtkmodules.generate_pyi.typename_forward
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.typename_forward
+```
+````
+
+`````{py:class} Graph()
+:canonical: vtkmodules.generate_pyi.Graph
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.Graph
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.Graph.__init__
+```
+
+````{py:method} __getitem__(name)
+:canonical: vtkmodules.generate_pyi.Graph.__getitem__
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.Graph.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(name, node)
+:canonical: vtkmodules.generate_pyi.Graph.__setitem__
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.Graph.__setitem__
+```
+
+````
+
+`````
+
+````{py:class} Node(o, d)
+:canonical: vtkmodules.generate_pyi.Node
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.Node
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.Node.__init__
+```
+
+````
+
+````{py:function} build_graph(d)
+:canonical: vtkmodules.generate_pyi.build_graph
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.build_graph
+```
+````
+
+````{py:function} sorted_graph_helper(graph, m, visited, items)
+:canonical: vtkmodules.generate_pyi.sorted_graph_helper
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.sorted_graph_helper
+```
+````
+
+````{py:function} sorted_graph(graph)
+:canonical: vtkmodules.generate_pyi.sorted_graph
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.sorted_graph
+```
+````
+
+````{py:function} topologically_sorted_items(d)
+:canonical: vtkmodules.generate_pyi.topologically_sorted_items
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.topologically_sorted_items
+```
+````
+
+````{py:data} string
+:canonical: vtkmodules.generate_pyi.string
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.string
+```
+
+````
+
+````{py:data} identifier
+:canonical: vtkmodules.generate_pyi.identifier
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.identifier
+```
+
+````
+
+````{py:data} indent
+:canonical: vtkmodules.generate_pyi.indent
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.indent
+```
+
+````
+
+````{py:data} has_self
+:canonical: vtkmodules.generate_pyi.has_self
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.has_self
+```
+
+````
+
+````{py:data} keychar
+:canonical: vtkmodules.generate_pyi.keychar
+:value: >
+   'compile(...)'
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.keychar
+```
+
+````
+
+````{py:function} parse_error(message, text, begin, pos)
+:canonical: vtkmodules.generate_pyi.parse_error
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.parse_error
+```
+````
+
+````{py:function} annotation_text(a, text, is_return)
+:canonical: vtkmodules.generate_pyi.annotation_text
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.annotation_text
+```
+````
+
+````{py:function} fix_annotations(signature)
+:canonical: vtkmodules.generate_pyi.fix_annotations
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.fix_annotations
+```
+````
+
+````{py:function} push_signature(o, l, signature)
+:canonical: vtkmodules.generate_pyi.push_signature
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.push_signature
+```
+````
+
+````{py:function} get_signatures(o)
+:canonical: vtkmodules.generate_pyi.get_signatures
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.get_signatures
+```
+````
+
+````{py:function} get_constructors(c)
+:canonical: vtkmodules.generate_pyi.get_constructors
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.get_constructors
+```
+````
+
+````{py:function} handle_static(o, signature)
+:canonical: vtkmodules.generate_pyi.handle_static
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.handle_static
+```
+````
+
+````{py:function} add_indent(s, indent)
+:canonical: vtkmodules.generate_pyi.add_indent
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.add_indent
+```
+````
+
+````{py:function} namespace_pyi(c, mod)
+:canonical: vtkmodules.generate_pyi.namespace_pyi
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.namespace_pyi
+```
+````
+
+````{py:function} class_pyi(c)
+:canonical: vtkmodules.generate_pyi.class_pyi
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.class_pyi
+```
+````
+
+````{py:function} module_pyi(mod, output)
+:canonical: vtkmodules.generate_pyi.module_pyi
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.module_pyi
+```
+````
+
+````{py:function} main(argv=sys.argv)
+:canonical: vtkmodules.generate_pyi.main
+
+```{autodoc2-docstring} vtkmodules.generate_pyi.main
+```
+````

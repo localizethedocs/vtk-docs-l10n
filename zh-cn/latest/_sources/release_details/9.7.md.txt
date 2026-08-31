@@ -1,0 +1,48 @@
+# 9.7
+
+Released on 2026-08-14.
+
+```{include} ../../release/_9.7-stripped.md
+:relative-images:
+:heading-offset: 1
+```
+
+```{toctree}
+:hidden:
+
+9.7/add-amr-contour-filter
+9.7/add-camera-manipulators
+9.7/add-geometry-and-feature-edges-dispatchers
+9.7/add-setbuffer-to-data-arrays
+9.7/add-voronoi-framework
+9.7/add-vtkAbstractArray-reserve-and-capacity
+9.7/add-vtkGetConstObjectMacro
+9.7/add-vtkJumpAndWalkCellLocator
+9.7/add-vtkSurfaceNetsAtlas
+9.7/add-vtkWeakPtr
+9.7/add_pch_option_in_build
+9.7/amr-ghost-cell-support
+9.7/anari-materials-library-support
+9.7/cell-locators-tolerance
+9.7/deprecate-classes-functions-that-use-GetVoidPointer
+9.7/deprecation-removals
+9.7/fix-wedge-point-ordering
+9.7/hardware-windows-and-wayland
+9.7/improve-cell-grid-probing
+9.7/iofides-supports-conduit
+9.7/linear-cells-improvements
+9.7/mesh-cache-improvements
+9.7/mpas-primary-grid
+9.7/numpy-compatible-array-mixins
+9.7/polyhedron-lopez-algorithm
+9.7/replace-GetVoidPointer-usages
+9.7/volume-rendering-16bit-wasm
+9.7/vtkBatchedLabeledDataMapper-implementation
+9.7/vtkBuffer-in-python
+9.7/vtkCellGrid-improvements
+9.7/vtkCollection-add-support-for-range-based-for-loops
+9.7/vtkCollection-refactor-to-use-stdvector
+9.7/vtkCollection-sequence-protocol
+9.7/vtkSurfaceNets3D-non-manifold-improvements
+9.7/vtkhdf-improvements
+```

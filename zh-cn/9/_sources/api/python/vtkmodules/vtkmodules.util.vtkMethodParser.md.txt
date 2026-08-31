@@ -1,0 +1,221 @@
+# {py:mod}`vtkmodules.util.vtkMethodParser`
+
+```{py:module} vtkmodules.util.vtkMethodParser
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VtkDirMethodParser <vtkmodules.util.vtkMethodParser.VtkDirMethodParser>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser
+    :summary:
+    ```
+* - {py:obj}`VtkPrintMethodParser <vtkmodules.util.vtkMethodParser.VtkPrintMethodParser>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`debug <vtkmodules.util.vtkMethodParser.debug>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.debug
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`DEBUG <vtkmodules.util.vtkMethodParser.DEBUG>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.DEBUG
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} DEBUG
+:canonical: vtkmodules.util.vtkMethodParser.DEBUG
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.DEBUG
+```
+
+````
+
+````{py:function} debug(msg)
+:canonical: vtkmodules.util.vtkMethodParser.debug
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.debug
+```
+````
+
+`````{py:class} VtkDirMethodParser
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser
+```
+
+````{py:method} initialize_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.initialize_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.initialize_methods
+```
+
+````
+
+````{py:method} parse_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.parse_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.parse_methods
+```
+
+````
+
+````{py:method} clean_up_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_up_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_up_methods
+```
+
+````
+
+````{py:method} clean_get_set(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_get_set
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_get_set
+```
+
+````
+
+````{py:method} clean_state_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_state_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_state_methods
+```
+
+````
+
+````{py:method} clean_get_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_get_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.clean_get_methods
+```
+
+````
+
+````{py:method} toggle_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.toggle_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.toggle_methods
+```
+
+````
+
+````{py:method} state_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.state_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.state_methods
+```
+
+````
+
+````{py:method} get_set_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.get_set_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.get_set_methods
+```
+
+````
+
+````{py:method} get_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkDirMethodParser.get_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkDirMethodParser.get_methods
+```
+
+````
+
+`````
+
+`````{py:class} VtkPrintMethodParser
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser
+```
+
+````{py:method} parse_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.parse_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.parse_methods
+```
+
+````
+
+````{py:method} _get_str_obj(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser._get_str_obj
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser._get_str_obj
+```
+
+````
+
+````{py:method} _initialize_methods(vtk_obj)
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser._initialize_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser._initialize_methods
+```
+
+````
+
+````{py:method} toggle_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.toggle_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.toggle_methods
+```
+
+````
+
+````{py:method} state_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.state_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.state_methods
+```
+
+````
+
+````{py:method} get_set_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.get_set_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.get_set_methods
+```
+
+````
+
+````{py:method} get_methods()
+:canonical: vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.get_methods
+
+```{autodoc2-docstring} vtkmodules.util.vtkMethodParser.VtkPrintMethodParser.get_methods
+```
+
+````
+
+`````

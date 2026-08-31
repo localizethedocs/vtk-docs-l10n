@@ -1,0 +1,585 @@
+# {py:mod}`vtkmodules.numpy_interface.vtk_structured_point_array`
+
+```{py:module} vtkmodules.numpy_interface.vtk_structured_point_array
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKStructuredAxisArray <vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray
+    :summary:
+    ```
+* - {py:obj}`VTKStructuredPointArray <vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_override_structured_point_numpy <vtkmodules.numpy_interface.vtk_structured_point_array._override_structured_point_numpy>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._override_structured_point_numpy
+    :summary:
+    ```
+* - {py:obj}`_sp_sum <vtkmodules.numpy_interface.vtk_structured_point_array._sp_sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_sum
+    :summary:
+    ```
+* - {py:obj}`_sp_min <vtkmodules.numpy_interface.vtk_structured_point_array._sp_min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_min
+    :summary:
+    ```
+* - {py:obj}`_sp_max <vtkmodules.numpy_interface.vtk_structured_point_array._sp_max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_max
+    :summary:
+    ```
+* - {py:obj}`_sp_mean <vtkmodules.numpy_interface.vtk_structured_point_array._sp_mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_mean
+    :summary:
+    ```
+* - {py:obj}`_add_template_type_aliases <vtkmodules.numpy_interface.vtk_structured_point_array._add_template_type_aliases>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._add_template_type_aliases
+    :summary:
+    ```
+* - {py:obj}`_register_structured_point_overrides <vtkmodules.numpy_interface.vtk_structured_point_array._register_structured_point_overrides>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._register_structured_point_overrides
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_STRUCTURED_POINT_OVERRIDE <vtkmodules.numpy_interface.vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE
+    :summary:
+    ```
+* - {py:obj}`_VTKTYPE_TO_MANGLING <vtkmodules.numpy_interface.vtk_structured_point_array._VTKTYPE_TO_MANGLING>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._VTKTYPE_TO_MANGLING
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _STRUCTURED_POINT_OVERRIDE
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE
+```
+
+````
+
+````{py:function} _override_structured_point_numpy(numpy_function)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._override_structured_point_numpy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._override_structured_point_numpy
+```
+````
+
+`````{py:class} VTKStructuredAxisArray(values, axis, dims, dataset=None)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__init__
+```
+
+````{py:property} shape
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.shape
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.shape
+```
+
+````
+
+````{py:property} dtype
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.dtype
+```
+
+````
+
+````{py:property} ndim
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.ndim
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.ndim
+```
+
+````
+
+````{py:property} size
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.size
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.size
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__len__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__len__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__repr__
+
+````
+
+````{py:method} __array__(dtype=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__array__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__getitem__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__array_ufunc__
+```
+
+````
+
+````{py:method} __add__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__add__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__add__
+```
+
+````
+
+````{py:method} __radd__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__radd__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__radd__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__sub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rsub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rsub__
+```
+
+````
+
+````{py:method} __mul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__mul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__mul__
+```
+
+````
+
+````{py:method} __rmul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rmul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rmul__
+```
+
+````
+
+````{py:method} __truediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__truediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__truediv__
+```
+
+````
+
+````{py:method} __rtruediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rtruediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rtruediv__
+```
+
+````
+
+````{py:method} __neg__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__neg__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__neg__
+```
+
+````
+
+````{py:method} __pow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__pow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__pow__
+```
+
+````
+
+````{py:method} __rpow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rpow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray.__rpow__
+```
+
+````
+
+`````
+
+`````{py:class} VTKStructuredPointArray(*args, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray
+
+Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__init__
+```
+
+````{py:method} from_axes(axis_arrays, dims=None)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.from_axes
+:classmethod:
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.from_axes
+```
+
+````
+
+````{py:method} _get_axis_arrays()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._get_axis_arrays
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._get_axis_arrays
+```
+
+````
+
+````{py:method} _get_dims()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._get_dims
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._get_dims
+```
+
+````
+
+````{py:method} _uses_dir_matrix()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._uses_dir_matrix
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._uses_dir_matrix
+```
+
+````
+
+````{py:property} dtype
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.dtype
+```
+
+````
+
+````{py:property} nbytes
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.nbytes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.nbytes
+```
+
+````
+
+````{py:method} _materialize(dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._materialize
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray._materialize
+```
+
+````
+
+````{py:method} to_numpy(dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.to_numpy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.to_numpy
+```
+
+````
+
+````{py:method} __array__(dtype=None, copy=None)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__array__
+```
+
+````
+
+````{py:method} __buffer__(flags)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__buffer__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__buffer__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(key, value)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__setitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__setitem__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__array_ufunc__
+```
+
+````
+
+````{py:method} __array_function__(func, types, args, kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__array_function__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__array_function__
+```
+
+````
+
+````{py:method} __add__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__add__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__add__
+```
+
+````
+
+````{py:method} __radd__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__radd__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__radd__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__sub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__rsub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__rsub__
+```
+
+````
+
+````{py:method} __mul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__mul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__mul__
+```
+
+````
+
+````{py:method} __rmul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__rmul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__rmul__
+```
+
+````
+
+````{py:method} __truediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__truediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__truediv__
+```
+
+````
+
+````{py:method} __rtruediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__rtruediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__rtruediv__
+```
+
+````
+
+````{py:method} __neg__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__neg__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__neg__
+```
+
+````
+
+````{py:method} __pos__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__pos__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__pos__
+```
+
+````
+
+````{py:method} __abs__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__abs__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__abs__
+```
+
+````
+
+````{py:method} __lt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__lt__
+
+````
+
+````{py:method} __le__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__le__
+
+````
+
+````{py:method} __eq__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__eq__
+
+````
+
+````{py:method} __ne__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__ne__
+
+````
+
+````{py:method} __ge__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__ge__
+
+````
+
+````{py:method} __gt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__gt__
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__repr__
+
+````
+
+````{py:method} __str__()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray.__str__
+
+````
+
+`````
+
+````{py:function} _sp_sum(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._sp_sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_sum
+```
+````
+
+````{py:function} _sp_min(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._sp_min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_min
+```
+````
+
+````{py:function} _sp_max(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._sp_max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_max
+```
+````
+
+````{py:function} _sp_mean(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._sp_mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._sp_mean
+```
+````
+
+````{py:data} _VTKTYPE_TO_MANGLING
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._VTKTYPE_TO_MANGLING
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._VTKTYPE_TO_MANGLING
+```
+
+````
+
+````{py:function} _add_template_type_aliases(template_cls, prefix)
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._add_template_type_aliases
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._add_template_type_aliases
+```
+````
+
+````{py:function} _register_structured_point_overrides()
+:canonical: vtkmodules.numpy_interface.vtk_structured_point_array._register_structured_point_overrides
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_structured_point_array._register_structured_point_overrides
+```
+````

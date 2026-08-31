@@ -1,0 +1,553 @@
+# {py:mod}`vtkmodules.numpy_interface.vtk_strided_array`
+
+```{py:module} vtkmodules.numpy_interface.vtk_strided_array
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKStridedArray <vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_strided_sum <vtkmodules.numpy_interface.vtk_strided_array._strided_sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_sum
+    :summary:
+    ```
+* - {py:obj}`_strided_mean <vtkmodules.numpy_interface.vtk_strided_array._strided_mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_mean
+    :summary:
+    ```
+* - {py:obj}`_strided_min <vtkmodules.numpy_interface.vtk_strided_array._strided_min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_min
+    :summary:
+    ```
+* - {py:obj}`_strided_max <vtkmodules.numpy_interface.vtk_strided_array._strided_max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_max
+    :summary:
+    ```
+* - {py:obj}`_strided_std <vtkmodules.numpy_interface.vtk_strided_array._strided_std>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_std
+    :summary:
+    ```
+* - {py:obj}`_strided_var <vtkmodules.numpy_interface.vtk_strided_array._strided_var>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_var
+    :summary:
+    ```
+* - {py:obj}`_strided_any <vtkmodules.numpy_interface.vtk_strided_array._strided_any>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_any
+    :summary:
+    ```
+* - {py:obj}`_strided_all <vtkmodules.numpy_interface.vtk_strided_array._strided_all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_all
+    :summary:
+    ```
+* - {py:obj}`_strided_prod <vtkmodules.numpy_interface.vtk_strided_array._strided_prod>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_prod
+    :summary:
+    ```
+* - {py:obj}`_strided_concatenate <vtkmodules.numpy_interface.vtk_strided_array._strided_concatenate>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_concatenate
+    :summary:
+    ```
+* - {py:obj}`_register_strided_overrides <vtkmodules.numpy_interface.vtk_strided_array._register_strided_overrides>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._register_strided_overrides
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} VTKStridedArray(buffer=None, stride=1, offset=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray
+
+Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__init__
+```
+
+````{py:method} ConstructBackend(buffer, stride, components=None, offset=None)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.ConstructBackend
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.ConstructBackend
+```
+
+````
+
+````{py:method} _get_buffer_numpy()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray._get_buffer_numpy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray._get_buffer_numpy
+```
+
+````
+
+````{py:property} stride
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.stride
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.stride
+```
+
+````
+
+````{py:property} offset
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.offset
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.offset
+```
+
+````
+
+````{py:property} dtype
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.dtype
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.dtype
+```
+
+````
+
+````{py:property} nbytes
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.nbytes
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.nbytes
+```
+
+````
+
+````{py:method} to_numpy(dtype=None)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.to_numpy
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.to_numpy
+```
+
+````
+
+````{py:method} __array__(dtype=None, copy=None)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__array__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__array__
+```
+
+````
+
+````{py:method} __buffer__(flags)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__buffer__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__buffer__
+```
+
+````
+
+````{py:method} __array_ufunc__(ufunc, method, *inputs, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__array_ufunc__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__array_ufunc__
+```
+
+````
+
+````{py:method} __array_function__(func, types, args, kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__array_function__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__array_function__
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__getitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(key, value)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__setitem__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__setitem__
+```
+
+````
+
+````{py:method} __add__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__add__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__add__
+```
+
+````
+
+````{py:method} __radd__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__radd__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__radd__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__sub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rsub__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rsub__
+```
+
+````
+
+````{py:method} __mul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__mul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__mul__
+```
+
+````
+
+````{py:method} __rmul__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rmul__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rmul__
+```
+
+````
+
+````{py:method} __truediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__truediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__truediv__
+```
+
+````
+
+````{py:method} __rtruediv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rtruediv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rtruediv__
+```
+
+````
+
+````{py:method} __floordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__floordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__floordiv__
+```
+
+````
+
+````{py:method} __rfloordiv__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rfloordiv__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rfloordiv__
+```
+
+````
+
+````{py:method} __pow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__pow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__pow__
+```
+
+````
+
+````{py:method} __rpow__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rpow__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rpow__
+```
+
+````
+
+````{py:method} __mod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__mod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__mod__
+```
+
+````
+
+````{py:method} __rmod__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rmod__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__rmod__
+```
+
+````
+
+````{py:method} __lt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__lt__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__lt__
+```
+
+````
+
+````{py:method} __le__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__le__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__le__
+```
+
+````
+
+````{py:method} __eq__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__eq__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__eq__
+```
+
+````
+
+````{py:method} __ne__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__ne__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__ne__
+```
+
+````
+
+````{py:method} __ge__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__ge__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__ge__
+```
+
+````
+
+````{py:method} __gt__(other)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__gt__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__gt__
+```
+
+````
+
+````{py:method} __neg__()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__neg__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__neg__
+```
+
+````
+
+````{py:method} __pos__()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__pos__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__pos__
+```
+
+````
+
+````{py:method} __abs__()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__abs__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__abs__
+```
+
+````
+
+````{py:method} sum(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.sum
+```
+
+````
+
+````{py:method} min(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.min
+```
+
+````
+
+````{py:method} max(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.max
+```
+
+````
+
+````{py:method} mean(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.mean
+```
+
+````
+
+````{py:method} std(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.std
+```
+
+````
+
+````{py:method} var(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.var
+```
+
+````
+
+````{py:method} any(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.any
+```
+
+````
+
+````{py:method} all(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.all
+```
+
+````
+
+````{py:method} prod(axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.prod
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__iter__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__repr__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__repr__
+```
+
+````
+
+````{py:method} __str__()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__str__
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array.VTKStridedArray.__str__
+```
+
+````
+
+`````
+
+````{py:function} _strided_sum(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_sum
+```
+````
+
+````{py:function} _strided_mean(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_mean
+```
+````
+
+````{py:function} _strided_min(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_min
+```
+````
+
+````{py:function} _strided_max(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_max
+```
+````
+
+````{py:function} _strided_std(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_std
+```
+````
+
+````{py:function} _strided_var(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_var
+```
+````
+
+````{py:function} _strided_any(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_any
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_any
+```
+````
+
+````{py:function} _strided_all(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_all
+```
+````
+
+````{py:function} _strided_prod(a, axis=None, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_prod
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_prod
+```
+````
+
+````{py:function} _strided_concatenate(arrays, axis=0, **kwargs)
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._strided_concatenate
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._strided_concatenate
+```
+````
+
+````{py:function} _register_strided_overrides()
+:canonical: vtkmodules.numpy_interface.vtk_strided_array._register_strided_overrides
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.vtk_strided_array._register_strided_overrides
+```
+````

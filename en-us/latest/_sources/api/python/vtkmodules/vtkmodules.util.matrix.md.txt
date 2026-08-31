@@ -1,0 +1,183 @@
+# {py:mod}`vtkmodules.util.matrix`
+
+```{py:module} vtkmodules.util.matrix
+```
+
+```{autodoc2-docstring} vtkmodules.util.matrix
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_MatrixMixin <vtkmodules.util.matrix._MatrixMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin
+    :summary:
+    ```
+* - {py:obj}`Matrix3x3 <vtkmodules.util.matrix.Matrix3x3>`
+  -
+* - {py:obj}`Matrix4x4 <vtkmodules.util.matrix.Matrix4x4>`
+  -
+````
+
+### API
+
+`````{py:class} _MatrixMixin(*args, **kwargs)
+:canonical: vtkmodules.util.matrix._MatrixMixin
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin.__init__
+```
+
+````{py:method} _init_from_data(data)
+:canonical: vtkmodules.util.matrix._MatrixMixin._init_from_data
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin._init_from_data
+```
+
+````
+
+````{py:method} _normalize_index(index, axis='row')
+:canonical: vtkmodules.util.matrix._MatrixMixin._normalize_index
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin._normalize_index
+```
+
+````
+
+````{py:method} _resolve_indices(key)
+:canonical: vtkmodules.util.matrix._MatrixMixin._resolve_indices
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin._resolve_indices
+```
+
+````
+
+````{py:method} _to_indices(key, axis)
+:canonical: vtkmodules.util.matrix._MatrixMixin._to_indices
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin._to_indices
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.matrix._MatrixMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(key, value)
+:canonical: vtkmodules.util.matrix._MatrixMixin.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin.__setitem__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.matrix._MatrixMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin.__len__
+```
+
+````
+
+````{py:method} __eq__(other)
+:canonical: vtkmodules.util.matrix._MatrixMixin.__eq__
+
+````
+
+````{py:method} __ne__(other)
+:canonical: vtkmodules.util.matrix._MatrixMixin.__ne__
+
+````
+
+````{py:method} __matmul__(other)
+:canonical: vtkmodules.util.matrix._MatrixMixin.__matmul__
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin.__matmul__
+```
+
+````
+
+````{py:method} __invert__()
+:canonical: vtkmodules.util.matrix._MatrixMixin.__invert__
+
+```{autodoc2-docstring} vtkmodules.util.matrix._MatrixMixin.__invert__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.matrix._MatrixMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} Matrix3x3(*args, **kwargs)
+:canonical: vtkmodules.util.matrix.Matrix3x3
+
+Bases: {py:obj}`vtkmodules.util.matrix._MatrixMixin`, {py:obj}`vtkmodules.vtkCommonMath.vtkMatrix3x3`
+
+````{py:attribute} _size
+:canonical: vtkmodules.util.matrix.Matrix3x3._size
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.matrix.Matrix3x3._size
+```
+
+````
+
+````{py:attribute} _multiply
+:canonical: vtkmodules.util.matrix.Matrix3x3._multiply
+:value: >
+   'staticmethod(...)'
+
+```{autodoc2-docstring} vtkmodules.util.matrix.Matrix3x3._multiply
+```
+
+````
+
+`````
+
+`````{py:class} Matrix4x4(*args, **kwargs)
+:canonical: vtkmodules.util.matrix.Matrix4x4
+
+Bases: {py:obj}`vtkmodules.util.matrix._MatrixMixin`, {py:obj}`vtkmodules.vtkCommonMath.vtkMatrix4x4`
+
+````{py:attribute} _size
+:canonical: vtkmodules.util.matrix.Matrix4x4._size
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.matrix.Matrix4x4._size
+```
+
+````
+
+````{py:attribute} _multiply
+:canonical: vtkmodules.util.matrix.Matrix4x4._multiply
+:value: >
+   'staticmethod(...)'
+
+```{autodoc2-docstring} vtkmodules.util.matrix.Matrix4x4._multiply
+```
+
+````
+
+`````
