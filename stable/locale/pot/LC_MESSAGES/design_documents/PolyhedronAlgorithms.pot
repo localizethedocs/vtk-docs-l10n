@@ -1,0 +1,1807 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:1
+msgid "vtkPolyhedron Contour, Clip, and IsInside Algorithms"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:3
+msgid "Overview"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:5
+msgid ""
+"This document describes the algorithms used by `vtkPolyhedron` for "
+"contouring (isosurface extraction), clipping, and inside/outside "
+"classification."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:8
+msgid "**Reference:**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:9
+msgid ""
+"J. López, A. Esteban, J. Hernández, P. Gómez, R. Zamora, C. Zanzi, F. Faura, "
+"\"A new isosurface extraction method on arbitrary grids\", Journal of "
+"Computational Physics, Volume 444, 2021, 110579. https://doi.org/10.1016/j."
+"jcp.2021.110579"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:14
+msgid ""
+"The open-source isoap library implementing this algorithm is available at: "
+"https://doi.org/10.17632/4rcf98s74c.1"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:17
+msgid "Face Winding Requirement"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:19
+msgid ""
+"All algorithms below require that polyhedron faces have **outward-pointing "
+"normals**: vertices must be ordered counter-clockwise when viewed from "
+"outside the cell (right-hand rule). This requirement is documented in "
+"`vtkPolyhedron.h`."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:23
+msgid ""
+"The solid-angle `IsInside()` depends on this for correct sign of the winding "
+"number. The López contour/clip algorithm depends on this for correct \"key "
+"face\" assignment (outside→inside edge transitions)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:27
+msgid "IsInside: Solid Angle Summation"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:29
+msgid ""
+"`vtkPolyhedron::IsInside()` determines whether a query point lies inside or "
+"outside the polyhedron using the winding number computed via solid angle "
+"summation."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:33
+#: ../../../design_documents/PolyhedronAlgorithms.md:77
+#: ../../../design_documents/PolyhedronAlgorithms.md:553
+msgid "Algorithm"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:35
+msgid ""
+"A closed surface subtends exactly **4π steradians** when viewed from any "
+"interior point, and **0 steradians** from any exterior point. This is the 3D "
+"generalization of the 2D winding number."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:39
+msgid ""
+"total_solid_angle = 0\n"
+"for each face:\n"
+"    triangulate face (fan from minimum-index vertex)\n"
+"    for each triangle (a, b, c):\n"
+"        total_solid_angle += solid_angle(a, b, c, query_point)\n"
+"\n"
+"if |total_solid_angle| ≈ 4π → INSIDE\n"
+"if |total_solid_angle| ≈ 0  → OUTSIDE\n"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:50
+msgid ""
+"The solid angle of a triangle is computed using the Van Oosterom–Strackee "
+"formula:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:53
+msgid ""
+"tan(Ω/2) = det(ra, rb, rc) / (|ra||rb||rc| + |ra|(rb·rc) + |rb|(ra·rc) + |rc|"
+"(ra·rb))\n"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:57
+msgid "where `ra = a − x`, etc."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:59
+msgid ""
+"A near-surface tolerance provides an early-out for points very close to "
+"faces, treating them as inside. This avoids numerical ambiguity at the "
+"boundary."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:62
+#: ../../../design_documents/PolyhedronAlgorithms.md:106
+msgid "Comparison with Previous Implementation"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Aspect"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Old (Random Ray Casting)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "New (Solid Angle)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Determinism"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Non-deterministic"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Deterministic"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Edge cases"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Ray hits vertex → retry"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "No special cases"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Iterations"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Up to 10 with voting"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Single pass"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Winding dependence"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "None (counts intersections)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Requires outward normals"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:72
+msgid "Contour: López Polygon-Tracing Algorithm"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:74
+msgid ""
+"`vtkPolyhedron::Contour()` extracts isosurface polygons using the López "
+"polygon-tracing method, implemented in `vtkPolyhedronContour`."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:79
+msgid "**Classify vertices** as inside (scalar > isoValue) or outside."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:81
+msgid ""
+"**Find iso-vertices** on edges that cross the isosurface. Each iso-vertex "
+"lies on an edge shared by exactly two faces. One face sees the edge as "
+"outside→inside (the **key face**); the other sees inside→outside."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:85
+msgid "**Trace iso-polygons** by walking through key faces:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:86
+msgid ""
+"start at any unvisited iso-vertex\n"
+"repeat:\n"
+"    face = current.KeyFace\n"
+"    next = next iso-vertex on this face (circular order)\n"
+"until next == start\n"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:94
+msgid ""
+"The next-iso-vertex-on-key-face rule produces closed polygons that form the "
+"isosurface contour without any post-processing."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:97
+msgid "**Interpolate** positions linearly along the crossing edges."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:99
+#: ../../../design_documents/PolyhedronAlgorithms.md:542
+msgid "Key Insight"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:101
+msgid ""
+"Each iso-vertex has a \"key face\" (where the edge goes outside→inside in "
+"face traversal order). Tracing through key faces to the next iso-vertex "
+"automatically produces closed contour polygons. No triangulation, no edge "
+"merging, no fragment assembly."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Old (Triangulate-and-Merge)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "New (López)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Face handling"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Triangulates all faces"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Works on original faces"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Internal edges"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Created then removed"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Never created"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Post-processing"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Complex MergeTriFacePolygons"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "None"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Code complexity"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~800 lines, 20+ functions"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~550 lines, 1 class"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+#: ../../../design_documents/PolyhedronAlgorithms.md:117
+msgid "Clip"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:119
+msgid ""
+"`vtkPolyhedron::Clip()` reuses the contour infrastructure with an additional "
+"face-building step:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:122
+msgid ""
+"Steps 1–3 from Contour (classify, find iso-vertices, trace iso-polygons)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:123
+msgid ""
+"**Build clipped faces**: for each original face, walk vertices keeping those "
+"on the retained side, inserting iso-vertices at cut edges."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:125
+msgid ""
+"**Add cap faces**: the traced iso-polygons become cap faces that close the "
+"clipped polyhedron (with reversed winding for `insideOut`)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:127
+msgid "**Output** as a polyhedron face stream."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:129
+msgid "Implementation Structure"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "File"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Description"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkPolyhedron.h/.cxx`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Cell class; delegates to `vtkPolyhedronContour`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkPolyhedronContour.h/.cxx`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "López algorithm: per-cell and bulk threaded API"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid.cxx`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Threaded contour: polyhedron handling in fast + general paths"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkTableBasedClipDataSet.cxx`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Threaded clip: polyhedron handling with face stream output"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:138
+msgid "Centroid: Divergence Theorem"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:140
+msgid ""
+"`vtkPolyhedron::GetCentroid()` computes the volume and centroid "
+"simultaneously using the divergence theorem. Each face is fan-triangulated "
+"from its first vertex. Each triangle (v0, v1, v2) forms a signed tetrahedron "
+"with the origin whose volume is `v0 . (v1 x v2) / 6`. The centroid is the "
+"volume-weighted average of tet centroids `(v0 + v1 + v2) / 4`."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:146
+msgid ""
+"This replaces the previous pyramid-decomposition approach that required an "
+"arbitrary apex point, per-face normal/area computation via `vtkPolygon`, and "
+"face centroid calculations."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:150
+msgid "Computational Complexity"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:152
+msgid ""
+"Let E = total edge count across all faces (equivalently, sum of face vertex "
+"counts). For typical polyhedra E is O(F·k) where F = faces and k = average "
+"vertices per face."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Operation"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Old"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "New"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Contour"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(F·k²) — per-face triangle merge with linear-search edge ordering"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(E) — single-pass polygon tracing"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(F·k²) — same contour + face rebuild"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(E) — trace + linear face walk"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "IsInside"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(F) with up to 10 non-deterministic retries"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(E) single deterministic pass"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "GetCentroid"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(E) with per-face vtkPolygon dispatch"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "O(E) direct arithmetic"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:163
+msgid ""
+"The old contour/clip bottleneck was `OrderEdgePolygon`, which performs a "
+"linear scan plus `std::vector::erase` (both O(n)) for each edge in a face's "
+"contour fragment, giving O(k²) per face. The new López algorithm visits each "
+"iso-vertex exactly once during polygon tracing."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:168
+msgid ""
+"The constant-factor improvement is also significant: the old implementation "
+"creates ~20 intermediate data structures (vectors of edge vectors, edge-face "
+"maps, point-edge multimaps, edge count maps) and converts between "
+"representations multiple times. The new implementation uses one hash map for "
+"edge-to-iso-vertex lookup and traces directly."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:173
+msgid "Bulk Threaded API"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:175
+msgid ""
+"`vtkPolyhedronContour` provides a per-cell static API for integration with "
+"VTK's threaded contour and clip filters. The API takes the cell's "
+"`vtkCellArray` face stream and a `vtkDataArray` scalar field directly, "
+"without instantiating `vtkPolyhedron` objects."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:180
+msgid "Contour: single-call per-cell helper"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:182
+msgid ""
+"Contour extraction uses a single-pass cell helper, `ContourCell`. The helper "
+"runs the full López trace for one polyhedron and reports the intersected "
+"edges as `(globalPtId0, globalPtId1, t)` tuples plus a per-polygon vertex-"
+"count array. Iso-vertex deduplication is performed by the calling filter "
+"through its shared edge locator (`vtkStaticEdgeLocatorTemplate`); the helper "
+"does not write final iso-vertex coordinates. There is no separate count "
+"phase because `vtkContour3DLinearGrid` does not prefix-sum polyhedron cell "
+"sizes before running the trace: the point merger absorbs per-cell output "
+"into thread-local buffers, and the fast path emits triangle vertex "
+"coordinates directly."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:193
+msgid "Clip: two-pass Count/Emit"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:195
+msgid ""
+"Clip uses the classic two-pass pattern required to deduplicate iso-vertices "
+"through a shared edge locator:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:198
+msgid ""
+"**Count pass** (parallel): Each thread calls `CountClip` per cell to "
+"determine output sizes and to record the set of intersected edges."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:201
+msgid ""
+"**Prefix sum + edge locator build** (serial): Global offsets are computed "
+"from per-cell counts, and the collected edge list is fed into a shared "
+"`vtkStaticEdgeLocatorTemplate` that assigns unique iso-vertex IDs."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:205
+msgid ""
+"**Emit pass** (parallel): Each thread calls `EmitClip` per cell, writing "
+"geometry into pre-allocated output arrays at the computed offsets."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:208
+msgid ""
+"Both Count and Emit internally call the same `RunLopezTrace` function. The "
+"trace is O(E). Running it twice per cell (once for Count, once for Emit) is "
+"the canonical price paid for the two-pass parallel structure, and the thread-"
+"local trace workspace keeps the constant factor low."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:213
+msgid "Shared Core"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:215
+msgid ""
+"A single `RunLopezTrace` function in an anonymous namespace implements the "
+"López algorithm on raw arrays. The per-cell `Execute` path and the bulk "
+"entry points (`ContourCell`, `CountClip`, `EmitClip`) all dispatch through "
+"this function. There is one algorithm implementation, not two."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:220
+msgid "API Summary"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:222
+msgid ""
+"All entry points take the cell's `vtkCellArray` face stream and a "
+"`vtkDataArray` scalar directly, and report intersected edges as "
+"`(globalPtId0, globalPtId1, t)` tuples for downstream deduplication via a "
+"shared edge locator."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:227
+msgid ""
+"**Contour — single-call helper.** Used by `vtkContour3DLinearGrid` in both "
+"fast and general paths."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:230
+msgid ""
+"static void ContourCell(numPointIds, pointIds, polyhedronFaces, scalars,\n"
+"    isoValue, generateTriangles,\n"
+"    polygonsSize, intersectedEdges);\n"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:236
+msgid ""
+"`polygonsSize` is a per-output-polygon vertex count (3 for each triangle "
+"when `generateTriangles=true`); `intersectedEdges` holds the edge tuples in "
+"polygon traversal order so the caller can build polygon connectivity by "
+"looking up each edge's deduplicated iso-vertex ID."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:241
+msgid ""
+"**Clip — two-pass Count/Emit.** Used by `vtkTableBasedClipDataSet`. Output "
+"point IDs are written directly (combining the kept-point `pointMap` lookup "
+"with the iso-vertex `numberOfKeptPoints + edgeId` offset) so the caller can "
+"copy the resulting cell arrays into pre-reserved global offsets without a "
+"second remapping pass."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:247
+msgid ""
+"static void CountClip(numPointIds, pointIds, polyhedronFaces, scalars,\n"
+"    isoValue, insideOut,\n"
+"    &numOutputCells, &numOutputCellConnectivity,\n"
+"    &numOutputFaces, &numOutputFacesConnectivity,\n"
+"    intersectedEdges);\n"
+"\n"
+"static void EmitClip(numPointIds, pointIds, polyhedronFaces, scalars,\n"
+"    isoValue, insideOut, pointMap, numberOfKeptPoints, edgeLocator,\n"
+"    outputCells, outputFaces);\n"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:259
+msgid ""
+"The clip Count/Emit functions return edge endpoint pairs and interpolation "
+"weights rather than interpolated point data, so the calling filter can "
+"perform point data interpolation externally in bulk, matching the pattern "
+"used by existing VTK threaded filters."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:264
+msgid "Filter Integration"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Filter"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Path"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "How polyhedra are handled"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContourFilter`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Delegates to `vtkContour3DLinearGrid`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Threaded fast + general paths"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid` (fast)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`ContourCells::operator()`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid ""
+"`ContourCell` with `generateTriangles=true`; edge tuples deduplicated via "
+"the shared `vtkStaticEdgeLocatorTemplate` and triangle vertex coords emitted "
+"into thread-local point buffers"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid` (general)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`ExtractEdges::operator()`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid ""
+"`ContourCell` producing edge tuples `(v0, v1, t)` for the shared "
+"`vtkStaticEdgeLocatorTemplate`; per-polygon vertex counts retained for the "
+"post-merge polygon emit pass when `GenerateTriangles=OFF`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkTableBasedClipDataSet`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`ExtractCells` (integrated with MC batch pipeline)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid ""
+"Polyhedra flow through the same batch / prefix-sum / extract pipeline as "
+"other cell types, using the cell-array `CountClip` (classify phase) and "
+"`EmitClip` (extract phase). Fast-kept/discarded cells use sentinel case "
+"values; intersected cells go through Count/Emit with the shared edge locator."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkClipDataSet`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Per-cell fallback"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkPolyhedron::Clip` -> `Execute` -> `RunLopezTrace`"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:274
+msgid "Batch Data Extension (vtkTableBasedClipDataSet)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:276
+msgid ""
+"The `vtkTableBasedClipDataSet` batch framework uses "
+"`TableBasedCellBatchData` with an `operator+=` that accumulates per-batch "
+"counts across threads via prefix sum. Polyhedron support required adding two "
+"new fields:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:280
+msgid ""
+"`PolyhedronFacesOffset`: total face connectivity entries (vertices per face)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:281
+msgid ""
+"`PolyhedronFaceLocsOffset`: total face count entries (number of faces per "
+"cell)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:283
+msgid ""
+"These accumulate through the existing `operator+=` / "
+"`BuildOffsetsAndGetGlobalSum` machinery alongside `CellsOffset`, "
+"`CellsConnectivityOffset`, and `CentroidsOffset`. The prefix sum converts "
+"per-batch counts into global offsets that `ExtractCells` uses to write face "
+"data at the correct positions."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:288
+msgid ""
+"Polyhedron cells reuse the existing sentinel case values that "
+"`vtkMarchingCellsClipCases.h` defines for all cell types: `KEPT_CELL_CASE` "
+"(fast-kept, all vertices on the retained side) and `DISCARDED_CELL_CASE` "
+"(fast-discarded, no vertices on the retained side). Cells that actually "
+"intersect the isosurface get the case value `1`, indicating \"handled by the "
+"Count/Emit path.\" These values are distinct from the 8-bit MC case indices "
+"used by other cell types, so there is no collision."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:296
+msgid "Performance"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:298
+msgid ""
+"Benchmarks on an 8-core machine with polyhedron grids (hexahedral cells "
+"stored as `VTK_POLYHEDRON`), comparing the threaded `vtkContour3DLinearGrid` "
+"and `vtkTableBasedClipDataSet` against the legacy per-cell `vtkContourGrid` "
+"and `vtkClipDataSet` paths:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:303
+msgid ""
+"**Contour** (`vtkContour3DLinearGrid` with MergePoints + "
+"InterpolateAttributes vs `vtkContourGrid`):"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Grid size"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Legacy (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Threaded (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Speedup"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "30³ (27K)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "68"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "15"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "4.4x"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "50³ (125K)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "194"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "63"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "3.1x"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "70³ (343K)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "400"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "183"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2.2x"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:312
+msgid "**Clip** (`vtkTableBasedClipDataSet` vs `vtkClipDataSet`):"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "20³ (8K)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "36"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "14"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2.6x"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "67"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "32"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2.1x"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:319
+msgid ""
+"See the production CFD mesh section below for detailed clip benchmarks "
+"across multiple cut scenarios on a 2.88M-cell mesh."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:322
+msgid ""
+"Key optimizations: direct grid array access when points and scalars are "
+"`double` (eliminates per-cell copy), `thread_local` trace workspace (reuses "
+"hash maps and vectors across cells within each thread), and a compact-remap "
+"path that keeps the per-cell scratch buffers dense in local indices."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:327
+msgid ""
+"When input points are not `double`, a compact-remap path is used: a per-"
+"thread `globalToLocal` map remaps cell point IDs to dense local indices `0.."
+"nCellPts-1`, the face stream is remapped to local indices, and `cellPts`/"
+"`cellScalars` buffers of size `nCellPts` are filled. Performance is "
+"comparable to the `double` path (68 ms vs 61 ms on the 2.88M-cell drone "
+"mesh)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:333
+msgid "Production CFD Mesh (drone_results.cgns)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:335
+msgid ""
+"A production all-polyhedra CFD mesh with **2.88M VTK_POLYHEDRON cells** and "
+"6.5M points (CGNS NFACE/NGON format). Benchmarks run on an 8-core Linux "
+"workstation. Each reported number is the median wall-time across 5 "
+"consecutive `Update()` calls, after one warmup `Update()`, measured with "
+"`time.perf_counter()` around the filter `Update()`. Baseline is the released "
+"ParaView 6.1.0 binary (pvpython) on the same Linux machine, against the same "
+"mesh and pipeline."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:343
+msgid "**Contour** — PRES isocontour at value=0:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:345
+msgid "The speedup comes from two independent contributions:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Change"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Baseline"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Result"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "López algorithm alone (serial `vtkContourGrid`)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~10,300 ms (PV 6.1.0 baseline)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~1,300 ms (Linux, warning-free)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**~8x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Threading + C3DLG infrastructure"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~1,300 ms (serial López)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**59 ms** (C3DLG, 8 cores, no normals)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**~22x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**Combined vs PV 6.1.0 baseline (no normals)**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~10,300 ms"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**59 ms**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**~175x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**Combined vs PV 6.1.0 baseline (ComputeNormals=ON)**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "~10,400 ms"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**73 ms**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**~143x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:354
+msgid ""
+"The old algorithm emits hundreds of topology-defect warnings per run via "
+"mutex-serialized `vtkGenericWarningMacro`, which dominates wall-clock time "
+"in a warning-heavy environment. The López algorithm handles the same "
+"defective cells silently and correctly, so warning overhead is not a factor "
+"in the new path."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Time (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Output cells"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Output size"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "ParaView 6.1.0 baseline, GT=ON, ComputeNormals=OFF"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "10,309"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "438K triangles"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "18.6 MB"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "ParaView 6.1.0 baseline, GT=OFF, ComputeNormals=OFF"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "11,247"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid` GT=ON, ComputeNormals=OFF"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**59**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "439K triangles"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid` GT=ON, ComputeNormals=ON"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**73**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid` GT=OFF, ComputeNormals=OFF"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**51**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "175K polygons"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**12.6 MB**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkContour3DLinearGrid` GT=OFF, ComputeNormals=ON"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**55**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:369
+msgid ""
+"ComputeNormals=ON adds only a few milliseconds (cell-normal compute and "
+"point-normal averaging at merged vertices). The previous orientation pass "
+"via `vtkOrientPolyData` is no longer needed because the López trace produces "
+"consistently oriented iso-polygons directly, so polygon-mode contours no "
+"longer pay an orientation cost. Linux, 8-core workstation, 2.88M-cell drone "
+"mesh, PRES=0."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:376
+msgid ""
+"The GenerateTriangles=OFF path uses `ContourCell(generateTriangles=false)` "
+"to extract polygon connectivity directly, bypassing fan-triangulation. "
+"Output polygons carry correct cell data and point normals. The 175K polygon "
+"count vs 439K triangle count reflects that polyhedron iso-polygons are "
+"typically quads or pentagons that would otherwise each be split into 2-3 "
+"triangles. The 6 MB output size reduction (32%) is meaningful in time-series "
+"workflows. With the orientation pass removed, GT=OFF is now strictly faster "
+"than GT=ON on this mesh (51 ms vs 59 ms with no normals)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:385
+msgid ""
+"**Contour memory** — on Windows, the old `vtkContourGrid` working set peaks "
+"at **3,310 MB** during processing vs a 2,703 MB baseline — a ~600 MB "
+"transient spike from per-cell `vtkPolyhedron` intermediate allocations. The "
+"new C3DLG path uses thread-local workspace that stabilizes at high-water "
+"mark after the first few cells and shows no measurable spike."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:391
+msgid "**Clip** — plane y=0 (half-domain, ~50% cells kept), 5 reps, median:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Output"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "ParaView 6.1.0 baseline (`vtkClipDataSet` fallback for polyhedra)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "4,822"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "1,450,017 cells, 3,406,651 pts"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "`vtkTableBasedClipDataSet` with first-class López polyhedron support"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**194**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "1,449,631 cells, 3,283,329 pts"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:398
+msgid ""
+"This is a **~25x speedup** at the user-visible Clip filter level. The "
+"dominant contribution is that `vtkTableBasedClipDataSet` now handles "
+"polyhedra directly via `CountClip`/`EmitClip` instead of falling back to a "
+"contour-based clip pipeline; the unified inside/outside classification "
+"(shared with `ContourCell`) avoids redundant per-cell vertex tagging across "
+"the count and emit passes."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:405
+msgid ""
+"Edge-locator sizing is bounded by the set of edges actually intersected by "
+"the plane (O(N_intersected × avg_edges_per_cell)) rather than the full input "
+"edge set, which keeps small-cut scenarios fast and avoids the half-domain "
+"slowdown seen in earlier clip implementations that pre-populated the locator "
+"with all input points."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:411
+msgid ""
+"**Summary**: on this all-polyhedra CFD mesh, `vtkContour3DLinearGrid` is "
+"**~22x faster** than serial López contour and **~175x faster** than the "
+"ParaView 6.1.0 baseline (no normals). With ComputeNormals=ON the speedup vs "
+"baseline is ~143x. `vtkTableBasedClipDataSet` with first-class polyhedron "
+"support is **~25x faster** than the ParaView 6.1.0 baseline on the y=0 plane "
+"cut. All numbers are PRES=0 contour and y=0 plane clip on the 2.88M-cell "
+"drone mesh, 8-core Linux workstation, comparing to ParaView 6.1.0 (released) "
+"on the same hardware."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:420
+msgid "Synthetic All-Polyhedra Scaling Study"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:422
+msgid ""
+"To characterize how wall-time scales with mesh size, we run the same contour "
+"and clip operations on synthetic all-polyhedra grids generated by "
+"`vtkCellTypeSource(VTK_POLYHEDRON)` with a wavelet scalar field "
+"(`vtkRTAnalyticSource` formula evaluated analytically on the polyhedral "
+"mesh's points; no auxiliary image or resampler). Isovalue is the field "
+"midrange; clip plane is `y = D/2` (half-domain)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:429
+msgid ""
+"**Timing methodology**: each reported number is the arithmetic mean of 5 "
+"consecutive `Update()` calls on the same filter instance, after a single "
+"warmup `Update()` to absorb any one-time scheduling or allocation costs. "
+"Each `Update()` runs the full filter end-to-end (`RequestData()` to output "
+"ready). Wall-time is measured with `time.perf_counter()` around the "
+"`Update()` call. Input dataset construction, scalar field evaluation, and "
+"any pipeline plumbing happen once before timing starts and are not included "
+"in the reported numbers."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:438
+msgid ""
+"This is a problem-size scaling study at fixed thread count: every row uses "
+"the same Linux 8-core workstation as the drone benchmark, with VTK SMP "
+"running at its default thread count (8). Threads are not varied. The timings "
+"therefore reflect how total work grows with mesh size on a fixed machine, "
+"not parallel efficiency (strong scaling) or per-thread efficiency under "
+"proportional growth (weak scaling)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:445
+msgid ""
+"![Wavelet scaling, contour and clip vs input cells](images/"
+"PolyhedronAlgorithms_wavelet_scaling.svg)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:445
+msgid "Wavelet scaling, contour and clip vs input cells"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Grid"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Input cells"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Output cells (contour)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Contour GT=ON (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Contour GT=OFF (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Clip y=mid (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "100³"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "1.0 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "167 K"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "18"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "16"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "39"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "200³"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "8.0 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "673 K"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "90"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "76"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "309"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "300³"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "27.0 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "1.52 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "230"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "200"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "1,077"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "400³"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "64.0 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2.69 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "463"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "435"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2,656"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "500³"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "125.0 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "4.21 M"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "761"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "720"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "5,180"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:455
+msgid ""
+"The plot above is log-log; the dashed line is slope-1 (linear) for "
+"reference. Contour wall-time scales sublinearly with input cells: 125x input "
+"growth from 100³ to 500³ produces only ~42x growth in contour time. The "
+"reason is dimensional: contour input is volumetric (`O(D³)`) but contour "
+"output is the iso-surface, which is `O(D²)`. The output-bounded portion of "
+"the algorithm therefore grows more slowly than total input work. Clip output "
+"is also volumetric (a fraction of the input mesh), so its cost scales close "
+"to linearly with input."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:464
+msgid ""
+"The drone production benchmark (2.88 M cells, 51-73 ms contour, 194 ms clip) "
+"sits comfortably within the linear regime of this scaling curve. The 125 M-"
+"cell point demonstrates that the algorithm contours nine-figure polyhedral "
+"meshes in under one second on commodity hardware."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:469
+msgid "GenerateTriangles=OFF for Linear Cells"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:471
+msgid ""
+"`vtkContour3DLinearGrid` now handles `GenerateTriangles=OFF` for all "
+"supported linear cell types (VTK_HEXAHEDRON, VTK_TETRA, VTK_WEDGE, "
+"VTK_PYRAMID) via a `vtkPolygonBuilder` post-process on the merged triangle "
+"output. Previously, `vtkContourFilter` with `GenerateTriangles=OFF` fell "
+"back to `vtkContourGrid` (serial, per-cell) for all these types. Now the "
+"full threaded C3DLG pipeline handles them end-to-end — `vtkContourGrid` is "
+"no longer involved."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:478
+msgid ""
+"The polygon builder groups merged triangles by input cell ID and uses edge "
+"interior/boundary counting to reconstruct the iso-polygon boundary. This "
+"reproduces what `vtkContourHelper` does inside `vtkContourGrid`, but applied "
+"once on the globally merged output rather than per cell."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:483
+msgid ""
+"Benchmarks on a 30×30×30 synthetic grid (`vtkCellTypeSource`), "
+"`vtkContour3DLinearGrid` vs `vtkContourGrid`:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "Cell type"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "CGrid ON (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "C3DLG ON (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "CGrid OFF (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "C3DLG OFF (ms)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "OFF speedup"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "HEX (27K cells)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "12.8"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "1.7"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "6.0"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "3.4"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**1.8x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "TET (324K cells)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "26.0"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2.1"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "40.0"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "17.0"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**2.4x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "WEDGE (54K cells)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "5.5"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "0.8"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "9.5"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "4.7"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**2.0x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "PYRAMID (162K cells)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "15.1"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "2.0"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "24.6"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "13.1"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:0
+msgid "**1.9x**"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:493
+msgid ""
+"`vtkContourFilter` now unconditionally routes all supported cell types to "
+"`vtkContour3DLinearGrid` regardless of `GenerateTriangles`, passing the flag "
+"through via `SetGenerateTriangles()`. `vtkContourGrid` is no longer used for "
+"any mesh that `CanFullyProcessDataObject` accepts."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:498
+msgid "Limitations"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:500
+msgid ""
+"These are inherent to vertex-based isosurface extraction, shared with the "
+"previous implementation:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:503
+msgid "**Vertex-based sampling**: only vertex scalar values are considered"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:504
+msgid "**Linear interpolation**: iso-vertex position is linearly interpolated"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:505
+msgid "**One crossing per edge**: an edge can have at most one iso-vertex"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:506
+msgid "**Manifold assumption**: each edge must be shared by exactly two faces"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:507
+msgid ""
+"**Outward normals required**: faces must be wound with outward-pointing "
+"normals"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:509
+msgid "Normal Computation (`ComputeNormals=ON`)"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:511
+msgid ""
+"When `ComputeNormals=ON`, `vtkContour3DLinearGrid` computes per-cell normals "
+"on the contour output and averages them at each merged vertex:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:514
+msgid ""
+"**Cell normals** — `vtkTriangle::ComputeNormal` for triangles, `vtkPolygon::"
+"ComputeNormal` over all polygon vertices for native iso-polygons "
+"(`GenerateTriangles=OFF`)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:517
+msgid ""
+"**Point normals** — unweighted average of adjacent cell normals at each "
+"merged vertex, normalized. Identical to `vtkPolyDataNormals::"
+"GetPointNormals`."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:520
+msgid ""
+"This relies on the López trace and the marching case tables producing "
+"consistently wound output for the cell types they handle. Polyhedron "
+"generation paths that may emit reordered faces (e.g. the wedge decomposition "
+"in `vtkUnstructuredGrid`) are corrected at the source so the contour output "
+"is consistent without a post-pass orientation step."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:527
+msgid "Future Work"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:529
+msgid "Face-Based Algorithm and GPU Execution"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:531
+msgid ""
+"The current implementation operates cell-by-cell: for each polyhedron, it "
+"unpacks the face stream, builds a global-to-local index map, copies "
+"coordinates and scalars into a compact local buffer, and runs the López "
+"trace. This is efficient on CPU but does not map well to GPU execution, "
+"where irregular per-cell control flow and per-cell memory allocation are "
+"costly."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:538
+msgid ""
+"We have developed a face-based reformulation of the López algorithm that "
+"eliminates all cell-level bookkeeping and exposes the computation as two "
+"purely data-parallel phases."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:544
+msgid ""
+"In a face-based mesh (the native format of CFD solvers such as Fluent and "
+"OpenFOAM), each internal face stores its vertex list wound CCW for the owner "
+"cell (c0), and a neighbour cell ID (c1). The López polygon trace, which "
+"walks cell faces in CCW order to assign key vertices, is equivalent to "
+"walking each face once for each of its two cells — forward for c0, reversed "
+"for c1. The owner/neighbour direction flag encodes all the cell-level "
+"orientation information López needs; no cell topology is accessed during the "
+"algorithm."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:555
+msgid ""
+"**Phase 1** runs in parallel over all (face, cell) pairs. For each face, "
+"walk its vertices in the CCW direction for the given cell. Collect crossing "
+"edges in walk order to form the IPVINT list. For each key edge (a crossing "
+"where the walk steps outside-to-inside), pair it with the immediately "
+"preceding crossing edge in the IPVINT list (circular). Emit that pair as a "
+"polygon graph edge attributed to the cell. For faces with four crossing "
+"edges (saddle configurations), this rule resolves the topological ambiguity "
+"identically to the original López Algorithm 3."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:564
+msgid ""
+"**Phase 2** runs in parallel over cells. Each cell accumulates a small "
+"polygon adjacency graph from Phase 1. Since every iso-vertex has degree two "
+"in this graph, the polygon is recovered by following the chain until it "
+"closes. Multiple disconnected cycles produce separate output polygons."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:569
+msgid ""
+"This reformulation has been verified to produce bit-for-bit identical "
+"polygon vertex sets and cyclic orderings to the original López algorithm "
+"across 300 test cases including random scalar fields and deliberately "
+"constructed ambiguous face configurations."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:574
+msgid ""
+"Phase 1 maps directly to a GPU compute shader or Viskores worklet: one "
+"thread per (face, cell) pair, no shared state during emission. Phase 2 maps "
+"to one thread per intersected cell executing a short sequential loop of 3 to "
+"20 steps. The compact local index remap required by the current CPU "
+"implementation disappears entirely since the algorithm operates on global "
+"vertex IDs throughout."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:581
+msgid "Implications for vtkPolyhedronContour"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:583
+msgid ""
+"The face-based reformulation could replace the current `ContourCell` and "
+"`CountClip`/`EmitClip` implementations, removing the per-cell scratch "
+"buffers (`ScratchGlobalToLocal`, `ScratchFaceStream`, `ScratchCoords`, "
+"`ScratchScalars`) and the global-to-local hash map build. The public API "
+"surface would change to accept a face list with owner/neighbour assignments "
+"rather than a per-cell face stream. For meshes already stored in face-based "
+"format no preprocessing would be required."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:591
+msgid "Native Face-Based Storage for Polyhedral Datasets"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:593
+msgid ""
+"The current VTK unstructured grid stores polyhedra via a face stream "
+"embedded in `vtkCellArray`: for each polyhedron cell, the face stream "
+"encodes face count, then for each face its vertex count followed by global "
+"vertex IDs. This format requires unpacking the full face stream to access "
+"any single face, and does not directly expose the owner/neighbour "
+"relationship between adjacent cells."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:600
+msgid ""
+"A more efficient representation for polyhedral CFD data would store faces as "
+"first-class entities:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:603
+msgid ""
+"**Face list**: one entry per unique face, storing vertex IDs wound CCW for "
+"the owner cell, the owner cell ID (c0), and the neighbour cell ID (c1, or -1 "
+"for boundary faces)."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:606
+msgid ""
+"**Cell-to-face map**: for each cell, the list of face IDs that bound it. "
+"Used only for cell reconstruction — not needed during isosurface extraction."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:610
+msgid ""
+"This representation matches the native format of OpenFOAM (`owner`/"
+"`neighbour`/`faces` files) and Fluent polyhedral meshes. It enables the face-"
+"based isosurface algorithm to operate directly on the stored data without "
+"any intermediate unpacking or reformatting."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:615
+msgid "Cell Reconstruction from Faces"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:617
+msgid ""
+"When cell-level output is required (e.g. for clip operations that output a "
+"clipped unstructured grid rather than a surface), cells can be reconstructed "
+"from the face list using the cell-to-face map. Each output polyhedron is "
+"described by collecting its bounding face IDs, remapping face vertices to "
+"local indices, and writing the VTK face stream. This reconstruction pass is "
+"a straightforward map over cells and is independent of the isosurface "
+"extraction."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:625
+msgid ""
+"For some in-situ and GPU use cases, cell reconstruction may not be needed at "
+"all: the isosurface output is a surface mesh of polygons, which is already "
+"in the correct form for GPU rendering without any cell-level structure."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:630
+msgid "GPU Execution Paths"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:632
+msgid ""
+"Three implementation strategies are being considered for GPU execution of "
+"the face-based algorithm:"
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:635
+msgid ""
+"**Viskores worklets** provide GPU portability across CUDA, HIP, and OpenMP "
+"backends. Phase 1 maps to a scatter worklet over faces; Phase 2 maps to a "
+"small gather worklet over cells. Viskores does not currently have a native "
+"face-based mesh representation and would require either a new dataset type "
+"or a face-array adapter."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:641
+msgid ""
+"**Direct CUDA kernels** give full control and are appropriate for use cases "
+"committed to NVIDIA hardware. The face-based algorithm's two-phase structure "
+"maps directly: a CUDA kernel over (face, cell) pairs for Phase 1, a prefix "
+"sum for output sizing, and a second kernel over cells for Phase 2. This path "
+"requires no new VTK data structures but is not portable to AMD or Intel GPUs."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:648
+msgid ""
+"**Compute shaders** (GLSL/WGSL via VTK's WebGPU or OpenGL backends) are the "
+"most forward-looking option for browser-delivered rendering where output is "
+"streamed to a JavaScript frontend. Phase 1 is a compute pass with atomic "
+"append or two-pass count/emit; Phase 2 can be skipped by rendering polygon "
+"edges directly from the Phase 1 output and fan-triangulating from a centroid."
+msgstr ""
+
+#: ../../../design_documents/PolyhedronAlgorithms.md:655
+msgid ""
+"For CFD meshes dominated by polyhedra with smooth scalar fields, ambiguous "
+"faces (four crossing edges on a single face) are rare. The IPVINT circular-"
+"previous rule handles them correctly in all cases without any geometric "
+"test, so all three GPU paths can use the same branch-free per-face kernel."
+msgstr ""

@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:1
+msgid "Read primary grid from MPAS"
+msgstr ""
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:3
+msgid ""
+"The `vtkMPASReader` now can read the primary grid from MPAS files. MPAS "
+"files provide the connectivity for two complementary grids. The first "
+"\"primary\" grid is formed as the Voronoi diagram of points on the globe. It "
+"comprises primarily hexagons and pentagons on the surface. The second "
+"\"dual\" grid is formed as the Delaunay triangulation of these points on the "
+"globe. As the names would imply, the grids are duals of each other with the "
+"cells of the primary corresponding to points of the dual and vice versa."
+msgstr ""
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:11
+msgid ""
+"![Comparison of primary and dual grids in MPAS](../imgs/9.7/mpas-grids.jpg)"
+msgstr ""
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:11
+msgid "Comparison of primary and dual grids in MPAS"
+msgstr ""
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:13
+msgid ""
+"Although the simulation operates mostly on the primary grid, `vtkMPASReader` "
+"loaded the dual grid. This is because on the dual grid most results data are "
+"on the points so they get interpolated well and when in multilayer view the "
+"surface triangles are extruded into well supported wedge shapes."
+msgstr ""
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:18
+msgid ""
+"However, scientists sometimes need to see the primary grid. The shape of the "
+"original cells can be important and the data values can get \"smeared.\" "
+"Thus, `vtkMPASReader` now has a `UsePrimaryGrid` option that allows users to "
+"see the original primary grid. Multilayers are also supported by extruding "
+"general polygons into polyhedra cell types."
+msgstr ""
+
+#: ../../../release_details/9.7/mpas-primary-grid.md:24
+msgid ""
+"That said, loading the dual grid (`UsePrimaryGrid` off) is still the "
+"default, which maintains backward compatibility with the previous behavior. "
+"The identification of fields as either point or cell is still based on the "
+"dual grid. This is a little confusing as when turning on the primary grid "
+"selected point fields show up as cell fields."
+msgstr ""

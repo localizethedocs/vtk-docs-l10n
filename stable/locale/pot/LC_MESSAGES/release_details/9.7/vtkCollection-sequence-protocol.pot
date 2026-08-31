@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK stable\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:1
+msgid "vtkCollection now supports Python sequence protocol"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:3
+msgid ""
+"All `vtkCollection` subclasses now support `len()`, indexing with `[]` "
+"(including negative indices), and membership testing with `in`:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:6
+msgid ""
+"collection = vtkActorCollection()\n"
+"collection.AddItem(actor1)\n"
+"collection.AddItem(actor2)\n"
+"\n"
+"len(collection)        # 2\n"
+"collection[0]          # actor1\n"
+"collection[-1]         # actor2\n"
+"actor1 in collection   # True\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:17
+msgid ""
+"This is implemented at the C level via `tp_as_sequence`, so it is "
+"automatically inherited by all ~23 subclasses of `vtkCollection` (e.g., "
+"`vtkRendererCollection`, `vtkDataArrayCollection`, etc.) without any "
+"additional Python code."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:22
+msgid "Pythonic mutation methods are also available:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:24
+msgid ""
+"collection.append(actor3)     # AddItem\n"
+"collection.insert(0, actor4)  # InsertItem\n"
+"collection.remove(actor1)     # RemoveItem\n"
+"collection.clear()            # RemoveAllItems\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:31
+msgid ""
+"All of this is implemented at the C level and automatically inherited by all "
+"~23 subclasses of `vtkCollection` (e.g., `vtkRendererCollection`, "
+"`vtkDataArrayCollection`, etc.) without any additional Python code."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-sequence-protocol.md:35
+msgid ""
+"The existing iteration protocol (`for item in collection`) continues to work "
+"as before."
+msgstr ""

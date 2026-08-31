@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,14 @@ msgid "{bdg-primary-line}`VTK::CommonArchive`"
 msgstr ""
 
 #: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::CommonCache`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Assorted utility classes for caching purpose"
+msgstr ""
+
+#: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::CommonColor`"
 msgstr ""
 
@@ -230,18 +238,17 @@ msgid ""
 "(../modules/vtk-modules/Domains/Microscopy/readme.md)"
 msgstr ""
 
-#: ../../../modules/index.md:64 ../../../modules/index.md:67
-#: ../../../modules/index.md:80 ../../../modules/index.md:104
-#: ../../../modules/index.md:109 ../../../modules/index.md:117
-#: ../../../modules/index.md:118 ../../../modules/index.md:131
-#: ../../../modules/index.md:155 ../../../modules/index.md:180
-#: ../../../modules/index.md:208 ../../../modules/index.md:210
-#: ../../../modules/index.md:227 ../../../modules/index.md:228
-#: ../../../modules/index.md:229 ../../../modules/index.md:237
-#: ../../../modules/index.md:243 ../../../modules/index.md:257
-#: ../../../modules/index.md:258 ../../../modules/index.md:264
-#: ../../../modules/index.md:265 ../../../modules/index.md:279
-#: ../../../modules/index.md:314
+#: ../../../modules/index.md:65 ../../../modules/index.md:68
+#: ../../../modules/index.md:82 ../../../modules/index.md:106
+#: ../../../modules/index.md:111 ../../../modules/index.md:119
+#: ../../../modules/index.md:120 ../../../modules/index.md:133
+#: ../../../modules/index.md:159 ../../../modules/index.md:184
+#: ../../../modules/index.md:212 ../../../modules/index.md:214
+#: ../../../modules/index.md:231 ../../../modules/index.md:232
+#: ../../../modules/index.md:233 ../../../modules/index.md:241
+#: ../../../modules/index.md:247 ../../../modules/index.md:269
+#: ../../../modules/index.md:270 ../../../modules/index.md:285
+#: ../../../modules/index.md:320
 msgid ""
 "<svg version=\"4.0.0.63c5cb3\" width=\"2.0em\" height=\"2.0em\" class=\"sd-"
 "material-icon sd-material-icon-menu_book\" viewBox=\"0 0 24 24\" aria-"
@@ -365,6 +372,10 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid "Filters and algorithms for images"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::FiltersMeshing`"
 msgstr ""
 
 #: ../../../modules/index.md:3
@@ -799,6 +810,10 @@ msgid "{bdg-primary-line}`VTK::IOHDFTools`"
 msgstr ""
 
 #: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IOIFC`"
+msgstr ""
+
+#: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::IOIOSS`"
 msgstr ""
 
@@ -852,6 +867,10 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::IOMySQL`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::IONanoVDB`"
 msgstr ""
 
 #: ../../../modules/index.md:3
@@ -1277,6 +1296,10 @@ msgid ""
 msgstr ""
 
 #: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingWebXR`"
+msgstr ""
+
+#: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::RenderingZSpace`"
 msgstr ""
 
@@ -1363,19 +1386,7 @@ msgid "{bdg-primary-line}`VTK::WebAssembly`"
 msgstr ""
 
 #: ../../../modules/index.md:3
-msgid ""
-"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Web/WebAssembly/"
-"README.md)"
-msgstr ""
-
-#: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::WebAssemblyAsync`"
-msgstr ""
-
-#: ../../../modules/index.md:3
-msgid ""
-"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Web/"
-"WebAssemblyAsync/README.md)"
 msgstr ""
 
 #: ../../../modules/index.md:3
@@ -1428,6 +1439,10 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::cli11`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::conduit`"
 msgstr ""
 
 #: ../../../modules/index.md:3

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-08-31 15:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,7 +208,7 @@ msgid "vtk_add_test_cxx(<EXENAME> <VARNAME> <ARG>...)"
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleTesting.cmake:341
-#: ../../../../../CMake/vtkModuleTesting.cmake:522
+#: ../../../../../CMake/vtkModuleTesting.cmake:536
 msgid ""
 "Each argument should be either an option, a test specification, or it is "
 "passed as flags to all tests declared in the group. The list of tests is set "
@@ -216,8 +216,8 @@ msgid ""
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleTesting.cmake:345
-#: ../../../../../CMake/vtkModuleTesting.cmake:526
-#: ../../../../../CMake/vtkModuleTesting.cmake:1054
+#: ../../../../../CMake/vtkModuleTesting.cmake:540
+#: ../../../../../CMake/vtkModuleTesting.cmake:1068
 msgid "Options:"
 msgstr ""
 
@@ -251,38 +251,38 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModuleTesting.cmake:364
 msgid ""
-"``WEBGPU_GRAPHICS_BACKEND``: The test should be run using the WebGPU "
-"graphics backend. This is only available when building with WebGPU support. "
-"It enables WebGPU via setting the environment variable "
-"``VTK_GRAPHICS_BACKEND=WEBGPU``."
+"``NO_SERDES``: The test does not do serialization/deserialization testing. "
+"If it does, a second test with the suffix ``SerDes` is created which passes "
+"the ``--serdes`` flag. Note that only tests that do a regression test on a "
+"render window and pass ``--serdes`` will do serdes testing."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:368
+#: ../../../../../CMake/vtkModuleTesting.cmake:369
 msgid ""
 "Additional flags may be passed to tests using the ``${_vtk_build_test}"
 "_ARGS`` variable or the ``<NAME>_ARGS`` variable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:511
-#: ../../../../../CMake/vtkModuleTesting.cmake:1000
+#: ../../../../../CMake/vtkModuleTesting.cmake:525
+#: ../../../../../CMake/vtkModuleTesting.cmake:1014
 msgid "MPI tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:515
+#: ../../../../../CMake/vtkModuleTesting.cmake:529
 msgid ""
 "This function declares C++ tests which should be run under an MPI "
 "environment. |module| Source files are required to use the `cxx` extension."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:518
+#: ../../../../../CMake/vtkModuleTesting.cmake:532
 msgid "vtk_add_test_mpi(<EXENAME> <VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:528
+#: ../../../../../CMake/vtkModuleTesting.cmake:542
 msgid "``TESTING_DATA``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:529
+#: ../../../../../CMake/vtkModuleTesting.cmake:543
 msgid ""
 "``NO_VALID``: The test does not have a valid baseline image. If it does, the "
 "baseline is assumed to be in ``../Data/Baseline/<NAME>.png`` relative to the "
@@ -291,40 +291,40 @@ msgid ""
 "via the ``-V`` flag."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:535
+#: ../../../../../CMake/vtkModuleTesting.cmake:549
 msgid ""
 "Each test is run using the number of processors specified by the following "
 "variables (using the first one which is set):"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:538
+#: ../../../../../CMake/vtkModuleTesting.cmake:552
 msgid "``<NAME>_NUMPROCS``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:539
+#: ../../../../../CMake/vtkModuleTesting.cmake:553
 msgid "``<EXENAME>_NUMPROCS``"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:540
+#: ../../../../../CMake/vtkModuleTesting.cmake:554
 msgid "``VTK_MPI_NUMPROCS`` (defaults to ``2``)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:542
+#: ../../../../../CMake/vtkModuleTesting.cmake:556
 msgid ""
 "Additional flags may be passed to tests using the ``${_vtk_build_test}"
 "_ARGS`` variable or the `<NAME>_ARGS` variable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:639
+#: ../../../../../CMake/vtkModuleTesting.cmake:653
 msgid "C++ test executable"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:643
+#: ../../../../../CMake/vtkModuleTesting.cmake:657
 msgid ""
 "vtk_test_cxx_executable(<EXENAME> <VARNAME> [RENDERING_FACTORY] [<SRC>...])"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:647
+#: ../../../../../CMake/vtkModuleTesting.cmake:661
 msgid ""
 "Creates an executable named ``EXENAME`` which contains the tests listed in "
 "the variable named in the ``VARNAME`` argument. The ``EXENAME`` must match "
@@ -332,13 +332,13 @@ msgid ""
 "tests."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:651
+#: ../../../../../CMake/vtkModuleTesting.cmake:665
 msgid ""
 "If ``RENDERING_FACTORY`` is provided, VTK's rendering factories are "
 "initialized during the test."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:654
+#: ../../../../../CMake/vtkModuleTesting.cmake:668
 msgid ""
 "By default, VTK's rendering tests enable FP exceptions to find floating "
 "point errors in debug builds. If ``DISABLE_FLOATING_POINT_EXCEPTIONS`` is "
@@ -346,87 +346,87 @@ msgid ""
 "testing against external libraries to ignore exceptions in third-party code."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:659
+#: ../../../../../CMake/vtkModuleTesting.cmake:673
 msgid ""
 "Any additional arguments are added as additional sources for the executable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:698
+#: ../../../../../CMake/vtkModuleTesting.cmake:712
 msgid ""
 "MPI executables used to have their own test executable function.|module-"
 "internal| This is no longer necessary and is deprecated. Instead, "
 "`vtk_test_cxx_executable` should be used instead."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:712
+#: ../../../../../CMake/vtkModuleTesting.cmake:726
 msgid "Python tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:716
+#: ../../../../../CMake/vtkModuleTesting.cmake:730
 msgid ""
 "This function declares Python tests.|module| Test files are required to use "
 "the `py` extension."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:719
+#: ../../../../../CMake/vtkModuleTesting.cmake:733
 msgid "vtk_add_test_python(<EXENAME> <VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:725
+#: ../../../../../CMake/vtkModuleTesting.cmake:739
 msgid ""
 "If the ``_vtk_testing_python_exe`` variable is not set, the ``vtkpython`` "
 "binary is used by default. Additional arguments may be passed in this "
 "variable as well."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:728
+#: ../../../../../CMake/vtkModuleTesting.cmake:742
 msgid ""
 "If the given Python executable supports VTK's ``--enable-bt`` flag, setting "
 "``_vtk_testing_python_exe_supports_bt`` to ``1`` is required to enable it."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:914
+#: ../../../../../CMake/vtkModuleTesting.cmake:928
 msgid "JavaScript tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:918
+#: ../../../../../CMake/vtkModuleTesting.cmake:932
 msgid ""
 "This function declares JavaScript tests run with NodeJS. Test files are "
 "required to use the `mjs` extension. Additional arguments to `node` can be "
 "passed via `_vtk_node_args` variable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:922
+#: ../../../../../CMake/vtkModuleTesting.cmake:936
 msgid "vtk_add_test_module_javascript_node(<VARNAME> <ARG>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:928
+#: ../../../../../CMake/vtkModuleTesting.cmake:942
 msgid ""
 "The ``_vtk_testing_nodejs_exe`` variable must point to the path of a `node` "
 "interpreter."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1004
+#: ../../../../../CMake/vtkModuleTesting.cmake:1018
 msgid ""
 "A small wrapper around ``vtk_add_test_python`` which adds support for "
 "running MPI-aware tests written in Python."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1007
+#: ../../../../../CMake/vtkModuleTesting.cmake:1021
 msgid ""
 "The ``$<module library name>_NUMPROCS`` variable may be used to use a non-"
 "default number of processors for a test."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1010
+#: ../../../../../CMake/vtkModuleTesting.cmake:1024
 msgid "This forces running with the ``pvtkpython`` executable."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1037
+#: ../../../../../CMake/vtkModuleTesting.cmake:1051
 msgid "ABI Mangling tests"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1041
+#: ../../../../../CMake/vtkModuleTesting.cmake:1055
 msgid ""
 "This function declares a test to verify that all of the exported symbols in "
 "the VTK module library contain the correct ABI mangling prefix. This test "
@@ -434,18 +434,18 @@ msgid ""
 "\"<DEFAULT>\"."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1045
+#: ../../../../../CMake/vtkModuleTesting.cmake:1059
 msgid ""
 "Current limitations of this test are: - Does not run on non-UNIX platforms - "
 "Is not compatible with the option \"VTK_ENABLE_KITS\" - May not work outside "
 "of VTK itself"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1050
+#: ../../../../../CMake/vtkModuleTesting.cmake:1064
 msgid "vtk_add_test_mangling(module_name [EXEMPTIONS ...])"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleTesting.cmake:1056
+#: ../../../../../CMake/vtkModuleTesting.cmake:1070
 msgid ""
 "``EXEMPTIONS``: List of symbol patterns to excluded from the ABI mangling "
 "test where it is known that the symbols do not support the ABI mangling but "
