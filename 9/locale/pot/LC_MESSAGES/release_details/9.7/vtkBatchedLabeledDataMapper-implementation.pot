@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:1
+msgid "vtkBatchedLabeledDataMapper: Implementation"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:3
+msgid "Background"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:5
+msgid ""
+"`vtkFastLabeledDataMapper` was introduced in VTK 9.5 as a faster replacement "
+"for `vtkLabeledDataMapper`. Instead of issuing one draw call per label, it "
+"packs all glyphs into a single texture atlas and emits them in one geometry-"
+"shader pass, making label-heavy scenes significantly cheaper to render. Its "
+"initial implementation lived entirely in `Rendering/OpenGL2`, which tied the "
+"atlas-building logic to the OpenGL backend and made it impossible to reuse "
+"the same approach on other backends or in non-3D contexts."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:13
+msgid "New class: vtkBatchedLabeledDataMapper"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:15
+msgid ""
+"`vtkBatchedLabeledDataMapper` is a `vtkLabeledDataMapper` subclass that "
+"brings the same glyph-atlas batch rendering to both world-space and display-"
+"space label overlays. It inherits the full API of `vtkLabeledDataMapper` "
+"(coordinate systems, transform, label mode, text properties) but replaces "
+"the one-draw-call-per-label rendering with a glyph atlas batch approach so "
+"that all labels are drawn in a single pass."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:22
+msgid "It follows a backend-split architecture:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:24
+msgid ""
+"**`vtkBatchedLabeledDataMapper`** (`Rendering/Label`) — backend-agnostic "
+"base class that accepts any `vtkDataSet`, builds the glyph atlas, and "
+"prepares the per-label geometry arrays."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:27
+msgid ""
+"**`vtkOpenGLBatchedLabeledDataMapper`** (`Rendering/OpenGL2`) — OpenGL "
+"backend that uploads the atlas to a `vtkTextureObject` and renders all "
+"labels in one geometry-shader pass using a `vtkOpenGLPolyDataMapper` helper."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:30
+msgid ""
+"**`vtkWebGPUBatchedLabeledDataMapper`** (`Rendering/WebGPU`) — WebGPU "
+"backend using instanced rendering: 18 vertices per label instance (3 layers "
+"× 6 vertices) with WGSL shader replacements for atlas sampling, background, "
+"and frame rendering."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:35
+msgid "The API extends `vtkLabeledDataMapper` with two additions:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:37
+msgid ""
+"**`TextAnchor`** — positions the label bounding box relative to its screen "
+"point (`LowerLeft`, `UpperRight`, `Center`, etc.)."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:39
+msgid ""
+"**`DisplayOffset`** — applies a fixed pixel nudge `(dx, dy)` to every label "
+"in display space, useful for pushing labels away from their anchor point."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:42
+msgid ""
+"vtkNew<vtkBatchedLabeledDataMapper> mapper;\n"
+"mapper->SetLabelModeToLabelFieldData();\n"
+"mapper->SetFieldDataName(\"names\");\n"
+"// drive per-label text property selection from the \"types\" array\n"
+"mapper->SetInputArrayToProcess(\n"
+"  0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, \"types\");\n"
+"mapper->SetLabelTextProperty(prop0, 0);\n"
+"mapper->SetLabelTextProperty(prop1, 1);\n"
+"mapper->SetTextAnchor(vtkBatchedLabeledDataMapper::LowerLeft);\n"
+"int offset[2] = { 4, 4 };\n"
+"mapper->SetDisplayOffset(offset);\n"
+"mapper->SetInputData(dataset);\n"
+"\n"
+"vtkNew<vtkActor2D> actor;\n"
+"actor->SetMapper(mapper);\n"
+"renderer->AddViewProp(actor);\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:61
+msgid "Breaking change: vtkLabeledDataMapper::Implementation"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:63
+msgid ""
+"The protected data member `Implementation` in `vtkLabeledDataMapper` has "
+"been changed from a raw pointer (`Internals* Implementation`) to a `std::"
+"unique_ptr<Internals>`. Subclasses that stored or transferred ownership of "
+"this pointer must be updated accordingly."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:68
+msgid "Deprecation of vtkFastLabeledDataMapper"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:70
+msgid ""
+"`vtkFastLabeledDataMapper` (the original `vtkOpenGLPolyDataMapper`-based 3D "
+"label mapper in `Rendering/OpenGL2`) is deprecated as of VTK 9.7. Use "
+"`vtkBatchedLabeledDataMapper` instead, which supports both world-space and "
+"display-space rendering and works across all backends via the object factory."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:75
+msgid "vtkGridAxesActor2D: batch tick label rendering"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:77
+msgid ""
+"`vtkGridAxesActor2D` now uses `vtkBatchedLabeledDataMapper` for tick labels. "
+"Previously, each tick mark on each axis edge was backed by an individual "
+"`vtkBillboardTextActor3D`, meaning the renderer issued one draw call per "
+"visible tick on every frame. Each of the four axis edges now owns a single "
+"`vtkBatchedLabeledDataMapper` fed by a per-edge `vtkPolyData`, so the entire "
+"set of tick labels for an edge is rendered in one batched pass. Title labels "
+"remain as `vtkBillboardTextActor3D` actors since there is at most one per "
+"edge."
+msgstr ""

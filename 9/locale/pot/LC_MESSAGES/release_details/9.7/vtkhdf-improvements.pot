@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:1
+msgid "Proper caching in vtkHDFReader"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:3
+msgid ""
+"vtkHDFReader cache was reworked to work properly with all supported types "
+"but vtkHyperTreeGrid, with added support for "
+"vtkPartitionedDataSetCollection, vtkMultiBlockDataSet and vtkOverlappingAMR."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:6
+msgid ""
+"The caches now ensure the MeshMTime of vtkDataSet provided by the "
+"vtkHDFReader do not change if they should not."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:9
+msgid ""
+"In this context, the UseCache member is now true by default and it have been "
+"deprecated for further removal."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:12
+msgid ""
+"GetAttributeOriginalIdName, SetAttributeOriginalIdName and AddFieldArrays "
+"have also been deprecated."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:14
+msgid ""
+"vtkHDFUtilities::RetrieveHDFInformation have been deprecated in favor of a "
+"version with more arguments."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:16
+msgid "Proper distributed support in vtkHDFReader"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:18
+msgid ""
+"vtkHDFReader now generates proper vtkPartitionedDataSet distributed contents "
+"with empty (nullptr) partitions where other ranks have data."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:21
+msgid "Piece distribution configuration in vtkHDFReader"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:23
+msgid ""
+"When reading partitioned data in parallel, you can now use `vtkHDFReader::"
+"SetPieceDistribution` to choose the piece distribution strategy: interleave "
+"blocks between processes, or allocate \"blocks\" of partitions."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:26
+msgid "Better support for partitioned data writing in vtkHDFWriter"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:28
+msgid ""
+"`vtkHDFWriter` is now able to write partitioned data in parallel when the "
+"number of non-null partitions differ between processes."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:31
+msgid ""
+"Removal of unspecified Temporal FieldData behavior with vtkOverlappingAMR"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:33
+msgid ""
+"vtkOverlappingAMR does not specify properly how to handle temporal field "
+"data in the VTKHDF specifications, the implementation have been removed "
+"before a proper reimplementation."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:37
+msgid "Quiet support in vtkHDFUtilities::Open"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:39
+msgid ""
+"A new argument have been added to vtkHDFUtilities::Open to suppress all "
+"console output on error. The previous version has been deprecated."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:42
+msgid "vtkHyperTreeGrid support in vtkHDFWriter"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:44
+msgid ""
+"`vtkHDFWriter` now properly supports the HyperTreeGrid data model. It can "
+"write partitioned, temporal and distributed data."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:46
+msgid ""
+"New data types specified: vtkRectilinearGrid, vtkStructuredGrid and vtkTable"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:48
+msgid ""
+"The VTKHDF specification now supports Recilinear Grids, Structured Grids and "
+"Tables."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:50
+msgid ""
+"`vtkHDFWriter` and `vtkHDFReader` are both capable of handling these new "
+"datatypes, for simple and time-dependent data (no partition or extent "
+"support)."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:52
+msgid "vtkHDFUtilities and vtkHDFReader deprecations"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:54
+msgid ""
+"The protect method `vtkHDFReader::DataArraySelection` now returns a `std::"
+"map` instead of a `std::array` with `vtkDataObject::AttributeTypes::` as a "
+"key."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkhdf-improvements.md:55
+msgid ""
+"`vtkHDFUtilities::GetArrayNames`, `RetrieveHDFInformation` and "
+"`NewFieldArray` also use a `std::map<int, hid_t>` for the "
+"`attributeDataGroup` argument instead of a `std::array<hid_t, 3>`."
+msgstr ""

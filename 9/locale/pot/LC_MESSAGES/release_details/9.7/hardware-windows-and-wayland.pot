@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:1
+msgid "Architectural Update: Hardware Window, Wayland, and WebGPU"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:3
+msgid "✨ New Wayland Support"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:5
+msgid "Native Wayland Interactor (vtkWaylandRenderWindowInteractor):"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:6
+msgid ""
+"A new, dedicated interactor has been implemented for robust event handling "
+"on Wayland compositors. It processes pointer (mouse motion, buttons, "
+"scrolling) and keyboard inputs directly, using xkbcommon for precise keymap "
+"and modifier state management."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:11
+msgid "Native Wayland Display Protocol Support"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:12
+msgid ""
+"This version introduces comprehensive, native support for the Wayland "
+"display protocol, providing a modern alternative to X11 on Linux systems. "
+"Windows can request standard decorations (title bars, borders) from the "
+"Wayland compositor by leveraging the xdg-decoration-unstable-v1 protocol. "
+"This ensures applications integrate visually with the user's desktop "
+"environment."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:18
+msgid "WebGPU on Wayland:"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:19
+msgid ""
+"The WebGPU rendering backend is now fully integrated with Wayland surfaces, "
+"allowing high-performance graphics in modern Linux environments."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:22
+msgid "🚀 Platform-Specific Enhancements & WebGPU Integration"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:23
+msgid ""
+"Significant advancements have been made to standardize and enhance the "
+"rendering experience across diverse operating systems, including Windows, "
+"macOS, and Linux. Historically, VTK's rendering architecture has been "
+"characterized by a tightly coupled integration between the windowing system "
+"and the graphics stack. However, with the advent of modern graphics APIs, "
+"such as WebGPU, which offer more sophisticated and explicit surface "
+"descriptors, VTK now implements a clear logical separation between its "
+"graphics system and the underlying windowing system."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:32
+msgid ""
+"This architectural shift is embodied by the introduction of the new "
+"`vtkHardwareWindow` class and its specialized sub-classes. These components "
+"are meticulously designed to manage platform-specific window system "
+"integrations, critically, without incorporating any direct calls to the "
+"rendering layer. This distinct separation not only facilitates superior "
+"management and independent evolution of these two crucial codebases but also "
+"significantly streamlines the integration of future graphics and windowing "
+"APIs, thereby enhancing flexibility and long-term maintainability."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:42
+msgid "Windows: Improved Interactor and Hardware Window Support"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:43
+msgid ""
+"The `vtkWin32RenderWindowInteractor` has been updated to seamlessly support "
+"both the legacy OpenGL render window and the new vtkHardwareWindow "
+"abstraction."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:46
+msgid ""
+"The `vtkWin32HardwareWindow` also supports native Windows cursor shapes and "
+"visibility controls."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:49
+msgid "Apple (macOS/Cocoa) WebGPU Rendering via Metal"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:50
+msgid ""
+"The `vtkCocoaHardwareWindow` now utilizes the WebGPU API with the Metal "
+"backend, bringing modern, high-performance rendering to macOS applications."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:53
+msgid ""
+"The `vtkCocoaHardwareView` is set as the \"first responder,\" allowing it to "
+"properly intercept and process system keyboard and mouse events for reliable "
+"interaction."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:57
+msgid "Linux (X11)"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:58
+msgid ""
+"Unified Hardware Window: The specialized `vtkXWebGPURenderWindow` has been "
+"removed in favor of the more generic `vtkXlibHardwareWindow`. This "
+"simplifies the architecture by using a single, unified component for X11-"
+"based windowing."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:62
+msgid "🔧 Refactoring & Build System Improvements"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:64
+msgid "Consolidated Win32 Build Logic"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:65
+msgid ""
+"A new `VTK_USE_WIN32` CMake option has been introduced to replace disparate "
+"WIN32 checks as well as the opengl dependent variable "
+"`VTK_USE_WIN32_OPENGL`. This unifies conditional compilation and linking for "
+"all Win32 components, simplifying the build configuration for Windows."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:70
+msgid "CMake Support for Wayland"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:71
+msgid ""
+"With the introduction of `FindWAYLAND.cmake` CMake script, the build system "
+"finds and links against required Wayland libraries and generates necessary "
+"protocol files, making it straightforward to build with Wayland support "
+"enabled. To enable Wayland support, set `VTK_USE_Wayland:BOOL=ON`."
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:76
+msgid "🐛 Bug Fixes"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:78
+msgid "Fixed Xlib Macro Collision"
+msgstr ""
+
+#: ../../../release_details/9.7/hardware-windows-and-wayland.md:79
+msgid ""
+"Resolved a critical compilation error on Linux systems where the Xlib "
+"Success macro conflicted with the wgpu::MapAsyncStatus::Success enum, "
+"allowing WebGPU code to build correctly with X11 headers. (Commit d8a4c55)"
+msgstr ""

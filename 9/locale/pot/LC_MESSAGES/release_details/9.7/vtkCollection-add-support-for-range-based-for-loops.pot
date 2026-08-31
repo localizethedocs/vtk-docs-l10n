@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:1
+msgid ""
+"Range-based for loops for `vtkCollection`; deprecation of "
+"`vtkCollectionIterator`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:3
+msgid ""
+"`vtkCollection` now supports C++11 range-based for loops, leveraging modern "
+"C++ syntax."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:5
+msgid ""
+"This, along with `vtk::Range`, should be preferred over using "
+"`vtkCollectionIterator` and `vtkCollectionSimpleIterator` and they are now "
+"deprecated."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:7
+msgid "Here's a typical example of the old way:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:9
+msgid ""
+"vtkCollectionIterator* iter = this->AnimationCuesIterator;\n"
+"for (iter->InitTraversal(); !iter->IsDoneWithTraversal(); iter-"
+">GoToNextItem())\n"
+"{\n"
+"  vtkAnimationCue* cue = vtkAnimationCue::SafeDownCast(iter-"
+">GetCurrentObject());\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:16
+msgid "transformed:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:18
+msgid ""
+"for (vtkObject* obj : *(this->AnimationCues))\n"
+"{\n"
+"  vtkAnimationCue* cue = vtkAnimationCue::SafeDownCast(obj);\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:24
+msgid ""
+"Note that since `vtkCollection` uses `vtkObject` (as opposed to being "
+"templated), the range-based for loops also use `vtkObject` and may require "
+"casting (as in both the old *and* new ways above)."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkCollection-add-support-for-range-based-for-loops.md:26
+msgid ""
+"All of VTK's own uses have been updated. The only slight backwards "
+"incompatible change is that the `protected` member `vtkCollectionIterator* "
+"AnimationCuesIterator` in `vtkAnimationScene` has been removed. This may "
+"cause compatibility issues for anyone subclassing this class."
+msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:08+0000\n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,11 +123,11 @@ msgid ""
 "command:`vtk_module_wrap_python function`."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:613
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:621
 msgid "Wrap a set of modules for use in Python.|module-wrapping-python|"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:615
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:623
 msgid ""
 "vtk_module_wrap_python(\n"
 "  MODULES <module>...\n"
@@ -163,18 +163,18 @@ msgid ""
 ")"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:651
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:659
 msgid "``MODULES``: (Required) The list of modules to wrap."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:652
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:660
 msgid ""
 "``TARGET``: (Recommended) The target to create which represents all wrapped "
 "Python modules. This is mostly useful when supporting static Python modules "
 "in order to add the generated modules to the built-in table."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:655
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:663
 msgid ""
 "``WRAPPED_MODULES``: (Recommended) Not all modules are wrappable. This "
 "variable will be set to contain the list of modules which were wrapped. "
@@ -183,14 +183,14 @@ msgid ""
 "in Python code."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:660
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:668
 msgid ""
 "``WRAP_TARGET``: If provided, a custom target with this name will be "
 "created. It will depend on all wrapped Python modules and may be used to "
 "ensure that Python wrapping has completed for further work."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:663
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:671
 msgid ""
 "``BUILD_STATIC``: Defaults to ``${BUILD_SHARED_LIBS}``. Note that shared "
 "modules with a static build is not completely supported. For static Python "
@@ -200,25 +200,25 @@ msgid ""
 "the same function is provided, but it is a no-op."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:669
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:677
 msgid ""
 "``INSTALL_HEADERS`` (Defaults to ``ON``): If unset, the CMake properties and "
 "the Python wrapping related headers will not be installed."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:671
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:679
 msgid ""
 "``BUILD_PYI_FILES`` (Defaults to ``OFF``): If set, ``.pyi`` files will be "
 "built and installed for the generated modules."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:673
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:681
 msgid ""
 "``TARGET_SPECIFIC_COMPONENTS`` (Defaults to ``OFF``): If set, prepend the "
 "output target name to the install component (``<TARGET>-<COMPONENT>``)."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:675
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:683
 msgid ""
 "``DEPENDS``: This is list of other Python modules targets i.e. targets "
 "generated from previous calls to ``vtk_module_wrap_python`` that this new "
@@ -227,15 +227,15 @@ msgid ""
 "dependencies."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:679
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:687
 msgid ""
 "``UTILITY_TARGET``: If specified, all libraries made by the Python wrapping "
 "will link privately to this target. This may be used to add compile flags to "
 "the Python libraries."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:682
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1266
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:690
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1287
 msgid ""
 "``MODULE_DESTINATION``: Modules will be placed in this location in the build "
 "tree. The install tree should remove ``$<CONFIGURATION>`` bits, but it "
@@ -243,7 +243,7 @@ msgid ""
 "default value."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:686
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:694
 msgid ""
 "``STATIC_MODULE_DESTINATION``: Defaults to ``${CMAKE_INSTALL_LIBDIR}``. This "
 "default may change in the future since the best location for these files is "
@@ -251,51 +251,51 @@ msgid ""
 "the install tree under this path."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:690
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:698
 msgid ""
 "``CMAKE_DESTINATION``: (Required if ``INSTALL_HEADERS`` is ``ON``) Where to "
 "install Python-related module property CMake files."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:692
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:700
 msgid ""
 "``LIBRARY_DESTINATION`` (Recommended): If provided, dynamic loader "
 "information will be added to modules for loading dependent libraries."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:694
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:702
 msgid ""
 "``HEADERS_DESTINATION``: Defaults to (``${CMAKE_INSTALL_INCLUDEDIR}``. "
 "Module loader headers will be installed to this directory."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:696
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:704
 msgid ""
 "``PYTHON_PACKAGE``: (Recommended) All generated modules will be added to "
 "this Python package. The format is in Python syntax (e.g., ``package."
 "subpackage``)."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:699
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:707
 msgid ""
 "``SOABI``: (Required for wheel support): If given, generate libraries with "
 "the SOABI tag in the module filename."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:701
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:709
 msgid ""
 "``USE_DEBUG_SUFFIX`` (Defaults to ``OFF``): If ``ON``, Windows modules will "
 "have a ``_d`` suffix appended to the module name. This is intended for use "
 "with debug Python builds."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:704
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:712
 msgid ""
 "``REPLACE_DEBUG_SUFFIX`` (Defaults to ``OFF``): If ``ON``, any project-wide "
 "debug suffix will be replaced with the local debug suffix (if enabled)."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:706
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:714
 msgid ""
 "``INTERPRETER`` (Defaults to ``VTK::Python`` or ``Python3::Interpreter``): "
 "If provided, this interpreter will be used to run supplemental processes "
@@ -305,34 +305,34 @@ msgid ""
 "``DISABLE`` is given, any support using interpreters will be disabled."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:712
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:720
 msgid ""
 "``INSTALL_EXPORT``: If provided, static installs will add the installed "
 "libraries to the provided export set."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:714
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1270
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:722
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1291
 msgid ""
 "``COMPONENT``: Defaults to ``python``. All install rules created by this "
 "function will use this installation component."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:716
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:724
 msgid "``WARNINGS``: Warnings to enable. Supported warnings: ``empty``."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1241
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1262
 msgid "Install Python packages with a module |module-wrapping-python|."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1243
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1264
 msgid ""
 "Some modules may have associated Python code. This function should be used "
 "to install them."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1246
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1267
 msgid ""
 "vtk_module_add_python_package(<module>\n"
 "  PACKAGE <package>\n"
@@ -341,7 +341,7 @@ msgid ""
 "  [COMPONENT <component>])"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1255
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1276
 msgid ""
 "The ``<module>`` argument must match the associated VTK module that the "
 "package is with. Each package is independent and should be installed "
@@ -349,13 +349,13 @@ msgid ""
 "their own call to this function."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1260
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1281
 msgid ""
 "``PACKAGE``: (Required) The package installed by this call. Currently, "
 "subpackages must have their own call to this function."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1262
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1283
 msgid ""
 "``FILES``: (Required) File paths should be relative to the source directory "
 "of the calling ``CMakeLists.txt``. Upward paths are not supported (nor are "
@@ -363,40 +363,40 @@ msgid ""
 "relative path is computed relative to the current binary directory."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1273
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1294
 msgid ""
 "A ``<module>-<package>`` target is created which ensures that all Python "
 "modules have been copied to the correct location in the build tree."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1276
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1297
 msgid "Todo"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1277
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1298
 msgid ""
 "Support freezing the Python package. This should create a header and the "
 "associated target should provide an interface for including this header. The "
 "target should then be exported and the header installed properly."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1378
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1399
 msgid "Use a Python package as a module. |module-wrapping-python|"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1381
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1402
 msgid ""
 "If a module is a Python package, this function should be used instead of :"
 "cmake:command:`vtk_module_add_module`."
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1384
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1405
 msgid ""
 "vtk_module_add_python_module(<name>\n"
 "  PACKAGES <packages>...)"
 msgstr ""
 
-#: ../../../../../CMake/vtkModuleWrapPython.cmake:1390
+#: ../../../../../CMake/vtkModuleWrapPython.cmake:1411
 msgid ""
 "``PACKAGES``: (Required) The list of packages installed by this module. "
 "These must have been created by the :cmake:command:"
