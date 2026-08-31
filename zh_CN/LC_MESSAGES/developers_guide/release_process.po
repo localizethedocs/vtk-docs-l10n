@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/release_process.md:1
+msgid "Release Process"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:3
+msgid ""
+"This document provides a high-level overview of the VTK release cycle and "
+"associated release process."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:6
+msgid "Overview"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:8
+msgid ""
+"We aim to release a new version of VTK every six months. However, we "
+"recognize that this schedule is flexible. The project is funded and "
+"developed by many different groups, each of which works towards their own "
+"particular sets of features."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:13
+msgid "VTK releases are named with a `Major.Minor.Patch` scheme."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:15
+msgid ""
+"VTK releases are handled by the VTK release group, which currently consists "
+"of:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:16
+msgid "@vbolea"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:17
+msgid "@sankhesh"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:18
+msgid "@mwestphal"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:20
+msgid "Branching Scheme"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:22
+msgid ""
+"The overall release history resembles a skinny tree. Development proceeds "
+"along the `master` branch, consisting of topic branches that start from and "
+"are merged into `master`. Every so often, a release is tagged and branched "
+"from it."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:26
+msgid ""
+"In general, no work takes place on the `release` branch, but some bug fixes "
+"from master can be backported and will be used for occasional patch releases."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:30
+msgid ""
+"Steps for contributing changes specific to the `release` branch are "
+"documented in [](git/develop.md#create-a-topic)."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:34
+msgid ""
+"On the `master` branch, bug fixes and new features are continuously "
+"developed. At release time, the focus temporarily shifts to producing a "
+"library that is as stable and robust as possible."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:38
+msgid "Steps"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:40
+msgid "The process for cutting releases is as follows:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:42
+msgid "Announce upcoming release"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:44
+msgid ""
+"A few weeks before the intended `release` branch, the VTK release group "
+"announce on [VTK Discourse](https://discourse.vtk.org/) that a new release "
+"is coming. This alerts developers to avoid making drastic changes that might "
+"delay the release and gives them a chance to push important and nearly "
+"completed features in time for the release. For example, see [this post]"
+"(https://discourse.vtk.org/t/vtk-9-4-0-release/14577)."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:50
+msgid ""
+"Polish the dashboards and bug tracker by addressing outstanding issue and "
+"coordinate effort with relevant developers."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:53
+msgid ""
+"Persistent compilation and regression test problems are fixed. Serious "
+"outstanding bugs are fixed."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:56
+msgid "This is an effort involving the whole community of developers."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:58
+msgid ""
+"[Create a new issue](https://gitlab.kitware.com/vtk/vtk/-/issues/new) titled "
+"`Release X.Y.Z[rcN]` based of the [new-release](https://gitlab.kitware.com/"
+"vtk/vtk/-/blob/master/.gitlab/issue_templates/new-release.md?plain=1) "
+"template."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:62
+msgid ""
+"Specific steps to create eiter the candidate or the official release are "
+"found in the newly created issue."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:66
+msgid "This is handled by the VTK release group."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:68
+msgid "Perform the release candidate cycle"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:70
+msgid ""
+"Tag the release branch and create and publish release candidate artifacts "
+"and change summaries."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:73
+msgid ""
+"Announce the release candidate and request feedback from the community, "
+"especially third-party packagers."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:77
+msgid ""
+"Bug reports should be entered into the bug tracker with the upcoming release "
+"number as the milestone."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:81
+msgid ""
+"If the community reports bugs, classify them in the bug tracker and ensure "
+"they are fixed."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:84
+msgid ""
+"This is not handled by the VTK release group but by the whole community of "
+"VTK developers."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:87
+msgid ""
+"Only serious bugs and regressions need to be fixed before the release. Such "
+"merge requests must be acknowledged (`+1`) by the VTK release group before "
+"being merged. New features and minor problems should be merged into `master` "
+"as usual."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:92
+msgid ""
+"Patches for the release branch should start from the release branch, be "
+"submitted through GitLab, and then merged into `master`. Once fully tested "
+"there, reviewed and acknowloedge by the VTK release group, the branch can be "
+"merged into the release branch."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:97
+msgid ""
+"When the selected issues are fixed in the release branch, tag the tip of the "
+"release branch and release it as the next candidate, then the cycle "
+"continues."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:101
+msgid ""
+"Distribution specific patches can accumulate over time. Consider reviewing "
+"the following distribution specific pages to identify potential fixes and "
+"improvements that could be integrated in VTK itself:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:105
+msgid "Debian:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:106
+msgid "https://tracker.debian.org/pkg/vtk9"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:107
+msgid "https://udd.debian.org/patches.cgi?src=vtk9"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:109
+msgid "Gentoo:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:110
+msgid "https://packages.gentoo.org/packages/sci-libs/vtk"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:111
+msgid "https://gitweb.gentoo.org/repo/gentoo.git/tree/sci-libs/vtk/files"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:113
+msgid "openSUSE:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:114
+msgid "https://build.opensuse.org/package/show/openSUSE:Factory/vtk"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:116
+msgid "Package the official release"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:118
+msgid ""
+"The official VTK package consists of tar balls and ZIP files of the source, "
+"Python Wheels, Doxygen documentation, and regression test data, all at the "
+"tag point."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:122
+msgid ""
+"Volunteer third-party packagers create binary packages from the official "
+"release for various platforms, so their input is especially valuable during "
+"the release cycle."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:126
+msgid ""
+"The VTK release group also compiles release notes for the official release "
+"announcement. Release notes are compiled from various [standardized topic "
+"documents](https://gitlab.kitware.com/vtk/vtk/-/tree/master/Documentation/"
+"release) added to the `Documentation/release/dev` folder while features or "
+"issues are fixed. The aggregation of these topic files is done manually and "
+"results in the creation of a file named `Documentation/release/X.Y.md` for "
+"the current release."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:133
+msgid "GitLab and Releases"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:135
+msgid ""
+"GitLab milestones are used for keeping track of branches for the release. "
+"They allow keeping track of issues and merge requests which should be "
+"\"done\" for the milestone to be considered complete."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:139
+msgid ""
+"For each release (including release candidates), a milestone is created with "
+"a plausible due date. The milestone page allows for an easy overview of "
+"branches which need wrangling for a release."
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:143
+msgid "Merge Requests"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:145
+msgid ""
+"Merge requests which need to be rebased onto the relevant release branch "
+"should be marked with the `needs-rebase-for-release` tag and commented on "
+"how the branch can be rebased properly:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:149
+msgid ""
+"This branch is marked for a release, but includes other commits in\n"
+"`master`. Please either rebase the branch on top of the release branch and\n"
+"remove the `needs-rebase-for-release` tag from the merge request:\n"
+"\n"
+"```sh\n"
+"$ git rebase --onto=origin/release origin/master $branch_name\n"
+"$ git gitlab-push -f\n"
+"```\n"
+"\n"
+"or, if there are conflicts when using a single branch, open a new branch\n"
+"and open a merge request against the `release` branch:\n"
+"\n"
+"```sh\n"
+"$ git checkout -b ${branch_name}-release $branch_name\n"
+"$ git rebase --onto=origin/release origin/master ${branch_name}-release\n"
+"$ git gitlab-push\n"
+"```\n"
+"\n"
+"Thanks!\n"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:169
+msgid "Wrangling Branches"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:171
+msgid ""
+"Branches may be wrangled using the filters in the merge request page. "
+"Replace `$release` at the end with the relevant milestone name:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:174
+msgid ""
+"https://gitlab.kitware.com/vtk/vtk/-/merge_requests?"
+"state=all&milestone_title=$release\n"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:176
+msgid ""
+"The following states of a merge request indicate where they are in the flow:"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:178
+msgid "open for `master`: get into `master` first"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:179
+msgid "open for `release`: ensure it is already in `master`"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:180
+msgid ""
+"open with `needs-rebase-for-release` tag: wait for contributor to rebase "
+"properly; ping if necessary"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:182
+msgid "`MERGED`: merge into `release`"
+msgstr ""
+
+#: ../../../developers_guide/release_process.md:184
+msgid ""
+"There is currently no good way of marking a branch that went towards "
+"`master` is also in `release` already since tags cannot be added to closed "
+"merge requests. Suggestions welcome :) ."
+msgstr ""

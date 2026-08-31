@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:1
+msgid "Added new Python API for connecting pipelines"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:3
+msgid ""
+"A new (Python-only) API to connect and execute pipelines was introduced. "
+"Pipeline objects can now be connected with the `>>` operator. For example, "
+"the following"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:6
+msgid ""
+"s = vtkSphereSource()\n"
+"sr = vtkShrinkFilter()\n"
+"sr.SetInputConnection(s.GetOutputPort())\n"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:11
+msgid "can now be expressed as"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:12
+msgid ""
+"s = vtkSphereSource()\n"
+"sr = vtkShrinkFilter()\n"
+"s >> sr\n"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:17
+msgid "It is also possible to do the following:"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:18
+msgid "pipeline = vtkSphereSource() >> vtkShrinkFilter()\n"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:21
+msgid "Pipelines can also be executed more easily. For example:"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:23
+msgid "result = (vtkSphereSource() >> vtkShrinkFilter()).update().output\n"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:26
+msgid "We also introduced an API to use filters in a more functional way:"
+msgstr ""
+
+#: ../../../release_details/9.4/new-python-api-for-pipelines.md:27
+msgid "result = vtkShrinkFilter(shrink_factor=0.5)(input_data)\n"
+msgstr ""
