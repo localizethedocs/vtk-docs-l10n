@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:1
+msgid ""
+"Polyhedron clipping and contouring now uses López polygon-tracing algorithm"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:3
+msgid ""
+"`vtkPolyhedron::Contour()` and `vtkPolyhedron::Clip()` have been replaced "
+"with an implementation based on the López polygon-tracing algorithm (López "
+"et al., \"A new isosurface extraction method on arbitrary grids\", JCP "
+"2021). The new algorithm works directly on the original polyhedron faces "
+"without triangulation, eliminating the complex triangle-merging post-"
+"processing step of the previous implementation."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:9
+msgid ""
+"`vtkPolyhedron::IsInside()` has been replaced with a solid-angle (winding "
+"number) summation, replacing the previous random ray-casting approach. The "
+"new method is deterministic and single-pass."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:13
+msgid "Breaking change: outward-facing normals required"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:15
+msgid ""
+"These new algorithms require that polyhedron face vertices are wound counter-"
+"clockwise when viewed from outside the cell, so that face normals (by the "
+"right-hand rule) point outward. The previous ray-casting and triangulation-"
+"based approaches were tolerant of inconsistent or inward-facing normals; the "
+"new algorithms are not."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:21
+msgid ""
+"Code that constructs `VTK_POLYHEDRON` cells must ensure correct face "
+"winding. `vtkCellTypeSource` has been fixed accordingly."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:24
+msgid "New API"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:26
+msgid ""
+"`vtkLine::DistanceToSegment()` — squared distance from a point to a finite "
+"line segment, with clean degenerate handling"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:28
+msgid ""
+"`vtkTriangle::DistanceToTriangle()` — squared distance from a point to a "
+"triangle (perpendicular when inside, edge distance otherwise)"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:30
+msgid ""
+"`vtkTriangle::SolidAngle()` — signed solid angle subtended by a triangle at "
+"a point, using the Van Oosterom-Strackee formula"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:32
+msgid ""
+"`vtkPolyhedronContour::CountClip()` / `EmitClip()` — bulk count/emit API for "
+"threaded clip filters, used by `vtkTableBasedClipDataSet` and integrated "
+"with the shared edge locator"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:35
+msgid ""
+"`vtkPolyhedronContour::ContourCell()` — cell-level contour helper used by "
+"`vtkContour3DLinearGrid`. Runs the López trace for one polyhedron and "
+"reports intersected edges and per-polygon vertex counts; iso-vertex "
+"deduplication is performed by the calling filter via its shared edge locator"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:41
+msgid "What changed"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:43
+msgid ""
+"`vtkPolyhedronContour` — new class implementing the López algorithm for both "
+"contour and clip operations"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:45
+msgid ""
+"`vtkPolyhedron::IsInside()` — replaced random ray-casting with solid-angle "
+"summation (winding number)"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:47
+msgid ""
+"`vtkPolyhedron::GetCentroid()` — replaced pyramid decomposition with "
+"divergence theorem computation"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:49
+msgid "`vtkPolyhedron::ComputeVolume()` — new method using divergence theorem"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:50
+msgid ""
+"`vtkCellTypeSource::GeneratePolyhedron()` — fixed face winding to produce "
+"outward-pointing normals"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:52
+msgid ""
+"`vtkContour3DLinearGrid` — polyhedra handled via `vtkPolyhedronContour::"
+"ContourCell` alongside the existing linear cell marching tables. Cell "
+"normals for non-triangle polygons use `vtkPolygon::ComputeNormal` over all "
+"vertices rather than a first-3 approximation. `GenerateTriangles=OFF` "
+"outputs native iso-polygons (quads, pentagons, etc.) using the polygon case "
+"tables for linear cells and the López trace for polyhedra. `MergePoints` has "
+"been deprecated; points are always merged."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:60
+msgid ""
+"`vtk3dLinearGridPlaneCutter` now uses `vtkContour3DLinearGrid` and therefore "
+"supports polyhedron cutting, and exposes `GenerateTriangles` and "
+"`GenerateCutScalars`. `MergePoints` has been deprecated."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:63
+msgid ""
+"`vtkContourFilter` now dispatches to the fast `vtkContour3DLinearGrid` path "
+"for linear unstructured grids regardless of `GenerateTriangles`; previously "
+"the fast path was gated on `GenerateTriangles=ON`, so polygon-mode "
+"contouring fell through to the generic per-cell `vtkContourGrid` path and "
+"was substantially slower."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:67
+msgid ""
+"`vtkTableBasedClipDataSet` — polyhedra flow through the same batch / prefix-"
+"sum / extract pipeline as other cell types, using the bulk `CountClip` / "
+"`EmitClip` cell-array API together with the shared edge locator for iso-"
+"vertex deduplication. Fast-kept and fast-discarded cells use sentinel case "
+"values; intersected cells are handled by Count/Emit."
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:72
+msgid ""
+"Tests that load polyhedron data with inconsistent winding now normalize face "
+"orientation at runtime before contour/clip operations"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:74
+msgid ""
+"`vtkCPExodusIIElementBlock` used by `vtkCPExodusIIInSituReader` has been "
+"deprecated in favor of `vtkUnstructuredGrid`"
+msgstr ""
+
+#: ../../../release_details/9.7/polyhedron-lopez-algorithm.md:75
+msgid ""
+"`vtkCPExodusIIElementBlockCellIterator` has been deprecated, because it's no "
+"longer needed."
+msgstr ""

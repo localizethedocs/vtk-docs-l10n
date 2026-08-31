@@ -1,0 +1,422 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:1
+msgid "vtkBuffer Python Integration and NumPy Memory Safety"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:3
+msgid "Overview"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:5
+msgid ""
+"VTK now provides improved Python/NumPy interoperability through the "
+"`vtkBuffer` class with full buffer protocol support. This enables zero-copy "
+"data sharing between VTK arrays and NumPy, along with improved memory safety "
+"when VTK arrays reallocate."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:9
+msgid "vtkBuffer and the Python Buffer Protocol"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:11
+msgid "Direct Buffer Access"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:13
+msgid ""
+"You can now use `vtkBuffer` directly from Python with seamless NumPy "
+"integration. The buffer protocol implementation enables zero-copy views of "
+"VTK memory:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:16
+msgid ""
+"import numpy as np\n"
+"from vtkmodules.vtkCommonCore import vtkBuffer\n"
+"\n"
+"# Create a typed buffer\n"
+"buf = vtkBuffer['float64']()\n"
+"buf.Allocate(100)\n"
+"\n"
+"# Create a numpy array that shares memory with the buffer (zero-copy)\n"
+"arr = np.asarray(buf)\n"
+"\n"
+"# Modifications through numpy are reflected in the VTK buffer\n"
+"arr[:] = np.linspace(0, 1, 100)\n"
+"\n"
+"# Multiple numpy arrays can share the same buffer\n"
+"arr2 = np.asarray(buf)\n"
+"assert np.shares_memory(arr, arr2)\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:35
+msgid "Supported Data Types"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:37
+msgid ""
+"The buffer protocol supports all standard VTK scalar types with automatic "
+"NumPy dtype mapping:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "VTK Type"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "NumPy dtype"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`float32`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.float32`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`float64`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.float64`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`int8`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.int8`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`uint8`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.uint8`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`int16`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.int16`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`uint16`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.uint16`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`int32`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.int32`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`uint32`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.uint32`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`int64`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.int64`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`uint64`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:0
+msgid "`numpy.uint64`"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:53
+msgid "Memory Views"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:55
+msgid "Standard Python `memoryview` objects also work with `vtkBuffer`:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:57
+msgid ""
+"buf = vtkBuffer['int32']()\n"
+"buf.Allocate(4)\n"
+"\n"
+"m = memoryview(buf)\n"
+"print(m.shape)     # (4,)\n"
+"print(m.itemsize)  # 4\n"
+"print(m.format)    # 'i'\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:67
+msgid "vtkAbstractBuffer Base Class"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:69
+msgid ""
+"A new `vtkAbstractBuffer` base class provides the interface for buffer "
+"protocol support. It defines virtual methods for type-agnostic buffer access:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:72
+msgid "`GetVoidBuffer()` - Returns the raw buffer pointer"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:73
+msgid "`GetNumberOfElements()` - Returns the number of elements"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:74
+msgid "`GetDataType()` - Returns the VTK type identifier (e.g., `VTK_FLOAT`)"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:75
+msgid "`GetDataTypeSize()` - Returns the size in bytes of each element"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:77
+msgid ""
+"This abstraction enables Python wrapping code to support any buffer type "
+"without knowing the specific template instantiation."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:80
+msgid "Accessing Buffers from Data Arrays"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:82
+msgid ""
+"You can now access the underlying `vtkBuffer` objects from VTK data arrays, "
+"enabling direct buffer protocol access to array memory:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:85
+msgid ""
+"import numpy as np\n"
+"from vtkmodules.vtkCommonCore import vtkFloatArray\n"
+"\n"
+"# Create a VTK array\n"
+"arr = vtkFloatArray()\n"
+"arr.SetNumberOfComponents(3)\n"
+"arr.SetNumberOfTuples(100)\n"
+"\n"
+"# Get the underlying buffer (for AOS arrays)\n"
+"buf = arr.GetBuffer()\n"
+"\n"
+"# Create a numpy view of the raw buffer\n"
+"raw_data = np.asarray(buf)\n"
+"print(raw_data.shape)  # (300,) - flattened view of 100 tuples x 3 "
+"components\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:102
+msgid "Array Type Methods"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:104
+msgid "Different array types provide appropriate buffer access methods:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:106
+msgid ""
+"**vtkAOSDataArrayTemplate** (e.g., `vtkFloatArray`): `GetBuffer()` returns "
+"the single contiguous buffer"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:108
+msgid ""
+"**vtkSOADataArrayTemplate**: `GetComponentBuffer(int comp)` returns the "
+"buffer for a specific component"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:110
+msgid ""
+"**vtkScaledSOADataArrayTemplate**: `GetComponentBuffer(int comp)` returns "
+"the buffer for a specific component"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:113
+msgid "Memory Safety with BufferChangedEvent"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:115
+msgid "The Problem"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:117
+msgid ""
+"When a NumPy array references VTK buffer memory and the VTK array "
+"reallocates (e.g., due to `Resize()` or `InsertNextTuple()`), the NumPy "
+"array may point to invalid memory, causing crashes or data corruption."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:121
+msgid "The Solution"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:123
+msgid ""
+"VTK data arrays now fire a `BufferChangedEvent` whenever they reallocate "
+"their internal buffers. Python wrapper classes like `VTKArray` observe this "
+"event and mark themselves as stale, raising a `RuntimeError` if accessed "
+"after the buffer has changed."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:128
+msgid ""
+"When using `vtkBuffer` directly, you should obtain fresh buffer references "
+"after any operation that might reallocate the array."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:131
+msgid "Example"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:133
+msgid ""
+"import numpy as np\n"
+"from vtkmodules.vtkCommonCore import vtkFloatArray\n"
+"import vtkmodules.numpy_interface.dataset_adapter as dsa\n"
+"\n"
+"arr = vtkFloatArray()\n"
+"arr.SetNumberOfValues(10)\n"
+"arr.SetValue(0, 42.0)\n"
+"\n"
+"# Create a VTKArray wrapper (recommended for safety)\n"
+"va = dsa.vtkDataArrayToVTKArray(arr)\n"
+"print(va[0])  # 42.0\n"
+"\n"
+"# Resize the VTK array - this may reallocate the buffer\n"
+"arr.SetNumberOfValues(1000)\n"
+"\n"
+"# VTKArray detects the stale buffer and raises RuntimeError\n"
+"try:\n"
+"    print(va[0])  # Raises RuntimeError\n"
+"except RuntimeError:\n"
+"    print(\"Buffer changed - get a fresh reference\")\n"
+"\n"
+"# Get a fresh VTKArray reference\n"
+"va_new = dsa.vtkDataArrayToVTKArray(arr)\n"
+"print(va_new.shape)  # (1000,)\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:160
+msgid "Improved numpy_support and dataset_adapter"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:162
+msgid "numpy_support Module"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:164
+msgid ""
+"The `numpy_to_vtk()` function now stores NumPy array references on the "
+"buffer rather than the data array. This ensures the NumPy memory stays valid "
+"even if the VTK array is modified:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:168
+msgid ""
+"from vtkmodules.util.numpy_support import numpy_to_vtk\n"
+"import numpy as np\n"
+"\n"
+"data = np.array([1.0, 2.0, 3.0], dtype=np.float32)\n"
+"vtk_arr = numpy_to_vtk(data)\n"
+"\n"
+"# The numpy array reference is stored on the buffer, keeping memory valid\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:178
+msgid "dataset_adapter Module"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:180
+msgid ""
+"The `VTKArray` class in the dataset adapter now stores a reference to the "
+"underlying buffer, ensuring memory validity throughout the VTKArray's "
+"lifetime:"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:183
+msgid ""
+"import vtkmodules.numpy_interface.dataset_adapter as dsa\n"
+"from vtkmodules.vtkFiltersSources import vtkSphereSource\n"
+"\n"
+"sphere = vtkSphereSource()\n"
+"sphere.Update()\n"
+"\n"
+"# Wrap the output\n"
+"wrapped = dsa.WrapDataObject(sphere.GetOutput())\n"
+"\n"
+"# Access point coordinates as VTKArray (numpy subclass)\n"
+"points = wrapped.Points\n"
+"\n"
+"# The VTKArray holds a buffer reference, ensuring memory safety\n"
+"print(points.shape)\n"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:200
+msgid "Best Practices"
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:202
+msgid ""
+"**Use VTKArray for automatic safety**: The dataset adapter's `VTKArray` "
+"class automatically detects buffer changes and raises `RuntimeError` on "
+"stale access."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:205
+msgid ""
+"**Get fresh references after modifications**: If you modify a VTK array's "
+"size, obtain a new buffer reference and NumPy view."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:208
+msgid ""
+"**Use zero-copy when possible**: Creating NumPy views via `np.asarray(buf)` "
+"avoids data copying and provides the best performance."
+msgstr ""
+
+#: ../../../release_details/9.7/vtkBuffer-in-python.md:211
+msgid ""
+"**Observe BufferChangedEvent for custom wrappers**: If you create custom "
+"Python wrappers around VTK arrays, observe `BufferChangedEvent` to detect "
+"reallocation."
+msgstr ""

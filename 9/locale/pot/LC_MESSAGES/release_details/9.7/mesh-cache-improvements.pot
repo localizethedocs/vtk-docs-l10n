@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:1
+msgid "Mesh cache improvements"
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:3
+msgid ""
+"`vtkDataObjectMeshCache` has better performance to forward attribute to "
+"output:"
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:4
+msgid ""
+"`PreservedInputAttributes` flags a field from the OriginalDataObject so its "
+"arrays are shallow copied, without the need of the (time-costly) "
+"`OriginalIds` mapping."
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:6
+msgid ""
+"when using the `OriginalIds` map, the cache now uses SMP acceleration to "
+"forward attributes to the output."
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:8
+msgid ""
+"`PreservedCachedArray` flags some arrays from the cache to be preserved as "
+"is in the output. By default, every cached arrays are removed and the output "
+"is filled only by forwarding input arrays. When the consumer adds a new "
+"array that will not change in static mesh cases, it is useful to set it as a "
+"`PreservedCachedArray`."
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:13
+msgid ""
+"`vtkMeshCacheRunner` is a RAII helper to use an existing "
+"`vtkDataObjectMeshCache` with a new OriginalDataObject. Its constructor does "
+"some sanity checks, can add implicit `OriginalIds` if needed and copy the "
+"cache to the given output if the cache is valid. Optionally performs cache "
+"update in its destructor."
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:19
+msgid "Fix for composite data"
+msgstr ""
+
+#: ../../../release_details/9.7/mesh-cache-improvements.md:21
+msgid ""
+"`vtkDataObjectMeshCache` stores the MeshMTime for each input leaf. "
+"Previously, only the most recent (i.e. the greater) was stored for "
+"comparison. This was a wrong approach: replacing an older leaf with another "
+"dataset also older than the stored value, the cache was still considered as "
+"valid."
+msgstr ""

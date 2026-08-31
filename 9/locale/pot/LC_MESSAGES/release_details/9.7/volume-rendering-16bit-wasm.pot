@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:1
+msgid "Support 16-bit Textures on GLES 3.0 and WebAssembly"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:3
+msgid ""
+"VTK now provides comprehensive support for 16-bit textures (both signed and "
+"unsigned) on GLES 3.0 (including WebAssembly/Emscripten) platforms, "
+"addressing the limitation of missing normalized 16-bit formats in the OpenGL "
+"ES core specification."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:8
+msgid "Runtime Detection of GL_EXT_texture_norm16"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:10
+msgid ""
+"`vtkOpenGLState` now detects the availability of the `GL_EXT_texture_norm16` "
+"extension at runtime. When the extension is present, normalized 16-bit "
+"formats (`GL_R16` for unsigned and signed variants) are used natively. When "
+"absent, VTK automatically falls back to optimized conversion strategies."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:15
+msgid "GPU-Assisted Conversion with Multiple Strategies"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:17
+msgid ""
+"A new `vtkOpenGLTextureNormalizationHelper` class provides three conversion "
+"strategies for platforms without native 16-bit support:"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:20
+msgid ""
+"**CPU Conversion**: Direct CPU-based normalization of 16-bit data to 32-bit "
+"float before upload, useful for debugging and smaller datasets."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:22
+msgid ""
+"**Compute Shader Conversion**: High-performance GPU-based conversion using "
+"compute shaders for efficient parallel processing of large datasets."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:24
+msgid ""
+"**Framebuffer-based Conversion**: Alternative GPU conversion using "
+"framebuffer objects and rendering techniques, providing compatibility across "
+"different hardware configurations."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:28
+msgid ""
+"The system automatically selects the most efficient strategy available on "
+"the target platform."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:31
+msgid "Zero-Copy and Performance Optimization"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:33
+msgid ""
+"The implementation prioritizes zero-copy transfer of texture data whenever "
+"possible. For 16-bit data on GLES 3.0 without `GL_EXT_texture_norm16`, the "
+"conversion is delegated to the GPU when available, minimizing CPU "
+"involvement and data movement. This significantly improves performance when "
+"loading large 16-bit texture datasets."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:39
+msgid "Support for Both Unsigned and Signed 16-bit Data"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:41
+msgid ""
+"**VTK_UNSIGNED_SHORT**: Falls back to `GL_R32F` with values normalized to "
+"[0, 1] when native support is unavailable."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:43
+msgid ""
+"**VTK_SHORT**: Extends the framework to handle signed 16-bit data, "
+"normalizing values to [-1, 1] using `GL_R32F` on platforms without extension "
+"support."
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:47
+msgid "Platform Coverage"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:49
+msgid "This enhancement enables proper 16-bit texture handling across:"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:51
+msgid "**GLES 3.0**: Modern mobile and embedded systems"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:52
+msgid "**WebAssembly (Emscripten)**: Web-based VTK applications"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:53
+msgid ""
+"**Legacy Systems**: Fallback to CPU conversion ensures compatibility even on "
+"older hardware"
+msgstr ""
+
+#: ../../../release_details/9.7/volume-rendering-16bit-wasm.md:56
+msgid ""
+"The `Create1DFromRaw`, `Create2DFromRaw`, `Create2DArrayFromRaw`, and "
+"`Create3DFromRaw` methods in `vtkTextureObject` now transparently handle 16-"
+"bit source data with automatic GPU-first conversion and CPU fallback "
+"strategies."
+msgstr ""

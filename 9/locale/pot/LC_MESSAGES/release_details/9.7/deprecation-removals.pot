@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/deprecation-removals.md:1
+msgid "Deprecations/Removals"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:3
+msgid "All APIs that were deprecated in 9.5 are now removed."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:4
+msgid ""
+"In CommonCore: many vtkType were removed: VTK_MULTIGROUP_DATA_SET, "
+"VTK_HIERARCHICAL_DATA_SET, VTK_HIERARCHICAL_BOX_DATA_SET, VTK_HYPER_OCTREE, "
+"VTK_TEMPORAL_DATA_SET, VTK_PISTON_DATA_OBJECT"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:5
+msgid "In CommonCore: vtkScalarsToColors::UseMagnitude was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:6
+msgid ""
+"In CommonCore: vtkTypedDataArrayInstantiate, vtkMappedDataArray, "
+"vtkTypedDataArrayvtkTypedDataArrayIterator, were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:7
+msgid ""
+"In CommonDataModel: vtkAbstractCellLinks::SequentialProcessing and "
+"vtkStaticCellLinksTemplate::SequentialProcessing were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:8
+msgid ""
+"In CommonDataModel: vtkConvexPointSet::HasFixedTopology, "
+"vtkStaticCellLinksTemplate::SerialBuildLinksFromMultipleArrays and "
+"vtkStaticCellLinksTemplate::ThreadedBuildLinksFromMultipleArrays were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:9
+msgid ""
+"In CommonDataModel: vtkHierarchicalBoxDataSet, vtkStructuredDataType were "
+"removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:10
+msgid ""
+"In CommonExecutionModel: vtkExtentSplitter::Min, vtkExtentSplitter::Max were "
+"removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:11
+msgid "In CommonExecutionModel: vtkHierarchicalBoxDataSetAlgorithm was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:12
+msgid ""
+"In FiltersCore: vtkAppendPolyData::AppendData and vtkAppendPolyData::"
+"AppendCells were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:13
+msgid "In FiltersGeometry: vtkHierarchicalDataSetGeometryFilter was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:14
+msgid ""
+"In FiltersHybrid: Many method from vtkAdaptiveDataSetSurfaceFilter were "
+"removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:15
+msgid "In FiltersHyperTree: vtkHyperTreeGridVisibleLeavesSize was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:16
+msgid ""
+"In FiltersModeling: vtkDijkstraImageGeodesicPath::GetImageDataInput was "
+"removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:17
+msgid ""
+"In IOCatalystConduit: vtkConduitToDataObject::FillPartionedDataSet, "
+"vtkConduitArrayUtilities::MCGhostArrayToVTKGhostArray were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:18
+msgid ""
+"In IOExodus: vtkCPExodusIINodalCoordinatesTemplate, "
+"vtkCPExodusIIResultsArrayTemplate were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:19
+msgid ""
+"In IOGeometry: vtkFLUENTReader::ReadZone, vtkFLUENTReader::ParseCaseFile, "
+"vtkFLUENTReader::ParseDataFile were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:20
+msgid "In IOHDF: vtkHDFReader::MergeParts and all related API was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:21
+msgid ""
+"In IOLegacy: vtkCompositeDataWriter and vtkCompositeDataReader API for "
+"vtkHierarchicalBoxDataSet was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:22
+msgid "In IOParallelXML: vtkXMLPHierarchicalBoxDataWriter was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:23
+msgid ""
+"In IOParallelXML: vtkXMLPUnstructuredDataWriter::GetInputAsPointSet was "
+"removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:24
+msgid ""
+"In IOXML: vtkXMLGenericDataObjectReader API related to "
+"vtkHierarchicalBoxDataSet was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:25
+msgid ""
+"In IOXML: vtkXMLHierarchicalBoxDataReader, vtkXMLHierarchicalBoxDataWriter, "
+"vtkXMLHierarchicalDataReader, vtkXMLMultiGroupDataReader were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:26
+msgid ""
+"In IOXML: vtkXMLWriter::GetInputAsDataSet, vtkXMLUnstructuredDataWriter::"
+"GetInputAsPointSet, vtkXMLTableWriter::GetInputAsTable, vtkXMLReader::Min, "
+"vtkXMLReader::Max were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:27
+msgid ""
+"In InteractionWidgets: Deprecated behavior of vtkCellCentersPointPlacer::"
+"HasProp, vtkPolyDataPointPlacer::HasProp have been removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:28
+msgid ""
+"In ParallelMPI: vtkMPIUtilities::Printf, SynchronizedPrintf were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:29
+msgid ""
+"In RenderingAnnotation: Many vtkAxisActor member and methods were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:30
+msgid ""
+"In RenderingCore: vtkMapper::GetInputAsDataSet, vtkViewport::AddActor2D, "
+"vtkViewport::RemoveActor2D were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:31
+msgid ""
+"In RenderingImage: Deprecated behavior of vtkImageStack::HasProp was removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:32
+msgid ""
+"In RenderingOpenXR: vtkOpenXRRenderWindow::SetUseDepthExtension and "
+"vtkOpenXRRenderWindow::GetUseDepthExtension were removed"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecation-removals.md:33
+msgid ""
+"In WebWebAssembly: vtkWasmSceneManager, vtkWasmSceneManager were removed"
+msgstr ""

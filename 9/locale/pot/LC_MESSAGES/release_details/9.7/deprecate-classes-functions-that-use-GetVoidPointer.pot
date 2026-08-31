@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK 9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:1
+msgid "Deprecate classes/functions that use vtkAbstractArray::GetVoidPointer()"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:3
+msgid ""
+"Several classes and methods have been deprecated to further reduce the usage "
+"of `vtkAbstractArray::GetVoidPointer()`."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:5
+msgid ""
+"`vtkSMPContourGrid` has been deprecated. Use `vtkContourFilter` instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:6
+msgid ""
+"`vtkSMPMergePoints` has been deprecated. Use `vtkStaticPointLocator` instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:7
+msgid ""
+"`vtkSMPMergePolyDataHelper` has been deprecated. Use `vtkAppendPolyData` "
+"instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:8
+msgid ""
+"`vtkPoints(2D)::GetVoidPointer()` have been deprecated. Use `vtkPoints(2D)::"
+"GetData()` along with `vtkArrayDispatch` instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:10
+msgid ""
+"`vtkGenericDataArray::GetPointer()` has been deprecated. Use "
+"`vtkArrayDispatch` and `vtk::DataArray(Tuple/Value)Range` instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:12
+msgid ""
+"`vtk(Array/Points)Portal` have been deprecated because they are no longer "
+"needed."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:13
+msgid ""
+"`vtkAbstractArray::ExportToVoidPointer()` has been deprecated. Use DeepCopy "
+"with an `vtkAOSDataArrayTemplate` instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:15
+msgid ""
+"`vtkAbstractArray::NewIterator()` along with `vtkArrayIterator`, "
+"`vtkBitArrayIterator`, `vtkArrayIteratorTemplate` have been deprecated. Use "
+"`vtk::DataArrayValueRange` or the array directly instead."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:17
+msgid ""
+"`vtkAbstractArray:WriterToVoidPointer()` has been deprecated. Use "
+"`vtkAOSDataArrayTemplate::WriterPointer()` or `vtkAbstractArray::"
+"SetNumberOf[Values/Tuples]()` instead"
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:19
+msgid "`vtkVoidArray` has been deprecated because it is no longer needed."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:20
+msgid ""
+"`vtkScaledSOADataArrayTemplate` has been deprecated because it is no longer "
+"needed."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:21
+msgid ""
+"`vtk(Angular)PeriodicDataArray` have been deprecated because they are no "
+"longer needed since `vtkAngularPeriodicFilter` generates an implicit array "
+"using an internally defined backend."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:23
+msgid ""
+"`vtkStdFunctionArray` has been deprecated because it is no longer needed."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:25
+msgid ""
+"Additionally, to further reduce the usage of `vtkAbstractArray::"
+"GetVoidPointer()`, `vtk::DataArray(Value/Tuple)Range` have been extended to "
+"support all concrete `vtkAbstractArray` subclasses, including `vtkBitArray`, "
+"`vtkStringArray`, and `vtkVariantArray`. This was accomplished by adding "
+"`(Set/Get)Typed(Component/Tuple)`, `GetVariantArray`, and `ShallowCopy` "
+"methods to these classes, and change their implementation so that they use "
+"`vtkBuffer` internally, instead of raw pointers, so that their "
+"implementation is similar to `vtkAOSDataArrayTemplate`."
+msgstr ""
+
+#: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:31
+msgid ""
+"Finally, all `vtkGenericDataArray` subclasses (except "
+"`vtkAOSDataArrayTemplate`) now have a `GetVoidPointer()` method which warns "
+"you when you use it because it performs a deep-copy internally. To that end, "
+"`vtkSOADataArrayTemplate` no longer converts to `vtkAOSDataArrayTemplate` "
+"when `GetVoidPointer()` is called."
+msgstr ""
