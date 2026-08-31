@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:56
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:601
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:577
 msgid "Add native-type aliases so template['float64'] etc. work."
 msgstr ""
 
@@ -141,7 +141,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:60
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:608
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:584
 msgid ""
 "Register VTKStructuredPointArray for all vtkStructuredPointArray template "
 "instantiations."
@@ -168,7 +168,7 @@ msgid "API"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:86
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:591
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:567
 msgid "None"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Return the full (N, 3) array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:603
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:579
 msgid ""
 "Templates that only have vtkType-based instantiations (e.g. vtkTypeFloat64) "
 "need aliases under the native IA64 mangled names (e.g. _IdE for double) so "

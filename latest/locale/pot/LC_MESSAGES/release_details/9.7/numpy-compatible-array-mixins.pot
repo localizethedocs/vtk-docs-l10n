@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:1
+msgid "NumPy-compatible array mixins for VTK data arrays"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:3
+msgid ""
+"VTK data arrays now behave like NumPy arrays in Python. The new "
+"`VTKAOSArray` and `VTKSOAArray` mixin classes are automatically applied to "
+"all `vtkAOSDataArrayTemplate` and `vtkSOADataArrayTemplate` instances, so "
+"arrays obtained from VTK support arithmetic, indexing, reductions, and "
+"ufuncs without manual conversion."
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:9
+msgid "Zero-copy NumPy integration"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:11
+msgid ""
+"AOS arrays expose a single contiguous buffer as a zero-copy NumPy view. SOA "
+"arrays expose per-component buffers as zero-copy NumPy views and perform "
+"element-wise operations per-component, avoiding conversion to interleaved "
+"layout:"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:16
+msgid ""
+"from vtkmodules.vtkFiltersSources import vtkSphereSource\n"
+"\n"
+"sphere = vtkSphereSource()\n"
+"sphere.Update()\n"
+"points = sphere.GetOutput().GetPoints().GetData()\n"
+"\n"
+"# Arithmetic works directly on VTK arrays\n"
+"scaled = points * 2.0\n"
+"offset = points + 1.0\n"
+"\n"
+"# NumPy functions work transparently\n"
+"import numpy as np\n"
+"print(np.mean(points, axis=0))\n"
+"print(np.min(points), np.max(points))\n"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:33
+msgid "SOA per-component operations"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:35
+msgid ""
+"SOA arrays preserve their structure-of-arrays layout through operations, "
+"avoiding the overhead of interleaving components:"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:38
+msgid ""
+"from vtkmodules.util.numpy_support import numpy_to_vtk_soa\n"
+"\n"
+"x = np.random.rand(1000)\n"
+"y = np.random.rand(1000)\n"
+"z = np.random.rand(1000)\n"
+"soa = numpy_to_vtk_soa([x, y, z], name=\"coords\")\n"
+"\n"
+"# Per-component operations — no AOS conversion\n"
+"result = soa * 2.0 + 1.0\n"
+"print(soa.components)        # [x_array, y_array, z_array]\n"
+"print(np.sum(soa, axis=0))   # per-component sum\n"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:52
+msgid "Features"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:54
+msgid ""
+"**Arithmetic operators**: `+`, `-`, `*`, `/`, `//`, `**`, `%` and their "
+"reverse variants"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:56
+msgid "**Comparison operators**: `<`, `<=`, `==`, `!=`, `>=`, `>`"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:57
+msgid ""
+"**NumPy ufuncs**: element-wise operations dispatch per-component for SOA"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:58
+msgid ""
+"**NumPy array functions**: `sum`, `mean`, `min`, `max`, `std`, `var`, `any`, "
+"`all`, `prod`, `argmin`, `argmax`, `cumsum`, `cumprod`, `concatenate`, "
+"`clip`, `sort`, `where`, `isin`, `round`, `dot`"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:61
+msgid "**Indexing**: scalar, slice, boolean, and fancy indexing"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:62
+msgid ""
+"**Memory safety**: `BufferChangedEvent` observation invalidates stale views"
+msgstr ""
+
+#: ../../../release_details/9.7/numpy-compatible-array-mixins.md:63
+msgid ""
+"**Metadata propagation**: dataset and association metadata flow through "
+"element-wise operations"
+msgstr ""

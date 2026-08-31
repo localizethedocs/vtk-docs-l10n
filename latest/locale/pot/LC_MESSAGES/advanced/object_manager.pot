@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,18 +108,12 @@ msgstr ""
 
 #: ../../../advanced/object_manager.md:49
 msgid ""
-"In WASM, you will need to create two directories that resemble this tree. In "
+"In WASM, you will need to create a directory that resembles this tree. In "
 "this illustration, we wish to (de)serialize classes from the `Bar` and `Foo` "
 "modules in WASM using `vtkRemoteSession` or `vtkStandaloneSession`."
 msgstr ""
 
 #: ../../../advanced/object_manager.md:52
-msgid ""
-"The `WebAssemblyAsync` module is optional. You can leave it out if you are "
-"not interested in having WebGPU support."
-msgstr ""
-
-#: ../../../advanced/object_manager.md:55
 msgid ""
 "- Bar\n"
 " |- ...\n"
@@ -130,16 +124,13 @@ msgid ""
 "- WebAssembly\n"
 " |- vtk.module\n"
 " |- CMakeLists.txt\n"
-"- WebAssemblyAsync\n"
-" |- vtk.module\n"
-" |- CMakeLists.txt\n"
 msgstr ""
 
-#: ../../../advanced/object_manager.md:70
+#: ../../../advanced/object_manager.md:64
 msgid "Declare your dependencies in `WebAssembly/vtk.module`"
 msgstr ""
 
-#: ../../../advanced/object_manager.md:72
+#: ../../../advanced/object_manager.md:66
 msgid ""
 "NAME\n"
 "  FooBar::WebAssembly\n"
@@ -155,13 +146,22 @@ msgid ""
 "  VTK::RenderingOpenGL2\n"
 "  VTK::RenderingUI\n"
 "  VTK::RenderingVolumeOpenGL2\n"
+"  VTK::RenderingWebGPU\n"
 msgstr ""
 
-#: ../../../advanced/object_manager.md:89
+#: ../../../advanced/object_manager.md:84
+msgid ""
+"`VTK::RenderingWebGPU` is optional; drop it if you do not need WebGPU "
+"support. A single `vtkWebAssembly.wasm` binary now exposes both the "
+"synchronous and asynchronous sessions, so no separate async module is "
+"required."
+msgstr ""
+
+#: ../../../advanced/object_manager.md:88
 msgid "Build the module in the `WebAssembly/CMakeLists.txt`"
 msgstr ""
 
-#: ../../../advanced/object_manager.md:91
+#: ../../../advanced/object_manager.md:90
 msgid ""
 "if (NOT CMAKE_SYSTEM_NAME STREQUAL \"Emscripten\")\n"
 "  message(FATAL_ERROR\n"
@@ -174,34 +174,8 @@ msgid ""
 ")\n"
 msgstr ""
 
-#: ../../../advanced/object_manager.md:103
+#: ../../../advanced/object_manager.md:102
 msgid ""
 "Finally, ensure the `WebAssembly/vtk.module` is passed to `vtk_module_build` "
 "in your project's root `CMakeLists.txt`"
-msgstr ""
-
-#: ../../../advanced/object_manager.md:105
-msgid ""
-"If you are interested in WebGPU support, declare your dependencies in "
-"`WebAssemblyAsync/vtk.module` and repeat similar steps as in the non-async "
-"section using the new module names."
-msgstr ""
-
-#: ../../../advanced/object_manager.md:108
-msgid ""
-"NAME\n"
-"  FooBar::WebAssemblyAsync\n"
-"LIBRARY_NAME\n"
-"  fooBarWebAssemblyAsync\n"
-"PRIVATE_DEPENDS\n"
-"  VTK::SerializationManager\n"
-"  VTK::WebAssemblySession\n"
-"OPTIONAL_DEPENDS\n"
-"  FooBar::Foo\n"
-"  FooBar::Bar\n"
-"  VTK::RenderingContextOpenGL2\n"
-"  VTK::RenderingOpenGL2\n"
-"  VTK::RenderingUI\n"
-"  VTK::RenderingVolumeOpenGL2\n"
-"  VTK::RenderingWebGPU\n"
 msgstr ""

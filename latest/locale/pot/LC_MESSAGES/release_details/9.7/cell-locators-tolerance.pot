@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:1
+msgid ""
+"CellLocators: Make sure that when a tolerance parameter is available it can "
+"be used"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:3
+msgid ""
+"`vtkCellLocator`, `vtkStaticCellLocator`, `vtkCellTreeLocator`, "
+"`vtkModifiedBSPTree`, `vtkOBBTree`, `vtkLinearTransformCellLocator` have the "
+"following functions that have a tolerance parameter, but it was not used in "
+"the implementation. Now it is used."
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:7
+msgid "`InsideCellBounds`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:8
+msgid "`IntersectWithLine`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:9
+msgid "`FindCell`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:10
+msgid "`FindCellsAlongLine`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:11
+msgid "`FindCellsAlongPlane`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:13
+msgid ""
+"The following `vtkAbstractCellLocator` functions are no longer virtual, "
+"since they are calling other functions internally, which the subclasses may "
+"implement."
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:16
+msgid "`vtkIdType FindCell(double x[3]);`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:17
+msgid ""
+"`vtkIdType FindCell(double x[3], double tol2, vtkGenericCell* GenCell, "
+"double pcoords[3], double* weights);`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:18
+msgid ""
+"`void FindCellsAlongLine(const double p1[3], const double p2[3], double tol, "
+"vtkIdList* cells);`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:20
+msgid ""
+"Some other classes and tests that previously pretended to use the tolerance "
+"(without actually using it) has been updated accordingly:"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:23
+msgid "`vtkBinCellDataFilter`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:24
+msgid "`TestResampleWithDataSet3`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:25
+msgid "Test `CellTreeLocator`"
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:27
+msgid "And new tests have been added in TestCellLocatorsEdgeCases."
+msgstr ""
+
+#: ../../../release_details/9.7/cell-locators-tolerance.md:29
+msgid ""
+"because of these changes, since `vtkAbstractCellLocator` don't use "
+"`vtkLocator::Tolerance`, `vtkLocator::Tolerance` has been deprecated, and "
+"only `vtkAbstractPointLocator` has it now."
+msgstr ""

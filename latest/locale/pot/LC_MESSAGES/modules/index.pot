@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -240,15 +240,15 @@ msgstr ""
 
 #: ../../../modules/index.md:65 ../../../modules/index.md:68
 #: ../../../modules/index.md:82 ../../../modules/index.md:106
-#: ../../../modules/index.md:111 ../../../modules/index.md:119
-#: ../../../modules/index.md:120 ../../../modules/index.md:133
-#: ../../../modules/index.md:159 ../../../modules/index.md:184
-#: ../../../modules/index.md:212 ../../../modules/index.md:214
-#: ../../../modules/index.md:231 ../../../modules/index.md:232
-#: ../../../modules/index.md:233 ../../../modules/index.md:241
-#: ../../../modules/index.md:247 ../../../modules/index.md:269
-#: ../../../modules/index.md:270 ../../../modules/index.md:285
-#: ../../../modules/index.md:320
+#: ../../../modules/index.md:112 ../../../modules/index.md:120
+#: ../../../modules/index.md:121 ../../../modules/index.md:134
+#: ../../../modules/index.md:160 ../../../modules/index.md:185
+#: ../../../modules/index.md:213 ../../../modules/index.md:215
+#: ../../../modules/index.md:232 ../../../modules/index.md:233
+#: ../../../modules/index.md:234 ../../../modules/index.md:242
+#: ../../../modules/index.md:248 ../../../modules/index.md:270
+#: ../../../modules/index.md:271 ../../../modules/index.md:286
+#: ../../../modules/index.md:321
 msgid ""
 "<svg version=\"4.0.0.63c5cb3\" width=\"2.0em\" height=\"2.0em\" class=\"sd-"
 "material-icon sd-material-icon-menu_book\" viewBox=\"0 0 24 24\" aria-"
@@ -618,6 +618,14 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid "Adapt Qt's SQL interface to VTK's vtkSQLDatabase."
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::GUISupportQtWebGPU`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Make VTK WebGPU render-windows available to Qt applications."
 msgstr ""
 
 #: ../../../modules/index.md:3
@@ -1382,11 +1390,11 @@ msgid "{bdg-primary-line}`VTK::ViewsQt`"
 msgstr ""
 
 #: ../../../modules/index.md:3
-msgid "{bdg-primary-line}`VTK::WebAssembly`"
+msgid "{bdg-primary-line}`VTK::ViewsScivis`"
 msgstr ""
 
 #: ../../../modules/index.md:3
-msgid "{bdg-primary-line}`VTK::WebAssemblyAsync`"
+msgid "{bdg-primary-line}`VTK::WebAssembly`"
 msgstr ""
 
 #: ../../../modules/index.md:3

@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:1
+msgid "Improved `vtkCellGrid` evaluation performance and API"
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:3
+msgid ""
+"`vtkDGEvaluator::ClassifyPoints` has been rewritten for substantially better "
+"performance."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:5
+msgid ""
+"Classification now runs in parallel over cell batches via `vtkSMPTools`."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:7
+msgid ""
+"Before invoking the Newton-Raphson solver, each candidate probe point is "
+"tested against the convex hull of the cell's corner points using the new "
+"`vtkConvexHull` static API; points outside the hull are rejected "
+"immediately, avoiding the expensive Newton step for the vast majority of "
+"probe points in practice."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:12
+msgid ""
+"The separate `EvaluatePositions` pass has been merged into `ClassifyPoints`, "
+"so parametric coordinates computed during classification are stored "
+"directly, eliminating a redundant second pass. Divergence detection now uses "
+"the new `GetSignedParametricDistance` method instead of a second virtual "
+"dispatch, and the linear solve uses `partialPivLu` instead of "
+"`HouseholderQR`, which is sufficient and cheaper for the guaranteed 3×3 "
+"Jacobian."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:18
+msgid ""
+"A bug where `ClassifyPoints` crashed when a connectivity array's component "
+"count exceeded the number of cell corners has also been fixed."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:21
+msgid ""
+"`vtkDGInterpolateCalculator::Evaluate` and `EvaluateDerivative` now use "
+"thread-local scratch arrays for intermediate computations, enabling safe "
+"concurrent evaluation without per-call heap allocation."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:25
+msgid ""
+"All `vtkDGCell` subclasses now implement `GetSignedParametricDistance(rst)`, "
+"which returns the signed distance of a parametric point from the reference-"
+"element boundary (negative inside, zero on the boundary, positive outside). "
+"`IsInside(rst, tol)` is now a non-virtual inline wrapper around it."
+msgstr ""
+
+#: ../../../release_details/9.7/improve-cell-grid-probing.md:30
+msgid ""
+"`vtkStaticPointLocator::FindPointsWithinRadius` (and its 2D counterpart) is "
+"now faster. Buckets lying entirely outside the query sphere are rejected "
+"early via a distance-to-AABB test, and buckets lying entirely inside it skip "
+"the per-point distance check and bulk-copy their point IDs directly. Both "
+"optimizations also apply to `vtkStaticPointLocator2D`."
+msgstr ""

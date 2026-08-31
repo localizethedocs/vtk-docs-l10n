@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:1
+msgid "Add `vtkSurfaceNetsAtlas`"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:3
+msgid ""
+"`vtkSurfaceNetsAtlas` is a new filter that consumes the polygonal output of "
+"any SurfaceNets filter (`vtkSurfaceNets2D`, `vtkSurfaceNets3D`, or "
+"`vtkGeneralizedSurfaceNets3D`) and exposes it as a queryable label atlas: a "
+"database of Regions (one per label) and Patches (one per adjacent label "
+"pair) that can be efficiently re-queried without re-running upstream surface "
+"extraction."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:8
+msgid ""
+"The atlas is built once per input mesh change (gated on the input "
+"`vtkPolyData` MTime). Changing extraction parameters does not trigger a "
+"rebuild, making iterative workflows (e.g. interactive label visibility "
+"toggling) inexpensive."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:12
+msgid "Output"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:14
+msgid ""
+"The filter produces a `vtkPartitionedDataSetCollection` with a "
+"`vtkDataAssembly` organized into two subtrees: `Regions` (one PDS per label) "
+"and `Patches` (one PDS per adjacent label pair). Assembly node names default "
+"to `Label_N` / `Label_N_Label_M` and are replaced by user-provided names "
+"when set. Each node carries `Name`, `Label`, `LID` attributes (regions) or "
+"`Name0`, `Name1`, `Label0`, `Label1`, `LID0`, `LID1` (patches)."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:20
+msgid ""
+"Each output partition carries identifying cell-data arrays so downstream "
+"consumers can work without the assembly:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:23
+msgid ""
+"**Region**: `\"BoundaryLabels\"` (2-component, active scalar; Label0 is "
+"always the region's own label so normals point outward), `\"Label\"` "
+"(`vtkIdType`, constant), `\"LID\"` (`int`, constant). Field data: "
+"`\"AdjacentLabels\"` (`vtkIdType[]`), `\"PatchIDs\"` (`int[]`)."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:26
+msgid ""
+"**Patch**: `\"BoundaryLabels\"` (2-component, active scalar; Label0 < Label1 "
+"by value, background last), `\"PatchID\"` (`int`, constant)."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:28
+msgid ""
+"**PDC field data**: `\"LIDToLabel\"` (`vtkIdType[]`), `\"PatchLIDs\"` (2-"
+"component `int`), `\"PatchLabels\"` (2-component `vtkIdType`). All three are "
+"always present."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:31
+msgid "Constant arrays are backed by `vtkConstantArray` (O(1) storage)."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:33
+msgid "Extraction"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:35
+msgid ""
+"`GenerateRegions` (default: on) emits one Region PDS per selected label."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:36
+msgid ""
+"`GeneratePatches` (default: on) emits one Patch PDS per adjacent label pair "
+"where at least one label is selected."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:38
+msgid ""
+"`OutputStyle` (default: `Boundary`) controls which cells appear in each "
+"Region:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:39
+msgid ""
+"`Boundary`: only cells whose interface touches the background label. "
+"Combined with `GeneratePatches`, this forms an exact partition of the "
+"upstream output — no cell duplication, same total count."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:42
+msgid ""
+"`All`: every cell of the region surface, so interior interface cells appear "
+"in both adjacent Region partitions."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:44
+msgid ""
+"`ExtractionMode` (default: `EXTRACT_ALL`) selects which labels are emitted:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:45
+msgid "`EXTRACT_ALL`: every label in the input."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:46
+msgid ""
+"`EXTRACT_LABEL_SET`: only labels in the `SelectedLabels` list (empty list → "
+"empty output)."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:47
+msgid ""
+"`SelectedLabels` API: `AddSelectedLabel`, `RemoveSelectedLabel`, "
+"`ClearSelectedLabels`, `SetSelectedLabel(i, label)`, `GetSelectedLabel(i)`, "
+"`SetSelectedLabels(vector)`, `GetSelectedLabels()`, and "
+"`GetNumberOfSelectedLabels()`."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:50
+msgid ""
+"`GenerateSelectedLabels(numLabels, rangeStart, rangeEnd)` populates the "
+"selection with evenly spaced integer labels (analogous to `vtkContourValues::"
+"GenerateValues`). The two-argument overload "
+"`GenerateSelectedLabels(rangeStart, rangeEnd)` selects every integer in the "
+"range, covering the common case of sequential segmentation labels."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:55
+msgid "Label names"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:57
+msgid ""
+"`SetLabelName` / `AddLabelName` / `RemoveLabelName` / `ClearLabelNames` / "
+"`GetLabelName` / `GetNumberOfLabelNames` assign human-readable names to "
+"labels. Names are independent of the `SelectedLabels` list and work with "
+"both extraction modes. They replace the default `\"Label_N\"` / "
+"`\"Label_N_Label_M\"` assembly node names and are stored as `\"Name\"` / "
+"`\"Name0\"` / `\"Name1\"` attributes on each node. Default names are filled "
+"in automatically at atlas build time for any label without a user-provided "
+"name."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:64
+msgid "Topological queries"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:66
+msgid ""
+"Post-`Update()` queries cover label↔LID mapping, adjacency, and patch "
+"topology: `GetNumberOfLabels`, `HasLabel`, `GetLIDForLabel`, "
+"`GetLabelForLID`, `GetLabelForName`, `AreAdjacent`, `GetAdjacentLabels`, "
+"`GetNumberOfPatches`, `GetPatchID`, `GetPatchLabels`, `GetPatchCellCount`, "
+"`GetPatchesForLabel`. All methods that accept a label value also have a "
+"`const std::string&` name-based overload that resolves via `GetLabelForName`."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:72
+msgid "Optional post-processing"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:74
+msgid ""
+"`ResolveNonManifoldPoints` splits non-manifold points in each output "
+"partition by local connected component. If the input carries a "
+"`NonManifoldTableIndices` point-data array (produced by `vtkSurfaceNets3D`), "
+"only candidate points are processed; otherwise all points are scanned. The "
+"array is never forwarded to output partitions."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:81
+msgid "The following supporting changes were made:"
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:83
+msgid ""
+"**`vtkSurfaceNets3D` deprecations**: `OUTPUT_STYLE_BOUNDARY` and "
+"`OUTPUT_STYLE_SELECTED`, along with the associated `SelectedLabels` API, are "
+"deprecated in VTK 9.7 in favor of using `vtkSurfaceNetsAtlas` downstream. "
+"For backward compatibility these code paths now delegate internally to a "
+"`vtkSurfaceNetsAtlas` instance and merge the per-label partitions back into "
+"a single `vtkPolyData` using `vtkAppendPolyData`."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:89
+msgid ""
+"**`vtkGeneralizedSurfaceNets3D` dispatch**: now dispatches over the concrete "
+"scalar type of the region-ids input array (via `vtkArrayDispatch`) instead "
+"of requiring `vtkIntArray`. Any integer array type (`vtkShortArray`, "
+"`vtkIntArray`, `vtkLongArray`, etc.) is handled natively without a copy."
+msgstr ""
+
+#: ../../../release_details/9.7/add-vtkSurfaceNetsAtlas.md:94
+msgid ""
+"**Consistent `\"BoundaryLabels\"` convention**: `vtkSurfaceNets2D` and "
+"`vtkGeneralizedSurfaceNets3D` were updated to name the boundary-label cell-"
+"data array `\"BoundaryLabels\"` and to use a consistent 2-tuple ordering "
+"(background label last; smaller label first when both are non-background), "
+"matching `vtkSurfaceNets3D`. `vtkGeneralizedSurfaceNets3D` also reverses "
+"polygon winding when swapping labels to preserve outward-facing normals."
+msgstr ""

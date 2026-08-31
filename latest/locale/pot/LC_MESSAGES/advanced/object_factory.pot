@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 15:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/object_factory.md:1
+msgid "Object factory"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:5
+msgid ""
+"`vtkObjectFactory` is a class in `VTK::CommonCore` module that automates the "
+"instantiation of VTK objects. This allows you to write VTK scripts with the "
+"same object name and having API specific classes being instantiated "
+"depending on the available classes. The instantiation occurs when calling "
+"the `::New()` static variable on any class deriving from `vtkObject`. "
+"Therefore, `vtkNew<>` or `vtkSmartPointer<>` also follow the same logic."
+msgstr ""
+
+#: ../../../advanced/object_factory.md:7
+msgid ""
+"For example, after configuration, the following two lines will provide the "
+"same object:"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:9
+msgid ""
+"// Creates the concrete class directly\n"
+"vtkNew<vtkOpenGLRenderer> renderer1;\n"
+"\n"
+"// Also a vtkOpenGLRenderer\n"
+"vtkNew<vtkRenderer> renderer2;\n"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:17
+msgid "Requirements"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:19
+msgid "CMake targets that use the VTK factory have to ensure that:"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:20
+msgid "The module providing the override is linked"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:21
+msgid "That `vtk_module_autoinit` is called on the target"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:23
+msgid ""
+"In VTK Python, the module providing the implementation needs to be imported "
+"as well."
+msgstr ""
+
+#: ../../../advanced/object_factory.md:25
+msgid "Add factory support to new VTK classes"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:27
+msgid ""
+"Adding support of API specific classes to the factory can be achieved in two "
+"steps. The first one is to add C++ code to configure the VTK class. Then "
+"some calls to CMake functions need to be done."
+msgstr ""
+
+#: ../../../advanced/object_factory.md:29
+msgid "Configure the VTK class in C++"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:31
+msgid ""
+"Make sure to use the `vtkStandardNewMacro` if you want to override a base "
+"class. Note that `vtkFactoryNewMacro` is the macro to use to make an "
+"overridable class."
+msgstr ""
+
+#: ../../../advanced/object_factory.md:32
+msgid ""
+"Create override attributes in the VTK class: [override attributes "
+"documentation](https://vtk.org/doc/nightly/html/classvtkOverrideAttribute."
+"html#details)"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:34
+msgid "Configure the VTK class in CMake"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:36
+msgid ""
+"CMake override declaration: [](/advanced/migration_guides/ModuleMigration."
+"md#object-factories)"
+msgstr ""
+
+#: ../../../advanced/object_factory.md:37
+msgid ""
+"Module autoinit: [](/api/cmake/ModuleSystem.md#autoinit) and [](/api/cmake/"
+"ModuleSystem.md#module-metadata)"
+msgstr ""
