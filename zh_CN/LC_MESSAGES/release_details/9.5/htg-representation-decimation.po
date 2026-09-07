@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:1
+msgid "HTG Surface Representation improvements"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:3
+msgid ""
+"Cells outside the camera frustum are now decimated in 3D as well as 1D and "
+"2D in HTG Surface Representation. The method to check their visibility has "
+"been generified to work in all cases, including without parallel projection "
+"(which was required before), and with masks. Existing tests have been "
+"updated and new ones created to cover these functionalities."
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:7
+msgid "Some public members are now deprecated and have no effect:"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:8
+msgid "`Set/GetCircleSelection`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:9
+msgid "`Set/GetBBSelection`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:10
+msgid "`Set/GetDynamicDecimateLevelMax`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:11
+msgid "`Set/GetScale`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:13
+msgid ""
+"Some protected members of `vtkAdaptiveDataSetSurfaceFilter` have been moved "
+"to private or completely removed:"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:14
+msgid "Removed:"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:15
+msgid "`BBSelection`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:16
+msgid "`CircleSelection`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:17
+msgid "`DynamicDecimateLevelMax`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:18
+msgid "`LevelMax`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:19
+msgid "`LastCameraFocalPoint`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:20
+msgid "`LastCameraParallelScale`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:21
+msgid "`ParallelProjection`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:22
+msgid "`Radius`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:23
+msgid "`Scale`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:24
+msgid "`WindowBounds`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:25
+msgid "Moved to private:"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:26
+msgid "`Axis1`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:27
+msgid "`Axis2`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:28
+msgid "`Cells`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:29
+msgid "`Dimension`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:30
+msgid "`FixedLevelMax`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:31
+msgid "`InData`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:32
+msgid "`LastRendererSize`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:33
+msgid "`Mask`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:34
+msgid "`Orientation`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:35
+msgid "`OutData`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:36
+msgid "`Points`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:37
+msgid "`Renderer`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:38
+msgid "`ViewPointDepend`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:40
+msgid "The following methods have been moved to private:"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:41
+msgid "`AddFace`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:42
+msgid "`ProcessLeaf1D`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:43
+msgid "`ProcessLeaf2D`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:44
+msgid "`ProcessLeaf3D`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:45
+msgid "`ProcessTrees`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:46
+msgid "`RecursivelyProcessTree1DAnd2D`"
+msgstr ""
+
+#: ../../../release_details/9.5/htg-representation-decimation.md:47
+msgid "`RecursivelyProcessTree3D`"
+msgstr ""

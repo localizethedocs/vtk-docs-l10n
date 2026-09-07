@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/alembic-exporter.md:1
+msgid "Add Alembic scene exporter"
+msgstr ""
+
+#: ../../../release_details/9.4/alembic-exporter.md:3
+msgid ""
+"The IO/Alembic module now provides a new scene exporter for the [Alembic "
+"file format](https://www.alembic.io/). This format is used for dynamic scene "
+"and complex geometry exchange for 3D modeling packages."
+msgstr ""
+
+#: ../../../release_details/9.4/alembic-exporter.md:6
+msgid ""
+"The class `vtkAlembicExporter` exports the current visible scene to an \"."
+"abc\" file. This includes all visible polygonal geometry, with vertex colors "
+"and texture coordinates. If a colormap has been applied, a texture "
+"containing the colormap is also saved as a \".png\" file. The camera "
+"position and orientation is also exported. Blender 3.6 imports these scene "
+"files, and other modeling packages like 3D Studio Max and Maya also have "
+"Alembic importers."
+msgstr ""

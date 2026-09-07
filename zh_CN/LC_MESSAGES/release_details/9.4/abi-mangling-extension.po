@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:1
+msgid "ABI Mangling extension for C/C++ ABI in VTK"
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:3
+msgid ""
+"Using the C++ feature `inline namespace` VTK is able to apply ABI mangling "
+"to VTK without affecting the API interface in code. This feature allows for "
+"separately compiled VTK libraries isolated in their own translation units to "
+"be linked in the same application without symbol conflicts at runtime."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:8
+msgid ""
+"This feature was \"experimental\" due to lack of  CI testing and missing "
+"manglings for C ABIs in VTK. Both of these missing components are now added."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:12
+msgid ""
+"A change from the experimental version to the current version is the "
+"splitting of concerns for the ABI namespace. Previously, "
+"`VTK_ABI_NAMESPACE_NAME` allowed the injection of additional attributes into "
+"the namespace such as `__attribute__ ((visibility (\\\"hidden\\\")))`. The "
+"`VTK_ABI_NAMESPACE_NAME` is now guarded to follow a subset of the C++ "
+"namespace naming rules (it must match the regular expression `^[a-zA-Z0-9_]+"
+"$`)."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:19
+msgid "Must contain only lower-case or upper-letters, numbers, or underscores"
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:20
+msgid "Must contain one(1) or more characters."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:21
+msgid ""
+"Cannot use nested or anonymous namespace names (ie. no `::` or empty names)"
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:23
+msgid ""
+"Attribute inject is now supported as a separate feature flag "
+"`VTK_ABI_NAMESPACE_ATTRIBUTES` which takes a string of attributes to inject."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:26
+msgid ""
+"Example defining a ABI namespace `vtk9_custom` which applies the "
+"`visibility(\"hidden\")` attribute to all of the VTK bits."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:29
+msgid ""
+"cmake -DVTK_ABI_NAMESPACE_NAME=vtk9_custom \\\n"
+"      -DVTK_ABI_NAMESPACE_ATTRIBUTES=\"__attribute__ ((visibility (\\"
+"\"hidden\\\")))\" \\\n"
+"      $source_path\n"
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:35
+msgid ""
+"The C ABIs previously skipped by the ABI mangling feature are now included. "
+"Most of the C ABIs have added macros for compatibility in VTK module code. "
+"While the macros allow for use of the unmangled name in code, they do not "
+"allow for loading functions via the DLL interface by the unmangled names. "
+"While the `inline namespace` wrapped mangling allows the injection of extra "
+"attributes, the C ABI mangling currently does not."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:42
+msgid ""
+"Configure warnings were added when configuring features without ABI mangling "
+"support when the `VTK_ABI_NAMESPACE_NAME` is set. While it is still possible "
+"to build VTK with these configurations, it is not recommended."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:46
+msgid "Notes:"
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:47
+msgid ""
+"This change does not affect VTK builds that are not using the "
+"`VTK_ABI_NAMESPACE` feature."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:48
+msgid "Third party libraries still do not support ABI mangling."
+msgstr ""
+
+#: ../../../release_details/9.4/abi-mangling-extension.md:49
+msgid "VTK Wrappings still do not support ABI mangling (ie. Python/Java/etc.)."
+msgstr ""
