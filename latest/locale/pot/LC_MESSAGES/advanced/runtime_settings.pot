@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-09-07 13:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,52 +37,44 @@ msgstr ""
 msgid ""
 "To control which implementation is selected, provide a preferences string to "
 "`vtkObjectFactory`. The string lists attribute keys with a list of values "
-"ordered by priority, using the format `key=value1,value2`, and separates "
-"attributes with semicolons (e.g., `keyA=valueA1,valueA2;keyB=valueB1,"
-"valueB2`)."
+"using the format `key=value1,value2`, and separates attributes with "
+"semicolons (e.g., `keyA=valueA1,valueA2;keyB=valueB1,valueB2`)."
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:9
-msgid ""
-"In the below examples, the vtkObjectFactory prefers implementations that "
-"have `valueA1` over `valueA2` for an attribute `keyA`, and if that fails, "
-"`valueB1` over `valueB2` for an attribute `keyB`:"
+msgid "There are three possible ways to set the preferences are:"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:11
-msgid "The three possible ways to set the preferences are:"
-msgstr ""
-
-#: ../../../advanced/runtime_settings.md:12
+#: ../../../advanced/runtime_settings.md:10
 msgid ""
 "Set the environment variable `VTK_FACTORY_PREFER` before starting your "
 "application."
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:13
+#: ../../../advanced/runtime_settings.md:11
 msgid "VTK_FACTORY_PREFER=\"keyA=valueA1,valueA2;keyB=valueB1,valueB2\"\n"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:16
+#: ../../../advanced/runtime_settings.md:14
 msgid ""
 "Call the static method `vtkObjectFactory::SetPreferences()` before creating "
 "any VTK objects."
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:18
+#: ../../../advanced/runtime_settings.md:16
 msgid ""
 "vtkObjectFactory::SetPreferences(\"keyA=valueA1,valueA2;keyB=valueB1,"
 "valueB2\");\n"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:21
+#: ../../../advanced/runtime_settings.md:19
 msgid ""
 "Call the static method `vtkObjectFactory::"
 "InitializePreferencesFromCommandLineArgs(argc, argv)` early in your "
 "application, passing the command line arguments."
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:23
+#: ../../../advanced/runtime_settings.md:21
 msgid ""
 "int main(int argc, char* argv[])\n"
 "{\n"
@@ -91,12 +83,21 @@ msgid ""
 "}\n"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:31
+#: ../../../advanced/runtime_settings.md:29
 msgid ""
 "# Example preference string ('=' sign can be omitted and replaced with a "
 "space)\n"
 "./my_vtk_app --vtk-factory-prefer=\"keyA=valueA1,valueA2;keyB=valueB1,"
 "valueB2\"\n"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:34
+msgid ""
+"When preferences are passed to the object factory, the choice of the class "
+"to instantiate is based on a score. The factory will assign a score to all "
+"classes that derive from the given class name to instantiate. The class with "
+"the highest score will be chosen one. The score calculation is explained in "
+"the section below."
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:36
@@ -134,7 +135,7 @@ msgid "RenderingBackend"
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:0
-msgid "`OpenGL`, `WebGPU`"
+msgid "`OpenGL`, `WebGPU`, `ANARI`"
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:0
@@ -145,11 +146,101 @@ msgstr ""
 msgid "`Cocoa`,`EGL`,`HTML5`,`OffScreenMESA`,`X11`"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:46
-msgid "OpenGL"
+#: ../../../advanced/runtime_settings.md:0
+msgid "SupportRenderPass"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:0
+msgid "`true`, `false`"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:47
+msgid ""
+"The class score is computed based on the override attributes above by "
+"comparing them against the preference keys and values. Three rules influence "
+"the score value:"
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:48
+msgid ""
+"If the attribute key is not found in the preferences, the score stays the "
+"same."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:49
+msgid ""
+"If the attribute key is found and the preference value matches, the score is "
+"incremented by 1."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:50
+msgid ""
+"If the attribute key is found and the preference value does not match, the "
+"score is decremented by 1. Once all class scores are computed, the class "
+"with the highest score is chosen. If multiple classes have the same highest "
+"score value, the order of the preferences value determines which class to "
+"pick. Finally, if all scores have a value of 0, the factory will fallback to "
+"the default instantiation mechanism."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:53
+msgid ""
+"As an example, if `ANARI` and `OpenGL` are activated on a build, here are "
+"some possible score results for a `vtkRenderWindow` instantiation:"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:54
+msgid ""
+"`VTK_FACTORY_PREFER=\"RenderingBackend=OpenGL,ANARI;SupportRenderPass=true\"`"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:55
+msgid ""
+"`vtkOpenGLRenderWindow` will have a score of 2 because it matches both keys "
+"and values."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:56
+msgid ""
+"`vtkAnariRenderWindow` will have a score of 1 because it only matches the "
+"`RenderingBackend` key."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:57
+msgid ""
+"`VTK_FACTORY_PREFER=\"RenderingBackend=OpenGL,ANARI;"
+"SupportRenderPass=false\"`"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:58
+msgid ""
+"`vtkOpenGLRenderWindow` will have a score of 1 because it only matches the "
+"`RenderingBackend` key."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:59
+msgid ""
+"`vtkAnariRenderWindow` will have a score of 2 because it only matches both "
+"keys and values."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:60
+msgid "`VTK_FACTORY_PREFER=\"RenderingBackend=ANARI;SupportRenderPass=true\"`."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:61
+msgid ""
+"The score will be 0 for both render windows because `vtkAnariRenderWindow` "
+"matches the first key and `vtkOpenGLRenderWindow` matches the second key. In "
+"this case, the factory will fallback to default factory instantiation "
+"mechanism."
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:63
+msgid "OpenGL"
+msgstr ""
+
+#: ../../../advanced/runtime_settings.md:65
 msgid ""
 "On Linux and Windows, VTK will attempt to detect support for an OpenGL "
 "context backend at runtime and create an appropriate subclass of "
@@ -157,52 +248,52 @@ msgid ""
 "environment variable `VTK_DEFAULT_OPENGL_WINDOW`. The possible values are:"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:53
+#: ../../../advanced/runtime_settings.md:70
 msgid ""
 "`vtkXOpenGLRenderWindow` (Linux; applicable only when `VTK_USE_X` is `ON`, "
 "which is the default setting)"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:54
+#: ../../../advanced/runtime_settings.md:71
 msgid ""
 "`vtkWin32OpenGLRenderWindow` (Windows; applicable only when "
 "`VTK_USE_WIN32_OPENGL` is `ON`, which is the default setting)"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:55
+#: ../../../advanced/runtime_settings.md:72
 msgid ""
 "`vtkEGLRenderWindow` (applicable only when `VTK_OPENGL_HAS_EGL` is `ON`, "
 "which is the default setting)"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:56
+#: ../../../advanced/runtime_settings.md:73
 msgid ""
 "`vtkOSOpenGLRenderWindow` (OSMesa, requires that `osmesa.dll` or `libOSMesa."
 "so` is installed)"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:58
+#: ../../../advanced/runtime_settings.md:75
 msgid ""
 "Note: VTK does **not** support OSMesa on macOS, iOS, Android and WebAssembly "
 "platforms."
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:60
+#: ../../../advanced/runtime_settings.md:77
 msgid "Multisample anti-aliasing"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:62
+#: ../../../advanced/runtime_settings.md:79
 msgid ""
 "Some OpenGL drivers have rendering problems when Multisample anti-aliasing "
 "is enabled. It is possible to specify the environment variable "
 "`VTK_FORCE_MSAA` to troubleshoot rendering problems with these values:"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:65
+#: ../../../advanced/runtime_settings.md:82
 msgid "`0` to disable MSAA"
 msgstr ""
 
-#: ../../../advanced/runtime_settings.md:66
+#: ../../../advanced/runtime_settings.md:83
 msgid ""
 "`1` to enable it regardless even when the driver is known to have problems "
 "with MSAA"
