@@ -1,0 +1,91 @@
+# {py:mod}`vtkmodules.numpy_interface.utils`
+
+```{py:module} vtkmodules.numpy_interface.utils
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`ArrayAssociation <vtkmodules.numpy_interface.utils.ArrayAssociation>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.utils.ArrayAssociation
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`reshape_append_ones <vtkmodules.numpy_interface.utils.reshape_append_ones>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.utils.reshape_append_ones
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} ArrayAssociation
+:canonical: vtkmodules.numpy_interface.utils.ArrayAssociation
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils.ArrayAssociation
+```
+
+````{py:attribute} POINT
+:canonical: vtkmodules.numpy_interface.utils.ArrayAssociation.POINT
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils.ArrayAssociation.POINT
+```
+
+````
+
+````{py:attribute} CELL
+:canonical: vtkmodules.numpy_interface.utils.ArrayAssociation.CELL
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils.ArrayAssociation.CELL
+```
+
+````
+
+````{py:attribute} FIELD
+:canonical: vtkmodules.numpy_interface.utils.ArrayAssociation.FIELD
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils.ArrayAssociation.FIELD
+```
+
+````
+
+````{py:attribute} ROW
+:canonical: vtkmodules.numpy_interface.utils.ArrayAssociation.ROW
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils.ArrayAssociation.ROW
+```
+
+````
+
+`````
+
+````{py:function} reshape_append_ones(a1, a2)
+:canonical: vtkmodules.numpy_interface.utils.reshape_append_ones
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.utils.reshape_append_ones
+```
+````

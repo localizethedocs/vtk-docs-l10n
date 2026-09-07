@@ -1,0 +1,423 @@
+# {py:mod}`vtkmodules.wx.wxVTKRenderWindow`
+
+```{py:module} vtkmodules.wx.wxVTKRenderWindow
+```
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`wxVTKRenderWindow <vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`wxVTKRenderWindowConeExample <vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindowConeExample>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindowConeExample
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`baseClass <vtkmodules.wx.wxVTKRenderWindow.baseClass>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.baseClass
+    :summary:
+    ```
+* - {py:obj}`_useCapture <vtkmodules.wx.wxVTKRenderWindow._useCapture>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow._useCapture
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} baseClass
+:canonical: vtkmodules.wx.wxVTKRenderWindow.baseClass
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.baseClass
+```
+
+````
+
+````{py:data} _useCapture
+:canonical: vtkmodules.wx.wxVTKRenderWindow._useCapture
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow._useCapture
+```
+
+````
+
+`````{py:class} wxVTKRenderWindow(parent, ID, *args, **kw)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow
+
+Bases: {py:obj}`vtkmodules.wx.wxVTKRenderWindow.baseClass`
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.__init__
+```
+
+````{py:method} SetDesiredUpdateRate(rate)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.SetDesiredUpdateRate
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.SetDesiredUpdateRate
+```
+
+````
+
+````{py:method} GetDesiredUpdateRate()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetDesiredUpdateRate
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetDesiredUpdateRate
+```
+
+````
+
+````{py:method} SetStillUpdateRate(rate)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.SetStillUpdateRate
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.SetStillUpdateRate
+```
+
+````
+
+````{py:method} GetStillUpdateRate()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetStillUpdateRate
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetStillUpdateRate
+```
+
+````
+
+````{py:method} OnPaint(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnPaint
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnPaint
+```
+
+````
+
+````{py:method} _OnSize(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnSize
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnSize
+```
+
+````
+
+````{py:method} OnSize(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnSize
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnSize
+```
+
+````
+
+````{py:method} OnMove(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMove
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMove
+```
+
+````
+
+````{py:method} _OnEnterWindow(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnEnterWindow
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnEnterWindow
+```
+
+````
+
+````{py:method} OnEnterWindow(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnEnterWindow
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnEnterWindow
+```
+
+````
+
+````{py:method} _OnLeaveWindow(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnLeaveWindow
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnLeaveWindow
+```
+
+````
+
+````{py:method} OnLeaveWindow(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnLeaveWindow
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnLeaveWindow
+```
+
+````
+
+````{py:method} OnSetFocus(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnSetFocus
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnSetFocus
+```
+
+````
+
+````{py:method} OnKillFocus(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnKillFocus
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnKillFocus
+```
+
+````
+
+````{py:method} _OnButtonDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnButtonDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnButtonDown
+```
+
+````
+
+````{py:method} OnButtonDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnButtonDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnButtonDown
+```
+
+````
+
+````{py:method} OnLeftDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnLeftDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnLeftDown
+```
+
+````
+
+````{py:method} OnRightDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnRightDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnRightDown
+```
+
+````
+
+````{py:method} OnMiddleDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMiddleDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMiddleDown
+```
+
+````
+
+````{py:method} _OnButtonUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnButtonUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow._OnButtonUp
+```
+
+````
+
+````{py:method} OnButtonUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnButtonUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnButtonUp
+```
+
+````
+
+````{py:method} OnLeftUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnLeftUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnLeftUp
+```
+
+````
+
+````{py:method} OnRightUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnRightUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnRightUp
+```
+
+````
+
+````{py:method} OnMiddleUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMiddleUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMiddleUp
+```
+
+````
+
+````{py:method} OnMotion(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMotion
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnMotion
+```
+
+````
+
+````{py:method} OnChar(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnChar
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnChar
+```
+
+````
+
+````{py:method} OnKeyDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnKeyDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnKeyDown
+```
+
+````
+
+````{py:method} OnKeyUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnKeyUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.OnKeyUp
+```
+
+````
+
+````{py:method} GetZoomFactor()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetZoomFactor
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetZoomFactor
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetRenderWindow
+```
+
+````
+
+````{py:method} GetPicker()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetPicker
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetPicker
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Render
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Render
+```
+
+````
+
+````{py:method} UpdateRenderer(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.UpdateRenderer
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.UpdateRenderer
+```
+
+````
+
+````{py:method} GetCurrentRenderer()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetCurrentRenderer
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.GetCurrentRenderer
+```
+
+````
+
+````{py:method} Rotate(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Rotate
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Rotate
+```
+
+````
+
+````{py:method} Pan(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Pan
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Pan
+```
+
+````
+
+````{py:method} Zoom(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Zoom
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Zoom
+```
+
+````
+
+````{py:method} Reset(event=None)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Reset
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Reset
+```
+
+````
+
+````{py:method} Wireframe()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Wireframe
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Wireframe
+```
+
+````
+
+````{py:method} Surface()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Surface
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.Surface
+```
+
+````
+
+````{py:method} PickActor(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.PickActor
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindow.PickActor
+```
+
+````
+
+`````
+
+````{py:function} wxVTKRenderWindowConeExample()
+:canonical: vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindowConeExample
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindow.wxVTKRenderWindowConeExample
+```
+````

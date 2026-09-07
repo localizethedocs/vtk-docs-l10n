@@ -1,0 +1,44 @@
+# {py:mod}`vtkmodules.wx`
+
+```{py:module} vtkmodules.wx
+```
+
+```{autodoc2-docstring} vtkmodules.wx
+:allowtitles:
+```
+
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+vtkmodules.wx.wxVTKRenderWindow
+vtkmodules.wx.wxVTKRenderWindowInteractor
+```
+
+## Package Contents
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.wx.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.wx.__all__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __all__
+:canonical: vtkmodules.wx.__all__
+:value: >
+   ['wxVTKRenderWindow', 'wxVTKRenderWindowInteractor']
+
+```{autodoc2-docstring} vtkmodules.wx.__all__
+```
+
+````

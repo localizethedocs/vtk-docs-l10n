@@ -1,0 +1,256 @@
+# {py:mod}`vtkmodules.util.vtkAlgorithm`
+
+```{py:module} vtkmodules.util.vtkAlgorithm
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTKAlgorithm <vtkmodules.util.vtkAlgorithm.VTKAlgorithm>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm
+    :summary:
+    ```
+* - {py:obj}`VTKPythonAlgorithmBase <vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} VTKAlgorithm(nInputPorts=1, inputType='vtkDataSet', nOutputPorts=1, outputType='vtkPolyData')
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.__init__
+```
+
+````{py:method} Initialize(vtkself)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.Initialize
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.Initialize
+```
+
+````
+
+````{py:method} GetInputData(inInfo, i, j)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.GetInputData
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.GetInputData
+```
+
+````
+
+````{py:method} GetOutputData(outInfo, i)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.GetOutputData
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.GetOutputData
+```
+
+````
+
+````{py:method} RequestDataObject(vtkself, request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestDataObject
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestDataObject
+```
+
+````
+
+````{py:method} RequestInformation(vtkself, request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestInformation
+```
+
+````
+
+````{py:method} RequestUpdateExtent(vtkself, request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestUpdateExtent
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestUpdateExtent
+```
+
+````
+
+````{py:method} RequestData(vtkself, request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestData
+:abstractmethod:
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.RequestData
+```
+
+````
+
+````{py:method} ProcessRequest(vtkself, request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.ProcessRequest
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.ProcessRequest
+```
+
+````
+
+````{py:method} FillInputPortInformation(vtkself, port, info)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.FillInputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.FillInputPortInformation
+```
+
+````
+
+````{py:method} FillOutputPortInformation(vtkself, port, info)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKAlgorithm.FillOutputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKAlgorithm.FillOutputPortInformation
+```
+
+````
+
+`````
+
+``````{py:class} VTKPythonAlgorithmBase(nInputPorts=1, inputType='vtkDataSet', nOutputPorts=1, outputType='vtkPolyData')
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase
+
+Bases: {py:obj}`vtkmodules.vtkFiltersPython.vtkPythonAlgorithm`
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.__init__
+```
+
+`````{py:class} InternalAlgorithm
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm
+```
+
+````{py:method} Initialize(vtkself)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.Initialize
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.Initialize
+```
+
+````
+
+````{py:method} FillInputPortInformation(vtkself, port, info)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.FillInputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.FillInputPortInformation
+```
+
+````
+
+````{py:method} FillOutputPortInformation(vtkself, port, info)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.FillOutputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.FillOutputPortInformation
+```
+
+````
+
+````{py:method} ProcessRequest(vtkself, request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.ProcessRequest
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.InternalAlgorithm.ProcessRequest
+```
+
+````
+
+`````
+
+````{py:method} GetInputData(inInfo, i, j)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.GetInputData
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.GetInputData
+```
+
+````
+
+````{py:method} GetOutputData(outInfo, i)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.GetOutputData
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.GetOutputData
+```
+
+````
+
+````{py:method} FillInputPortInformation(port, info)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.FillInputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.FillInputPortInformation
+```
+
+````
+
+````{py:method} FillOutputPortInformation(port, info)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.FillOutputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.FillOutputPortInformation
+```
+
+````
+
+````{py:method} ProcessRequest(request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.ProcessRequest
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.ProcessRequest
+```
+
+````
+
+````{py:method} RequestDataObject(request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestDataObject
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestDataObject
+```
+
+````
+
+````{py:method} RequestInformation(request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestInformation
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestInformation
+```
+
+````
+
+````{py:method} RequestUpdateExtent(request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestUpdateExtent
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestUpdateExtent
+```
+
+````
+
+````{py:method} RequestData(request, inInfo, outInfo)
+:canonical: vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestData
+:abstractmethod:
+
+```{autodoc2-docstring} vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase.RequestData
+```
+
+````
+
+``````

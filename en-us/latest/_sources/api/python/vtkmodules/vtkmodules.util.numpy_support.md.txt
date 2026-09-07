@@ -1,0 +1,155 @@
+# {py:mod}`vtkmodules.util.numpy_support`
+
+```{py:module} vtkmodules.util.numpy_support
+```
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`get_vtk_array_type <vtkmodules.util.numpy_support.get_vtk_array_type>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.get_vtk_array_type
+    :summary:
+    ```
+* - {py:obj}`get_vtk_to_numpy_typemap <vtkmodules.util.numpy_support.get_vtk_to_numpy_typemap>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.get_vtk_to_numpy_typemap
+    :summary:
+    ```
+* - {py:obj}`get_numpy_array_type <vtkmodules.util.numpy_support.get_numpy_array_type>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.get_numpy_array_type
+    :summary:
+    ```
+* - {py:obj}`create_vtk_array <vtkmodules.util.numpy_support.create_vtk_array>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.create_vtk_array
+    :summary:
+    ```
+* - {py:obj}`numpy_to_vtk <vtkmodules.util.numpy_support.numpy_to_vtk>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.numpy_to_vtk
+    :summary:
+    ```
+* - {py:obj}`numpy_to_vtkIdTypeArray <vtkmodules.util.numpy_support.numpy_to_vtkIdTypeArray>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.numpy_to_vtkIdTypeArray
+    :summary:
+    ```
+* - {py:obj}`vtk_to_numpy <vtkmodules.util.numpy_support.vtk_to_numpy>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.vtk_to_numpy
+    :summary:
+    ```
+* - {py:obj}`vtk_soa_to_numpy <vtkmodules.util.numpy_support.vtk_soa_to_numpy>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.vtk_soa_to_numpy
+    :summary:
+    ```
+* - {py:obj}`numpy_to_vtk_soa <vtkmodules.util.numpy_support.numpy_to_vtk_soa>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.numpy_to_vtk_soa
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VTK_ID_TYPE_SIZE <vtkmodules.util.numpy_support.VTK_ID_TYPE_SIZE>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.VTK_ID_TYPE_SIZE
+    :summary:
+    ```
+* - {py:obj}`VTK_LONG_TYPE_SIZE <vtkmodules.util.numpy_support.VTK_LONG_TYPE_SIZE>`
+  - ```{autodoc2-docstring} vtkmodules.util.numpy_support.VTK_LONG_TYPE_SIZE
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} VTK_ID_TYPE_SIZE
+:canonical: vtkmodules.util.numpy_support.VTK_ID_TYPE_SIZE
+:value: >
+   'GetDataTypeSize(...)'
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.VTK_ID_TYPE_SIZE
+```
+
+````
+
+````{py:data} VTK_LONG_TYPE_SIZE
+:canonical: vtkmodules.util.numpy_support.VTK_LONG_TYPE_SIZE
+:value: >
+   'GetDataTypeSize(...)'
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.VTK_LONG_TYPE_SIZE
+```
+
+````
+
+````{py:function} get_vtk_array_type(numpy_array_type)
+:canonical: vtkmodules.util.numpy_support.get_vtk_array_type
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.get_vtk_array_type
+```
+````
+
+````{py:function} get_vtk_to_numpy_typemap()
+:canonical: vtkmodules.util.numpy_support.get_vtk_to_numpy_typemap
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.get_vtk_to_numpy_typemap
+```
+````
+
+````{py:function} get_numpy_array_type(vtk_array_type)
+:canonical: vtkmodules.util.numpy_support.get_numpy_array_type
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.get_numpy_array_type
+```
+````
+
+````{py:function} create_vtk_array(vtk_arr_type)
+:canonical: vtkmodules.util.numpy_support.create_vtk_array
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.create_vtk_array
+```
+````
+
+````{py:function} numpy_to_vtk(num_array, deep=0, array_type=None)
+:canonical: vtkmodules.util.numpy_support.numpy_to_vtk
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.numpy_to_vtk
+```
+````
+
+````{py:function} numpy_to_vtkIdTypeArray(num_array, deep=0)
+:canonical: vtkmodules.util.numpy_support.numpy_to_vtkIdTypeArray
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.numpy_to_vtkIdTypeArray
+```
+````
+
+````{py:function} vtk_to_numpy(vtk_array)
+:canonical: vtkmodules.util.numpy_support.vtk_to_numpy
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.vtk_to_numpy
+```
+````
+
+````{py:function} vtk_soa_to_numpy(vtk_array)
+:canonical: vtkmodules.util.numpy_support.vtk_soa_to_numpy
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.vtk_soa_to_numpy
+```
+````
+
+````{py:function} numpy_to_vtk_soa(arrays, name='')
+:canonical: vtkmodules.util.numpy_support.numpy_to_vtk_soa
+
+```{autodoc2-docstring} vtkmodules.util.numpy_support.numpy_to_vtk_soa
+```
+````

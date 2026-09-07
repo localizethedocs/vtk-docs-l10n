@@ -1,0 +1,176 @@
+# {py:mod}`vtkmodules.util.variant_array`
+
+```{py:module} vtkmodules.util.variant_array
+```
+
+```{autodoc2-docstring} vtkmodules.util.variant_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_VariantArrayMixin <vtkmodules.util.variant_array._VariantArrayMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin
+    :summary:
+    ```
+* - {py:obj}`VariantArray <vtkmodules.util.variant_array.VariantArray>`
+  - ```{autodoc2-docstring} vtkmodules.util.variant_array.VariantArray
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_get_extract <vtkmodules.util.variant_array._get_extract>`
+  - ```{autodoc2-docstring} vtkmodules.util.variant_array._get_extract
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_extract <vtkmodules.util.variant_array._extract>`
+  - ```{autodoc2-docstring} vtkmodules.util.variant_array._extract
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _extract
+:canonical: vtkmodules.util.variant_array._extract
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._extract
+```
+
+````
+
+````{py:function} _get_extract()
+:canonical: vtkmodules.util.variant_array._get_extract
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._get_extract
+```
+````
+
+`````{py:class} _VariantArrayMixin(*args, **kwargs)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.__init__
+```
+
+````{py:method} _init_from_data(data)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin._init_from_data
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin._init_from_data
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.__len__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(index, value)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.__setitem__
+```
+
+````
+
+````{py:method} __contains__(value)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.__contains__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.__repr__
+
+````
+
+````{py:method} append(value)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.append
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.append
+```
+
+````
+
+````{py:method} extend(iterable)
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.extend
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.extend
+```
+
+````
+
+````{py:method} clear()
+:canonical: vtkmodules.util.variant_array._VariantArrayMixin.clear
+
+```{autodoc2-docstring} vtkmodules.util.variant_array._VariantArrayMixin.clear
+```
+
+````
+
+`````
+
+````{py:class} VariantArray(*args, **kwargs)
+:canonical: vtkmodules.util.variant_array.VariantArray
+
+Bases: {py:obj}`vtkmodules.util.variant_array._VariantArrayMixin`, {py:obj}`vtkmodules.vtkCommonCore.vtkVariantArray`
+
+```{autodoc2-docstring} vtkmodules.util.variant_array.VariantArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.variant_array.VariantArray.__init__
+```
+
+````
