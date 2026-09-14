@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:1
+msgid "{py:mod}`vtkmodules.util.graph`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:7
+msgid "Pythonic API for VTK graph and tree classes."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:9
+msgid "Adds iteration, len, repr, and convenient accessors::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:11
+msgid ""
+"g = vtkMutableDirectedGraph()\n"
+"# ... build graph ...\n"
+"len(g)                          # vertex count\n"
+"for v in g:                     # iterate vertex ids\n"
+"for s, t, eid in g.edges:       # iterate edges as namedtuples\n"
+"for n in g.neighbors(5):        # adjacent vertex ids\n"
+"g.vertex_data                   # vtkDataSetAttributes\n"
+"g.edge_data                     # vtkDataSetAttributes\n"
+"\n"
+"# Mutable graph construction:\n"
+"g = vtkMutableDirectedGraph()\n"
+"g.edges = np.array([[0, 1], [1, 2], [0, 3]])\n"
+"g.vertex_data = {\"weight\": np.array([1.0, 2.0, 3.0, 4.0])}\n"
+"g.edge_data = {\"cost\": np.array([0.5, 1.5, 2.5])}\n"
+"\n"
+"# Tree-specific:\n"
+"t.root                          # root vertex id\n"
+"for c in t.children(v):         # child vertex ids\n"
+"t.parent(v)                     # parent vertex id\n"
+"t.is_leaf(v)                    # bool\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:18
+msgid "{py:obj}`_GraphMixin <vtkmodules.util.graph._GraphMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:22
+msgid "{py:obj}`_MutableGraphMixin <vtkmodules.util.graph._MutableGraphMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:26
+msgid "{py:obj}`_TreeMixin <vtkmodules.util.graph._TreeMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:30
+msgid "{py:obj}`DirectedGraph <vtkmodules.util.graph.DirectedGraph>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:34
+msgid ""
+"{py:obj}`MutableDirectedGraph <vtkmodules.util.graph.MutableDirectedGraph>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:38
+msgid "{py:obj}`UndirectedGraph <vtkmodules.util.graph.UndirectedGraph>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:42
+msgid ""
+"{py:obj}`MutableUndirectedGraph <vtkmodules.util.graph."
+"MutableUndirectedGraph>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:46
+msgid ""
+"{py:obj}`DirectedAcyclicGraph <vtkmodules.util.graph.DirectedAcyclicGraph>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:50
+msgid "{py:obj}`Tree <vtkmodules.util.graph.Tree>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:56
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:62
+msgid "{py:obj}`_set_arrays <vtkmodules.util.graph._set_arrays>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:255
+msgid "Populate a vtkDataSetAttributes from a dict of {name: array}."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:68
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:74
+msgid "{py:obj}`Edge <vtkmodules.util.graph.Edge>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:80
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:86
+msgid "'namedtuple(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:205
+msgid "Convert to a networkx graph."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:207
+msgid ""
+"Returns an ``nx.DiGraph`` for directed graphs or ``nx.Graph`` for undirected "
+"graphs.  Vertex and edge data arrays are copied as node/edge attributes."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:213
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:262
+msgid "Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:247
+msgid "Populate this graph from a networkx graph."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:249
+msgid ""
+"Nodes must be contiguous integers ``0..N-1``.  Use ``networkx."
+"convert_node_labels_to_integers()`` first if needed."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:252
+msgid "Existing vertices, edges, and data are replaced."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:317
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkDirectedGraph`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:327
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.graph._MutableGraphMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkMutableDirectedGraph`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:337
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkUndirectedGraph`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:347
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.graph._MutableGraphMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkMutableUndirectedGraph`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:357
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkDirectedAcyclicGraph`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:367
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.graph._TreeMixin`, {py:obj}`vtkmodules."
+"vtkCommonDataModel.vtkTree`"
+msgstr ""

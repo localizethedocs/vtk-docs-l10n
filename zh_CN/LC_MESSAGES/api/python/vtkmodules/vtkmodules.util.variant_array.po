@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:1
+msgid "{py:mod}`vtkmodules.util.variant_array`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:7
+msgid "Pythonic interface for vtkVariantArray."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:9
+msgid ""
+"Makes vtkVariantArray behave like a Python list of heterogeneous values::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:11
+msgid ""
+"arr = vtkVariantArray()\n"
+"arr.append(42)\n"
+"arr.append(\"hello\")\n"
+"arr.append(3.14)\n"
+"len(arr)                      # 3\n"
+"arr[0]                        # 42\n"
+"arr[-1]                       # 3.14\n"
+"arr[1] = \"world\"              # SetValue\n"
+"\"world\" in arr                # True\n"
+"list(arr)                     # [42, 'world', 3.14]\n"
+"repr(arr)                     # vtkVariantArray([42, 'world', 3.14])\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:23
+msgid ""
+"Values are automatically extracted from vtkVariant to native Python types "
+"using vtkVariantExtract."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:18
+msgid ""
+"{py:obj}`_VariantArrayMixin <vtkmodules.util.variant_array."
+"_VariantArrayMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:22
+msgid "{py:obj}`VariantArray <vtkmodules.util.variant_array.VariantArray>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:28
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:34
+msgid "{py:obj}`_get_extract <vtkmodules.util.variant_array._get_extract>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:40
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:46
+msgid "{py:obj}`_extract <vtkmodules.util.variant_array._extract>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:52
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:58
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:78
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:171
+msgid "Initialization"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:89
+msgid "Populate the array from an iterable of values."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:142
+msgid "Append a value to the end of the array."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:150
+msgid "Extend the array with values from an iterable."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/variant_array.py:158
+msgid "Remove all values from the array."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.variant_array.md:166
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.variant_array._VariantArrayMixin`, {py:obj}"
+"`vtkmodules.vtkCommonCore.vtkVariantArray`"
+msgstr ""
