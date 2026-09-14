@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-14 14:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:1
+msgid "VTK::RenderingANARIOpenGL"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:5
+msgid ""
+"`VTK::RenderingANARIOpenGL` is a module that can be used to display the "
+"ANARI rendered frame in a render window. This module implements a render "
+"pass that can be used for onscreen rendering."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:9
+msgid "Using ANARI onscreen"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:11
+msgid ""
+"The following code snippet is the intended way to show the ANARI rendered "
+"frame to an OpenGL render window:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:13
+msgid ""
+"// Setup an actor\n"
+"vtkNew<vtkSphereSource> source;\n"
+"vtkNew<vtkPolyDataMapper> mapper;\n"
+"mapper->SetInputConnection(source->GetOutputPort());\n"
+"vtkNew<vtkActor> actor;\n"
+"actor->SetMapper(mapper);\n"
+"\n"
+"vtkNew<vtkRenderWindowInteractor> interactor;\n"
+"vtkNew<vtkRenderWindow> renderWindow;\n"
+"interactor->SetRenderWindow(renderWindow);\n"
+"vtkNew<vtkRenderer> renderer;\n"
+"renderer->AddActor(actor);\n"
+"renderWindow->AddRenderer(renderer);\n"
+"\n"
+"// Initialize ANARI pass\n"
+"vtkNew<vtkAnariPass> anariPass;\n"
+"anariPass->GetAnariDevice()->SetupAnariDeviceFromLibrary(\"environment\", "
+"\"default\", false);\n"
+"renderer->SetPass(anariPass);\n"
+"\n"
+"// Start scene rendering / interaction\n"
+"interactor->Start();\n"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:37
+msgid "Factory preferences"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/ANARI/OpenGL/README.md:39
+msgid ""
+"When both ANARI and OpenGL are activated on a VTK build, the factory may not "
+"pick the right class for `vtkRenderWindow`. In this case, the override "
+"attribute `SupportRenderPass=true` helps the factory to select the "
+"`vtkOpenGLRenderWindow`. See [](/advanced/runtime_settings.md#override-"
+"attributes) for more information about this topic."
+msgstr ""
