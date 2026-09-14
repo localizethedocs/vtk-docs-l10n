@@ -1,0 +1,1887 @@
+# {py:mod}`vtkmodules.util.vtkConstants`
+
+```{py:module} vtkmodules.util.vtkConstants
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkImageScalarTypeNameMacro <vtkmodules.util.vtkConstants.vtkImageScalarTypeNameMacro>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.vtkImageScalarTypeNameMacro
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_VTK_FLOAT_MAX <vtkmodules.util.vtkConstants._VTK_FLOAT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants._VTK_FLOAT_MAX
+    :summary:
+    ```
+* - {py:obj}`_VTK_INT_MAX <vtkmodules.util.vtkConstants._VTK_INT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants._VTK_INT_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_VOID <vtkmodules.util.vtkConstants.VTK_VOID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VOID
+    :summary:
+    ```
+* - {py:obj}`VTK_BIT <vtkmodules.util.vtkConstants.VTK_BIT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIT
+    :summary:
+    ```
+* - {py:obj}`VTK_CHAR <vtkmodules.util.vtkConstants.VTK_CHAR>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CHAR
+    :summary:
+    ```
+* - {py:obj}`VTK_SIGNED_CHAR <vtkmodules.util.vtkConstants.VTK_SIGNED_CHAR>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SIGNED_CHAR
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_CHAR <vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR
+    :summary:
+    ```
+* - {py:obj}`VTK_SHORT <vtkmodules.util.vtkConstants.VTK_SHORT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SHORT
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_SHORT <vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT
+    :summary:
+    ```
+* - {py:obj}`VTK_INT <vtkmodules.util.vtkConstants.VTK_INT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_INT
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_INT <vtkmodules.util.vtkConstants.VTK_UNSIGNED_INT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_INT
+    :summary:
+    ```
+* - {py:obj}`VTK_LONG <vtkmodules.util.vtkConstants.VTK_LONG>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_LONG <vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG
+    :summary:
+    ```
+* - {py:obj}`VTK_FLOAT <vtkmodules.util.vtkConstants.VTK_FLOAT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_FLOAT
+    :summary:
+    ```
+* - {py:obj}`VTK_DOUBLE <vtkmodules.util.vtkConstants.VTK_DOUBLE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DOUBLE
+    :summary:
+    ```
+* - {py:obj}`VTK_ID_TYPE <vtkmodules.util.vtkConstants.VTK_ID_TYPE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_ID_TYPE
+    :summary:
+    ```
+* - {py:obj}`VTK_STRING <vtkmodules.util.vtkConstants.VTK_STRING>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_STRING
+    :summary:
+    ```
+* - {py:obj}`VTK_OPAQUE <vtkmodules.util.vtkConstants.VTK_OPAQUE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_OPAQUE
+    :summary:
+    ```
+* - {py:obj}`VTK_LONG_LONG <vtkmodules.util.vtkConstants.VTK_LONG_LONG>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG_LONG
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_LONG_LONG <vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG_LONG>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG_LONG
+    :summary:
+    ```
+* - {py:obj}`VTK_VARIANT <vtkmodules.util.vtkConstants.VTK_VARIANT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VARIANT
+    :summary:
+    ```
+* - {py:obj}`VTK_OBJECT <vtkmodules.util.vtkConstants.VTK_OBJECT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_OBJECT
+    :summary:
+    ```
+* - {py:obj}`VTK_BIT_MIN <vtkmodules.util.vtkConstants.VTK_BIT_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIT_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_BIT_MAX <vtkmodules.util.vtkConstants.VTK_BIT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIT_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_CHAR_MIN <vtkmodules.util.vtkConstants.VTK_CHAR_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CHAR_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_CHAR_MAX <vtkmodules.util.vtkConstants.VTK_CHAR_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CHAR_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_CHAR_MIN <vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_CHAR_MAX <vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_SHORT_MIN <vtkmodules.util.vtkConstants.VTK_SHORT_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SHORT_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_SHORT_MAX <vtkmodules.util.vtkConstants.VTK_SHORT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SHORT_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_SHORT_MIN <vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSIGNED_SHORT_MAX <vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_INT_MIN <vtkmodules.util.vtkConstants.VTK_INT_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_INT_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_INT_MAX <vtkmodules.util.vtkConstants.VTK_INT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_INT_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_LONG_MIN <vtkmodules.util.vtkConstants.VTK_LONG_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_LONG_MAX <vtkmodules.util.vtkConstants.VTK_LONG_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_FLOAT_MIN <vtkmodules.util.vtkConstants.VTK_FLOAT_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_FLOAT_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_FLOAT_MAX <vtkmodules.util.vtkConstants.VTK_FLOAT_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_FLOAT_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_DOUBLE_MIN <vtkmodules.util.vtkConstants.VTK_DOUBLE_MIN>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DOUBLE_MIN
+    :summary:
+    ```
+* - {py:obj}`VTK_DOUBLE_MAX <vtkmodules.util.vtkConstants.VTK_DOUBLE_MAX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DOUBLE_MAX
+    :summary:
+    ```
+* - {py:obj}`VTK_POLY_DATA <vtkmodules.util.vtkConstants.VTK_POLY_DATA>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLY_DATA
+    :summary:
+    ```
+* - {py:obj}`VTK_STRUCTURED_POINTS <vtkmodules.util.vtkConstants.VTK_STRUCTURED_POINTS>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_STRUCTURED_POINTS
+    :summary:
+    ```
+* - {py:obj}`VTK_STRUCTURED_GRID <vtkmodules.util.vtkConstants.VTK_STRUCTURED_GRID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_STRUCTURED_GRID
+    :summary:
+    ```
+* - {py:obj}`VTK_RECTILINEAR_GRID <vtkmodules.util.vtkConstants.VTK_RECTILINEAR_GRID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_RECTILINEAR_GRID
+    :summary:
+    ```
+* - {py:obj}`VTK_UNSTRUCTURED_GRID <vtkmodules.util.vtkConstants.VTK_UNSTRUCTURED_GRID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSTRUCTURED_GRID
+    :summary:
+    ```
+* - {py:obj}`VTK_PIECEWISE_FUNCTION <vtkmodules.util.vtkConstants.VTK_PIECEWISE_FUNCTION>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PIECEWISE_FUNCTION
+    :summary:
+    ```
+* - {py:obj}`VTK_IMAGE_DATA <vtkmodules.util.vtkConstants.VTK_IMAGE_DATA>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_IMAGE_DATA
+    :summary:
+    ```
+* - {py:obj}`VTK_DATA_OBJECT <vtkmodules.util.vtkConstants.VTK_DATA_OBJECT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DATA_OBJECT
+    :summary:
+    ```
+* - {py:obj}`VTK_DATA_SET <vtkmodules.util.vtkConstants.VTK_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_POINT_SET <vtkmodules.util.vtkConstants.VTK_POINT_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POINT_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_UNIFORM_GRID <vtkmodules.util.vtkConstants.VTK_UNIFORM_GRID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNIFORM_GRID
+    :summary:
+    ```
+* - {py:obj}`VTK_COMPOSITE_DATA_SET <vtkmodules.util.vtkConstants.VTK_COMPOSITE_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COMPOSITE_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_MULTIGROUP_DATA_SET <vtkmodules.util.vtkConstants.VTK_MULTIGROUP_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_MULTIGROUP_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_MULTIBLOCK_DATA_SET <vtkmodules.util.vtkConstants.VTK_MULTIBLOCK_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_MULTIBLOCK_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_HIERARCHICAL_DATA_SET <vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_HIERARCHICAL_BOX_DATA_SET <vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_BOX_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_BOX_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_GENERIC_DATA_SET <vtkmodules.util.vtkConstants.VTK_GENERIC_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_GENERIC_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_HYPER_OCTREE <vtkmodules.util.vtkConstants.VTK_HYPER_OCTREE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HYPER_OCTREE
+    :summary:
+    ```
+* - {py:obj}`VTK_TEMPORAL_DATA_SET <vtkmodules.util.vtkConstants.VTK_TEMPORAL_DATA_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEMPORAL_DATA_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_TABLE <vtkmodules.util.vtkConstants.VTK_TABLE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TABLE
+    :summary:
+    ```
+* - {py:obj}`VTK_GRAPH <vtkmodules.util.vtkConstants.VTK_GRAPH>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_GRAPH
+    :summary:
+    ```
+* - {py:obj}`VTK_TREE <vtkmodules.util.vtkConstants.VTK_TREE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TREE
+    :summary:
+    ```
+* - {py:obj}`VTK_SELECTION <vtkmodules.util.vtkConstants.VTK_SELECTION>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SELECTION
+    :summary:
+    ```
+* - {py:obj}`VTK_OK <vtkmodules.util.vtkConstants.VTK_OK>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_OK
+    :summary:
+    ```
+* - {py:obj}`VTK_ERROR <vtkmodules.util.vtkConstants.VTK_ERROR>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_ERROR
+    :summary:
+    ```
+* - {py:obj}`VTK_ARIAL <vtkmodules.util.vtkConstants.VTK_ARIAL>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_ARIAL
+    :summary:
+    ```
+* - {py:obj}`VTK_COURIER <vtkmodules.util.vtkConstants.VTK_COURIER>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COURIER
+    :summary:
+    ```
+* - {py:obj}`VTK_TIMES <vtkmodules.util.vtkConstants.VTK_TIMES>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TIMES
+    :summary:
+    ```
+* - {py:obj}`VTK_UNKNOWN_FONT <vtkmodules.util.vtkConstants.VTK_UNKNOWN_FONT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNKNOWN_FONT
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_LEFT <vtkmodules.util.vtkConstants.VTK_TEXT_LEFT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_LEFT
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_CENTERED <vtkmodules.util.vtkConstants.VTK_TEXT_CENTERED>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_CENTERED
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_RIGHT <vtkmodules.util.vtkConstants.VTK_TEXT_RIGHT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_RIGHT
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_BOTTOM <vtkmodules.util.vtkConstants.VTK_TEXT_BOTTOM>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_BOTTOM
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_TOP <vtkmodules.util.vtkConstants.VTK_TEXT_TOP>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_TOP
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_GLOBAL_ANTIALIASING_SOME <vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_SOME>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_SOME
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_GLOBAL_ANTIALIASING_NONE <vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_NONE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_NONE
+    :summary:
+    ```
+* - {py:obj}`VTK_TEXT_GLOBAL_ANTIALIASING_ALL <vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_ALL>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_ALL
+    :summary:
+    ```
+* - {py:obj}`VTK_LUMINANCE <vtkmodules.util.vtkConstants.VTK_LUMINANCE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LUMINANCE
+    :summary:
+    ```
+* - {py:obj}`VTK_LUMINANCE_ALPHA <vtkmodules.util.vtkConstants.VTK_LUMINANCE_ALPHA>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LUMINANCE_ALPHA
+    :summary:
+    ```
+* - {py:obj}`VTK_RGB <vtkmodules.util.vtkConstants.VTK_RGB>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_RGB
+    :summary:
+    ```
+* - {py:obj}`VTK_RGBA <vtkmodules.util.vtkConstants.VTK_RGBA>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_RGBA
+    :summary:
+    ```
+* - {py:obj}`VTK_COLOR_MODE_DEFAULT <vtkmodules.util.vtkConstants.VTK_COLOR_MODE_DEFAULT>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COLOR_MODE_DEFAULT
+    :summary:
+    ```
+* - {py:obj}`VTK_COLOR_MODE_MAP_SCALARS <vtkmodules.util.vtkConstants.VTK_COLOR_MODE_MAP_SCALARS>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COLOR_MODE_MAP_SCALARS
+    :summary:
+    ```
+* - {py:obj}`VTK_NEAREST_INTERPOLATION <vtkmodules.util.vtkConstants.VTK_NEAREST_INTERPOLATION>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_NEAREST_INTERPOLATION
+    :summary:
+    ```
+* - {py:obj}`VTK_LINEAR_INTERPOLATION <vtkmodules.util.vtkConstants.VTK_LINEAR_INTERPOLATION>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LINEAR_INTERPOLATION
+    :summary:
+    ```
+* - {py:obj}`VTK_MAX_VRCOMP <vtkmodules.util.vtkConstants.VTK_MAX_VRCOMP>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_MAX_VRCOMP
+    :summary:
+    ```
+* - {py:obj}`VTK_EMPTY_CELL <vtkmodules.util.vtkConstants.VTK_EMPTY_CELL>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_EMPTY_CELL
+    :summary:
+    ```
+* - {py:obj}`VTK_VERTEX <vtkmodules.util.vtkConstants.VTK_VERTEX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VERTEX
+    :summary:
+    ```
+* - {py:obj}`VTK_POLY_VERTEX <vtkmodules.util.vtkConstants.VTK_POLY_VERTEX>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLY_VERTEX
+    :summary:
+    ```
+* - {py:obj}`VTK_LINE <vtkmodules.util.vtkConstants.VTK_LINE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LINE
+    :summary:
+    ```
+* - {py:obj}`VTK_POLY_LINE <vtkmodules.util.vtkConstants.VTK_POLY_LINE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLY_LINE
+    :summary:
+    ```
+* - {py:obj}`VTK_TRIANGLE <vtkmodules.util.vtkConstants.VTK_TRIANGLE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TRIANGLE
+    :summary:
+    ```
+* - {py:obj}`VTK_TRIANGLE_STRIP <vtkmodules.util.vtkConstants.VTK_TRIANGLE_STRIP>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TRIANGLE_STRIP
+    :summary:
+    ```
+* - {py:obj}`VTK_POLYGON <vtkmodules.util.vtkConstants.VTK_POLYGON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLYGON
+    :summary:
+    ```
+* - {py:obj}`VTK_PIXEL <vtkmodules.util.vtkConstants.VTK_PIXEL>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PIXEL
+    :summary:
+    ```
+* - {py:obj}`VTK_QUAD <vtkmodules.util.vtkConstants.VTK_QUAD>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUAD
+    :summary:
+    ```
+* - {py:obj}`VTK_TETRA <vtkmodules.util.vtkConstants.VTK_TETRA>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TETRA
+    :summary:
+    ```
+* - {py:obj}`VTK_VOXEL <vtkmodules.util.vtkConstants.VTK_VOXEL>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VOXEL
+    :summary:
+    ```
+* - {py:obj}`VTK_HEXAHEDRON <vtkmodules.util.vtkConstants.VTK_HEXAHEDRON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HEXAHEDRON
+    :summary:
+    ```
+* - {py:obj}`VTK_WEDGE <vtkmodules.util.vtkConstants.VTK_WEDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_WEDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_PYRAMID <vtkmodules.util.vtkConstants.VTK_PYRAMID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PYRAMID
+    :summary:
+    ```
+* - {py:obj}`VTK_PENTAGONAL_PRISM <vtkmodules.util.vtkConstants.VTK_PENTAGONAL_PRISM>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PENTAGONAL_PRISM
+    :summary:
+    ```
+* - {py:obj}`VTK_HEXAGONAL_PRISM <vtkmodules.util.vtkConstants.VTK_HEXAGONAL_PRISM>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HEXAGONAL_PRISM
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_EDGE <vtkmodules.util.vtkConstants.VTK_QUADRATIC_EDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_EDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_TRIANGLE <vtkmodules.util.vtkConstants.VTK_QUADRATIC_TRIANGLE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_TRIANGLE
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_QUAD <vtkmodules.util.vtkConstants.VTK_QUADRATIC_QUAD>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_QUAD
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_TETRA <vtkmodules.util.vtkConstants.VTK_QUADRATIC_TETRA>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_TETRA
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_HEXAHEDRON <vtkmodules.util.vtkConstants.VTK_QUADRATIC_HEXAHEDRON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_HEXAHEDRON
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_WEDGE <vtkmodules.util.vtkConstants.VTK_QUADRATIC_WEDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_WEDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_PYRAMID <vtkmodules.util.vtkConstants.VTK_QUADRATIC_PYRAMID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_PYRAMID
+    :summary:
+    ```
+* - {py:obj}`VTK_BIQUADRATIC_QUAD <vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUAD>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUAD
+    :summary:
+    ```
+* - {py:obj}`VTK_TRIQUADRATIC_HEXAHEDRON <vtkmodules.util.vtkConstants.VTK_TRIQUADRATIC_HEXAHEDRON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TRIQUADRATIC_HEXAHEDRON
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_LINEAR_QUAD <vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_QUAD>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_QUAD
+    :summary:
+    ```
+* - {py:obj}`VTK_QUADRATIC_LINEAR_WEDGE <vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_WEDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_WEDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_BIQUADRATIC_QUADRATIC_WEDGE <vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_WEDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_WEDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON <vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON
+    :summary:
+    ```
+* - {py:obj}`VTK_CONVEX_POINT_SET <vtkmodules.util.vtkConstants.VTK_CONVEX_POINT_SET>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CONVEX_POINT_SET
+    :summary:
+    ```
+* - {py:obj}`VTK_PARAMETRIC_CURVE <vtkmodules.util.vtkConstants.VTK_PARAMETRIC_CURVE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_CURVE
+    :summary:
+    ```
+* - {py:obj}`VTK_PARAMETRIC_SURFACE <vtkmodules.util.vtkConstants.VTK_PARAMETRIC_SURFACE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_SURFACE
+    :summary:
+    ```
+* - {py:obj}`VTK_PARAMETRIC_TRI_SURFACE <vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TRI_SURFACE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TRI_SURFACE
+    :summary:
+    ```
+* - {py:obj}`VTK_PARAMETRIC_QUAD_SURFACE <vtkmodules.util.vtkConstants.VTK_PARAMETRIC_QUAD_SURFACE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_QUAD_SURFACE
+    :summary:
+    ```
+* - {py:obj}`VTK_PARAMETRIC_TETRA_REGION <vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TETRA_REGION>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TETRA_REGION
+    :summary:
+    ```
+* - {py:obj}`VTK_PARAMETRIC_HEX_REGION <vtkmodules.util.vtkConstants.VTK_PARAMETRIC_HEX_REGION>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_HEX_REGION
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_EDGE <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_EDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_EDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_TRIANGLE <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TRIANGLE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TRIANGLE
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_QUAD <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_QUAD>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_QUAD
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_POLYGON <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_POLYGON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_POLYGON
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_TETRAHEDRON <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TETRAHEDRON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TETRAHEDRON
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_WEDGE <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_WEDGE>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_WEDGE
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_PYRAMID <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_PYRAMID>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_PYRAMID
+    :summary:
+    ```
+* - {py:obj}`VTK_HIGHER_ORDER_HEXAHEDRON <vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_HEXAHEDRON>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_HEXAHEDRON
+    :summary:
+    ```
+* - {py:obj}`__vtkTypeNameDict <vtkmodules.util.vtkConstants.__vtkTypeNameDict>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkConstants.__vtkTypeNameDict
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _VTK_FLOAT_MAX
+:canonical: vtkmodules.util.vtkConstants._VTK_FLOAT_MAX
+:value: >
+   1e+38
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants._VTK_FLOAT_MAX
+```
+
+````
+
+````{py:data} _VTK_INT_MAX
+:canonical: vtkmodules.util.vtkConstants._VTK_INT_MAX
+:value: >
+   2147483647
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants._VTK_INT_MAX
+```
+
+````
+
+````{py:data} VTK_VOID
+:canonical: vtkmodules.util.vtkConstants.VTK_VOID
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VOID
+```
+
+````
+
+````{py:data} VTK_BIT
+:canonical: vtkmodules.util.vtkConstants.VTK_BIT
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIT
+```
+
+````
+
+````{py:data} VTK_CHAR
+:canonical: vtkmodules.util.vtkConstants.VTK_CHAR
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CHAR
+```
+
+````
+
+````{py:data} VTK_SIGNED_CHAR
+:canonical: vtkmodules.util.vtkConstants.VTK_SIGNED_CHAR
+:value: >
+   15
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SIGNED_CHAR
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_CHAR
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR
+```
+
+````
+
+````{py:data} VTK_SHORT
+:canonical: vtkmodules.util.vtkConstants.VTK_SHORT
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SHORT
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_SHORT
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT
+:value: >
+   5
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT
+```
+
+````
+
+````{py:data} VTK_INT
+:canonical: vtkmodules.util.vtkConstants.VTK_INT
+:value: >
+   6
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_INT
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_INT
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_INT
+:value: >
+   7
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_INT
+```
+
+````
+
+````{py:data} VTK_LONG
+:canonical: vtkmodules.util.vtkConstants.VTK_LONG
+:value: >
+   8
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_LONG
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG
+:value: >
+   9
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG
+```
+
+````
+
+````{py:data} VTK_FLOAT
+:canonical: vtkmodules.util.vtkConstants.VTK_FLOAT
+:value: >
+   10
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_FLOAT
+```
+
+````
+
+````{py:data} VTK_DOUBLE
+:canonical: vtkmodules.util.vtkConstants.VTK_DOUBLE
+:value: >
+   11
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DOUBLE
+```
+
+````
+
+````{py:data} VTK_ID_TYPE
+:canonical: vtkmodules.util.vtkConstants.VTK_ID_TYPE
+:value: >
+   12
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_ID_TYPE
+```
+
+````
+
+````{py:data} VTK_STRING
+:canonical: vtkmodules.util.vtkConstants.VTK_STRING
+:value: >
+   13
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_STRING
+```
+
+````
+
+````{py:data} VTK_OPAQUE
+:canonical: vtkmodules.util.vtkConstants.VTK_OPAQUE
+:value: >
+   14
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_OPAQUE
+```
+
+````
+
+````{py:data} VTK_LONG_LONG
+:canonical: vtkmodules.util.vtkConstants.VTK_LONG_LONG
+:value: >
+   16
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG_LONG
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_LONG_LONG
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG_LONG
+:value: >
+   17
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_LONG_LONG
+```
+
+````
+
+````{py:data} VTK_VARIANT
+:canonical: vtkmodules.util.vtkConstants.VTK_VARIANT
+:value: >
+   20
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VARIANT
+```
+
+````
+
+````{py:data} VTK_OBJECT
+:canonical: vtkmodules.util.vtkConstants.VTK_OBJECT
+:value: >
+   21
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_OBJECT
+```
+
+````
+
+````{py:data} VTK_BIT_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_BIT_MIN
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIT_MIN
+```
+
+````
+
+````{py:data} VTK_BIT_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_BIT_MAX
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIT_MAX
+```
+
+````
+
+````{py:data} VTK_CHAR_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_CHAR_MIN
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CHAR_MIN
+```
+
+````
+
+````{py:data} VTK_CHAR_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_CHAR_MAX
+:value: >
+   127
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CHAR_MAX
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_CHAR_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MIN
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MIN
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_CHAR_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MAX
+:value: >
+   255
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_CHAR_MAX
+```
+
+````
+
+````{py:data} VTK_SHORT_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_SHORT_MIN
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SHORT_MIN
+```
+
+````
+
+````{py:data} VTK_SHORT_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_SHORT_MAX
+:value: >
+   32767
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SHORT_MAX
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_SHORT_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MIN
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MIN
+```
+
+````
+
+````{py:data} VTK_UNSIGNED_SHORT_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MAX
+:value: >
+   65535
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSIGNED_SHORT_MAX
+```
+
+````
+
+````{py:data} VTK_INT_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_INT_MIN
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_INT_MIN
+```
+
+````
+
+````{py:data} VTK_INT_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_INT_MAX
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_INT_MAX
+```
+
+````
+
+````{py:data} VTK_LONG_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_LONG_MIN
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG_MIN
+```
+
+````
+
+````{py:data} VTK_LONG_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_LONG_MAX
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LONG_MAX
+```
+
+````
+
+````{py:data} VTK_FLOAT_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_FLOAT_MIN
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_FLOAT_MIN
+```
+
+````
+
+````{py:data} VTK_FLOAT_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_FLOAT_MAX
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_FLOAT_MAX
+```
+
+````
+
+````{py:data} VTK_DOUBLE_MIN
+:canonical: vtkmodules.util.vtkConstants.VTK_DOUBLE_MIN
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DOUBLE_MIN
+```
+
+````
+
+````{py:data} VTK_DOUBLE_MAX
+:canonical: vtkmodules.util.vtkConstants.VTK_DOUBLE_MAX
+:value: >
+   1e+99
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DOUBLE_MAX
+```
+
+````
+
+````{py:data} VTK_POLY_DATA
+:canonical: vtkmodules.util.vtkConstants.VTK_POLY_DATA
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLY_DATA
+```
+
+````
+
+````{py:data} VTK_STRUCTURED_POINTS
+:canonical: vtkmodules.util.vtkConstants.VTK_STRUCTURED_POINTS
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_STRUCTURED_POINTS
+```
+
+````
+
+````{py:data} VTK_STRUCTURED_GRID
+:canonical: vtkmodules.util.vtkConstants.VTK_STRUCTURED_GRID
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_STRUCTURED_GRID
+```
+
+````
+
+````{py:data} VTK_RECTILINEAR_GRID
+:canonical: vtkmodules.util.vtkConstants.VTK_RECTILINEAR_GRID
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_RECTILINEAR_GRID
+```
+
+````
+
+````{py:data} VTK_UNSTRUCTURED_GRID
+:canonical: vtkmodules.util.vtkConstants.VTK_UNSTRUCTURED_GRID
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNSTRUCTURED_GRID
+```
+
+````
+
+````{py:data} VTK_PIECEWISE_FUNCTION
+:canonical: vtkmodules.util.vtkConstants.VTK_PIECEWISE_FUNCTION
+:value: >
+   5
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PIECEWISE_FUNCTION
+```
+
+````
+
+````{py:data} VTK_IMAGE_DATA
+:canonical: vtkmodules.util.vtkConstants.VTK_IMAGE_DATA
+:value: >
+   6
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_IMAGE_DATA
+```
+
+````
+
+````{py:data} VTK_DATA_OBJECT
+:canonical: vtkmodules.util.vtkConstants.VTK_DATA_OBJECT
+:value: >
+   7
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DATA_OBJECT
+```
+
+````
+
+````{py:data} VTK_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_DATA_SET
+:value: >
+   8
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_DATA_SET
+```
+
+````
+
+````{py:data} VTK_POINT_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_POINT_SET
+:value: >
+   9
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POINT_SET
+```
+
+````
+
+````{py:data} VTK_UNIFORM_GRID
+:canonical: vtkmodules.util.vtkConstants.VTK_UNIFORM_GRID
+:value: >
+   10
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNIFORM_GRID
+```
+
+````
+
+````{py:data} VTK_COMPOSITE_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_COMPOSITE_DATA_SET
+:value: >
+   11
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COMPOSITE_DATA_SET
+```
+
+````
+
+````{py:data} VTK_MULTIGROUP_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_MULTIGROUP_DATA_SET
+:value: >
+   12
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_MULTIGROUP_DATA_SET
+```
+
+````
+
+````{py:data} VTK_MULTIBLOCK_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_MULTIBLOCK_DATA_SET
+:value: >
+   13
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_MULTIBLOCK_DATA_SET
+```
+
+````
+
+````{py:data} VTK_HIERARCHICAL_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_DATA_SET
+:value: >
+   14
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_DATA_SET
+```
+
+````
+
+````{py:data} VTK_HIERARCHICAL_BOX_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_BOX_DATA_SET
+:value: >
+   15
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIERARCHICAL_BOX_DATA_SET
+```
+
+````
+
+````{py:data} VTK_GENERIC_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_GENERIC_DATA_SET
+:value: >
+   16
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_GENERIC_DATA_SET
+```
+
+````
+
+````{py:data} VTK_HYPER_OCTREE
+:canonical: vtkmodules.util.vtkConstants.VTK_HYPER_OCTREE
+:value: >
+   17
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HYPER_OCTREE
+```
+
+````
+
+````{py:data} VTK_TEMPORAL_DATA_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_TEMPORAL_DATA_SET
+:value: >
+   18
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEMPORAL_DATA_SET
+```
+
+````
+
+````{py:data} VTK_TABLE
+:canonical: vtkmodules.util.vtkConstants.VTK_TABLE
+:value: >
+   19
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TABLE
+```
+
+````
+
+````{py:data} VTK_GRAPH
+:canonical: vtkmodules.util.vtkConstants.VTK_GRAPH
+:value: >
+   20
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_GRAPH
+```
+
+````
+
+````{py:data} VTK_TREE
+:canonical: vtkmodules.util.vtkConstants.VTK_TREE
+:value: >
+   21
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TREE
+```
+
+````
+
+````{py:data} VTK_SELECTION
+:canonical: vtkmodules.util.vtkConstants.VTK_SELECTION
+:value: >
+   22
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_SELECTION
+```
+
+````
+
+````{py:data} VTK_OK
+:canonical: vtkmodules.util.vtkConstants.VTK_OK
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_OK
+```
+
+````
+
+````{py:data} VTK_ERROR
+:canonical: vtkmodules.util.vtkConstants.VTK_ERROR
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_ERROR
+```
+
+````
+
+````{py:data} VTK_ARIAL
+:canonical: vtkmodules.util.vtkConstants.VTK_ARIAL
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_ARIAL
+```
+
+````
+
+````{py:data} VTK_COURIER
+:canonical: vtkmodules.util.vtkConstants.VTK_COURIER
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COURIER
+```
+
+````
+
+````{py:data} VTK_TIMES
+:canonical: vtkmodules.util.vtkConstants.VTK_TIMES
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TIMES
+```
+
+````
+
+````{py:data} VTK_UNKNOWN_FONT
+:canonical: vtkmodules.util.vtkConstants.VTK_UNKNOWN_FONT
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_UNKNOWN_FONT
+```
+
+````
+
+````{py:data} VTK_TEXT_LEFT
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_LEFT
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_LEFT
+```
+
+````
+
+````{py:data} VTK_TEXT_CENTERED
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_CENTERED
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_CENTERED
+```
+
+````
+
+````{py:data} VTK_TEXT_RIGHT
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_RIGHT
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_RIGHT
+```
+
+````
+
+````{py:data} VTK_TEXT_BOTTOM
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_BOTTOM
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_BOTTOM
+```
+
+````
+
+````{py:data} VTK_TEXT_TOP
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_TOP
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_TOP
+```
+
+````
+
+````{py:data} VTK_TEXT_GLOBAL_ANTIALIASING_SOME
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_SOME
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_SOME
+```
+
+````
+
+````{py:data} VTK_TEXT_GLOBAL_ANTIALIASING_NONE
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_NONE
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_NONE
+```
+
+````
+
+````{py:data} VTK_TEXT_GLOBAL_ANTIALIASING_ALL
+:canonical: vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_ALL
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TEXT_GLOBAL_ANTIALIASING_ALL
+```
+
+````
+
+````{py:data} VTK_LUMINANCE
+:canonical: vtkmodules.util.vtkConstants.VTK_LUMINANCE
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LUMINANCE
+```
+
+````
+
+````{py:data} VTK_LUMINANCE_ALPHA
+:canonical: vtkmodules.util.vtkConstants.VTK_LUMINANCE_ALPHA
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LUMINANCE_ALPHA
+```
+
+````
+
+````{py:data} VTK_RGB
+:canonical: vtkmodules.util.vtkConstants.VTK_RGB
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_RGB
+```
+
+````
+
+````{py:data} VTK_RGBA
+:canonical: vtkmodules.util.vtkConstants.VTK_RGBA
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_RGBA
+```
+
+````
+
+````{py:data} VTK_COLOR_MODE_DEFAULT
+:canonical: vtkmodules.util.vtkConstants.VTK_COLOR_MODE_DEFAULT
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COLOR_MODE_DEFAULT
+```
+
+````
+
+````{py:data} VTK_COLOR_MODE_MAP_SCALARS
+:canonical: vtkmodules.util.vtkConstants.VTK_COLOR_MODE_MAP_SCALARS
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_COLOR_MODE_MAP_SCALARS
+```
+
+````
+
+````{py:data} VTK_NEAREST_INTERPOLATION
+:canonical: vtkmodules.util.vtkConstants.VTK_NEAREST_INTERPOLATION
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_NEAREST_INTERPOLATION
+```
+
+````
+
+````{py:data} VTK_LINEAR_INTERPOLATION
+:canonical: vtkmodules.util.vtkConstants.VTK_LINEAR_INTERPOLATION
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LINEAR_INTERPOLATION
+```
+
+````
+
+````{py:data} VTK_MAX_VRCOMP
+:canonical: vtkmodules.util.vtkConstants.VTK_MAX_VRCOMP
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_MAX_VRCOMP
+```
+
+````
+
+````{py:data} VTK_EMPTY_CELL
+:canonical: vtkmodules.util.vtkConstants.VTK_EMPTY_CELL
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_EMPTY_CELL
+```
+
+````
+
+````{py:data} VTK_VERTEX
+:canonical: vtkmodules.util.vtkConstants.VTK_VERTEX
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VERTEX
+```
+
+````
+
+````{py:data} VTK_POLY_VERTEX
+:canonical: vtkmodules.util.vtkConstants.VTK_POLY_VERTEX
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLY_VERTEX
+```
+
+````
+
+````{py:data} VTK_LINE
+:canonical: vtkmodules.util.vtkConstants.VTK_LINE
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_LINE
+```
+
+````
+
+````{py:data} VTK_POLY_LINE
+:canonical: vtkmodules.util.vtkConstants.VTK_POLY_LINE
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLY_LINE
+```
+
+````
+
+````{py:data} VTK_TRIANGLE
+:canonical: vtkmodules.util.vtkConstants.VTK_TRIANGLE
+:value: >
+   5
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TRIANGLE
+```
+
+````
+
+````{py:data} VTK_TRIANGLE_STRIP
+:canonical: vtkmodules.util.vtkConstants.VTK_TRIANGLE_STRIP
+:value: >
+   6
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TRIANGLE_STRIP
+```
+
+````
+
+````{py:data} VTK_POLYGON
+:canonical: vtkmodules.util.vtkConstants.VTK_POLYGON
+:value: >
+   7
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_POLYGON
+```
+
+````
+
+````{py:data} VTK_PIXEL
+:canonical: vtkmodules.util.vtkConstants.VTK_PIXEL
+:value: >
+   8
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PIXEL
+```
+
+````
+
+````{py:data} VTK_QUAD
+:canonical: vtkmodules.util.vtkConstants.VTK_QUAD
+:value: >
+   9
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUAD
+```
+
+````
+
+````{py:data} VTK_TETRA
+:canonical: vtkmodules.util.vtkConstants.VTK_TETRA
+:value: >
+   10
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TETRA
+```
+
+````
+
+````{py:data} VTK_VOXEL
+:canonical: vtkmodules.util.vtkConstants.VTK_VOXEL
+:value: >
+   11
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_VOXEL
+```
+
+````
+
+````{py:data} VTK_HEXAHEDRON
+:canonical: vtkmodules.util.vtkConstants.VTK_HEXAHEDRON
+:value: >
+   12
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HEXAHEDRON
+```
+
+````
+
+````{py:data} VTK_WEDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_WEDGE
+:value: >
+   13
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_WEDGE
+```
+
+````
+
+````{py:data} VTK_PYRAMID
+:canonical: vtkmodules.util.vtkConstants.VTK_PYRAMID
+:value: >
+   14
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PYRAMID
+```
+
+````
+
+````{py:data} VTK_PENTAGONAL_PRISM
+:canonical: vtkmodules.util.vtkConstants.VTK_PENTAGONAL_PRISM
+:value: >
+   15
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PENTAGONAL_PRISM
+```
+
+````
+
+````{py:data} VTK_HEXAGONAL_PRISM
+:canonical: vtkmodules.util.vtkConstants.VTK_HEXAGONAL_PRISM
+:value: >
+   16
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HEXAGONAL_PRISM
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_EDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_EDGE
+:value: >
+   21
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_EDGE
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_TRIANGLE
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_TRIANGLE
+:value: >
+   22
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_TRIANGLE
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_QUAD
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_QUAD
+:value: >
+   23
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_QUAD
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_TETRA
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_TETRA
+:value: >
+   24
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_TETRA
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_HEXAHEDRON
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_HEXAHEDRON
+:value: >
+   25
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_HEXAHEDRON
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_WEDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_WEDGE
+:value: >
+   26
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_WEDGE
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_PYRAMID
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_PYRAMID
+:value: >
+   27
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_PYRAMID
+```
+
+````
+
+````{py:data} VTK_BIQUADRATIC_QUAD
+:canonical: vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUAD
+:value: >
+   28
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUAD
+```
+
+````
+
+````{py:data} VTK_TRIQUADRATIC_HEXAHEDRON
+:canonical: vtkmodules.util.vtkConstants.VTK_TRIQUADRATIC_HEXAHEDRON
+:value: >
+   29
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_TRIQUADRATIC_HEXAHEDRON
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_LINEAR_QUAD
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_QUAD
+:value: >
+   30
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_QUAD
+```
+
+````
+
+````{py:data} VTK_QUADRATIC_LINEAR_WEDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_WEDGE
+:value: >
+   31
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_QUADRATIC_LINEAR_WEDGE
+```
+
+````
+
+````{py:data} VTK_BIQUADRATIC_QUADRATIC_WEDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_WEDGE
+:value: >
+   32
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_WEDGE
+```
+
+````
+
+````{py:data} VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON
+:canonical: vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON
+:value: >
+   33
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_BIQUADRATIC_QUADRATIC_HEXAHEDRON
+```
+
+````
+
+````{py:data} VTK_CONVEX_POINT_SET
+:canonical: vtkmodules.util.vtkConstants.VTK_CONVEX_POINT_SET
+:value: >
+   41
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_CONVEX_POINT_SET
+```
+
+````
+
+````{py:data} VTK_PARAMETRIC_CURVE
+:canonical: vtkmodules.util.vtkConstants.VTK_PARAMETRIC_CURVE
+:value: >
+   51
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_CURVE
+```
+
+````
+
+````{py:data} VTK_PARAMETRIC_SURFACE
+:canonical: vtkmodules.util.vtkConstants.VTK_PARAMETRIC_SURFACE
+:value: >
+   52
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_SURFACE
+```
+
+````
+
+````{py:data} VTK_PARAMETRIC_TRI_SURFACE
+:canonical: vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TRI_SURFACE
+:value: >
+   53
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TRI_SURFACE
+```
+
+````
+
+````{py:data} VTK_PARAMETRIC_QUAD_SURFACE
+:canonical: vtkmodules.util.vtkConstants.VTK_PARAMETRIC_QUAD_SURFACE
+:value: >
+   54
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_QUAD_SURFACE
+```
+
+````
+
+````{py:data} VTK_PARAMETRIC_TETRA_REGION
+:canonical: vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TETRA_REGION
+:value: >
+   55
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_TETRA_REGION
+```
+
+````
+
+````{py:data} VTK_PARAMETRIC_HEX_REGION
+:canonical: vtkmodules.util.vtkConstants.VTK_PARAMETRIC_HEX_REGION
+:value: >
+   56
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_PARAMETRIC_HEX_REGION
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_EDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_EDGE
+:value: >
+   60
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_EDGE
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_TRIANGLE
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TRIANGLE
+:value: >
+   61
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TRIANGLE
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_QUAD
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_QUAD
+:value: >
+   62
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_QUAD
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_POLYGON
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_POLYGON
+:value: >
+   63
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_POLYGON
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_TETRAHEDRON
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TETRAHEDRON
+:value: >
+   64
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_TETRAHEDRON
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_WEDGE
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_WEDGE
+:value: >
+   65
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_WEDGE
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_PYRAMID
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_PYRAMID
+:value: >
+   66
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_PYRAMID
+```
+
+````
+
+````{py:data} VTK_HIGHER_ORDER_HEXAHEDRON
+:canonical: vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_HEXAHEDRON
+:value: >
+   67
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.VTK_HIGHER_ORDER_HEXAHEDRON
+```
+
+````
+
+````{py:data} __vtkTypeNameDict
+:canonical: vtkmodules.util.vtkConstants.__vtkTypeNameDict
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.__vtkTypeNameDict
+```
+
+````
+
+````{py:function} vtkImageScalarTypeNameMacro(type)
+:canonical: vtkmodules.util.vtkConstants.vtkImageScalarTypeNameMacro
+
+```{autodoc2-docstring} vtkmodules.util.vtkConstants.vtkImageScalarTypeNameMacro
+```
+````

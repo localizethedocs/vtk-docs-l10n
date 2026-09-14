@@ -1,0 +1,382 @@
+# {py:mod}`vtkmodules.util.widgets`
+
+```{py:module} vtkmodules.util.widgets
+```
+
+```{autodoc2-docstring} vtkmodules.util.widgets
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_WidgetMixin <vtkmodules.util.widgets._WidgetMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin
+    :summary:
+    ```
+* - {py:obj}`_BoxWidget2Mixin <vtkmodules.util.widgets._BoxWidget2Mixin>`
+  -
+* - {py:obj}`_SphereWidget2Mixin <vtkmodules.util.widgets._SphereWidget2Mixin>`
+  -
+* - {py:obj}`_ImplicitPlaneWidget2Mixin <vtkmodules.util.widgets._ImplicitPlaneWidget2Mixin>`
+  -
+* - {py:obj}`_LineWidget2Mixin <vtkmodules.util.widgets._LineWidget2Mixin>`
+  -
+* - {py:obj}`_SplineWidget2Mixin <vtkmodules.util.widgets._SplineWidget2Mixin>`
+  -
+* - {py:obj}`_SliderWidgetMixin <vtkmodules.util.widgets._SliderWidgetMixin>`
+  -
+* - {py:obj}`_ImplicitCylinderWidgetMixin <vtkmodules.util.widgets._ImplicitCylinderWidgetMixin>`
+  -
+* - {py:obj}`_ImplicitConeWidgetMixin <vtkmodules.util.widgets._ImplicitConeWidgetMixin>`
+  -
+* - {py:obj}`_ImplicitAnnulusWidgetMixin <vtkmodules.util.widgets._ImplicitAnnulusWidgetMixin>`
+  -
+* - {py:obj}`_CoordinateFrameWidgetMixin <vtkmodules.util.widgets._CoordinateFrameWidgetMixin>`
+  -
+* - {py:obj}`BoxWidget2 <vtkmodules.util.widgets.BoxWidget2>`
+  -
+* - {py:obj}`SphereWidget2 <vtkmodules.util.widgets.SphereWidget2>`
+  -
+* - {py:obj}`ImplicitPlaneWidget2 <vtkmodules.util.widgets.ImplicitPlaneWidget2>`
+  -
+* - {py:obj}`LineWidget2 <vtkmodules.util.widgets.LineWidget2>`
+  -
+* - {py:obj}`SplineWidget2 <vtkmodules.util.widgets.SplineWidget2>`
+  -
+* - {py:obj}`SliderWidget <vtkmodules.util.widgets.SliderWidget>`
+  -
+* - {py:obj}`ImplicitCylinderWidget <vtkmodules.util.widgets.ImplicitCylinderWidget>`
+  -
+* - {py:obj}`ImplicitConeWidget <vtkmodules.util.widgets.ImplicitConeWidget>`
+  -
+* - {py:obj}`ImplicitAnnulusWidget <vtkmodules.util.widgets.ImplicitAnnulusWidget>`
+  -
+* - {py:obj}`CoordinateFrameWidget <vtkmodules.util.widgets.CoordinateFrameWidget>`
+  -
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_fmt3 <vtkmodules.util.widgets._fmt3>`
+  - ```{autodoc2-docstring} vtkmodules.util.widgets._fmt3
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} _fmt3(vals)
+:canonical: vtkmodules.util.widgets._fmt3
+
+```{autodoc2-docstring} vtkmodules.util.widgets._fmt3
+```
+````
+
+`````{py:class} _WidgetMixin
+:canonical: vtkmodules.util.widgets._WidgetMixin
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin
+```
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.util.widgets._WidgetMixin.__getattr__
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.__getattr__
+```
+
+````
+
+````{py:method} _add_observer(event, callback)
+:canonical: vtkmodules.util.widgets._WidgetMixin._add_observer
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin._add_observer
+```
+
+````
+
+````{py:method} _clear_observers(event)
+:canonical: vtkmodules.util.widgets._WidgetMixin._clear_observers
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin._clear_observers
+```
+
+````
+
+````{py:method} on_interaction(callback)
+:canonical: vtkmodules.util.widgets._WidgetMixin.on_interaction
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.on_interaction
+```
+
+````
+
+````{py:method} on_end_interaction(callback)
+:canonical: vtkmodules.util.widgets._WidgetMixin.on_end_interaction
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.on_end_interaction
+```
+
+````
+
+````{py:method} clear_on_interaction()
+:canonical: vtkmodules.util.widgets._WidgetMixin.clear_on_interaction
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.clear_on_interaction
+```
+
+````
+
+````{py:method} clear_on_end_interaction()
+:canonical: vtkmodules.util.widgets._WidgetMixin.clear_on_end_interaction
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.clear_on_end_interaction
+```
+
+````
+
+````{py:method} __del__()
+:canonical: vtkmodules.util.widgets._WidgetMixin.__del__
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.__del__
+```
+
+````
+
+````{py:method} on()
+:canonical: vtkmodules.util.widgets._WidgetMixin.on
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.on
+```
+
+````
+
+````{py:method} off()
+:canonical: vtkmodules.util.widgets._WidgetMixin.off
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.off
+```
+
+````
+
+````{py:method} __enter__()
+:canonical: vtkmodules.util.widgets._WidgetMixin.__enter__
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.__enter__
+```
+
+````
+
+````{py:method} __exit__(*exc)
+:canonical: vtkmodules.util.widgets._WidgetMixin.__exit__
+
+```{autodoc2-docstring} vtkmodules.util.widgets._WidgetMixin.__exit__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._WidgetMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _BoxWidget2Mixin(*args, interactor=None, bounds=None)
+:canonical: vtkmodules.util.widgets._BoxWidget2Mixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._BoxWidget2Mixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _SphereWidget2Mixin(*args, interactor=None, bounds=None, center=None, radius=None)
+:canonical: vtkmodules.util.widgets._SphereWidget2Mixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._SphereWidget2Mixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _ImplicitPlaneWidget2Mixin(*args, interactor=None, bounds=None, origin=None, normal=None)
+:canonical: vtkmodules.util.widgets._ImplicitPlaneWidget2Mixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._ImplicitPlaneWidget2Mixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _LineWidget2Mixin(*args, interactor=None, bounds=None, point1=None, point2=None)
+:canonical: vtkmodules.util.widgets._LineWidget2Mixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._LineWidget2Mixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _SplineWidget2Mixin(*args, interactor=None, bounds=None)
+:canonical: vtkmodules.util.widgets._SplineWidget2Mixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._SplineWidget2Mixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _SliderWidgetMixin(*args, interactor=None, value=None, min_value=None, max_value=None, title=None, point1=None, point2=None)
+:canonical: vtkmodules.util.widgets._SliderWidgetMixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._SliderWidgetMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _ImplicitCylinderWidgetMixin(*args, interactor=None, bounds=None, center=None, axis=None, radius=None)
+:canonical: vtkmodules.util.widgets._ImplicitCylinderWidgetMixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._ImplicitCylinderWidgetMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _ImplicitConeWidgetMixin(*args, interactor=None, bounds=None, origin=None, axis=None, angle=None)
+:canonical: vtkmodules.util.widgets._ImplicitConeWidgetMixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._ImplicitConeWidgetMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _ImplicitAnnulusWidgetMixin(*args, interactor=None, bounds=None, center=None, axis=None, inner_radius=None, outer_radius=None)
+:canonical: vtkmodules.util.widgets._ImplicitAnnulusWidgetMixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._ImplicitAnnulusWidgetMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} _CoordinateFrameWidgetMixin(*args, interactor=None, bounds=None, origin=None)
+:canonical: vtkmodules.util.widgets._CoordinateFrameWidgetMixin
+
+Bases: {py:obj}`vtkmodules.util.widgets._WidgetMixin`
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.widgets._CoordinateFrameWidgetMixin.__repr__
+
+````
+
+`````
+
+```{py:class} BoxWidget2(*args, interactor=None, bounds=None)
+:canonical: vtkmodules.util.widgets.BoxWidget2
+
+Bases: {py:obj}`vtkmodules.util.widgets._BoxWidget2Mixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkBoxWidget2`
+
+```
+
+```{py:class} SphereWidget2(*args, interactor=None, bounds=None, center=None, radius=None)
+:canonical: vtkmodules.util.widgets.SphereWidget2
+
+Bases: {py:obj}`vtkmodules.util.widgets._SphereWidget2Mixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkSphereWidget2`
+
+```
+
+```{py:class} ImplicitPlaneWidget2(*args, interactor=None, bounds=None, origin=None, normal=None)
+:canonical: vtkmodules.util.widgets.ImplicitPlaneWidget2
+
+Bases: {py:obj}`vtkmodules.util.widgets._ImplicitPlaneWidget2Mixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkImplicitPlaneWidget2`
+
+```
+
+```{py:class} LineWidget2(*args, interactor=None, bounds=None, point1=None, point2=None)
+:canonical: vtkmodules.util.widgets.LineWidget2
+
+Bases: {py:obj}`vtkmodules.util.widgets._LineWidget2Mixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkLineWidget2`
+
+```
+
+```{py:class} SplineWidget2(*args, interactor=None, bounds=None)
+:canonical: vtkmodules.util.widgets.SplineWidget2
+
+Bases: {py:obj}`vtkmodules.util.widgets._SplineWidget2Mixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkSplineWidget2`
+
+```
+
+```{py:class} SliderWidget(*args, interactor=None, value=None, min_value=None, max_value=None, title=None, point1=None, point2=None)
+:canonical: vtkmodules.util.widgets.SliderWidget
+
+Bases: {py:obj}`vtkmodules.util.widgets._SliderWidgetMixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkSliderWidget`
+
+```
+
+```{py:class} ImplicitCylinderWidget(*args, interactor=None, bounds=None, center=None, axis=None, radius=None)
+:canonical: vtkmodules.util.widgets.ImplicitCylinderWidget
+
+Bases: {py:obj}`vtkmodules.util.widgets._ImplicitCylinderWidgetMixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkImplicitCylinderWidget`
+
+```
+
+```{py:class} ImplicitConeWidget(*args, interactor=None, bounds=None, origin=None, axis=None, angle=None)
+:canonical: vtkmodules.util.widgets.ImplicitConeWidget
+
+Bases: {py:obj}`vtkmodules.util.widgets._ImplicitConeWidgetMixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkImplicitConeWidget`
+
+```
+
+```{py:class} ImplicitAnnulusWidget(*args, interactor=None, bounds=None, center=None, axis=None, inner_radius=None, outer_radius=None)
+:canonical: vtkmodules.util.widgets.ImplicitAnnulusWidget
+
+Bases: {py:obj}`vtkmodules.util.widgets._ImplicitAnnulusWidgetMixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkImplicitAnnulusWidget`
+
+```
+
+```{py:class} CoordinateFrameWidget(*args, interactor=None, bounds=None, origin=None)
+:canonical: vtkmodules.util.widgets.CoordinateFrameWidget
+
+Bases: {py:obj}`vtkmodules.util.widgets._CoordinateFrameWidgetMixin`, {py:obj}`vtkmodules.vtkInteractionWidgets.vtkCoordinateFrameWidget`
+
+```

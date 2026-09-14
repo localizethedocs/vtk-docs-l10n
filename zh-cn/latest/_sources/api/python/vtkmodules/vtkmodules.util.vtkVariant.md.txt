@@ -1,0 +1,178 @@
+# {py:mod}`vtkmodules.util.vtkVariant`
+
+```{py:module} vtkmodules.util.vtkVariant
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkVariantStrictWeakOrderKey <vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrderKey>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrderKey
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkVariantCreate <vtkmodules.util.vtkVariant.vtkVariantCreate>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantCreate
+    :summary:
+    ```
+* - {py:obj}`vtkVariantExtract <vtkmodules.util.vtkVariant.vtkVariantExtract>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantExtract
+    :summary:
+    ```
+* - {py:obj}`vtkVariantCast <vtkmodules.util.vtkVariant.vtkVariantCast>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantCast
+    :summary:
+    ```
+* - {py:obj}`vtkVariantStrictWeakOrder <vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrder>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrder
+    :summary:
+    ```
+* - {py:obj}`vtkVariantStrictEquality <vtkmodules.util.vtkVariant.vtkVariantStrictEquality>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictEquality
+    :summary:
+    ```
+* - {py:obj}`vtkVariantLessThan <vtkmodules.util.vtkVariant.vtkVariantLessThan>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantLessThan
+    :summary:
+    ```
+* - {py:obj}`vtkVariantEqual <vtkmodules.util.vtkVariant.vtkVariantEqual>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantEqual
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_variant_type_map <vtkmodules.util.vtkVariant._variant_type_map>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant._variant_type_map
+    :summary:
+    ```
+* - {py:obj}`_variant_method_map <vtkmodules.util.vtkVariant._variant_method_map>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant._variant_method_map
+    :summary:
+    ```
+* - {py:obj}`_variant_check_map <vtkmodules.util.vtkVariant._variant_check_map>`
+  - ```{autodoc2-docstring} vtkmodules.util.vtkVariant._variant_check_map
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _variant_type_map
+:canonical: vtkmodules.util.vtkVariant._variant_type_map
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant._variant_type_map
+```
+
+````
+
+````{py:data} _variant_method_map
+:canonical: vtkmodules.util.vtkVariant._variant_method_map
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant._variant_method_map
+```
+
+````
+
+````{py:data} _variant_check_map
+:canonical: vtkmodules.util.vtkVariant._variant_check_map
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant._variant_check_map
+```
+
+````
+
+````{py:function} vtkVariantCreate(v, t)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantCreate
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantCreate
+```
+````
+
+````{py:function} vtkVariantExtract(v, t=None)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantExtract
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantExtract
+```
+````
+
+````{py:function} vtkVariantCast(v, t)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantCast
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantCast
+```
+````
+
+````{py:function} vtkVariantStrictWeakOrder(s1, s2)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrder
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrder
+```
+````
+
+`````{py:class} vtkVariantStrictWeakOrderKey(obj, *args)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrderKey
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrderKey
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrderKey.__init__
+```
+
+````{py:method} __lt__(other)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantStrictWeakOrderKey.__lt__
+
+````
+
+`````
+
+````{py:function} vtkVariantStrictEquality(s1, s2)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantStrictEquality
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantStrictEquality
+```
+````
+
+````{py:function} vtkVariantLessThan(s1, s2)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantLessThan
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantLessThan
+```
+````
+
+````{py:function} vtkVariantEqual(s1, s2)
+:canonical: vtkmodules.util.vtkVariant.vtkVariantEqual
+
+```{autodoc2-docstring} vtkmodules.util.vtkVariant.vtkVariantEqual
+```
+````

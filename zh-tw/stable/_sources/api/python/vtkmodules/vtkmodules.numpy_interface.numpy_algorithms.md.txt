@@ -1,0 +1,315 @@
+# {py:mod}`vtkmodules.numpy_interface.numpy_algorithms`
+
+```{py:module} vtkmodules.numpy_interface.numpy_algorithms
+```
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_apply_func2 <vtkmodules.numpy_interface.numpy_algorithms._apply_func2>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._apply_func2
+    :summary:
+    ```
+* - {py:obj}`apply_ufunc <vtkmodules.numpy_interface.numpy_algorithms.apply_ufunc>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.apply_ufunc
+    :summary:
+    ```
+* - {py:obj}`_make_ufunc <vtkmodules.numpy_interface.numpy_algorithms._make_ufunc>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_ufunc
+    :summary:
+    ```
+* - {py:obj}`apply_dfunc <vtkmodules.numpy_interface.numpy_algorithms.apply_dfunc>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.apply_dfunc
+    :summary:
+    ```
+* - {py:obj}`_make_dfunc <vtkmodules.numpy_interface.numpy_algorithms._make_dfunc>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_dfunc
+    :summary:
+    ```
+* - {py:obj}`_make_dsfunc <vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc
+    :summary:
+    ```
+* - {py:obj}`_make_dsfunc2 <vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc2>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc2
+    :summary:
+    ```
+* - {py:obj}`bitwise_or <vtkmodules.numpy_interface.numpy_algorithms.bitwise_or>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.bitwise_or
+    :summary:
+    ```
+* - {py:obj}`sum <vtkmodules.numpy_interface.numpy_algorithms.sum>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.sum
+    :summary:
+    ```
+* - {py:obj}`max <vtkmodules.numpy_interface.numpy_algorithms.max>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.max
+    :summary:
+    ```
+* - {py:obj}`min <vtkmodules.numpy_interface.numpy_algorithms.min>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.min
+    :summary:
+    ```
+* - {py:obj}`all <vtkmodules.numpy_interface.numpy_algorithms.all>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.all
+    :summary:
+    ```
+* - {py:obj}`mean <vtkmodules.numpy_interface.numpy_algorithms.mean>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.mean
+    :summary:
+    ```
+* - {py:obj}`var <vtkmodules.numpy_interface.numpy_algorithms.var>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.var
+    :summary:
+    ```
+* - {py:obj}`std <vtkmodules.numpy_interface.numpy_algorithms.std>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.std
+    :summary:
+    ```
+* - {py:obj}`shape <vtkmodules.numpy_interface.numpy_algorithms.shape>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.shape
+    :summary:
+    ```
+* - {py:obj}`flatnonzero <vtkmodules.numpy_interface.numpy_algorithms.flatnonzero>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.flatnonzero
+    :summary:
+    ```
+* - {py:obj}`_like_VTKCompositeDataArray <vtkmodules.numpy_interface.numpy_algorithms._like_VTKCompositeDataArray>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._like_VTKCompositeDataArray
+    :summary:
+    ```
+* - {py:obj}`zeros_like <vtkmodules.numpy_interface.numpy_algorithms.zeros_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.zeros_like
+    :summary:
+    ```
+* - {py:obj}`ones_like <vtkmodules.numpy_interface.numpy_algorithms.ones_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.ones_like
+    :summary:
+    ```
+* - {py:obj}`empty_like <vtkmodules.numpy_interface.numpy_algorithms.empty_like>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.empty_like
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`nonzero <vtkmodules.numpy_interface.numpy_algorithms.nonzero>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.nonzero
+    :summary:
+    ```
+* - {py:obj}`where <vtkmodules.numpy_interface.numpy_algorithms.where>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.where
+    :summary:
+    ```
+* - {py:obj}`isin <vtkmodules.numpy_interface.numpy_algorithms.isin>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.isin
+    :summary:
+    ```
+* - {py:obj}`expand_dims <vtkmodules.numpy_interface.numpy_algorithms.expand_dims>`
+  - ```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.expand_dims
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} _apply_func2(func, array, args)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms._apply_func2
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._apply_func2
+```
+````
+
+````{py:function} apply_ufunc(func, array, args=())
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.apply_ufunc
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.apply_ufunc
+```
+````
+
+````{py:function} _make_ufunc(ufunc)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms._make_ufunc
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_ufunc
+```
+````
+
+````{py:function} apply_dfunc(dfunc, array1, val2)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.apply_dfunc
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.apply_dfunc
+```
+````
+
+````{py:function} _make_dfunc(dfunc)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms._make_dfunc
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_dfunc
+```
+````
+
+````{py:function} _make_dsfunc(dsfunc)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc
+```
+````
+
+````{py:function} _make_dsfunc2(dsfunc)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc2
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._make_dsfunc2
+```
+````
+
+````{py:function} bitwise_or(array1, array2)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.bitwise_or
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.bitwise_or
+```
+````
+
+````{py:function} sum(array, axis=None, controller=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.sum
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.sum
+```
+````
+
+````{py:function} max(array, axis=None, controller=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.max
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.max
+```
+````
+
+````{py:function} min(array, axis=None, controller=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.min
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.min
+```
+````
+
+````{py:function} all(array, axis=None, controller=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.all
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.all
+```
+````
+
+````{py:function} mean(array, axis=None, controller=None, size=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.mean
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.mean
+```
+````
+
+````{py:function} var(array, axis=None, controller=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.var
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.var
+```
+````
+
+````{py:function} std(array, axis=None, controller=None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.std
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.std
+```
+````
+
+````{py:function} shape(array)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.shape
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.shape
+```
+````
+
+````{py:function} flatnonzero(array)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.flatnonzero
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.flatnonzero
+```
+````
+
+````{py:function} _like_VTKCompositeDataArray(array: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray, kind: str, dtype: typing.Optional[numpy.dtype] = None, value: typing.Optional[int] = None)
+:canonical: vtkmodules.numpy_interface.numpy_algorithms._like_VTKCompositeDataArray
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms._like_VTKCompositeDataArray
+```
+````
+
+````{py:function} zeros_like(array: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray, dtype: typing.Optional[numpy.dtype] = None) -> vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.zeros_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.zeros_like
+```
+````
+
+````{py:function} ones_like(array: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray, dtype: typing.Optional[numpy.dtype] = None) -> vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.ones_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.ones_like
+```
+````
+
+````{py:function} empty_like(array: vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray, dtype: typing.Optional[numpy.dtype] = None) -> vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.empty_like
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.empty_like
+```
+````
+
+````{py:data} nonzero
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.nonzero
+:value: >
+   '(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.nonzero
+```
+
+````
+
+````{py:data} where
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.where
+:value: >
+   '(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.where
+```
+
+````
+
+````{py:data} isin
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.isin
+:value: >
+   '(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.isin
+```
+
+````
+
+````{py:data} expand_dims
+:canonical: vtkmodules.numpy_interface.numpy_algorithms.expand_dims
+:value: >
+   '(...)'
+
+```{autodoc2-docstring} vtkmodules.numpy_interface.numpy_algorithms.expand_dims
+```
+
+````
