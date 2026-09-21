@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:1
+msgid "Rewrite reader for EnSight Gold files"
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:3
+msgid ""
+"There is a new version of the EnSight gold reader. This adds two classes, "
+"`vtkEnSightGoldCombinedReader` and `vtkEnSightSOSGoldReader`, to handle "
+"EnSight gold casefiles and SOS files, respectively. This reader should have "
+"all of the functionality of the old reader, as well as supporting some "
+"things that the old reader did not. Notable differences between this reader "
+"and the old reader:"
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:6
+msgid ""
+"No complicated class hierarchy. Hopefully this will be easier to maintain "
+"and figure out where problems are."
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:7
+msgid ""
+"There is an internal class, EnSightFile that handles all file operations and "
+"will handle ASCII, C binary, and Fortran binary. That makes it so the "
+"EnSightDataSet internal class doesn't have to care about what type of file "
+"is being read and can just focus on handling the logic around the different "
+"types of data (there are some rare cases where the way ASCII and binary are "
+"formatted in inconsistent ways, but for the most part EnSightDataSet doesn't "
+"need to care about file type)."
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:8
+msgid ""
+"You can select which parts to load. By default, it will load all parts, but "
+"similar to loading selected arrays, you can load selected parts."
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:9
+msgid "Static geometry is cached."
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:10
+msgid "Outputs `vtkPartitionedDataSetCollection`"
+msgstr ""
+
+#: ../../../release_details/9.4/ensight-gold-rewrite.md:12
+msgid ""
+"For parallel support, these readers take a different approach than the old "
+"readers. This reader makes the assumption that the user will want to stick "
+"to the decomposition of parts that already exists in their casefiles. The "
+"initial strategy for this reader assigns whole casefiles to the available "
+"processes as evenly as possible. This means that using the same number of "
+"processes as number of servers listed in the SOS file is the most efficient "
+"- each rank will read one casefile. If there are more processes than "
+"casefiles, some ranks will do no work, while if there are fewer processes "
+"than casefiles, some rank(s) will read more than one casefile. In the "
+"future, we will add a strategy that will consider the partition of a part in "
+"the casefile as an atomic unit, and those partitions could be more evenly "
+"distributed across ranks."
+msgstr ""

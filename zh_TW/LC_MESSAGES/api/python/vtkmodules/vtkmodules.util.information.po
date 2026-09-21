@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:1
+msgid "{py:mod}`vtkmodules.util.information`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:7
+msgid "Pythonic interfaces for vtkInformation and vtkInformationVector."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:9
+msgid "Makes vtkInformation behave like a Python dictionary (key -> value)::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:11
+msgid ""
+"from vtkmodules.vtkCommonDataModel import vtkDataObject\n"
+"info = vtkInformation()\n"
+"info[vtkDataObject.FIELD_NAME()] = \"Pressure\"\n"
+"info[vtkDataObject.FIELD_NAME()]           # \"Pressure\"\n"
+"vtkDataObject.FIELD_NAME() in info         # True\n"
+"del info[vtkDataObject.FIELD_NAME()]       # Remove entry\n"
+"len(info)                                  # entry count\n"
+"for key in info: ...                       # iterate vtkInformationKey "
+"objects\n"
+"info.keys()                                # list of vtkInformationKey "
+"objects\n"
+"info.string_keys()                         # list of key name strings\n"
+"info.values(), info.items()                # dict-like views\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:23
+msgid "Makes vtkInformationVector behave like a Python list::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:25
+msgid ""
+"vec = vtkInformationVector()\n"
+"vec.append(vtkInformation())\n"
+"len(vec)          # 1\n"
+"vec[0]            # vtkInformation\n"
+"for info in vec:  # iterate\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:10
+msgid "Module Contents"
+msgstr "模組目次"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:12
+msgid "Classes"
+msgstr "類別"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:18
+msgid ""
+"{py:obj}`_InformationMixin <vtkmodules.util.information._InformationMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:22
+msgid "{py:obj}`Information <vtkmodules.util.information.Information>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:26
+msgid ""
+"{py:obj}`_InformationVectorMixin <vtkmodules.util.information."
+"_InformationVectorMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:30
+msgid ""
+"{py:obj}`InformationVector <vtkmodules.util.information.InformationVector>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:36
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:42
+msgid "{py:obj}`_resolve_key <vtkmodules.util.information._resolve_key>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:118
+msgid ""
+"Resolve a string key name (case-insensitive) to its vtkInformationKey object."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:48
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:54
+msgid ""
+"{py:obj}`_SCALAR_KEY_TYPES <vtkmodules.util.information._SCALAR_KEY_TYPES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:58
+msgid ""
+"{py:obj}`_VECTOR_KEY_TYPES <vtkmodules.util.information._VECTOR_KEY_TYPES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:62
+msgid ""
+"{py:obj}`_OBJECT_KEY_TYPES <vtkmodules.util.information._OBJECT_KEY_TYPES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:66
+msgid ""
+"{py:obj}`_OBJECT_VECTOR_KEY_TYPES <vtkmodules.util.information."
+"_OBJECT_VECTOR_KEY_TYPES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:72
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:78
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:88
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:98
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:108
+msgid "()"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:181
+msgid "Return the list of vtkInformationKey objects in this information."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:197
+msgid "Return [(key_object, value), ...] for all entries."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:205
+msgid "Return the names of the keys in this information as strings."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/information.py:221
+msgid "Merge entries from another vtkInformation or a Python mapping."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:242
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.information._InformationMixin`, {py:obj}"
+"`vtkmodules.vtkCommonCore.vtkInformation`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.information.md:321
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.information._InformationVectorMixin`, {py:"
+"obj}`vtkmodules.vtkCommonCore.vtkInformationVector`"
+msgstr ""
