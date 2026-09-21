@@ -1,0 +1,325 @@
+# {py:mod}`vtkmodules.util.information`
+
+```{py:module} vtkmodules.util.information
+```
+
+```{autodoc2-docstring} vtkmodules.util.information
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_InformationMixin <vtkmodules.util.information._InformationMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._InformationMixin
+    :summary:
+    ```
+* - {py:obj}`Information <vtkmodules.util.information.Information>`
+  - ```{autodoc2-docstring} vtkmodules.util.information.Information
+    :summary:
+    ```
+* - {py:obj}`_InformationVectorMixin <vtkmodules.util.information._InformationVectorMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin
+    :summary:
+    ```
+* - {py:obj}`InformationVector <vtkmodules.util.information.InformationVector>`
+  - ```{autodoc2-docstring} vtkmodules.util.information.InformationVector
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_resolve_key <vtkmodules.util.information._resolve_key>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._resolve_key
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_SCALAR_KEY_TYPES <vtkmodules.util.information._SCALAR_KEY_TYPES>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._SCALAR_KEY_TYPES
+    :summary:
+    ```
+* - {py:obj}`_VECTOR_KEY_TYPES <vtkmodules.util.information._VECTOR_KEY_TYPES>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._VECTOR_KEY_TYPES
+    :summary:
+    ```
+* - {py:obj}`_OBJECT_KEY_TYPES <vtkmodules.util.information._OBJECT_KEY_TYPES>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._OBJECT_KEY_TYPES
+    :summary:
+    ```
+* - {py:obj}`_OBJECT_VECTOR_KEY_TYPES <vtkmodules.util.information._OBJECT_VECTOR_KEY_TYPES>`
+  - ```{autodoc2-docstring} vtkmodules.util.information._OBJECT_VECTOR_KEY_TYPES
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _SCALAR_KEY_TYPES
+:canonical: vtkmodules.util.information._SCALAR_KEY_TYPES
+:value: >
+   ()
+
+```{autodoc2-docstring} vtkmodules.util.information._SCALAR_KEY_TYPES
+```
+
+````
+
+````{py:data} _VECTOR_KEY_TYPES
+:canonical: vtkmodules.util.information._VECTOR_KEY_TYPES
+:value: >
+   ()
+
+```{autodoc2-docstring} vtkmodules.util.information._VECTOR_KEY_TYPES
+```
+
+````
+
+````{py:data} _OBJECT_KEY_TYPES
+:canonical: vtkmodules.util.information._OBJECT_KEY_TYPES
+:value: >
+   ()
+
+```{autodoc2-docstring} vtkmodules.util.information._OBJECT_KEY_TYPES
+```
+
+````
+
+````{py:data} _OBJECT_VECTOR_KEY_TYPES
+:canonical: vtkmodules.util.information._OBJECT_VECTOR_KEY_TYPES
+:value: >
+   ()
+
+```{autodoc2-docstring} vtkmodules.util.information._OBJECT_VECTOR_KEY_TYPES
+```
+
+````
+
+````{py:function} _resolve_key(name_or_key)
+:canonical: vtkmodules.util.information._resolve_key
+
+```{autodoc2-docstring} vtkmodules.util.information._resolve_key
+```
+````
+
+`````{py:class} _InformationMixin
+:canonical: vtkmodules.util.information._InformationMixin
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin
+```
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.information._InformationMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(key, value)
+:canonical: vtkmodules.util.information._InformationMixin.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.__setitem__
+```
+
+````
+
+````{py:method} __delitem__(key)
+:canonical: vtkmodules.util.information._InformationMixin.__delitem__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.__delitem__
+```
+
+````
+
+````{py:method} __contains__(key)
+:canonical: vtkmodules.util.information._InformationMixin.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.__contains__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.information._InformationMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.__len__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.information._InformationMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.__iter__
+```
+
+````
+
+````{py:method} keys()
+:canonical: vtkmodules.util.information._InformationMixin.keys
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.keys
+```
+
+````
+
+````{py:method} values()
+:canonical: vtkmodules.util.information._InformationMixin.values
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.values
+```
+
+````
+
+````{py:method} items()
+:canonical: vtkmodules.util.information._InformationMixin.items
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.items
+```
+
+````
+
+````{py:method} string_keys()
+:canonical: vtkmodules.util.information._InformationMixin.string_keys
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.string_keys
+```
+
+````
+
+````{py:method} get(key, default=None)
+:canonical: vtkmodules.util.information._InformationMixin.get
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.get
+```
+
+````
+
+````{py:method} update(other)
+:canonical: vtkmodules.util.information._InformationMixin.update
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.update
+```
+
+````
+
+````{py:method} clear()
+:canonical: vtkmodules.util.information._InformationMixin.clear
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationMixin.clear
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.information._InformationMixin.__repr__
+
+````
+
+`````
+
+````{py:class} Information
+:canonical: vtkmodules.util.information.Information
+
+Bases: {py:obj}`vtkmodules.util.information._InformationMixin`, {py:obj}`vtkmodules.vtkCommonCore.vtkInformation`
+
+```{autodoc2-docstring} vtkmodules.util.information.Information
+```
+
+````
+
+`````{py:class} _InformationVectorMixin
+:canonical: vtkmodules.util.information._InformationVectorMixin
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin
+```
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.information._InformationVectorMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.__len__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.util.information._InformationVectorMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(index, info)
+:canonical: vtkmodules.util.information._InformationVectorMixin.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.__setitem__
+```
+
+````
+
+````{py:method} __delitem__(index)
+:canonical: vtkmodules.util.information._InformationVectorMixin.__delitem__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.__delitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.information._InformationVectorMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.__iter__
+```
+
+````
+
+````{py:method} __contains__(info)
+:canonical: vtkmodules.util.information._InformationVectorMixin.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.__contains__
+```
+
+````
+
+````{py:method} append(info)
+:canonical: vtkmodules.util.information._InformationVectorMixin.append
+
+```{autodoc2-docstring} vtkmodules.util.information._InformationVectorMixin.append
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.information._InformationVectorMixin.__repr__
+
+````
+
+`````
+
+````{py:class} InformationVector
+:canonical: vtkmodules.util.information.InformationVector
+
+Bases: {py:obj}`vtkmodules.util.information._InformationVectorMixin`, {py:obj}`vtkmodules.vtkCommonCore.vtkInformationVector`
+
+```{autodoc2-docstring} vtkmodules.util.information.InformationVector
+```
+
+````

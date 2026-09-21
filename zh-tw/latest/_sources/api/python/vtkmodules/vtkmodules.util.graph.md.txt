@@ -1,0 +1,371 @@
+# {py:mod}`vtkmodules.util.graph`
+
+```{py:module} vtkmodules.util.graph
+```
+
+```{autodoc2-docstring} vtkmodules.util.graph
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_GraphMixin <vtkmodules.util.graph._GraphMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin
+    :summary:
+    ```
+* - {py:obj}`_MutableGraphMixin <vtkmodules.util.graph._MutableGraphMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph._MutableGraphMixin
+    :summary:
+    ```
+* - {py:obj}`_TreeMixin <vtkmodules.util.graph._TreeMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin
+    :summary:
+    ```
+* - {py:obj}`DirectedGraph <vtkmodules.util.graph.DirectedGraph>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.DirectedGraph
+    :summary:
+    ```
+* - {py:obj}`MutableDirectedGraph <vtkmodules.util.graph.MutableDirectedGraph>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.MutableDirectedGraph
+    :summary:
+    ```
+* - {py:obj}`UndirectedGraph <vtkmodules.util.graph.UndirectedGraph>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.UndirectedGraph
+    :summary:
+    ```
+* - {py:obj}`MutableUndirectedGraph <vtkmodules.util.graph.MutableUndirectedGraph>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.MutableUndirectedGraph
+    :summary:
+    ```
+* - {py:obj}`DirectedAcyclicGraph <vtkmodules.util.graph.DirectedAcyclicGraph>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.DirectedAcyclicGraph
+    :summary:
+    ```
+* - {py:obj}`Tree <vtkmodules.util.graph.Tree>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.Tree
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_set_arrays <vtkmodules.util.graph._set_arrays>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph._set_arrays
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`Edge <vtkmodules.util.graph.Edge>`
+  - ```{autodoc2-docstring} vtkmodules.util.graph.Edge
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} Edge
+:canonical: vtkmodules.util.graph.Edge
+:value: >
+   'namedtuple(...)'
+
+```{autodoc2-docstring} vtkmodules.util.graph.Edge
+```
+
+````
+
+`````{py:class} _GraphMixin
+:canonical: vtkmodules.util.graph._GraphMixin
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin
+```
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.graph._GraphMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.__len__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.graph._GraphMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.graph._GraphMixin.__repr__
+
+````
+
+````{py:property} vertices
+:canonical: vtkmodules.util.graph._GraphMixin.vertices
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.vertices
+```
+
+````
+
+````{py:property} edges
+:canonical: vtkmodules.util.graph._GraphMixin.edges
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.edges
+```
+
+````
+
+````{py:property} vertex_data
+:canonical: vtkmodules.util.graph._GraphMixin.vertex_data
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.vertex_data
+```
+
+````
+
+````{py:property} edge_data
+:canonical: vtkmodules.util.graph._GraphMixin.edge_data
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.edge_data
+```
+
+````
+
+````{py:method} neighbors(v)
+:canonical: vtkmodules.util.graph._GraphMixin.neighbors
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.neighbors
+```
+
+````
+
+````{py:method} out_edges(v)
+:canonical: vtkmodules.util.graph._GraphMixin.out_edges
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.out_edges
+```
+
+````
+
+````{py:method} in_edges(v)
+:canonical: vtkmodules.util.graph._GraphMixin.in_edges
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.in_edges
+```
+
+````
+
+````{py:method} degree(v)
+:canonical: vtkmodules.util.graph._GraphMixin.degree
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.degree
+```
+
+````
+
+````{py:method} out_degree(v)
+:canonical: vtkmodules.util.graph._GraphMixin.out_degree
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.out_degree
+```
+
+````
+
+````{py:method} in_degree(v)
+:canonical: vtkmodules.util.graph._GraphMixin.in_degree
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.in_degree
+```
+
+````
+
+````{py:method} to_networkx()
+:canonical: vtkmodules.util.graph._GraphMixin.to_networkx
+
+```{autodoc2-docstring} vtkmodules.util.graph._GraphMixin.to_networkx
+```
+
+````
+
+`````
+
+`````{py:class} _MutableGraphMixin
+:canonical: vtkmodules.util.graph._MutableGraphMixin
+
+Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`
+
+```{autodoc2-docstring} vtkmodules.util.graph._MutableGraphMixin
+```
+
+````{py:property} edges
+:canonical: vtkmodules.util.graph._MutableGraphMixin.edges
+
+```{autodoc2-docstring} vtkmodules.util.graph._MutableGraphMixin.edges
+```
+
+````
+
+````{py:property} vertex_data
+:canonical: vtkmodules.util.graph._MutableGraphMixin.vertex_data
+
+```{autodoc2-docstring} vtkmodules.util.graph._MutableGraphMixin.vertex_data
+```
+
+````
+
+````{py:property} edge_data
+:canonical: vtkmodules.util.graph._MutableGraphMixin.edge_data
+
+```{autodoc2-docstring} vtkmodules.util.graph._MutableGraphMixin.edge_data
+```
+
+````
+
+````{py:method} from_networkx(nx_graph)
+:canonical: vtkmodules.util.graph._MutableGraphMixin.from_networkx
+
+```{autodoc2-docstring} vtkmodules.util.graph._MutableGraphMixin.from_networkx
+```
+
+````
+
+`````
+
+````{py:function} _set_arrays(dsa, arrays, num_tuples)
+:canonical: vtkmodules.util.graph._set_arrays
+
+```{autodoc2-docstring} vtkmodules.util.graph._set_arrays
+```
+````
+
+`````{py:class} _TreeMixin
+:canonical: vtkmodules.util.graph._TreeMixin
+
+Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`
+
+```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin
+```
+
+````{py:property} root
+:canonical: vtkmodules.util.graph._TreeMixin.root
+
+```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin.root
+```
+
+````
+
+````{py:method} parent(v)
+:canonical: vtkmodules.util.graph._TreeMixin.parent
+
+```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin.parent
+```
+
+````
+
+````{py:method} children(v)
+:canonical: vtkmodules.util.graph._TreeMixin.children
+
+```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin.children
+```
+
+````
+
+````{py:method} is_leaf(v)
+:canonical: vtkmodules.util.graph._TreeMixin.is_leaf
+
+```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin.is_leaf
+```
+
+````
+
+````{py:method} level(v)
+:canonical: vtkmodules.util.graph._TreeMixin.level
+
+```{autodoc2-docstring} vtkmodules.util.graph._TreeMixin.level
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.graph._TreeMixin.__repr__
+
+````
+
+`````
+
+````{py:class} DirectedGraph
+:canonical: vtkmodules.util.graph.DirectedGraph
+
+Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkDirectedGraph`
+
+```{autodoc2-docstring} vtkmodules.util.graph.DirectedGraph
+```
+
+````
+
+````{py:class} MutableDirectedGraph
+:canonical: vtkmodules.util.graph.MutableDirectedGraph
+
+Bases: {py:obj}`vtkmodules.util.graph._MutableGraphMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkMutableDirectedGraph`
+
+```{autodoc2-docstring} vtkmodules.util.graph.MutableDirectedGraph
+```
+
+````
+
+````{py:class} UndirectedGraph
+:canonical: vtkmodules.util.graph.UndirectedGraph
+
+Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkUndirectedGraph`
+
+```{autodoc2-docstring} vtkmodules.util.graph.UndirectedGraph
+```
+
+````
+
+````{py:class} MutableUndirectedGraph
+:canonical: vtkmodules.util.graph.MutableUndirectedGraph
+
+Bases: {py:obj}`vtkmodules.util.graph._MutableGraphMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkMutableUndirectedGraph`
+
+```{autodoc2-docstring} vtkmodules.util.graph.MutableUndirectedGraph
+```
+
+````
+
+````{py:class} DirectedAcyclicGraph
+:canonical: vtkmodules.util.graph.DirectedAcyclicGraph
+
+Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkDirectedAcyclicGraph`
+
+```{autodoc2-docstring} vtkmodules.util.graph.DirectedAcyclicGraph
+```
+
+````
+
+````{py:class} Tree
+:canonical: vtkmodules.util.graph.Tree
+
+Bases: {py:obj}`vtkmodules.util.graph._TreeMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkTree`
+
+```{autodoc2-docstring} vtkmodules.util.graph.Tree
+```
+
+````

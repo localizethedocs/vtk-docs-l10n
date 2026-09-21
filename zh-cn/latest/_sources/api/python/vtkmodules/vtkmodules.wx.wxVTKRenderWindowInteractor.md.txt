@@ -1,0 +1,317 @@
+# {py:mod}`vtkmodules.wx.wxVTKRenderWindowInteractor`
+
+```{py:module} vtkmodules.wx.wxVTKRenderWindowInteractor
+```
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`EventTimer <vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer
+    :summary:
+    ```
+* - {py:obj}`wxVTKRenderWindowInteractor <vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`wxVTKRenderWindowInteractorConeExample <vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractorConeExample>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractorConeExample
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`baseClass <vtkmodules.wx.wxVTKRenderWindowInteractor.baseClass>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.baseClass
+    :summary:
+    ```
+* - {py:obj}`_useCapture <vtkmodules.wx.wxVTKRenderWindowInteractor._useCapture>`
+  - ```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor._useCapture
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} baseClass
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.baseClass
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.baseClass
+```
+
+````
+
+````{py:data} _useCapture
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor._useCapture
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor._useCapture
+```
+
+````
+
+`````{py:class} EventTimer(iren)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer
+
+Bases: {py:obj}`wx.Timer`
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer.__init__
+```
+
+````{py:method} Notify()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer.Notify
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.EventTimer.Notify
+```
+
+````
+
+`````
+
+`````{py:class} wxVTKRenderWindowInteractor(parent, ID, *args, **kw)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor
+
+Bases: {py:obj}`vtkmodules.wx.wxVTKRenderWindowInteractor.baseClass`
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.__init__
+```
+
+````{py:attribute} USE_STEREO
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.USE_STEREO
+:value: >
+   False
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.USE_STEREO
+```
+
+````
+
+````{py:method} BindEvents()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.BindEvents
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.BindEvents
+```
+
+````
+
+````{py:method} __getattr__(attr)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.__getattr__
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.__getattr__
+```
+
+````
+
+````{py:method} CreateTimer(obj, evt)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.CreateTimer
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.CreateTimer
+```
+
+````
+
+````{py:method} DestroyTimer(obj, evt)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.DestroyTimer
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.DestroyTimer
+```
+
+````
+
+````{py:method} _CursorChangedEvent(obj, evt)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor._CursorChangedEvent
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor._CursorChangedEvent
+```
+
+````
+
+````{py:method} CursorChangedEvent(obj, evt)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.CursorChangedEvent
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.CursorChangedEvent
+```
+
+````
+
+````{py:method} HideCursor()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.HideCursor
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.HideCursor
+```
+
+````
+
+````{py:method} ShowCursor()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.ShowCursor
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.ShowCursor
+```
+
+````
+
+````{py:method} GetDisplayId()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.GetDisplayId
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.GetDisplayId
+```
+
+````
+
+````{py:method} OnMouseCaptureLost(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnMouseCaptureLost
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnMouseCaptureLost
+```
+
+````
+
+````{py:method} OnPaint(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnPaint
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnPaint
+```
+
+````
+
+````{py:method} OnSize(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnSize
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnSize
+```
+
+````
+
+````{py:method} OnMotion(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnMotion
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnMotion
+```
+
+````
+
+````{py:method} OnEnter(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnEnter
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnEnter
+```
+
+````
+
+````{py:method} OnLeave(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnLeave
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnLeave
+```
+
+````
+
+````{py:method} OnButtonDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnButtonDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnButtonDown
+```
+
+````
+
+````{py:method} OnButtonUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnButtonUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnButtonUp
+```
+
+````
+
+````{py:method} OnMouseWheel(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnMouseWheel
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnMouseWheel
+```
+
+````
+
+````{py:method} OnKeyDown(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnKeyDown
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnKeyDown
+```
+
+````
+
+````{py:method} OnKeyUp(event)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnKeyUp
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.OnKeyUp
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.GetRenderWindow
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.Render
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.Render
+```
+
+````
+
+````{py:method} SetRenderWhenDisabled(newValue)
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.SetRenderWhenDisabled
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor.SetRenderWhenDisabled
+```
+
+````
+
+`````
+
+````{py:function} wxVTKRenderWindowInteractorConeExample()
+:canonical: vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractorConeExample
+
+```{autodoc2-docstring} vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractorConeExample
+```
+````
