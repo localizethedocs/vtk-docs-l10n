@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:4
+msgid "vtkModuleWrapJava"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:8
+msgid "APIs for wrapping modules for Java"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:15
+msgid "Generate sources for using a module's classes from Java. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:17
+msgid ""
+"This function generates the wrapped sources for a module. It places the list "
+"of generated source files and Java source files in variables named in the "
+"second and third arguments, respectively."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:21
+msgid "_vtk_module_wrap_java_sources(<module> <sources> <classes>)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:321
+msgid "Generate a JNI library for a set of modules. |module-impl|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:323
+msgid ""
+"A single JNI library may consist of the Java wrappings of multiple modules. "
+"This is useful for kit-based builds where the modules part of the same kit "
+"belong to the same JNI library as well."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:327
+msgid "_vtk_module_wrap_java_library(<name> <module>...)"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:331
+msgid ""
+"The first argument is the name of the JNI library. The remaining arguments "
+"are modules to include in the JNI library."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:334
+msgid ""
+"The remaining information it uses is assumed to be provided by the :cmake:"
+"command:`vtk_module_wrap_java` function."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:486
+msgid "Wrap a set of modules for use in Java. |module-wrapping-java|"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:488
+msgid ""
+"vtk_module_wrap_java(\n"
+"  MODULES <module>...\n"
+"  [WRAPPED_MODULES <varname>]\n"
+"\n"
+"  [UTILITY_TARGET <target>]\n"
+"\n"
+"  [JAVA_OUTPUT <destination>]\n"
+"\n"
+"  [LIBRARY_DESTINATION <destination>]\n"
+"  [JNILIB_DESTINATION <destination>]\n"
+"  [JNILIB_COMPONENT <component>]\n"
+"\n"
+"  [WARNINGS <warning>...])"
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:504
+msgid "``MODULES``: (Required) The list of modules to wrap."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:505
+msgid ""
+"``WRAPPED_MODULES``: (Recommended) Not all modules are wrappable. This "
+"variable will be set to contain the list of modules which were wrapped."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:507
+msgid ""
+"``UTILITY_TARGET``: If specified, all libraries made by the Java wrapping "
+"will link privately to this target. This may be used to add compile flags to "
+"the Java libraries."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:510
+msgid ""
+"``JAVA_OUTPUT``: Defaults to ``${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/"
+"vtkJava``. Java source files are written to this directory. After "
+"generation, the files may be compiled as needed."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:514
+msgid ""
+"``LIBRARY_DESTINATION`` (Recommended): If provided, dynamic loader "
+"information will be added to modules for loading dependent libraries."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:516
+msgid "``JNILIB_DESTINATION``: Where to install JNI libraries."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:517
+msgid ""
+"``JNILIB_COMPONENT``: Defaults to ``jni``. The install component to use for "
+"JNI libraries."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:519
+msgid "``WARNINGS``: Warnings to enable. Supported warnings: ``empty``."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:521
+msgid ""
+"For each wrapped module, a ``<module>Java`` target will be created. These "
+"targets will have a ``_vtk_module_java_files`` property which is the list of "
+"generated Java source files for that target."
+msgstr ""
+
+#: ../../../../../CMake/vtkModuleWrapJava.cmake:525
+msgid ""
+"For dependency purposes, the ``<module>Java-java-sources`` target may also "
+"be used."
+msgstr ""

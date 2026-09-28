@@ -1,0 +1,434 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../build_instructions/build.md:1
+#: ../../../build_instructions/build.md:247
+msgid "Building"
+msgstr ""
+
+#: ../../../build_instructions/build.md:3
+msgid ""
+"This page describes how to build and install VTK. It covers building for "
+"development, on both Unix-type systems (Linux, HP-UX, Solaris, macOS), and "
+"Windows. Note that Unix-like environments such as Cygwin and MinGW are not "
+"officially supported. However, patches to fix problems with these platforms "
+"will be considered for inclusion. It is recommended that users which require "
+"VTK to work on these platforms to submit nightly testing results for them."
+msgstr ""
+
+#: ../../../build_instructions/build.md:10
+msgid ""
+"A full-featured build of VTK depends on several open source tools and "
+"libraries such as Python, Qt, CGNS, HDF5, etc. Some of these are included in "
+"the VTK source itself (e.g., HDF5), while others are expected to be present "
+"on the machine on which VTK is being built (e.g., Python, Qt)."
+msgstr ""
+
+#: ../../../build_instructions/build.md:15
+msgid ""
+"VTK supports all of the common generators supported by CMake. The Ninja, "
+"Makefiles, and Visual Studio generators are the most well-tested however."
+msgstr ""
+
+#: ../../../build_instructions/build.md:18
+msgid ""
+"Note that VTK does not support in-source builds, so you must have a build "
+"tree that is not the source tree."
+msgstr ""
+
+#: ../../../build_instructions/build.md:21
+msgid "Obtaining the sources"
+msgstr ""
+
+#: ../../../build_instructions/build.md:23
+msgid "There are two approaches:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Release Download"
+msgstr ""
+
+#: ../../../build_instructions/build.md:29
+msgid ""
+"Download the source release `VTK-X.Y.Z.tar.gz` from https://vtk.org/"
+"download/."
+msgstr ""
+
+#: ../../../build_instructions/build.md:30
+msgid "Create a folder for VTK."
+msgstr ""
+
+#: ../../../build_instructions/build.md:31
+msgid ""
+"Extract the contents of the VTK folder in the downloaded archive to the "
+"subfolder called `source`"
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Git Clone"
+msgstr ""
+
+#: ../../../build_instructions/build.md:35
+msgid ""
+"To obtain VTK's sources locally, clone the VTK repository using [Git][git]."
+msgstr ""
+
+#: ../../../build_instructions/build.md:39
+msgid ""
+"Open `Git Bash` on Windows or a terminal on Linux and macOS and execute the "
+"following:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:42
+msgid ""
+"mkdir -p ~/vtk\n"
+"git clone --recursive https://gitlab.kitware.com/vtk/vtk.git ~/vtk/source\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:49
+msgid ""
+"To use the latest features being developed or to make changes and contribute "
+"to VTK, download the source using **Git Clone**."
+msgstr ""
+
+#: ../../../build_instructions/build.md:52
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../build_instructions/build.md:54
+msgid ""
+"VTK only requires a few packages in order to build in general, however "
+"specific features may require additional packages to be provided to VTK's "
+"build configuration."
+msgstr ""
+
+#: ../../../build_instructions/build.md:58
+msgid "Required:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:60
+msgid "[CMake][cmake]"
+msgstr ""
+
+#: ../../../build_instructions/build.md:61
+msgid ""
+"Version 3.12 or newer, however, the latest version is always recommended. If "
+"the system package management utilities do not offer cmake or if the offered "
+"version is too old Precompiled binaries available on [CMake's download page]"
+"[cmake-download]."
+msgstr ""
+
+#: ../../../build_instructions/build.md:65
+msgid "  <!-- Keep this section in sync with top-level README.md -->\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:66
+msgid "Supported compiler"
+msgstr ""
+
+#: ../../../build_instructions/build.md:67
+msgid "GCC 8.0 or newer"
+msgstr ""
+
+#: ../../../build_instructions/build.md:68
+msgid "Clang 7.0 or newer"
+msgstr ""
+
+#: ../../../build_instructions/build.md:69
+msgid "Apple Clang 11.0 (Xcode 11.3.1) or newer"
+msgstr ""
+
+#: ../../../build_instructions/build.md:70
+msgid "Microsoft Visual Studio 2019 or newer"
+msgstr ""
+
+#: ../../../build_instructions/build.md:71
+msgid "Intel 19.0 or newer"
+msgstr ""
+
+#: ../../../build_instructions/build.md:73
+msgid "Optional Additions"
+msgstr ""
+
+#: ../../../build_instructions/build.md:75
+msgid ""
+"**ffmpeg** When the ability to write `.avi` files is desired, and writing "
+"these files is not supported by the OS, VTK can use the ffmpeg library. This "
+"is generally true for Unix-like operating systems. Source code for ffmpeg "
+"can be obtained from [the website][ffmpeg]."
+msgstr ""
+
+#: ../../../build_instructions/build.md:81
+msgid ""
+"**MPI** To run VTK in parallel, an [MPI][mpi] implementation is required. If "
+"an MPI implementation that exploits special interconnect hardware is "
+"provided on your system, we suggest using it for optimal performance. "
+"Otherwise, on Linux/Mac, we suggest either [OpenMPI][openmpi] or [MPICH]"
+"[mpich]. On Windows, [Microsoft MPI][msmpi] is required."
+msgstr ""
+
+#: ../../../build_instructions/build.md:88
+msgid ""
+"**Python** In order to use scripting, [Python][python] is required. The "
+"minimum supported version is **3.4**. The instructions are using the system "
+"Python. On Ubuntu/Debian the required package is `python3-dev`. If you use a "
+"different Python implementation or a virtual environment make sure the "
+"environment you use is activated. On Ubuntu/Debian the required package for "
+"creating virtual environments is `python3-venv`."
+msgstr ""
+
+#: ../../../build_instructions/build.md:96
+msgid ""
+"**Qt5** VTK uses Qt as its GUI library (if the relevant modules are "
+"enabled). Precompiled binaries are available on [Qt's website][qt-download]. "
+"Note that on Windows, the compiler used for building VTK must match the "
+"compiler version used to build Qt. Version **5.9** or newer is required."
+msgstr ""
+
+#: ../../../build_instructions/build.md:102
+msgid ""
+"**OSMesa** Off-screen Mesa can be used as a software-renderer for running "
+"VTK on a server without hardware OpenGL acceleration. This is usually "
+"available in system packages on Linux. For example, the `libosmesa6-dev` "
+"package on Debian and Ubuntu. However, for older machines, building a newer "
+"version of Mesa is likely necessary for bug fixes and support. Its source "
+"and build instructions can be found on [its website][mesa]."
+msgstr ""
+
+#: ../../../build_instructions/build.md:121
+msgid "Creating the Build Environment"
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Windows"
+msgstr ""
+
+#: ../../../build_instructions/build.md:128
+#: ../../../build_instructions/build.md:164
+msgid "Install CMake"
+msgstr ""
+
+#: ../../../build_instructions/build.md:130
+msgid "Install [Visual Studio Community Edition][visual-studio]"
+msgstr ""
+
+#: ../../../build_instructions/build.md:132
+msgid ""
+"During installation select the \"desktop development with C++\" workload."
+msgstr ""
+
+#: ../../../build_instructions/build.md:134
+msgid ""
+"Use \"x64 Native Tools Command Prompt\" for the installed Visual Studio "
+"version to configure with CMake and to build with ninja."
+msgstr ""
+
+#: ../../../build_instructions/build.md:137
+msgid ""
+"Get [ninja][ninja]. Unzip the binary and put it in `PATH`. Note that newer "
+"Visual Studio releases come with a version of `ninja` already and should "
+"already exist in `PATH` within the command prompt."
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Linux (Ubuntu/Debian)"
+msgstr ""
+
+#: ../../../build_instructions/build.md:148
+msgid "Install the following packages:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:150
+msgid ""
+"$ sudo apt install \\\n"
+"build-essential \\\n"
+"cmake \\\n"
+"cmake-curses-gui \\\n"
+"mesa-common-dev \\\n"
+"mesa-utils \\\n"
+"freeglut3-dev \\\n"
+"ninja-build\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "macOS"
+msgstr ""
+
+#: ../../../build_instructions/build.md:166
+msgid "Install XCode"
+msgstr ""
+
+#: ../../../build_instructions/build.md:168
+msgid "Ensure XCode command line tools are installed:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:170
+msgid "xcode-select --install\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:177
+msgid ""
+"`ninja` is a more efficient alternative to `Makefiles` or Visual Studio "
+"solution files. The speed increase is the most noticeable when doing "
+"incremental build. `ninja` version 1.10.1 or higher is required."
+msgstr ""
+
+#: ../../../build_instructions/build.md:182
+msgid "Configure"
+msgstr ""
+
+#: ../../../build_instructions/build.md:184
+msgid ""
+"In order to build, CMake requires two steps, configure and build. VTK itself "
+"does not support what are known as in-source builds, so the first step is to "
+"create a build directory."
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Windows (Ninja)"
+msgstr ""
+
+#: ../../../build_instructions/build.md:193
+msgid ""
+"Open \"x64 Native Tools Command Prompt\" for the installed Visual Studio:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:195
+msgid "ccmake -GNinja -S %HOMEPATH%\\vtk\\source -B %HOMEPATH%\\vtk\\build\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:199
+msgid ""
+"Note that CMake GUI must also be launched from the \"Native Tools Command "
+"Prompt\"."
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Windows (Visual Studio)"
+msgstr ""
+
+#: ../../../build_instructions/build.md:205
+msgid "Use CMake to generate a Visual Studio solution file (`.sln`)."
+msgstr ""
+
+#: ../../../build_instructions/build.md:207
+msgid ""
+"Open CMake GUI, either by typing `cmake-gui` on the command prompt or from "
+"the start-menu."
+msgstr ""
+
+#: ../../../build_instructions/build.md:208
+msgid "Enter the source and build directories"
+msgstr ""
+
+#: ../../../build_instructions/build.md:209
+msgid "Click `[Configure]`"
+msgstr ""
+
+#: ../../../build_instructions/build.md:210
+msgid ""
+"You will now get a selection screen in which you can specify your "
+"\"generator\". Select the one you need."
+msgstr ""
+
+#: ../../../build_instructions/build.md:211
+msgid ""
+"We are now presented with a few options that can be turned on or off as "
+"desired."
+msgstr ""
+
+#: ../../../build_instructions/build.md:212
+msgid "Click `[Configure]` to apply the changes."
+msgstr ""
+
+#: ../../../build_instructions/build.md:213
+msgid "Click `[Generate]`. This will populate the \"build\" sub-folder."
+msgstr ""
+
+#: ../../../build_instructions/build.md:214
+msgid ""
+"Finally, click `[Open Project]` to open the generated solution in Visual "
+"Studio."
+msgstr ""
+
+#: ../../../build_instructions/build.md:0
+msgid "Linux/macOS"
+msgstr ""
+
+#: ../../../build_instructions/build.md:220
+msgid ""
+"mkdir -p ~/vtk/build\n"
+"cd ~/vtk/build\n"
+"ccmake -GNinja ../path/to/vtk/source\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:226
+msgid ""
+"The parameter `-GNinja` may be skipped to use the default generator (e.g "
+"`Unix Makefiles`)."
+msgstr ""
+
+#: ../../../build_instructions/build.md:230
+msgid "**Missing dependencies**"
+msgstr ""
+
+#: ../../../build_instructions/build.md:233
+msgid ""
+"CMake may not find all dependencies automatically in all cases. The steps "
+"needed to find any given package depends on the package itself."
+msgstr ""
+
+#: ../../../build_instructions/build.md:236
+msgid ""
+"For general assistance, please see the documentation for [`find_package`'s "
+"search procedure][cmake-find_package-search] and [the relevant Find module]"
+"[cmake-modules-find] (as available)."
+msgstr ""
+
+#: ../../../build_instructions/build.md:244
+msgid ""
+"Different features can be enabled/disabled by setting the [Build Settings]"
+"(build_settings.md) during the configure stage, one can even use presets "
+"such as `default`, `mini` or `dev` with the `--preset=default` cmake "
+"argument."
+msgstr ""
+
+#: ../../../build_instructions/build.md:249
+msgid "To build VTK:"
+msgstr ""
+
+#: ../../../build_instructions/build.md:256
+msgid "cmake --build %HOMEPATH%\\vtk\\build --config Release\n"
+msgstr ""
+
+#: ../../../build_instructions/build.md:263
+msgid "Open the generated solution file."
+msgstr ""
+
+#: ../../../build_instructions/build.md:265
+msgid "Set the configuration to \"Release\""
+msgstr ""
+
+#: ../../../build_instructions/build.md:267
+msgid "On the menu bar, choose `Build`, and then choose `Build Solution`."
+msgstr ""
+
+#: ../../../build_instructions/build.md:272
+msgid "cmake --build ~/vtk/build\n"
+msgstr ""
