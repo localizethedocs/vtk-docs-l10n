@@ -1,0 +1,422 @@
+# {py:mod}`vtkmodules.util.implicit_functions`
+
+```{py:module} vtkmodules.util.implicit_functions
+```
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_ImplicitFunctionMixin <vtkmodules.util.implicit_functions._ImplicitFunctionMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin
+    :summary:
+    ```
+* - {py:obj}`Sphere <vtkmodules.util.implicit_functions.Sphere>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Sphere
+    :summary:
+    ```
+* - {py:obj}`Plane <vtkmodules.util.implicit_functions.Plane>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Plane
+    :summary:
+    ```
+* - {py:obj}`Box <vtkmodules.util.implicit_functions.Box>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Box
+    :summary:
+    ```
+* - {py:obj}`Cylinder <vtkmodules.util.implicit_functions.Cylinder>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Cylinder
+    :summary:
+    ```
+* - {py:obj}`Cone <vtkmodules.util.implicit_functions.Cone>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Cone
+    :summary:
+    ```
+* - {py:obj}`Quadric <vtkmodules.util.implicit_functions.Quadric>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Quadric
+    :summary:
+    ```
+* - {py:obj}`Superquadric <vtkmodules.util.implicit_functions.Superquadric>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Superquadric
+    :summary:
+    ```
+* - {py:obj}`PerlinNoise <vtkmodules.util.implicit_functions.PerlinNoise>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.PerlinNoise
+    :summary:
+    ```
+* - {py:obj}`ImplicitBoolean <vtkmodules.util.implicit_functions.ImplicitBoolean>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.ImplicitBoolean
+    :summary:
+    ```
+* - {py:obj}`ImplicitSum <vtkmodules.util.implicit_functions.ImplicitSum>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.ImplicitSum
+    :summary:
+    ```
+* - {py:obj}`Annulus <vtkmodules.util.implicit_functions.Annulus>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Annulus
+    :summary:
+    ```
+* - {py:obj}`Frustum <vtkmodules.util.implicit_functions.Frustum>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.Frustum
+    :summary:
+    ```
+* - {py:obj}`ImplicitHalo <vtkmodules.util.implicit_functions.ImplicitHalo>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.ImplicitHalo
+    :summary:
+    ```
+* - {py:obj}`CoordinateFrame <vtkmodules.util.implicit_functions.CoordinateFrame>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions.CoordinateFrame
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_fmt3 <vtkmodules.util.implicit_functions._fmt3>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions._fmt3
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_OP_TYPE_REVERSE <vtkmodules.util.implicit_functions._OP_TYPE_REVERSE>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions._OP_TYPE_REVERSE
+    :summary:
+    ```
+* - {py:obj}`_TIER3_CLASSES <vtkmodules.util.implicit_functions._TIER3_CLASSES>`
+  - ```{autodoc2-docstring} vtkmodules.util.implicit_functions._TIER3_CLASSES
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _OP_TYPE_REVERSE
+:canonical: vtkmodules.util.implicit_functions._OP_TYPE_REVERSE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._OP_TYPE_REVERSE
+```
+
+````
+
+````{py:function} _fmt3(vals)
+:canonical: vtkmodules.util.implicit_functions._fmt3
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._fmt3
+```
+````
+
+`````{py:class} _ImplicitFunctionMixin
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin
+```
+
+````{py:method} __or__(other)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__or__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__or__
+```
+
+````
+
+````{py:method} __ror__(other)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__ror__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__ror__
+```
+
+````
+
+````{py:method} __and__(other)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__and__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__and__
+```
+
+````
+
+````{py:method} __rand__(other)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__rand__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__rand__
+```
+
+````
+
+````{py:method} __sub__(other)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__sub__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__sub__
+```
+
+````
+
+````{py:method} __rsub__(other)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__rsub__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__rsub__
+```
+
+````
+
+````{py:method} __invert__()
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__invert__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__invert__
+```
+
+````
+
+````{py:method} __call__(*args)
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__call__
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__call__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions._ImplicitFunctionMixin.__repr__
+
+````
+
+`````
+
+`````{py:class} Sphere
+:canonical: vtkmodules.util.implicit_functions.Sphere
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkSphere`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Sphere
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Sphere.__repr__
+
+````
+
+`````
+
+`````{py:class} Plane
+:canonical: vtkmodules.util.implicit_functions.Plane
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkPlane`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Plane
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Plane.__repr__
+
+````
+
+`````
+
+`````{py:class} Box
+:canonical: vtkmodules.util.implicit_functions.Box
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkBox`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Box
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Box.__repr__
+
+````
+
+`````
+
+`````{py:class} Cylinder
+:canonical: vtkmodules.util.implicit_functions.Cylinder
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkCylinder`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Cylinder
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Cylinder.__repr__
+
+````
+
+`````
+
+`````{py:class} Cone
+:canonical: vtkmodules.util.implicit_functions.Cone
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkCone`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Cone
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Cone.__repr__
+
+````
+
+`````
+
+`````{py:class} Quadric
+:canonical: vtkmodules.util.implicit_functions.Quadric
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkQuadric`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Quadric
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Quadric.__repr__
+
+````
+
+`````
+
+`````{py:class} Superquadric
+:canonical: vtkmodules.util.implicit_functions.Superquadric
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkSuperquadric`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Superquadric
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Superquadric.__repr__
+
+````
+
+`````
+
+`````{py:class} PerlinNoise
+:canonical: vtkmodules.util.implicit_functions.PerlinNoise
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkPerlinNoise`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.PerlinNoise
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.PerlinNoise.__repr__
+
+````
+
+`````
+
+`````{py:class} ImplicitBoolean
+:canonical: vtkmodules.util.implicit_functions.ImplicitBoolean
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkImplicitBoolean`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.ImplicitBoolean
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.ImplicitBoolean.__repr__
+
+````
+
+`````
+
+`````{py:class} ImplicitSum
+:canonical: vtkmodules.util.implicit_functions.ImplicitSum
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkImplicitSum`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.ImplicitSum
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.ImplicitSum.__repr__
+
+````
+
+`````
+
+`````{py:class} Annulus
+:canonical: vtkmodules.util.implicit_functions.Annulus
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkAnnulus`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Annulus
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Annulus.__repr__
+
+````
+
+`````
+
+`````{py:class} Frustum
+:canonical: vtkmodules.util.implicit_functions.Frustum
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkFrustum`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.Frustum
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.Frustum.__repr__
+
+````
+
+`````
+
+`````{py:class} ImplicitHalo
+:canonical: vtkmodules.util.implicit_functions.ImplicitHalo
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkImplicitHalo`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.ImplicitHalo
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.ImplicitHalo.__repr__
+
+````
+
+`````
+
+`````{py:class} CoordinateFrame
+:canonical: vtkmodules.util.implicit_functions.CoordinateFrame
+
+Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkCoordinateFrame`
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions.CoordinateFrame
+```
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.implicit_functions.CoordinateFrame.__repr__
+
+````
+
+`````
+
+````{py:data} _TIER3_CLASSES
+:canonical: vtkmodules.util.implicit_functions._TIER3_CLASSES
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.implicit_functions._TIER3_CLASSES
+```
+
+````

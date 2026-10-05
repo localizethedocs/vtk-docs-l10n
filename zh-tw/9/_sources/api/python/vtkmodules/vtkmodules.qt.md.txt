@@ -1,0 +1,71 @@
+# {py:mod}`vtkmodules.qt`
+
+```{py:module} vtkmodules.qt
+```
+
+```{autodoc2-docstring} vtkmodules.qt
+:allowtitles:
+```
+
+## Submodules
+
+```{toctree}
+:titlesonly:
+:maxdepth: 1
+
+vtkmodules.qt.QVTKRenderWindowInteractor
+```
+
+## Package Contents
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`PyQtImpl <vtkmodules.qt.PyQtImpl>`
+  - ```{autodoc2-docstring} vtkmodules.qt.PyQtImpl
+    :summary:
+    ```
+* - {py:obj}`QVTKRWIBase <vtkmodules.qt.QVTKRWIBase>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRWIBase
+    :summary:
+    ```
+* - {py:obj}`__all__ <vtkmodules.qt.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.qt.__all__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} PyQtImpl
+:canonical: vtkmodules.qt.PyQtImpl
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.qt.PyQtImpl
+```
+
+````
+
+````{py:data} QVTKRWIBase
+:canonical: vtkmodules.qt.QVTKRWIBase
+:value: >
+   'QWidget'
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRWIBase
+```
+
+````
+
+````{py:data} __all__
+:canonical: vtkmodules.qt.__all__
+:value: >
+   ['QVTKRenderWindowInteractor']
+
+```{autodoc2-docstring} vtkmodules.qt.__all__
+```
+
+````

@@ -1,0 +1,281 @@
+# {py:mod}`vtkmodules.util.execution_model`
+
+```{py:module} vtkmodules.util.execution_model
+```
+
+```{autodoc2-docstring} vtkmodules.util.execution_model
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`select_ports <vtkmodules.util.execution_model.select_ports>`
+  - ```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports
+    :summary:
+    ```
+* - {py:obj}`Pipeline <vtkmodules.util.execution_model.Pipeline>`
+  - ```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline
+    :summary:
+    ```
+* - {py:obj}`Output <vtkmodules.util.execution_model.Output>`
+  - ```{autodoc2-docstring} vtkmodules.util.execution_model.Output
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_call <vtkmodules.util.execution_model._call>`
+  - ```{autodoc2-docstring} vtkmodules.util.execution_model._call
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.util.execution_model.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.util.execution_model.__all__
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __all__
+:canonical: vtkmodules.util.execution_model.__all__
+:value: >
+   ['select_ports', 'Pipeline', 'Output']
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.__all__
+```
+
+````
+
+````{py:function} _call(first, last, inp=None, port=0)
+:canonical: vtkmodules.util.execution_model._call
+
+```{autodoc2-docstring} vtkmodules.util.execution_model._call
+```
+````
+
+`````{py:class} select_ports(*args)
+:canonical: vtkmodules.util.execution_model.select_ports
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.__init__
+```
+
+````{py:method} SetInputConnection(inp)
+:canonical: vtkmodules.util.execution_model.select_ports.SetInputConnection
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.SetInputConnection
+```
+
+````
+
+````{py:method} AddInputConnection(inp)
+:canonical: vtkmodules.util.execution_model.select_ports.AddInputConnection
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.AddInputConnection
+```
+
+````
+
+````{py:method} GetOutputPort()
+:canonical: vtkmodules.util.execution_model.select_ports.GetOutputPort
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.GetOutputPort
+```
+
+````
+
+````{py:method} GetInputPortInformation(port)
+:canonical: vtkmodules.util.execution_model.select_ports.GetInputPortInformation
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.GetInputPortInformation
+```
+
+````
+
+````{py:method} update()
+:canonical: vtkmodules.util.execution_model.select_ports.update
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.update
+```
+
+````
+
+````{py:method} __rshift__(rhs)
+:canonical: vtkmodules.util.execution_model.select_ports.__rshift__
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.__rshift__
+```
+
+````
+
+````{py:method} __rrshift__(lhs)
+:canonical: vtkmodules.util.execution_model.select_ports.__rrshift__
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.__rrshift__
+```
+
+````
+
+````{py:method} __call__(inp=None)
+:canonical: vtkmodules.util.execution_model.select_ports.__call__
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.select_ports.__call__
+```
+
+````
+
+`````
+
+`````{py:class} Pipeline(lhs, rhs)
+:canonical: vtkmodules.util.execution_model.Pipeline
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.__init__
+```
+
+````{py:attribute} PIPELINE
+:canonical: vtkmodules.util.execution_model.Pipeline.PIPELINE
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.PIPELINE
+```
+
+````
+
+````{py:attribute} ALGORITHM
+:canonical: vtkmodules.util.execution_model.Pipeline.ALGORITHM
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.ALGORITHM
+```
+
+````
+
+````{py:attribute} DATA
+:canonical: vtkmodules.util.execution_model.Pipeline.DATA
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.DATA
+```
+
+````
+
+````{py:attribute} UNKNOWN
+:canonical: vtkmodules.util.execution_model.Pipeline.UNKNOWN
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.UNKNOWN
+```
+
+````
+
+````{py:method} _connect(lhs, rhs, rhs_alg, connect_method)
+:canonical: vtkmodules.util.execution_model.Pipeline._connect
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline._connect
+```
+
+````
+
+````{py:method} _determine_type(arg)
+:canonical: vtkmodules.util.execution_model.Pipeline._determine_type
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline._determine_type
+```
+
+````
+
+````{py:method} update(**kwargs)
+:canonical: vtkmodules.util.execution_model.Pipeline.update
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.update
+```
+
+````
+
+````{py:method} __call__(inp=None)
+:canonical: vtkmodules.util.execution_model.Pipeline.__call__
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.__call__
+```
+
+````
+
+````{py:method} __rshift__(rhs)
+:canonical: vtkmodules.util.execution_model.Pipeline.__rshift__
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.__rshift__
+```
+
+````
+
+````{py:method} __rrshift__(lhs)
+:canonical: vtkmodules.util.execution_model.Pipeline.__rrshift__
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Pipeline.__rrshift__
+```
+
+````
+
+`````
+
+`````{py:class} Output(algorithm, **kwargs)
+:canonical: vtkmodules.util.execution_model.Output
+
+Bases: {py:obj}`object`
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Output
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Output.__init__
+```
+
+````{py:property} output
+:canonical: vtkmodules.util.execution_model.Output.output
+
+```{autodoc2-docstring} vtkmodules.util.execution_model.Output.output
+```
+
+````
+
+`````
