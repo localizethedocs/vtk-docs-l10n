@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-10-05 16:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:72
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:536
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:522
 msgid ""
 "Register VTKCompositeArray mixin as override for all vtkCompositeArray "
 "template types."
@@ -176,45 +176,49 @@ msgid ""
 "**kwargs     Forwarded to the VTK base-class initializer."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:98
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_composite_array.md:97
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:108
 msgid "Return the list of original sub-arrays (with their own mixins)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:110
 msgid ""
 "Each sub-array is the original vtkDataArray passed to the backend, enhanced "
 "with whatever mixin it has (VTKAOSArray, VTKConstantArray, etc.)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:106
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:116
 msgid "Return the list of tuple offsets for each sub-array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:130
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:140
 msgid "Materialize the full array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:138
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:148
 msgid "Materialize the full array by concatenating sub-arrays."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:146
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:156
 msgid "Override C-level buffer protocol to materialize via concatenation."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:154
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:164
 msgid "Handle numpy ufuncs by applying per-sub-array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:162
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:172
 msgid "Dispatch numpy functions with per-sub-array overrides where possible."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:170
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:180
 msgid "Index into the composite array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:172
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_composite_array.py:182
 msgid ""
 "Scalar index delegates to the appropriate sub-array. Slices map to sub-array "
 "ranges and concatenate. Fancy/boolean indexing materializes."

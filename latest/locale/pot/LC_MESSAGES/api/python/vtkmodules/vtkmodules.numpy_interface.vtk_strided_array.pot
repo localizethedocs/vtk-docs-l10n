@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-10-05 16:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,7 +138,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:72
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:552
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:538
 msgid ""
 "Register VTKStridedArray mixin as override for all vtkStridedArray template "
 "types."
@@ -196,72 +196,76 @@ msgid ""
 "the dtype already matches) and ``ConstructBackend`` is called."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:98
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_strided_array.md:97
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:108
 msgid "Set strided backend parameters."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:110
 msgid ""
 "*buffer* is a ``vtkAbstractBuffer`` (e.g. obtained via ``array."
 "GetBuffer()``).  The C++ side stores the buffer with reference counting so "
 "the vtkBuffer object stays alive."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:114
 msgid ""
 "If the buffer was created by ``numpy_to_vtk`` (zero-copy), the underlying "
 "numpy array reference is also preserved here so that the raw memory remains "
 "valid."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:106
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:116
 msgid "Return the underlying buffer as a flat numpy array (zero-copy)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:108
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:118
 msgid "Returns None if no buffer is accessible (raw-pointer construction)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:114
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:124
 msgid "Return the stride of the strided backend."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:122
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:132
 msgid "Return the offset of the strided backend."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:146
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:156
 msgid "Return the array as a numpy ndarray (zero-copy when possible)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:154
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:164
 msgid "Return a numpy view using strides (zero-copy when possible)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:156
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:166
 msgid ""
 "When the underlying buffer is accessible, creates a strided numpy view that "
 "maps directly to the buffer memory.  Falls back to DeepCopy only when the "
 "buffer is not accessible from Python."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:162
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:172
 msgid "Override C-level buffer protocol to return strided view."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:170
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:180
 msgid "Handle numpy ufuncs by materializing."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:178
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:188
 msgid "Dispatch numpy functions via override registry."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:186
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:196
 msgid "Index into the strided array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:188
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_strided_array.py:198
 msgid ""
 "Scalar index: direct lookup via GetComponent/GetTuple. Everything else: "
 "delegates to the numpy strided view."

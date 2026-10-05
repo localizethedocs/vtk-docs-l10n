@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-30 09:07+0000\n"
+"POT-Creation-Date: 2026-10-05 16:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,7 +60,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:20
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:81
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:92
 msgid "A memory-efficient array whose values follow an affine function."
 msgstr ""
 
@@ -70,128 +70,148 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:30
 msgid ""
+"{py:obj}`_lazy_result_dtype <vtkmodules.numpy_interface.vtk_affine_array."
+"_lazy_result_dtype>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:32
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:82
+msgid "Return the numpy scalar type of ``ufunc(*inputs)``, or None."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:34
+msgid ""
 "{py:obj}`_affine_sum <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_sum>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:544
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:555
 msgid "sum = n*intercept + slope*n*(n-1)/2."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:34
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:38
 msgid ""
 "{py:obj}`_affine_mean <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_mean>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:36
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:551
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:40
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:562
 msgid "mean = intercept + slope*(n-1)/2."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:38
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:42
 msgid ""
 "{py:obj}`_affine_min <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_min>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:40
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:558
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:44
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:569
 msgid "min depends on slope sign."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:42
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:46
 msgid ""
 "{py:obj}`_affine_max <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_max>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:44
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:565
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:48
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:576
 msgid "max depends on slope sign."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:46
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:50
 msgid ""
 "{py:obj}`_affine_std <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_std>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:48
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:572
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:583
 msgid "std using closed-form: |slope| * sqrt((n^2-1)/12)."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:50
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:54
 msgid ""
 "{py:obj}`_affine_var <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_var>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:52
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:579
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:590
 msgid "var using closed-form: slope^2 * (n^2-1) / 12."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:54
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:58
 msgid ""
 "{py:obj}`_affine_any <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_any>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:56
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:586
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:597
 msgid ""
 "O(1): any is True unless all values are zero (slope==0 and intercept==0)."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:58
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:62
 msgid ""
 "{py:obj}`_affine_all <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_all>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:60
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:593
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:64
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:604
 msgid "O(1) when possible: check if any value in the sequence is zero."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:62
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:66
 msgid ""
 "{py:obj}`_affine_prod <vtkmodules.numpy_interface.vtk_affine_array."
 "_affine_prod>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:64
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:600
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:68
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:611
 msgid "No useful closed form — materialize."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:66
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:70
 msgid ""
 "{py:obj}`_register_affine_overrides <vtkmodules.numpy_interface."
 "vtk_affine_array._register_affine_overrides>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:68
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:607
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:72
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:618
 msgid ""
 "Register VTKAffineArray mixin as override for all vtkAffineArray template "
 "types."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:72
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:76
 msgid "API"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:78
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:84
+msgid ""
+"The ufunc is applied to an empty array of the affine array's dtype in its "
+"place, so numpy's own promotion rules decide the result type (and raise the "
+"same errors, such as for an out-of-bounds Python int) without materializing "
+"anything.  None means VTK has no affine array of that type and the caller "
+"should materialize instead."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:89
 msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
 "VTKDataArrayMixin`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:83
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:94
 msgid ""
 "Each element is computed as ``slope * index + intercept``, using O(1) memory "
 "regardless of array size.  This is useful for representing regularly-spaced "
@@ -199,21 +219,21 @@ msgid ""
 "every element."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:99
 msgid ""
 "This mixin is automatically applied to all ``vtkAffineArray`` "
 "instantiations.  Any affine array that crosses from C++ to Python is already "
 "a ``VTKAffineArray`` instance."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:92
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:103
 msgid ""
 "Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/vtk_affine_array.py:92: (INFO/1) Duplicate "
-"implicit target name: \"parameters\"."
+"Python/vtkmodules/numpy_interface/vtk_affine_array.py:103: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:94
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:105
 msgid ""
 "shape : int or tuple of int, optional     Number of tuples (single int or 1-"
 "tuple), or ``(ntuples, ncomps)``     for a multi-component array.  When "
@@ -222,18 +242,18 @@ msgid ""
 "of the affine function (default ``0``)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:102
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:113
 msgid ""
 "Construction/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/vtk_affine_array.py:102: (INFO/1) "
+"Python/vtkmodules/numpy_interface/vtk_affine_array.py:113: (INFO/1) "
 "Duplicate implicit target name: \"construction\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:115
 msgid "Create with bracket notation and positional arguments::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:106
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:117
 msgid ""
 "from vtkmodules.vtkCommonCore import vtkAffineArray\n"
 "\n"
@@ -244,21 +264,21 @@ msgid ""
 "b = vtkAffineArray[numpy.float64](11, 2.0, 10.0)\n"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:114
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:125
 msgid ""
 "Available dtypes: ``'float32'``, ``'float64'``, ``'int8'``, ``'int16'``, "
 "``'int32'``, ``'int64'``, ``'uint8'``, ``'uint16'``, ``'uint32'``, "
 "``'uint64'``."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:118
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:129
 msgid ""
 "Properties/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/vtk_affine_array.py:118: (INFO/1) "
+"Python/vtkmodules/numpy_interface/vtk_affine_array.py:129: (INFO/1) "
 "Duplicate implicit target name: \"properties\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:131
 msgid ""
 "shape : tuple of int     ``(ntuples,)`` for 1-component, ``(ntuples, "
 "ncomps)`` otherwise. dtype : numpy.dtype     The element data type. "
@@ -267,125 +287,125 @@ msgid ""
 "(POINT, CELL, etc.)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:129
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:140
 msgid ""
 "Lazy Arithmetic/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/"
-"Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:129: (INFO/1) "
+"Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:140: (INFO/1) "
 "Duplicate implicit target name: \"lazy arithmetic\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:131
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:142
 msgid ""
 "Several operations produce a new affine array instead of materialising the "
 "full data:"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:134
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:145
 msgid "``arr * scalar`` scales slope and intercept."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:135
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:146
 msgid "``arr + scalar`` shifts the intercept."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:136
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:147
 msgid "``arr / scalar`` scales slope and intercept."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:137
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:148
 msgid "``-arr`` negates slope and intercept."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:138
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:149
 msgid ""
 "Slicing with a step produces a new affine array with adjusted parameters."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:141
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:152
 msgid ""
 "O(1) Reductions/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/"
-"Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:141: (INFO/1) "
+"Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:152: (INFO/1) "
 "Duplicate implicit target name: \"o(1) reductions\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:143
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:154
 msgid ""
 "``sum``, ``mean``, ``min``, ``max``, ``std``, ``var``, ``any``, ``all``, "
 "``argmin``, ``argmax`` use closed-form arithmetic series formulas and never "
 "materialise the array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:147
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:158
 msgid ""
 "NumPy Integration/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/"
-"Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:147: (INFO/1) "
+"Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:158: (INFO/1) "
 "Duplicate implicit target name: \"numpy integration\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:149
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:160
 msgid "``numpy.asarray(arr)`` materialises the full array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:150
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:161
 msgid ""
 "``numpy.sum(arr)``, ``numpy.mean(arr)``, etc. are intercepted and computed "
 "in O(1)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:152
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:163
 msgid "Ufuncs with scalar operands stay lazy when possible."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:153
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:164
 msgid ""
 "Unoptimized numpy functions trigger a warning and fall back to "
 "materialisation."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:156
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:167
 msgid ""
 "Indexing/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/vtk_affine_array.py:156: (INFO/1) "
+"Python/vtkmodules/numpy_interface/vtk_affine_array.py:167: (INFO/1) "
 "Duplicate implicit target name: \"indexing\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:158
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:169
 msgid ""
 "Scalar indexing returns the computed value.  Slicing a single-component "
 "array returns a new ``VTKAffineArray`` with adjusted parameters. The array "
 "is read-only; ``__setitem__`` raises ``TypeError``."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:162
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:173
 msgid ""
 "See Also/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/vtk_affine_array.py:162: (INFO/1) "
+"Python/vtkmodules/numpy_interface/vtk_affine_array.py:173: (INFO/1) "
 "Duplicate implicit target name: \"see also\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:164
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:175
 msgid ""
 "vtkAffineArray : The underlying C++ implicit array class. VTKConstantArray : "
 "Similar lazy evaluation for uniform-value arrays. VTKAOSArray : Mixin for "
 "regular (array-of-structures) VTK arrays."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:83
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_affine_array.md:94
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:87
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:98
 msgid "Create a new affine array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:89
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:100
 msgid ""
 "Parameters/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/repo/Wrapping/"
-"Python/vtkmodules/numpy_interface/vtk_affine_array.py:89: (INFO/1) Duplicate "
-"implicit target name: \"parameters\"."
+"Python/vtkmodules/numpy_interface/vtk_affine_array.py:100: (INFO/1) "
+"Duplicate implicit target name: \"parameters\"."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:91
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:102
 msgid ""
 "shape : int or tuple of int, optional     Number of tuples, or ``(ntuples, "
 "ncomps)`` tuple. slope : scalar, optional     Slope of the affine function "
@@ -394,42 +414,42 @@ msgid ""
 "initializer."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:94
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:105
 msgid "Raise if backend is not constructed."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:151
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:162
 msgid "Create a vtkAffineArray with the given parameters."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:160
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:171
 msgid "Create a new affine array from parameters."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:200
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:211
 msgid "Return the full materialized array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:208
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:219
 msgid "Materialize the full array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:216
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:227
 msgid "Override C-level buffer protocol to materialize via __array__."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:224
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:235
 msgid "Index into the array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:248
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:259
 msgid "Handle numpy ufuncs. Many operations stay lazy."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:256
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:267
 msgid "Handle numpy functions like sum, min, max, mean with optimized paths."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:448
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_affine_array.py:459
 msgid "True when axis reduces the entire 1-component array (axis=0 ≡ None)."
 msgstr ""
