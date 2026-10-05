@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-10-05 16:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgid ""
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:384
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:380
 msgid "Register VTKImplicitArray as override on vtkDataArray."
 msgstr ""
 
@@ -188,25 +188,30 @@ msgstr ""
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:80
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:79
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:89
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:100
 msgid "Deep-copy this array into a contiguous AOS numpy array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:116
 msgid "Invalidate the cached numpy array when the VTK array is modified."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:140
 msgid "Expose the materialised AOS copy via the buffer protocol."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:122
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:142
 msgid ""
 "This allows ``numpy.frombuffer(implicit_arr)`` and "
 "``vtk_to_numpy(implicit_arr)`` to work transparently."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:386
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:382
 msgid ""
 "This is a fallback: any array type that already has a more-specific override "
 "(AOS on vtkFloatArray, SOA on vtkSOADataArrayTemplate, etc.) is unaffected.  "
