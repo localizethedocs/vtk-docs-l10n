@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../supported_hardware.md:1
+msgid "Supported Hardware"
+msgstr ""
+
+#: ../../../supported_hardware.md:3
+msgid ""
+"VTK can integrate with a number of specialized visualization hardware "
+"including:"
+msgstr ""
+
+#: ../../../supported_hardware.md:5
+msgid ""
+"[Looking Glass](https://lookingglassfactory.com/), see the latest blog post "
+"[here](https://www.kitware.com/looking-glass-factory-expands-reach-into-rd-"
+"labs-with-new-holographic-kitware-integrations). The integration is achieved "
+"using an [external](https://github.com/Kitware/LookingGlassVTKModule) vtk "
+"module that leverages the display's SDK."
+msgstr ""
+
+#: ../../../supported_hardware.md:10
+msgid ""
+"Virtual Reality headsets like [Oculus](https://www.oculus.com)  and [VIVE]"
+"(https://www.vive.com) as described in [this](https://www.kitware.com/using-"
+"virtual-reality-devices-with-vtk) post via the {bdg-primary-line}`VTK::"
+"RenderingOpenVR` module."
+msgstr ""
+
+#: ../../../supported_hardware.md:14
+msgid ""
+"Augmented Reality headsets like [Hololens](https://www.microsoft.com/en-us/"
+"hololens) as demonstrated [here](https://www.kitware.com/stream-vtk-to-the-"
+"hololens-2) via the {bdg-primary-line}`VTK::RenderingOpenXRRemoting` module."
+msgstr ""
+
+#: ../../../supported_hardware.md:18
+msgid ""
+"Augmented Reality displays like [ZSpace](https://zspace.com/) via its "
+"ParaView integration as demonstrated [here](https://www.kitware.com/zspace-"
+"device-support-coming-to-paraview)."
+msgstr ""

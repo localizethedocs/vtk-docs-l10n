@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-13 10:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:1
+msgid "{py:mod}`vtkmodules.util.implicit_functions`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/implicit_functions.py:7
+msgid "Pythonic API for VTK implicit functions."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/implicit_functions.py:9
+msgid "Adds CSG operators, a callable protocol, and an informative repr::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/implicit_functions.py:11
+msgid ""
+"from vtkmodules.vtkCommonDataModel import vtkSphere, vtkPlane, vtkBox\n"
+"\n"
+"# Constructor kwargs (handled by the Python wrapping layer, which maps\n"
+"# snake_case keyword arguments to the corresponding Set methods):\n"
+"s = vtkSphere(center=(0, 0, 0), radius=1.0)\n"
+"p = vtkPlane(origin=(0, 0, 0), normal=(1, 0, 0))\n"
+"\n"
+"# CSG operators:\n"
+"union        = s | p       # vtkImplicitBoolean(VTK_UNION)\n"
+"intersection = s & p       # vtkImplicitBoolean(VTK_INTERSECTION)\n"
+"difference   = s - p       # vtkImplicitBoolean(VTK_DIFFERENCE)\n"
+"negated      = ~s           # vtkImplicitSum(weight=-1.0)\n"
+"\n"
+"# Callable protocol:\n"
+"s(1, 2, 3)                 # scalar → float\n"
+"s([1, 2, 3])               # 3-element sequence → float\n"
+"s(Nx3_array)               # batch → 1D numpy array\n"
+"\n"
+"# Repr:\n"
+"repr(s)  # → \"vtkSphere(center=(0.0, 0.0, 0.0), radius=1.0)\"\n"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:10
+msgid "Module Contents"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:12
+msgid "Classes"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:18
+msgid ""
+"{py:obj}`_ImplicitFunctionMixin <vtkmodules.util.implicit_functions."
+"_ImplicitFunctionMixin>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:22
+msgid "{py:obj}`Sphere <vtkmodules.util.implicit_functions.Sphere>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:26
+msgid "{py:obj}`Plane <vtkmodules.util.implicit_functions.Plane>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:30
+msgid "{py:obj}`Box <vtkmodules.util.implicit_functions.Box>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:34
+msgid "{py:obj}`Cylinder <vtkmodules.util.implicit_functions.Cylinder>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:38
+msgid "{py:obj}`Cone <vtkmodules.util.implicit_functions.Cone>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:42
+msgid "{py:obj}`Quadric <vtkmodules.util.implicit_functions.Quadric>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:46
+msgid ""
+"{py:obj}`Superquadric <vtkmodules.util.implicit_functions.Superquadric>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:50
+msgid "{py:obj}`PerlinNoise <vtkmodules.util.implicit_functions.PerlinNoise>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:54
+msgid ""
+"{py:obj}`ImplicitBoolean <vtkmodules.util.implicit_functions."
+"ImplicitBoolean>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:58
+msgid "{py:obj}`ImplicitSum <vtkmodules.util.implicit_functions.ImplicitSum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:62
+msgid "{py:obj}`Annulus <vtkmodules.util.implicit_functions.Annulus>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:66
+msgid "{py:obj}`Frustum <vtkmodules.util.implicit_functions.Frustum>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:70
+msgid ""
+"{py:obj}`ImplicitHalo <vtkmodules.util.implicit_functions.ImplicitHalo>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:74
+msgid ""
+"{py:obj}`CoordinateFrame <vtkmodules.util.implicit_functions."
+"CoordinateFrame>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:80
+msgid "Functions"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:86
+msgid "{py:obj}`_fmt3 <vtkmodules.util.implicit_functions._fmt3>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:92
+msgid "Data"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:98
+msgid ""
+"{py:obj}`_OP_TYPE_REVERSE <vtkmodules.util.implicit_functions."
+"_OP_TYPE_REVERSE>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:102
+msgid ""
+"{py:obj}`_TIER3_CLASSES <vtkmodules.util.implicit_functions._TIER3_CLASSES>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:108
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:114
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:418
+msgid "None"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:208
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkSphere`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:223
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkPlane`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:238
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkBox`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:253
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkCylinder`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:268
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkCone`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:283
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkQuadric`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:298
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkSuperquadric`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:313
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkPerlinNoise`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:328
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkImplicitBoolean`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:343
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkImplicitSum`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:358
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkAnnulus`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:373
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkFrustum`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:388
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkImplicitHalo`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.implicit_functions.md:403
+msgid ""
+"Bases: {py:obj}`vtkmodules.util.implicit_functions._ImplicitFunctionMixin`, "
+"{py:obj}`vtkmodules.vtkCommonDataModel.vtkCoordinateFrame`"
+msgstr ""

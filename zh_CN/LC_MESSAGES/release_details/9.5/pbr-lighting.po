@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/pbr-lighting.md:1
+msgid "Fix lighting calculations for PBR interpolation"
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:3
+msgid ""
+"When both directional and positional lights were intermixed in the view, the "
+"polydata mapper treated directional lights as positional and generated "
+"incorrect renderings. This issue is now fixed."
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:0
+msgid "Before"
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:0
+msgid "After"
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:0
+msgid "![](../imgs/9.5/pbr_light_before.png)"
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:0
+msgid ""
+"![](https://vtk.org/files/ExternalData/"
+"SHA512/01b2f3261b9dc1550b1dae1abcc32ab45c170964500115ee66efba9200ff46485d2bee6efe1e13c6972630661c29dfac5abc83de7ac88b21d566a3db215936d4)"
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:10
+msgid ""
+"In the images above, there are two lights - a positional light in front of "
+"the lower left sphere and a directional light in front of the third sphere "
+"in the second-last row."
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:13
+msgid ""
+"As visible in the **Before** image, the directional light is treated as "
+"positional (see light reflected in the neighborhood spheres) and has a "
+"conical intensity fall-off."
+msgstr ""
+
+#: ../../../release_details/9.5/pbr-lighting.md:16
+msgid ""
+"In the **After** image, once can see that the directional light is treated "
+"as a point light located at an infinite distance from the scene."
+msgstr ""
