@@ -1,0 +1,48 @@
+# {py:mod}`vtkmodules.tk.vtkTkPhotoImage`
+
+```{py:module} vtkmodules.tk.vtkTkPhotoImage
+```
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkPhotoImage
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkTkPhotoImage <vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage>`
+  - ```{autodoc2-docstring} vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} vtkTkPhotoImage(**kw)
+:canonical: vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage
+
+Bases: {py:obj}`tkinter.PhotoImage`
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage.__init__
+```
+
+````{py:method} PutImageSlice(image, z, orientation='transverse', window=256, level=128)
+:canonical: vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage.PutImageSlice
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkPhotoImage.vtkTkPhotoImage.PutImageSlice
+```
+
+````
+
+`````

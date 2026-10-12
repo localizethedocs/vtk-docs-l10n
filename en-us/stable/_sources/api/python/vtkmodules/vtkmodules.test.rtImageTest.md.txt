@@ -1,0 +1,42 @@
+# {py:mod}`vtkmodules.test.rtImageTest`
+
+```{py:module} vtkmodules.test.rtImageTest
+```
+
+```{autodoc2-docstring} vtkmodules.test.rtImageTest
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_GetController <vtkmodules.test.rtImageTest._GetController>`
+  - ```{autodoc2-docstring} vtkmodules.test.rtImageTest._GetController
+    :summary:
+    ```
+* - {py:obj}`main <vtkmodules.test.rtImageTest.main>`
+  - ```{autodoc2-docstring} vtkmodules.test.rtImageTest.main
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} _GetController()
+:canonical: vtkmodules.test.rtImageTest._GetController
+
+```{autodoc2-docstring} vtkmodules.test.rtImageTest._GetController
+```
+````
+
+````{py:function} main(test_script)
+:canonical: vtkmodules.test.rtImageTest.main
+
+```{autodoc2-docstring} vtkmodules.test.rtImageTest.main
+```
+````
