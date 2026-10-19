@@ -1,0 +1,406 @@
+# {py:mod}`vtkmodules.util.molecule`
+
+```{py:module} vtkmodules.util.molecule
+```
+
+```{autodoc2-docstring} vtkmodules.util.molecule
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_AtomView <vtkmodules.util.molecule._AtomView>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._AtomView
+    :summary:
+    ```
+* - {py:obj}`_BondView <vtkmodules.util.molecule._BondView>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._BondView
+    :summary:
+    ```
+* - {py:obj}`_MoleculeMixin <vtkmodules.util.molecule._MoleculeMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin
+    :summary:
+    ```
+* - {py:obj}`Molecule <vtkmodules.util.molecule.Molecule>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule.Molecule
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_get_periodic_table <vtkmodules.util.molecule._get_periodic_table>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._get_periodic_table
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_periodic_table <vtkmodules.util.molecule._periodic_table>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._periodic_table
+    :summary:
+    ```
+* - {py:obj}`_RDKIT_BOND_TYPE_TO_VTK_ORDER <vtkmodules.util.molecule._RDKIT_BOND_TYPE_TO_VTK_ORDER>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._RDKIT_BOND_TYPE_TO_VTK_ORDER
+    :summary:
+    ```
+* - {py:obj}`_VTK_ORDER_TO_RDKIT_BOND_TYPE <vtkmodules.util.molecule._VTK_ORDER_TO_RDKIT_BOND_TYPE>`
+  - ```{autodoc2-docstring} vtkmodules.util.molecule._VTK_ORDER_TO_RDKIT_BOND_TYPE
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _periodic_table
+:canonical: vtkmodules.util.molecule._periodic_table
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.molecule._periodic_table
+```
+
+````
+
+````{py:function} _get_periodic_table()
+:canonical: vtkmodules.util.molecule._get_periodic_table
+
+```{autodoc2-docstring} vtkmodules.util.molecule._get_periodic_table
+```
+````
+
+````{py:data} _RDKIT_BOND_TYPE_TO_VTK_ORDER
+:canonical: vtkmodules.util.molecule._RDKIT_BOND_TYPE_TO_VTK_ORDER
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.molecule._RDKIT_BOND_TYPE_TO_VTK_ORDER
+```
+
+````
+
+````{py:data} _VTK_ORDER_TO_RDKIT_BOND_TYPE
+:canonical: vtkmodules.util.molecule._VTK_ORDER_TO_RDKIT_BOND_TYPE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.molecule._VTK_ORDER_TO_RDKIT_BOND_TYPE
+```
+
+````
+
+`````{py:class} _AtomView(mol)
+:canonical: vtkmodules.util.molecule._AtomView
+
+```{autodoc2-docstring} vtkmodules.util.molecule._AtomView
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.molecule._AtomView.__init__
+```
+
+````{py:attribute} __slots__
+:canonical: vtkmodules.util.molecule._AtomView.__slots__
+:value: >
+   ('_mol',)
+
+```{autodoc2-docstring} vtkmodules.util.molecule._AtomView.__slots__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.molecule._AtomView.__len__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._AtomView.__len__
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.molecule._AtomView.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._AtomView.__getitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.molecule._AtomView.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._AtomView.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.molecule._AtomView.__repr__
+
+````
+
+`````
+
+`````{py:class} _BondView(mol)
+:canonical: vtkmodules.util.molecule._BondView
+
+```{autodoc2-docstring} vtkmodules.util.molecule._BondView
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.molecule._BondView.__init__
+```
+
+````{py:attribute} __slots__
+:canonical: vtkmodules.util.molecule._BondView.__slots__
+:value: >
+   ('_mol',)
+
+```{autodoc2-docstring} vtkmodules.util.molecule._BondView.__slots__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.molecule._BondView.__len__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._BondView.__len__
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.molecule._BondView.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._BondView.__getitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.molecule._BondView.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._BondView.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.molecule._BondView.__repr__
+
+````
+
+`````
+
+`````{py:class} _MoleculeMixin(*args, atomic_numbers=None, symbols=None, positions=None, **kwargs)
+:canonical: vtkmodules.util.molecule._MoleculeMixin
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.__init__
+```
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.molecule._MoleculeMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.__len__
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.molecule._MoleculeMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.__getitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.molecule._MoleculeMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.__iter__
+```
+
+````
+
+````{py:property} atoms
+:canonical: vtkmodules.util.molecule._MoleculeMixin.atoms
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.atoms
+```
+
+````
+
+````{py:property} bonds
+:canonical: vtkmodules.util.molecule._MoleculeMixin.bonds
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.bonds
+```
+
+````
+
+````{py:property} positions
+:canonical: vtkmodules.util.molecule._MoleculeMixin.positions
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.positions
+```
+
+````
+
+````{py:property} atomic_numbers
+:canonical: vtkmodules.util.molecule._MoleculeMixin.atomic_numbers
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.atomic_numbers
+```
+
+````
+
+````{py:property} bond_orders
+:canonical: vtkmodules.util.molecule._MoleculeMixin.bond_orders
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.bond_orders
+```
+
+````
+
+````{py:property} symbols
+:canonical: vtkmodules.util.molecule._MoleculeMixin.symbols
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.symbols
+```
+
+````
+
+````{py:property} formula
+:canonical: vtkmodules.util.molecule._MoleculeMixin.formula
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.formula
+```
+
+````
+
+````{py:property} atom_data
+:canonical: vtkmodules.util.molecule._MoleculeMixin.atom_data
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.atom_data
+```
+
+````
+
+````{py:property} bond_data
+:canonical: vtkmodules.util.molecule._MoleculeMixin.bond_data
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.bond_data
+```
+
+````
+
+````{py:method} append(atomic_number_or_symbol, position)
+:canonical: vtkmodules.util.molecule._MoleculeMixin.append
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.append
+```
+
+````
+
+````{py:method} add_bond(atom1, atom2, order=1)
+:canonical: vtkmodules.util.molecule._MoleculeMixin.add_bond
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.add_bond
+```
+
+````
+
+````{py:property} lattice
+:canonical: vtkmodules.util.molecule._MoleculeMixin.lattice
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.lattice
+```
+
+````
+
+````{py:property} lattice_origin
+:canonical: vtkmodules.util.molecule._MoleculeMixin.lattice_origin
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.lattice_origin
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.molecule._MoleculeMixin.__repr__
+
+````
+
+````{py:method} to_ase()
+:canonical: vtkmodules.util.molecule._MoleculeMixin.to_ase
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.to_ase
+```
+
+````
+
+````{py:method} from_ase(atoms)
+:canonical: vtkmodules.util.molecule._MoleculeMixin.from_ase
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.from_ase
+```
+
+````
+
+````{py:method} to_rdkit(sanitize=False)
+:canonical: vtkmodules.util.molecule._MoleculeMixin.to_rdkit
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.to_rdkit
+```
+
+````
+
+````{py:method} from_rdkit(rdkit_mol, conformer_id=-1)
+:canonical: vtkmodules.util.molecule._MoleculeMixin.from_rdkit
+
+```{autodoc2-docstring} vtkmodules.util.molecule._MoleculeMixin.from_rdkit
+```
+
+````
+
+`````
+
+````{py:class} Molecule(*args, atomic_numbers=None, symbols=None, positions=None, **kwargs)
+:canonical: vtkmodules.util.molecule.Molecule
+
+Bases: {py:obj}`vtkmodules.util.molecule._MoleculeMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkMolecule`
+
+```{autodoc2-docstring} vtkmodules.util.molecule.Molecule
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.molecule.Molecule.__init__
+```
+
+````

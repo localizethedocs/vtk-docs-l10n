@@ -1,0 +1,47 @@
+# 9.5
+
+Released on 2025-06-20.
+
+```{include} ../../release/_9.5-stripped.md
+:relative-images:
+:heading-offset: 1
+```
+
+```{toctree}
+:hidden:
+
+9.5/ExplodeDataSet
+9.5/add-edge-width-property
+9.5/add-getter-setter-for-camera-orientation-widget-buttons
+9.5/add-point-2d-shape-setting-for-vtkProperty
+9.5/add-prolab-transferfunction-interpolation
+9.5/add-state_metadata_vtk_fields-vtkConduitSource
+9.5/add-vtkCocoaAutoreleasePool
+9.5/addSurfaceProbeVolumeMapper
+9.5/axes-actors-breaking-change
+9.5/breaking-change-remove-nlohmann-json-from-public-API
+9.5/delimited-text-reader-options
+9.5/ensight-reader-improvements
+9.5/fides-init
+9.5/fides-timestep-error
+9.5/fix-composite-mapper-opacity-override
+9.5/fix-ghost-cells-polyhedrons
+9.5/fix-polygon-centroid
+9.5/fix-polyhedron-parametric-center
+9.5/fix-py-data-model
+9.5/fluentReaderImprovements
+9.5/frustum-implicit-widget
+9.5/gltf-toggle-data
+9.5/htg-representation-decimation
+9.5/index-buffer-creation-performances
+9.5/multithread-vtkOpenFOAMReader
+9.5/openfoam-restart-files
+9.5/pbr-lighting
+9.5/qml-multitouch
+9.5/region-id-filter
+9.5/relative-temporal-array-operator
+9.5/transition-from-vtkm-to-viskores
+9.5/useoit_translucent
+9.5/vtk-Catalyst-Implicit-Topology
+9.5/widget-representations-improvements
+```
