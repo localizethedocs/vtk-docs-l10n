@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:1
 msgid "{py:mod}`vtkmodules.numpy_interface.vtk_structured_point_array`"
-msgstr ""
+msgstr "{py:mod}`vtkmodules.numpy_interface.vtk_structured_point_array`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:7
 msgid ""
@@ -54,11 +54,11 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:10
 msgid "Module Contents"
-msgstr ""
+msgstr "模組目次"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:12
 msgid "Classes"
-msgstr ""
+msgstr "類別"
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:18
 msgid ""
@@ -198,7 +198,7 @@ msgstr ""
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:106
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:279
 msgid "Initialization"
-msgstr ""
+msgstr "初始化"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:110
 msgid "Parameters"
@@ -229,6 +229,8 @@ msgid ""
 "Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
 "VTKDataArrayMixin`"
 msgstr ""
+"基底類別：{py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
+"VTKDataArrayMixin`"
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:279
 msgid ""
