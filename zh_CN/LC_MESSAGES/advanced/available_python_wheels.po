@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../advanced/available_python_wheels.md:1
+msgid "Additional Python Wheels"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:3
+msgid "Python wheels for VTK are available in pypi"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:5
+msgid "pip install vtk\n"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:9
+msgid ""
+"More wheels can be accessed from the [GitLab Package Registry](https://"
+"gitlab.kitware.com/vtk/vtk/-/packages)."
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:11
+msgid "To install the **latest release** wheel from the GitLab registry:"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:13
+msgid "pip install --extra-index-url https://wheels.vtk.org vtk\n"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:17
+msgid "To install the latest wheel **from master**:"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:19
+msgid ""
+"pip install --extra-index-url https://wheels.vtk.org vtk --pre --no-cache\n"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:23
+msgid ""
+"The wheels available at PyPi are built using the default rendering backend "
+"which leverages any available hardware graphics for generating the scene. "
+"There is also a OSMesa wheel variant that leverages offscreen rendering with "
+"OSMesa. This wheel is being built for both Linux and Windows at this time "
+"and bundles all of the necessary libraries into the wheel. These wheels are "
+"intended to be used by downstream projects in headless, CI-like environments "
+"or cloud application deployments, preventing the need to install any "
+"addition system packages."
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:33
+msgid ""
+"As of VTK 9.4, OSMesa and EGL support are included by default in the `vtk` "
+"wheels and can be selected at runtime. The `vtk-osmesa` wheels are no longer "
+"provided, and it is no longer necessary to install `vtk-osmesa`."
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:37
+msgid ""
+"conda-forge packages are also [available](https://anaconda.org/conda-forge/"
+"vtk) and maintained by the community."
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:40
+msgid "VTK wheel SDKs"
+msgstr ""
+
+#: ../../../advanced/available_python_wheels.md:42
+msgid ""
+"VTK wheel SDKs can be accessed from the [GitLab Package Registry](https://"
+"gitlab.kitware.com/vtk/vtk/-/packages). For more information about the VTK "
+"wheel SDKs, please refer to [Wheel SDKs section](wheel_sdks)."
+msgstr ""
