@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-10-26 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,11 +66,11 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:47
 msgid ""
-"Metal tensors are imported as host arrays. A shared-storage MTLBuffer on "
-"Apple Silicon is unified memory, so its pointer is host-readable and the "
-"wrap is still zero-copy; Viskores has no Metal device adapter, so there is "
-"nothing else it could be. Private-storage buffers have no host-readable "
-"pointer, report null, and are rejected. VTK never *exports* Metal memory, "
+"Metal tensors are rejected. The data pointer a Metal tensor carries is the "
+"``MTLBuffer`` object itself, not memory the host can read -- PyTorch's MPS "
+"tensors, for one, are private-storage buffers with no host-readable contents "
+"at all -- and Viskores has no Metal device adapter to hand it to instead. "
+"Copy the tensor to the CPU first. VTK never *exports* Metal memory either, "
 "because no VTK array can hold it."
 msgstr ""
 
@@ -91,14 +92,27 @@ msgid ""
 "context per device, so a pointer identifies itself and every consumer lands "
 "in the same place. Level Zero does not work that way: a USM pointer is only "
 "meaningful inside the ``ze_context_handle_t`` it was allocated from, and "
-"recovering that requires a context you already hold. So ``kDLOneAPI`` maps "
-"to the ``\"level_zero\"`` space and ``vtkmDataArrayFactory`` refuses it, "
-"naming the space, rather than treating the pointer as something it is not. "
-"Supporting Level Zero means finding somewhere for the context to travel "
-"first; it is not a matter of adding a device adapter."
+"recovering that requires a context you already hold."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:71
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:67
+msgid ""
+"So for ``kDLOneAPI`` the context travels once, out of band, instead of with "
+"every tensor. ``level_zero_handles()`` reports the driver, device and "
+"context of the SYCL queue Viskores runs on, and a producer that wants VTK to "
+"read its memory allocates *there*. Kokkos builds that queue in the SYCL "
+"platform's default context, which is also where a SYCL program allocates "
+"unless it creates a context of its own. On import the pointer is checked "
+"against that context and refused if the SYCL runtime does not know it as USM "
+"device or shared memory. The check separates device memory from host memory; "
+"it cannot prove which context a pointer came from, because drivers are not "
+"required to tell contexts apart and Intel's does not. Exported Level Zero "
+"tensors are in that context too. All of this needs VTK built with Viskores "
+"on Kokkos' SYCL backend; without it ``kDLOneAPI`` tensors are refused, "
+"naming the space."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:81
 msgid ""
 "**Device ordinal.** ``DLPackArray(array, device_id=...)`` is taken from the "
 "caller and reported verbatim by ``__dlpack_device__``. It is not derived "
@@ -106,7 +120,7 @@ msgid ""
 "0 will mislabel memory that is not on device 0. Pass the right ordinal."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:76
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:86
 msgid ""
 "**Streams.** ``__dlpack__`` accepts DLPack's ``stream`` argument and ignores "
 "it. That argument is how a consumer says \"make this safe to read on my "
@@ -174,8 +188,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:28
 msgid ""
-"{py:obj}`_DLManagedTensorVersioned <vtkmodules.util.dlpack_support."
-"_DLManagedTensorVersioned>`"
+"{py:obj}`_DLManagedTensorVersioned "
+"<vtkmodules.util.dlpack_support._DLManagedTensorVersioned>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:30
@@ -183,7 +197,7 @@ msgid "{py:obj}`DLPackArray <vtkmodules.util.dlpack_support.DLPackArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:625
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:720
 msgid "Adapter exposing a vtkDataArray through the DLPack protocol."
 msgstr ""
 
@@ -192,7 +206,7 @@ msgid "{py:obj}`_HostTensor <vtkmodules.util.dlpack_support._HostTensor>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:36
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:727
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:822
 msgid "Shows an imported host tensor to numpy, and holds it open."
 msgstr ""
 
@@ -201,415 +215,490 @@ msgid "Functions"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:46
-msgid "{py:obj}`_release <vtkmodules.util.dlpack_support._release>`"
+msgid "{py:obj}`_immortal <vtkmodules.util.dlpack_support._immortal>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:48
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:582
-msgid "Drop what was pinned for the export at *managed_ptr*."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:600
+msgid "Leak one reference to *obj*, so it outlives interpreter teardown."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:50
 msgid ""
-"{py:obj}`_tensor_deleter <vtkmodules.util.dlpack_support._tensor_deleter>`"
+"{py:obj}`_shutdown_safe <vtkmodules.util.dlpack_support._shutdown_safe>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:52
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:589
-msgid "Called by the consumer when it is done with the tensor."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:607
+msgid ""
+"Wrap *function* as an immortal C callback that ignores null pointers and "
+"does nothing once the interpreter is finalizing."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:54
-msgid ""
-"{py:obj}`_tensor_deleter_versioned <vtkmodules.util.dlpack_support."
-"_tensor_deleter_versioned>`"
+msgid "{py:obj}`_releaser <vtkmodules.util.dlpack_support._releaser>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:56
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:596
-msgid ""
-"As above for a v1.0 tensor: the deleter is handed only a pointer and cannot "
-"tell the layouts apart, so there is one per layout."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:634
+msgid "Return a function dropping what was pinned for an export."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:58
 msgid ""
-"{py:obj}`_capsule_destructor <vtkmodules.util.dlpack_support."
-"_capsule_destructor>`"
+"{py:obj}`_unadopted_releaser "
+"<vtkmodules.util.dlpack_support._unadopted_releaser>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:60
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:603
-msgid "Release an export no consumer ever adopted."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:681
+msgid "Return a function releasing an export no consumer ever adopted."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:62
 msgid ""
-"{py:obj}`supported_device_types <vtkmodules.util.dlpack_support."
-"supported_device_types>`"
+"{py:obj}`supported_device_types "
+"<vtkmodules.util.dlpack_support.supported_device_types>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:64
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:610
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:698
 msgid "DLPack device types this module can import, as a set of ints."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:66
-msgid "{py:obj}`vtk_to_dlpack <vtkmodules.util.dlpack_support.vtk_to_dlpack>`"
+msgid ""
+"{py:obj}`level_zero_handles "
+"<vtkmodules.util.dlpack_support.level_zero_handles>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:68
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:617
-msgid "Export a vtkDataArray as a DLPack capsule, without copying."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:705
+msgid "The Level Zero handles VTK's device memory lives under, or ``None``."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:70
-msgid "{py:obj}`dlpack_to_vtk <vtkmodules.util.dlpack_support.dlpack_to_vtk>`"
+msgid "{py:obj}`vtk_to_dlpack <vtkmodules.util.dlpack_support.vtk_to_dlpack>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:72
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:654
-msgid "Import a DLPack tensor as a vtkDataArray, without copying."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:712
+msgid "Export a vtkDataArray as a DLPack capsule, without copying."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:74
-msgid ""
-"{py:obj}`_request_capsule <vtkmodules.util.dlpack_support._request_capsule>`"
+msgid "{py:obj}`dlpack_to_vtk <vtkmodules.util.dlpack_support.dlpack_to_vtk>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:76
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:661
-msgid "Get a capsule from *source*, preferring the versioned protocol."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:749
+msgid "Import a DLPack tensor as a vtkDataArray, without copying."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:78
 msgid ""
-"{py:obj}`_release_adopted <vtkmodules.util.dlpack_support._release_adopted>`"
+"{py:obj}`_request_capsule <vtkmodules.util.dlpack_support._request_capsule>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:80
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:688
-msgid "Drop the hold on an adopted tensor, calling the producer's deleter."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:756
+msgid "Get a capsule from *source*, preferring the versioned protocol."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:82
 msgid ""
-"{py:obj}`_adopted_release <vtkmodules.util.dlpack_support._adopted_release>`"
+"{py:obj}`_release_adopted <vtkmodules.util.dlpack_support._release_adopted>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:84
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:695
-msgid "Called by VTK when it is finished with an imported tensor."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:783
+msgid "Drop the hold on an adopted tensor, calling the producer's deleter."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:86
 msgid ""
-"{py:obj}`_register_adopted <vtkmodules.util.dlpack_support."
-"_register_adopted>`"
+"{py:obj}`_adopted_release <vtkmodules.util.dlpack_support._adopted_release>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:88
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:712
-msgid "Take ownership of *capsule*, and return the key that releases it."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:790
+msgid "Called by VTK when it is finished with an imported tensor."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:90
 msgid ""
-"{py:obj}`_hold_via_descriptor <vtkmodules.util.dlpack_support."
-"_hold_via_descriptor>`"
+"{py:obj}`_register_adopted "
+"<vtkmodules.util.dlpack_support._register_adopted>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:92
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:719
-msgid "Release the tensor keyed *key* when *descriptor* is destroyed."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:807
+msgid "Take ownership of *capsule*, and return the key that releases it."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:94
-msgid "{py:obj}`_wrap_host <vtkmodules.util.dlpack_support._wrap_host>`"
+msgid ""
+"{py:obj}`_hold_via_descriptor "
+"<vtkmodules.util.dlpack_support._hold_via_descriptor>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:96
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:748
-msgid "Build the array from a host pointer, via numpy."
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:814
+msgid "Release the tensor keyed *key* when *descriptor* is destroyed."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:98
+msgid "{py:obj}`_wrap_host <vtkmodules.util.dlpack_support._wrap_host>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:100
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:843
+msgid "Build the array from a host pointer, via numpy."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:102
 msgid ""
 "{py:obj}`_wrap_descriptor <vtkmodules.util.dlpack_support._wrap_descriptor>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:100
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:755
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:104
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:850
 msgid "Build the array from a device pointer, via Viskores."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:104
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:108
 msgid "Data"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:110
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:114
 msgid "{py:obj}`__all__ <vtkmodules.util.dlpack_support.__all__>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:114
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:118
 msgid "{py:obj}`kDLCPU <vtkmodules.util.dlpack_support.kDLCPU>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:118
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:122
 msgid "{py:obj}`kDLCUDA <vtkmodules.util.dlpack_support.kDLCUDA>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:122
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:126
 msgid "{py:obj}`kDLCUDAHost <vtkmodules.util.dlpack_support.kDLCUDAHost>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:126
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:130
 msgid "{py:obj}`kDLOpenCL <vtkmodules.util.dlpack_support.kDLOpenCL>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:130
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:134
 msgid "{py:obj}`kDLVulkan <vtkmodules.util.dlpack_support.kDLVulkan>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:134
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:138
 msgid "{py:obj}`kDLMetal <vtkmodules.util.dlpack_support.kDLMetal>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:138
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:142
 msgid "{py:obj}`kDLROCM <vtkmodules.util.dlpack_support.kDLROCM>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:142
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:146
 msgid "{py:obj}`kDLROCMHost <vtkmodules.util.dlpack_support.kDLROCMHost>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:146
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:150
 msgid ""
 "{py:obj}`kDLCUDAManaged <vtkmodules.util.dlpack_support.kDLCUDAManaged>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:150
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:154
 msgid "{py:obj}`kDLOneAPI <vtkmodules.util.dlpack_support.kDLOneAPI>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:154
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:158
 msgid "{py:obj}`kDLInt <vtkmodules.util.dlpack_support.kDLInt>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:158
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:162
 msgid "{py:obj}`kDLUInt <vtkmodules.util.dlpack_support.kDLUInt>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:162
-msgid "{py:obj}`kDLFloat <vtkmodules.util.dlpack_support.kDLFloat>`"
-msgstr ""
-
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:166
-msgid ""
-"{py:obj}`_DEVICE_TO_SPACE <vtkmodules.util.dlpack_support._DEVICE_TO_SPACE>`"
+msgid "{py:obj}`kDLFloat <vtkmodules.util.dlpack_support.kDLFloat>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:170
 msgid ""
-"{py:obj}`_SPACE_TO_DEVICE <vtkmodules.util.dlpack_support._SPACE_TO_DEVICE>`"
+"{py:obj}`_DEVICE_TO_SPACE <vtkmodules.util.dlpack_support._DEVICE_TO_SPACE>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:174
-msgid "{py:obj}`_LONG_BITS <vtkmodules.util.dlpack_support._LONG_BITS>`"
+msgid ""
+"{py:obj}`_SPACE_TO_DEVICE <vtkmodules.util.dlpack_support._SPACE_TO_DEVICE>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:178
-msgid ""
-"{py:obj}`_VTK_TO_DLPACK <vtkmodules.util.dlpack_support._VTK_TO_DLPACK>`"
+msgid "{py:obj}`_LONG_BITS <vtkmodules.util.dlpack_support._LONG_BITS>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:182
 msgid ""
-"{py:obj}`_DLPACK_TO_VTK <vtkmodules.util.dlpack_support._DLPACK_TO_VTK>`"
+"{py:obj}`_VTK_TO_DLPACK <vtkmodules.util.dlpack_support._VTK_TO_DLPACK>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:186
 msgid ""
-"{py:obj}`DLPACK_FLAG_BITMASK_READ_ONLY <vtkmodules.util.dlpack_support."
-"DLPACK_FLAG_BITMASK_READ_ONLY>`"
+"{py:obj}`_DLPACK_TO_VTK <vtkmodules.util.dlpack_support._DLPACK_TO_VTK>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:190
 msgid ""
-"{py:obj}`_PyCapsule_New <vtkmodules.util.dlpack_support._PyCapsule_New>`"
+"{py:obj}`DLPACK_FLAG_BITMASK_READ_ONLY "
+"<vtkmodules.util.dlpack_support.DLPACK_FLAG_BITMASK_READ_ONLY>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:194
 msgid ""
-"{py:obj}`_PyCapsule_IsValid <vtkmodules.util.dlpack_support."
-"_PyCapsule_IsValid>`"
+"{py:obj}`_PyCapsule_New <vtkmodules.util.dlpack_support._PyCapsule_New>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:198
 msgid ""
-"{py:obj}`_PyCapsule_GetPointer <vtkmodules.util.dlpack_support."
-"_PyCapsule_GetPointer>`"
+"{py:obj}`_PyCapsule_IsValid "
+"<vtkmodules.util.dlpack_support._PyCapsule_IsValid>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:202
-msgid "{py:obj}`_pinned <vtkmodules.util.dlpack_support._pinned>`"
+msgid ""
+"{py:obj}`_PyCapsule_GetPointer "
+"<vtkmodules.util.dlpack_support._PyCapsule_GetPointer>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:206
-msgid "{py:obj}`_next_key <vtkmodules.util.dlpack_support._next_key>`"
+msgid "{py:obj}`_CALLBACK <vtkmodules.util.dlpack_support._CALLBACK>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:210
-msgid "{py:obj}`_adopted <vtkmodules.util.dlpack_support._adopted>`"
+msgid "{py:obj}`_pinned <vtkmodules.util.dlpack_support._pinned>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:214
-msgid ""
-"{py:obj}`_next_adopted_key <vtkmodules.util.dlpack_support."
-"_next_adopted_key>`"
+msgid "{py:obj}`_next_key <vtkmodules.util.dlpack_support._next_key>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:218
-msgid ""
-"{py:obj}`_PyCapsule_SetName <vtkmodules.util.dlpack_support."
-"_PyCapsule_SetName>`"
+msgid "{py:obj}`_release <vtkmodules.util.dlpack_support._release>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:224
-msgid "API"
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:222
+msgid ""
+"{py:obj}`_release_versioned "
+"<vtkmodules.util.dlpack_support._release_versioned>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:226
+msgid ""
+"{py:obj}`_tensor_deleter <vtkmodules.util.dlpack_support._tensor_deleter>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:230
 msgid ""
-"['vtk_to_dlpack', 'dlpack_to_vtk', 'DLPackArray', 'supported_device_types']"
+"{py:obj}`_tensor_deleter_versioned "
+"<vtkmodules.util.dlpack_support._tensor_deleter_versioned>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:240
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:350
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:572
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:678
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:234
+msgid ""
+"{py:obj}`_capsule_destructor "
+"<vtkmodules.util.dlpack_support._capsule_destructor>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:238
+msgid "{py:obj}`_adopted <vtkmodules.util.dlpack_support._adopted>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:242
+msgid ""
+"{py:obj}`_next_adopted_key "
+"<vtkmodules.util.dlpack_support._next_adopted_key>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:246
+msgid ""
+"{py:obj}`_PyCapsule_SetName "
+"<vtkmodules.util.dlpack_support._PyCapsule_SetName>`"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:252
+msgid "API"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:258
+msgid ""
+"['vtk_to_dlpack', 'dlpack_to_vtk', 'DLPackArray', 'supported_device_types', "
+"'level_zero_handles']"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:268
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:378
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:624
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:773
 msgid "1"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:250
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:360
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:278
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:388
 msgid "2"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:260
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:288
 msgid "3"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:270
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:298
 msgid "4"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:280
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:308
 msgid "7"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:290
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:318
 msgid "8"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:300
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:328
 msgid "10"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:310
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:338
 msgid "11"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:320
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:348
 msgid "13"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:330
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:358
 msgid "14"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:340
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:368
 msgid "0"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:370
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:380
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:390
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:400
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:410
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:522
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:532
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:542
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:552
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:562
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:668
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:702
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:398
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:408
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:418
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:428
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:438
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:550
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:560
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:570
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:580
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:763
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:797
 msgid "None"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:420
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:437
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:454
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:471
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:488
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:505
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:448
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:465
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:482
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:499
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:516
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:533
 msgid "Bases: {py:obj}`ctypes.Structure`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:426
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:454
 msgid "[('code',), ('bits',), ('lanes',)]"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:443
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:471
 msgid "[('device_type',), ('device_id',)]"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:460
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:488
 msgid ""
 "[('data',), ('device',), ('ndim',), ('dtype',), ('shape',), ('strides',), "
 "('byte_offset',)]"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:477
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:505
 msgid "[('dl_tensor',), ('manager_ctx',), ('deleter',)]"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:494
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:522
 msgid "[('major',), ('minor',)]"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:511
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:539
 msgid ""
 "[('version',), ('manager_ctx',), ('deleter',), ('flags',), ('dl_tensor',)]"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:584
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:590
+msgid "'CFUNCTYPE(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:614
+msgid "'_immortal(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:636
 msgid ""
 "*struct* says which layout to read: manager_ctx sits at a different offset "
 "in the two."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:605
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:641
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:651
+msgid "'_releaser(...)'"
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:661
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:671
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:688
+msgid "'_shutdown_safe(...)'"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:683
 msgid ""
 "A consumer that takes the tensor renames the capsule to \"used_dltensor\" "
 "and takes over calling the deleter. A capsule collected still named "
 "\"dltensor\" was nobody's responsibility."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:619
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:707
+msgid ""
+"Returns ``{\"driver\": int, \"device\": int, \"context\": int}`` -- the "
+"``ze_driver_handle_t``, ``ze_device_handle_t`` and ``ze_context_handle_t`` "
+"of the SYCL queue Viskores runs on -- when VTK was built with Viskores on "
+"Kokkos' SYCL backend and that backend is running on a Level Zero device. "
+"Otherwise ``None``."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:713
+msgid ""
+"A producer allocates in this context so that its ``kDLOneAPI`` tensors are "
+"meaningful to VTK; see \"Context\" in the module documentation. The handles "
+"belong to the SYCL runtime: use them, do not destroy them."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:714
 msgid ""
 "The tensor is 2-D, ``(number of tuples, number of components)``, which is "
 "how the array is laid out. Single-component arrays are still 2-D with a "
 "trailing 1; reshape on the consumer side if you want 1-D."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:623
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:718
 msgid ""
 "The array is kept alive for as long as the consumer holds the tensor, so it "
 "is safe to drop every other reference to it."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:626
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:721
 msgid ""
 "With *versioned*, produces a v1.0 tensor in a \"dltensor_versioned\" capsule "
 "instead of the legacy \"dltensor\" one. Consumers that ask for v1.0 need "
@@ -617,70 +706,70 @@ msgid ""
 "it marks the view read-only and then will not re-export it."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:632
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:727
 msgid ""
 "Raises TypeError for a data type with no DLPack equivalent, and ValueError "
 "for an array with no accessible memory -- implicit and computed arrays have "
 "none to describe."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:627
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:722
 msgid ""
 "Libraries call ``__dlpack__`` rather than taking a capsule directly, so "
 "wrapping the array lets them consume it as they would any other array:"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:630
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:725
 msgid ""
 "cupy.from_dlpack(DLPackArray(vtk_array))\n"
 "torch.from_dlpack(DLPackArray(vtk_array))\n"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:627
-#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:729
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:722
+#: ../../../api/python/vtkmodules/vtkmodules.util.dlpack_support.md:824
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:656
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:751
 msgid ""
 "*source* may be a capsule or any object implementing ``__dlpack__`` -- a "
 "CuPy array, a PyTorch tensor, a NumPy array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:659
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:754
 msgid ""
 "A 1-D tensor becomes a single-component array. A 2-D tensor becomes "
 "``(tuples, components)``. Higher rank is rejected, since a vtkDataArray has "
 "no way to represent it."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:663
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:758
 msgid ""
 "The tensor is held open for as long as the returned array lives, so the "
 "source can be dropped immediately."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:663
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:758
 msgid ""
 "Asking for v1.0 first matters: NumPy refuses to export a read-only array "
 "over the legacy protocol, because that protocol cannot say so. A producer "
 "predating v1.0 raises TypeError, so fall back."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:714
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:809
 msgid ""
 "Renaming the capsule is what marks it consumed: from here its own destructor "
 "leaves it alone, and releasing it is this module's job."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:729
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:824
 msgid ""
 "numpy.asarray() of this builds a view whose base is this object, so the "
 "tensor stays open for exactly as long as anything is looking at the memory, "
 "and is released once nothing is."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:733
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:828
 msgid ""
 "The hold is this object's own lifetime, rather than the vtkMemoryDescriptor "
 "release callback the device path uses. That callback is a ctypes trampoline "
@@ -690,14 +779,14 @@ msgid ""
 "up, and the worst it can do is leak."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:740
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:835
 msgid ""
 "The array interface is what makes the view writable. Nothing here asks the "
 "producer about mutability; dlpack_to_vtk has already read the read-only flag "
 "off the capsule and refused if it was set."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:750
+#: ../../../../../Wrapping/Python/vtkmodules/util/dlpack_support.py:845
 msgid ""
 "Host memory does not go through Viskores, and must not: plain VTK builds "
 "have no vtkmDataArrayFactory, and host tensors are the common case. numpy is "

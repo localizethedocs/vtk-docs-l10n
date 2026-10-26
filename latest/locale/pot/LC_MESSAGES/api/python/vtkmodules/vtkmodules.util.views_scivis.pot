@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-10-26 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,8 +37,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:15
 msgid ""
-"named colors -- ``color=\"tomato\"``, resolved via :mod:`vtkmodules.util."
-"colors`"
+"named colors -- ``color=\"tomato\"``, resolved "
+"via :mod:`vtkmodules.util.colors`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:16
@@ -70,8 +71,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:27
 msgid ""
-"The layer is registered for ``vtkViewsScivis`` in ``vtkmodules/__init__.py."
-"in`` and loaded automatically when that module is imported."
+"The layer is registered for ``vtkViewsScivis`` in ``vtkmodules/"
+"__init__.py.in`` and loaded automatically when that module is imported."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:10
@@ -93,8 +94,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:22
 msgid ""
-"{py:obj}`SurfaceRepresentation <vtkmodules.util.views_scivis."
-"SurfaceRepresentation>`"
+"{py:obj}`SurfaceRepresentation "
+"<vtkmodules.util.views_scivis.SurfaceRepresentation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:24
@@ -113,8 +114,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:30
 msgid ""
-"{py:obj}`LookupTableManager <vtkmodules.util.views_scivis."
-"LookupTableManager>`"
+"{py:obj}`LookupTableManager "
+"<vtkmodules.util.views_scivis.LookupTableManager>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:32
@@ -144,8 +145,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:42
 msgid ""
-"{py:obj}`GridAxesRepresentation <vtkmodules.util.views_scivis."
-"GridAxesRepresentation>`"
+"{py:obj}`GridAxesRepresentation "
+"<vtkmodules.util.views_scivis.GridAxesRepresentation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:44
@@ -156,8 +157,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:46
 msgid ""
-"{py:obj}`TextOverlayRepresentation <vtkmodules.util.views_scivis."
-"TextOverlayRepresentation>`"
+"{py:obj}`TextOverlayRepresentation "
+"<vtkmodules.util.views_scivis.TextOverlayRepresentation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:48
@@ -177,8 +178,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:54
 msgid ""
-"{py:obj}`VolumeRepresentation <vtkmodules.util.views_scivis."
-"VolumeRepresentation>`"
+"{py:obj}`VolumeRepresentation "
+"<vtkmodules.util.views_scivis.VolumeRepresentation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:56
@@ -192,8 +193,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:66
 msgid ""
-"{py:obj}`_make_representation <vtkmodules.util.views_scivis."
-"_make_representation>`"
+"{py:obj}`_make_representation "
+"<vtkmodules.util.views_scivis._make_representation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:68
@@ -235,8 +236,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:90
 msgid ""
-"{py:obj}`REPRESENTATION_TYPES <vtkmodules.util.views_scivis."
-"REPRESENTATION_TYPES>`"
+"{py:obj}`REPRESENTATION_TYPES "
+"<vtkmodules.util.views_scivis.REPRESENTATION_TYPES>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:96
@@ -249,8 +250,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:114
 msgid ""
-"Accepts ``None`` (a surface representation), a name from :data:"
-"`REPRESENTATION_TYPES`, or a representation class."
+"Accepts ``None`` (a surface representation), a name "
+"from :data:`REPRESENTATION_TYPES`, or a representation class."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:121
@@ -288,9 +289,9 @@ msgstr ""
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:149
 msgid ""
 "So an attribute this class does not define is looked for on each delegate in "
-"turn, and set on the first that has it.  ``rep.specular = 0.3`` and ``rep."
-"property.specular = 0.3`` are then the same thing, and an attribute nobody "
-"owns still fails, naming the delegates it looked in."
+"turn, and set on the first that has it.  ``rep.specular = 0.3`` and "
+"``rep.property.specular = 0.3`` are then the same thing, and an attribute "
+"nobody owns still fails, naming the delegates it looked in."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:143
@@ -427,9 +428,9 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:273
 msgid ""
-"Reading a name that has no map makes one, the way :class:`collections."
-"defaultdict` does, because that is what the manager is for -- ``in`` is the "
-"way to ask without making one."
+"Reading a name that has no map makes one, the "
+"way :class:`collections.defaultdict` does, because that is what the manager "
+"is for -- ``in`` is the way to ask without making one."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:332
@@ -496,9 +497,9 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:565
 msgid ""
-"*representation_type* selects what to build: a name from :data:"
-"`REPRESENTATION_TYPES`, a representation class, or ``None`` for a surface "
-"representation::"
+"*representation_type* selects what to build: a name "
+"from :data:`REPRESENTATION_TYPES`, a representation class, or ``None`` for a "
+"surface representation::"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:569

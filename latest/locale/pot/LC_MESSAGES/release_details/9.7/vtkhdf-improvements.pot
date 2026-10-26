@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-10-26 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,9 +68,10 @@ msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:23
 msgid ""
-"When reading partitioned data in parallel, you can now use `vtkHDFReader::"
-"SetPieceDistribution` to choose the piece distribution strategy: interleave "
-"blocks between processes, or allocate \"blocks\" of partitions."
+"When reading partitioned data in parallel, you can now use "
+"`vtkHDFReader::SetPieceDistribution` to choose the piece distribution "
+"strategy: interleave blocks between processes, or allocate \"blocks\" of "
+"partitions."
 msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:26
@@ -138,9 +140,9 @@ msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:54
 msgid ""
-"The protect method `vtkHDFReader::DataArraySelection` now returns a `std::"
-"map` instead of a `std::array` with `vtkDataObject::AttributeTypes::` as a "
-"key."
+"The protect method `vtkHDFReader::DataArraySelection` now returns a "
+"`std::map` instead of a `std::array` with `vtkDataObject::AttributeTypes::` "
+"as a key."
 msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:55

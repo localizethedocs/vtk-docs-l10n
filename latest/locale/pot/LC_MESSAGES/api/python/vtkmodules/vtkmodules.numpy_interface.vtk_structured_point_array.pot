@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-10-26 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,8 +62,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:18
 msgid ""
-"{py:obj}`VTKStructuredAxisArray <vtkmodules.numpy_interface."
-"vtk_structured_point_array.VTKStructuredAxisArray>`"
+"{py:obj}`VTKStructuredAxisArray "
+"<vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredAxisArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:20
@@ -75,8 +75,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:22
 msgid ""
-"{py:obj}`VTKStructuredPointArray <vtkmodules.numpy_interface."
-"vtk_structured_point_array.VTKStructuredPointArray>`"
+"{py:obj}`VTKStructuredPointArray "
+"<vtkmodules.numpy_interface.vtk_structured_point_array.VTKStructuredPointArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:24
@@ -90,8 +90,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:34
 msgid ""
-"{py:obj}`_override_structured_point_numpy <vtkmodules.numpy_interface."
-"vtk_structured_point_array._override_structured_point_numpy>`"
+"{py:obj}`_override_structured_point_numpy "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._override_structured_point_numpy>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:36
@@ -101,8 +101,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:38
 msgid ""
-"{py:obj}`_lazy_dtype_supported <vtkmodules.numpy_interface."
-"vtk_structured_point_array._lazy_dtype_supported>`"
+"{py:obj}`_lazy_dtype_supported "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._lazy_dtype_supported>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:40
@@ -112,47 +112,47 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:42
 msgid ""
-"{py:obj}`_sp_sum <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_sp_sum>`"
+"{py:obj}`_sp_sum "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._sp_sum>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:46
 msgid ""
-"{py:obj}`_sp_min <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_sp_min>`"
+"{py:obj}`_sp_min "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._sp_min>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:50
 msgid ""
-"{py:obj}`_sp_max <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_sp_max>`"
+"{py:obj}`_sp_max "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._sp_max>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:54
 msgid ""
-"{py:obj}`_sp_mean <vtkmodules.numpy_interface.vtk_structured_point_array."
-"_sp_mean>`"
+"{py:obj}`_sp_mean "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._sp_mean>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:58
 msgid ""
-"{py:obj}`_add_template_type_aliases <vtkmodules.numpy_interface."
-"vtk_structured_point_array._add_template_type_aliases>`"
+"{py:obj}`_add_template_type_aliases "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._add_template_type_aliases>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:60
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:660
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:636
 msgid "Add native-type aliases so template['float64'] etc. work."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:62
 msgid ""
-"{py:obj}`_register_structured_point_overrides <vtkmodules.numpy_interface."
-"vtk_structured_point_array._register_structured_point_overrides>`"
+"{py:obj}`_register_structured_point_overrides "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._register_structured_point_overrides>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:64
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:667
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:643
 msgid ""
 "Register VTKStructuredPointArray for all vtkStructuredPointArray template "
 "instantiations."
@@ -164,14 +164,14 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:74
 msgid ""
-"{py:obj}`_STRUCTURED_POINT_OVERRIDE <vtkmodules.numpy_interface."
-"vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE>`"
+"{py:obj}`_STRUCTURED_POINT_OVERRIDE "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._STRUCTURED_POINT_OVERRIDE>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:78
 msgid ""
-"{py:obj}`_VTKTYPE_TO_MANGLING <vtkmodules.numpy_interface."
-"vtk_structured_point_array._VTKTYPE_TO_MANGLING>`"
+"{py:obj}`_VTKTYPE_TO_MANGLING "
+"<vtkmodules.numpy_interface.vtk_structured_point_array._VTKTYPE_TO_MANGLING>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:84
@@ -179,7 +179,7 @@ msgid "API"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:90
-#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:650
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:626
 msgid "None"
 msgstr ""
 
@@ -243,8 +243,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_structured_point_array.md:285
 msgid ""
-"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
-"VTKDataArrayMixin`"
+"Bases: {py:obj}"
+"`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:290
@@ -319,7 +319,7 @@ msgstr ""
 msgid "Return the full (N, 3) array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:662
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_structured_point_array.py:638
 msgid ""
 "Templates that only have vtkType-based instantiations (e.g. vtkTypeFloat64) "
 "need aliases under the native IA64 mangled names (e.g. _IdE for double) so "
