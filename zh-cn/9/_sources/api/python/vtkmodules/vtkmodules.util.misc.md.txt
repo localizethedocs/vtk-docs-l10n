@@ -1,0 +1,75 @@
+# {py:mod}`vtkmodules.util.misc`
+
+```{py:module} vtkmodules.util.misc
+```
+
+```{autodoc2-docstring} vtkmodules.util.misc
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`deprecated <vtkmodules.util.misc.deprecated>`
+  - ```{autodoc2-docstring} vtkmodules.util.misc.deprecated
+    :summary:
+    ```
+* - {py:obj}`calldata_type <vtkmodules.util.misc.calldata_type>`
+  - ```{autodoc2-docstring} vtkmodules.util.misc.calldata_type
+    :summary:
+    ```
+* - {py:obj}`vtkGetDataRoot <vtkmodules.util.misc.vtkGetDataRoot>`
+  - ```{autodoc2-docstring} vtkmodules.util.misc.vtkGetDataRoot
+    :summary:
+    ```
+* - {py:obj}`vtkGetTempDir <vtkmodules.util.misc.vtkGetTempDir>`
+  - ```{autodoc2-docstring} vtkmodules.util.misc.vtkGetTempDir
+    :summary:
+    ```
+* - {py:obj}`vtkRegressionTestImage <vtkmodules.util.misc.vtkRegressionTestImage>`
+  - ```{autodoc2-docstring} vtkmodules.util.misc.vtkRegressionTestImage
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} deprecated(version, message)
+:canonical: vtkmodules.util.misc.deprecated
+
+```{autodoc2-docstring} vtkmodules.util.misc.deprecated
+```
+````
+
+````{py:function} calldata_type(type)
+:canonical: vtkmodules.util.misc.calldata_type
+
+```{autodoc2-docstring} vtkmodules.util.misc.calldata_type
+```
+````
+
+````{py:function} vtkGetDataRoot()
+:canonical: vtkmodules.util.misc.vtkGetDataRoot
+
+```{autodoc2-docstring} vtkmodules.util.misc.vtkGetDataRoot
+```
+````
+
+````{py:function} vtkGetTempDir()
+:canonical: vtkmodules.util.misc.vtkGetTempDir
+
+```{autodoc2-docstring} vtkmodules.util.misc.vtkGetTempDir
+```
+````
+
+````{py:function} vtkRegressionTestImage(renWin)
+:canonical: vtkmodules.util.misc.vtkRegressionTestImage
+
+```{autodoc2-docstring} vtkmodules.util.misc.vtkRegressionTestImage
+```
+````

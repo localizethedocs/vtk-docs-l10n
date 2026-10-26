@@ -1,0 +1,243 @@
+# {py:mod}`vtkmodules.tk.vtkTkRenderWindowInteractor`
+
+```{py:module} vtkmodules.tk.vtkTkRenderWindowInteractor
+```
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkTkRenderWindowInteractor <vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor>`
+  - ```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkRenderWindowInteractorConeExample <vtkmodules.tk.vtkTkRenderWindowInteractor.vtkRenderWindowInteractorConeExample>`
+  - ```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkRenderWindowInteractorConeExample
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} vtkTkRenderWindowInteractor(master, cnf={}, **kw)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor
+
+Bases: {py:obj}`tkinter.Widget`
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.__init__
+```
+
+````{py:method} __getattr__(attr)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.__getattr__
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.__getattr__
+```
+
+````
+
+````{py:method} BindEvents()
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.BindEvents
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.BindEvents
+```
+
+````
+
+````{py:method} CreateTimer(obj, evt)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.CreateTimer
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.CreateTimer
+```
+
+````
+
+````{py:method} DestroyTimer(obj, event)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.DestroyTimer
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.DestroyTimer
+```
+
+````
+
+````{py:method} _GrabFocus(enter=0)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor._GrabFocus
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor._GrabFocus
+```
+
+````
+
+````{py:method} MouseMoveEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseMoveEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseMoveEvent
+```
+
+````
+
+````{py:method} LeftButtonPressEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.LeftButtonPressEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.LeftButtonPressEvent
+```
+
+````
+
+````{py:method} LeftButtonReleaseEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.LeftButtonReleaseEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.LeftButtonReleaseEvent
+```
+
+````
+
+````{py:method} MiddleButtonPressEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MiddleButtonPressEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MiddleButtonPressEvent
+```
+
+````
+
+````{py:method} MiddleButtonReleaseEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MiddleButtonReleaseEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MiddleButtonReleaseEvent
+```
+
+````
+
+````{py:method} RightButtonPressEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.RightButtonPressEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.RightButtonPressEvent
+```
+
+````
+
+````{py:method} RightButtonReleaseEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.RightButtonReleaseEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.RightButtonReleaseEvent
+```
+
+````
+
+````{py:method} MouseWheelEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseWheelEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseWheelEvent
+```
+
+````
+
+````{py:method} MouseWheelForwardEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseWheelForwardEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseWheelForwardEvent
+```
+
+````
+
+````{py:method} MouseWheelBackwardEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseWheelBackwardEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.MouseWheelBackwardEvent
+```
+
+````
+
+````{py:method} KeyPressEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.KeyPressEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.KeyPressEvent
+```
+
+````
+
+````{py:method} KeyReleaseEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.KeyReleaseEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.KeyReleaseEvent
+```
+
+````
+
+````{py:method} ConfigureEvent(event)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.ConfigureEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.ConfigureEvent
+```
+
+````
+
+````{py:method} EnterEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.EnterEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.EnterEvent
+```
+
+````
+
+````{py:method} LeaveEvent(event, ctrl, shift)
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.LeaveEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.LeaveEvent
+```
+
+````
+
+````{py:method} ExposeEvent()
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.ExposeEvent
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.ExposeEvent
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.GetRenderWindow
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.Render
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkTkRenderWindowInteractor.Render
+```
+
+````
+
+`````
+
+````{py:function} vtkRenderWindowInteractorConeExample()
+:canonical: vtkmodules.tk.vtkTkRenderWindowInteractor.vtkRenderWindowInteractorConeExample
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWindowInteractor.vtkRenderWindowInteractorConeExample
+```
+````

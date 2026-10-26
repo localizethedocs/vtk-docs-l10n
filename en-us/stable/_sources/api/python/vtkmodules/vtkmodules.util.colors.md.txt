@@ -1,0 +1,2694 @@
+# {py:mod}`vtkmodules.util.colors`
+
+```{py:module} vtkmodules.util.colors
+```
+
+```{autodoc2-docstring} vtkmodules.util.colors
+:allowtitles:
+```
+
+## Module Contents
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`antique_white <vtkmodules.util.colors.antique_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.antique_white
+    :summary:
+    ```
+* - {py:obj}`azure <vtkmodules.util.colors.azure>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.azure
+    :summary:
+    ```
+* - {py:obj}`bisque <vtkmodules.util.colors.bisque>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.bisque
+    :summary:
+    ```
+* - {py:obj}`blanched_almond <vtkmodules.util.colors.blanched_almond>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.blanched_almond
+    :summary:
+    ```
+* - {py:obj}`cornsilk <vtkmodules.util.colors.cornsilk>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cornsilk
+    :summary:
+    ```
+* - {py:obj}`eggshell <vtkmodules.util.colors.eggshell>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.eggshell
+    :summary:
+    ```
+* - {py:obj}`floral_white <vtkmodules.util.colors.floral_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.floral_white
+    :summary:
+    ```
+* - {py:obj}`gainsboro <vtkmodules.util.colors.gainsboro>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.gainsboro
+    :summary:
+    ```
+* - {py:obj}`ghost_white <vtkmodules.util.colors.ghost_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.ghost_white
+    :summary:
+    ```
+* - {py:obj}`honeydew <vtkmodules.util.colors.honeydew>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.honeydew
+    :summary:
+    ```
+* - {py:obj}`ivory <vtkmodules.util.colors.ivory>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.ivory
+    :summary:
+    ```
+* - {py:obj}`lavender <vtkmodules.util.colors.lavender>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.lavender
+    :summary:
+    ```
+* - {py:obj}`lavender_blush <vtkmodules.util.colors.lavender_blush>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.lavender_blush
+    :summary:
+    ```
+* - {py:obj}`lemon_chiffon <vtkmodules.util.colors.lemon_chiffon>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.lemon_chiffon
+    :summary:
+    ```
+* - {py:obj}`linen <vtkmodules.util.colors.linen>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.linen
+    :summary:
+    ```
+* - {py:obj}`mint_cream <vtkmodules.util.colors.mint_cream>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.mint_cream
+    :summary:
+    ```
+* - {py:obj}`misty_rose <vtkmodules.util.colors.misty_rose>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.misty_rose
+    :summary:
+    ```
+* - {py:obj}`moccasin <vtkmodules.util.colors.moccasin>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.moccasin
+    :summary:
+    ```
+* - {py:obj}`navajo_white <vtkmodules.util.colors.navajo_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.navajo_white
+    :summary:
+    ```
+* - {py:obj}`old_lace <vtkmodules.util.colors.old_lace>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.old_lace
+    :summary:
+    ```
+* - {py:obj}`papaya_whip <vtkmodules.util.colors.papaya_whip>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.papaya_whip
+    :summary:
+    ```
+* - {py:obj}`peach_puff <vtkmodules.util.colors.peach_puff>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.peach_puff
+    :summary:
+    ```
+* - {py:obj}`seashell <vtkmodules.util.colors.seashell>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.seashell
+    :summary:
+    ```
+* - {py:obj}`snow <vtkmodules.util.colors.snow>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.snow
+    :summary:
+    ```
+* - {py:obj}`thistle <vtkmodules.util.colors.thistle>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.thistle
+    :summary:
+    ```
+* - {py:obj}`titanium_white <vtkmodules.util.colors.titanium_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.titanium_white
+    :summary:
+    ```
+* - {py:obj}`wheat <vtkmodules.util.colors.wheat>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.wheat
+    :summary:
+    ```
+* - {py:obj}`white <vtkmodules.util.colors.white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.white
+    :summary:
+    ```
+* - {py:obj}`white_smoke <vtkmodules.util.colors.white_smoke>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.white_smoke
+    :summary:
+    ```
+* - {py:obj}`zinc_white <vtkmodules.util.colors.zinc_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.zinc_white
+    :summary:
+    ```
+* - {py:obj}`cold_grey <vtkmodules.util.colors.cold_grey>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cold_grey
+    :summary:
+    ```
+* - {py:obj}`dim_grey <vtkmodules.util.colors.dim_grey>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.dim_grey
+    :summary:
+    ```
+* - {py:obj}`grey <vtkmodules.util.colors.grey>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.grey
+    :summary:
+    ```
+* - {py:obj}`light_grey <vtkmodules.util.colors.light_grey>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.light_grey
+    :summary:
+    ```
+* - {py:obj}`slate_grey <vtkmodules.util.colors.slate_grey>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_grey
+    :summary:
+    ```
+* - {py:obj}`slate_grey_dark <vtkmodules.util.colors.slate_grey_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_grey_dark
+    :summary:
+    ```
+* - {py:obj}`slate_grey_light <vtkmodules.util.colors.slate_grey_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_grey_light
+    :summary:
+    ```
+* - {py:obj}`warm_grey <vtkmodules.util.colors.warm_grey>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.warm_grey
+    :summary:
+    ```
+* - {py:obj}`black <vtkmodules.util.colors.black>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.black
+    :summary:
+    ```
+* - {py:obj}`ivory_black <vtkmodules.util.colors.ivory_black>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.ivory_black
+    :summary:
+    ```
+* - {py:obj}`lamp_black <vtkmodules.util.colors.lamp_black>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.lamp_black
+    :summary:
+    ```
+* - {py:obj}`alizarin_crimson <vtkmodules.util.colors.alizarin_crimson>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.alizarin_crimson
+    :summary:
+    ```
+* - {py:obj}`brick <vtkmodules.util.colors.brick>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.brick
+    :summary:
+    ```
+* - {py:obj}`cadmium_red_deep <vtkmodules.util.colors.cadmium_red_deep>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadmium_red_deep
+    :summary:
+    ```
+* - {py:obj}`coral <vtkmodules.util.colors.coral>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.coral
+    :summary:
+    ```
+* - {py:obj}`coral_light <vtkmodules.util.colors.coral_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.coral_light
+    :summary:
+    ```
+* - {py:obj}`deep_pink <vtkmodules.util.colors.deep_pink>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.deep_pink
+    :summary:
+    ```
+* - {py:obj}`english_red <vtkmodules.util.colors.english_red>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.english_red
+    :summary:
+    ```
+* - {py:obj}`firebrick <vtkmodules.util.colors.firebrick>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.firebrick
+    :summary:
+    ```
+* - {py:obj}`geranium_lake <vtkmodules.util.colors.geranium_lake>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.geranium_lake
+    :summary:
+    ```
+* - {py:obj}`hot_pink <vtkmodules.util.colors.hot_pink>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.hot_pink
+    :summary:
+    ```
+* - {py:obj}`indian_red <vtkmodules.util.colors.indian_red>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.indian_red
+    :summary:
+    ```
+* - {py:obj}`light_salmon <vtkmodules.util.colors.light_salmon>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.light_salmon
+    :summary:
+    ```
+* - {py:obj}`madder_lake_deep <vtkmodules.util.colors.madder_lake_deep>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.madder_lake_deep
+    :summary:
+    ```
+* - {py:obj}`maroon <vtkmodules.util.colors.maroon>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.maroon
+    :summary:
+    ```
+* - {py:obj}`pink <vtkmodules.util.colors.pink>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.pink
+    :summary:
+    ```
+* - {py:obj}`pink_light <vtkmodules.util.colors.pink_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.pink_light
+    :summary:
+    ```
+* - {py:obj}`raspberry <vtkmodules.util.colors.raspberry>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.raspberry
+    :summary:
+    ```
+* - {py:obj}`red <vtkmodules.util.colors.red>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.red
+    :summary:
+    ```
+* - {py:obj}`rose_madder <vtkmodules.util.colors.rose_madder>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.rose_madder
+    :summary:
+    ```
+* - {py:obj}`salmon <vtkmodules.util.colors.salmon>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.salmon
+    :summary:
+    ```
+* - {py:obj}`tomato <vtkmodules.util.colors.tomato>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.tomato
+    :summary:
+    ```
+* - {py:obj}`venetian_red <vtkmodules.util.colors.venetian_red>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.venetian_red
+    :summary:
+    ```
+* - {py:obj}`beige <vtkmodules.util.colors.beige>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.beige
+    :summary:
+    ```
+* - {py:obj}`brown <vtkmodules.util.colors.brown>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.brown
+    :summary:
+    ```
+* - {py:obj}`brown_madder <vtkmodules.util.colors.brown_madder>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.brown_madder
+    :summary:
+    ```
+* - {py:obj}`brown_ochre <vtkmodules.util.colors.brown_ochre>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.brown_ochre
+    :summary:
+    ```
+* - {py:obj}`burlywood <vtkmodules.util.colors.burlywood>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.burlywood
+    :summary:
+    ```
+* - {py:obj}`burnt_sienna <vtkmodules.util.colors.burnt_sienna>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.burnt_sienna
+    :summary:
+    ```
+* - {py:obj}`burnt_umber <vtkmodules.util.colors.burnt_umber>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.burnt_umber
+    :summary:
+    ```
+* - {py:obj}`chocolate <vtkmodules.util.colors.chocolate>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.chocolate
+    :summary:
+    ```
+* - {py:obj}`deep_ochre <vtkmodules.util.colors.deep_ochre>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.deep_ochre
+    :summary:
+    ```
+* - {py:obj}`flesh <vtkmodules.util.colors.flesh>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.flesh
+    :summary:
+    ```
+* - {py:obj}`flesh_ochre <vtkmodules.util.colors.flesh_ochre>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.flesh_ochre
+    :summary:
+    ```
+* - {py:obj}`gold_ochre <vtkmodules.util.colors.gold_ochre>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.gold_ochre
+    :summary:
+    ```
+* - {py:obj}`greenish_umber <vtkmodules.util.colors.greenish_umber>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.greenish_umber
+    :summary:
+    ```
+* - {py:obj}`khaki <vtkmodules.util.colors.khaki>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.khaki
+    :summary:
+    ```
+* - {py:obj}`khaki_dark <vtkmodules.util.colors.khaki_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.khaki_dark
+    :summary:
+    ```
+* - {py:obj}`light_beige <vtkmodules.util.colors.light_beige>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.light_beige
+    :summary:
+    ```
+* - {py:obj}`peru <vtkmodules.util.colors.peru>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.peru
+    :summary:
+    ```
+* - {py:obj}`rosy_brown <vtkmodules.util.colors.rosy_brown>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.rosy_brown
+    :summary:
+    ```
+* - {py:obj}`raw_sienna <vtkmodules.util.colors.raw_sienna>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.raw_sienna
+    :summary:
+    ```
+* - {py:obj}`raw_umber <vtkmodules.util.colors.raw_umber>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.raw_umber
+    :summary:
+    ```
+* - {py:obj}`sepia <vtkmodules.util.colors.sepia>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sepia
+    :summary:
+    ```
+* - {py:obj}`sienna <vtkmodules.util.colors.sienna>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sienna
+    :summary:
+    ```
+* - {py:obj}`saddle_brown <vtkmodules.util.colors.saddle_brown>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.saddle_brown
+    :summary:
+    ```
+* - {py:obj}`sandy_brown <vtkmodules.util.colors.sandy_brown>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sandy_brown
+    :summary:
+    ```
+* - {py:obj}`tan <vtkmodules.util.colors.tan>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.tan
+    :summary:
+    ```
+* - {py:obj}`van_dyke_brown <vtkmodules.util.colors.van_dyke_brown>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.van_dyke_brown
+    :summary:
+    ```
+* - {py:obj}`cadmium_orange <vtkmodules.util.colors.cadmium_orange>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadmium_orange
+    :summary:
+    ```
+* - {py:obj}`cadmium_red_light <vtkmodules.util.colors.cadmium_red_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadmium_red_light
+    :summary:
+    ```
+* - {py:obj}`carrot <vtkmodules.util.colors.carrot>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.carrot
+    :summary:
+    ```
+* - {py:obj}`dark_orange <vtkmodules.util.colors.dark_orange>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.dark_orange
+    :summary:
+    ```
+* - {py:obj}`mars_orange <vtkmodules.util.colors.mars_orange>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.mars_orange
+    :summary:
+    ```
+* - {py:obj}`mars_yellow <vtkmodules.util.colors.mars_yellow>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.mars_yellow
+    :summary:
+    ```
+* - {py:obj}`orange <vtkmodules.util.colors.orange>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.orange
+    :summary:
+    ```
+* - {py:obj}`orange_red <vtkmodules.util.colors.orange_red>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.orange_red
+    :summary:
+    ```
+* - {py:obj}`yellow_ochre <vtkmodules.util.colors.yellow_ochre>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.yellow_ochre
+    :summary:
+    ```
+* - {py:obj}`aureoline_yellow <vtkmodules.util.colors.aureoline_yellow>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.aureoline_yellow
+    :summary:
+    ```
+* - {py:obj}`banana <vtkmodules.util.colors.banana>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.banana
+    :summary:
+    ```
+* - {py:obj}`cadmium_lemon <vtkmodules.util.colors.cadmium_lemon>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadmium_lemon
+    :summary:
+    ```
+* - {py:obj}`cadmium_yellow <vtkmodules.util.colors.cadmium_yellow>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadmium_yellow
+    :summary:
+    ```
+* - {py:obj}`cadmium_yellow_light <vtkmodules.util.colors.cadmium_yellow_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadmium_yellow_light
+    :summary:
+    ```
+* - {py:obj}`gold <vtkmodules.util.colors.gold>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.gold
+    :summary:
+    ```
+* - {py:obj}`goldenrod <vtkmodules.util.colors.goldenrod>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.goldenrod
+    :summary:
+    ```
+* - {py:obj}`goldenrod_dark <vtkmodules.util.colors.goldenrod_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.goldenrod_dark
+    :summary:
+    ```
+* - {py:obj}`goldenrod_light <vtkmodules.util.colors.goldenrod_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.goldenrod_light
+    :summary:
+    ```
+* - {py:obj}`goldenrod_pale <vtkmodules.util.colors.goldenrod_pale>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.goldenrod_pale
+    :summary:
+    ```
+* - {py:obj}`light_goldenrod <vtkmodules.util.colors.light_goldenrod>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.light_goldenrod
+    :summary:
+    ```
+* - {py:obj}`melon <vtkmodules.util.colors.melon>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.melon
+    :summary:
+    ```
+* - {py:obj}`naples_yellow_deep <vtkmodules.util.colors.naples_yellow_deep>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.naples_yellow_deep
+    :summary:
+    ```
+* - {py:obj}`yellow <vtkmodules.util.colors.yellow>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.yellow
+    :summary:
+    ```
+* - {py:obj}`yellow_light <vtkmodules.util.colors.yellow_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.yellow_light
+    :summary:
+    ```
+* - {py:obj}`chartreuse <vtkmodules.util.colors.chartreuse>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.chartreuse
+    :summary:
+    ```
+* - {py:obj}`chrome_oxide_green <vtkmodules.util.colors.chrome_oxide_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.chrome_oxide_green
+    :summary:
+    ```
+* - {py:obj}`cinnabar_green <vtkmodules.util.colors.cinnabar_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cinnabar_green
+    :summary:
+    ```
+* - {py:obj}`cobalt_green <vtkmodules.util.colors.cobalt_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cobalt_green
+    :summary:
+    ```
+* - {py:obj}`emerald_green <vtkmodules.util.colors.emerald_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.emerald_green
+    :summary:
+    ```
+* - {py:obj}`forest_green <vtkmodules.util.colors.forest_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.forest_green
+    :summary:
+    ```
+* - {py:obj}`green <vtkmodules.util.colors.green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.green
+    :summary:
+    ```
+* - {py:obj}`green_dark <vtkmodules.util.colors.green_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.green_dark
+    :summary:
+    ```
+* - {py:obj}`green_pale <vtkmodules.util.colors.green_pale>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.green_pale
+    :summary:
+    ```
+* - {py:obj}`green_yellow <vtkmodules.util.colors.green_yellow>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.green_yellow
+    :summary:
+    ```
+* - {py:obj}`lawn_green <vtkmodules.util.colors.lawn_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.lawn_green
+    :summary:
+    ```
+* - {py:obj}`lime_green <vtkmodules.util.colors.lime_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.lime_green
+    :summary:
+    ```
+* - {py:obj}`mint <vtkmodules.util.colors.mint>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.mint
+    :summary:
+    ```
+* - {py:obj}`olive <vtkmodules.util.colors.olive>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.olive
+    :summary:
+    ```
+* - {py:obj}`olive_drab <vtkmodules.util.colors.olive_drab>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.olive_drab
+    :summary:
+    ```
+* - {py:obj}`olive_green_dark <vtkmodules.util.colors.olive_green_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.olive_green_dark
+    :summary:
+    ```
+* - {py:obj}`permanent_green <vtkmodules.util.colors.permanent_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.permanent_green
+    :summary:
+    ```
+* - {py:obj}`sap_green <vtkmodules.util.colors.sap_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sap_green
+    :summary:
+    ```
+* - {py:obj}`sea_green <vtkmodules.util.colors.sea_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sea_green
+    :summary:
+    ```
+* - {py:obj}`sea_green_dark <vtkmodules.util.colors.sea_green_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sea_green_dark
+    :summary:
+    ```
+* - {py:obj}`sea_green_medium <vtkmodules.util.colors.sea_green_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sea_green_medium
+    :summary:
+    ```
+* - {py:obj}`sea_green_light <vtkmodules.util.colors.sea_green_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sea_green_light
+    :summary:
+    ```
+* - {py:obj}`spring_green <vtkmodules.util.colors.spring_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.spring_green
+    :summary:
+    ```
+* - {py:obj}`spring_green_medium <vtkmodules.util.colors.spring_green_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.spring_green_medium
+    :summary:
+    ```
+* - {py:obj}`terre_verte <vtkmodules.util.colors.terre_verte>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.terre_verte
+    :summary:
+    ```
+* - {py:obj}`viridian_light <vtkmodules.util.colors.viridian_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.viridian_light
+    :summary:
+    ```
+* - {py:obj}`yellow_green <vtkmodules.util.colors.yellow_green>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.yellow_green
+    :summary:
+    ```
+* - {py:obj}`aquamarine <vtkmodules.util.colors.aquamarine>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.aquamarine
+    :summary:
+    ```
+* - {py:obj}`aquamarine_medium <vtkmodules.util.colors.aquamarine_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.aquamarine_medium
+    :summary:
+    ```
+* - {py:obj}`cyan <vtkmodules.util.colors.cyan>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cyan
+    :summary:
+    ```
+* - {py:obj}`cyan_white <vtkmodules.util.colors.cyan_white>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cyan_white
+    :summary:
+    ```
+* - {py:obj}`turquoise <vtkmodules.util.colors.turquoise>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.turquoise
+    :summary:
+    ```
+* - {py:obj}`turquoise_dark <vtkmodules.util.colors.turquoise_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.turquoise_dark
+    :summary:
+    ```
+* - {py:obj}`turquoise_medium <vtkmodules.util.colors.turquoise_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.turquoise_medium
+    :summary:
+    ```
+* - {py:obj}`turquoise_pale <vtkmodules.util.colors.turquoise_pale>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.turquoise_pale
+    :summary:
+    ```
+* - {py:obj}`alice_blue <vtkmodules.util.colors.alice_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.alice_blue
+    :summary:
+    ```
+* - {py:obj}`blue <vtkmodules.util.colors.blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.blue
+    :summary:
+    ```
+* - {py:obj}`blue_light <vtkmodules.util.colors.blue_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.blue_light
+    :summary:
+    ```
+* - {py:obj}`blue_medium <vtkmodules.util.colors.blue_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.blue_medium
+    :summary:
+    ```
+* - {py:obj}`cadet <vtkmodules.util.colors.cadet>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cadet
+    :summary:
+    ```
+* - {py:obj}`cobalt <vtkmodules.util.colors.cobalt>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cobalt
+    :summary:
+    ```
+* - {py:obj}`cornflower <vtkmodules.util.colors.cornflower>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cornflower
+    :summary:
+    ```
+* - {py:obj}`cerulean <vtkmodules.util.colors.cerulean>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cerulean
+    :summary:
+    ```
+* - {py:obj}`dodger_blue <vtkmodules.util.colors.dodger_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.dodger_blue
+    :summary:
+    ```
+* - {py:obj}`indigo <vtkmodules.util.colors.indigo>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.indigo
+    :summary:
+    ```
+* - {py:obj}`manganese_blue <vtkmodules.util.colors.manganese_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.manganese_blue
+    :summary:
+    ```
+* - {py:obj}`midnight_blue <vtkmodules.util.colors.midnight_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.midnight_blue
+    :summary:
+    ```
+* - {py:obj}`navy <vtkmodules.util.colors.navy>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.navy
+    :summary:
+    ```
+* - {py:obj}`peacock <vtkmodules.util.colors.peacock>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.peacock
+    :summary:
+    ```
+* - {py:obj}`powder_blue <vtkmodules.util.colors.powder_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.powder_blue
+    :summary:
+    ```
+* - {py:obj}`royal_blue <vtkmodules.util.colors.royal_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.royal_blue
+    :summary:
+    ```
+* - {py:obj}`slate_blue <vtkmodules.util.colors.slate_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_blue
+    :summary:
+    ```
+* - {py:obj}`slate_blue_dark <vtkmodules.util.colors.slate_blue_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_blue_dark
+    :summary:
+    ```
+* - {py:obj}`slate_blue_light <vtkmodules.util.colors.slate_blue_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_blue_light
+    :summary:
+    ```
+* - {py:obj}`slate_blue_medium <vtkmodules.util.colors.slate_blue_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.slate_blue_medium
+    :summary:
+    ```
+* - {py:obj}`sky_blue <vtkmodules.util.colors.sky_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sky_blue
+    :summary:
+    ```
+* - {py:obj}`sky_blue_deep <vtkmodules.util.colors.sky_blue_deep>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sky_blue_deep
+    :summary:
+    ```
+* - {py:obj}`sky_blue_light <vtkmodules.util.colors.sky_blue_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.sky_blue_light
+    :summary:
+    ```
+* - {py:obj}`steel_blue <vtkmodules.util.colors.steel_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.steel_blue
+    :summary:
+    ```
+* - {py:obj}`steel_blue_light <vtkmodules.util.colors.steel_blue_light>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.steel_blue_light
+    :summary:
+    ```
+* - {py:obj}`turquoise_blue <vtkmodules.util.colors.turquoise_blue>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.turquoise_blue
+    :summary:
+    ```
+* - {py:obj}`ultramarine <vtkmodules.util.colors.ultramarine>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.ultramarine
+    :summary:
+    ```
+* - {py:obj}`blue_violet <vtkmodules.util.colors.blue_violet>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.blue_violet
+    :summary:
+    ```
+* - {py:obj}`cobalt_violet_deep <vtkmodules.util.colors.cobalt_violet_deep>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.cobalt_violet_deep
+    :summary:
+    ```
+* - {py:obj}`magenta <vtkmodules.util.colors.magenta>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.magenta
+    :summary:
+    ```
+* - {py:obj}`orchid <vtkmodules.util.colors.orchid>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.orchid
+    :summary:
+    ```
+* - {py:obj}`orchid_dark <vtkmodules.util.colors.orchid_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.orchid_dark
+    :summary:
+    ```
+* - {py:obj}`orchid_medium <vtkmodules.util.colors.orchid_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.orchid_medium
+    :summary:
+    ```
+* - {py:obj}`permanent_red_violet <vtkmodules.util.colors.permanent_red_violet>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.permanent_red_violet
+    :summary:
+    ```
+* - {py:obj}`plum <vtkmodules.util.colors.plum>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.plum
+    :summary:
+    ```
+* - {py:obj}`purple <vtkmodules.util.colors.purple>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.purple
+    :summary:
+    ```
+* - {py:obj}`purple_medium <vtkmodules.util.colors.purple_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.purple_medium
+    :summary:
+    ```
+* - {py:obj}`ultramarine_violet <vtkmodules.util.colors.ultramarine_violet>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.ultramarine_violet
+    :summary:
+    ```
+* - {py:obj}`violet <vtkmodules.util.colors.violet>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.violet
+    :summary:
+    ```
+* - {py:obj}`violet_dark <vtkmodules.util.colors.violet_dark>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.violet_dark
+    :summary:
+    ```
+* - {py:obj}`violet_red <vtkmodules.util.colors.violet_red>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.violet_red
+    :summary:
+    ```
+* - {py:obj}`violet_red_medium <vtkmodules.util.colors.violet_red_medium>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.violet_red_medium
+    :summary:
+    ```
+* - {py:obj}`violet_red_pale <vtkmodules.util.colors.violet_red_pale>`
+  - ```{autodoc2-docstring} vtkmodules.util.colors.violet_red_pale
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} antique_white
+:canonical: vtkmodules.util.colors.antique_white
+:value: >
+   (0.9804, 0.9216, 0.8431)
+
+```{autodoc2-docstring} vtkmodules.util.colors.antique_white
+```
+
+````
+
+````{py:data} azure
+:canonical: vtkmodules.util.colors.azure
+:value: >
+   (0.9412, 1.0, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.azure
+```
+
+````
+
+````{py:data} bisque
+:canonical: vtkmodules.util.colors.bisque
+:value: >
+   (1.0, 0.8941, 0.7686)
+
+```{autodoc2-docstring} vtkmodules.util.colors.bisque
+```
+
+````
+
+````{py:data} blanched_almond
+:canonical: vtkmodules.util.colors.blanched_almond
+:value: >
+   (1.0, 0.9216, 0.8039)
+
+```{autodoc2-docstring} vtkmodules.util.colors.blanched_almond
+```
+
+````
+
+````{py:data} cornsilk
+:canonical: vtkmodules.util.colors.cornsilk
+:value: >
+   (1.0, 0.9725, 0.8627)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cornsilk
+```
+
+````
+
+````{py:data} eggshell
+:canonical: vtkmodules.util.colors.eggshell
+:value: >
+   (0.99, 0.9, 0.79)
+
+```{autodoc2-docstring} vtkmodules.util.colors.eggshell
+```
+
+````
+
+````{py:data} floral_white
+:canonical: vtkmodules.util.colors.floral_white
+:value: >
+   (1.0, 0.9804, 0.9412)
+
+```{autodoc2-docstring} vtkmodules.util.colors.floral_white
+```
+
+````
+
+````{py:data} gainsboro
+:canonical: vtkmodules.util.colors.gainsboro
+:value: >
+   (0.8627, 0.8627, 0.8627)
+
+```{autodoc2-docstring} vtkmodules.util.colors.gainsboro
+```
+
+````
+
+````{py:data} ghost_white
+:canonical: vtkmodules.util.colors.ghost_white
+:value: >
+   (0.9725, 0.9725, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.ghost_white
+```
+
+````
+
+````{py:data} honeydew
+:canonical: vtkmodules.util.colors.honeydew
+:value: >
+   (0.9412, 1.0, 0.9412)
+
+```{autodoc2-docstring} vtkmodules.util.colors.honeydew
+```
+
+````
+
+````{py:data} ivory
+:canonical: vtkmodules.util.colors.ivory
+:value: >
+   (1.0, 1.0, 0.9412)
+
+```{autodoc2-docstring} vtkmodules.util.colors.ivory
+```
+
+````
+
+````{py:data} lavender
+:canonical: vtkmodules.util.colors.lavender
+:value: >
+   (0.902, 0.902, 0.9804)
+
+```{autodoc2-docstring} vtkmodules.util.colors.lavender
+```
+
+````
+
+````{py:data} lavender_blush
+:canonical: vtkmodules.util.colors.lavender_blush
+:value: >
+   (1.0, 0.9412, 0.9608)
+
+```{autodoc2-docstring} vtkmodules.util.colors.lavender_blush
+```
+
+````
+
+````{py:data} lemon_chiffon
+:canonical: vtkmodules.util.colors.lemon_chiffon
+:value: >
+   (1.0, 0.9804, 0.8039)
+
+```{autodoc2-docstring} vtkmodules.util.colors.lemon_chiffon
+```
+
+````
+
+````{py:data} linen
+:canonical: vtkmodules.util.colors.linen
+:value: >
+   (0.9804, 0.9412, 0.902)
+
+```{autodoc2-docstring} vtkmodules.util.colors.linen
+```
+
+````
+
+````{py:data} mint_cream
+:canonical: vtkmodules.util.colors.mint_cream
+:value: >
+   (0.9608, 1.0, 0.9804)
+
+```{autodoc2-docstring} vtkmodules.util.colors.mint_cream
+```
+
+````
+
+````{py:data} misty_rose
+:canonical: vtkmodules.util.colors.misty_rose
+:value: >
+   (1.0, 0.8941, 0.8824)
+
+```{autodoc2-docstring} vtkmodules.util.colors.misty_rose
+```
+
+````
+
+````{py:data} moccasin
+:canonical: vtkmodules.util.colors.moccasin
+:value: >
+   (1.0, 0.8941, 0.7098)
+
+```{autodoc2-docstring} vtkmodules.util.colors.moccasin
+```
+
+````
+
+````{py:data} navajo_white
+:canonical: vtkmodules.util.colors.navajo_white
+:value: >
+   (1.0, 0.8706, 0.6784)
+
+```{autodoc2-docstring} vtkmodules.util.colors.navajo_white
+```
+
+````
+
+````{py:data} old_lace
+:canonical: vtkmodules.util.colors.old_lace
+:value: >
+   (0.9922, 0.9608, 0.902)
+
+```{autodoc2-docstring} vtkmodules.util.colors.old_lace
+```
+
+````
+
+````{py:data} papaya_whip
+:canonical: vtkmodules.util.colors.papaya_whip
+:value: >
+   (1.0, 0.9373, 0.8353)
+
+```{autodoc2-docstring} vtkmodules.util.colors.papaya_whip
+```
+
+````
+
+````{py:data} peach_puff
+:canonical: vtkmodules.util.colors.peach_puff
+:value: >
+   (1.0, 0.8549, 0.7255)
+
+```{autodoc2-docstring} vtkmodules.util.colors.peach_puff
+```
+
+````
+
+````{py:data} seashell
+:canonical: vtkmodules.util.colors.seashell
+:value: >
+   (1.0, 0.9608, 0.9333)
+
+```{autodoc2-docstring} vtkmodules.util.colors.seashell
+```
+
+````
+
+````{py:data} snow
+:canonical: vtkmodules.util.colors.snow
+:value: >
+   (1.0, 0.9804, 0.9804)
+
+```{autodoc2-docstring} vtkmodules.util.colors.snow
+```
+
+````
+
+````{py:data} thistle
+:canonical: vtkmodules.util.colors.thistle
+:value: >
+   (0.8471, 0.749, 0.8471)
+
+```{autodoc2-docstring} vtkmodules.util.colors.thistle
+```
+
+````
+
+````{py:data} titanium_white
+:canonical: vtkmodules.util.colors.titanium_white
+:value: >
+   (0.99, 1.0, 0.94)
+
+```{autodoc2-docstring} vtkmodules.util.colors.titanium_white
+```
+
+````
+
+````{py:data} wheat
+:canonical: vtkmodules.util.colors.wheat
+:value: >
+   (0.9608, 0.8706, 0.702)
+
+```{autodoc2-docstring} vtkmodules.util.colors.wheat
+```
+
+````
+
+````{py:data} white
+:canonical: vtkmodules.util.colors.white
+:value: >
+   (1.0, 1.0, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.white
+```
+
+````
+
+````{py:data} white_smoke
+:canonical: vtkmodules.util.colors.white_smoke
+:value: >
+   (0.9608, 0.9608, 0.9608)
+
+```{autodoc2-docstring} vtkmodules.util.colors.white_smoke
+```
+
+````
+
+````{py:data} zinc_white
+:canonical: vtkmodules.util.colors.zinc_white
+:value: >
+   (0.99, 0.97, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.zinc_white
+```
+
+````
+
+````{py:data} cold_grey
+:canonical: vtkmodules.util.colors.cold_grey
+:value: >
+   (0.5, 0.54, 0.53)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cold_grey
+```
+
+````
+
+````{py:data} dim_grey
+:canonical: vtkmodules.util.colors.dim_grey
+:value: >
+   (0.4118, 0.4118, 0.4118)
+
+```{autodoc2-docstring} vtkmodules.util.colors.dim_grey
+```
+
+````
+
+````{py:data} grey
+:canonical: vtkmodules.util.colors.grey
+:value: >
+   (0.7529, 0.7529, 0.7529)
+
+```{autodoc2-docstring} vtkmodules.util.colors.grey
+```
+
+````
+
+````{py:data} light_grey
+:canonical: vtkmodules.util.colors.light_grey
+:value: >
+   (0.8275, 0.8275, 0.8275)
+
+```{autodoc2-docstring} vtkmodules.util.colors.light_grey
+```
+
+````
+
+````{py:data} slate_grey
+:canonical: vtkmodules.util.colors.slate_grey
+:value: >
+   (0.4392, 0.502, 0.5647)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_grey
+```
+
+````
+
+````{py:data} slate_grey_dark
+:canonical: vtkmodules.util.colors.slate_grey_dark
+:value: >
+   (0.1843, 0.3098, 0.3098)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_grey_dark
+```
+
+````
+
+````{py:data} slate_grey_light
+:canonical: vtkmodules.util.colors.slate_grey_light
+:value: >
+   (0.4667, 0.5333, 0.6)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_grey_light
+```
+
+````
+
+````{py:data} warm_grey
+:canonical: vtkmodules.util.colors.warm_grey
+:value: >
+   (0.5, 0.5, 0.41)
+
+```{autodoc2-docstring} vtkmodules.util.colors.warm_grey
+```
+
+````
+
+````{py:data} black
+:canonical: vtkmodules.util.colors.black
+:value: >
+   (0.0, 0.0, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.black
+```
+
+````
+
+````{py:data} ivory_black
+:canonical: vtkmodules.util.colors.ivory_black
+:value: >
+   (0.16, 0.14, 0.13)
+
+```{autodoc2-docstring} vtkmodules.util.colors.ivory_black
+```
+
+````
+
+````{py:data} lamp_black
+:canonical: vtkmodules.util.colors.lamp_black
+:value: >
+   (0.18, 0.28, 0.23)
+
+```{autodoc2-docstring} vtkmodules.util.colors.lamp_black
+```
+
+````
+
+````{py:data} alizarin_crimson
+:canonical: vtkmodules.util.colors.alizarin_crimson
+:value: >
+   (0.89, 0.15, 0.21)
+
+```{autodoc2-docstring} vtkmodules.util.colors.alizarin_crimson
+```
+
+````
+
+````{py:data} brick
+:canonical: vtkmodules.util.colors.brick
+:value: >
+   (0.61, 0.4, 0.12)
+
+```{autodoc2-docstring} vtkmodules.util.colors.brick
+```
+
+````
+
+````{py:data} cadmium_red_deep
+:canonical: vtkmodules.util.colors.cadmium_red_deep
+:value: >
+   (0.89, 0.09, 0.05)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadmium_red_deep
+```
+
+````
+
+````{py:data} coral
+:canonical: vtkmodules.util.colors.coral
+:value: >
+   (1.0, 0.498, 0.3137)
+
+```{autodoc2-docstring} vtkmodules.util.colors.coral
+```
+
+````
+
+````{py:data} coral_light
+:canonical: vtkmodules.util.colors.coral_light
+:value: >
+   (0.9412, 0.502, 0.502)
+
+```{autodoc2-docstring} vtkmodules.util.colors.coral_light
+```
+
+````
+
+````{py:data} deep_pink
+:canonical: vtkmodules.util.colors.deep_pink
+:value: >
+   (1.0, 0.0784, 0.5765)
+
+```{autodoc2-docstring} vtkmodules.util.colors.deep_pink
+```
+
+````
+
+````{py:data} english_red
+:canonical: vtkmodules.util.colors.english_red
+:value: >
+   (0.83, 0.24, 0.1)
+
+```{autodoc2-docstring} vtkmodules.util.colors.english_red
+```
+
+````
+
+````{py:data} firebrick
+:canonical: vtkmodules.util.colors.firebrick
+:value: >
+   (0.698, 0.1333, 0.1333)
+
+```{autodoc2-docstring} vtkmodules.util.colors.firebrick
+```
+
+````
+
+````{py:data} geranium_lake
+:canonical: vtkmodules.util.colors.geranium_lake
+:value: >
+   (0.89, 0.07, 0.19)
+
+```{autodoc2-docstring} vtkmodules.util.colors.geranium_lake
+```
+
+````
+
+````{py:data} hot_pink
+:canonical: vtkmodules.util.colors.hot_pink
+:value: >
+   (1.0, 0.4118, 0.7059)
+
+```{autodoc2-docstring} vtkmodules.util.colors.hot_pink
+```
+
+````
+
+````{py:data} indian_red
+:canonical: vtkmodules.util.colors.indian_red
+:value: >
+   (0.69, 0.09, 0.12)
+
+```{autodoc2-docstring} vtkmodules.util.colors.indian_red
+```
+
+````
+
+````{py:data} light_salmon
+:canonical: vtkmodules.util.colors.light_salmon
+:value: >
+   (1.0, 0.6275, 0.4784)
+
+```{autodoc2-docstring} vtkmodules.util.colors.light_salmon
+```
+
+````
+
+````{py:data} madder_lake_deep
+:canonical: vtkmodules.util.colors.madder_lake_deep
+:value: >
+   (0.89, 0.18, 0.19)
+
+```{autodoc2-docstring} vtkmodules.util.colors.madder_lake_deep
+```
+
+````
+
+````{py:data} maroon
+:canonical: vtkmodules.util.colors.maroon
+:value: >
+   (0.6902, 0.1882, 0.3765)
+
+```{autodoc2-docstring} vtkmodules.util.colors.maroon
+```
+
+````
+
+````{py:data} pink
+:canonical: vtkmodules.util.colors.pink
+:value: >
+   (1.0, 0.7529, 0.7961)
+
+```{autodoc2-docstring} vtkmodules.util.colors.pink
+```
+
+````
+
+````{py:data} pink_light
+:canonical: vtkmodules.util.colors.pink_light
+:value: >
+   (1.0, 0.7137, 0.7569)
+
+```{autodoc2-docstring} vtkmodules.util.colors.pink_light
+```
+
+````
+
+````{py:data} raspberry
+:canonical: vtkmodules.util.colors.raspberry
+:value: >
+   (0.53, 0.15, 0.34)
+
+```{autodoc2-docstring} vtkmodules.util.colors.raspberry
+```
+
+````
+
+````{py:data} red
+:canonical: vtkmodules.util.colors.red
+:value: >
+   (1.0, 0.0, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.red
+```
+
+````
+
+````{py:data} rose_madder
+:canonical: vtkmodules.util.colors.rose_madder
+:value: >
+   (0.89, 0.21, 0.22)
+
+```{autodoc2-docstring} vtkmodules.util.colors.rose_madder
+```
+
+````
+
+````{py:data} salmon
+:canonical: vtkmodules.util.colors.salmon
+:value: >
+   (0.9804, 0.502, 0.4471)
+
+```{autodoc2-docstring} vtkmodules.util.colors.salmon
+```
+
+````
+
+````{py:data} tomato
+:canonical: vtkmodules.util.colors.tomato
+:value: >
+   (1.0, 0.3882, 0.2784)
+
+```{autodoc2-docstring} vtkmodules.util.colors.tomato
+```
+
+````
+
+````{py:data} venetian_red
+:canonical: vtkmodules.util.colors.venetian_red
+:value: >
+   (0.83, 0.1, 0.12)
+
+```{autodoc2-docstring} vtkmodules.util.colors.venetian_red
+```
+
+````
+
+````{py:data} beige
+:canonical: vtkmodules.util.colors.beige
+:value: >
+   (0.64, 0.58, 0.5)
+
+```{autodoc2-docstring} vtkmodules.util.colors.beige
+```
+
+````
+
+````{py:data} brown
+:canonical: vtkmodules.util.colors.brown
+:value: >
+   (0.5, 0.1647, 0.1647)
+
+```{autodoc2-docstring} vtkmodules.util.colors.brown
+```
+
+````
+
+````{py:data} brown_madder
+:canonical: vtkmodules.util.colors.brown_madder
+:value: >
+   (0.86, 0.16, 0.16)
+
+```{autodoc2-docstring} vtkmodules.util.colors.brown_madder
+```
+
+````
+
+````{py:data} brown_ochre
+:canonical: vtkmodules.util.colors.brown_ochre
+:value: >
+   (0.53, 0.26, 0.12)
+
+```{autodoc2-docstring} vtkmodules.util.colors.brown_ochre
+```
+
+````
+
+````{py:data} burlywood
+:canonical: vtkmodules.util.colors.burlywood
+:value: >
+   (0.8706, 0.7216, 0.5294)
+
+```{autodoc2-docstring} vtkmodules.util.colors.burlywood
+```
+
+````
+
+````{py:data} burnt_sienna
+:canonical: vtkmodules.util.colors.burnt_sienna
+:value: >
+   (0.54, 0.21, 0.06)
+
+```{autodoc2-docstring} vtkmodules.util.colors.burnt_sienna
+```
+
+````
+
+````{py:data} burnt_umber
+:canonical: vtkmodules.util.colors.burnt_umber
+:value: >
+   (0.54, 0.2, 0.14)
+
+```{autodoc2-docstring} vtkmodules.util.colors.burnt_umber
+```
+
+````
+
+````{py:data} chocolate
+:canonical: vtkmodules.util.colors.chocolate
+:value: >
+   (0.8235, 0.4118, 0.1176)
+
+```{autodoc2-docstring} vtkmodules.util.colors.chocolate
+```
+
+````
+
+````{py:data} deep_ochre
+:canonical: vtkmodules.util.colors.deep_ochre
+:value: >
+   (0.45, 0.24, 0.1)
+
+```{autodoc2-docstring} vtkmodules.util.colors.deep_ochre
+```
+
+````
+
+````{py:data} flesh
+:canonical: vtkmodules.util.colors.flesh
+:value: >
+   (1.0, 0.49, 0.25)
+
+```{autodoc2-docstring} vtkmodules.util.colors.flesh
+```
+
+````
+
+````{py:data} flesh_ochre
+:canonical: vtkmodules.util.colors.flesh_ochre
+:value: >
+   (1.0, 0.34, 0.13)
+
+```{autodoc2-docstring} vtkmodules.util.colors.flesh_ochre
+```
+
+````
+
+````{py:data} gold_ochre
+:canonical: vtkmodules.util.colors.gold_ochre
+:value: >
+   (0.78, 0.47, 0.15)
+
+```{autodoc2-docstring} vtkmodules.util.colors.gold_ochre
+```
+
+````
+
+````{py:data} greenish_umber
+:canonical: vtkmodules.util.colors.greenish_umber
+:value: >
+   (1.0, 0.24, 0.05)
+
+```{autodoc2-docstring} vtkmodules.util.colors.greenish_umber
+```
+
+````
+
+````{py:data} khaki
+:canonical: vtkmodules.util.colors.khaki
+:value: >
+   (0.9412, 0.902, 0.549)
+
+```{autodoc2-docstring} vtkmodules.util.colors.khaki
+```
+
+````
+
+````{py:data} khaki_dark
+:canonical: vtkmodules.util.colors.khaki_dark
+:value: >
+   (0.7412, 0.7176, 0.4196)
+
+```{autodoc2-docstring} vtkmodules.util.colors.khaki_dark
+```
+
+````
+
+````{py:data} light_beige
+:canonical: vtkmodules.util.colors.light_beige
+:value: >
+   (0.9608, 0.9608, 0.8627)
+
+```{autodoc2-docstring} vtkmodules.util.colors.light_beige
+```
+
+````
+
+````{py:data} peru
+:canonical: vtkmodules.util.colors.peru
+:value: >
+   (0.8039, 0.5216, 0.2471)
+
+```{autodoc2-docstring} vtkmodules.util.colors.peru
+```
+
+````
+
+````{py:data} rosy_brown
+:canonical: vtkmodules.util.colors.rosy_brown
+:value: >
+   (0.7373, 0.5608, 0.5608)
+
+```{autodoc2-docstring} vtkmodules.util.colors.rosy_brown
+```
+
+````
+
+````{py:data} raw_sienna
+:canonical: vtkmodules.util.colors.raw_sienna
+:value: >
+   (0.78, 0.38, 0.08)
+
+```{autodoc2-docstring} vtkmodules.util.colors.raw_sienna
+```
+
+````
+
+````{py:data} raw_umber
+:canonical: vtkmodules.util.colors.raw_umber
+:value: >
+   (0.45, 0.29, 0.07)
+
+```{autodoc2-docstring} vtkmodules.util.colors.raw_umber
+```
+
+````
+
+````{py:data} sepia
+:canonical: vtkmodules.util.colors.sepia
+:value: >
+   (0.37, 0.15, 0.07)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sepia
+```
+
+````
+
+````{py:data} sienna
+:canonical: vtkmodules.util.colors.sienna
+:value: >
+   (0.6275, 0.3216, 0.1765)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sienna
+```
+
+````
+
+````{py:data} saddle_brown
+:canonical: vtkmodules.util.colors.saddle_brown
+:value: >
+   (0.5451, 0.2706, 0.0745)
+
+```{autodoc2-docstring} vtkmodules.util.colors.saddle_brown
+```
+
+````
+
+````{py:data} sandy_brown
+:canonical: vtkmodules.util.colors.sandy_brown
+:value: >
+   (0.9569, 0.6431, 0.3765)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sandy_brown
+```
+
+````
+
+````{py:data} tan
+:canonical: vtkmodules.util.colors.tan
+:value: >
+   (0.8235, 0.7059, 0.549)
+
+```{autodoc2-docstring} vtkmodules.util.colors.tan
+```
+
+````
+
+````{py:data} van_dyke_brown
+:canonical: vtkmodules.util.colors.van_dyke_brown
+:value: >
+   (0.37, 0.15, 0.02)
+
+```{autodoc2-docstring} vtkmodules.util.colors.van_dyke_brown
+```
+
+````
+
+````{py:data} cadmium_orange
+:canonical: vtkmodules.util.colors.cadmium_orange
+:value: >
+   (1.0, 0.38, 0.01)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadmium_orange
+```
+
+````
+
+````{py:data} cadmium_red_light
+:canonical: vtkmodules.util.colors.cadmium_red_light
+:value: >
+   (1.0, 0.01, 0.05)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadmium_red_light
+```
+
+````
+
+````{py:data} carrot
+:canonical: vtkmodules.util.colors.carrot
+:value: >
+   (0.93, 0.57, 0.13)
+
+```{autodoc2-docstring} vtkmodules.util.colors.carrot
+```
+
+````
+
+````{py:data} dark_orange
+:canonical: vtkmodules.util.colors.dark_orange
+:value: >
+   (1.0, 0.549, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.dark_orange
+```
+
+````
+
+````{py:data} mars_orange
+:canonical: vtkmodules.util.colors.mars_orange
+:value: >
+   (0.59, 0.27, 0.08)
+
+```{autodoc2-docstring} vtkmodules.util.colors.mars_orange
+```
+
+````
+
+````{py:data} mars_yellow
+:canonical: vtkmodules.util.colors.mars_yellow
+:value: >
+   (0.89, 0.44, 0.1)
+
+```{autodoc2-docstring} vtkmodules.util.colors.mars_yellow
+```
+
+````
+
+````{py:data} orange
+:canonical: vtkmodules.util.colors.orange
+:value: >
+   (1.0, 0.5, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.orange
+```
+
+````
+
+````{py:data} orange_red
+:canonical: vtkmodules.util.colors.orange_red
+:value: >
+   (1.0, 0.2706, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.orange_red
+```
+
+````
+
+````{py:data} yellow_ochre
+:canonical: vtkmodules.util.colors.yellow_ochre
+:value: >
+   (0.89, 0.51, 0.09)
+
+```{autodoc2-docstring} vtkmodules.util.colors.yellow_ochre
+```
+
+````
+
+````{py:data} aureoline_yellow
+:canonical: vtkmodules.util.colors.aureoline_yellow
+:value: >
+   (1.0, 0.66, 0.14)
+
+```{autodoc2-docstring} vtkmodules.util.colors.aureoline_yellow
+```
+
+````
+
+````{py:data} banana
+:canonical: vtkmodules.util.colors.banana
+:value: >
+   (0.89, 0.81, 0.34)
+
+```{autodoc2-docstring} vtkmodules.util.colors.banana
+```
+
+````
+
+````{py:data} cadmium_lemon
+:canonical: vtkmodules.util.colors.cadmium_lemon
+:value: >
+   (1.0, 0.89, 0.01)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadmium_lemon
+```
+
+````
+
+````{py:data} cadmium_yellow
+:canonical: vtkmodules.util.colors.cadmium_yellow
+:value: >
+   (1.0, 0.6, 0.07)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadmium_yellow
+```
+
+````
+
+````{py:data} cadmium_yellow_light
+:canonical: vtkmodules.util.colors.cadmium_yellow_light
+:value: >
+   (1.0, 0.69, 0.06)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadmium_yellow_light
+```
+
+````
+
+````{py:data} gold
+:canonical: vtkmodules.util.colors.gold
+:value: >
+   (1.0, 0.8431, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.gold
+```
+
+````
+
+````{py:data} goldenrod
+:canonical: vtkmodules.util.colors.goldenrod
+:value: >
+   (0.8549, 0.6471, 0.1255)
+
+```{autodoc2-docstring} vtkmodules.util.colors.goldenrod
+```
+
+````
+
+````{py:data} goldenrod_dark
+:canonical: vtkmodules.util.colors.goldenrod_dark
+:value: >
+   (0.7216, 0.5255, 0.0431)
+
+```{autodoc2-docstring} vtkmodules.util.colors.goldenrod_dark
+```
+
+````
+
+````{py:data} goldenrod_light
+:canonical: vtkmodules.util.colors.goldenrod_light
+:value: >
+   (0.9804, 0.9804, 0.8235)
+
+```{autodoc2-docstring} vtkmodules.util.colors.goldenrod_light
+```
+
+````
+
+````{py:data} goldenrod_pale
+:canonical: vtkmodules.util.colors.goldenrod_pale
+:value: >
+   (0.9333, 0.9098, 0.6667)
+
+```{autodoc2-docstring} vtkmodules.util.colors.goldenrod_pale
+```
+
+````
+
+````{py:data} light_goldenrod
+:canonical: vtkmodules.util.colors.light_goldenrod
+:value: >
+   (0.9333, 0.8667, 0.5098)
+
+```{autodoc2-docstring} vtkmodules.util.colors.light_goldenrod
+```
+
+````
+
+````{py:data} melon
+:canonical: vtkmodules.util.colors.melon
+:value: >
+   (0.89, 0.66, 0.41)
+
+```{autodoc2-docstring} vtkmodules.util.colors.melon
+```
+
+````
+
+````{py:data} naples_yellow_deep
+:canonical: vtkmodules.util.colors.naples_yellow_deep
+:value: >
+   (1.0, 0.66, 0.07)
+
+```{autodoc2-docstring} vtkmodules.util.colors.naples_yellow_deep
+```
+
+````
+
+````{py:data} yellow
+:canonical: vtkmodules.util.colors.yellow
+:value: >
+   (1.0, 1.0, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.yellow
+```
+
+````
+
+````{py:data} yellow_light
+:canonical: vtkmodules.util.colors.yellow_light
+:value: >
+   (1.0, 1.0, 0.8784)
+
+```{autodoc2-docstring} vtkmodules.util.colors.yellow_light
+```
+
+````
+
+````{py:data} chartreuse
+:canonical: vtkmodules.util.colors.chartreuse
+:value: >
+   (0.498, 1.0, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.chartreuse
+```
+
+````
+
+````{py:data} chrome_oxide_green
+:canonical: vtkmodules.util.colors.chrome_oxide_green
+:value: >
+   (0.4, 0.5, 0.08)
+
+```{autodoc2-docstring} vtkmodules.util.colors.chrome_oxide_green
+```
+
+````
+
+````{py:data} cinnabar_green
+:canonical: vtkmodules.util.colors.cinnabar_green
+:value: >
+   (0.38, 0.7, 0.16)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cinnabar_green
+```
+
+````
+
+````{py:data} cobalt_green
+:canonical: vtkmodules.util.colors.cobalt_green
+:value: >
+   (0.24, 0.57, 0.25)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cobalt_green
+```
+
+````
+
+````{py:data} emerald_green
+:canonical: vtkmodules.util.colors.emerald_green
+:value: >
+   (0.0, 0.79, 0.34)
+
+```{autodoc2-docstring} vtkmodules.util.colors.emerald_green
+```
+
+````
+
+````{py:data} forest_green
+:canonical: vtkmodules.util.colors.forest_green
+:value: >
+   (0.1333, 0.5451, 0.1333)
+
+```{autodoc2-docstring} vtkmodules.util.colors.forest_green
+```
+
+````
+
+````{py:data} green
+:canonical: vtkmodules.util.colors.green
+:value: >
+   (0.0, 1.0, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.green
+```
+
+````
+
+````{py:data} green_dark
+:canonical: vtkmodules.util.colors.green_dark
+:value: >
+   (0.0, 0.3922, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.green_dark
+```
+
+````
+
+````{py:data} green_pale
+:canonical: vtkmodules.util.colors.green_pale
+:value: >
+   (0.5961, 0.9843, 0.5961)
+
+```{autodoc2-docstring} vtkmodules.util.colors.green_pale
+```
+
+````
+
+````{py:data} green_yellow
+:canonical: vtkmodules.util.colors.green_yellow
+:value: >
+   (0.6784, 1.0, 0.1843)
+
+```{autodoc2-docstring} vtkmodules.util.colors.green_yellow
+```
+
+````
+
+````{py:data} lawn_green
+:canonical: vtkmodules.util.colors.lawn_green
+:value: >
+   (0.4863, 0.9882, 0.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.lawn_green
+```
+
+````
+
+````{py:data} lime_green
+:canonical: vtkmodules.util.colors.lime_green
+:value: >
+   (0.1961, 0.8039, 0.1961)
+
+```{autodoc2-docstring} vtkmodules.util.colors.lime_green
+```
+
+````
+
+````{py:data} mint
+:canonical: vtkmodules.util.colors.mint
+:value: >
+   (0.74, 0.99, 0.79)
+
+```{autodoc2-docstring} vtkmodules.util.colors.mint
+```
+
+````
+
+````{py:data} olive
+:canonical: vtkmodules.util.colors.olive
+:value: >
+   (0.23, 0.37, 0.17)
+
+```{autodoc2-docstring} vtkmodules.util.colors.olive
+```
+
+````
+
+````{py:data} olive_drab
+:canonical: vtkmodules.util.colors.olive_drab
+:value: >
+   (0.4196, 0.5569, 0.1373)
+
+```{autodoc2-docstring} vtkmodules.util.colors.olive_drab
+```
+
+````
+
+````{py:data} olive_green_dark
+:canonical: vtkmodules.util.colors.olive_green_dark
+:value: >
+   (0.3333, 0.4196, 0.1843)
+
+```{autodoc2-docstring} vtkmodules.util.colors.olive_green_dark
+```
+
+````
+
+````{py:data} permanent_green
+:canonical: vtkmodules.util.colors.permanent_green
+:value: >
+   (0.04, 0.79, 0.17)
+
+```{autodoc2-docstring} vtkmodules.util.colors.permanent_green
+```
+
+````
+
+````{py:data} sap_green
+:canonical: vtkmodules.util.colors.sap_green
+:value: >
+   (0.19, 0.5, 0.08)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sap_green
+```
+
+````
+
+````{py:data} sea_green
+:canonical: vtkmodules.util.colors.sea_green
+:value: >
+   (0.1804, 0.5451, 0.3412)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sea_green
+```
+
+````
+
+````{py:data} sea_green_dark
+:canonical: vtkmodules.util.colors.sea_green_dark
+:value: >
+   (0.5608, 0.7373, 0.5608)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sea_green_dark
+```
+
+````
+
+````{py:data} sea_green_medium
+:canonical: vtkmodules.util.colors.sea_green_medium
+:value: >
+   (0.2353, 0.702, 0.4431)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sea_green_medium
+```
+
+````
+
+````{py:data} sea_green_light
+:canonical: vtkmodules.util.colors.sea_green_light
+:value: >
+   (0.1255, 0.698, 0.6667)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sea_green_light
+```
+
+````
+
+````{py:data} spring_green
+:canonical: vtkmodules.util.colors.spring_green
+:value: >
+   (0.0, 1.0, 0.498)
+
+```{autodoc2-docstring} vtkmodules.util.colors.spring_green
+```
+
+````
+
+````{py:data} spring_green_medium
+:canonical: vtkmodules.util.colors.spring_green_medium
+:value: >
+   (0.0, 0.9804, 0.6039)
+
+```{autodoc2-docstring} vtkmodules.util.colors.spring_green_medium
+```
+
+````
+
+````{py:data} terre_verte
+:canonical: vtkmodules.util.colors.terre_verte
+:value: >
+   (0.22, 0.37, 0.06)
+
+```{autodoc2-docstring} vtkmodules.util.colors.terre_verte
+```
+
+````
+
+````{py:data} viridian_light
+:canonical: vtkmodules.util.colors.viridian_light
+:value: >
+   (0.43, 1.0, 0.44)
+
+```{autodoc2-docstring} vtkmodules.util.colors.viridian_light
+```
+
+````
+
+````{py:data} yellow_green
+:canonical: vtkmodules.util.colors.yellow_green
+:value: >
+   (0.6039, 0.8039, 0.1961)
+
+```{autodoc2-docstring} vtkmodules.util.colors.yellow_green
+```
+
+````
+
+````{py:data} aquamarine
+:canonical: vtkmodules.util.colors.aquamarine
+:value: >
+   (0.498, 1.0, 0.8314)
+
+```{autodoc2-docstring} vtkmodules.util.colors.aquamarine
+```
+
+````
+
+````{py:data} aquamarine_medium
+:canonical: vtkmodules.util.colors.aquamarine_medium
+:value: >
+   (0.4, 0.8039, 0.6667)
+
+```{autodoc2-docstring} vtkmodules.util.colors.aquamarine_medium
+```
+
+````
+
+````{py:data} cyan
+:canonical: vtkmodules.util.colors.cyan
+:value: >
+   (0.0, 1.0, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cyan
+```
+
+````
+
+````{py:data} cyan_white
+:canonical: vtkmodules.util.colors.cyan_white
+:value: >
+   (0.8784, 1.0, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cyan_white
+```
+
+````
+
+````{py:data} turquoise
+:canonical: vtkmodules.util.colors.turquoise
+:value: >
+   (0.251, 0.8784, 0.8157)
+
+```{autodoc2-docstring} vtkmodules.util.colors.turquoise
+```
+
+````
+
+````{py:data} turquoise_dark
+:canonical: vtkmodules.util.colors.turquoise_dark
+:value: >
+   (0.0, 0.8078, 0.8196)
+
+```{autodoc2-docstring} vtkmodules.util.colors.turquoise_dark
+```
+
+````
+
+````{py:data} turquoise_medium
+:canonical: vtkmodules.util.colors.turquoise_medium
+:value: >
+   (0.2824, 0.8196, 0.8)
+
+```{autodoc2-docstring} vtkmodules.util.colors.turquoise_medium
+```
+
+````
+
+````{py:data} turquoise_pale
+:canonical: vtkmodules.util.colors.turquoise_pale
+:value: >
+   (0.6863, 0.9333, 0.9333)
+
+```{autodoc2-docstring} vtkmodules.util.colors.turquoise_pale
+```
+
+````
+
+````{py:data} alice_blue
+:canonical: vtkmodules.util.colors.alice_blue
+:value: >
+   (0.9412, 0.9725, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.alice_blue
+```
+
+````
+
+````{py:data} blue
+:canonical: vtkmodules.util.colors.blue
+:value: >
+   (0.0, 0.0, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.blue
+```
+
+````
+
+````{py:data} blue_light
+:canonical: vtkmodules.util.colors.blue_light
+:value: >
+   (0.6784, 0.8471, 0.902)
+
+```{autodoc2-docstring} vtkmodules.util.colors.blue_light
+```
+
+````
+
+````{py:data} blue_medium
+:canonical: vtkmodules.util.colors.blue_medium
+:value: >
+   (0.0, 0.0, 0.8039)
+
+```{autodoc2-docstring} vtkmodules.util.colors.blue_medium
+```
+
+````
+
+````{py:data} cadet
+:canonical: vtkmodules.util.colors.cadet
+:value: >
+   (0.3725, 0.6196, 0.6275)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cadet
+```
+
+````
+
+````{py:data} cobalt
+:canonical: vtkmodules.util.colors.cobalt
+:value: >
+   (0.24, 0.35, 0.67)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cobalt
+```
+
+````
+
+````{py:data} cornflower
+:canonical: vtkmodules.util.colors.cornflower
+:value: >
+   (0.3922, 0.5843, 0.9294)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cornflower
+```
+
+````
+
+````{py:data} cerulean
+:canonical: vtkmodules.util.colors.cerulean
+:value: >
+   (0.02, 0.72, 0.8)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cerulean
+```
+
+````
+
+````{py:data} dodger_blue
+:canonical: vtkmodules.util.colors.dodger_blue
+:value: >
+   (0.1176, 0.5647, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.dodger_blue
+```
+
+````
+
+````{py:data} indigo
+:canonical: vtkmodules.util.colors.indigo
+:value: >
+   (0.03, 0.18, 0.33)
+
+```{autodoc2-docstring} vtkmodules.util.colors.indigo
+```
+
+````
+
+````{py:data} manganese_blue
+:canonical: vtkmodules.util.colors.manganese_blue
+:value: >
+   (0.01, 0.66, 0.62)
+
+```{autodoc2-docstring} vtkmodules.util.colors.manganese_blue
+```
+
+````
+
+````{py:data} midnight_blue
+:canonical: vtkmodules.util.colors.midnight_blue
+:value: >
+   (0.098, 0.098, 0.4392)
+
+```{autodoc2-docstring} vtkmodules.util.colors.midnight_blue
+```
+
+````
+
+````{py:data} navy
+:canonical: vtkmodules.util.colors.navy
+:value: >
+   (0.0, 0.0, 0.502)
+
+```{autodoc2-docstring} vtkmodules.util.colors.navy
+```
+
+````
+
+````{py:data} peacock
+:canonical: vtkmodules.util.colors.peacock
+:value: >
+   (0.2, 0.63, 0.79)
+
+```{autodoc2-docstring} vtkmodules.util.colors.peacock
+```
+
+````
+
+````{py:data} powder_blue
+:canonical: vtkmodules.util.colors.powder_blue
+:value: >
+   (0.6902, 0.8784, 0.902)
+
+```{autodoc2-docstring} vtkmodules.util.colors.powder_blue
+```
+
+````
+
+````{py:data} royal_blue
+:canonical: vtkmodules.util.colors.royal_blue
+:value: >
+   (0.2549, 0.4118, 0.8824)
+
+```{autodoc2-docstring} vtkmodules.util.colors.royal_blue
+```
+
+````
+
+````{py:data} slate_blue
+:canonical: vtkmodules.util.colors.slate_blue
+:value: >
+   (0.4157, 0.3529, 0.8039)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_blue
+```
+
+````
+
+````{py:data} slate_blue_dark
+:canonical: vtkmodules.util.colors.slate_blue_dark
+:value: >
+   (0.2824, 0.2392, 0.5451)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_blue_dark
+```
+
+````
+
+````{py:data} slate_blue_light
+:canonical: vtkmodules.util.colors.slate_blue_light
+:value: >
+   (0.5176, 0.4392, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_blue_light
+```
+
+````
+
+````{py:data} slate_blue_medium
+:canonical: vtkmodules.util.colors.slate_blue_medium
+:value: >
+   (0.4824, 0.4078, 0.9333)
+
+```{autodoc2-docstring} vtkmodules.util.colors.slate_blue_medium
+```
+
+````
+
+````{py:data} sky_blue
+:canonical: vtkmodules.util.colors.sky_blue
+:value: >
+   (0.5294, 0.8078, 0.9216)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sky_blue
+```
+
+````
+
+````{py:data} sky_blue_deep
+:canonical: vtkmodules.util.colors.sky_blue_deep
+:value: >
+   (0.0, 0.749, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sky_blue_deep
+```
+
+````
+
+````{py:data} sky_blue_light
+:canonical: vtkmodules.util.colors.sky_blue_light
+:value: >
+   (0.5294, 0.8078, 0.9804)
+
+```{autodoc2-docstring} vtkmodules.util.colors.sky_blue_light
+```
+
+````
+
+````{py:data} steel_blue
+:canonical: vtkmodules.util.colors.steel_blue
+:value: >
+   (0.2745, 0.5098, 0.7059)
+
+```{autodoc2-docstring} vtkmodules.util.colors.steel_blue
+```
+
+````
+
+````{py:data} steel_blue_light
+:canonical: vtkmodules.util.colors.steel_blue_light
+:value: >
+   (0.6902, 0.7686, 0.8706)
+
+```{autodoc2-docstring} vtkmodules.util.colors.steel_blue_light
+```
+
+````
+
+````{py:data} turquoise_blue
+:canonical: vtkmodules.util.colors.turquoise_blue
+:value: >
+   (0.0, 0.78, 0.55)
+
+```{autodoc2-docstring} vtkmodules.util.colors.turquoise_blue
+```
+
+````
+
+````{py:data} ultramarine
+:canonical: vtkmodules.util.colors.ultramarine
+:value: >
+   (0.07, 0.04, 0.56)
+
+```{autodoc2-docstring} vtkmodules.util.colors.ultramarine
+```
+
+````
+
+````{py:data} blue_violet
+:canonical: vtkmodules.util.colors.blue_violet
+:value: >
+   (0.5412, 0.1686, 0.8863)
+
+```{autodoc2-docstring} vtkmodules.util.colors.blue_violet
+```
+
+````
+
+````{py:data} cobalt_violet_deep
+:canonical: vtkmodules.util.colors.cobalt_violet_deep
+:value: >
+   (0.57, 0.13, 0.62)
+
+```{autodoc2-docstring} vtkmodules.util.colors.cobalt_violet_deep
+```
+
+````
+
+````{py:data} magenta
+:canonical: vtkmodules.util.colors.magenta
+:value: >
+   (1.0, 0.0, 1.0)
+
+```{autodoc2-docstring} vtkmodules.util.colors.magenta
+```
+
+````
+
+````{py:data} orchid
+:canonical: vtkmodules.util.colors.orchid
+:value: >
+   (0.8549, 0.4392, 0.8392)
+
+```{autodoc2-docstring} vtkmodules.util.colors.orchid
+```
+
+````
+
+````{py:data} orchid_dark
+:canonical: vtkmodules.util.colors.orchid_dark
+:value: >
+   (0.6, 0.1961, 0.8)
+
+```{autodoc2-docstring} vtkmodules.util.colors.orchid_dark
+```
+
+````
+
+````{py:data} orchid_medium
+:canonical: vtkmodules.util.colors.orchid_medium
+:value: >
+   (0.7294, 0.3333, 0.8275)
+
+```{autodoc2-docstring} vtkmodules.util.colors.orchid_medium
+```
+
+````
+
+````{py:data} permanent_red_violet
+:canonical: vtkmodules.util.colors.permanent_red_violet
+:value: >
+   (0.86, 0.15, 0.27)
+
+```{autodoc2-docstring} vtkmodules.util.colors.permanent_red_violet
+```
+
+````
+
+````{py:data} plum
+:canonical: vtkmodules.util.colors.plum
+:value: >
+   (0.8667, 0.6275, 0.8667)
+
+```{autodoc2-docstring} vtkmodules.util.colors.plum
+```
+
+````
+
+````{py:data} purple
+:canonical: vtkmodules.util.colors.purple
+:value: >
+   (0.6275, 0.1255, 0.9412)
+
+```{autodoc2-docstring} vtkmodules.util.colors.purple
+```
+
+````
+
+````{py:data} purple_medium
+:canonical: vtkmodules.util.colors.purple_medium
+:value: >
+   (0.5765, 0.4392, 0.8588)
+
+```{autodoc2-docstring} vtkmodules.util.colors.purple_medium
+```
+
+````
+
+````{py:data} ultramarine_violet
+:canonical: vtkmodules.util.colors.ultramarine_violet
+:value: >
+   (0.36, 0.14, 0.43)
+
+```{autodoc2-docstring} vtkmodules.util.colors.ultramarine_violet
+```
+
+````
+
+````{py:data} violet
+:canonical: vtkmodules.util.colors.violet
+:value: >
+   (0.56, 0.37, 0.6)
+
+```{autodoc2-docstring} vtkmodules.util.colors.violet
+```
+
+````
+
+````{py:data} violet_dark
+:canonical: vtkmodules.util.colors.violet_dark
+:value: >
+   (0.5804, 0.0, 0.8275)
+
+```{autodoc2-docstring} vtkmodules.util.colors.violet_dark
+```
+
+````
+
+````{py:data} violet_red
+:canonical: vtkmodules.util.colors.violet_red
+:value: >
+   (0.8157, 0.1255, 0.5647)
+
+```{autodoc2-docstring} vtkmodules.util.colors.violet_red
+```
+
+````
+
+````{py:data} violet_red_medium
+:canonical: vtkmodules.util.colors.violet_red_medium
+:value: >
+   (0.7804, 0.0824, 0.5216)
+
+```{autodoc2-docstring} vtkmodules.util.colors.violet_red_medium
+```
+
+````
+
+````{py:data} violet_red_pale
+:canonical: vtkmodules.util.colors.violet_red_pale
+:value: >
+   (0.8588, 0.4392, 0.5765)
+
+```{autodoc2-docstring} vtkmodules.util.colors.violet_red_pale
+```
+
+````

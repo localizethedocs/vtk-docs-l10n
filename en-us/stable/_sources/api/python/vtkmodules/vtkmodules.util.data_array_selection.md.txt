@@ -1,0 +1,123 @@
+# {py:mod}`vtkmodules.util.data_array_selection`
+
+```{py:module} vtkmodules.util.data_array_selection
+```
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_DataArraySelectionMixin <vtkmodules.util.data_array_selection._DataArraySelectionMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin
+    :summary:
+    ```
+* - {py:obj}`DataArraySelection <vtkmodules.util.data_array_selection.DataArraySelection>`
+  - ```{autodoc2-docstring} vtkmodules.util.data_array_selection.DataArraySelection
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} _DataArraySelectionMixin
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin
+```
+
+````{py:method} __getitem__(name)
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(name, value)
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.__setitem__
+```
+
+````
+
+````{py:method} __delitem__(name)
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__delitem__
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.__delitem__
+```
+
+````
+
+````{py:method} __contains__(name)
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.__contains__
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.__len__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.__iter__
+```
+
+````
+
+````{py:method} keys()
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.keys
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.keys
+```
+
+````
+
+````{py:method} values()
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.values
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.values
+```
+
+````
+
+````{py:method} items()
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.items
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection._DataArraySelectionMixin.items
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.data_array_selection._DataArraySelectionMixin.__repr__
+
+````
+
+`````
+
+````{py:class} DataArraySelection
+:canonical: vtkmodules.util.data_array_selection.DataArraySelection
+
+Bases: {py:obj}`vtkmodules.util.data_array_selection._DataArraySelectionMixin`, {py:obj}`vtkmodules.vtkCommonCore.vtkDataArraySelection`
+
+```{autodoc2-docstring} vtkmodules.util.data_array_selection.DataArraySelection
+```
+
+````

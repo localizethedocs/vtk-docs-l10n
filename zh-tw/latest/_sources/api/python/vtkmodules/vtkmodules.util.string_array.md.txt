@@ -1,0 +1,135 @@
+# {py:mod}`vtkmodules.util.string_array`
+
+```{py:module} vtkmodules.util.string_array
+```
+
+```{autodoc2-docstring} vtkmodules.util.string_array
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_StringArrayMixin <vtkmodules.util.string_array._StringArrayMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin
+    :summary:
+    ```
+* - {py:obj}`StringArray <vtkmodules.util.string_array.StringArray>`
+  - ```{autodoc2-docstring} vtkmodules.util.string_array.StringArray
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} _StringArrayMixin(*args, **kwargs)
+:canonical: vtkmodules.util.string_array._StringArrayMixin
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.__init__
+```
+
+````{py:method} _init_from_data(data)
+:canonical: vtkmodules.util.string_array._StringArrayMixin._init_from_data
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin._init_from_data
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.string_array._StringArrayMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.__len__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.util.string_array._StringArrayMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(index, value)
+:canonical: vtkmodules.util.string_array._StringArrayMixin.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.__setitem__
+```
+
+````
+
+````{py:method} __contains__(value)
+:canonical: vtkmodules.util.string_array._StringArrayMixin.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.__contains__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.string_array._StringArrayMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.__iter__
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.string_array._StringArrayMixin.__repr__
+
+````
+
+````{py:method} append(value)
+:canonical: vtkmodules.util.string_array._StringArrayMixin.append
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.append
+```
+
+````
+
+````{py:method} extend(iterable)
+:canonical: vtkmodules.util.string_array._StringArrayMixin.extend
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.extend
+```
+
+````
+
+````{py:method} clear()
+:canonical: vtkmodules.util.string_array._StringArrayMixin.clear
+
+```{autodoc2-docstring} vtkmodules.util.string_array._StringArrayMixin.clear
+```
+
+````
+
+`````
+
+````{py:class} StringArray(*args, **kwargs)
+:canonical: vtkmodules.util.string_array.StringArray
+
+Bases: {py:obj}`vtkmodules.util.string_array._StringArrayMixin`, {py:obj}`vtkmodules.vtkCommonCore.vtkStringArray`
+
+```{autodoc2-docstring} vtkmodules.util.string_array.StringArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.string_array.StringArray.__init__
+```
+
+````
