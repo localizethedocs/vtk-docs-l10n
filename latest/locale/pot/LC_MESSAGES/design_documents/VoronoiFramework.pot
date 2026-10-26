@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-15 13:50+0000\n"
+"POT-Creation-Date: 2026-10-26 14:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -204,14 +204,14 @@ msgid ""
 "The hull/tile vertices $x_k$ are formed by the intersection of the planes "
 "separating $p_i$ and face neighboring points $p_j$. Usually D+1 planes "
 "intersect at a $x_k$ unless a numerical degeneracy exists (more on this "
-"later). For example, in 3D, the four clipping planes formed by the points "
-"$(p0,p1,p2,p3)$ intersect at $x_k$; in 2D the three lines formed by $(p0,p1,"
-"p2)$ intersect at $x_k$. The set of generating point ids $(p_i, p_j)$ which "
-"define the clipping planes meeting at a $x_k$ are called the topological "
-"coordinates of $x_k$. Note that the components of the topological "
-"coordinates are sorted in increasing order, so that in 3D the four "
-"components $(p0,p1,p2,p3)$ are ordered $p0 < p1 < p2 < p3$. This simplifies "
-"comparison operations such as equality checks."
+"later). For example, in 3D, the four clipping planes formed by the points $"
+"(p0,p1,p2,p3)$ intersect at $x_k$; in 2D the three lines formed by $"
+"(p0,p1,p2)$ intersect at $x_k$. The set of generating point ids $(p_i, p_j)$ "
+"which define the clipping planes meeting at a $x_k$ are called the "
+"topological coordinates of $x_k$. Note that the components of the "
+"topological coordinates are sorted in increasing order, so that in 3D the "
+"four components $(p0,p1,p2,p3)$ are ordered $p0 < p1 < p2 < p3$. This "
+"simplifies comparison operations such as equality checks."
 msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:38
@@ -255,12 +255,12 @@ msgstr ""
 #: ../../../../Doxygen/VoronoiFramework.md:45
 msgid ""
 "**The Adjacency Graph.** The adjacency graph G is a topological abstraction "
-"of the Voronoi tessellation. It is a graph that connects Voronoi cells (i."
-"e., generating points $p_i$) with their face neighbors. It can be used for a "
-"variety of purposes including topological validation, and in applications "
-"such as path planning. In VTK, G consists of spokes (connections between "
-"$p_i$) and wheels, which are just the collection of spokes emanating from a "
-"particular $p_i$."
+"of the Voronoi tessellation. It is a graph that connects Voronoi cells "
+"(i.e., generating points $p_i$) with their face neighbors. It can be used "
+"for a variety of purposes including topological validation, and in "
+"applications such as path planning. In VTK, G consists of spokes "
+"(connections between $p_i$) and wheels, which are just the collection of "
+"spokes emanating from a particular $p_i$."
 msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:47
@@ -459,9 +459,10 @@ msgstr ""
 #: ../../../../Doxygen/VoronoiFramework.md:80
 msgid ""
 "![Voronoi iterator](VoronoiIterator.png \"Voronoi bin iterator traversal "
-"pattern.\") Figure 4.  The iterators access locator bins in an increasing "
-"distance, ping-pong traversal style, beginning at the generator point. In "
-"3D, the ping-pong order is across opposite faces, as well as within faces."
+"pattern.\") Figure 4.  The (deprecated) bin iterators of the static point "
+"locators access locator bins in an increasing distance, ping-pong traversal "
+"style, beginning at the generator point. In 3D, the ping-pong order is "
+"across opposite faces, as well as within faces."
 msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:80
@@ -470,23 +471,26 @@ msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:83
 msgid ""
-"In addition to the classes listed above, the vtkStaticPointLocator and "
-"vtkStaticPointLocator2D locator classes play a critical role in the Voronoi "
-"algorithms. These objects perform local point searches around each generator "
-"point $p_i$, identifying nearby points in an expanding search (which ends "
-"only when the circumflower criterion is satisfied or the search space is "
-"exhausted). This process is facilitated by iterators which grow the search "
-"space using a ping-pong traversal from the generating point outward."
+"In addition to the classes listed above, a point locator (any "
+"`vtkAbstractPointLocator`, a `vtkKdTreePointLocator` by default) plays a "
+"critical role in the Voronoi algorithms. It performs local point searches "
+"around each generator point $p_i$, identifying nearby points in an expanding "
+"search (which ends only when the circumflower criterion is satisfied or the "
+"search space is exhausted)."
 msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:85
 msgid ""
-"**vtkAnnularBinIterator.** The `vtkAnnularBinIterator` is used to iterate "
-"over `vtkStaticPointLocator2D` bins (or buckets) surrounding a generating "
-"point $p_i$. The iteration proceeds in such a way that locator bins are "
-"returned in increasing distance from $p_i$. As each bin is visited, the "
-"points contained in the bin (if any) are used by the Voronoi algorithm to "
-"perform clips on a `vtkVoronoiTile` instance."
+"**vtkVoronoiNeighborIterator.** The `vtkVoronoiNeighborIterator` (in "
+"`vtkVoronoiCore.h`) requests the points around a generating point $p_i$ in "
+"increasing distance, in spherical shells (annuli in 2D). The first shell, "
+"found with `FindNPointsInShell()`, holds the nearest points; the next ones, "
+"found with `FindPointsInShell()`, grow geometrically up to the circumflower, "
+"and skip the points outside of the Voronoi flower. As each shell is "
+"returned, its points are used by the Voronoi algorithm to perform clips on a "
+"`vtkVoronoiTile` or `vtkVoronoiHull` instance. (The `vtkAnnularBinIterator` "
+"and `vtkShellBinIterator`, which visited the bins of the static point "
+"locators in the order of Figure 4, are deprecated.)"
 msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:87
@@ -503,34 +507,28 @@ msgstr ""
 
 #: ../../../../Doxygen/VoronoiFramework.md:90
 msgid ""
-"**vtkShellBinIterator.**  The `vtkShellBinIterator` is used to iterate over "
-"`vtkStaticPointLocator` bins (or buckets) surrounding a generating point "
-"$p_i$. The iteration proceeds in such a way that locator bins are returned "
-"in increasing distance from $p_i$. As each bin is visited, the points "
-"contained in the bin (if any) are used by the Voronoi algorithm to perform "
-"clips on a `vtkVoronoiHull` instance. Conceptually, VTK’s core Voronoi "
-"algorithm is simple and embarrassingly parallel. The details of the "
-"compositor and classifier, the neighborhood search process, and the cell "
-"construction process, add significant implementation complexity. To better "
-"understand how these components work together, reviewing the simple "
-"`TestVoronoiCore2D.cxx` and `TestVoronoiCore3D.cxx` tests may help. Of "
-"course, these framework classes have been instantiated for use by several "
-"VTK filters. Reviewing these filters is another good way to learn more about "
-"VTK’s Voronoi framework."
+"Conceptually, VTK’s core Voronoi algorithm is simple and embarrassingly "
+"parallel. The details of the compositor and classifier, the neighborhood "
+"search process, and the cell construction process, add significant "
+"implementation complexity. To better understand how these components work "
+"together, reviewing the simple `TestVoronoiCore2D.cxx` and "
+"`TestVoronoiCore3D.cxx` tests may help. Of course, these framework classes "
+"have been instantiated for use by several VTK filters. Reviewing these "
+"filters is another good way to learn more about VTK’s Voronoi framework."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:93
+#: ../../../../Doxygen/VoronoiFramework.md:92
 msgid "VTK Filters"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:94
+#: ../../../../Doxygen/VoronoiFramework.md:93
 msgid ""
 "Initially three VTK filters have been added as part of the Voronoi "
 "framework. More will be added in the future, but these offer basic "
 "capabilities applicable to many computational challenges."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:96
+#: ../../../../Doxygen/VoronoiFramework.md:95
 msgid ""
 "**vtkVoronoi2D.** The `vtkVoronoi2D` filter can generate a 2D Voronoi "
 "tessellation, Delaunay triangulation, or both, from an input set of points "
@@ -539,7 +537,7 @@ msgid ""
 "particular input point (I.e., point of interest)."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:98
+#: ../../../../Doxygen/VoronoiFramework.md:97
 msgid ""
 "**vtkVoronoi3D.** The `vtkVoronoi3D` filter can generate either a 3D Voronoi "
 "tessellation (`vtkPolyhedron` cells) or a Delaunay tetrahedralization "
@@ -550,18 +548,18 @@ msgid ""
 "provided)."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:100
+#: ../../../../Doxygen/VoronoiFramework.md:99
 msgid ""
 "![Generalized surface net](VoronoiHeart.png \"Generalized surface net of a "
 "segmented, human heart.\") Figure 6. Generalized surface net produced from "
 "14,649,149 points and 21 segmented regions of a human heart."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:100
+#: ../../../../Doxygen/VoronoiFramework.md:99
 msgid "Generalized surface net"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:103
+#: ../../../../Doxygen/VoronoiFramework.md:102
 msgid ""
 "**vtkGeneralizedSurfaceNets3D.** Surface Nets is a contouring algorithm that "
 "is typically used to extract the surfaces of labeled regions; e.g., the "
@@ -573,11 +571,11 @@ msgid ""
 "generating points exist in different regions–Figure 6)."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:105
+#: ../../../../Doxygen/VoronoiFramework.md:104
 msgid "Supporting Filters"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:106
+#: ../../../../Doxygen/VoronoiFramework.md:105
 msgid ""
 "Several supporting filters exist in VTK to prepare input for the Voronoi "
 "framework and filters. These can be used to adjust point distributions "
@@ -585,7 +583,7 @@ msgid ""
 "scalar fields into input point sets,"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:108
+#: ../../../../Doxygen/VoronoiFramework.md:107
 msgid ""
 "**vtkThresholdScalars.** This filter converts a continuous scalar field into "
 "discrete, labeled regions (essentially a primitive segmentation algorithm). "
@@ -598,7 +596,7 @@ msgid ""
 "suitable for the Voronoi classes."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:110
+#: ../../../../Doxygen/VoronoiFramework.md:109
 msgid ""
 "**vtkJitterPoints.** The `vtkJitterPoints` filter randomly perturbs point "
 "positions. It operates on any input of type `vtkPointSet`, modifying only "
@@ -607,10 +605,10 @@ msgid ""
 "performance of Voronoi algorithms by removing degeneracies."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:112
+#: ../../../../Doxygen/VoronoiFramework.md:111
 msgid ""
-"**vtkFillPointCloud.** This filter adds points to an existing point cloud (i."
-"e., an instance of a `vtkPointSet`), placing points in regions where no "
+"**vtkFillPointCloud.** This filter adds points to an existing point cloud "
+"(i.e., an instance of a `vtkPointSet`), placing points in regions where no "
 "input points exist. The fill operation preserves the input points (and any "
 "region labels if available), and adds new points with a specified background "
 "label.  `vtkFillPointCloud` can be used to improve the performance of the "
@@ -620,7 +618,7 @@ msgid ""
 "result the Voronoi/Delaunay filters can produce concave tessellations."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:114
+#: ../../../../Doxygen/VoronoiFramework.md:113
 msgid ""
 "**vtkLabeledImagePointSampler.** This filter generates points from a labeled/"
 "segmented input 3D volume or 2D x-y image. This can be used to reduce the "
@@ -631,7 +629,7 @@ msgid ""
 "(i.e., segmentation labels)."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:116
+#: ../../../../Doxygen/VoronoiFramework.md:115
 msgid ""
 "**vtkProbeFilter.** This filter has long existed in VTK yet offers "
 "interesting capabilities in support of the Voronoi framework. By probing "
@@ -639,18 +637,18 @@ msgid ""
 "selectively tessellate probed regions of data."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:118
+#: ../../../../Doxygen/VoronoiFramework.md:117
 msgid "Usage: Building and Testing"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:119
+#: ../../../../Doxygen/VoronoiFramework.md:118
 msgid ""
 "This section describes how to begin using the Voronoi framework in VTK. "
 "Begin by building VTK on your platform as described in the build "
 "instructions. Pay particular attention to the following CMake variables:"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:121
+#: ../../../../Doxygen/VoronoiFramework.md:120
 msgid ""
 "`CMAKE_BUILD_TYPE` - to obtain maximum performance, use “Release”. Since the "
 "Voronoi framework is templated, the optimizations resulting from this build "
@@ -662,7 +660,7 @@ msgid ""
 "Python."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:125
+#: ../../../../Doxygen/VoronoiFramework.md:124
 msgid ""
 "Note that if the SMP implementation type is set to TBB, then you may have to "
 "set the CMake variable TBB_DIR. Similarly, wrapping Python requires that "
@@ -672,7 +670,7 @@ msgid ""
 "require some assistance to resolve."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:127
+#: ../../../../Doxygen/VoronoiFramework.md:126
 msgid ""
 "Once CMake is properly configured, and the build process completes, there "
 "are many tests and examples that can be run. We recommend starting with the "
@@ -681,25 +679,25 @@ msgid ""
 "simply invoke:"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:129
+#: ../../../../Doxygen/VoronoiFramework.md:128
 msgid ""
 "$ cd VTK/Filters/Meshing/Testing/Python/\n"
 "$ ~/VTK/build/bin/vtkpython TestVoronoi3D2.py\n"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:134
+#: ../../../../Doxygen/VoronoiFramework.md:133
 msgid ""
 "assuming that VTK has been built in the `~/VTK/build/` directory. To run a C+"
 "+ test, invoke:"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:136
+#: ../../../../Doxygen/VoronoiFramework.md:135
 msgid ""
 "$ cd ~/VTK/build/\n"
 "$ ./bin/vtkFiltersMeshingCxxTests TestVoronoiCore3D\n"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:141
+#: ../../../../Doxygen/VoronoiFramework.md:140
 msgid ""
 "The environment variable `VTK_SMP_MAX_THREADS` can be used to limit the "
 "number of computing threads used during execution. For example, export "
@@ -709,15 +707,15 @@ msgid ""
 "setting `VTK_SMP_MAX_THREADS` to 1."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:143
+#: ../../../../Doxygen/VoronoiFramework.md:142
 msgid "Additional help is available from the VTK Discourse list."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:145
+#: ../../../../Doxygen/VoronoiFramework.md:144
 msgid "Voronoi Framework Template Parameters"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:146
+#: ../../../../Doxygen/VoronoiFramework.md:145
 msgid ""
 "For advanced users and developers, understanding the template parameters "
 "which are used to instantiate VTK’s Voronoi framework is essential. The "
@@ -727,14 +725,14 @@ msgid ""
 "`vtkVoronoiCore3D` is defined as follows:"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:148
+#: ../../../../Doxygen/VoronoiFramework.md:147
 msgid ""
 "template <class TCompositor, class TClassifier=vtkVoronoiClassifier3D>\n"
 "class vtkVoronoiCore3D\n"
 "{ … };\n"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:154
+#: ../../../../Doxygen/VoronoiFramework.md:153
 msgid ""
 "The compositor is used to extract specific information as each Voronoi hull "
 "is generated; accumulating this information in thread local storage, and "
@@ -754,18 +752,18 @@ msgid ""
 "information (e.g., the “strength” of connection to neighboring hulls)."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:156
+#: ../../../../Doxygen/VoronoiFramework.md:155
 msgid ""
 "For further information, we recommend studying the vtkVoronoiCore, "
 "vtkVoronoiCore2D, and vtkVoronoiCore3D classes found in the VTK/Filters/"
 "Meshing directory."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:158
+#: ../../../../Doxygen/VoronoiFramework.md:157
 msgid "Future Work"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:159
+#: ../../../../Doxygen/VoronoiFramework.md:158
 msgid ""
 "With the addition of the configurable Voronoi framework, significant "
 "potential exists to add new Voronoi-based computational and visualization "
@@ -778,32 +776,32 @@ msgid ""
 "applications."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:161
+#: ../../../../Doxygen/VoronoiFramework.md:160
 msgid "References"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:162
+#: ../../../../Doxygen/VoronoiFramework.md:161
 msgid ""
 "[1] W. Schroeder, D. Thompson, S. Tsalikis. \"A Parallel Meshless Voronoi "
 "Method for Generalized SurfaceNets.\" IEEE Transactions on Visualization and "
 "Computer Graphics. (In preparation.)"
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:164
+#: ../../../../Doxygen/VoronoiFramework.md:163
 msgid ""
 "[2] C. H. Rycroft. “Voro++: A three-dimensional voronoi cell library in c+"
 "+.” Chaos: An Interdisciplinary Journal of Nonlinear Science, vol. 19, no. "
 "4, p. 041111, 10 2009."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:166
+#: ../../../../Doxygen/VoronoiFramework.md:165
 msgid ""
 "[3] J. Lu, E. A. Lazar, and C. H. Rycroft. “An extension to voro++ for "
 "multithreaded computation of voronoi cells.” Computer Physics "
 "Communications, vol. 291, p. 108832, 2023."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:168
+#: ../../../../Doxygen/VoronoiFramework.md:167
 msgid ""
 "[4] J. R. Shewchuk, “Triangle: Engineering a 2d quality mesh generator and "
 "delaunay triangulator.” in Applied Computational Geometry Towards Geometric "
@@ -811,14 +809,14 @@ msgid ""
 "Berlin Heidelberg, 1996, pp. 203–222."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:170
+#: ../../../../Doxygen/VoronoiFramework.md:169
 msgid ""
 "[5] W. Schroeder, S. Tsalikis, M. Halle, and S. Frisken. “A high-performance "
 "surfacenets discrete isocontouring algorithm.” 2024. [Online]. Available: "
 "https://doi.org/10.48550/arXiv.2401.14906."
 msgstr ""
 
-#: ../../../../Doxygen/VoronoiFramework.md:172
+#: ../../../../Doxygen/VoronoiFramework.md:171
 msgid ""
 "[6] Imprecision in QHull. http://www.qhull.org/html/qh-impre.htm [Online]"
 msgstr ""
