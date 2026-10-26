@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:1
+msgid "Refactor of the AMR data model"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:3
+msgid ""
+"The AMR data model has been refactored for future proofing. "
+"vtkUniformGridAMR now inherits from vtkPartitionedDataSetCollection instead "
+"of vtkCompositeDataSet."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:6
+msgid ""
+"This lets classes interact with AMR data as they would with any data object "
+"tree or pdc when accessing data, without requiring specific code. Specific "
+"code can and will still be needed in certain cases. Of course, when setting "
+"up the AMR, the AMR API should be used."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:10
+msgid ""
+"Indeed, each AMR level is now stored as a vtkPartitionedDataSet, and the AMR "
+"structure itself is described in the vtkAMRMetaData class stored internally."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:13
+msgid ""
+"Another impactful change was the separation of vtkAMRInformation into "
+"vtkAMRMetaData and vtkOverlappingAMRMetaData. This allow much simpler "
+"handling of the Overlapping vs NonOverlapping case and clear separation of "
+"responsibility."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:17
+msgid ""
+"In the process many API were reworked for consistency and stability. "
+"Backward compatibility was kept for many methods but certains became "
+"redundant and are just no-op with a deprecation flag."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:21
+msgid "Add Support for AMR of vtkRectilinearGrid"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:23
+msgid ""
+"The AMR data model now supports creating AMR of vtkRectilinearGrid thanks to "
+"the refactoring and the introduction of vtkCartesianGrid."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:26
+msgid ""
+"For vtkNonOverlappingAMR, the usage is pretty straight forward, just use "
+"`SetDataSet(level, idx, grid)` with coherent cartesian grids and it will "
+"work out of the box. Type can be mixed too."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:29
+msgid ""
+"For vtkOverlappingAMR, types cannot be mixed. Just add vtkRectilinearGrid "
+"but do not use SetSpacing or SetRefinementRatio as they do not make sense "
+"for this type. Instead, bounds will be automatically used internally and the "
+"API will just work."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:32
+msgid "Changes"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:34
+msgid ""
+"Here is the exhaustive list. `AMR::` refer to any AMR class, new or already "
+"present, for the sake of brevity. (vtkUniformGridAMR, vtkNonOverlappingAMR, "
+"vtkOverlappingAMR, vtkAMRInformation, vtkAMRMetaData, "
+"vtkOverlappingAMRMetaData)"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:38
+msgid "Classes:"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:40
+msgid ""
+"Deprecate vtkAMRInformation and introduce vtkOverlappingAMRMataData and "
+"vtkAMRMetaData"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:41
+msgid "Deprecate vtkAMRDataInternals which is not used anymore"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:42
+msgid "Deprecate vtkUniformGridAMRDataIterator into vtkUniformGirdAMRIterator"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:43
+msgid ""
+"Rename vtkUniformGridAMR into vtkAMRDataObject, vtkUniformGridAMR is now a "
+"legacy empty shell"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:45
+msgid "Methods:"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:47
+msgid "Deprecate AMR::Audit and add AMR::CheckValidity that returns a bool"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:48
+msgid "Deprecate AMR::Set/GetData, which are currently no-op."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:49
+msgid ""
+"Deprecate AMR::GetInfo and introduce vtkUniformGridAMR::GetMetaData and "
+"vtkOverlappingAMR::GetOverlappingAMRMetaData"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:50
+msgid ""
+"Deprecate AMR::Initialize(nBlock, blocksPerLevel) into AMR::Initialize(const "
+"std::vector<unsigned int>& blocksPerLevel)"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:50
+msgid "<unsigned int>"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:51
+msgid "Deprecate AMR::GetDataSet(level, idx) into AMR::GetDataSetAs..."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:52
+msgid ""
+"Deprecate vtkUniformGridAMR::GetCompositeIndex into vtkUniformGridAMR::"
+"GetAbsoluteBlockIndex"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:53
+msgid ""
+"Deprecate vtkUniformGridAMR::GetLevelAndIndex into vtkUniformGridAMR::"
+"ComputeIndexPair"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:54
+msgid ""
+"Deprecate vtkAMRInformation::GetIndex into vtkAMRMetaData::"
+"GetAbsoluteBlockIndex"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:55
+msgid ""
+"Deprecate vtkAMRInformation::GetTotalNumberOfBlocks into vtkAMRMetaData::"
+"GetNumberOfBlocks"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:56
+msgid ""
+"Deprecate vtkAMRInformation::GetNumberOfDataSets(level) into vtkAMRMetaData::"
+"GetNumberOfBlocks(level)"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:57
+msgid ""
+"vtkOverlappingAMRLevelIdScalars::ColorLevel has been moved from protected to "
+"private without deprecation"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:59
+msgid "Members:"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:61
+msgid "vtkUniformGridAMR::Bounds is now private"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:63
+msgid "Change of behavior:"
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:65
+msgid ""
+"vtkUniformGridAMR::Initialize() now has multiple signatures, which may "
+"require to specify the type of argument being provided."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:67
+msgid ""
+"vtkUniformGridAMR now inherits vtkPartitionedDataSetCollection, which means "
+"any vtkPartitionedDataSetCollection::SafeDownCast(amr) will not return "
+"nullptr anymore."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:70
+msgid ""
+"vtkUniformGridAMRIterator now inherits vtkDataObjectTreeIterator, which "
+"means any vtkDataObjectTreeIterator::SafeDownCast(amrIter) will not return "
+"nullptr anymore."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:73
+msgid "vtkPlaneCutter now outputs a PDC instead of a MBD with a AMR input."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:75
+msgid ""
+"vtkDataObjectTree::CopyStructure(amr) used to reconstruct a data object tree "
+"with an simili AMR structure, this is not the case anymore and it just copy "
+"the partitioned dataset collection structure using the generic "
+"implementation."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:78
+msgid ""
+"vtkUniformGridAMR::CopyStructure(amr) now copy the bounds as well to ensure "
+"retro compatibility when dealing with vtkNonOverlappingAMR that do not "
+"contains bounds in the vtkAMRMetaData, contrary to vtkOverlappingAMR."
+msgstr ""
+
+#: ../../../release_details/9.6/refactor-amr-datamodel.md:81
+msgid ""
+"vtkExtractBlockUsingDataAssembly now outputs a "
+"vtkPartitionedDataSetCollection when input is a vtkNonOverlappingAMR for "
+"consistency."
+msgstr ""
