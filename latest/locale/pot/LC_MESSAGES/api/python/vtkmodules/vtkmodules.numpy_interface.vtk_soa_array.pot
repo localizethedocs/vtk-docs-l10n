@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-11-02 17:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,8 +68,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:34
 msgid ""
-"{py:obj}`_soa_to_ndarray_arg <vtkmodules.numpy_interface.vtk_soa_array."
-"_soa_to_ndarray_arg>`"
+"{py:obj}`_soa_to_ndarray_arg "
+"<vtkmodules.numpy_interface.vtk_soa_array._soa_to_ndarray_arg>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:36
@@ -79,8 +79,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:38
 msgid ""
-"{py:obj}`_soa_as_ndarray <vtkmodules.numpy_interface.vtk_soa_array."
-"_soa_as_ndarray>`"
+"{py:obj}`_soa_as_ndarray "
+"<vtkmodules.numpy_interface.vtk_soa_array._soa_as_ndarray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:40
@@ -143,14 +143,14 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:90
 msgid ""
-"{py:obj}`_soa_cumprod <vtkmodules.numpy_interface.vtk_soa_array."
-"_soa_cumprod>`"
+"{py:obj}`_soa_cumprod "
+"<vtkmodules.numpy_interface.vtk_soa_array._soa_cumprod>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:94
 msgid ""
-"{py:obj}`_soa_concatenate <vtkmodules.numpy_interface.vtk_soa_array."
-"_soa_concatenate>`"
+"{py:obj}`_soa_concatenate "
+"<vtkmodules.numpy_interface.vtk_soa_array._soa_concatenate>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:98
@@ -184,12 +184,12 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:122
 msgid ""
-"{py:obj}`_register_soa_overrides <vtkmodules.numpy_interface.vtk_soa_array."
-"_register_soa_overrides>`"
+"{py:obj}`_register_soa_overrides "
+"<vtkmodules.numpy_interface.vtk_soa_array._register_soa_overrides>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:124
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:806
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:782
 msgid "Register VTKSOAArray mixin as override for all SOA template types."
 msgstr ""
 
@@ -199,8 +199,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:134
 msgid ""
-"{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_soa_array."
-"_UNINITIALIZED>`"
+"{py:obj}`_UNINITIALIZED "
+"<vtkmodules.numpy_interface.vtk_soa_array._UNINITIALIZED>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:140
@@ -219,8 +219,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_soa_array.md:177
 msgid ""
-"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
-"VTKDataArrayMixin`"
+"Bases: {py:obj}"
+"`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:182
@@ -258,8 +258,8 @@ msgstr ""
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:205
 msgid ""
 "Per-Component Operations/home/runner/work/vtk-docs-l10n/vtk-docs-l10n/out/"
-"repo/Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:205: "
-"(INFO/1) Duplicate implicit target name: \"per-component operations\"."
+"repo/Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:205: (INFO/"
+"1) Duplicate implicit target name: \"per-component operations\"."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:207
@@ -438,6 +438,6 @@ msgstr ""
 msgid "Decompose other into per-component operands, or return None."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:658
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_soa_array.py:634
 msgid "Sort per-component (axis=0) or materialise for other axes."
 msgstr ""

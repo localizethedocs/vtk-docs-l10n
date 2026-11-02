@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-11-02 17:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,10 +66,10 @@ msgstr ""
 #: ../../../vtk_file_formats/vtkxml_file_format.md:14
 msgid ""
 "**Structured**. The dataset is a topologically regular array of cells such "
-"as pixels and voxels (e.g., image data) or quadrilaterals and hexahedra (e."
-"g., structured grid). Rectangular subsets of the data are described through "
-"extents. The structured dataset types are vtkImageData, vtkRectilinearGrid, "
-"and vtkStructuredGrid."
+"as pixels and voxels (e.g., image data) or quadrilaterals and hexahedra "
+"(e.g., structured grid). Rectangular subsets of the data are described "
+"through extents. The structured dataset types are vtkImageData, "
+"vtkRectilinearGrid, and vtkStructuredGrid."
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkxml_file_format.md:16
@@ -336,18 +336,48 @@ msgid ""
 "      <CellData>...</CellData>\n"
 "      <Points>...</Points>\n"
 "      <Cells>...</Cells>\n"
+"      <SideIds>...</SideIds>\n"
+"      <SideData>...</SideData>\n"
 "    </Piece>\n"
 "  </UnstructuredGrid>\n"
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:150
+#: ../../../vtk_file_formats/vtkxml_file_format.md:152
+msgid ""
+"Since version 2.4, an UnstructuredGrid piece can also carry data on the "
+"sides shared between its cells, the faces of 3D cells and the edges of 2D "
+"cells:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:154
+msgid ""
+"**SideData**. Laid out like _CellData_, with one tuple per side. A side "
+"shared by two cells has one tuple. The sides are numbered by "
+"`vtkUnstructuredGridSideMap`."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:155
+msgid ""
+"**SideIds**. Optional. The side numbering, when the writer was given one "
+"rather than letting VTK derive it. Its attributes are _NumberOfSides_ and "
+"_NumberOfHalfSides_, and it holds one _DataArray_, _HalfSideToSide_, with "
+"the side id of every side of every cell, in cell order and then in the local "
+"side order of `vtkCellTypeSides`. Without it, the reader derives the "
+"numbering from the cells."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:157
+msgid "Readers older than version 2.4 ignore both elements."
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:159
 msgid ""
 "Every dataset describes the data associated with its points and cells with "
 "PointData and CellData XML elements as follows:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:151
+#: ../../../vtk_file_formats/vtkxml_file_format.md:160
 msgid ""
 "      <PointData Scalars=\"Temperature\" Vectors=\"Velocity\">\n"
 "        <DataArray Name=\"Velocity\" .../>\n"
@@ -356,7 +386,7 @@ msgid ""
 "      </PointData>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:160
+#: ../../../vtk_file_formats/vtkxml_file_format.md:169
 msgid ""
 "VTK allows an arbitrary number of data arrays to be associated with the "
 "points and cells of a dataset. Each data array is described by a DataArray "
@@ -365,33 +395,33 @@ msgid ""
 "by name:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:161
+#: ../../../vtk_file_formats/vtkxml_file_format.md:170
 msgid "_Scalars_: The name of the active scalars array, if any."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:162
+#: ../../../vtk_file_formats/vtkxml_file_format.md:171
 msgid "_Vectors_: The name of the active vectors array, if any."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:163
+#: ../../../vtk_file_formats/vtkxml_file_format.md:172
 msgid "_Normals_: The name of the active normals array, if any."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:164
+#: ../../../vtk_file_formats/vtkxml_file_format.md:173
 msgid "_Tensors_: The name of the active tensors array, if any."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:165
+#: ../../../vtk_file_formats/vtkxml_file_format.md:174
 msgid "_TCoords_: The name of the active texture coordinates array, if any."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:167
+#: ../../../vtk_file_formats/vtkxml_file_format.md:176
 msgid ""
 "Some datasets describe their points and cells using different combinations "
 "of the following common elements:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:169
+#: ../../../vtk_file_formats/vtkxml_file_format.md:178
 msgid ""
 "**Points**. The _Points_ element explicitly defines coordinates for each "
 "point individually. It contains one _DataArray_ element describing an array "
@@ -399,14 +429,14 @@ msgid ""
 "point."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:171
+#: ../../../vtk_file_formats/vtkxml_file_format.md:180
 msgid ""
 "      <Points>\n"
 "        <DataArray NumberOfComponents=\"3\" .../>\n"
 "      </Points>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:178
+#: ../../../vtk_file_formats/vtkxml_file_format.md:187
 msgid ""
 "**Coordinates**. The _Coordinates_ element defines point coordinates for an "
 "extent by specifying the ordinate along each axis for each integer value in "
@@ -414,7 +444,7 @@ msgid ""
 "ordinates along the x-y-z axes, respectively."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:180
+#: ../../../vtk_file_formats/vtkxml_file_format.md:189
 msgid ""
 "      <Coordinates>\n"
 "        <DataArray .../>\n"
@@ -423,7 +453,7 @@ msgid ""
 "      </Coordinates>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:189
+#: ../../../vtk_file_formats/vtkxml_file_format.md:198
 msgid ""
 "**Verts**, **Lines**, **Strips**, and **Polys**. The _Verts_, _Lines_, "
 "_Strips_, and _Polys_ elements define cells explicitly by specifying point "
@@ -434,7 +464,7 @@ msgid ""
 "connectivity array for the end of each cell."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:191
+#: ../../../vtk_file_formats/vtkxml_file_format.md:200
 msgid ""
 "      <Verts>\n"
 "        <DataArray type=\"Int32\" Name=\"connectivity\" .../>\n"
@@ -442,7 +472,7 @@ msgid ""
 "      </Verts>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:199
+#: ../../../vtk_file_formats/vtkxml_file_format.md:208
 msgid ""
 "**Cells**. The _Cells_ element defines cells explicitly by specifying point "
 "connectivity and cell types. It contains three _DataArray_ elements. The "
@@ -453,7 +483,7 @@ msgid ""
 "3.)"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:201
+#: ../../../vtk_file_formats/vtkxml_file_format.md:210
 msgid ""
 "      <Cells>\n"
 "        <DataArray type=\"Int32\" Name=\"connectivity\" .../>\n"
@@ -462,19 +492,19 @@ msgid ""
 "      </Cells>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:210
+#: ../../../vtk_file_formats/vtkxml_file_format.md:219
 msgid ""
 "All of the data and geometry specifications use _DataArray_ elements to "
 "describe their actual content as follows:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:212
+#: ../../../vtk_file_formats/vtkxml_file_format.md:221
 msgid ""
 "**DataArray**. The _DataArray_ element stores a sequence of values of one "
 "type. There may be one or more components per value."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:214
+#: ../../../vtk_file_formats/vtkxml_file_format.md:223
 msgid ""
 "        <DataArray type=\"Float32\" Name=\"vectors\" "
 "NumberOfComponents=\"3\"\n"
@@ -485,11 +515,11 @@ msgid ""
 "                   10 20 30 ... </DataArray>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:225
+#: ../../../vtk_file_formats/vtkxml_file_format.md:234
 msgid "The attributes of the _DataArray_ elements are described as follows:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:227
+#: ../../../vtk_file_formats/vtkxml_file_format.md:236
 msgid ""
 "type: The data type of a single component of the array. This is one of Int8, "
 "UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Float32, Float64. Note: "
@@ -498,42 +528,42 @@ msgid ""
 "books/VTKUsersGuide.pdf#page=24)) or if the platform is 64-bit."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:229
+#: ../../../vtk_file_formats/vtkxml_file_format.md:238
 msgid ""
 "Name: The name of the array. This is usually a brief description of the data "
 "stored in the array."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:231
+#: ../../../vtk_file_formats/vtkxml_file_format.md:240
 msgid "NumberOfComponents: The number of components per value in the array."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:233
+#: ../../../vtk_file_formats/vtkxml_file_format.md:242
 msgid ""
 "format: The means by which the data values themselves are stored in the "
 "file. This is \"ascii\", \"binary\", or \"appended\"."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:235
+#: ../../../vtk_file_formats/vtkxml_file_format.md:244
 msgid ""
 "offset: If the format attribute is \"appended\", this specifies the offset "
 "from the beginning of the appended data section to the beginning of this "
 "array's data."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:237
+#: ../../../vtk_file_formats/vtkxml_file_format.md:246
 msgid ""
 "The _format_ attribute chooses among the three ways in which data values can "
 "be stored:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:239
+#: ../../../vtk_file_formats/vtkxml_file_format.md:248
 msgid ""
 "_format=\"ascii\"_ — The data is listed in ASCII directly inside the "
 "_DataArray_ element. Whitespace is used for separation."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:240
+#: ../../../vtk_file_formats/vtkxml_file_format.md:249
 msgid ""
 "_format=\"binary\"_ — The data is encoded in base64 and listed contiguously "
 "inside the _DataArray_ element. Data may also be compressed before encoding "
@@ -541,7 +571,7 @@ msgid ""
 "byte_order attribute of the _VTKFile_ element."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:241
+#: ../../../vtk_file_formats/vtkxml_file_format.md:250
 msgid ""
 "format=\"appended\" — The data is stored in the appended data section. Since "
 "many _DataArray_ elements may store their data in this section, the offset "
@@ -549,13 +579,13 @@ msgid ""
 "is the default used by VTK's writers."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:243
+#: ../../../vtk_file_formats/vtkxml_file_format.md:252
 msgid ""
 "The appended data section is stored in an _AppendedData_ element that is "
 "nested inside _VTKFile_ after the dataset element:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:245
+#: ../../../vtk_file_formats/vtkxml_file_format.md:254
 msgid ""
 "<VTKFile ...>\n"
 "  ...\n"
@@ -565,7 +595,7 @@ msgid ""
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:255
+#: ../../../vtk_file_formats/vtkxml_file_format.md:264
 msgid ""
 "The appended data section begins immediately after the underscore ('_') that "
 "prefixes the content of the _AppendedData_ element; the underscore itself is "
@@ -578,18 +608,18 @@ msgid ""
 "first character after the underscore to the beginning of its data."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:257
+#: ../../../vtk_file_formats/vtkxml_file_format.md:266
 msgid "**Parallel File Formats**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:258
+#: ../../../vtk_file_formats/vtkxml_file_format.md:267
 msgid ""
 "The parallel file formats do not actually store any data in the file. "
 "Instead, the data is broken into pieces, each of which is stored in a serial "
 "file of the same dataset type."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:260
+#: ../../../vtk_file_formats/vtkxml_file_format.md:269
 msgid ""
 "The _VTKFile_ element contains one element whose name corresponds to the "
 "type of dataset the file describes, but with a \"P\" prefix. We refer to "
@@ -597,7 +627,7 @@ msgid ""
 "_PRectilinearGrid_, _PStructuredGrid_, _PPolyData_, or _PUnstructuredGrid_."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:262
+#: ../../../vtk_file_formats/vtkxml_file_format.md:271
 msgid ""
 "The parallel dataset element and those nested inside specify the data array "
 "types used to store points, point data, and cell data (the type of arrays "
@@ -609,15 +639,15 @@ msgid ""
 "without reading the pieces' files."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:264
+#: ../../../vtk_file_formats/vtkxml_file_format.md:273
 msgid "The general structure for each parallel dataset format is as follows:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:266
+#: ../../../vtk_file_formats/vtkxml_file_format.md:275
 msgid "**PImageData**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:267
+#: ../../../vtk_file_formats/vtkxml_file_format.md:276
 msgid ""
 "The _PImageData_ element specifies the whole extent of the dataset and the "
 "number of ghost-levels by which the extents in the individual pieces "
@@ -626,7 +656,7 @@ msgid ""
 "file in which it is stored."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:269
+#: ../../../vtk_file_formats/vtkxml_file_format.md:278
 msgid ""
 "<VTKFile type=\"PImageData\" ...>\n"
 "  <PImageData WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
@@ -639,11 +669,11 @@ msgid ""
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:282
+#: ../../../vtk_file_formats/vtkxml_file_format.md:291
 msgid "**PRectilinearGrid**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:283
+#: ../../../vtk_file_formats/vtkxml_file_format.md:292
 msgid ""
 "The _PRectilinearGrid_ element specifies the whole extent of the dataset and "
 "the number of ghost-levels by which the extents in the individual pieces "
@@ -653,7 +683,7 @@ msgid ""
 "file in which it is stored."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:285
+#: ../../../vtk_file_formats/vtkxml_file_format.md:294
 msgid ""
 "<VTKFile type=\"PRectilinearGrid\" ...>\n"
 "  <PRectilinearGrid WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
@@ -668,11 +698,11 @@ msgid ""
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:300
+#: ../../../vtk_file_formats/vtkxml_file_format.md:309
 msgid "**PStructuredGrid**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:301
+#: ../../../vtk_file_formats/vtkxml_file_format.md:310
 msgid ""
 "The _PStructuredGrid_ element specifies the whole extent of the dataset and "
 "the number of ghost-levels by which the extents in the individual pieces "
@@ -681,7 +711,7 @@ msgid ""
 "element describes the extent of one piece and the file in which it is stored."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:303
+#: ../../../vtk_file_formats/vtkxml_file_format.md:312
 msgid ""
 "<VTKFile type=\"PStructuredGrid\" ...>\n"
 "  <PStructuredGrid WholeExtent=\"x1 x2 y1 y2 z1 z2\"\n"
@@ -696,11 +726,11 @@ msgid ""
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:318
+#: ../../../vtk_file_formats/vtkxml_file_format.md:327
 msgid "**PPolyData**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:319
+#: ../../../vtk_file_formats/vtkxml_file_format.md:328
 msgid ""
 "The _PPolyData_ element specifies the number of ghost-levels by which the "
 "individual pieces overlap. The _PPoints_ element describes the type of array "
@@ -708,7 +738,7 @@ msgid ""
 "Each _Piece_ element specifies the file in which the piece is stored."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:321
+#: ../../../vtk_file_formats/vtkxml_file_format.md:330
 msgid ""
 "<VTKFile type=\"PPolyData\" ...>\n"
 "  <PPolyData GhostLevel=\"#\">\n"
@@ -721,11 +751,11 @@ msgid ""
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:334
+#: ../../../vtk_file_formats/vtkxml_file_format.md:343
 msgid "**PUnstructuredGrid**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:335
+#: ../../../vtk_file_formats/vtkxml_file_format.md:344
 msgid ""
 "The _PUnstructuredGrid_ element specifies the number of ghost-levels by "
 "which the individual pieces overlap. The _PPoints_ element describes the "
@@ -734,7 +764,7 @@ msgid ""
 "is stored."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:337
+#: ../../../vtk_file_formats/vtkxml_file_format.md:346
 msgid ""
 "<VTKFile type=\"PUnstructuredGrid\" ...>\n"
 "  <PUnstructuredGrid GhostLevel=\"0\">\n"
@@ -747,13 +777,13 @@ msgid ""
 "</VTKFile>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:350
+#: ../../../vtk_file_formats/vtkxml_file_format.md:359
 msgid ""
 "Every dataset uses _PPointData_ and _PCellData_ elements to describe the "
 "types of data arrays associated with its points and cells."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:352
+#: ../../../vtk_file_formats/vtkxml_file_format.md:361
 msgid ""
 "**PPointData** and **PCellData**. These elements simply mirror the "
 "_PointData_ and _CellData_ elements from the serial file formats. They "
@@ -761,7 +791,7 @@ msgid ""
 "actual data."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:354
+#: ../../../vtk_file_formats/vtkxml_file_format.md:363
 msgid ""
 "    <PPointData Scalars=\"Temperature\" Vectors=\"Velocity\">\n"
 "      <PDataArray Name=\"Velocity\" .../>\n"
@@ -770,34 +800,34 @@ msgid ""
 "    </PPointData>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:363
+#: ../../../vtk_file_formats/vtkxml_file_format.md:372
 msgid ""
 "For datasets that need specification of points, the following elements "
 "mirror their counterparts from the serial file format:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:365
+#: ../../../vtk_file_formats/vtkxml_file_format.md:374
 msgid ""
 "**PPoints**. The _PPoints_ element contains one _PDataArray_ element "
 "describing an array with three components. The data array does not actually "
 "contain any data."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:367
+#: ../../../vtk_file_formats/vtkxml_file_format.md:376
 msgid ""
 "    <PPoints>\n"
 "      <PDataArray NumberOfComponents=\"3\" .../>\n"
 "    </PPoints>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:374
+#: ../../../vtk_file_formats/vtkxml_file_format.md:383
 msgid ""
 "**PCoordinates**. The _PCoordinates_ element contains three _PDataArray_ "
 "elements describing the arrays used to specify ordinates along each axis. "
 "The data arrays do not actually contain any data."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:376
+#: ../../../vtk_file_formats/vtkxml_file_format.md:385
 msgid ""
 "    <PCoordinates>\n"
 "      <PDataArray .../>\n"
@@ -806,13 +836,13 @@ msgid ""
 "    </PCoordinates>"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:385
+#: ../../../vtk_file_formats/vtkxml_file_format.md:394
 msgid ""
 "All of the data and geometry specifications use _PDataArray_ elements to "
 "describe the data array types:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:387
+#: ../../../vtk_file_formats/vtkxml_file_format.md:396
 msgid ""
 "**PDataArray**. The _PDataArray_ element specifies the type, Name, and "
 "optionally the NumberOfComponents attributes from the _DataArray_ element. "
@@ -821,28 +851,28 @@ msgid ""
 "is necessary for efficient pipeline updates in some cases."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:389
+#: ../../../vtk_file_formats/vtkxml_file_format.md:398
 msgid ""
 "      <PDataArray type=\"Float32\" Name=\"vectors\" NumberOfComponents=\"3\"/"
 ">\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:393
+#: ../../../vtk_file_formats/vtkxml_file_format.md:402
 msgid "**XML File Examples**"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:395
+#: ../../../vtk_file_formats/vtkxml_file_format.md:404
 msgid ""
 "Below are some examples for valid XML files for the different file formats. "
 "Each example includes a minimal dataset along with point and cell attributes "
 "to illustrate typical structure, data arrays, and element organization."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:397
+#: ../../../vtk_file_formats/vtkxml_file_format.md:406
 msgid "ImageData"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:399
+#: ../../../vtk_file_formats/vtkxml_file_format.md:408
 msgid ""
 "This example shows a 2D image stored as vtkImageData with three pieces. Each "
 "piece defines its own Extent, while Origin and Spacing are shared across the "
@@ -850,11 +880,11 @@ msgid ""
 "element layout."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:401
+#: ../../../vtk_file_formats/vtkxml_file_format.md:410
 msgid "ImageData Example"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:406
+#: ../../../vtk_file_formats/vtkxml_file_format.md:415
 msgid ""
 "<VTKFile type=\"ImageData\"  version=\"0.1\" byte_order=\"LittleEndian\">\n"
 "  <ImageData WholeExtent=\"0 26 0 14 0 0\"\n"
@@ -983,21 +1013,21 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:531
+#: ../../../vtk_file_formats/vtkxml_file_format.md:540
 msgid "RectilinearGrid"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:533
+#: ../../../vtk_file_formats/vtkxml_file_format.md:542
 msgid ""
 "This example demonstrates a vtkRectilinearGrid with independent X, Y, and Z "
 "coordinate arrays, and it includes scalar fields on both points and cells."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:535
+#: ../../../vtk_file_formats/vtkxml_file_format.md:544
 msgid "RectilinearGrid Example"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:540
+#: ../../../vtk_file_formats/vtkxml_file_format.md:549
 msgid ""
 "<VTKFile type=\"RectilinearGrid\" version=\"0.1\" "
 "byte_order=\"LittleEndian\">\n"
@@ -1049,22 +1079,22 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:587
+#: ../../../vtk_file_formats/vtkxml_file_format.md:596
 msgid "StructuredGrid"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:589
+#: ../../../vtk_file_formats/vtkxml_file_format.md:598
 msgid ""
 "A vtkStructuredGrid example with explicit point coordinates. The grid is "
 "6×6×2 in extent, with varying Z-coordinates. Point and cell scalar data are "
 "included."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:591
+#: ../../../vtk_file_formats/vtkxml_file_format.md:600
 msgid "StructuredGrid Example"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:596
+#: ../../../vtk_file_formats/vtkxml_file_format.md:605
 msgid ""
 "<VTKFile type=\"StructuredGrid\" version=\"0.1\" "
 "byte_order=\"LittleEndian\">\n"
@@ -1119,21 +1149,21 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:648
+#: ../../../vtk_file_formats/vtkxml_file_format.md:657
 msgid "PolyData"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:650
+#: ../../../vtk_file_formats/vtkxml_file_format.md:659
 msgid ""
 "Demonstrated is a 2D polygonal mesh with 13 points and 6 polygons, including "
 "point-based scalars and vectors, and cell scalar values."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:652
+#: ../../../vtk_file_formats/vtkxml_file_format.md:661
 msgid "PolyData Example"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:657
+#: ../../../vtk_file_formats/vtkxml_file_format.md:666
 msgid ""
 "<VTKFile type=\"PolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
 "  <PolyData>\n"
@@ -1187,21 +1217,21 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:706
+#: ../../../vtk_file_formats/vtkxml_file_format.md:715
 msgid "UnstructuredGrid"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:708
+#: ../../../vtk_file_formats/vtkxml_file_format.md:717
 msgid ""
 "This example shows a 3D mesh with 20 points and 12 mixed-type cells (wedges "
 "and pyramids), featuring point scalars and cell-based scalars and normals."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:710
+#: ../../../vtk_file_formats/vtkxml_file_format.md:719
 msgid "UnstructuredGrid Example"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:715
+#: ../../../vtk_file_formats/vtkxml_file_format.md:724
 msgid ""
 "<VTKFile type=\"UnstructuredGrid\" version=\"1.0\" "
 "byte_order=\"LittleEndian\">\n"
@@ -1285,27 +1315,27 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:794
+#: ../../../vtk_file_formats/vtkxml_file_format.md:803
 msgid ""
 "Below is another unstructured grid example, which uses polyhedron cell types."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:796
+#: ../../../vtk_file_formats/vtkxml_file_format.md:805
 msgid "UnstructuredGrid Example with Polyhedron Cell Types"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:801
+#: ../../../vtk_file_formats/vtkxml_file_format.md:810
 msgid "Here we see a few additional ``DataArray`` types:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:803
+#: ../../../vtk_file_formats/vtkxml_file_format.md:812
 msgid ""
 "The ``faces`` array specifies the faces of all the cells. The description "
 "for each cell must first specify the total number of faces, then list each "
 "face, starting with the number of points and followed by the point IDs."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:804
+#: ../../../vtk_file_formats/vtkxml_file_format.md:813
 msgid ""
 "cell0_nFaces\n"
 "cell0_face0_npts p0 p1 ...\n"
@@ -1321,25 +1351,25 @@ msgid ""
 "...\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:819
+#: ../../../vtk_file_formats/vtkxml_file_format.md:828
 msgid ""
 "``faceoffsets`` contains the offsets into the ``faces`` array for the end of "
 "each cell."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:821
+#: ../../../vtk_file_formats/vtkxml_file_format.md:830
 msgid ""
 "``connectivity`` in this case lists all unique point IDs referenced in each "
 "cell."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:823
+#: ../../../vtk_file_formats/vtkxml_file_format.md:832
 msgid ""
 "``offsets`` describes where each cell entry ends in the ``connectivity`` "
 "array."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:825
+#: ../../../vtk_file_formats/vtkxml_file_format.md:834
 msgid ""
 "<VTKFile type=\"UnstructuredGrid\" version=\"0.1\" "
 "byte_order=\"LittleEndian\">\n"
@@ -1476,34 +1506,34 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:959
+#: ../../../vtk_file_formats/vtkxml_file_format.md:968
 msgid "PPolyData"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:961
+#: ../../../vtk_file_formats/vtkxml_file_format.md:970
 msgid ""
 "The following is a complete example specifying a vtkPolyData representing a "
-"cube with some scalar data on its points and faces. <sup>[1](https://kitware."
-"com/products/books/VTKUsersGuide.pdf)</sup>"
-msgstr ""
-
-#: ../../../vtk_file_formats/vtkxml_file_format.md:961
-msgid "<sup>"
-msgstr ""
-
-#: ../../../vtk_file_formats/vtkxml_file_format.md:961
-msgid "</sup>"
-msgstr ""
-
-#: ../../../vtk_file_formats/vtkxml_file_format.md:964
-msgid "PPolyData Cube Example"
-msgstr ""
-
-#: ../../../vtk_file_formats/vtkxml_file_format.md:969
-msgid "``polyEx.pvtp``:"
+"cube with some scalar data on its points and faces. <sup>[1](https://"
+"kitware.com/products/books/VTKUsersGuide.pdf)</sup>"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkxml_file_format.md:970
+msgid "<sup>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:970
+msgid "</sup>"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:973
+msgid "PPolyData Cube Example"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:978
+msgid "``polyEx.pvtp``:"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkxml_file_format.md:979
 msgid ""
 "<VTKFile type=\"PPolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
 "  <PPolyData GhostLevel=\"0\">\n"
@@ -1523,11 +1553,11 @@ msgid ""
 "</VTKFile>\n"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:988
+#: ../../../vtk_file_formats/vtkxml_file_format.md:997
 msgid "``polyEx0.vtp``:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkxml_file_format.md:989
+#: ../../../vtk_file_formats/vtkxml_file_format.md:998
 msgid ""
 "<VTKFile type=\"PolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n"
 "  <PolyData>\n"
