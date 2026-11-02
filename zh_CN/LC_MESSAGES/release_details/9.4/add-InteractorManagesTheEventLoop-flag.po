@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.md:1
+msgid ""
+"New flag vtkRenderWindowInteractor::InteractorManagesTheEventLoop for event "
+"loop"
+msgstr ""
+
+#: ../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.md:3
+msgid ""
+"This flag is useful when you are integrating VTK in a larger system. In such "
+"cases, an application can lock up if the `Start()` method in "
+"vtkRenderWindowInteractor processes events indefinitely without giving the "
+"system a chance to execute anything. The default value for this flag is "
+"true. It currently only affects VTK webassembly applications."
+msgstr ""
+
+#: ../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.md:10
+msgid "As an example with webassembly in the browser through emscripten SDK:"
+msgstr ""
+
+#: ../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.md:12
+msgid ""
+"If your app has an `int main` entry point, leave this value enabled. "
+"Emscripten will simulate an infinite event loop and avoid running code after "
+"`interactor->Start()` which is usually the end of `main`. Otherwise, all VTK "
+"objects will go out of scope immediately without giving a chance for user "
+"interaction with the render window."
+msgstr ""
+
+#: ../../../release_details/9.4/add-InteractorManagesTheEventLoop-flag.md:17
+msgid ""
+"If your app does not have an `int main` entry point, disable this behavior. "
+"Otherwise, the webassembly application will not start up successfully."
+msgstr ""
