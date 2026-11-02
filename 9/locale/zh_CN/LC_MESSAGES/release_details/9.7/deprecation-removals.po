@@ -73,8 +73,8 @@ msgstr ""
 
 #: ../../../release_details/9.7/deprecation-removals.md:12
 msgid ""
-"In FiltersCore: vtkAppendPolyData::AppendData and vtkAppendPolyData::"
-"AppendCells were removed"
+"In FiltersCore: vtkAppendPolyData::AppendData and "
+"vtkAppendPolyData::AppendCells were removed"
 msgstr ""
 
 #: ../../../release_details/9.7/deprecation-removals.md:13
@@ -149,15 +149,17 @@ msgstr ""
 
 #: ../../../release_details/9.7/deprecation-removals.md:26
 msgid ""
-"In IOXML: vtkXMLWriter::GetInputAsDataSet, vtkXMLUnstructuredDataWriter::"
-"GetInputAsPointSet, vtkXMLTableWriter::GetInputAsTable, vtkXMLReader::Min, "
-"vtkXMLReader::Max were removed"
+"In IOXML: vtkXMLWriter::GetInputAsDataSet, "
+"vtkXMLUnstructuredDataWriter::GetInputAsPointSet, "
+"vtkXMLTableWriter::GetInputAsTable, vtkXMLReader::Min, vtkXMLReader::Max "
+"were removed"
 msgstr ""
 
 #: ../../../release_details/9.7/deprecation-removals.md:27
 msgid ""
-"In InteractionWidgets: Deprecated behavior of vtkCellCentersPointPlacer::"
-"HasProp, vtkPolyDataPointPlacer::HasProp have been removed"
+"In InteractionWidgets: Deprecated behavior of "
+"vtkCellCentersPointPlacer::HasProp, vtkPolyDataPointPlacer::HasProp have "
+"been removed"
 msgstr ""
 
 #: ../../../release_details/9.7/deprecation-removals.md:28

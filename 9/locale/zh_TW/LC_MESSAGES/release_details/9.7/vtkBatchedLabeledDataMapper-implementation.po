@@ -119,9 +119,9 @@ msgstr ""
 #: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:63
 msgid ""
 "The protected data member `Implementation` in `vtkLabeledDataMapper` has "
-"been changed from a raw pointer (`Internals* Implementation`) to a `std::"
-"unique_ptr<Internals>`. Subclasses that stored or transferred ownership of "
-"this pointer must be updated accordingly."
+"been changed from a raw pointer (`Internals* Implementation`) to a "
+"`std::unique_ptr<Internals>`. Subclasses that stored or transferred "
+"ownership of this pointer must be updated accordingly."
 msgstr ""
 
 #: ../../../release_details/9.7/vtkBatchedLabeledDataMapper-implementation.md:68

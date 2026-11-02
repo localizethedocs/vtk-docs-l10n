@@ -77,8 +77,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.misc.md:34
 msgid ""
-"{py:obj}`vtkRegressionTestImage <vtkmodules.util.misc."
-"vtkRegressionTestImage>`"
+"{py:obj}`vtkRegressionTestImage "
+"<vtkmodules.util.misc.vtkRegressionTestImage>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:36
@@ -124,14 +124,14 @@ msgstr ""
 #: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:61
 msgid ""
 "@calldata_type(vtkConstants.VTK_STRING) def onError(caller, event, "
-"calldata):     print(\"caller: %s - event: %s - msg: %s\" % (caller."
-"GetClassName(), event, calldata))"
+"calldata):     print(\"caller: %s - event: %s - msg: %s\" % "
+"(caller.GetClassName(), event, calldata))"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:65
 msgid ""
-"lt = vtkLookupTable() lt.AddObserver(vtkCommand.ErrorEvent, onError) lt."
-"SetTableRange(2,1)"
+"lt = vtkLookupTable() lt.AddObserver(vtkCommand.ErrorEvent, onError) "
+"lt.SetTableRange(2,1)"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/misc.py:76

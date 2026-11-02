@@ -23,11 +23,12 @@ msgstr ""
 
 #: ../../../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.md:3
 msgid ""
-"You can now draw round points by calling the new `vtkProperty::"
-"SetPoint2DShape()` method with a value of `vtkProperty::Point2DShapeType::"
-"Round`. The default value is `vtkProperty::Point2DShapeType::Square`. Note "
-"that points will be rendered as spheres when `RenderPointsAsSpheres` is "
-"turned on irrespective of the value of `Point2DShape`."
+"You can now draw round points by calling the new "
+"`vtkProperty::SetPoint2DShape()` method with a value of "
+"`vtkProperty::Point2DShapeType::Round`. The default value is "
+"`vtkProperty::Point2DShapeType::Square`. Note that points will be rendered "
+"as spheres when `RenderPointsAsSpheres` is turned on irrespective of the "
+"value of `Point2DShape`."
 msgstr ""
 
 #: ../../../release_details/9.5/add-point-2d-shape-setting-for-vtkProperty.md:8

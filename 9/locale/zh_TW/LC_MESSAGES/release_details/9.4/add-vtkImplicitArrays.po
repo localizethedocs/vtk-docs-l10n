@@ -176,9 +176,9 @@ msgstr ""
 #: ../../../release_details/9.4/add-vtkImplicitArrays.md:98
 msgid ""
 "`vtkCompositeArray<ValueType>`: using the "
-"`vtkCompositeImplicitBackend<ValueType>` closure backend that takes an `std::"
-"vector<vtkDataArray*>` at construction and returns values as if the list has "
-"been concatenated into one array"
+"`vtkCompositeImplicitBackend<ValueType>` closure backend that takes an "
+"`std::vector<vtkDataArray*>` at construction and returns values as if the "
+"list has been concatenated into one array"
 msgstr ""
 
 #: ../../../release_details/9.4/add-vtkImplicitArrays.md:99
@@ -240,8 +240,8 @@ msgstr ""
 #: ../../../release_details/9.4/add-vtkImplicitArrays.md:117
 msgid ""
 "`vtkImplicitArray::GetVoidPointer` (implementing and internal deep copy of "
-"the array into an AOS array that can be destroyed with `vtkImplicitArray::"
-"Squeeze`)"
+"the array into an AOS array that can be destroyed with "
+"`vtkImplicitArray::Squeeze`)"
 msgstr ""
 
 #: ../../../release_details/9.4/add-vtkImplicitArrays.md:118
@@ -361,8 +361,8 @@ msgstr ""
 
 #: ../../../release_details/9.4/add-vtkImplicitArrays.md:163
 msgid ""
-"Any two arrays composited into a `vtkCompositeArray` using the `vtk::"
-"ConcatenateDataArrays` method must have the same number of components."
+"Any two arrays composited into a `vtkCompositeArray` using the "
+"`vtk::ConcatenateDataArrays` method must have the same number of components."
 msgstr ""
 
 #: ../../../release_details/9.4/add-vtkImplicitArrays.md:164
@@ -421,8 +421,9 @@ msgid ""
 "}\n"
 "\n"
 "vtkNew<vtkIndexedArray<int>> indexed;\n"
-"indexed->SetBackend(std::"
-"make_shared<vtkIndexedImplicitBackend<int>>(indexes, baseArr));\n"
+"indexed-"
+">SetBackend(std::make_shared<vtkIndexedImplicitBackend<int>>(indexes, "
+"baseArr));\n"
 "indexed->SetNumberOfComponents(1);\n"
 "indexed->SetNumberOfComponents(indexes->GetNumberOfIds());\n"
 "CHECK(indexed->GetValue(13) == 130); // always true\n"

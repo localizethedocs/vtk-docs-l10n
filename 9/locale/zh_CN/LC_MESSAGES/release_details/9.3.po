@@ -164,10 +164,10 @@ msgstr ""
 #: ../../../../release/_9.3-stripped.md:33
 msgid ""
 "Uniformize the `vtkPlot` API for color setters/getter, in order to fit the "
-"API of `vtkPen` and `vtkBrush`. Methods using floating point parameters (e."
-"g. `vtkPlot::SetColor(double r, double g, double b)`) are now suffixed with "
-"`F` to avoid confusion with equivalent functions using unsigned chars. The "
-"former ones are marked as deprecated."
+"API of `vtkPen` and `vtkBrush`. Methods using floating point parameters "
+"(e.g. `vtkPlot::SetColor(double r, double g, double b)`) are now suffixed "
+"with `F` to avoid confusion with equivalent functions using unsigned chars. "
+"The former ones are marked as deprecated."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:38
@@ -416,8 +416,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:113
 msgid ""
-"`vtkPLY::get_words` signature changed from `void(std::istream* is, std::"
-"vector<char*>* words, char line_words[], char orig_line[])` to "
+"`vtkPLY::get_words` signature changed from `void(std::istream* is, "
+"std::vector<char*>* words, char line_words[], char orig_line[])` to "
 "`void(vtkResourceParser* is, std::vector<char*>* words, char line_words[], "
 "char orig_line[])`"
 msgstr ""
@@ -914,8 +914,9 @@ msgstr ""
 msgid ""
 "`vtkThreadedCallbackQueue` can be used to run functions in the background on "
 "different threads. Use the `Push` method to add functions to the queue. The "
-"`Push` method returns a `vtkSmartPointer<vtkThreadedCallbackQueue::"
-"vtkSharedFutureBase>`, which lets users synchronize tasks."
+"`Push` method returns a "
+"`vtkSmartPointer<vtkThreadedCallbackQueue::vtkSharedFutureBase>`, which lets "
+"users synchronize tasks."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:309
@@ -1034,11 +1035,11 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:352
 msgid ""
-"Add new `vtkNonLinearCell::StableClip` method and `vtkQuadraticTetra::"
-"StableClip` implementation. The goal of this clip is to only decompose a "
-"cell if its actually clipped, otherwise keep the non-linear cell in its "
-"entirety. Note: this clipping approach will lead to topological holes "
-"between decomposed cells and the remaining non-linear cells."
+"Add new `vtkNonLinearCell::StableClip` method and "
+"`vtkQuadraticTetra::StableClip` implementation. The goal of this clip is to "
+"only decompose a cell if its actually clipped, otherwise keep the non-linear "
+"cell in its entirety. Note: this clipping approach will lead to topological "
+"holes between decomposed cells and the remaining non-linear cells."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:357
@@ -1208,9 +1209,10 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:429
 msgid ""
-"Added regularization mode. This is enabled by setting `vtkQuadricDecimation::"
-"SetRegularize(true)` and `vtkQuadricDecimation::SetRegularization(value)` "
-"where `value` is the standard deviation used in the Gaussian distribution."
+"Added regularization mode. This is enabled by setting "
+"`vtkQuadricDecimation::SetRegularize(true)` and "
+"`vtkQuadricDecimation::SetRegularization(value)` where `value` is the "
+"standard deviation used in the Gaussian distribution."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:433
@@ -1292,8 +1294,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:458
 msgid ""
-"Added more VTK-m accelerated filter overrides. If the `VTK::"
-"AcceleratorsVTKmFilters` is enabled and the CMake option "
+"Added more VTK-m accelerated filter overrides. If the "
+"`VTK::AcceleratorsVTKmFilters` is enabled and the CMake option "
 "`VTK_ENABLE_VTKM_OVERRIDES` is ON, the following filters will be overridden:"
 msgstr ""
 
@@ -1622,9 +1624,9 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:570
 msgid ""
-"Added `vtkNumberToString::SetHighExponent` and `vtkNumberToString::"
-"SetLowExponent` to control the exponent range for scientific or fixed "
-"notation."
+"Added `vtkNumberToString::SetHighExponent` and "
+"`vtkNumberToString::SetLowExponent` to control the exponent range for "
+"scientific or fixed notation."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:572
@@ -1646,8 +1648,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:579
 msgid ""
-"![poly data hdf schema](imgs/9.3/poly_data_hdf_schema.png) ![schema]"
-"(imgs/9.3/transient_hdf_schema.png)"
+"![poly data hdf schema](imgs/9.3/poly_data_hdf_schema.png) ![schema](imgs/"
+"9.3/transient_hdf_schema.png)"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:579
@@ -1981,8 +1983,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:714
 msgid ""
-"Added `VTK_USE_WIN32_OPENGL` option to disable Win32 API in `VTK::"
-"RenderingOpenGL2` on Windows. This enables OSMesa support on Windows."
+"Added `VTK_USE_WIN32_OPENGL` option to disable Win32 API in "
+"`VTK::RenderingOpenGL2` on Windows. This enables OSMesa support on Windows."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:716
@@ -1992,8 +1994,8 @@ msgstr ""
 #: ../../../../release/_9.3-stripped.md:717
 msgid ""
 "Added new module providing `zSpace` support to VTK, implementing render "
-"window, interactor style, camera, etc. Supports both the \"Core zSpace "
-"API\" (legacy) and the \"Core Compatibility zSpace API\" (latest)."
+"window, interactor style, camera, etc. Supports both the \"Core zSpace API\" "
+"(legacy) and the \"Core Compatibility zSpace API\" (latest)."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:720
@@ -2012,8 +2014,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:726
 msgid ""
-"Improved performance and consistency of `vtkRenderWindowInteractor::"
-"ProcessEvents` across all platforms."
+"Improved performance and consistency of "
+"`vtkRenderWindowInteractor::ProcessEvents` across all platforms."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:728
@@ -2261,9 +2263,9 @@ msgstr ""
 #: ../../../../release/_9.3-stripped.md:826
 msgid ""
 "The result of the bug was that stereo images of an object were always a "
-"fixed distance apart from each other, regardless of the objects location w.r."
-"t. the screen, and regardless of the the eye position w.r.t. the object and "
-"screen."
+"fixed distance apart from each other, regardless of the objects location "
+"w.r.t. the screen, and regardless of the the eye position w.r.t. the object "
+"and screen."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:831
@@ -2301,8 +2303,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:847
 msgid ""
-"`fast_float` added as a vendored package. It is available using the `VTK::"
-"fast_float` module."
+"`fast_float` added as a vendored package. It is available using the "
+"`VTK::fast_float` module."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:850
@@ -2448,26 +2450,26 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:895
 msgid ""
-"`vtkBezierInterpolation::flattenSimplex` has been renamed to `::"
-"FlattenSimplex`"
+"`vtkBezierInterpolation::flattenSimplex` has been renamed to "
+"`::FlattenSimplex`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:897
 msgid ""
-"`vtkBezierInterpolation::unflattenSimplex` has been renamed to `::"
-"UnFlattenSimplex`"
+"`vtkBezierInterpolation::unflattenSimplex` has been renamed to "
+"`::UnFlattenSimplex`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:899
 msgid ""
-"`vtkBezierInterpolation::deCasteljauSimplex` has been renamed to `::"
-"DeCasteljauSimplex`"
+"`vtkBezierInterpolation::deCasteljauSimplex` has been renamed to "
+"`::DeCasteljauSimplex`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:901
 msgid ""
-"`vtkBezierInterpolation::deCasteljauSimplexDeriv` has been renamed to `::"
-"DeCasteljauSimplexDeriv`"
+"`vtkBezierInterpolation::deCasteljauSimplexDeriv` has been renamed to "
+"`::DeCasteljauSimplexDeriv`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:903
@@ -2482,15 +2484,15 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:905
 msgid ""
-"`vtkHigherOrderHexahedron::getInterp` has been renamed to `::"
-"GetInterpolation`"
+"`vtkHigherOrderHexahedron::getInterp` has been renamed to "
+"`::GetInterpolation`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:906
 #: ../../../../release/_9.3-stripped.md:914
 msgid ""
-"`vtkHigherOrderQuadrilateral::getEdgeCell` has been renamed to `::"
-"GetEdgeCell`"
+"`vtkHigherOrderQuadrilateral::getEdgeCell` has been renamed to "
+"`::GetEdgeCell`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:907
@@ -2516,20 +2518,20 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:912
 msgid ""
-"`vtkHigherOrderQuadrilateral::getBdyQuad` has been renamed to `::"
-"GetBoundaryQuad`"
+"`vtkHigherOrderQuadrilateral::getBdyQuad` has been renamed to "
+"`::GetBoundaryQuad`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:913
 msgid ""
-"`vtkHigherOrderQuadrilateral::getBdyTri` has been renamed to `::"
-"GetBoundaryTri`"
+"`vtkHigherOrderQuadrilateral::getBdyTri` has been renamed to "
+"`::GetBoundaryTri`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:915
 msgid ""
-"`vtkHigherOrderQuadrilateral::getInterp` has been renamed to `::"
-"GetInterpolation`"
+"`vtkHigherOrderQuadrilateral::getInterp` has been renamed to "
+"`::GetInterpolation`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:916
@@ -2606,8 +2608,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:937
 msgid ""
-"`vtkDataSetSurfaceFilter` methods `::GetUseStrips`, `::SetUseStrips`, `::"
-"UseStripsOn`, and `::UseStripsOff` have been removed"
+"`vtkDataSetSurfaceFilter` methods `::GetUseStrips`, `::SetUseStrips`, "
+"`::UseStripsOn`, and `::UseStripsOff` have been removed"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:939
@@ -2687,8 +2689,8 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:962
 msgid ""
-"`vtkOpenGLRenderWindow::GetOffScreenFramebuffer` has been replaced by `::"
-"GetRenderFramebuffer`"
+"`vtkOpenGLRenderWindow::GetOffScreenFramebuffer` has been replaced by "
+"`::GetRenderFramebuffer`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:964
@@ -2713,14 +2715,14 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:969
 msgid ""
-"`vtkDIYUtilities::GetDataSets` is replaced by `vtkCompositeDataSet::"
-"GetDataSets`"
+"`vtkDIYUtilities::GetDataSets` is replaced by "
+"`vtkCompositeDataSet::GetDataSets`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:971
 msgid ""
-"`vtkCurveRepresentation::*DirectionalLine*` methods have been renamed to `::"
-"*Directional*`"
+"`vtkCurveRepresentation::*DirectionalLine*` methods have been renamed to "
+"`::*Directional*`"
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:973
@@ -2839,9 +2841,9 @@ msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:1037
 msgid ""
-"`vtkCapsuleSource` is deprecated in favor of `vtkCylinderSource::"
-"SetCapping(true)` and `vtkCylinderSource::SetCapsuleCap(true)`, which has "
-"the same functionality."
+"`vtkCapsuleSource` is deprecated in favor of "
+"`vtkCylinderSource::SetCapping(true)` and "
+"`vtkCylinderSource::SetCapsuleCap(true)`, which has the same functionality."
 msgstr ""
 
 #: ../../../../release/_9.3-stripped.md:1044

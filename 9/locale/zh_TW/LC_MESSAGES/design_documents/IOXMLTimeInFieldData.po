@@ -54,11 +54,12 @@ msgstr ""
 #: ../../../design_documents/IOXMLTimeInFieldData.md:23
 msgid ""
 "In addition, the XML writers will generate a field array of name TimeValue "
-"in the output, if they encounter time value in their input (`vtkDataObject::"
-"DATA_TIME_STEP()`). This is done even if the data does not have a TimeValue "
-"array. Furthermore, even such an array exists, it will be replaced with one "
-"that contains the value from `vtkDataObject::DATA_TIME_STEP()` to make sure "
-"that the value is consistent with the pipeline value."
+"in the output, if they encounter time value in their input "
+"(`vtkDataObject::DATA_TIME_STEP()`). This is done even if the data does not "
+"have a TimeValue array. Furthermore, even such an array exists, it will be "
+"replaced with one that contains the value from "
+"`vtkDataObject::DATA_TIME_STEP()` to make sure that the value is consistent "
+"with the pipeline value."
 msgstr ""
 
 #: ../../../design_documents/IOXMLTimeInFieldData.md:30

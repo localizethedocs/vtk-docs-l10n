@@ -29,9 +29,9 @@ msgstr ""
 msgid ""
 "`vtkDataObject` now provides a new static method "
 "`GetAttributeTypeAsString(int attributeType)` that converts an integer "
-"attribute-type constant (e.g., `vtkDataObject::POINT`, `vtkDataObject::"
-"CELL`) to its string name. This is the symmetric counterpart of the existing "
-"`GetAssociationTypeAsString`."
+"attribute-type constant (e.g., `vtkDataObject::POINT`, "
+"`vtkDataObject::CELL`) to its string name. This is the symmetric counterpart "
+"of the existing `GetAssociationTypeAsString`."
 msgstr ""
 
 #: ../../../release_details/9.7/vtkCellGrid-improvements.md:9

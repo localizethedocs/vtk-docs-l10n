@@ -422,10 +422,10 @@ msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:174
 msgid ""
-"Namespaces should not be brought into global scope in any public headers, i."
-"e. the `using` keyword should not appear in any public headers except within "
-"class scope. It can be used in implementations, but it is preferred to bring "
-"symbols into the global scope rather than an entire namespace."
+"Namespaces should not be brought into global scope in any public headers, "
+"i.e. the `using` keyword should not appear in any public headers except "
+"within class scope. It can be used in implementations, but it is preferred "
+"to bring symbols into the global scope rather than an entire namespace."
 msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:176
@@ -657,8 +657,9 @@ msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:260
 msgid ""
-"[*std::string_view*](http://www.en.cppreference.com/w/cpp/header/string_view."
-"html) should be used to avoid string copy especially for IO treatment."
+"[*std::string_view*](http://www.en.cppreference.com/w/cpp/header/"
+"string_view.html) should be used to avoid string copy especially for IO "
+"treatment."
 msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:262
@@ -788,8 +789,8 @@ msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:312
 msgid ""
-"Instead of directly using new c++11 constructs such as std::"
-"compare_exchange_weak instead extend the functionality of vtk core "
+"Instead of directly using new c++11 constructs such as "
+"std::compare_exchange_weak instead extend the functionality of vtk core "
 "concurrency classes."
 msgstr ""
 
@@ -813,9 +814,9 @@ msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:320
 msgid ""
-"[*std::isnan*](http://en.cppreference.com/w/cpp/numeric/math/isnan), [*std::"
-"isfinite*](http://en.cppreference.com/w/cpp/numeric/math/isfinite), [*std::"
-"isinf*](http://en.cppreference.com/w/cpp/numeric/math/isinf)"
+"[*std::isnan*](http://en.cppreference.com/w/cpp/numeric/math/isnan), "
+"[*std::isfinite*](http://en.cppreference.com/w/cpp/numeric/math/isfinite), "
+"[*std::isinf*](http://en.cppreference.com/w/cpp/numeric/math/isinf)"
 msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:322
@@ -846,8 +847,8 @@ msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:332
 msgid ""
-"[*std::future*](http://en.cppreference.com/w/cpp/thread/future)/ [*std::"
-"async*](http://en.cppreference.com/w/cpp/thread/async)"
+"[*std::future*](http://en.cppreference.com/w/cpp/thread/future)/ "
+"[*std::async*](http://en.cppreference.com/w/cpp/thread/async)"
 msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:334
@@ -910,8 +911,8 @@ msgid ""
 "(Encouraged) When iterating over a map with a range-based loop (because it "
 "is often assumed that the correct type is std::pair<KeyType, ValueType> "
 "whereas it is actually std::pair<const KeyType, ValueType>). This is "
-"particularly well paired with local key and value aliases for .first and ."
-"second (often const-ref)."
+"particularly well paired with local key and value aliases for .first "
+"and .second (often const-ref)."
 msgstr ""
 
 #: ../../../developers_guide/coding_conventions.md:349

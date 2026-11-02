@@ -38,8 +38,8 @@ msgid ""
 "To control which implementation is selected, provide a preferences string to "
 "`vtkObjectFactory`. The string lists attribute keys with a list of values "
 "ordered by priority, using the format `key=value1,value2`, and separates "
-"attributes with semicolons (e.g., `keyA=valueA1,valueA2;keyB=valueB1,"
-"valueB2`)."
+"attributes with semicolons (e.g., "
+"`keyA=valueA1,valueA2;keyB=valueB1,valueB2`)."
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:9
@@ -70,16 +70,14 @@ msgid ""
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:18
-msgid ""
-"vtkObjectFactory::SetPreferences(\"keyA=valueA1,valueA2;keyB=valueB1,"
-"valueB2\");\n"
+msgid "vtkObjectFactory::SetPreferences(\"keyA=valueA1,valueA2;keyB=valueB1,valueB2\");\n"
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:21
 msgid ""
-"Call the static method `vtkObjectFactory::"
-"InitializePreferencesFromCommandLineArgs(argc, argv)` early in your "
-"application, passing the command line arguments."
+"Call the static method "
+"`vtkObjectFactory::InitializePreferencesFromCommandLineArgs(argc, argv)` "
+"early in your application, passing the command line arguments."
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:23
@@ -95,8 +93,8 @@ msgstr ""
 msgid ""
 "# Example preference string ('=' sign can be omitted and replaced with a "
 "space)\n"
-"./my_vtk_app --vtk-factory-prefer=\"keyA=valueA1,valueA2;keyB=valueB1,"
-"valueB2\"\n"
+"./my_vtk_app --vtk-factory-"
+"prefer=\"keyA=valueA1,valueA2;keyB=valueB1,valueB2\"\n"
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:36
@@ -109,8 +107,8 @@ msgid ""
 "preferences string. These attributes are used as keys in the "
 "`VTK_FACTORY_PREFER` environment variable (or equivalently via "
 "`vtkObjectFactory::SetPreferences()` or the `--vtk-factory-prefer` command-"
-"line option) using the format described above (for example: `Platform=macOS;"
-"RenderingBackend=OpenGL`)."
+"line option) using the format described above (for example: "
+"`Platform=macOS;RenderingBackend=OpenGL`)."
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:0
@@ -177,8 +175,8 @@ msgstr ""
 
 #: ../../../advanced/runtime_settings.md:56
 msgid ""
-"`vtkOSOpenGLRenderWindow` (OSMesa, requires that `osmesa.dll` or `libOSMesa."
-"so` is installed)"
+"`vtkOSOpenGLRenderWindow` (OSMesa, requires that `osmesa.dll` or "
+"`libOSMesa.so` is installed)"
 msgstr ""
 
 #: ../../../advanced/runtime_settings.md:58

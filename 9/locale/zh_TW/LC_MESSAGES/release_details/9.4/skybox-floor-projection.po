@@ -32,9 +32,9 @@ msgstr ""
 #: ../../../release_details/9.4/skybox-floor-projection.md:7
 msgid ""
 "In this version, vtkSkybox learned of new properties of scaling the texture "
-"mapping of the image onto the floor projection. `vtkSkybox::"
-"SetFloorTexCoordScale` allows users to scale the texture map in the (u, v) "
-"space."
+"mapping of the image onto the floor projection. "
+"`vtkSkybox::SetFloorTexCoordScale` allows users to scale the texture map in "
+"the (u, v) space."
 msgstr ""
 
 #: ../../../release_details/9.4/skybox-floor-projection.md:11

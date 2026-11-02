@@ -64,8 +64,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.md:22
 msgid ""
-"{py:obj}`wxVTKRenderWindowInteractor <vtkmodules.wx."
-"wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor>`"
+"{py:obj}`wxVTKRenderWindowInteractor "
+"<vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractor>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindowInteractor.py:24
@@ -82,8 +82,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.wx.wxVTKRenderWindowInteractor.md:34
 msgid ""
-"{py:obj}`wxVTKRenderWindowInteractorConeExample <vtkmodules.wx."
-"wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractorConeExample>`"
+"{py:obj}`wxVTKRenderWindowInteractorConeExample "
+"<vtkmodules.wx.wxVTKRenderWindowInteractor.wxVTKRenderWindowInteractorConeExample>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindowInteractor.py:36
@@ -263,8 +263,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/wx/wxVTKRenderWindowInteractor.py:314
 msgid ""
-"This prevents recursive rendering during wx.SafeYield() calls. wx."
-"SafeYield() can be called during the ProgressMethod() callback of a VTK "
+"This prevents recursive rendering during wx.SafeYield() calls. "
+"wx.SafeYield() can be called during the ProgressMethod() callback of a VTK "
 "object to have progress bars and other GUI elements updated - it does this "
 "by disabling all windows (disallowing user-input to prevent re-entrancy of "
 "code) and then handling all outstanding GUI events."

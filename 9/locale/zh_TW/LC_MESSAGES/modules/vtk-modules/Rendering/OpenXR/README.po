@@ -173,9 +173,9 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:62
 msgid ""
-"VTK-build > cmake -DVTK_MODULE_ENABLE_VTK_RenderingOpenXR:STRING=YES -"
-"DOpenXR_INCLUDE_DIR:PATH=\"path/to/OpenXR-SDK/include/openxr\" -"
-"DOpenXR_LIBRARY:FILEPATH=\"path/to/OpenXR-SDK-build/src/loader/Release/"
+"VTK-build > cmake -DVTK_MODULE_ENABLE_VTK_RenderingOpenXR:STRING=YES "
+"-DOpenXR_INCLUDE_DIR:PATH=\"path/to/OpenXR-SDK/include/openxr\" "
+"-DOpenXR_LIBRARY:FILEPATH=\"path/to/OpenXR-SDK-build/src/loader/Release/"
 "openxr_loader.lib\" path/to/VTK\n"
 "VTK-build > cmake --build . --config \"Release\"\n"
 msgstr ""
@@ -195,13 +195,13 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:71
 msgid ""
-"Out of the box, VTK does not come with any controller models for the `VTK::"
-"RenderingOpenXR` module to render, but a data archive containing models for "
-"a subset of the currently supported interaction profiles is available from "
-"[here](https://www.paraview.org/files/data/OpenXRControllerModels-0.1.tgz).  "
-"Those models are included by default in ParaView binary downloads, but can "
-"be extracted into any build or install tree, and VTK will automatically find "
-"and use them."
+"Out of the box, VTK does not come with any controller models for the "
+"`VTK::RenderingOpenXR` module to render, but a data archive containing "
+"models for a subset of the currently supported interaction profiles is "
+"available from [here](https://www.paraview.org/files/data/"
+"OpenXRControllerModels-0.1.tgz).  Those models are included by default in "
+"ParaView binary downloads, but can be extracted into any build or install "
+"tree, and VTK will automatically find and use them."
 msgstr ""
 
 #: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:73
@@ -279,9 +279,9 @@ msgstr "測試"
 
 #: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:116
 msgid ""
-"Minimum OpenXR examples are available in the [`Testing/Cxx`](https://gitlab."
-"kitware.com/vtk/vtk/-/blob/master/Rendering/OpenXR/Testing/Cxx) directory "
-"for testing."
+"Minimum OpenXR examples are available in the [`Testing/Cxx`](https://"
+"gitlab.kitware.com/vtk/vtk/-/blob/master/Rendering/OpenXR/Testing/Cxx) "
+"directory for testing."
 msgstr ""
 
 #: ../../../modules/vtk-modules/Rendering/OpenXR/README.md:118

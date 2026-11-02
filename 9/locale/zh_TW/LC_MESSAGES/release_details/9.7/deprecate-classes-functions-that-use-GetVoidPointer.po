@@ -45,8 +45,8 @@ msgstr ""
 
 #: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:8
 msgid ""
-"`vtkPoints(2D)::GetVoidPointer()` have been deprecated. Use `vtkPoints(2D)::"
-"GetData()` along with `vtkArrayDispatch` instead."
+"`vtkPoints(2D)::GetVoidPointer()` have been deprecated. Use "
+"`vtkPoints(2D)::GetData()` along with `vtkArrayDispatch` instead."
 msgstr ""
 
 #: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:10
@@ -77,8 +77,8 @@ msgstr ""
 #: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:17
 msgid ""
 "`vtkAbstractArray:WriterToVoidPointer()` has been deprecated. Use "
-"`vtkAOSDataArrayTemplate::WriterPointer()` or `vtkAbstractArray::"
-"SetNumberOf[Values/Tuples]()` instead"
+"`vtkAOSDataArrayTemplate::WriterPointer()` or "
+"`vtkAbstractArray::SetNumberOf[Values/Tuples]()` instead"
 msgstr ""
 
 #: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:19
@@ -105,14 +105,14 @@ msgstr ""
 
 #: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:25
 msgid ""
-"Additionally, to further reduce the usage of `vtkAbstractArray::"
-"GetVoidPointer()`, `vtk::DataArray(Value/Tuple)Range` have been extended to "
-"support all concrete `vtkAbstractArray` subclasses, including `vtkBitArray`, "
-"`vtkStringArray`, and `vtkVariantArray`. This was accomplished by adding "
-"`(Set/Get)Typed(Component/Tuple)`, `GetVariantArray`, and `ShallowCopy` "
-"methods to these classes, and change their implementation so that they use "
-"`vtkBuffer` internally, instead of raw pointers, so that their "
-"implementation is similar to `vtkAOSDataArrayTemplate`."
+"Additionally, to further reduce the usage of "
+"`vtkAbstractArray::GetVoidPointer()`, `vtk::DataArray(Value/Tuple)Range` "
+"have been extended to support all concrete `vtkAbstractArray` subclasses, "
+"including `vtkBitArray`, `vtkStringArray`, and `vtkVariantArray`. This was "
+"accomplished by adding `(Set/Get)Typed(Component/Tuple)`, `GetVariantArray`, "
+"and `ShallowCopy` methods to these classes, and change their implementation "
+"so that they use `vtkBuffer` internally, instead of raw pointers, so that "
+"their implementation is similar to `vtkAOSDataArrayTemplate`."
 msgstr ""
 
 #: ../../../release_details/9.7/deprecate-classes-functions-that-use-GetVoidPointer.md:31

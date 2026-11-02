@@ -30,9 +30,9 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/IO/CellGrid/README.md:7
 msgid ""
-"Both the reader and writer classes use the [vtkCellGridIOQuery](https://vtk."
-"org/doc/nightly/html/classvtkCellGridIOQuery.html) to accomplish their work. "
-"This query can be set to serialize data to or deserialize data from an "
+"Both the reader and writer classes use the [vtkCellGridIOQuery](https://"
+"vtk.org/doc/nightly/html/classvtkCellGridIOQuery.html) to accomplish their "
+"work. This query can be set to serialize data to or deserialize data from an "
 "`nlohmann::json` object, which is in turn written to or read from disk. Note "
 "that this query is used by the `VTK::IOLegacy` module as well – it embeds "
 "MessagePack-formatted data for cell-grids into the existing legacy VTK file "

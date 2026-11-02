@@ -74,8 +74,9 @@ msgstr ""
 
 #: ../../../release_details/9.6/replace-GetVoidPointer-usages.md:22
 msgid ""
-"If two `vtkAbstractArray`s need to be compared, use `vtkTestUtilities::"
-"CompareAbstractArray()` instead of `GetVoidPointer()` and `std::equal()`."
+"If two `vtkAbstractArray`s need to be compared, use "
+"`vtkTestUtilities::CompareAbstractArray()` instead of `GetVoidPointer()` and "
+"`std::equal()`."
 msgstr ""
 
 #: ../../../release_details/9.6/replace-GetVoidPointer-usages.md:24
@@ -113,8 +114,8 @@ msgid ""
 "If array is `vtkDataArray`, but using `HasStandardMemoryLayout`, it has been "
 "verified that it actually is `vtkAOSDataArrayTemplate`, then "
 "`GetVoidPointer()` is _safe_ to use. This usually happens when the array was "
-"created using `vtkDataArray::CreateDataArray()` or `vtkAbstractArray::"
-"CreateArray()` by passing a standard VTK data type."
+"created using `vtkDataArray::CreateDataArray()` or "
+"`vtkAbstractArray::CreateArray()` by passing a standard VTK data type."
 msgstr ""
 
 #: ../../../release_details/9.6/replace-GetVoidPointer-usages.md:39
