@@ -421,9 +421,9 @@ msgstr ""
 #: ../../../../../CMake/vtkModule.cmake:451
 msgid ""
 "``DEFAULT``: Acts as either ``WANT`` or ``DONT_WANT`` based on the group "
-"settings for the module or ``WANT_BY_DEFAULT`` option to :cmake:command:"
-"`vtk_module_scan` if no other preference is specified. This is usually "
-"handled via another setting in the main project."
+"settings for the module or ``WANT_BY_DEFAULT`` option "
+"to :cmake:command:`vtk_module_scan` if no other preference is specified. "
+"This is usually handled via another setting in the main project."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:456
@@ -1414,9 +1414,9 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:2558
 msgid ""
-"``ENABLE_WRAPPING``: (Default depends on the existence of ``VTK::"
-"WrapHierarchy`` or ``VTKCompileTools::WrapHierarchy`` targets) If enabled, "
-"wrapping will be available to the modules built in this call."
+"``ENABLE_WRAPPING``: (Default depends on the existence of "
+"``VTK::WrapHierarchy`` or ``VTKCompileTools::WrapHierarchy`` targets) If "
+"enabled, wrapping will be available to the modules built in this call."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:2561
@@ -1605,8 +1605,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:2631
 msgid ""
-"``SPDX_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_DATAROOTDIR}/doc/"
-"${CMAKE_PROJECT_NAME}/spdx/``) The install destination for SPDX files."
+"``SPDX_DESTINATION``: (Defaults to ``${CMAKE_INSTALL_DATAROOTDIR}/doc/$"
+"{CMAKE_PROJECT_NAME}/spdx/``) The install destination for SPDX files."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:2633
@@ -1726,13 +1726,13 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:3420
 msgid ""
-"If not provided via the ``AUTOINIT_INCLUDE`` argument to the :cmake:command:"
-"`vtk_module_add_module` function, the header to use is fetched from the "
-"``_vtk_module_autoinit_include`` global property. This only needs to be "
-"managed in modules that ``IMPLEMENTS`` or are ``IMPLEMENTABLE``. This should "
-"be provided by projects using the module system at its lowest level. "
-"Projects not implementing the ``VTK_MODULE_AUTOINIT`` macro should have its "
-"value provided by ``find_package`` dependencies in some way."
+"If not provided via the ``AUTOINIT_INCLUDE`` argument to "
+"the :cmake:command:`vtk_module_add_module` function, the header to use is "
+"fetched from the ``_vtk_module_autoinit_include`` global property. This only "
+"needs to be managed in modules that ``IMPLEMENTS`` or are ``IMPLEMENTABLE``. "
+"This should be provided by projects using the module system at its lowest "
+"level. Projects not implementing the ``VTK_MODULE_AUTOINIT`` macro should "
+"have its value provided by ``find_package`` dependencies in some way."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:3432
@@ -1807,8 +1807,8 @@ msgid ""
 "Write wrap hierarchy files for the module currently being built. This also "
 "installs the hierarchy file for use by dependent projects if "
 "``INSTALL_HEADERS`` is set. This function honors the ``HEADERS_COMPONENT``, "
-"and ``HEADERS_EXCLUDE_FROM_ALL`` arguments to :cmake:command:"
-"`vtk_module_build`."
+"and ``HEADERS_EXCLUDE_FROM_ALL`` arguments "
+"to :cmake:command:`vtk_module_build`."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:3726
@@ -1853,8 +1853,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:3960
 msgid ""
-"``BASE_DIRS``: Base directories for the files. Defaults to "
-"``${CMAKE_CURRENT_SOURCE_DIR}`` and ``${CMAKE_CURRENT_BINARY_DIR}`` if not "
+"``BASE_DIRS``: Base directories for the files. Defaults to ``$"
+"{CMAKE_CURRENT_SOURCE_DIR}`` and ``${CMAKE_CURRENT_BINARY_DIR}`` if not "
 "specified."
 msgstr ""
 
@@ -2022,9 +2022,9 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:4822
 msgid ""
-"Move this function out to be VTK-specific, probably into `vtkModuleTesting."
-"cmake`. Each module would then need to manually call this function. It "
-"currently assumes it is in VTK itself."
+"Move this function out to be VTK-specific, probably into "
+"`vtkModuleTesting.cmake`. Each module would then need to manually call this "
+"function. It currently assumes it is in VTK itself."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:4826
@@ -2087,9 +2087,9 @@ msgstr ""
 #: ../../../../../CMake/vtkModule.cmake:5102
 msgid ""
 "Install a target within the module context. Generally only useful to "
-"wrapping code, modules that cannot use :cmake:command:"
-"`vtk_module_add_module` for some reason, or modules which create utility "
-"targets that need installed."
+"wrapping code, modules that cannot "
+"use :cmake:command:`vtk_module_add_module` for some reason, or modules which "
+"create utility targets that need installed."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:5106
@@ -2098,8 +2098,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:5110
 msgid ""
-"This function uses the various installation options to :cmake:command:"
-"`vtk_module_build` function to keep the install uniform."
+"This function uses the various installation options "
+"to :cmake:command:`vtk_module_build` function to keep the install uniform."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:5181
@@ -2157,9 +2157,9 @@ msgstr ""
 #: ../../../../../CMake/vtkModule.cmake:5345
 msgid ""
 "Modules may need to find external dependencies. CMake often provides modules "
-"to find these dependencies, but when imported targets are involved, these."
-"need to also be found from dependencies of the current project. Since the "
-"benefits of imported targets greatly outweighs not using them, it is "
+"to find these dependencies, but when imported targets are involved, "
+"these.need to also be found from dependencies of the current project. Since "
+"the benefits of imported targets greatly outweighs not using them, it is "
 "preferred to use them."
 msgstr ""
 
@@ -2255,9 +2255,9 @@ msgid ""
 "from CMake, using imported targets in the build means that imported targets "
 "need to be created during the ``find_package`` as well. This function writes "
 "a file suitable for inclusion from a ``<package>-config.cmake`` file to "
-"satisfy dependencies. It assumes that the exported targets are named "
-"``${CMAKE_FIND_PACKAGE_NAME}::${component}``. Dependent packages will only "
-"be found if a requested component requires the package to be found either "
+"satisfy dependencies. It assumes that the exported targets are named ``$"
+"{CMAKE_FIND_PACKAGE_NAME}::${component}``. Dependent packages will only be "
+"found if a requested component requires the package to be found either "
 "directly or transitively."
 msgstr ""
 
@@ -2337,10 +2337,11 @@ msgid ""
 "This offers a cache variable named ``VTK_MODULE_USE_EXTERNAL_<module name>`` "
 "that may be set to trigger between the internal copy and an externally "
 "provided copy. This is available as a local variable named "
-"``VTK_MODULE_USE_EXTERNAL_<library name>``. See the :cmake:command:"
-"`vtk_module_third_party_external` and :cmake:"
-"command`vtk_module_third_party_internal` functions for the arguments "
-"supported by the ``EXTERNAL`` and ``INTERNAL`` arguments, respectively."
+"``VTK_MODULE_USE_EXTERNAL_<library name>``. See "
+"the :cmake:command:`vtk_module_third_party_external` "
+"and :cmake:command`vtk_module_third_party_internal` functions for the "
+"arguments supported by the ``EXTERNAL`` and ``INTERNAL`` arguments, "
+"respectively."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:5982
@@ -2451,8 +2452,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:6051
 msgid ""
-"``FORWARD_VERSION_REQ`` and ``VERSION_VAR``: See documentation for :cmake:"
-"command:`vtk_module_find_package`."
+"``FORWARD_VERSION_REQ`` and ``VERSION_VAR``: See documentation "
+"for :cmake:command:`vtk_module_find_package`."
 msgstr ""
 
 #: ../../../../../CMake/vtkModule.cmake:6053

@@ -601,11 +601,11 @@ msgstr ""
 #: ../../../../Doxygen/ArrayDispatch-VTK-7-1.md:425
 msgid ""
 "There's not much to know about type lists as a user, other than how to "
-"create them. As seen above, there is a set of macros named `vtkTypeList::"
-"Create<...>`, where X is the number of types in the created list, and the "
-"arguments are the types to place in the list. In the example above, the new "
-"type list is typically bound to a friendlier name using a local `typedef`, "
-"which is a common practice."
+"create them. As seen above, there is a set of macros named "
+"`vtkTypeList::Create<...>`, where X is the number of types in the created "
+"list, and the arguments are the types to place in the list. In the example "
+"above, the new type list is typically bound to a friendlier name using a "
+"local `typedef`, which is a common practice."
 msgstr ""
 
 #: ../../../../Doxygen/ArrayDispatch-VTK-7-1.md:432
@@ -808,9 +808,9 @@ msgstr ""
 
 #: ../../../../Doxygen/ArrayDispatch-VTK-7-1.md:578
 msgid ""
-"There's a problem, though. Recall that only the arrays in `vtkArrayDispatch::"
-"Arrays` are tested for dispatching. What happens if the array passed into "
-"someFunction wasn't on that list?"
+"There's a problem, though. Recall that only the arrays in "
+"`vtkArrayDispatch::Arrays` are tested for dispatching. What happens if the "
+"array passed into someFunction wasn't on that list?"
 msgstr ""
 
 #: ../../../../Doxygen/ArrayDispatch-VTK-7-1.md:582

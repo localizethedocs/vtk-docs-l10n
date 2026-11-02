@@ -66,10 +66,10 @@ msgstr ""
 #: ../../../vtk_file_formats/vtkxml_file_format.md:14
 msgid ""
 "**Structured**. The dataset is a topologically regular array of cells such "
-"as pixels and voxels (e.g., image data) or quadrilaterals and hexahedra (e."
-"g., structured grid). Rectangular subsets of the data are described through "
-"extents. The structured dataset types are vtkImageData, vtkRectilinearGrid, "
-"and vtkStructuredGrid."
+"as pixels and voxels (e.g., image data) or quadrilaterals and hexahedra "
+"(e.g., structured grid). Rectangular subsets of the data are described "
+"through extents. The structured dataset types are vtkImageData, "
+"vtkRectilinearGrid, and vtkStructuredGrid."
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkxml_file_format.md:16
@@ -1483,8 +1483,8 @@ msgstr ""
 #: ../../../vtk_file_formats/vtkxml_file_format.md:961
 msgid ""
 "The following is a complete example specifying a vtkPolyData representing a "
-"cube with some scalar data on its points and faces. <sup>[1](https://kitware."
-"com/products/books/VTKUsersGuide.pdf)</sup>"
+"cube with some scalar data on its points and faces. <sup>[1](https://"
+"kitware.com/products/books/VTKUsersGuide.pdf)</sup>"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkxml_file_format.md:961

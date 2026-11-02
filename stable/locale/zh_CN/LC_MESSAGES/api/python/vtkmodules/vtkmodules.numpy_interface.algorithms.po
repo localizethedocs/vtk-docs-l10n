@@ -41,8 +41,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:18
 msgid ""
-"{py:obj}`_lookup_mpi_type <vtkmodules.numpy_interface.algorithms."
-"_lookup_mpi_type>`"
+"{py:obj}`_lookup_mpi_type "
+"<vtkmodules.numpy_interface.algorithms._lookup_mpi_type>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:22
@@ -76,8 +76,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:34
 msgid ""
-"{py:obj}`make_point_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
-"make_point_mask_from_NaNs>`"
+"{py:obj}`make_point_mask_from_NaNs "
+"<vtkmodules.numpy_interface.algorithms.make_point_mask_from_NaNs>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:36
@@ -91,8 +91,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:38
 msgid ""
-"{py:obj}`make_cell_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
-"make_cell_mask_from_NaNs>`"
+"{py:obj}`make_cell_mask_from_NaNs "
+"<vtkmodules.numpy_interface.algorithms.make_cell_mask_from_NaNs>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:40
@@ -106,8 +106,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:42
 msgid ""
-"{py:obj}`make_mask_from_NaNs <vtkmodules.numpy_interface.algorithms."
-"make_mask_from_NaNs>`"
+"{py:obj}`make_mask_from_NaNs "
+"<vtkmodules.numpy_interface.algorithms.make_mask_from_NaNs>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:44
@@ -156,8 +156,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:58
 msgid ""
-"{py:obj}`_global_per_block <vtkmodules.numpy_interface.algorithms."
-"_global_per_block>`"
+"{py:obj}`_global_per_block "
+"<vtkmodules.numpy_interface.algorithms._global_per_block>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:62
@@ -174,8 +174,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:66
 msgid ""
-"{py:obj}`count_per_block <vtkmodules.numpy_interface.algorithms."
-"count_per_block>`"
+"{py:obj}`count_per_block "
+"<vtkmodules.numpy_interface.algorithms.count_per_block>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:68
@@ -187,8 +187,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:70
 msgid ""
-"{py:obj}`mean_per_block <vtkmodules.numpy_interface.algorithms."
-"mean_per_block>`"
+"{py:obj}`mean_per_block "
+"<vtkmodules.numpy_interface.algorithms.mean_per_block>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:72
@@ -238,8 +238,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:86
 msgid ""
-"{py:obj}`_local_array_count <vtkmodules.numpy_interface.algorithms."
-"_local_array_count>`"
+"{py:obj}`_local_array_count "
+"<vtkmodules.numpy_interface.algorithms._local_array_count>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:90
@@ -310,8 +310,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:114
 msgid ""
-"{py:obj}`unstructured_from_composite_arrays <vtkmodules.numpy_interface."
-"algorithms.unstructured_from_composite_arrays>`"
+"{py:obj}`unstructured_from_composite_arrays "
+"<vtkmodules.numpy_interface.algorithms.unstructured_from_composite_arrays>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:116
@@ -584,8 +584,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:354
 msgid ""
-"{py:obj}`surface_normal <vtkmodules.numpy_interface.algorithms."
-"surface_normal>`"
+"{py:obj}`surface_normal "
+"<vtkmodules.numpy_interface.algorithms.surface_normal>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.algorithms.md:358
@@ -747,8 +747,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:510
 msgid ""
-"sum_per_block(array, controller=vtkmodules.vtkParallelCore."
-"vtkDummyController())."
+"sum_per_block(array, "
+"controller=vtkmodules.vtkParallelCore.vtkDummyController())."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:505
@@ -803,8 +803,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:530
 msgid ""
-"max_per_block(array, controller=vtkmodules.vtkParallelCore."
-"vtkDummyController())."
+"max_per_block(array, "
+"controller=vtkmodules.vtkParallelCore.vtkDummyController())."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:527
@@ -815,8 +815,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:537
 msgid ""
-"min_per_block(array, controller=vtkmodules.vtkParallelCore."
-"vtkDummyController())."
+"min_per_block(array, "
+"controller=vtkmodules.vtkParallelCore.vtkDummyController())."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/algorithms.py:535

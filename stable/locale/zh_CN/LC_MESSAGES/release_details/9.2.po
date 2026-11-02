@@ -209,8 +209,8 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:51
 msgid ""
-"`vtkUnstructuredGridQuadricDecimation::NO_ERROR` has been renamed to `::"
-"NON_ERROR` to avoid conflicts with Microsoft Windows SDK headers."
+"`vtkUnstructuredGridQuadricDecimation::NO_ERROR` has been renamed to "
+"`::NON_ERROR` to avoid conflicts with Microsoft Windows SDK headers."
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:53
@@ -292,8 +292,8 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:81
 msgid ""
-"`vtkCellTreeLocator` has moved from `VTK::FiltersGeneral` to `VTK::"
-"CommonDataModel`"
+"`vtkCellTreeLocator` has moved from `VTK::FiltersGeneral` to "
+"`VTK::CommonDataModel`"
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:83
@@ -585,9 +585,9 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:181
 msgid ""
-"The render window serializers were updated to better map VTK options to VTK."
-"js options. This includes font coloring for scalar bars and color transfer "
-"function discretization."
+"The render window serializers were updated to better map VTK options to "
+"VTK.js options. This includes font coloring for scalar bars and color "
+"transfer function discretization."
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:184
@@ -935,8 +935,8 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:314
 msgid ""
-"`vtkCellTreeLocator::IntersectWithLine()` and `vtkModifiedBSPTree::"
-"IntersectWithLine()` are now thread-safe."
+"`vtkCellTreeLocator::IntersectWithLine()` and "
+"`vtkModifiedBSPTree::IntersectWithLine()` are now thread-safe."
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:316
@@ -972,8 +972,8 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:328
 msgid ""
-"VTKm filter factory overrides may be toggled using `vtkmFilterOverrides::"
-"SetEnabled()`."
+"VTKm filter factory overrides may be toggled using "
+"`vtkmFilterOverrides::SetEnabled()`."
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:330
@@ -1372,9 +1372,9 @@ msgstr ""
 msgid ""
 "![TestOSPRayBoxWidget2](imgs/9.2/TestOSPRayBoxWidget2.png) !"
 "[TestOSPRaySplineWidget2](imgs/9.2/TestOSPRaySplineWidget2.png) !"
-"[TestOSPRayImplicitPlaneWidget2](imgs/9.2/TestOSPRayImplicitPlaneWidget2."
-"png) ![TestOSPRayPointHandleRepresentation3D](imgs/9.2/"
-"TestOSPRayPointHandleRepresentation3D.png)"
+"[TestOSPRayImplicitPlaneWidget2](imgs/9.2/"
+"TestOSPRayImplicitPlaneWidget2.png) ![TestOSPRayPointHandleRepresentation3D]"
+"(imgs/9.2/TestOSPRayPointHandleRepresentation3D.png)"
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:475
@@ -1672,14 +1672,14 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:564
 msgid ""
-"`vtkAlgorithm::SetProgress()` has been replaced by `vtkAlgorithm::"
-"UpdateProgress()`"
+"`vtkAlgorithm::SetProgress()` has been replaced by "
+"`vtkAlgorithm::UpdateProgress()`"
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:566
 msgid ""
-"The following APIs have been replaced by `vtkResourceFileLocator::"
-"SetLogVerbosity()`:"
+"The following APIs have been replaced by "
+"`vtkResourceFileLocator::SetLogVerbosity()`:"
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:568
@@ -1700,8 +1700,9 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:572
 msgid ""
-"`vtkIdFilter::SetIdsArrayName()` has been replaced by `vtkIdFilter::"
-"SetPointIdsArrayName()` and `vtkIdFilter::SetCellIdsArrayName()`"
+"`vtkIdFilter::SetIdsArrayName()` has been replaced by "
+"`vtkIdFilter::SetPointIdsArrayName()` and "
+"`vtkIdFilter::SetCellIdsArrayName()`"
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:575
@@ -1719,9 +1720,10 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:580
 msgid ""
-"`vtkHyperTreeGridSource::GetMaximumLevel()` and `vtkHyperTreeGridSource::"
-"SetMaximumLevel()` have been replaced by `vtkHyperTreeGridSource::"
-"GetMaxDepth()` and `vtkHyperTreeGridSource::SetMaxDepth()`"
+"`vtkHyperTreeGridSource::GetMaximumLevel()` and "
+"`vtkHyperTreeGridSource::SetMaximumLevel()` have been replaced by "
+"`vtkHyperTreeGridSource::GetMaxDepth()` and "
+"`vtkHyperTreeGridSource::SetMaxDepth()`"
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:584
@@ -1910,8 +1912,9 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:642
 msgid ""
-"`vtkHyperTreeGrid::GetNumberOfVertices()` is now `vtkHyperTreeGrid::"
-"GetNumberOfCells()` to align with VTK's usage of the terminology."
+"`vtkHyperTreeGrid::GetNumberOfVertices()` is now "
+"`vtkHyperTreeGrid::GetNumberOfCells()` to align with VTK's usage of the "
+"terminology."
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:645
@@ -1974,9 +1977,10 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:671
 msgid ""
-"`vtkDescriptiveStatistics::UnbiasedVariance`, `vtkDescriptiveStatistics::"
-"G1Skewness`, and `vtkDescriptiveStatistics::G2Kurtosis` are now deprecated "
-"in favor of a single `vtkDescriptiveStatistics::SampleEstimate` instead."
+"`vtkDescriptiveStatistics::UnbiasedVariance`, "
+"`vtkDescriptiveStatistics::G1Skewness`, and "
+"`vtkDescriptiveStatistics::G2Kurtosis` are now deprecated in favor of a "
+"single `vtkDescriptiveStatistics::SampleEstimate` instead."
 msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:675
@@ -2040,9 +2044,10 @@ msgstr ""
 
 #: ../../../../release/_9.2-stripped.md:706
 msgid ""
-"`vtkOSPRayRendererNode::VOLUME_ANISOTROPY`, `vtkOSPRayRendererNode::"
-"GetVolumeAnisotropy()`, and `vtkOSPRayRendererNode::SetVolumeAnistropy()` "
-"are deprecated in favor of`vtkVolumeProperty::SetScatteringAnisotropy()` and "
+"`vtkOSPRayRendererNode::VOLUME_ANISOTROPY`, "
+"`vtkOSPRayRendererNode::GetVolumeAnisotropy()`, and "
+"`vtkOSPRayRendererNode::SetVolumeAnistropy()` are deprecated in favor "
+"of`vtkVolumeProperty::SetScatteringAnisotropy()` and "
 "`vtkVolumeProperty::GetScatteringAnisotropy()`."
 msgstr ""
 

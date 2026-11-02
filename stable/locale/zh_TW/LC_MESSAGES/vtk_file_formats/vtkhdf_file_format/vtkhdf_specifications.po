@@ -213,9 +213,9 @@ msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:140
 msgid ""
-"[Rectilinear grids](https://vtk.org/doc/nightly/html/classvtkRectilinearGrid."
-"html) represent a topologically regular dataset with variable spacing in the "
-"three coordinate directions."
+"[Rectilinear grids](https://vtk.org/doc/nightly/html/"
+"classvtkRectilinearGrid.html) represent a topologically regular dataset with "
+"variable spacing in the three coordinate directions."
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:142
@@ -243,9 +243,9 @@ msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:152
 msgid ""
-"[Structured grids](https://vtk.org/doc/nightly/html/classvtkStructuredGrid."
-"html) are a structured data type where point positions are defined "
-"explicitly."
+"[Structured grids](https://vtk.org/doc/nightly/html/"
+"classvtkStructuredGrid.html) are a structured data type where point "
+"positions are defined explicitly."
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:154
@@ -735,11 +735,11 @@ msgid ""
 "Then, dataset tree hierarchy is defined in the `Assembly` group, which is "
 "also a direct child of the `VTKHDF` group. Sub-groups in the `Assembly` "
 "group define the dataset(s) they contain using a [HDF5 symbolic link]"
-"(https://davis.lbl.gov/Manuals/HDF5-1.8.7/UG/09_Groups."
-"html#HardAndSymbolicLinks) to the top-level datasets. The name of the link "
-"target in the assembly will be the actual name of the block when read. Any "
-"group can have multiple children that are either links to datasets, or nodes "
-"that define datasets deeper in the hierarchy."
+"(https://davis.lbl.gov/Manuals/HDF5-1.8.7/UG/"
+"09_Groups.html#HardAndSymbolicLinks) to the top-level datasets. The name of "
+"the link target in the assembly will be the actual name of the block when "
+"read. Any group can have multiple children that are either links to "
+"datasets, or nodes that define datasets deeper in the hierarchy."
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:598
@@ -1105,6 +1105,6 @@ msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_specifications.md:925
 msgid ""
-"Unlike XML formats, VTKHDF does not support field names containing `/` and `."
-"` characters, because of a limitation in the HDF5 format specification."
+"Unlike XML formats, VTKHDF does not support field names containing `/` and "
+"`.` characters, because of a limitation in the HDF5 format specification."
 msgstr ""

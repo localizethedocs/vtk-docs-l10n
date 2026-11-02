@@ -202,8 +202,8 @@ msgstr ""
 #: ../../../../release/_9.4-stripped.md:60
 msgid ""
 "Introduced `vtkBatch` that provides multithreading to improve vtkAlgorithm "
-"performance. [Author's   note](9.4/add-vtkBatch-and-improve-table-based-clip."
-"md)"
+"performance. [Author's   note](9.4/add-vtkBatch-and-improve-table-based-"
+"clip.md)"
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:62
@@ -444,8 +444,8 @@ msgstr ""
 #: ../../../../release/_9.4-stripped.md:140
 msgid ""
 "The new `vtkWebGPUComputePointCloudMapper` is a webGPU compute shader "
-"implementation based on the   paper from [Shütz et.   al.](https://www.cg."
-"tuwien.ac.at/research/publications/2021/SCHUETZ-2021-PCC/)."
+"implementation based on the   paper from [Shütz et.   al.](https://"
+"www.cg.tuwien.ac.at/research/publications/2021/SCHUETZ-2021-PCC/)."
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:143
@@ -687,9 +687,9 @@ msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:232
 msgid ""
-"The `vtkFLUENTReader` introduced loading zones from the FLUENT .msh files. :"
-"warning:   **BREAKING_CHANGES** [Author's note](9.4/add-fluent-reader-zones-"
-"support.md)"
+"The `vtkFLUENTReader` introduced loading zones from the FLUENT .msh "
+"files. :warning:   **BREAKING_CHANGES** [Author's note](9.4/add-fluent-"
+"reader-zones-support.md)"
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:234
@@ -718,8 +718,8 @@ msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:242
 msgid ""
-"`vtkCesium3DTilesReader` has been extended support additional features. :"
-"warning:   **BREAKING_CHANGES** [Author's note](9.4/improve-"
+"`vtkCesium3DTilesReader` has been extended support additional "
+"features. :warning:   **BREAKING_CHANGES** [Author's note](9.4/improve-"
 "vtkCesium3DTilesReader.md)"
 msgstr ""
 
@@ -836,8 +836,8 @@ msgstr ""
 #: ../../../../release/_9.4-stripped.md:291
 msgid ""
 "Building packages against static VTK libraries with the MSVC compiler no "
-"longer fails due to a    missing symbol for `vtkSMPToolsImpl::"
-"IsParallelScope`."
+"longer fails due to a    missing symbol for "
+"`vtkSMPToolsImpl::IsParallelScope`."
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:294
@@ -942,8 +942,8 @@ msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:327
 msgid ""
-"`vtkRedistributeDataSetFilter` was refactored for better modularity. :"
-"warning:   **BREAKING_CHANGES** [Author's note](9.4/refactor-"
+"`vtkRedistributeDataSetFilter` was refactored for better "
+"modularity. :warning:   **BREAKING_CHANGES** [Author's note](9.4/refactor-"
 "vtkRedistributeDataSetFilter.md)"
 msgstr ""
 
@@ -982,8 +982,8 @@ msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:339
 msgid ""
-"The `vtkFDSReader` now correctly supports reading slice & boundaries files (."
-"sf & .bf),   for both point and cell-centered data."
+"The `vtkFDSReader` now correctly supports reading slice & boundaries files "
+"(.sf & .bf),   for both point and cell-centered data."
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:341
@@ -1052,8 +1052,8 @@ msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:365
 msgid ""
-"`vtkLegendScaleActor` improvements. [Author's note](9.4/legend-scale-actor."
-"md)"
+"`vtkLegendScaleActor` improvements. [Author's note](9.4/legend-scale-"
+"actor.md)"
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:366
@@ -1139,9 +1139,9 @@ msgstr ""
 #: ../../../../release/_9.4-stripped.md:396
 msgid ""
 "`vtkObjectBase`'s `Register` is no longer virtual. To control register "
-"counting/garbage collecting behavior override `vtkObjectBase::"
-"UsesGarbageCollector` instead. The following classes have been changed to "
-"meet this requirement:"
+"counting/garbage collecting behavior override "
+"`vtkObjectBase::UsesGarbageCollector` instead. The following classes have "
+"been changed to meet this requirement:"
 msgstr ""
 
 #: ../../../../release/_9.4-stripped.md:400

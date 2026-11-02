@@ -235,12 +235,12 @@ msgstr ""
 #: ../../../../release/_9.6-stripped.md:75
 msgid ""
 "**Adding stream support to various readers** `vtkResourceStream` can now be "
-"encapsulated into a `std::streambuf` using `vtkResourceStream::"
-"ToStreambuf()`. Stream support has been added to: `vtkSTLReader`, "
-"`vtkPTSReader`, `vtkHDFReader` (prefer memory stream), `vtkCityGMLReader` "
-"(prefer memory stream), `vtkOpenVDBReader`, `vtkDICOMImageReader`,  "
-"`vtk3DSImporter`, and `vtkOBJImporter`. ([Author notes](9.6/add-stream-"
-"support.md))"
+"encapsulated into a `std::streambuf` using "
+"`vtkResourceStream::ToStreambuf()`. Stream support has been added to: "
+"`vtkSTLReader`, `vtkPTSReader`, `vtkHDFReader` (prefer memory stream), "
+"`vtkCityGMLReader` (prefer memory stream), `vtkOpenVDBReader`, "
+"`vtkDICOMImageReader`,  `vtk3DSImporter`, and `vtkOBJImporter`. ([Author "
+"notes](9.6/add-stream-support.md))"
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:79
@@ -270,8 +270,8 @@ msgstr ""
 #: ../../../../release/_9.6-stripped.md:85
 msgid ""
 "**New USD exporter added** `vtkUSDExporter` is a new class that exports VTK "
-"scenes to Universal Scene Description (USD) files (.usd, .usda (ASCII), and ."
-"usdc (binary)). It is part of a new `vtk::IOUSD` module that depends on "
+"scenes to Universal Scene Description (USD) files (.usd, .usda (ASCII), "
+"and .usdc (binary)). It is part of a new `vtk::IOUSD` module that depends on "
 "OpenUSD. ([Author notes](9.6/add-usd-exporter.md))"
 msgstr ""
 
@@ -284,9 +284,10 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:90
 msgid ""
-"**vtkImageReader2 now supports reading vtkResourceStream** `vtkImageReader2::"
-"Get/SetStream` methods have been added and implemented in `vtkPNGReader`, "
-"`vtkTGAReader`, `vtkJPEGReader`, `vtkHDRReader`, and `vtkBMPReader`."
+"**vtkImageReader2 now supports reading vtkResourceStream** "
+"`vtkImageReader2::Get/SetStream` methods have been added and implemented in "
+"`vtkPNGReader`, `vtkTGAReader`, `vtkJPEGReader`, `vtkHDRReader`, and "
+"`vtkBMPReader`."
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:92
@@ -464,10 +465,10 @@ msgstr ""
 msgid ""
 "**Add WebAssembly interface for standalone applications** You can now "
 "develop remote WASM or standalone WASM applications using the "
-"`vtkWebAssembly.wasm` binary. The `VTK::WebAssembly` and `VTK::"
-"WebAssemblyAsync` now build a `vtkWebAssembly[Async].wasm` and associated `."
-"mjs` file that provide `vtkRemoteSession` and `vtkStandaloneSession` "
-"JavaScript classes."
+"`vtkWebAssembly.wasm` binary. The `VTK::WebAssembly` and "
+"`VTK::WebAssemblyAsync` now build a `vtkWebAssembly[Async].wasm` and "
+"associated `.mjs` file that provide `vtkRemoteSession` and "
+"`vtkStandaloneSession` JavaScript classes."
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:147
@@ -578,11 +579,11 @@ msgstr ""
 msgid ""
 "**Querying and resetting arrays to process and specify array components** "
 "`vtkAlgorithm` now provides `GetNumberOfInputArraySpecifications()` and "
-"`ResetInputArraySpecifications()`. Additionally, `vtkAlgorithm::"
-"SetInputArrayToProcess()` now supports specifying array components or norms "
-"(L1, L2, L∞) to process directly. A new method `GetInputArrayComponent()` is "
-"available to determine if specific components/norms are requested. ([Author "
-"notes](9.6/algorithm-array-components.md))"
+"`ResetInputArraySpecifications()`. Additionally, "
+"`vtkAlgorithm::SetInputArrayToProcess()` now supports specifying array "
+"components or norms (L1, L2, L∞) to process directly. A new method "
+"`GetInputArrayComponent()` is available to determine if specific components/"
+"norms are requested. ([Author notes](9.6/algorithm-array-components.md))"
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:192
@@ -723,8 +724,8 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:250
 msgid ""
-"![Microbenchmark results summary.](imgs/9.6/optimize-vtkObserver-benchmark."
-"png)"
+"![Microbenchmark results summary.](imgs/9.6/optimize-vtkObserver-"
+"benchmark.png)"
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:250
@@ -898,8 +899,8 @@ msgstr ""
 
 #: ../../../release_details/9.6.md:11
 msgid ""
-"![Diverging Interpolation Before](imgs/9.6/diverging-interpolation-before."
-"png)"
+"![Diverging Interpolation Before](imgs/9.6/diverging-interpolation-"
+"before.png)"
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:308
@@ -952,9 +953,9 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:324
 msgid ""
-"**Fix wrong default value of vtkXMLUniformGridAMRReader::"
-"MaximumLevelsToReadByDefault** Default value is now 0 (infinite) as "
-"documented, instead of 1."
+"**Fix wrong default value of "
+"vtkXMLUniformGridAMRReader::MaximumLevelsToReadByDefault** Default value is "
+"now 0 (infinite) as documented, instead of 1."
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:326
@@ -966,9 +967,9 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:328
 msgid ""
-"**Improve glTF camera focal point** Introduced a `vtkGLTFImporter::"
-"GuessCamerasFocalPoints()` called at the end of the import to assign a less "
-"arbitrary focal point based on the imported actors."
+"**Improve glTF camera focal point** Introduced a "
+"`vtkGLTFImporter::GuessCamerasFocalPoints()` called at the end of the import "
+"to assign a less arbitrary focal point based on the imported actors."
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:330
@@ -1133,8 +1134,8 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:391
 msgid ""
-"**Fix wrapping tools suffix for WASM** The wrapping tools now use a `."
-"commonjs` suffix, preventing runtime errors when running with Node.js "
+"**Fix wrapping tools suffix for WASM** The wrapping tools now use a "
+"`.commonjs` suffix, preventing runtime errors when running with Node.js "
 "projects that use `\"type\": \"module\"`."
 msgstr ""
 
@@ -1144,8 +1145,9 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:396
 msgid ""
-"**Deprecated Members Removal**: Removed `vtkHyperTreeGridThreshold::"
-"JustCreateNewMask` and `vtkTemporalAlgorithm::RunBackward`."
+"**Deprecated Members Removal**: Removed "
+"`vtkHyperTreeGridThreshold::JustCreateNewMask` and "
+"`vtkTemporalAlgorithm::RunBackward`."
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:397
@@ -1156,8 +1158,8 @@ msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:398
 msgid ""
-"**Deprecate unused vtkHyperTree(Grid) methods and options**: `vtkHyperTree::"
-"Freeze`, `vtkHyperTreeGrid::Squeeze`, and related members."
+"**Deprecate unused vtkHyperTree(Grid) methods and options**: "
+"`vtkHyperTree::Freeze`, `vtkHyperTreeGrid::Squeeze`, and related members."
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:399
@@ -1244,8 +1246,8 @@ msgid ""
 "roughness metallic surfaces appeared artificially dark because   single-"
 "scattering models lose energy at each bounce. The new approximation   "
 "redistributes that lost energy, keeping surfaces physically plausible "
-"across   the full roughness range.   ([Author notes](9.6/multiscatter-ibl."
-"md))"
+"across   the full roughness range.   ([Author notes](9.6/multiscatter-"
+"ibl.md))"
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:431
@@ -1256,12 +1258,12 @@ msgstr ""
 msgid ""
 "The Viskores data converters now properly convert `vtkConstantArray` to   "
 "`viskores::cont::ArrayHandleConstant` and `vtkAffineArray` to either   "
-"`viskores::cont::ArrayHandleIndex` or `viskores::cont::"
-"ArrayHandleCounting`.   Previously, dataset fields using these array types "
-"caused the entire   conversion to fail. Additionally, encountering an "
-"unknown array type now   issues a warning and continues conversion rather "
-"than aborting, so only the   affected fields are dropped.   ([Author notes]"
-"(9.6/viskores-const-count-array.md))"
+"`viskores::cont::ArrayHandleIndex` or "
+"`viskores::cont::ArrayHandleCounting`.   Previously, dataset fields using "
+"these array types caused the entire   conversion to fail. Additionally, "
+"encountering an unknown array type now   issues a warning and continues "
+"conversion rather than aborting, so only the   affected fields are "
+"dropped.   ([Author notes](9.6/viskores-const-count-array.md))"
 msgstr ""
 
 #: ../../../../release/_9.6-stripped.md:442

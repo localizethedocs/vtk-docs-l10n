@@ -33,18 +33,18 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:12
 msgid ""
-"from vtkmodules.vtkImagingCore vtkRTAnalyticSource import vtkmodules."
-"numpy_interface.dataset_adapter as dsa import vtkmodules.numpy_interface."
-"algorithms as algs"
+"from vtkmodules.vtkImagingCore vtkRTAnalyticSource import "
+"vtkmodules.numpy_interface.dataset_adapter as dsa import "
+"vtkmodules.numpy_interface.algorithms as algs"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:16
 msgid ""
-"rt = vtkRTAnalyticSource() rt.Update() image = dsa.WrapDataObject(rt."
-"GetOutput()) rtdata = image.PointData['RTData'] rtmin = algs.min(rtdata) "
-"rtmax = algs.max(rtdata) rtnorm = (rtdata - rtmin) / (rtmax - rtmin) image."
-"PointData.append(rtnorm, 'RTData - normalized') print image.GetPointData()."
-"GetArray('RTData - normalized').GetRange()"
+"rt = vtkRTAnalyticSource() rt.Update() image = "
+"dsa.WrapDataObject(rt.GetOutput()) rtdata = image.PointData['RTData'] rtmin "
+"= algs.min(rtdata) rtmax = algs.max(rtdata) rtnorm = (rtdata - rtmin) / "
+"(rtmax - rtmin) image.PointData.append(rtnorm, 'RTData - normalized') print "
+"image.GetPointData().GetArray('RTData - normalized').GetRange()"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:26
@@ -92,8 +92,9 @@ msgstr ""
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:57
 msgid ""
 "from vtkmodules.vtkCommonDataModel import vtkMultiBlockDataSet mb = "
-"vtkMultiBlockDataSet() mb.SetBlock(0, image.VTKObject) mb.SetBlock(1e, image."
-"VTKObject) cds = dsa.WrapDataObject(mb) for block in cds:     print block"
+"vtkMultiBlockDataSet() mb.SetBlock(0, image.VTKObject) mb.SetBlock(1e, "
+"image.VTKObject) cds = dsa.WrapDataObject(mb) for block in cds:     print "
+"block"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:65
@@ -113,8 +114,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:18
 msgid ""
-"{py:obj}`ArrayAssociation <vtkmodules.numpy_interface.dataset_adapter."
-"ArrayAssociation>`"
+"{py:obj}`ArrayAssociation "
+"<vtkmodules.numpy_interface.dataset_adapter.ArrayAssociation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:20
@@ -124,8 +125,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:22
 msgid ""
-"{py:obj}`VTKObjectWrapper <vtkmodules.numpy_interface.dataset_adapter."
-"VTKObjectWrapper>`"
+"{py:obj}`VTKObjectWrapper "
+"<vtkmodules.numpy_interface.dataset_adapter.VTKObjectWrapper>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:24
@@ -138,8 +139,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:26
 msgid ""
-"{py:obj}`VTKArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter."
-"VTKArrayMetaClass>`"
+"{py:obj}`VTKArrayMetaClass "
+"<vtkmodules.numpy_interface.dataset_adapter.VTKArrayMetaClass>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:30
@@ -157,14 +158,14 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:34
 msgid ""
-"{py:obj}`VTKNoneArrayMetaClass <vtkmodules.numpy_interface.dataset_adapter."
-"VTKNoneArrayMetaClass>`"
+"{py:obj}`VTKNoneArrayMetaClass "
+"<vtkmodules.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:38
 msgid ""
-"{py:obj}`VTKNoneArray <vtkmodules.numpy_interface.dataset_adapter."
-"VTKNoneArray>`"
+"{py:obj}`VTKNoneArray "
+"<vtkmodules.numpy_interface.dataset_adapter.VTKNoneArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:40
@@ -184,14 +185,14 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:42
 msgid ""
-"{py:obj}`VTKCompositeDataArrayMetaClass <vtkmodules.numpy_interface."
-"dataset_adapter.VTKCompositeDataArrayMetaClass>`"
+"{py:obj}`VTKCompositeDataArrayMetaClass "
+"<vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:46
 msgid ""
-"{py:obj}`VTKCompositeDataArray <vtkmodules.numpy_interface.dataset_adapter."
-"VTKCompositeDataArray>`"
+"{py:obj}`VTKCompositeDataArray "
+"<vtkmodules.numpy_interface.dataset_adapter.VTKCompositeDataArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:48
@@ -209,8 +210,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:50
 msgid ""
-"{py:obj}`DataSetAttributes <vtkmodules.numpy_interface.dataset_adapter."
-"DataSetAttributes>`"
+"{py:obj}`DataSetAttributes "
+"<vtkmodules.numpy_interface.dataset_adapter.DataSetAttributes>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:52
@@ -224,8 +225,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:54
 msgid ""
-"{py:obj}`CompositeDataSetAttributes <vtkmodules.numpy_interface."
-"dataset_adapter.CompositeDataSetAttributes>`"
+"{py:obj}`CompositeDataSetAttributes "
+"<vtkmodules.numpy_interface.dataset_adapter.CompositeDataSetAttributes>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:56
@@ -240,8 +241,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:58
 msgid ""
-"{py:obj}`CompositeDataIterator <vtkmodules.numpy_interface.dataset_adapter."
-"CompositeDataIterator>`"
+"{py:obj}`CompositeDataIterator "
+"<vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:60
@@ -254,8 +255,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:62
 msgid ""
-"{py:obj}`MultiCompositeDataIterator <vtkmodules.numpy_interface."
-"dataset_adapter.MultiCompositeDataIterator>`"
+"{py:obj}`MultiCompositeDataIterator "
+"<vtkmodules.numpy_interface.dataset_adapter.MultiCompositeDataIterator>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:64
@@ -293,8 +294,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:74
 msgid ""
-"{py:obj}`HyperTreeGrid <vtkmodules.numpy_interface.dataset_adapter."
-"HyperTreeGrid>`"
+"{py:obj}`HyperTreeGrid "
+"<vtkmodules.numpy_interface.dataset_adapter.HyperTreeGrid>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:76
@@ -306,8 +307,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:78
 msgid ""
-"{py:obj}`CompositeDataSet <vtkmodules.numpy_interface.dataset_adapter."
-"CompositeDataSet>`"
+"{py:obj}`CompositeDataSet "
+"<vtkmodules.numpy_interface.dataset_adapter.CompositeDataSet>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:80
@@ -355,8 +356,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:94
 msgid ""
-"{py:obj}`UnstructuredGrid <vtkmodules.numpy_interface.dataset_adapter."
-"UnstructuredGrid>`"
+"{py:obj}`UnstructuredGrid "
+"<vtkmodules.numpy_interface.dataset_adapter.UnstructuredGrid>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:96
@@ -395,8 +396,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:114
 msgid ""
-"{py:obj}`_override_numpy <vtkmodules.numpy_interface.dataset_adapter."
-"_override_numpy>`"
+"{py:obj}`_override_numpy "
+"<vtkmodules.numpy_interface.dataset_adapter._override_numpy>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:116
@@ -408,8 +409,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:118
 msgid ""
-"{py:obj}`reshape_append_ones <vtkmodules.numpy_interface.dataset_adapter."
-"reshape_append_ones>`"
+"{py:obj}`reshape_append_ones "
+"<vtkmodules.numpy_interface.dataset_adapter.reshape_append_ones>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:120
@@ -424,8 +425,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:122
 msgid ""
-"{py:obj}`vtkDataArrayToVTKArray <vtkmodules.numpy_interface.dataset_adapter."
-"vtkDataArrayToVTKArray>`"
+"{py:obj}`vtkDataArrayToVTKArray "
+"<vtkmodules.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:124
@@ -435,8 +436,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:126
 msgid ""
-"{py:obj}`numpyTovtkDataArray <vtkmodules.numpy_interface.dataset_adapter."
-"numpyTovtkDataArray>`"
+"{py:obj}`numpyTovtkDataArray "
+"<vtkmodules.numpy_interface.dataset_adapter.numpyTovtkDataArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:128
@@ -449,8 +450,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:130
 msgid ""
-"{py:obj}`_make_tensor_array_contiguous <vtkmodules.numpy_interface."
-"dataset_adapter._make_tensor_array_contiguous>`"
+"{py:obj}`_make_tensor_array_contiguous "
+"<vtkmodules.numpy_interface.dataset_adapter._make_tensor_array_contiguous>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:134
@@ -465,8 +466,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:138
 msgid ""
-"{py:obj}`WrapDataObject <vtkmodules.numpy_interface.dataset_adapter."
-"WrapDataObject>`"
+"{py:obj}`WrapDataObject "
+"<vtkmodules.numpy_interface.dataset_adapter.WrapDataObject>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:140
@@ -480,14 +481,14 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:150
 msgid ""
-"{py:obj}`NUMPY_MAJOR_VERSION <vtkmodules.numpy_interface.dataset_adapter."
-"NUMPY_MAJOR_VERSION>`"
+"{py:obj}`NUMPY_MAJOR_VERSION "
+"<vtkmodules.numpy_interface.dataset_adapter.NUMPY_MAJOR_VERSION>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:154
 msgid ""
-"{py:obj}`COMPOSITE_OVERRIDE <vtkmodules.numpy_interface.dataset_adapter."
-"COMPOSITE_OVERRIDE>`"
+"{py:obj}`COMPOSITE_OVERRIDE "
+"<vtkmodules.numpy_interface.dataset_adapter.COMPOSITE_OVERRIDE>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:158
@@ -784,8 +785,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.dataset_adapter.md:843
 msgid ""
-"Bases: {py:obj}`vtkmodules.numpy_interface.dataset_adapter."
-"CompositeDataIterator`"
+"Bases: {py:obj}"
+"`vtkmodules.numpy_interface.dataset_adapter.CompositeDataIterator`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/dataset_adapter.py:891

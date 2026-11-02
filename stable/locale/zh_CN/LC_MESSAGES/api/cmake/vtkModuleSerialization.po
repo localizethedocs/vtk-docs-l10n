@@ -213,8 +213,8 @@ msgstr ""
 msgid ""
 "``ASYNC``: If specified, the generated package will be linked with `-"
 "sJSPI=1` flag. The generated package will support asynchronous string-based "
-"method calls. This option is required if ``MODULE`` depends on ``VTK::"
-"RenderingWebGPU`` to support asynchronous webgpu APIs."
+"method calls. This option is required if ``MODULE`` depends on "
+"``VTK::RenderingWebGPU`` to support asynchronous webgpu APIs."
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleSerialization.cmake:516

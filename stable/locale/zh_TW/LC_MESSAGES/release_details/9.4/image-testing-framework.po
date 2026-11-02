@@ -155,8 +155,8 @@ msgstr ""
 
 #: ../../../release_details/9.4/image-testing-framework.md:68
 msgid ""
-"set_tests_properties(Test1 PROPERTIES ENVIRONMENT \"VTK_TESTING=1;"
-"VTK_TESTING_IMAGE_COMPARE_METHOD=LOOSE_VALID\")\n"
+"set_tests_properties(Test1 PROPERTIES ENVIRONMENT "
+"\"VTK_TESTING=1;VTK_TESTING_IMAGE_COMPARE_METHOD=LOOSE_VALID\")\n"
 msgstr ""
 
 #: ../../../release_details/9.4/image-testing-framework.md:72

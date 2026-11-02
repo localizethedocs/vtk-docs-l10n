@@ -45,9 +45,9 @@ msgstr ""
 
 #: ../../../release_details/9.4/python-numpy-integration.md:11
 msgid ""
-"But now a user is able to add to it by calling `vtkmodules."
-"register_vtk_module_dependencies(vtk_module_name, *import_strings)` to "
-"automate imports at vtk module loading."
+"But now a user is able to add to it by calling "
+"`vtkmodules.register_vtk_module_dependencies(vtk_module_name, "
+"*import_strings)` to automate imports at vtk module loading."
 msgstr ""
 
 #: ../../../release_details/9.4/python-numpy-integration.md:13

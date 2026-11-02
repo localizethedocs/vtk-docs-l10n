@@ -43,8 +43,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.vtkAlgorithm.md:22
 msgid ""
-"{py:obj}`VTKPythonAlgorithmBase <vtkmodules.util.vtkAlgorithm."
-"VTKPythonAlgorithmBase>`"
+"{py:obj}`VTKPythonAlgorithmBase "
+"<vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/vtkAlgorithm.py:24
@@ -173,16 +173,15 @@ msgid ""
 "    f = h5py.File(\"foo.h5\", 'r')\n"
 "    dims = f['RTData'].shape[::-1]\n"
 "    info = outInfo.GetInformationObject(0)\n"
-"    info.Set(vtkmodules.vtkCommonExecutionModel."
-"vtkStreamingDemandDrivenPipeline.WHOLE_EXTENT(),\n"
+"    info.Set(vtkmodules.vtkCommonExecutionModel.vtkStreamingDemandDrivenPipeline.WHOLE_EXTENT(),\n"
 "        (0, dims[0]-1, 0, dims[1]-1, 0, dims[2]-1), 6)\n"
 "    return 1\n"
 "\n"
 "def RequestData(self, request, inInfo, outInfo):\n"
 "    f = h5py.File(\"foo.h5\", 'r')\n"
 "    data = f['RTData'][:]\n"
-"    output = dsa.WrapDataObject(vtkmodules.vtkCommonDataModel.vtkImageData."
-"GetData(outInfo))\n"
+"    output = "
+"dsa.WrapDataObject(vtkmodules.vtkCommonDataModel.vtkImageData.GetData(outInfo))\n"
 "    output.SetDimensions(data.shape)\n"
 "    output.PointData.append(data.flatten(), 'RTData')\n"
 "    output.PointData.SetActiveScalars('RTData')\n"
@@ -195,8 +194,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/vtkAlgorithm.py:172
 msgid ""
-"cf = vtkmodules.vtkFiltersCore.vtkContourFilter() cf.SetInputConnection(alg."
-"GetOutputPort()) cf.Update()"
+"cf = vtkmodules.vtkFiltersCore.vtkContourFilter() "
+"cf.SetInputConnection(alg.GetOutputPort()) cf.Update()"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/vtkAlgorithm.py:140

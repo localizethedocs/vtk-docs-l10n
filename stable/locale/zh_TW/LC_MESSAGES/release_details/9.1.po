@@ -155,8 +155,8 @@ msgid ""
 "`vtkPolyData::ComputeBounds()` used to ignore points that do not belong to "
 "any cell which was not consistent with other `vtkPointSet` subclasses. See "
 "[ParaView issue #20354][paraview-issue20354]. The previous behavior is "
-"available through `vtkPolyData::ComputeCellsBounds()` and `vtkPolyData::"
-"GetCellsBounds()` (usually for rendering purposes)."
+"available through `vtkPolyData::ComputeCellsBounds()` and "
+"`vtkPolyData::GetCellsBounds()` (usually for rendering purposes)."
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:52
@@ -883,9 +883,9 @@ msgstr ""
 #: ../../../../release/_9.1-stripped.md:332
 msgid ""
 "`vtkTemporalPathLineFilter` can now manage backwards times using its "
-"`SetBackwardTime()` method. When using backwards time, each `vtkDataObject::"
-"DATA_TIME_STEP()` from subsequent `::RequestData()` method calls will "
-"decrease."
+"`SetBackwardTime()` method. When using backwards time, each "
+"`vtkDataObject::DATA_TIME_STEP()` from subsequent `::RequestData()` method "
+"calls will decrease."
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:336
@@ -1174,8 +1174,8 @@ msgstr ""
 #: ../../../../release/_9.1-stripped.md:449
 msgid ""
 "`vtkScalarBarActor` now supports custom tick locations via "
-"`vtkScalarBarActor::SetCustomLabels()` and `vtkScalarBarActor::"
-"SetUseCustomLabels()`."
+"`vtkScalarBarActor::SetCustomLabels()` and "
+"`vtkScalarBarActor::SetUseCustomLabels()`."
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:458
@@ -1371,8 +1371,8 @@ msgstr ""
 msgid ""
 "`vtkOpenGLPolyDataMapper` now supports a `vtkSelection` object to display "
 "selected ids or values directly from the mapper itself. Selections are "
-"rendered in a second pass as a wireframe using the `vtkProperty::"
-"SelectionColor` color."
+"rendered in a second pass as a wireframe using the "
+"`vtkProperty::SelectionColor` color."
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:551
@@ -1387,8 +1387,8 @@ msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:555
 msgid ""
-"![Uniform-Grid-Blanking](imgs/9.1/TestGPURayCastVolumeUniformGridBlanking."
-"png)"
+"![Uniform-Grid-Blanking](imgs/9.1/"
+"TestGPURayCastVolumeUniformGridBlanking.png)"
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:555
@@ -1801,8 +1801,8 @@ msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:703
 msgid ""
-"`vtkLegacy.h` and `VTK_LEGACY_REMOVE` are now deprecated and `vtkDeprecation."
-"h` and its mechanisms should be used instead."
+"`vtkLegacy.h` and `VTK_LEGACY_REMOVE` are now deprecated and "
+"`vtkDeprecation.h` and its mechanisms should be used instead."
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:705
@@ -1993,9 +1993,9 @@ msgstr ""
 #: ../../../../release/_9.1-stripped.md:769
 msgid ""
 "`vtkThreshold`'s `ThresholdByLower()`, `ThresholdByUpper()`, and "
-"`ThresholdBetween()` methods are deprecated in favor of `vtkThreshold::"
-"LowerThreshold`, `vtkThreshold::UpperThreshold`, and `vtkThreshold::"
-"ThresholdFunction` properties."
+"`ThresholdBetween()` methods are deprecated in favor of "
+"`vtkThreshold::LowerThreshold`, `vtkThreshold::UpperThreshold`, and "
+"`vtkThreshold::ThresholdFunction` properties."
 msgstr ""
 
 #: ../../../../release/_9.1-stripped.md:777

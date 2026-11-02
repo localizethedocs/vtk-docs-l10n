@@ -152,32 +152,32 @@ msgstr ""
 
 #: ../../../release_details/9.6/refactor-amr-datamodel.md:52
 msgid ""
-"Deprecate vtkUniformGridAMR::GetCompositeIndex into vtkUniformGridAMR::"
-"GetAbsoluteBlockIndex"
+"Deprecate vtkUniformGridAMR::GetCompositeIndex into "
+"vtkUniformGridAMR::GetAbsoluteBlockIndex"
 msgstr ""
 
 #: ../../../release_details/9.6/refactor-amr-datamodel.md:53
 msgid ""
-"Deprecate vtkUniformGridAMR::GetLevelAndIndex into vtkUniformGridAMR::"
-"ComputeIndexPair"
+"Deprecate vtkUniformGridAMR::GetLevelAndIndex into "
+"vtkUniformGridAMR::ComputeIndexPair"
 msgstr ""
 
 #: ../../../release_details/9.6/refactor-amr-datamodel.md:54
 msgid ""
-"Deprecate vtkAMRInformation::GetIndex into vtkAMRMetaData::"
-"GetAbsoluteBlockIndex"
+"Deprecate vtkAMRInformation::GetIndex into "
+"vtkAMRMetaData::GetAbsoluteBlockIndex"
 msgstr ""
 
 #: ../../../release_details/9.6/refactor-amr-datamodel.md:55
 msgid ""
-"Deprecate vtkAMRInformation::GetTotalNumberOfBlocks into vtkAMRMetaData::"
-"GetNumberOfBlocks"
+"Deprecate vtkAMRInformation::GetTotalNumberOfBlocks into "
+"vtkAMRMetaData::GetNumberOfBlocks"
 msgstr ""
 
 #: ../../../release_details/9.6/refactor-amr-datamodel.md:56
 msgid ""
-"Deprecate vtkAMRInformation::GetNumberOfDataSets(level) into vtkAMRMetaData::"
-"GetNumberOfBlocks(level)"
+"Deprecate vtkAMRInformation::GetNumberOfDataSets(level) into "
+"vtkAMRMetaData::GetNumberOfBlocks(level)"
 msgstr ""
 
 #: ../../../release_details/9.6/refactor-amr-datamodel.md:57

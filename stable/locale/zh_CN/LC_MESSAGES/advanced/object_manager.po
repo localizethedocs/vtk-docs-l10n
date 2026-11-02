@@ -62,8 +62,8 @@ msgstr ""
 
 #: ../../../advanced/object_manager.md:21
 msgid ""
-"You can retrieve all dependent object identifiers using `vtkObjectManager::"
-"GetAllDependencies(identifier)`"
+"You can retrieve all dependent object identifiers using "
+"`vtkObjectManager::GetAllDependencies(identifier)`"
 msgstr ""
 
 #: ../../../advanced/object_manager.md:24
@@ -73,12 +73,12 @@ msgstr ""
 #: ../../../advanced/object_manager.md:25
 msgid ""
 "You can also (de)serialize classes in custom VTK modules. Simply pass the "
-"registrar function to `vtkObjectManager::"
-"InitializeExtensionModuleHandler(registrar)` where the `registrar` argument "
-"is of type `vtkSessionObjectManagerRegistrarFunc`. In C/C++, this function "
-"can be accessed from the `vtkModuleNameSerDes.h` header file in your build "
-"directory. In Python, this function is available as an attribute on the "
-"module."
+"registrar function to "
+"`vtkObjectManager::InitializeExtensionModuleHandler(registrar)` where the "
+"`registrar` argument is of type `vtkSessionObjectManagerRegistrarFunc`. In C/"
+"C++, this function can be accessed from the `vtkModuleNameSerDes.h` header "
+"file in your build directory. In Python, this function is available as an "
+"attribute on the module."
 msgstr ""
 
 #: ../../../advanced/object_manager.md:31
@@ -98,8 +98,7 @@ msgid ""
 "from vtkmodules import vtkInteractionWidgets\n"
 "from vtkmodules.vtkSerializationManager import vtkObjectManager\n"
 "object_manager = vtkObjectManager()\n"
-"object_manager.InitializeExtensionModuleHandler(vtkInteractionWidgets."
-"RegisterClasses_vtkInteractionWidgets)\n"
+"object_manager.InitializeExtensionModuleHandler(vtkInteractionWidgets.RegisterClasses_vtkInteractionWidgets)\n"
 msgstr ""
 
 #: ../../../advanced/object_manager.md:47
