@@ -1,0 +1,1291 @@
+# {py:mod}`vtkmodules.util.functions`
+
+```{py:module} vtkmodules.util.functions
+```
+
+```{autodoc2-docstring} vtkmodules.util.functions
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_to_vtk_array <vtkmodules.util.functions._to_vtk_array>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._to_vtk_array
+    :summary:
+    ```
+* - {py:obj}`_apply_func2 <vtkmodules.util.functions._apply_func2>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._apply_func2
+    :summary:
+    ```
+* - {py:obj}`apply_ufunc <vtkmodules.util.functions.apply_ufunc>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.apply_ufunc
+    :summary:
+    ```
+* - {py:obj}`apply_dfunc <vtkmodules.util.functions.apply_dfunc>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.apply_dfunc
+    :summary:
+    ```
+* - {py:obj}`_make_ufunc <vtkmodules.util.functions._make_ufunc>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._make_ufunc
+    :summary:
+    ```
+* - {py:obj}`_make_dfunc <vtkmodules.util.functions._make_dfunc>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._make_dfunc
+    :summary:
+    ```
+* - {py:obj}`_make_dsfunc <vtkmodules.util.functions._make_dsfunc>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._make_dsfunc
+    :summary:
+    ```
+* - {py:obj}`_make_dsfunc2 <vtkmodules.util.functions._make_dsfunc2>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._make_dsfunc2
+    :summary:
+    ```
+* - {py:obj}`_lookup_mpi_type <vtkmodules.util.functions._lookup_mpi_type>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._lookup_mpi_type
+    :summary:
+    ```
+* - {py:obj}`_reduce_dims <vtkmodules.util.functions._reduce_dims>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._reduce_dims
+    :summary:
+    ```
+* - {py:obj}`global_func <vtkmodules.util.functions.global_func>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.global_func
+    :summary:
+    ```
+* - {py:obj}`_local_array_count <vtkmodules.util.functions._local_array_count>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._local_array_count
+    :summary:
+    ```
+* - {py:obj}`array_count <vtkmodules.util.functions.array_count>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.array_count
+    :summary:
+    ```
+* - {py:obj}`_cell_derivatives <vtkmodules.util.functions._cell_derivatives>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._cell_derivatives
+    :summary:
+    ```
+* - {py:obj}`_cell_quality <vtkmodules.util.functions._cell_quality>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._cell_quality
+    :summary:
+    ```
+* - {py:obj}`_matrix_math_filter <vtkmodules.util.functions._matrix_math_filter>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._matrix_math_filter
+    :summary:
+    ```
+* - {py:obj}`_sum <vtkmodules.util.functions._sum>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._sum
+    :summary:
+    ```
+* - {py:obj}`_max <vtkmodules.util.functions._max>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._max
+    :summary:
+    ```
+* - {py:obj}`_min <vtkmodules.util.functions._min>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._min
+    :summary:
+    ```
+* - {py:obj}`_all <vtkmodules.util.functions._all>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._all
+    :summary:
+    ```
+* - {py:obj}`_mean <vtkmodules.util.functions._mean>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._mean
+    :summary:
+    ```
+* - {py:obj}`_var <vtkmodules.util.functions._var>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._var
+    :summary:
+    ```
+* - {py:obj}`_cross <vtkmodules.util.functions._cross>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._cross
+    :summary:
+    ```
+* - {py:obj}`_dot <vtkmodules.util.functions._dot>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._dot
+    :summary:
+    ```
+* - {py:obj}`_mag <vtkmodules.util.functions._mag>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._mag
+    :summary:
+    ```
+* - {py:obj}`_matmul <vtkmodules.util.functions._matmul>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._matmul
+    :summary:
+    ```
+* - {py:obj}`_norm <vtkmodules.util.functions._norm>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._norm
+    :summary:
+    ```
+* - {py:obj}`_det <vtkmodules.util.functions._det>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._det
+    :summary:
+    ```
+* - {py:obj}`_eigenvalue <vtkmodules.util.functions._eigenvalue>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._eigenvalue
+    :summary:
+    ```
+* - {py:obj}`_eigenvector <vtkmodules.util.functions._eigenvector>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._eigenvector
+    :summary:
+    ```
+* - {py:obj}`_inv <vtkmodules.util.functions._inv>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._inv
+    :summary:
+    ```
+* - {py:obj}`_trace <vtkmodules.util.functions._trace>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._trace
+    :summary:
+    ```
+* - {py:obj}`_curl <vtkmodules.util.functions._curl>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._curl
+    :summary:
+    ```
+* - {py:obj}`_gradient <vtkmodules.util.functions._gradient>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._gradient
+    :summary:
+    ```
+* - {py:obj}`_divergence <vtkmodules.util.functions._divergence>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._divergence
+    :summary:
+    ```
+* - {py:obj}`_laplacian <vtkmodules.util.functions._laplacian>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._laplacian
+    :summary:
+    ```
+* - {py:obj}`_strain <vtkmodules.util.functions._strain>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._strain
+    :summary:
+    ```
+* - {py:obj}`_area <vtkmodules.util.functions._area>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._area
+    :summary:
+    ```
+* - {py:obj}`_aspect <vtkmodules.util.functions._aspect>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._aspect
+    :summary:
+    ```
+* - {py:obj}`_aspect_gamma <vtkmodules.util.functions._aspect_gamma>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._aspect_gamma
+    :summary:
+    ```
+* - {py:obj}`_condition <vtkmodules.util.functions._condition>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._condition
+    :summary:
+    ```
+* - {py:obj}`_diagonal <vtkmodules.util.functions._diagonal>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._diagonal
+    :summary:
+    ```
+* - {py:obj}`_jacobian <vtkmodules.util.functions._jacobian>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._jacobian
+    :summary:
+    ```
+* - {py:obj}`_max_angle <vtkmodules.util.functions._max_angle>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._max_angle
+    :summary:
+    ```
+* - {py:obj}`_min_angle <vtkmodules.util.functions._min_angle>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._min_angle
+    :summary:
+    ```
+* - {py:obj}`_shear <vtkmodules.util.functions._shear>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._shear
+    :summary:
+    ```
+* - {py:obj}`_skew <vtkmodules.util.functions._skew>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._skew
+    :summary:
+    ```
+* - {py:obj}`_volume <vtkmodules.util.functions._volume>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._volume
+    :summary:
+    ```
+* - {py:obj}`_surface_normal <vtkmodules.util.functions._surface_normal>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._surface_normal
+    :summary:
+    ```
+* - {py:obj}`_vertex_normal <vtkmodules.util.functions._vertex_normal>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._vertex_normal
+    :summary:
+    ```
+* - {py:obj}`_make_vector <vtkmodules.util.functions._make_vector>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._make_vector
+    :summary:
+    ```
+* - {py:obj}`sum <vtkmodules.util.functions.sum>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.sum
+    :summary:
+    ```
+* - {py:obj}`max <vtkmodules.util.functions.max>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.max
+    :summary:
+    ```
+* - {py:obj}`min <vtkmodules.util.functions.min>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.min
+    :summary:
+    ```
+* - {py:obj}`all <vtkmodules.util.functions.all>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.all
+    :summary:
+    ```
+* - {py:obj}`mean <vtkmodules.util.functions.mean>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.mean
+    :summary:
+    ```
+* - {py:obj}`var <vtkmodules.util.functions.var>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.var
+    :summary:
+    ```
+* - {py:obj}`std <vtkmodules.util.functions.std>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.std
+    :summary:
+    ```
+* - {py:obj}`make_vector <vtkmodules.util.functions.make_vector>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.make_vector
+    :summary:
+    ```
+* - {py:obj}`make_mask_from_NaNs <vtkmodules.util.functions.make_mask_from_NaNs>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.make_mask_from_NaNs
+    :summary:
+    ```
+* - {py:obj}`make_point_mask_from_NaNs <vtkmodules.util.functions.make_point_mask_from_NaNs>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.make_point_mask_from_NaNs
+    :summary:
+    ```
+* - {py:obj}`make_cell_mask_from_NaNs <vtkmodules.util.functions.make_cell_mask_from_NaNs>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.make_cell_mask_from_NaNs
+    :summary:
+    ```
+* - {py:obj}`_global_per_block <vtkmodules.util.functions._global_per_block>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._global_per_block
+    :summary:
+    ```
+* - {py:obj}`sum_per_block <vtkmodules.util.functions.sum_per_block>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.sum_per_block
+    :summary:
+    ```
+* - {py:obj}`count_per_block <vtkmodules.util.functions.count_per_block>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.count_per_block
+    :summary:
+    ```
+* - {py:obj}`mean_per_block <vtkmodules.util.functions.mean_per_block>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.mean_per_block
+    :summary:
+    ```
+* - {py:obj}`max_per_block <vtkmodules.util.functions.max_per_block>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.max_per_block
+    :summary:
+    ```
+* - {py:obj}`min_per_block <vtkmodules.util.functions.min_per_block>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.min_per_block
+    :summary:
+    ```
+* - {py:obj}`unstructured_from_composite_arrays <vtkmodules.util.functions.unstructured_from_composite_arrays>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.unstructured_from_composite_arrays
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_builtin_min <vtkmodules.util.functions._builtin_min>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._builtin_min
+    :summary:
+    ```
+* - {py:obj}`_builtin_max <vtkmodules.util.functions._builtin_max>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._builtin_max
+    :summary:
+    ```
+* - {py:obj}`_builtin_sum <vtkmodules.util.functions._builtin_sum>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._builtin_sum
+    :summary:
+    ```
+* - {py:obj}`_builtin_all <vtkmodules.util.functions._builtin_all>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._builtin_all
+    :summary:
+    ```
+* - {py:obj}`_vorticity <vtkmodules.util.functions._vorticity>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions._vorticity
+    :summary:
+    ```
+* - {py:obj}`curl <vtkmodules.util.functions.curl>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.curl
+    :summary:
+    ```
+* - {py:obj}`gradient <vtkmodules.util.functions.gradient>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.gradient
+    :summary:
+    ```
+* - {py:obj}`divergence <vtkmodules.util.functions.divergence>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.divergence
+    :summary:
+    ```
+* - {py:obj}`laplacian <vtkmodules.util.functions.laplacian>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.laplacian
+    :summary:
+    ```
+* - {py:obj}`strain <vtkmodules.util.functions.strain>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.strain
+    :summary:
+    ```
+* - {py:obj}`vorticity <vtkmodules.util.functions.vorticity>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.vorticity
+    :summary:
+    ```
+* - {py:obj}`area <vtkmodules.util.functions.area>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.area
+    :summary:
+    ```
+* - {py:obj}`aspect <vtkmodules.util.functions.aspect>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.aspect
+    :summary:
+    ```
+* - {py:obj}`aspect_gamma <vtkmodules.util.functions.aspect_gamma>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.aspect_gamma
+    :summary:
+    ```
+* - {py:obj}`condition <vtkmodules.util.functions.condition>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.condition
+    :summary:
+    ```
+* - {py:obj}`diagonal <vtkmodules.util.functions.diagonal>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.diagonal
+    :summary:
+    ```
+* - {py:obj}`jacobian <vtkmodules.util.functions.jacobian>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.jacobian
+    :summary:
+    ```
+* - {py:obj}`max_angle <vtkmodules.util.functions.max_angle>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.max_angle
+    :summary:
+    ```
+* - {py:obj}`min_angle <vtkmodules.util.functions.min_angle>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.min_angle
+    :summary:
+    ```
+* - {py:obj}`shear <vtkmodules.util.functions.shear>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.shear
+    :summary:
+    ```
+* - {py:obj}`skew <vtkmodules.util.functions.skew>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.skew
+    :summary:
+    ```
+* - {py:obj}`volume <vtkmodules.util.functions.volume>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.volume
+    :summary:
+    ```
+* - {py:obj}`det <vtkmodules.util.functions.det>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.det
+    :summary:
+    ```
+* - {py:obj}`determinant <vtkmodules.util.functions.determinant>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.determinant
+    :summary:
+    ```
+* - {py:obj}`eigenvalue <vtkmodules.util.functions.eigenvalue>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.eigenvalue
+    :summary:
+    ```
+* - {py:obj}`eigenvector <vtkmodules.util.functions.eigenvector>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.eigenvector
+    :summary:
+    ```
+* - {py:obj}`inv <vtkmodules.util.functions.inv>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.inv
+    :summary:
+    ```
+* - {py:obj}`inverse <vtkmodules.util.functions.inverse>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.inverse
+    :summary:
+    ```
+* - {py:obj}`trace <vtkmodules.util.functions.trace>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.trace
+    :summary:
+    ```
+* - {py:obj}`cross <vtkmodules.util.functions.cross>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.cross
+    :summary:
+    ```
+* - {py:obj}`dot <vtkmodules.util.functions.dot>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.dot
+    :summary:
+    ```
+* - {py:obj}`matmul <vtkmodules.util.functions.matmul>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.matmul
+    :summary:
+    ```
+* - {py:obj}`mag <vtkmodules.util.functions.mag>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.mag
+    :summary:
+    ```
+* - {py:obj}`norm <vtkmodules.util.functions.norm>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.norm
+    :summary:
+    ```
+* - {py:obj}`surface_normal <vtkmodules.util.functions.surface_normal>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.surface_normal
+    :summary:
+    ```
+* - {py:obj}`vertex_normal <vtkmodules.util.functions.vertex_normal>`
+  - ```{autodoc2-docstring} vtkmodules.util.functions.vertex_normal
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _builtin_min
+:canonical: vtkmodules.util.functions._builtin_min
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions._builtin_min
+```
+
+````
+
+````{py:data} _builtin_max
+:canonical: vtkmodules.util.functions._builtin_max
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions._builtin_max
+```
+
+````
+
+````{py:data} _builtin_sum
+:canonical: vtkmodules.util.functions._builtin_sum
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions._builtin_sum
+```
+
+````
+
+````{py:data} _builtin_all
+:canonical: vtkmodules.util.functions._builtin_all
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions._builtin_all
+```
+
+````
+
+````{py:function} _to_vtk_array(result, source)
+:canonical: vtkmodules.util.functions._to_vtk_array
+
+```{autodoc2-docstring} vtkmodules.util.functions._to_vtk_array
+```
+````
+
+````{py:function} _apply_func2(func, array, args)
+:canonical: vtkmodules.util.functions._apply_func2
+
+```{autodoc2-docstring} vtkmodules.util.functions._apply_func2
+```
+````
+
+````{py:function} apply_ufunc(func, array, args=())
+:canonical: vtkmodules.util.functions.apply_ufunc
+
+```{autodoc2-docstring} vtkmodules.util.functions.apply_ufunc
+```
+````
+
+````{py:function} apply_dfunc(dfunc, array1, val2)
+:canonical: vtkmodules.util.functions.apply_dfunc
+
+```{autodoc2-docstring} vtkmodules.util.functions.apply_dfunc
+```
+````
+
+````{py:function} _make_ufunc(ufunc)
+:canonical: vtkmodules.util.functions._make_ufunc
+
+```{autodoc2-docstring} vtkmodules.util.functions._make_ufunc
+```
+````
+
+````{py:function} _make_dfunc(dfunc)
+:canonical: vtkmodules.util.functions._make_dfunc
+
+```{autodoc2-docstring} vtkmodules.util.functions._make_dfunc
+```
+````
+
+````{py:function} _make_dsfunc(dsfunc)
+:canonical: vtkmodules.util.functions._make_dsfunc
+
+```{autodoc2-docstring} vtkmodules.util.functions._make_dsfunc
+```
+````
+
+````{py:function} _make_dsfunc2(dsfunc)
+:canonical: vtkmodules.util.functions._make_dsfunc2
+
+```{autodoc2-docstring} vtkmodules.util.functions._make_dsfunc2
+```
+````
+
+````{py:function} _lookup_mpi_type(ntype)
+:canonical: vtkmodules.util.functions._lookup_mpi_type
+
+```{autodoc2-docstring} vtkmodules.util.functions._lookup_mpi_type
+```
+````
+
+````{py:function} _reduce_dims(array, comm)
+:canonical: vtkmodules.util.functions._reduce_dims
+
+```{autodoc2-docstring} vtkmodules.util.functions._reduce_dims
+```
+````
+
+````{py:function} global_func(impl, array, axis, controller)
+:canonical: vtkmodules.util.functions.global_func
+
+```{autodoc2-docstring} vtkmodules.util.functions.global_func
+```
+````
+
+````{py:function} _local_array_count(array, axis)
+:canonical: vtkmodules.util.functions._local_array_count
+
+```{autodoc2-docstring} vtkmodules.util.functions._local_array_count
+```
+````
+
+````{py:function} array_count(array, axis, controller)
+:canonical: vtkmodules.util.functions.array_count
+
+```{autodoc2-docstring} vtkmodules.util.functions.array_count
+```
+````
+
+````{py:function} _cell_derivatives(array, dataset, attribute_type, filter)
+:canonical: vtkmodules.util.functions._cell_derivatives
+
+```{autodoc2-docstring} vtkmodules.util.functions._cell_derivatives
+```
+````
+
+````{py:function} _cell_quality(dataset, quality)
+:canonical: vtkmodules.util.functions._cell_quality
+
+```{autodoc2-docstring} vtkmodules.util.functions._cell_quality
+```
+````
+
+````{py:function} _matrix_math_filter(array, operation)
+:canonical: vtkmodules.util.functions._matrix_math_filter
+
+```{autodoc2-docstring} vtkmodules.util.functions._matrix_math_filter
+```
+````
+
+````{py:function} _sum(array, axis=None)
+:canonical: vtkmodules.util.functions._sum
+
+```{autodoc2-docstring} vtkmodules.util.functions._sum
+```
+````
+
+````{py:function} _max(array, axis=None)
+:canonical: vtkmodules.util.functions._max
+
+```{autodoc2-docstring} vtkmodules.util.functions._max
+```
+````
+
+````{py:function} _min(array, axis=None)
+:canonical: vtkmodules.util.functions._min
+
+```{autodoc2-docstring} vtkmodules.util.functions._min
+```
+````
+
+````{py:function} _all(array, axis=None)
+:canonical: vtkmodules.util.functions._all
+
+```{autodoc2-docstring} vtkmodules.util.functions._all
+```
+````
+
+````{py:function} _mean(array, axis=None)
+:canonical: vtkmodules.util.functions._mean
+
+```{autodoc2-docstring} vtkmodules.util.functions._mean
+```
+````
+
+````{py:function} _var(array, axis=None)
+:canonical: vtkmodules.util.functions._var
+
+```{autodoc2-docstring} vtkmodules.util.functions._var
+```
+````
+
+````{py:function} _cross(x, y)
+:canonical: vtkmodules.util.functions._cross
+
+```{autodoc2-docstring} vtkmodules.util.functions._cross
+```
+````
+
+````{py:function} _dot(a1, a2)
+:canonical: vtkmodules.util.functions._dot
+
+```{autodoc2-docstring} vtkmodules.util.functions._dot
+```
+````
+
+````{py:function} _mag(a)
+:canonical: vtkmodules.util.functions._mag
+
+```{autodoc2-docstring} vtkmodules.util.functions._mag
+```
+````
+
+````{py:function} _matmul(a, b)
+:canonical: vtkmodules.util.functions._matmul
+
+```{autodoc2-docstring} vtkmodules.util.functions._matmul
+```
+````
+
+````{py:function} _norm(a)
+:canonical: vtkmodules.util.functions._norm
+
+```{autodoc2-docstring} vtkmodules.util.functions._norm
+```
+````
+
+````{py:function} _det(array)
+:canonical: vtkmodules.util.functions._det
+
+```{autodoc2-docstring} vtkmodules.util.functions._det
+```
+````
+
+````{py:function} _eigenvalue(array)
+:canonical: vtkmodules.util.functions._eigenvalue
+
+```{autodoc2-docstring} vtkmodules.util.functions._eigenvalue
+```
+````
+
+````{py:function} _eigenvector(array)
+:canonical: vtkmodules.util.functions._eigenvector
+
+```{autodoc2-docstring} vtkmodules.util.functions._eigenvector
+```
+````
+
+````{py:function} _inv(array)
+:canonical: vtkmodules.util.functions._inv
+
+```{autodoc2-docstring} vtkmodules.util.functions._inv
+```
+````
+
+````{py:function} _trace(array)
+:canonical: vtkmodules.util.functions._trace
+
+```{autodoc2-docstring} vtkmodules.util.functions._trace
+```
+````
+
+````{py:function} _curl(array, dataset=None)
+:canonical: vtkmodules.util.functions._curl
+
+```{autodoc2-docstring} vtkmodules.util.functions._curl
+```
+````
+
+````{py:function} _gradient(array, dataset=None)
+:canonical: vtkmodules.util.functions._gradient
+
+```{autodoc2-docstring} vtkmodules.util.functions._gradient
+```
+````
+
+````{py:function} _divergence(array, dataset=None)
+:canonical: vtkmodules.util.functions._divergence
+
+```{autodoc2-docstring} vtkmodules.util.functions._divergence
+```
+````
+
+````{py:function} _laplacian(array, dataset=None)
+:canonical: vtkmodules.util.functions._laplacian
+
+```{autodoc2-docstring} vtkmodules.util.functions._laplacian
+```
+````
+
+````{py:function} _strain(array, dataset=None)
+:canonical: vtkmodules.util.functions._strain
+
+```{autodoc2-docstring} vtkmodules.util.functions._strain
+```
+````
+
+````{py:data} _vorticity
+:canonical: vtkmodules.util.functions._vorticity
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions._vorticity
+```
+
+````
+
+````{py:function} _area(dataset)
+:canonical: vtkmodules.util.functions._area
+
+```{autodoc2-docstring} vtkmodules.util.functions._area
+```
+````
+
+````{py:function} _aspect(dataset)
+:canonical: vtkmodules.util.functions._aspect
+
+```{autodoc2-docstring} vtkmodules.util.functions._aspect
+```
+````
+
+````{py:function} _aspect_gamma(dataset)
+:canonical: vtkmodules.util.functions._aspect_gamma
+
+```{autodoc2-docstring} vtkmodules.util.functions._aspect_gamma
+```
+````
+
+````{py:function} _condition(dataset)
+:canonical: vtkmodules.util.functions._condition
+
+```{autodoc2-docstring} vtkmodules.util.functions._condition
+```
+````
+
+````{py:function} _diagonal(dataset)
+:canonical: vtkmodules.util.functions._diagonal
+
+```{autodoc2-docstring} vtkmodules.util.functions._diagonal
+```
+````
+
+````{py:function} _jacobian(dataset)
+:canonical: vtkmodules.util.functions._jacobian
+
+```{autodoc2-docstring} vtkmodules.util.functions._jacobian
+```
+````
+
+````{py:function} _max_angle(dataset)
+:canonical: vtkmodules.util.functions._max_angle
+
+```{autodoc2-docstring} vtkmodules.util.functions._max_angle
+```
+````
+
+````{py:function} _min_angle(dataset)
+:canonical: vtkmodules.util.functions._min_angle
+
+```{autodoc2-docstring} vtkmodules.util.functions._min_angle
+```
+````
+
+````{py:function} _shear(dataset)
+:canonical: vtkmodules.util.functions._shear
+
+```{autodoc2-docstring} vtkmodules.util.functions._shear
+```
+````
+
+````{py:function} _skew(dataset)
+:canonical: vtkmodules.util.functions._skew
+
+```{autodoc2-docstring} vtkmodules.util.functions._skew
+```
+````
+
+````{py:function} _volume(dataset)
+:canonical: vtkmodules.util.functions._volume
+
+```{autodoc2-docstring} vtkmodules.util.functions._volume
+```
+````
+
+````{py:function} _surface_normal(dataset)
+:canonical: vtkmodules.util.functions._surface_normal
+
+```{autodoc2-docstring} vtkmodules.util.functions._surface_normal
+```
+````
+
+````{py:function} _vertex_normal(dataset)
+:canonical: vtkmodules.util.functions._vertex_normal
+
+```{autodoc2-docstring} vtkmodules.util.functions._vertex_normal
+```
+````
+
+````{py:function} _make_vector(ax, ay, az=None)
+:canonical: vtkmodules.util.functions._make_vector
+
+```{autodoc2-docstring} vtkmodules.util.functions._make_vector
+```
+````
+
+````{py:function} sum(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.sum
+
+```{autodoc2-docstring} vtkmodules.util.functions.sum
+```
+````
+
+````{py:function} max(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.max
+
+```{autodoc2-docstring} vtkmodules.util.functions.max
+```
+````
+
+````{py:function} min(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.min
+
+```{autodoc2-docstring} vtkmodules.util.functions.min
+```
+````
+
+````{py:function} all(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.all
+
+```{autodoc2-docstring} vtkmodules.util.functions.all
+```
+````
+
+````{py:function} mean(array, axis=None, controller=None, size=None)
+:canonical: vtkmodules.util.functions.mean
+
+```{autodoc2-docstring} vtkmodules.util.functions.mean
+```
+````
+
+````{py:function} var(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.var
+
+```{autodoc2-docstring} vtkmodules.util.functions.var
+```
+````
+
+````{py:function} std(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.std
+
+```{autodoc2-docstring} vtkmodules.util.functions.std
+```
+````
+
+````{py:data} curl
+:canonical: vtkmodules.util.functions.curl
+:value: >
+   '_make_dsfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.curl
+```
+
+````
+
+````{py:data} gradient
+:canonical: vtkmodules.util.functions.gradient
+:value: >
+   '_make_dsfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.gradient
+```
+
+````
+
+````{py:data} divergence
+:canonical: vtkmodules.util.functions.divergence
+:value: >
+   '_make_dsfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.divergence
+```
+
+````
+
+````{py:data} laplacian
+:canonical: vtkmodules.util.functions.laplacian
+:value: >
+   '_make_dsfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.laplacian
+```
+
+````
+
+````{py:data} strain
+:canonical: vtkmodules.util.functions.strain
+:value: >
+   '_make_dsfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.strain
+```
+
+````
+
+````{py:data} vorticity
+:canonical: vtkmodules.util.functions.vorticity
+:value: >
+   '_make_dsfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.vorticity
+```
+
+````
+
+````{py:data} area
+:canonical: vtkmodules.util.functions.area
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.area
+```
+
+````
+
+````{py:data} aspect
+:canonical: vtkmodules.util.functions.aspect
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.aspect
+```
+
+````
+
+````{py:data} aspect_gamma
+:canonical: vtkmodules.util.functions.aspect_gamma
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.aspect_gamma
+```
+
+````
+
+````{py:data} condition
+:canonical: vtkmodules.util.functions.condition
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.condition
+```
+
+````
+
+````{py:data} diagonal
+:canonical: vtkmodules.util.functions.diagonal
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.diagonal
+```
+
+````
+
+````{py:data} jacobian
+:canonical: vtkmodules.util.functions.jacobian
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.jacobian
+```
+
+````
+
+````{py:data} max_angle
+:canonical: vtkmodules.util.functions.max_angle
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.max_angle
+```
+
+````
+
+````{py:data} min_angle
+:canonical: vtkmodules.util.functions.min_angle
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.min_angle
+```
+
+````
+
+````{py:data} shear
+:canonical: vtkmodules.util.functions.shear
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.shear
+```
+
+````
+
+````{py:data} skew
+:canonical: vtkmodules.util.functions.skew
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.skew
+```
+
+````
+
+````{py:data} volume
+:canonical: vtkmodules.util.functions.volume
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.volume
+```
+
+````
+
+````{py:data} det
+:canonical: vtkmodules.util.functions.det
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.det
+```
+
+````
+
+````{py:data} determinant
+:canonical: vtkmodules.util.functions.determinant
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions.determinant
+```
+
+````
+
+````{py:data} eigenvalue
+:canonical: vtkmodules.util.functions.eigenvalue
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.eigenvalue
+```
+
+````
+
+````{py:data} eigenvector
+:canonical: vtkmodules.util.functions.eigenvector
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.eigenvector
+```
+
+````
+
+````{py:data} inv
+:canonical: vtkmodules.util.functions.inv
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.inv
+```
+
+````
+
+````{py:data} inverse
+:canonical: vtkmodules.util.functions.inverse
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.functions.inverse
+```
+
+````
+
+````{py:data} trace
+:canonical: vtkmodules.util.functions.trace
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.trace
+```
+
+````
+
+````{py:data} cross
+:canonical: vtkmodules.util.functions.cross
+:value: >
+   '_make_dfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.cross
+```
+
+````
+
+````{py:data} dot
+:canonical: vtkmodules.util.functions.dot
+:value: >
+   '_make_dfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.dot
+```
+
+````
+
+````{py:data} matmul
+:canonical: vtkmodules.util.functions.matmul
+:value: >
+   '_make_dfunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.matmul
+```
+
+````
+
+````{py:data} mag
+:canonical: vtkmodules.util.functions.mag
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.mag
+```
+
+````
+
+````{py:data} norm
+:canonical: vtkmodules.util.functions.norm
+:value: >
+   '_make_ufunc(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.norm
+```
+
+````
+
+````{py:data} surface_normal
+:canonical: vtkmodules.util.functions.surface_normal
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.surface_normal
+```
+
+````
+
+````{py:data} vertex_normal
+:canonical: vtkmodules.util.functions.vertex_normal
+:value: >
+   '_make_dsfunc2(...)'
+
+```{autodoc2-docstring} vtkmodules.util.functions.vertex_normal
+```
+
+````
+
+````{py:function} make_vector(arrayx, arrayy, arrayz=None)
+:canonical: vtkmodules.util.functions.make_vector
+
+```{autodoc2-docstring} vtkmodules.util.functions.make_vector
+```
+````
+
+````{py:function} make_mask_from_NaNs(array, ghost_array=NoneArray, is_cell=False)
+:canonical: vtkmodules.util.functions.make_mask_from_NaNs
+
+```{autodoc2-docstring} vtkmodules.util.functions.make_mask_from_NaNs
+```
+````
+
+````{py:function} make_point_mask_from_NaNs(dataset, array)
+:canonical: vtkmodules.util.functions.make_point_mask_from_NaNs
+
+```{autodoc2-docstring} vtkmodules.util.functions.make_point_mask_from_NaNs
+```
+````
+
+````{py:function} make_cell_mask_from_NaNs(dataset, array)
+:canonical: vtkmodules.util.functions.make_cell_mask_from_NaNs
+
+```{autodoc2-docstring} vtkmodules.util.functions.make_cell_mask_from_NaNs
+```
+````
+
+````{py:function} _global_per_block(impl, array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions._global_per_block
+
+```{autodoc2-docstring} vtkmodules.util.functions._global_per_block
+```
+````
+
+````{py:function} sum_per_block(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.sum_per_block
+
+```{autodoc2-docstring} vtkmodules.util.functions.sum_per_block
+```
+````
+
+````{py:function} count_per_block(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.count_per_block
+
+```{autodoc2-docstring} vtkmodules.util.functions.count_per_block
+```
+````
+
+````{py:function} mean_per_block(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.mean_per_block
+
+```{autodoc2-docstring} vtkmodules.util.functions.mean_per_block
+```
+````
+
+````{py:function} max_per_block(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.max_per_block
+
+```{autodoc2-docstring} vtkmodules.util.functions.max_per_block
+```
+````
+
+````{py:function} min_per_block(array, axis=None, controller=None)
+:canonical: vtkmodules.util.functions.min_per_block
+
+```{autodoc2-docstring} vtkmodules.util.functions.min_per_block
+```
+````
+
+````{py:function} unstructured_from_composite_arrays(points, arrays, controller=None)
+:canonical: vtkmodules.util.functions.unstructured_from_composite_arrays
+
+```{autodoc2-docstring} vtkmodules.util.functions.unstructured_from_composite_arrays
+```
+````

@@ -1,0 +1,756 @@
+# {py:mod}`vtkmodules.util.dlpack_support`
+
+```{py:module} vtkmodules.util.dlpack_support
+```
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_DLDataType <vtkmodules.util.dlpack_support._DLDataType>`
+  -
+* - {py:obj}`_DLDevice <vtkmodules.util.dlpack_support._DLDevice>`
+  -
+* - {py:obj}`_DLTensor <vtkmodules.util.dlpack_support._DLTensor>`
+  -
+* - {py:obj}`_DLManagedTensor <vtkmodules.util.dlpack_support._DLManagedTensor>`
+  -
+* - {py:obj}`_DLPackVersion <vtkmodules.util.dlpack_support._DLPackVersion>`
+  -
+* - {py:obj}`_DLManagedTensorVersioned <vtkmodules.util.dlpack_support._DLManagedTensorVersioned>`
+  -
+* - {py:obj}`DLPackArray <vtkmodules.util.dlpack_support.DLPackArray>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPackArray
+    :summary:
+    ```
+* - {py:obj}`_HostTensor <vtkmodules.util.dlpack_support._HostTensor>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._HostTensor
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_release <vtkmodules.util.dlpack_support._release>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._release
+    :summary:
+    ```
+* - {py:obj}`_tensor_deleter <vtkmodules.util.dlpack_support._tensor_deleter>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._tensor_deleter
+    :summary:
+    ```
+* - {py:obj}`_tensor_deleter_versioned <vtkmodules.util.dlpack_support._tensor_deleter_versioned>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._tensor_deleter_versioned
+    :summary:
+    ```
+* - {py:obj}`_capsule_destructor <vtkmodules.util.dlpack_support._capsule_destructor>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._capsule_destructor
+    :summary:
+    ```
+* - {py:obj}`supported_device_types <vtkmodules.util.dlpack_support.supported_device_types>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.supported_device_types
+    :summary:
+    ```
+* - {py:obj}`vtk_to_dlpack <vtkmodules.util.dlpack_support.vtk_to_dlpack>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.vtk_to_dlpack
+    :summary:
+    ```
+* - {py:obj}`dlpack_to_vtk <vtkmodules.util.dlpack_support.dlpack_to_vtk>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.dlpack_to_vtk
+    :summary:
+    ```
+* - {py:obj}`_request_capsule <vtkmodules.util.dlpack_support._request_capsule>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._request_capsule
+    :summary:
+    ```
+* - {py:obj}`_release_adopted <vtkmodules.util.dlpack_support._release_adopted>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._release_adopted
+    :summary:
+    ```
+* - {py:obj}`_adopted_release <vtkmodules.util.dlpack_support._adopted_release>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._adopted_release
+    :summary:
+    ```
+* - {py:obj}`_register_adopted <vtkmodules.util.dlpack_support._register_adopted>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._register_adopted
+    :summary:
+    ```
+* - {py:obj}`_hold_via_descriptor <vtkmodules.util.dlpack_support._hold_via_descriptor>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._hold_via_descriptor
+    :summary:
+    ```
+* - {py:obj}`_wrap_host <vtkmodules.util.dlpack_support._wrap_host>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._wrap_host
+    :summary:
+    ```
+* - {py:obj}`_wrap_descriptor <vtkmodules.util.dlpack_support._wrap_descriptor>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._wrap_descriptor
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`__all__ <vtkmodules.util.dlpack_support.__all__>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.__all__
+    :summary:
+    ```
+* - {py:obj}`kDLCPU <vtkmodules.util.dlpack_support.kDLCPU>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCPU
+    :summary:
+    ```
+* - {py:obj}`kDLCUDA <vtkmodules.util.dlpack_support.kDLCUDA>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCUDA
+    :summary:
+    ```
+* - {py:obj}`kDLCUDAHost <vtkmodules.util.dlpack_support.kDLCUDAHost>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCUDAHost
+    :summary:
+    ```
+* - {py:obj}`kDLOpenCL <vtkmodules.util.dlpack_support.kDLOpenCL>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLOpenCL
+    :summary:
+    ```
+* - {py:obj}`kDLVulkan <vtkmodules.util.dlpack_support.kDLVulkan>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLVulkan
+    :summary:
+    ```
+* - {py:obj}`kDLMetal <vtkmodules.util.dlpack_support.kDLMetal>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLMetal
+    :summary:
+    ```
+* - {py:obj}`kDLROCM <vtkmodules.util.dlpack_support.kDLROCM>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLROCM
+    :summary:
+    ```
+* - {py:obj}`kDLROCMHost <vtkmodules.util.dlpack_support.kDLROCMHost>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLROCMHost
+    :summary:
+    ```
+* - {py:obj}`kDLCUDAManaged <vtkmodules.util.dlpack_support.kDLCUDAManaged>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCUDAManaged
+    :summary:
+    ```
+* - {py:obj}`kDLOneAPI <vtkmodules.util.dlpack_support.kDLOneAPI>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLOneAPI
+    :summary:
+    ```
+* - {py:obj}`kDLInt <vtkmodules.util.dlpack_support.kDLInt>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLInt
+    :summary:
+    ```
+* - {py:obj}`kDLUInt <vtkmodules.util.dlpack_support.kDLUInt>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLUInt
+    :summary:
+    ```
+* - {py:obj}`kDLFloat <vtkmodules.util.dlpack_support.kDLFloat>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLFloat
+    :summary:
+    ```
+* - {py:obj}`_DEVICE_TO_SPACE <vtkmodules.util.dlpack_support._DEVICE_TO_SPACE>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._DEVICE_TO_SPACE
+    :summary:
+    ```
+* - {py:obj}`_SPACE_TO_DEVICE <vtkmodules.util.dlpack_support._SPACE_TO_DEVICE>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._SPACE_TO_DEVICE
+    :summary:
+    ```
+* - {py:obj}`_LONG_BITS <vtkmodules.util.dlpack_support._LONG_BITS>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._LONG_BITS
+    :summary:
+    ```
+* - {py:obj}`_VTK_TO_DLPACK <vtkmodules.util.dlpack_support._VTK_TO_DLPACK>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._VTK_TO_DLPACK
+    :summary:
+    ```
+* - {py:obj}`_DLPACK_TO_VTK <vtkmodules.util.dlpack_support._DLPACK_TO_VTK>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLPACK_TO_VTK
+    :summary:
+    ```
+* - {py:obj}`DLPACK_FLAG_BITMASK_READ_ONLY <vtkmodules.util.dlpack_support.DLPACK_FLAG_BITMASK_READ_ONLY>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPACK_FLAG_BITMASK_READ_ONLY
+    :summary:
+    ```
+* - {py:obj}`_PyCapsule_New <vtkmodules.util.dlpack_support._PyCapsule_New>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_New
+    :summary:
+    ```
+* - {py:obj}`_PyCapsule_IsValid <vtkmodules.util.dlpack_support._PyCapsule_IsValid>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_IsValid
+    :summary:
+    ```
+* - {py:obj}`_PyCapsule_GetPointer <vtkmodules.util.dlpack_support._PyCapsule_GetPointer>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_GetPointer
+    :summary:
+    ```
+* - {py:obj}`_pinned <vtkmodules.util.dlpack_support._pinned>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._pinned
+    :summary:
+    ```
+* - {py:obj}`_next_key <vtkmodules.util.dlpack_support._next_key>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._next_key
+    :summary:
+    ```
+* - {py:obj}`_adopted <vtkmodules.util.dlpack_support._adopted>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._adopted
+    :summary:
+    ```
+* - {py:obj}`_next_adopted_key <vtkmodules.util.dlpack_support._next_adopted_key>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._next_adopted_key
+    :summary:
+    ```
+* - {py:obj}`_PyCapsule_SetName <vtkmodules.util.dlpack_support._PyCapsule_SetName>`
+  - ```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_SetName
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} __all__
+:canonical: vtkmodules.util.dlpack_support.__all__
+:value: >
+   ['vtk_to_dlpack', 'dlpack_to_vtk', 'DLPackArray', 'supported_device_types']
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.__all__
+```
+
+````
+
+````{py:data} kDLCPU
+:canonical: vtkmodules.util.dlpack_support.kDLCPU
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCPU
+```
+
+````
+
+````{py:data} kDLCUDA
+:canonical: vtkmodules.util.dlpack_support.kDLCUDA
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCUDA
+```
+
+````
+
+````{py:data} kDLCUDAHost
+:canonical: vtkmodules.util.dlpack_support.kDLCUDAHost
+:value: >
+   3
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCUDAHost
+```
+
+````
+
+````{py:data} kDLOpenCL
+:canonical: vtkmodules.util.dlpack_support.kDLOpenCL
+:value: >
+   4
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLOpenCL
+```
+
+````
+
+````{py:data} kDLVulkan
+:canonical: vtkmodules.util.dlpack_support.kDLVulkan
+:value: >
+   7
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLVulkan
+```
+
+````
+
+````{py:data} kDLMetal
+:canonical: vtkmodules.util.dlpack_support.kDLMetal
+:value: >
+   8
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLMetal
+```
+
+````
+
+````{py:data} kDLROCM
+:canonical: vtkmodules.util.dlpack_support.kDLROCM
+:value: >
+   10
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLROCM
+```
+
+````
+
+````{py:data} kDLROCMHost
+:canonical: vtkmodules.util.dlpack_support.kDLROCMHost
+:value: >
+   11
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLROCMHost
+```
+
+````
+
+````{py:data} kDLCUDAManaged
+:canonical: vtkmodules.util.dlpack_support.kDLCUDAManaged
+:value: >
+   13
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLCUDAManaged
+```
+
+````
+
+````{py:data} kDLOneAPI
+:canonical: vtkmodules.util.dlpack_support.kDLOneAPI
+:value: >
+   14
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLOneAPI
+```
+
+````
+
+````{py:data} kDLInt
+:canonical: vtkmodules.util.dlpack_support.kDLInt
+:value: >
+   0
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLInt
+```
+
+````
+
+````{py:data} kDLUInt
+:canonical: vtkmodules.util.dlpack_support.kDLUInt
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLUInt
+```
+
+````
+
+````{py:data} kDLFloat
+:canonical: vtkmodules.util.dlpack_support.kDLFloat
+:value: >
+   2
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.kDLFloat
+```
+
+````
+
+````{py:data} _DEVICE_TO_SPACE
+:canonical: vtkmodules.util.dlpack_support._DEVICE_TO_SPACE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DEVICE_TO_SPACE
+```
+
+````
+
+````{py:data} _SPACE_TO_DEVICE
+:canonical: vtkmodules.util.dlpack_support._SPACE_TO_DEVICE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._SPACE_TO_DEVICE
+```
+
+````
+
+````{py:data} _LONG_BITS
+:canonical: vtkmodules.util.dlpack_support._LONG_BITS
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._LONG_BITS
+```
+
+````
+
+````{py:data} _VTK_TO_DLPACK
+:canonical: vtkmodules.util.dlpack_support._VTK_TO_DLPACK
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._VTK_TO_DLPACK
+```
+
+````
+
+````{py:data} _DLPACK_TO_VTK
+:canonical: vtkmodules.util.dlpack_support._DLPACK_TO_VTK
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLPACK_TO_VTK
+```
+
+````
+
+`````{py:class} _DLDataType()
+:canonical: vtkmodules.util.dlpack_support._DLDataType
+
+Bases: {py:obj}`ctypes.Structure`
+
+````{py:attribute} _fields_
+:canonical: vtkmodules.util.dlpack_support._DLDataType._fields_
+:value: >
+   [('code',), ('bits',), ('lanes',)]
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLDataType._fields_
+```
+
+````
+
+`````
+
+`````{py:class} _DLDevice()
+:canonical: vtkmodules.util.dlpack_support._DLDevice
+
+Bases: {py:obj}`ctypes.Structure`
+
+````{py:attribute} _fields_
+:canonical: vtkmodules.util.dlpack_support._DLDevice._fields_
+:value: >
+   [('device_type',), ('device_id',)]
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLDevice._fields_
+```
+
+````
+
+`````
+
+`````{py:class} _DLTensor()
+:canonical: vtkmodules.util.dlpack_support._DLTensor
+
+Bases: {py:obj}`ctypes.Structure`
+
+````{py:attribute} _fields_
+:canonical: vtkmodules.util.dlpack_support._DLTensor._fields_
+:value: >
+   [('data',), ('device',), ('ndim',), ('dtype',), ('shape',), ('strides',), ('byte_offset',)]
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLTensor._fields_
+```
+
+````
+
+`````
+
+`````{py:class} _DLManagedTensor()
+:canonical: vtkmodules.util.dlpack_support._DLManagedTensor
+
+Bases: {py:obj}`ctypes.Structure`
+
+````{py:attribute} _fields_
+:canonical: vtkmodules.util.dlpack_support._DLManagedTensor._fields_
+:value: >
+   [('dl_tensor',), ('manager_ctx',), ('deleter',)]
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLManagedTensor._fields_
+```
+
+````
+
+`````
+
+`````{py:class} _DLPackVersion()
+:canonical: vtkmodules.util.dlpack_support._DLPackVersion
+
+Bases: {py:obj}`ctypes.Structure`
+
+````{py:attribute} _fields_
+:canonical: vtkmodules.util.dlpack_support._DLPackVersion._fields_
+:value: >
+   [('major',), ('minor',)]
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLPackVersion._fields_
+```
+
+````
+
+`````
+
+`````{py:class} _DLManagedTensorVersioned()
+:canonical: vtkmodules.util.dlpack_support._DLManagedTensorVersioned
+
+Bases: {py:obj}`ctypes.Structure`
+
+````{py:attribute} _fields_
+:canonical: vtkmodules.util.dlpack_support._DLManagedTensorVersioned._fields_
+:value: >
+   [('version',), ('manager_ctx',), ('deleter',), ('flags',), ('dl_tensor',)]
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._DLManagedTensorVersioned._fields_
+```
+
+````
+
+`````
+
+````{py:data} DLPACK_FLAG_BITMASK_READ_ONLY
+:canonical: vtkmodules.util.dlpack_support.DLPACK_FLAG_BITMASK_READ_ONLY
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPACK_FLAG_BITMASK_READ_ONLY
+```
+
+````
+
+````{py:data} _PyCapsule_New
+:canonical: vtkmodules.util.dlpack_support._PyCapsule_New
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_New
+```
+
+````
+
+````{py:data} _PyCapsule_IsValid
+:canonical: vtkmodules.util.dlpack_support._PyCapsule_IsValid
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_IsValid
+```
+
+````
+
+````{py:data} _PyCapsule_GetPointer
+:canonical: vtkmodules.util.dlpack_support._PyCapsule_GetPointer
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_GetPointer
+```
+
+````
+
+````{py:data} _pinned
+:canonical: vtkmodules.util.dlpack_support._pinned
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._pinned
+```
+
+````
+
+````{py:data} _next_key
+:canonical: vtkmodules.util.dlpack_support._next_key
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._next_key
+```
+
+````
+
+````{py:function} _release(managed_ptr, struct=_DLManagedTensor)
+:canonical: vtkmodules.util.dlpack_support._release
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._release
+```
+````
+
+````{py:function} _tensor_deleter(managed_ptr)
+:canonical: vtkmodules.util.dlpack_support._tensor_deleter
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._tensor_deleter
+```
+````
+
+````{py:function} _tensor_deleter_versioned(managed_ptr)
+:canonical: vtkmodules.util.dlpack_support._tensor_deleter_versioned
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._tensor_deleter_versioned
+```
+````
+
+````{py:function} _capsule_destructor(capsule_ptr)
+:canonical: vtkmodules.util.dlpack_support._capsule_destructor
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._capsule_destructor
+```
+````
+
+````{py:function} supported_device_types()
+:canonical: vtkmodules.util.dlpack_support.supported_device_types
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.supported_device_types
+```
+````
+
+````{py:function} vtk_to_dlpack(array, device_id=0, versioned=False)
+:canonical: vtkmodules.util.dlpack_support.vtk_to_dlpack
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.vtk_to_dlpack
+```
+````
+
+`````{py:class} DLPackArray(array, device_id=0)
+:canonical: vtkmodules.util.dlpack_support.DLPackArray
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPackArray
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPackArray.__init__
+```
+
+````{py:method} __dlpack__(*, stream=None, max_version=None, dl_device=None, copy=None)
+:canonical: vtkmodules.util.dlpack_support.DLPackArray.__dlpack__
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPackArray.__dlpack__
+```
+
+````
+
+````{py:method} __dlpack_device__()
+:canonical: vtkmodules.util.dlpack_support.DLPackArray.__dlpack_device__
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.DLPackArray.__dlpack_device__
+```
+
+````
+
+`````
+
+````{py:function} dlpack_to_vtk(source, name=None)
+:canonical: vtkmodules.util.dlpack_support.dlpack_to_vtk
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support.dlpack_to_vtk
+```
+````
+
+````{py:function} _request_capsule(source)
+:canonical: vtkmodules.util.dlpack_support._request_capsule
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._request_capsule
+```
+````
+
+````{py:data} _adopted
+:canonical: vtkmodules.util.dlpack_support._adopted
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._adopted
+```
+
+````
+
+````{py:data} _next_adopted_key
+:canonical: vtkmodules.util.dlpack_support._next_adopted_key
+:value: >
+   1
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._next_adopted_key
+```
+
+````
+
+````{py:function} _release_adopted(key)
+:canonical: vtkmodules.util.dlpack_support._release_adopted
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._release_adopted
+```
+````
+
+````{py:function} _adopted_release(context)
+:canonical: vtkmodules.util.dlpack_support._adopted_release
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._adopted_release
+```
+````
+
+````{py:data} _PyCapsule_SetName
+:canonical: vtkmodules.util.dlpack_support._PyCapsule_SetName
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._PyCapsule_SetName
+```
+
+````
+
+````{py:function} _register_adopted(capsule, managed_ptr, struct, used_name)
+:canonical: vtkmodules.util.dlpack_support._register_adopted
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._register_adopted
+```
+````
+
+````{py:function} _hold_via_descriptor(descriptor, key)
+:canonical: vtkmodules.util.dlpack_support._hold_via_descriptor
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._hold_via_descriptor
+```
+````
+
+`````{py:class} _HostTensor(key, pointer, shape, dtype)
+:canonical: vtkmodules.util.dlpack_support._HostTensor
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._HostTensor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._HostTensor.__init__
+```
+
+````{py:method} __del__()
+:canonical: vtkmodules.util.dlpack_support._HostTensor.__del__
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._HostTensor.__del__
+```
+
+````
+
+`````
+
+````{py:function} _wrap_host(key, vtk_type, n_tuples, n_components, pointer, ndim)
+:canonical: vtkmodules.util.dlpack_support._wrap_host
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._wrap_host
+```
+````
+
+````{py:function} _wrap_descriptor(descriptor, vtk_type, n_tuples, n_components, space)
+:canonical: vtkmodules.util.dlpack_support._wrap_descriptor
+
+```{autodoc2-docstring} vtkmodules.util.dlpack_support._wrap_descriptor
+```
+````

@@ -1,0 +1,31 @@
+# {py:mod}`vtkmodules.util.keys`
+
+```{py:module} vtkmodules.util.keys
+```
+
+```{autodoc2-docstring} vtkmodules.util.keys
+:allowtitles:
+```
+
+## Module Contents
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`MakeKey <vtkmodules.util.keys.MakeKey>`
+  - ```{autodoc2-docstring} vtkmodules.util.keys.MakeKey
+    :summary:
+    ```
+````
+
+### API
+
+````{py:function} MakeKey(key_type, name, location, *args)
+:canonical: vtkmodules.util.keys.MakeKey
+
+```{autodoc2-docstring} vtkmodules.util.keys.MakeKey
+```
+````

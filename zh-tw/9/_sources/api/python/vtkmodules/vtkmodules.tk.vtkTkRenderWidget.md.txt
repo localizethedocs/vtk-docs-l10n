@@ -1,0 +1,251 @@
+# {py:mod}`vtkmodules.tk.vtkTkRenderWidget`
+
+```{py:module} vtkmodules.tk.vtkTkRenderWidget
+```
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkTkRenderWidget <vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget>`
+  - ```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`vtkRenderWidgetConeExample <vtkmodules.tk.vtkTkRenderWidget.vtkRenderWidgetConeExample>`
+  - ```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkRenderWidgetConeExample
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} vtkTkRenderWidget(master, cnf={}, **kw)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget
+
+Bases: {py:obj}`tkinter.Widget`
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.__init__
+```
+
+````{py:method} __getattr__(attr)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.__getattr__
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.__getattr__
+```
+
+````
+
+````{py:method} BindTkRenderWidget()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.BindTkRenderWidget
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.BindTkRenderWidget
+```
+
+````
+
+````{py:method} GetZoomFactor()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetZoomFactor
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetZoomFactor
+```
+
+````
+
+````{py:method} SetDesiredUpdateRate(rate)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.SetDesiredUpdateRate
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.SetDesiredUpdateRate
+```
+
+````
+
+````{py:method} GetDesiredUpdateRate()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetDesiredUpdateRate
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetDesiredUpdateRate
+```
+
+````
+
+````{py:method} SetStillUpdateRate(rate)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.SetStillUpdateRate
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.SetStillUpdateRate
+```
+
+````
+
+````{py:method} GetStillUpdateRate()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetStillUpdateRate
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetStillUpdateRate
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetRenderWindow
+```
+
+````
+
+````{py:method} GetPicker()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetPicker
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetPicker
+```
+
+````
+
+````{py:method} Expose()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Expose
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Expose
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Render
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Render
+```
+
+````
+
+````{py:method} UpdateRenderer(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.UpdateRenderer
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.UpdateRenderer
+```
+
+````
+
+````{py:method} GetCurrentRenderer()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetCurrentRenderer
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.GetCurrentRenderer
+```
+
+````
+
+````{py:method} Enter(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Enter
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Enter
+```
+
+````
+
+````{py:method} Leave(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Leave
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Leave
+```
+
+````
+
+````{py:method} StartMotion(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.StartMotion
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.StartMotion
+```
+
+````
+
+````{py:method} EndMotion(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.EndMotion
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.EndMotion
+```
+
+````
+
+````{py:method} Rotate(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Rotate
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Rotate
+```
+
+````
+
+````{py:method} Pan(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Pan
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Pan
+```
+
+````
+
+````{py:method} Zoom(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Zoom
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Zoom
+```
+
+````
+
+````{py:method} Reset(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Reset
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Reset
+```
+
+````
+
+````{py:method} Wireframe()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Wireframe
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Wireframe
+```
+
+````
+
+````{py:method} Surface()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Surface
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.Surface
+```
+
+````
+
+````{py:method} PickActor(x, y)
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.PickActor
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkTkRenderWidget.PickActor
+```
+
+````
+
+`````
+
+````{py:function} vtkRenderWidgetConeExample()
+:canonical: vtkmodules.tk.vtkTkRenderWidget.vtkRenderWidgetConeExample
+
+```{autodoc2-docstring} vtkmodules.tk.vtkTkRenderWidget.vtkRenderWidgetConeExample
+```
+````
