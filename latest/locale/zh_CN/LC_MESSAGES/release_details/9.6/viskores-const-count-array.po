@@ -25,9 +25,9 @@ msgstr ""
 msgid ""
 "Previously, if a dataset field was represented by a `vtkConstantArray` or a "
 "`vtkAffineArray`, the entire conversion process would fail. The Viskores "
-"data converters now properly convert `vtkConstantArray` to `viskores::cont::"
-"ArrayHandleConstant` and `vtkAffineArray` to either `viskores::cont::"
-"ArrayHandleIndex` or `viskores::cont::ArrayHandleCounting`."
+"data converters now properly convert `vtkConstantArray` to "
+"`viskores::cont::ArrayHandleConstant` and `vtkAffineArray` to either "
+"`viskores::cont::ArrayHandleIndex` or `viskores::cont::ArrayHandleCounting`."
 msgstr ""
 
 #: ../../../release_details/9.6/viskores-const-count-array.md:9

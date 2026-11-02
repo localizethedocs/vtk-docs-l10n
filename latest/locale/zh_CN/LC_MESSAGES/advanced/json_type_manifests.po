@@ -24,12 +24,12 @@ msgstr ""
 #: ../../../advanced/json_type_manifests.md:3
 msgid ""
 "When VTK is configured with `VTK_WRAP_SERIALIZATION=ON` and the advanced "
-"option `VTK_BUILD_TYPES_JSON=ON`, `vtkWrapSerDes` emits one `<ClassName>."
-"json` type manifest per serializable class during the same header parse that "
-"produces `<ClassName>SerDes.cxx`. Because the manifest is derived from the "
-"same allowability predicates the serializer and invoker use, it describes "
-"*exactly* the properties and methods that are marshalled, there is no "
-"distinction between the generated C++ and the manifest."
+"option `VTK_BUILD_TYPES_JSON=ON`, `vtkWrapSerDes` emits one "
+"`<ClassName>.json` type manifest per serializable class during the same "
+"header parse that produces `<ClassName>SerDes.cxx`. Because the manifest is "
+"derived from the same allowability predicates the serializer and invoker "
+"use, it describes *exactly* the properties and methods that are marshalled, "
+"there is no distinction between the generated C++ and the manifest."
 msgstr ""
 
 #: ../../../advanced/json_type_manifests.md:11

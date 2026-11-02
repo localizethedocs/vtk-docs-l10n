@@ -88,8 +88,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:42
 msgid ""
-"{py:obj}`MutableUndirectedGraph <vtkmodules.util.graph."
-"MutableUndirectedGraph>`"
+"{py:obj}`MutableUndirectedGraph "
+"<vtkmodules.util.graph.MutableUndirectedGraph>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:46
@@ -151,8 +151,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:249
 msgid ""
-"Nodes must be contiguous integers ``0..N-1``.  Use ``networkx."
-"convert_node_labels_to_integers()`` first if needed."
+"Nodes must be contiguous integers ``0..N-1``.  Use "
+"``networkx.convert_node_labels_to_integers()`` first if needed."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/graph.py:252
@@ -161,8 +161,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:317
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkDirectedGraph`"
+"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkDirectedGraph`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:327
@@ -173,8 +173,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:337
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkUndirectedGraph`"
+"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkUndirectedGraph`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:347
@@ -185,12 +185,12 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:357
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkDirectedAcyclicGraph`"
+"Bases: {py:obj}`vtkmodules.util.graph._GraphMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkDirectedAcyclicGraph`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.graph.md:367
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.graph._TreeMixin`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkTree`"
+"Bases: {py:obj}`vtkmodules.util.graph._TreeMixin`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkTree`"
 msgstr ""

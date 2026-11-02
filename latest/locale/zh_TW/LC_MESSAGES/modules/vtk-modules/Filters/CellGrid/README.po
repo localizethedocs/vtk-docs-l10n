@@ -113,8 +113,9 @@ msgstr ""
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:39
 msgid ""
 "[vtkCellGridSidesQuery](https://vtk.org/doc/nightly/html/"
-"classvtkCellGridSidesQuery.html) – Create a new vtkCellGrid holding sides (i."
-"e., boundaries of some lower dimension) of the cells in another vtkCellGrid."
+"classvtkCellGridSidesQuery.html) – Create a new vtkCellGrid holding sides "
+"(i.e., boundaries of some lower dimension) of the cells in another "
+"vtkCellGrid."
 msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:42
@@ -221,10 +222,10 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:100
 msgid ""
-"Note that you can query a cell-attribute for a `vtkCellAttribute::"
-"CellTypeInfo` object given any cell type-name. This allows each cell type to "
-"use different methods to interpolate values for the same attribute. The "
-"`CellTypeInfo` object stores the following"
+"Note that you can query a cell-attribute for a "
+"`vtkCellAttribute::CellTypeInfo` object given any cell type-name. This "
+"allows each cell type to use different methods to interpolate values for the "
+"same attribute. The `CellTypeInfo` object stores the following"
 msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:105

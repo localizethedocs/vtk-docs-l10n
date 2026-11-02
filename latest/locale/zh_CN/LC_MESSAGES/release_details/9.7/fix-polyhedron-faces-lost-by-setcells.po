@@ -48,9 +48,9 @@ msgstr ""
 
 #: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:16
 msgid ""
-"`vtkOverlappingCellsDetector`, which gathers candidate cells with `vtkCell::"
-"GetPointIds()` before exchanging them between ranks. The faces now travel "
-"with the candidates and are remapped with them."
+"`vtkOverlappingCellsDetector`, which gathers candidate cells with "
+"`vtkCell::GetPointIds()` before exchanging them between ranks. The faces now "
+"travel with the candidates and are remapped with them."
 msgstr ""
 
 #: ../../../release_details/9.7/fix-polyhedron-faces-lost-by-setcells.md:19

@@ -68,9 +68,10 @@ msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:23
 msgid ""
-"When reading partitioned data in parallel, you can now use `vtkHDFReader::"
-"SetPieceDistribution` to choose the piece distribution strategy: interleave "
-"blocks between processes, or allocate \"blocks\" of partitions."
+"When reading partitioned data in parallel, you can now use "
+"`vtkHDFReader::SetPieceDistribution` to choose the piece distribution "
+"strategy: interleave blocks between processes, or allocate \"blocks\" of "
+"partitions."
 msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:26
@@ -139,9 +140,9 @@ msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:54
 msgid ""
-"The protect method `vtkHDFReader::DataArraySelection` now returns a `std::"
-"map` instead of a `std::array` with `vtkDataObject::AttributeTypes::` as a "
-"key."
+"The protect method `vtkHDFReader::DataArraySelection` now returns a "
+"`std::map` instead of a `std::array` with `vtkDataObject::AttributeTypes::` "
+"as a key."
 msgstr ""
 
 #: ../../../release_details/9.7/vtkhdf-improvements.md:55

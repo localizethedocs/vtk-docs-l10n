@@ -93,24 +93,25 @@ msgstr ""
 
 #: ../../../release_details/9.6/algorithm-array-components.md:38
 msgid ""
-"Call `filter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::"
-"FIELD_ASSOCIATION_CELL, \"velocity\");` to have `filter` treat each tuple as "
-"it has in the past (where each tuple has 3 components). This uses pre-"
-"existing methods and works just as it has in the past."
+"Call `filter->SetInputArrayToProcess(0, 0, 0, "
+"vtkDataObject::FIELD_ASSOCIATION_CELL, \"velocity\");` to have `filter` "
+"treat each tuple as it has in the past (where each tuple has 3 components). "
+"This uses pre-existing methods and works just as it has in the past."
 msgstr ""
 
 #: ../../../release_details/9.6/algorithm-array-components.md:41
 msgid ""
-"Call `filter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::"
-"FIELD_ASSOCIATION_CELL, \"velocity\", 1);` to have `filter` use only the _y_ "
-"component of the velocity vector."
+"Call `filter->SetInputArrayToProcess(0, 0, 0, "
+"vtkDataObject::FIELD_ASSOCIATION_CELL, \"velocity\", 1);` to have `filter` "
+"use only the _y_ component of the velocity vector."
 msgstr ""
 
 #: ../../../release_details/9.6/algorithm-array-components.md:43
 msgid ""
-"Call `filter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::"
-"FIELD_ASSOCIATION_CELL, \"velocity\", vtkArrayComponents::L2Norm);` to have "
-"`filter` process the L₂-norm of the each velocity tuple."
+"Call `filter->SetInputArrayToProcess(0, 0, 0, "
+"vtkDataObject::FIELD_ASSOCIATION_CELL, \"velocity\", "
+"vtkArrayComponents::L2Norm);` to have `filter` process the L₂-norm of the "
+"each velocity tuple."
 msgstr ""
 
 #: ../../../release_details/9.6/algorithm-array-components.md:46
@@ -237,8 +238,8 @@ msgid ""
 "  filter->SetInputArrayToProcess(\n"
 "    0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, \"a1\", compOrNorm);\n"
 "  vtkSmartPointer<vtkDataArray> arrayToProcess =\n"
-"    filter->GetInputArray(0, input, association, vtkArrayComponents::"
-"L2Norm);\n"
+"    filter->GetInputArray(0, input, association, "
+"vtkArrayComponents::L2Norm);\n"
 msgstr ""
 
 #: ../../../release_details/9.6/algorithm-array-components.md:116

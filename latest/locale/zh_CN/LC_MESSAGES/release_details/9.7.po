@@ -102,8 +102,8 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:43
 msgid ""
-"**vtkCollection refactor to use std::vector** `vtkCollection` now uses `std::"
-"vector` instead of linked list, improving performance; "
+"**vtkCollection refactor to use std::vector** `vtkCollection` now uses "
+"`std::vector` instead of linked list, improving performance; "
 "`vtkCollectionElement` and some protected members removed. ([Author notes]"
 "(9.7/vtkCollection-refactor-to-use-stdvector.md))"
 msgstr ""
@@ -185,10 +185,10 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:80
 msgid ""
-"**Improved vtkCellGrid support in data model and filters** `vtkDataObject::"
-"GetAttributesAsFieldData`, `vtkAttributeDataToTableFilter` support, and "
-"`vtkCellGridSummaryInformationQuery` added. ([Author notes](9.7/vtkCellGrid-"
-"improvements.md))"
+"**Improved vtkCellGrid support in data model and filters** "
+"`vtkDataObject::GetAttributesAsFieldData`, `vtkAttributeDataToTableFilter` "
+"support, and `vtkCellGridSummaryInformationQuery` added. ([Author notes](9.7/"
+"vtkCellGrid-improvements.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:84
@@ -381,9 +381,9 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:159
 msgid ""
-"**New vtkTestUtilities API to test data against file** `vtkTestUtilities::"
-"CompareWithFile()` and `RegressionTest()` provide easy VTKHDF data "
-"comparison; writes baseline on failure."
+"**New vtkTestUtilities API to test data against file** "
+"`vtkTestUtilities::CompareWithFile()` and `RegressionTest()` provide easy "
+"VTKHDF data comparison; writes baseline on failure."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:162
@@ -421,8 +421,8 @@ msgid ""
 "the associated interactor style. A new `UseCenterOfRotation` property "
 "(default `false`) controls this: when disabled (legacy default) the widget "
 "rotates the camera about its focal point, and when enabled it rotates about "
-"the interactor style's center of rotation (`vtkInteractorStyle::"
-"GetCenterOfRotation`)."
+"the interactor style's center of rotation "
+"(`vtkInteractorStyle::GetCenterOfRotation`)."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:177
@@ -557,8 +557,8 @@ msgid ""
 "**Dictionary interface for vtkDataArraySelection** `vtkDataArraySelection` "
 "now supports a Python dictionary interface for getting, setting, and "
 "deleting array enable/disable states using standard dictionary syntax "
-"(`sel[\"Pressure\"] = True`). ([Author notes](9.7/pythonic-array-selection."
-"md))"
+"(`sel[\"Pressure\"] = True`). ([Author notes](9.7/pythonic-array-"
+"selection.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:238
@@ -620,8 +620,9 @@ msgstr ""
 #: ../../../../release/_9.7-stripped.md:268
 msgid ""
 "**vtkDataArrayAccessor: Replace with vtk::DataArrayRange** "
-"`vtkDataArrayAccessor` usage replaced with more modern `vtk::"
-"DataArrayValueRange` and `vtk::DataArrayTupleRange` throughout codebase."
+"`vtkDataArrayAccessor` usage replaced with more modern "
+"`vtk::DataArrayValueRange` and `vtk::DataArrayTupleRange` throughout "
+"codebase."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:273
@@ -704,8 +705,8 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:317
 msgid ""
-"**Make vtkOpenXRManager private** `vtkOpenXRManager` moved to `vtk::detail::"
-"vtkOpenXRManager`; public API moved to `vtkOpenXRRenderWindow`."
+"**Make vtkOpenXRManager private** `vtkOpenXRManager` moved to "
+"`vtk::detail::vtkOpenXRManager`; public API moved to `vtkOpenXRRenderWindow`."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:320
@@ -723,20 +724,21 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:325
 msgid ""
-"**numpy type mapping follows numpy's underlying C type** `vtkmodules.util."
-"numpy_support` and the Python template subscript operator now map numpy "
-"dtypes to VTK types by the dtype's underlying C type (its `dtype.char`) "
-"rather than a hardwired table of numpy scalar types. On LP64 platforms "
-"(Linux and macOS) `numpy.int64` is C `long`, so `numpy_to_vtk` now returns a "
-"`vtkLongArray` (`VTK_LONG`) instead of a `vtkTypeInt64Array` "
-"(`VTK_LONG_LONG`), and `numpy.uint64` maps to `VTK_UNSIGNED_LONG`; `numpy."
-"longlong` still maps to `VTK_LONG_LONG`, and Windows behavior is unchanged. "
-"The data is unaffected and round-trips losslessly — only type identity "
-"changes — so code that tests for an array class or type code should check "
-"widths instead (e.g. `GetDataTypeSize() == 8`) or accept both classes. "
+"**numpy type mapping follows numpy's underlying C type** "
+"`vtkmodules.util.numpy_support` and the Python template subscript operator "
+"now map numpy dtypes to VTK types by the dtype's underlying C type (its "
+"`dtype.char`) rather than a hardwired table of numpy scalar types. On LP64 "
+"platforms (Linux and macOS) `numpy.int64` is C `long`, so `numpy_to_vtk` now "
+"returns a `vtkLongArray` (`VTK_LONG`) instead of a `vtkTypeInt64Array` "
+"(`VTK_LONG_LONG`), and `numpy.uint64` maps to `VTK_UNSIGNED_LONG`; "
+"`numpy.longlong` still maps to `VTK_LONG_LONG`, and Windows behavior is "
+"unchanged. The data is unaffected and round-trips losslessly — only type "
+"identity changes — so code that tests for an array class or type code should "
+"check widths instead (e.g. `GetDataTypeSize() == 8`) or accept both classes. "
 "Template subscripting follows the same rule, so "
-"`vtkAOSDataArrayTemplate[numpy.int64]` and `vtkAOSDataArrayTemplate[numpy."
-"dtype('int64')]` now resolve to the same instantiation."
+"`vtkAOSDataArrayTemplate[numpy.int64]` and "
+"`vtkAOSDataArrayTemplate[numpy.dtype('int64')]` now resolve to the same "
+"instantiation."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:328
@@ -765,8 +767,8 @@ msgstr ""
 msgid ""
 "**Replace most GetVoidPointer instances (Part 2)** Removed ~48% of remaining "
 "`GetVoidPointer()` usages using `vtkArrayDispatch` and range methods; marked "
-"remaining usages as safe. ([Author notes](9.7/replace-GetVoidPointer-usages."
-"md))"
+"remaining usages as safe. ([Author notes](9.7/replace-GetVoidPointer-"
+"usages.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:342
@@ -819,8 +821,9 @@ msgstr ""
 msgid ""
 "**CellLocators: Make sure that when a tolerance parameter is available it "
 "can be used** Cell locator tolerance parameters in `InsideCellBounds`, "
-"`IntersectWithLine`, `FindCell`, etc. now actually used; `vtkLocator::"
-"Tolerance` deprecated. ([Author notes](9.7/cell-locators-tolerance.md))"
+"`IntersectWithLine`, `FindCell`, etc. now actually used; "
+"`vtkLocator::Tolerance` deprecated. ([Author notes](9.7/cell-locators-"
+"tolerance.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:367
@@ -848,12 +851,12 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:377
 msgid ""
-"**vtkPolyhedron: remove per-call allocation from IsInside** `vtkPolyhedron::"
-"IsInside` now triangulates faces using the shared allocation-free "
-"`vtkPolygon::EarClipPolygon3D` instead of constructing a new `vtkPolygon` "
-"and `vtkIdList` per call, removing allocation churn from the streamline and "
-"probe filters' hot path. ([Author notes](9.7/fix-polyhedron-isinside-"
-"allocations.md))"
+"**vtkPolyhedron: remove per-call allocation from IsInside** "
+"`vtkPolyhedron::IsInside` now triangulates faces using the shared allocation-"
+"free `vtkPolygon::EarClipPolygon3D` instead of constructing a new "
+"`vtkPolygon` and `vtkIdList` per call, removing allocation churn from the "
+"streamline and probe filters' hot path. ([Author notes](9.7/fix-polyhedron-"
+"isinside-allocations.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:381
@@ -882,10 +885,10 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:391
 msgid ""
-"**Improved vtkCellGrid evaluation performance and API** `vtkDGEvaluator::"
-"ClassifyPoints` rewritten for substantial performance with convex hull pre-"
-"filtering; `EvaluatePositions` merged into `ClassifyPoints`. ([Author notes]"
-"(9.7/improve-cell-grid-probing.md))"
+"**Improved vtkCellGrid evaluation performance and API** "
+"`vtkDGEvaluator::ClassifyPoints` rewritten for substantial performance with "
+"convex hull pre-filtering; `EvaluatePositions` merged into `ClassifyPoints`. "
+"([Author notes](9.7/improve-cell-grid-probing.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:395
@@ -936,8 +939,8 @@ msgid ""
 "`vtkCONVERGECFDReader` now reverses shared interior faces for their neighbor "
 "cell so every polyhedron has consistently outward-facing normals, fixing "
 "holes and broken cross sections when slicing or contouring CONVERGE "
-"polyhedral meshes. ([Author notes](9.7/convergecfd-polyhedron-face-winding."
-"md))"
+"polyhedral meshes. ([Author notes](9.7/convergecfd-polyhedron-face-"
+"winding.md))"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:419
@@ -994,16 +997,16 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:443
 msgid ""
-"**Improved vtkTGAReader::CanReadFile validation** `vtkTGAReader::"
-"CanReadFile` now checks bits-per-pixel field in addition to image type, "
-"reducing false positives."
+"**Improved vtkTGAReader::CanReadFile validation** "
+"`vtkTGAReader::CanReadFile` now checks bits-per-pixel field in addition to "
+"image type, reducing false positives."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:446
 msgid ""
-"**Stricter CanReadFile validation for vtkTGAReader** `vtkTGAReader::"
-"CanReadFile` performs multi-layer validation including TGA 2.0 footer and "
-"header cross-validation."
+"**Stricter CanReadFile validation for vtkTGAReader** "
+"`vtkTGAReader::CanReadFile` performs multi-layer validation including TGA "
+"2.0 footer and header cross-validation."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:449
@@ -1155,8 +1158,9 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:512
 msgid ""
-"**vtkImageSSIM::ComputeErrorMetrics RGBA Support** `vtkImageSSIM::"
-"ComputeErrorMetrics` now supports any number of components including RGBA."
+"**vtkImageSSIM::ComputeErrorMetrics RGBA Support** "
+"`vtkImageSSIM::ComputeErrorMetrics` now supports any number of components "
+"including RGBA."
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:515
@@ -1453,8 +1457,8 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:655
 msgid ""
-"[#20087](https://gitlab.kitware.com/vtk/vtk/-/issues/20087) vtkObjectBase::"
-"Register unresolved (2026-06-22)"
+"[#20087](https://gitlab.kitware.com/vtk/vtk/-/issues/20087) "
+"vtkObjectBase::Register unresolved (2026-06-22)"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:656
@@ -1657,8 +1661,9 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:688
 msgid ""
-"[#18031](https://gitlab.kitware.com/vtk/vtk/-/issues/18031) vtkOBBTree."
-"IntersectWithLine not finding intersection cell when it should (2026-05-19)"
+"[#18031](https://gitlab.kitware.com/vtk/vtk/-/issues/18031) "
+"vtkOBBTree.IntersectWithLine not finding intersection cell when it should "
+"(2026-05-19)"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:689
@@ -1832,9 +1837,9 @@ msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:716
 msgid ""
-"[#17629](https://gitlab.kitware.com/vtk/vtk/-/issues/17629) vtkPointLocator."
-"FindClosestPointWithinRadius causes access violation when using incremental "
-"point insertion (2026-05-13)"
+"[#17629](https://gitlab.kitware.com/vtk/vtk/-/issues/17629) "
+"vtkPointLocator.FindClosestPointWithinRadius causes access violation when "
+"using incremental point insertion (2026-05-13)"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:717
@@ -1858,9 +1863,9 @@ msgstr ""
 #: ../../../../release/_9.7-stripped.md:720
 msgid ""
 "[#17582](https://gitlab.kitware.com/vtk/vtk/-/issues/17582) VTK failed to "
-"run 2 tests VTK::FiltersAMRCxx-TestAMRSliceFilterCellData and VTK::"
-"FiltersAMRCxx-TestAMRSliceFilterPointData with release configuration and "
-"debug configuration with MSVC on windows (2026-05-13)"
+"run 2 tests VTK::FiltersAMRCxx-TestAMRSliceFilterCellData and "
+"VTK::FiltersAMRCxx-TestAMRSliceFilterPointData with release configuration "
+"and debug configuration with MSVC on windows (2026-05-13)"
 msgstr ""
 
 #: ../../../../release/_9.7-stripped.md:721

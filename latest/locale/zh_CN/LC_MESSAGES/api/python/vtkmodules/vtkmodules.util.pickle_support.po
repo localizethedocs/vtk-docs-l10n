@@ -39,8 +39,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/pickle_support.py:15
 msgid ""
-"sphereSrc = vtkSphereSource() sphereSrc.Update() pickled = pickle."
-"dumps(sphereSrc.GetOutput()) unpickled = pickle.loads(pickled) "
+"sphereSrc = vtkSphereSource() sphereSrc.Update() pickled = "
+"pickle.dumps(sphereSrc.GetOutput()) unpickled = pickle.loads(pickled) "
 "print(unpickled) *description of sphere data set*"
 msgstr ""
 
@@ -63,8 +63,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.pickle_support.md:18
 msgid ""
-"{py:obj}`unserialize_VTK_data_object <vtkmodules.util.pickle_support."
-"unserialize_VTK_data_object>`"
+"{py:obj}`unserialize_VTK_data_object "
+"<vtkmodules.util.pickle_support.unserialize_VTK_data_object>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/pickle_support.py:20
@@ -74,8 +74,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.pickle_support.md:22
 msgid ""
-"{py:obj}`serialize_VTK_data_object <vtkmodules.util.pickle_support."
-"serialize_VTK_data_object>`"
+"{py:obj}`serialize_VTK_data_object "
+"<vtkmodules.util.pickle_support.serialize_VTK_data_object>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/pickle_support.py:24

@@ -43,8 +43,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:17
 msgid ""
-"Only supports CPython. Other implementations are not supported by the `VTK::"
-"WrapPython` executable."
+"Only supports CPython. Other implementations are not supported by the "
+"`VTK::WrapPython` executable."
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:19
@@ -72,8 +72,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:38
 msgid ""
-"By default, the destination is ``Lib/site-packages`` on Windows and "
-"``${CMAKE_INSTALL_LIBDIR}/python<VERSION>/site-packages`` otherwise."
+"By default, the destination is ``Lib/site-packages`` on Windows and ``$"
+"{CMAKE_INSTALL_LIBDIR}/python<VERSION>/site-packages`` otherwise."
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:41
@@ -119,8 +119,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:289
 msgid ""
-"The remaining information it uses is assumed to be provided by the :cmake:"
-"command:`vtk_module_wrap_python function`."
+"The remaining information it uses is assumed to be provided by "
+"the :cmake:command:`vtk_module_wrap_python function`."
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:621
@@ -272,8 +272,8 @@ msgstr ""
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:704
 msgid ""
 "``PYTHON_PACKAGE``: (Recommended) All generated modules will be added to "
-"this Python package. The format is in Python syntax (e.g., ``package."
-"subpackage``)."
+"this Python package. The format is in Python syntax (e.g., "
+"``package.subpackage``)."
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:707
@@ -386,8 +386,8 @@ msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:1402
 msgid ""
-"If a module is a Python package, this function should be used instead of :"
-"cmake:command:`vtk_module_add_module`."
+"If a module is a Python package, this function should be used instead "
+"of :cmake:command:`vtk_module_add_module`."
 msgstr ""
 
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:1405
@@ -399,6 +399,6 @@ msgstr ""
 #: ../../../../../CMake/vtkModuleWrapPython.cmake:1411
 msgid ""
 "``PACKAGES``: (Required) The list of packages installed by this module. "
-"These must have been created by the :cmake:command:"
-"`vtk_module_add_python_package` function."
+"These must have been created by "
+"the :cmake:command:`vtk_module_add_python_package` function."
 msgstr ""

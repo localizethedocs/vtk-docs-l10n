@@ -59,8 +59,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:28
 msgid ""
-"{py:obj}`DataSetAttributesBase <vtkmodules.util.data_model."
-"DataSetAttributesBase>`"
+"{py:obj}`DataSetAttributesBase "
+"<vtkmodules.util.data_model.DataSetAttributesBase>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:30
@@ -78,14 +78,14 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:36
 msgid ""
-"{py:obj}`CompositeDataSetAttributesIterator <vtkmodules.util.data_model."
-"CompositeDataSetAttributesIterator>`"
+"{py:obj}`CompositeDataSetAttributesIterator "
+"<vtkmodules.util.data_model.CompositeDataSetAttributesIterator>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:40
 msgid ""
-"{py:obj}`CompositeDataSetAttributes <vtkmodules.util.data_model."
-"CompositeDataSetAttributes>`"
+"{py:obj}`CompositeDataSetAttributes "
+"<vtkmodules.util.data_model.CompositeDataSetAttributes>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:42
@@ -155,8 +155,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:68
 msgid ""
-"{py:obj}`CompositeDataIterator <vtkmodules.util.data_model."
-"CompositeDataIterator>`"
+"{py:obj}`CompositeDataIterator "
+"<vtkmodules.util.data_model.CompositeDataIterator>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:70
@@ -169,8 +169,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:72
 msgid ""
-"{py:obj}`CompositeDataSetBase <vtkmodules.util.data_model."
-"CompositeDataSetBase>`"
+"{py:obj}`CompositeDataSetBase "
+"<vtkmodules.util.data_model.CompositeDataSetBase>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:74
@@ -185,8 +185,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:78
 msgid ""
-"{py:obj}`PartitionedDataSetCollection <vtkmodules.util.data_model."
-"PartitionedDataSetCollection>`"
+"{py:obj}`PartitionedDataSetCollection "
+"<vtkmodules.util.data_model.PartitionedDataSetCollection>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:80
@@ -343,12 +343,12 @@ msgid ""
 "This is a child-to-parent back reference, so it must not keep the dataset "
 "alive.  A strong reference here leaks the whole dataset: when the Python "
 "wrapper for this field data is released while the C++ object is still alive "
-"(the common case -- ``ds.cell_data`` returns a temporary), ``vtkPythonUtil::"
-"RemoveObjectFromMap`` stashes ``__dict__`` in the ghost map, which then pins "
-"everything it references until the C++ object dies.  Since the dataset owns "
-"this field data, that never happens, and the cycle is invisible to Python's "
-"garbage collector. ``VTKDataArrayMixin._set_dataset`` uses the same weak "
-"reference."
+"(the common case -- ``ds.cell_data`` returns a temporary), "
+"``vtkPythonUtil::RemoveObjectFromMap`` stashes ``__dict__`` in the ghost "
+"map, which then pins everything it references until the C++ object dies.  "
+"Since the dataset owns this field data, that never happens, and the cycle is "
+"invisible to Python's garbage collector. ``VTKDataArrayMixin._set_dataset`` "
+"uses the same weak reference."
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:256
@@ -553,8 +553,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:674
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkUnstructuredGrid`"
+"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkUnstructuredGrid`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:679
@@ -566,8 +566,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:698
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkImageData`"
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkImageData`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:703
@@ -578,8 +578,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:714
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkPolyData`"
+"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkPolyData`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:719
@@ -588,8 +588,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:730
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkRectilinearGrid`"
+"Bases: {py:obj}`vtkmodules.util.data_model.DataSet`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkRectilinearGrid`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:735
@@ -669,8 +669,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.data_model.md:976
 msgid ""
-"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}`vtkmodules."
-"vtkCommonDataModel.vtkStructuredGrid`"
+"Bases: {py:obj}`vtkmodules.util.data_model.PointSet`, {py:obj}"
+"`vtkmodules.vtkCommonDataModel.vtkStructuredGrid`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/data_model.py:981

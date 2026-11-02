@@ -109,8 +109,8 @@ msgstr ""
 msgid ""
 "**Added new class to manually create a Cocoa NSAutoreleasePool**   The new "
 "class `vtkCocoaAutoreleasePool` allows manually creating and draining a "
-"Cocoa autorelease pool.   ([Author notes](9.5/add-vtkCocoaAutoreleasePool."
-"md))"
+"Cocoa autorelease pool.   ([Author notes](9.5/add-"
+"vtkCocoaAutoreleasePool.md))"
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:40
@@ -287,8 +287,8 @@ msgid ""
 "sections to load when reading a FLUENT file, and the output multiblock will "
 "only contain these zones. A `CacheData` option is available to balance I/O "
 "performance and memory usage. Due to interdependencies, some unselected "
-"zones might still be read.   ([Author notes](9.5/fluentReaderImprovements."
-"md))"
+"zones might still be read.   ([Author notes](9.5/"
+"fluentReaderImprovements.md))"
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:112
@@ -522,8 +522,8 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:201
 msgid ""
-"VTK now provides wheels for Linux aarch64. See https://pypi.org/project/"
-"vtk/9.5.0/"
+"VTK now provides wheels for Linux aarch64. See https://pypi.org/project/vtk/"
+"9.5.0/"
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:203
@@ -559,9 +559,10 @@ msgstr ""
 msgid ""
 "**Add to the NetCDFCFReader the ability to use data from an XArray**   An "
 "XArray can create a vtkNetCDFCFReader that uses its data, using zero copy "
-"when possible to create a VTK dataset using `reader = xarray_data.vtk."
-"reader()`. Any `vtkNetCDFCFReader` options can be set (`FileName` is "
-"ignored), and the reader can be used as usual in a VTK pipeline."
+"when possible to create a VTK dataset using `reader = "
+"xarray_data.vtk.reader()`. Any `vtkNetCDFCFReader` options can be set "
+"(`FileName` is ignored), and the reader can be used as usual in a VTK "
+"pipeline."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:220
@@ -621,10 +622,11 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:245
 msgid ""
-"You can now draw round points by calling `vtkProperty::"
-"SetPoint2DShape(vtkProperty::Point2DShapeType::Round)`. The default is "
-"square. This feature is currently implemented in the WebGPU rendering "
-"module.   ([Author notes](9.5/add-point-2d-shape-setting-for-vtkProperty.md))"
+"You can now draw round points by calling "
+"`vtkProperty::SetPoint2DShape(vtkProperty::Point2DShapeType::Round)`. The "
+"default is square. This feature is currently implemented in the WebGPU "
+"rendering module.   ([Author notes](9.5/add-point-2d-shape-setting-for-"
+"vtkProperty.md))"
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:248
@@ -750,8 +752,8 @@ msgid ""
 "You can now view detailed information about the GPU memory usage   of "
 "individual textures and buffers by setting the "
 "`VTK_WEBGPU_MEMORY_LOG_VERBOSITY`   environment variable or specifying a "
-"`vtkLogger::Verbosity` value to   `vtkWebGPUConfiguration::"
-"SetGPUMemoryLogVerbosity`."
+"`vtkLogger::Verbosity` value to   "
+"`vtkWebGPUConfiguration::SetGPUMemoryLogVerbosity`."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:299
@@ -821,9 +823,9 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:327
 msgid ""
-"You can now invoke methods on a registered object using the   new `nlohmann::"
-"json vtkObjectManager::Invoke(vtkTypeUInt32 identifier, const std::string& "
-"methodName, const nlohmann::json& args)`   function."
+"You can now invoke methods on a registered object using the   new "
+"`nlohmann::json vtkObjectManager::Invoke(vtkTypeUInt32 identifier, const "
+"std::string& methodName, const nlohmann::json& args)`   function."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:331
@@ -832,9 +834,9 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:333
 msgid ""
-"You can now call the `void UpdateStatesFromObjects(const std::"
-"vector<vtkTypeUInt32>& identifiers)` method on the `vtkObjectManager`   to "
-"only update states of objects corresponding to the vector of identifiers. "
+"You can now call the `void UpdateStatesFromObjects(const "
+"std::vector<vtkTypeUInt32>& identifiers)` method on the `vtkObjectManager`   "
+"to only update states of objects corresponding to the vector of identifiers. "
 "This method allows you to efficiently update a specific   object and it's "
 "dependencies without touching other unrelated objects."
 msgstr ""
@@ -861,8 +863,8 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:346
 msgid ""
-"**Remove usage of the nlohmannjson library from public facing API** :"
-"warning: **BREAKING_CHANGES**"
+"**Remove usage of the nlohmannjson library from public facing "
+"API** :warning: **BREAKING_CHANGES**"
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:348
@@ -884,8 +886,9 @@ msgid ""
 "Protected members of `vtkAxisActor` and `vtkPolarAxesActor` classes were "
 "moved to private. Please use appropriate Getter/Setter to use them instead. "
 "Also some API were ported from `const char*` to `std::string`, breaking "
-"getters like `vtkAxisActor::GetTitle()` and `vtkPolarAxesActor::"
-"GetPolarAxisTitle()`.   ([Author notes](9.5/axes-actors-breaking-change.md))"
+"getters like `vtkAxisActor::GetTitle()` and "
+"`vtkPolarAxesActor::GetPolarAxisTitle()`.   ([Author notes](9.5/axes-actors-"
+"breaking-change.md))"
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:358
@@ -1062,8 +1065,8 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:433
 msgid ""
-"Updated to be based on [11.1.4](https://github.com/fmtlib/fmt/releases/"
-"tag/11.1.4). The minimal external fmt version is now 11.0.0."
+"Updated to be based on [11.1.4](https://github.com/fmtlib/fmt/releases/tag/"
+"11.1.4). The minimal external fmt version is now 11.0.0."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:435
@@ -1431,8 +1434,8 @@ msgstr ""
 msgid ""
 "`vtkMPICommunicator::GatherVVoidArray` could hang due to a size check "
 "causing an early return for only the failing process. Now, `recvLengths` and "
-"`offsets` must be specified for all processes when calling `vtkCommunicator::"
-"GatherV` to prevent this."
+"`offsets` must be specified for all processes when calling "
+"`vtkCommunicator::GatherV` to prevent this."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:586
@@ -1515,9 +1518,9 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:618
 msgid ""
-"Fixed a `GL_INVALID_ENUM` error in `vtkOSOpenGLRenderWindow::"
-"ReportCapabilities` caused by using an unsupported method for querying "
-"`GL_EXTENSIONS`."
+"Fixed a `GL_INVALID_ENUM` error in "
+"`vtkOSOpenGLRenderWindow::ReportCapabilities` caused by using an unsupported "
+"method for querying `GL_EXTENSIONS`."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:620
@@ -1554,8 +1557,8 @@ msgstr ""
 msgid ""
 "Thick lines with cell scalar colors now render correctly on Apple silicon. "
 "VTK patches the shader code at runtime for the Apple OpenGL over Metal "
-"driver to handle an upstream bug. Use `vtkOpenGLRenderWindow::"
-"IsPrimIDBugPresent()` to check for this driver bug."
+"driver to handle an upstream bug. Use "
+"`vtkOpenGLRenderWindow::IsPrimIDBugPresent()` to check for this driver bug."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:635
@@ -1650,8 +1653,8 @@ msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:667
 msgid ""
-"`vtkExtentSplitter::Min` and `::Max` have been deprecated in favor of `std::"
-"min` and `std::max`."
+"`vtkExtentSplitter::Min` and `::Max` have been deprecated in favor of "
+"`std::min` and `std::max`."
 msgstr ""
 
 #: ../../../../release/_9.5-stripped.md:668
@@ -1766,9 +1769,9 @@ msgstr ""
 #: ../../../../release/_9.5-stripped.md:698
 msgid ""
 "Fixed an issue where mouse wheel event coordinates were incorrectly scaled "
-"in `vtkWebAssemblyRenderWindowInteractor`. When the `window."
-"devicePixelRatio` value was not equal to 1 in multi-viewport setups, it "
-"caused a different renderer to zoom its contents instead of the renderer "
+"in `vtkWebAssemblyRenderWindowInteractor`. When the "
+"`window.devicePixelRatio` value was not equal to 1 in multi-viewport setups, "
+"it caused a different renderer to zoom its contents instead of the renderer "
 "which was under the mouse cursor. The `ProcessEvent` method now properly "
 "handles coordinate scaling for MouseWheel events, ensuring consistent zoom "
 "behavior across all viewports."

@@ -833,8 +833,8 @@ msgstr ""
 
 #: ../../../developers_guide/git/develop.md:398
 msgid ""
-"Navigate to your fork (change the username in the URL): (https://gitlab."
-"kitware.com/username/vtk/)"
+"Navigate to your fork (change the username in the URL): (https://"
+"gitlab.kitware.com/username/vtk/)"
 msgstr ""
 
 #: ../../../developers_guide/git/develop.md:399
@@ -889,8 +889,8 @@ msgid ""
 "`--stage <stage>` or `-s <stage>`: Only affect jobs in a given stage. When "
 "provided multiple times, all named stages are matched.  Stage names may be "
 "seen on the merge request's pipeline page with the \"Group jobs by\" option "
-"set to \"Stages\".  Note that the names are determined by what is in the `."
-"gitlab-ci.yml` file and may be capitalized in the web page, so lowercasing "
+"set to \"Stages\".  Note that the names are determined by what is in the "
+"`.gitlab-ci.yml` file and may be capitalized in the web page, so lowercasing "
 "the webpage's display name for stages may be required."
 msgstr ""
 
@@ -1140,8 +1140,8 @@ msgstr ""
 #: ../../../developers_guide/git/develop.md:528
 msgid ""
 "By convention, do not request a merge if any `-1` or `Rejected-by:` review "
-"comments have not been resolved and superseded by at least `+1` or `Acked-by:"
-"` review comments from the same user."
+"comments have not been resolved and superseded by at least `+1` or `Acked-"
+"by:` review comments from the same user."
 msgstr ""
 
 #: ../../../developers_guide/git/develop.md:532
