@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:26+0000\n"
+"POT-Creation-Date: 2026-11-09 18:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -76,8 +77,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:18
 msgid ""
-"{py:obj}`VTKImplicitArray <vtkmodules.numpy_interface.vtk_implicit_array."
-"VTKImplicitArray>`"
+"{py:obj}`VTKImplicitArray "
+"<vtkmodules.numpy_interface.vtk_implicit_array.VTKImplicitArray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:20
@@ -91,12 +92,12 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:30
 msgid ""
-"{py:obj}`_register_implicit_override <vtkmodules.numpy_interface."
-"vtk_implicit_array._register_implicit_override>`"
+"{py:obj}`_register_implicit_override "
+"<vtkmodules.numpy_interface.vtk_implicit_array._register_implicit_override>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:360
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:404
 msgid "Register VTKImplicitArray as override on vtkDataArray."
 msgstr ""
 
@@ -106,8 +107,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:42
 msgid ""
-"{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_implicit_array."
-"_UNINITIALIZED>`"
+"{py:obj}`_UNINITIALIZED "
+"<vtkmodules.numpy_interface.vtk_implicit_array._UNINITIALIZED>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:48
@@ -120,8 +121,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:64
 msgid ""
-"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
-"VTKDataArrayMixin`"
+"Bases: {py:obj}"
+"`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:69
@@ -187,25 +188,30 @@ msgstr ""
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:80
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:79
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_implicit_array.md:89
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:100
 msgid "Deep-copy this array into a contiguous AOS numpy array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:96
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:116
 msgid "Invalidate the cached numpy array when the VTK array is modified."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:120
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:140
 msgid "Expose the materialised AOS copy via the buffer protocol."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:122
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:142
 msgid ""
 "This allows ``numpy.frombuffer(implicit_arr)`` and "
 "``vtk_to_numpy(implicit_arr)`` to work transparently."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:362
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_implicit_array.py:406
 msgid ""
 "This is a fallback: any array type that already has a more-specific override "
 "(AOS on vtkFloatArray, SOA on vtkSOADataArrayTemplate, etc.) is unaffected.  "
