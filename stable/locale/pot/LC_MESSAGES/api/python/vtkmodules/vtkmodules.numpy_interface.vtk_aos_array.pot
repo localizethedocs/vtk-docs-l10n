@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK stable\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-11-09 18:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,8 +58,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:30
 msgid ""
-"{py:obj}`_reshape_for_broadcast <vtkmodules.numpy_interface.vtk_aos_array."
-"_reshape_for_broadcast>`"
+"{py:obj}`_reshape_for_broadcast "
+"<vtkmodules.numpy_interface.vtk_aos_array._reshape_for_broadcast>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:32
@@ -68,8 +69,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:34
 msgid ""
-"{py:obj}`_aos_to_ndarray <vtkmodules.numpy_interface.vtk_aos_array."
-"_aos_to_ndarray>`"
+"{py:obj}`_aos_to_ndarray "
+"<vtkmodules.numpy_interface.vtk_aos_array._aos_to_ndarray>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:36
@@ -79,8 +80,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:38
 msgid ""
-"{py:obj}`_aos_to_ndarray_arg <vtkmodules.numpy_interface.vtk_aos_array."
-"_aos_to_ndarray_arg>`"
+"{py:obj}`_aos_to_ndarray_arg "
+"<vtkmodules.numpy_interface.vtk_aos_array._aos_to_ndarray_arg>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:40
@@ -90,12 +91,12 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:42
 msgid ""
-"{py:obj}`_register_aos_overrides <vtkmodules.numpy_interface.vtk_aos_array."
-"_register_aos_overrides>`"
+"{py:obj}`_register_aos_overrides "
+"<vtkmodules.numpy_interface.vtk_aos_array._register_aos_overrides>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:44
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:434
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:464
 msgid "Register VTKAOSArray mixin as override for all AOS template types."
 msgstr ""
 
@@ -105,8 +106,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:54
 msgid ""
-"{py:obj}`_UNINITIALIZED <vtkmodules.numpy_interface.vtk_aos_array."
-"_UNINITIALIZED>`"
+"{py:obj}`_UNINITIALIZED "
+"<vtkmodules.numpy_interface.vtk_aos_array._UNINITIALIZED>`"
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:60
@@ -136,8 +137,8 @@ msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:97
 msgid ""
-"Bases: {py:obj}`vtkmodules.numpy_interface._vtk_array_mixin."
-"VTKDataArrayMixin`"
+"Bases: {py:obj}"
+"`vtkmodules.numpy_interface._vtk_array_mixin.VTKDataArrayMixin`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:102
@@ -283,22 +284,28 @@ msgstr ""
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:113
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:112
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:122
+#: ../../../api/python/vtkmodules/vtkmodules.numpy_interface.vtk_aos_array.md:132
+msgid "None"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:143
 msgid "Populate this array from an iterable (list, tuple, numpy array, etc.)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:115
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:145
 msgid ""
 "The data is converted to match this array's VTK data type.  1-D and 2-D "
 "inputs are supported; for 2-D inputs the second dimension sets the number of "
 "components."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:129
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:159
 msgid "Extract a zero-copy numpy array view from the VTK buffer."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:131
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:161
 msgid ""
 "Source the buffer protocol from the underlying ``vtkBuffer`` rather than "
 "from ``self`` — numpy would otherwise stash a reference to the array in its "
@@ -307,19 +314,19 @@ msgid ""
 "uncollectable."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:137
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:167
 msgid "Set up BufferChangedEvent observer for memory safety."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:161
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:191
 msgid "Return the array as a numpy ndarray."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:426
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:456
 msgid "Create a VTK-backed AOS array from a numpy array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:428
+#: ../../../../../Wrapping/Python/vtkmodules/numpy_interface/vtk_aos_array.py:458
 msgid ""
 "Returns a VTKAOSArray-overridden VTK array with the numpy data. The VTK "
 "array holds a reference to the numpy array to prevent GC."
