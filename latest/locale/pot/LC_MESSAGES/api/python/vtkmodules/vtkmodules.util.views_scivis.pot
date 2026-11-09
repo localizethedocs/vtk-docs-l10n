@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-11-09 18:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,8 +37,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:15
 msgid ""
-"named colors -- ``color=\"tomato\"``, resolved via :mod:`vtkmodules.util."
-"colors`"
+"named colors -- ``color=\"tomato\"``, resolved "
+"via :mod:`vtkmodules.util.colors`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:16
@@ -70,8 +71,8 @@ msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:27
 msgid ""
-"The layer is registered for ``vtkViewsScivis`` in ``vtkmodules/__init__.py."
-"in`` and loaded automatically when that module is imported."
+"The layer is registered for ``vtkViewsScivis`` in ``vtkmodules/"
+"__init__.py.in`` and loaded automatically when that module is imported."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:10
@@ -87,18 +88,18 @@ msgid "{py:obj}`_Delegating <vtkmodules.util.views_scivis._Delegating>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:20
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:141
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:149
 msgid "Route properties to the object that owns them."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:22
 msgid ""
-"{py:obj}`SurfaceRepresentation <vtkmodules.util.views_scivis."
-"SurfaceRepresentation>`"
+"{py:obj}`SurfaceRepresentation "
+"<vtkmodules.util.views_scivis.SurfaceRepresentation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:24
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:188
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:196
 msgid "``vtkSurfaceRepresentation`` with named colors and property delegation."
 msgstr ""
 
@@ -107,160 +108,178 @@ msgid "{py:obj}`ScalarBars <vtkmodules.util.views_scivis.ScalarBars>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:28
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:230
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:238
 msgid "``vtkScivisScalarBars`` as a sequence of the bars it is maintaining."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:30
-msgid ""
-"{py:obj}`LookupTableManager <vtkmodules.util.views_scivis."
-"LookupTableManager>`"
+msgid "{py:obj}`Widgets <vtkmodules.util.views_scivis.Widgets>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:32
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:264
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:279
+msgid "``vtkScivisWidgets`` as a sequence, whose adders take callbacks."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:34
+msgid ""
+"{py:obj}`LookupTableManager "
+"<vtkmodules.util.views_scivis.LookupTableManager>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:36
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:361
 msgid ""
 "``vtkLookupTableManager`` as the mapping of array name to color map it is."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:34
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:38
 msgid "{py:obj}`_Block <vtkmodules.util.views_scivis._Block>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:36
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:320
-msgid "One block of a composite dataset, as something to set properties on."
-msgstr ""
-
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:38
-msgid ""
-"{py:obj}`BlockProperties <vtkmodules.util.views_scivis.BlockProperties>`"
-msgstr ""
-
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:40
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:375
-msgid "``vtkBlockProperties`` indexed by block."
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:417
+msgid "One block of a composite dataset, as something to set properties on."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:42
 msgid ""
-"{py:obj}`GridAxesRepresentation <vtkmodules.util.views_scivis."
-"GridAxesRepresentation>`"
+"{py:obj}`BlockProperties <vtkmodules.util.views_scivis.BlockProperties>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:44
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:401
-msgid ""
-"``vtkGridAxesRepresentation`` with named colors and property delegation."
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:472
+msgid "``vtkBlockProperties`` indexed by block."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:46
 msgid ""
-"{py:obj}`TextOverlayRepresentation <vtkmodules.util.views_scivis."
-"TextOverlayRepresentation>`"
+"{py:obj}`GridAxesRepresentation "
+"<vtkmodules.util.views_scivis.GridAxesRepresentation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:48
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:443
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:498
+msgid ""
+"``vtkGridAxesRepresentation`` with named colors and property delegation."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:50
+msgid ""
+"{py:obj}`TextOverlayRepresentation "
+"<vtkmodules.util.views_scivis.TextOverlayRepresentation>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:52
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:540
 msgid ""
 "``vtkTextOverlayRepresentation`` with named colors and property delegation."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:50
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:54
 msgid "{py:obj}`ScivisView <vtkmodules.util.views_scivis.ScivisView>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:52
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:477
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:56
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:574
 msgid "``vtkScivisView`` with named colors, ``size``, ``show()``."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:54
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:58
 msgid ""
-"{py:obj}`VolumeRepresentation <vtkmodules.util.views_scivis."
-"VolumeRepresentation>`"
+"{py:obj}`VolumeRepresentation "
+"<vtkmodules.util.views_scivis.VolumeRepresentation>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:56
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:567
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:60
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:664
 msgid "``vtkVolumeRepresentation`` with property delegation."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:60
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:64
 msgid "Functions"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:66
-msgid ""
-"{py:obj}`_make_representation <vtkmodules.util.views_scivis."
-"_make_representation>`"
-msgstr ""
-
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:68
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:112
-msgid "Build a representation for *representation_type*."
-msgstr ""
-
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:70
-msgid "{py:obj}`_resolve_color <vtkmodules.util.views_scivis._resolve_color>`"
+msgid ""
+"{py:obj}`_make_representation "
+"<vtkmodules.util.views_scivis._make_representation>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:72
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:119
-msgid "Return an ``(r, g, b)`` tuple for *color*."
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:120
+msgid "Build a representation for *representation_type*."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:74
-msgid "{py:obj}`_wrapped_base <vtkmodules.util.views_scivis._wrapped_base>`"
+msgid "{py:obj}`_resolve_color <vtkmodules.util.views_scivis._resolve_color>`"
 msgstr ""
 
 #: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:76
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:126
-msgid "The VTK class behind an override class."
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:127
+msgid "Return an ``(r, g, b)`` tuple for *color*."
 msgstr ""
 
 #: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:78
+msgid "{py:obj}`_wrapped_base <vtkmodules.util.views_scivis._wrapped_base>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:80
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:134
+msgid "The VTK class behind an override class."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:82
 msgid ""
 "{py:obj}`_check_property <vtkmodules.util.views_scivis._check_property>`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:80
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:133
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:84
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:141
 msgid "Raise for a keyword argument nothing on *obj* owns."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:84
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:86
+msgid "{py:obj}`_observe <vtkmodules.util.views_scivis._observe>`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:88
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:269
+msgid "Report what a widget is worth, rather than that it was interacted with."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:92
 msgid "Data"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:90
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:98
 msgid ""
-"{py:obj}`REPRESENTATION_TYPES <vtkmodules.util.views_scivis."
-"REPRESENTATION_TYPES>`"
+"{py:obj}`REPRESENTATION_TYPES "
+"<vtkmodules.util.views_scivis.REPRESENTATION_TYPES>`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:96
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:104
 msgid "API"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:102
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:110
 msgid "None"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:114
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:122
 msgid ""
-"Accepts ``None`` (a surface representation), a name from :data:"
-"`REPRESENTATION_TYPES`, or a representation class."
+"Accepts ``None`` (a surface representation), a name "
+"from :data:`REPRESENTATION_TYPES`, or a representation class."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:121
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:129
 msgid ""
 "*color* is either a 3-sequence with components in ``[0, 1]`` or a snake_case "
 "named color from :mod:`vtkmodules.util.colors` (e.g. ``\"tomato\"``, "
 "``\"steel_blue\"``)."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:128
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:136
 msgid ""
 "The override classes below add properties of their own -- named colors, and "
 "anything reached by delegation -- that the wrapped class knows nothing "
@@ -268,7 +287,7 @@ msgid ""
 "that class, not this one."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:135
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:143
 msgid ""
 "Attribute assignment on a Python subclass of a VTK object quietly creates an "
 "instance attribute, which would turn a misspelled keyword argument into a "
@@ -276,7 +295,7 @@ msgid ""
 "that they fail where the mistake was made."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:143
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:151
 msgid ""
 "The C++ classes carry only what it takes to make data visible and legible; "
 "everything else lives on the actor, property, mapper or filter underneath. "
@@ -285,39 +304,39 @@ msgid ""
 "where flat keyword arguments are the whole point."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:149
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:157
 msgid ""
 "So an attribute this class does not define is looked for on each delegate in "
-"turn, and set on the first that has it.  ``rep.specular = 0.3`` and ``rep."
-"property.specular = 0.3`` are then the same thing, and an attribute nobody "
-"owns still fails, naming the delegates it looked in."
+"turn, and set on the first that has it.  ``rep.specular = 0.3`` and "
+"``rep.property.specular = 0.3`` are then the same thing, and an attribute "
+"nobody owns still fails, naming the delegates it looked in."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:143
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:190
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:322
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:403
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:445
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:479
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:569
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:151
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:198
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:419
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:500
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:542
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:576
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:666
 msgid "Initialization"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:147
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:194
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:407
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:449
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:483
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:573
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:155
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:202
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:504
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:546
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:580
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:670
 msgid "Accept in the constructor everything assignment accepts."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:149
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:196
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:409
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:451
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:485
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:575
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:157
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:204
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:506
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:548
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:582
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:672
 msgid ""
 "VTK builds its own constructor keyword handling from the properties a class "
 "declares, and it runs before any Python attribute assignment -- so it never "
@@ -326,23 +345,23 @@ msgid ""
 "here instead, which puts the two back in step."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:155
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:202
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:415
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:457
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:491
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:581
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:163
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:210
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:512
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:554
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:588
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:678
 msgid ""
 "A dict value configures the sub-object of that name, so the grouping the C++ "
 "API has is available at construction too::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:158
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:205
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:418
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:460
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:494
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:584
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:166
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:213
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:515
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:557
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:591
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:681
 msgid ""
 "view = vtkScivisView(\n"
 "    window_title=\"demo\",\n"
@@ -351,73 +370,127 @@ msgid ""
 ")\n"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:164
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:211
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:424
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:466
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:500
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:590
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:172
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:219
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:521
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:563
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:597
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:687
 msgid ""
 "There is no way to spell that as a keyword name -- ``selector.mode=`` is a "
 "syntax error -- and a dict means nothing to an ordinary VTK property, so "
 "there is nothing for it to collide with."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:153
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:161
 msgid "()"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:185
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:193
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
 "`vtkmodules.vtkViewsScivis.vtkSurfaceRepresentation`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:200
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:208
 msgid "('GetProperty', 'GetGeometryFilter', 'GetActor')"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:227
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:235
 msgid "Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkScivisScalarBars`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:232
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:240
 msgid ""
 "``len(view.scalar_bars)`` and iterating over it read the bars the view has "
 "made, which is what reporting on them looks like::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:235
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:243
 msgid ""
 "for bar in view.scalar_bars:\n"
 "    print(bar.title, bar.lookup_table.range)\n"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:238
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:246
 msgid ""
 "A bar's title is the array it is labelled with.  Use ``GetActor(name, "
 "association)`` to reach one for a particular array instead."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:245
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:253
 msgid "The bar at a position, or the one labelled with an array."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:247
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:255
 msgid ""
 "A plain name finds the bar for that array whatever attributes it came from; "
 "pass ``(name, association)`` to say which."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:261
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:271
+msgid ""
+"VTK's AddObserver does not keep the Python callable alive, so the closures "
+"are stashed on the widget; dropping them makes the callback stop firing with "
+"nothing to show why."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:276
+msgid "Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkScivisWidgets`"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:281
+msgid ""
+"Each adder accepts ``callback`` and ``end_callback``.  The first is called "
+"while the widget is being dragged, the second when the drag finishes -- "
+"which is the one to use when the work is expensive, such as re-executing a "
+"filter.  Both are handed the value the widget stands for rather than the "
+"event::"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:287
+msgid ""
+"view.widgets.AddDistance(callback=lambda d: print(f\"{d:.3f}\"))\n"
+"view.widgets.AddPlane(end_callback=clip.SetClipFunction)\n"
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:302
+msgid "A ruler the user clicks the ends of; reports the distance."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:310
+msgid "Three points the user clicks; reports the angle between them."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:318
+msgid "A label pointing at a place; reports where it now points."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:326
+msgid "A line between two points; reports both, in world coordinates."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:334
+msgid "A plane to cut with; reports it as a vtkPlane, ready to clip by."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:342
+msgid "A box to crop to; reports the transform it has been dragged into."
+msgstr ""
+
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:350
+msgid "A spline through draggable handles; reports it as polydata."
+msgstr ""
+
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:358
 msgid "Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkLookupTableManager`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:266
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:363
 msgid "::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:268
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:365
 msgid ""
 "view.lookup_table_manager[\"Temperature\"] = my_map\n"
 "\"Temperature\" in view.lookup_table_manager\n"
@@ -425,94 +498,94 @@ msgid ""
 "    ...\n"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:273
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:370
 msgid ""
-"Reading a name that has no map makes one, the way :class:`collections."
-"defaultdict` does, because that is what the manager is for -- ``in`` is the "
-"way to ask without making one."
+"Reading a name that has no map makes one, the "
+"way :class:`collections.defaultdict` does, because that is what the manager "
+"is for -- ``in`` is the way to ask without making one."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:332
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:429
 msgid "('_blocks', '_index')"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:372
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:469
 msgid "Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkBlockProperties`"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:377
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:474
 msgid ""
 "``rep.blocks[3].color = \"tomato\"`` rather than three calls that each "
 "repeat the block index.  The index is the flat index of the block in the "
 "composite dataset, as vtkCompositeDataDisplayAttributes numbers them."
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:398
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:495
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
 "`vtkmodules.vtkViewsScivis.vtkGridAxesRepresentation`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:413
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:510
 msgid "('GetGridAxesActor',)"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:440
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:537
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
 "`vtkmodules.vtkViewsScivis.vtkTextOverlayRepresentation`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:455
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:552
 msgid "('GetTextProperty', 'GetTextActor')"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:474
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:571
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
 "`vtkmodules.vtkViewsScivis.vtkScivisView`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:489
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:586
 msgid "('GetLightKit', 'GetOrientationMarkerWidget', 'GetRenderer')"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:556
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:653
 msgid "Add a representation for *input* to the view and return it."
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:558
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:655
 msgid ""
 "*input* is a ``vtkAlgorithm`` (its output port is connected) or a "
 "``vtkDataObject``.  Keyword arguments are applied as properties on the "
 "created representation::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:562
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:659
 msgid ""
 "view.show(sphere, color=\"tomato\", opacity=0.8,\n"
 "          representation=\"surfacewithedges\")\n"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:565
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:662
 msgid ""
-"*representation_type* selects what to build: a name from :data:"
-"`REPRESENTATION_TYPES`, a representation class, or ``None`` for a surface "
-"representation::"
+"*representation_type* selects what to build: a name "
+"from :data:`REPRESENTATION_TYPES`, a representation class, or ``None`` for a "
+"surface representation::"
 msgstr ""
 
-#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:569
+#: ../../../../../Wrapping/Python/vtkmodules/util/views_scivis.py:666
 msgid ""
 "view.show(wavelet, \"volume\", scalar_opacity_unit_distance=0.8)\n"
 "view.show(wavelet, MyRepresentation)\n"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:564
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:661
 msgid ""
 "Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}"
 "`vtkmodules.vtkViewsScivis.vtkVolumeRepresentation`"
 msgstr ""
 
-#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:579
+#: ../../../api/python/vtkmodules/vtkmodules.util.views_scivis.md:676
 msgid "('GetVolumeProperty', 'GetVolumeMapper', 'GetVolume')"
 msgstr ""
