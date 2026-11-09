@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../developers_guide/git/dashboard.md:1
+msgid "Dashboard Scripts"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:4
+msgid ""
+"This page documents how to use the VTK `dashboard` branch in [Git][]. See "
+"the [README](README.md) for more information."
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:9
+msgid "Using the Dashboard Scripts"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:12
+msgid ""
+"The `dashboard` branch contains a dashboard client helper script. Use these "
+"commands to track it:"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:15
+msgid ""
+"$ mkdir -p ~/Dashboards/VTKScripts\n"
+"$ cd ~/Dashboards/VTKScripts\n"
+"$ git init\n"
+"$ git remote add -t dashboard origin https://gitlab.kitware.com/vtk/vtk.git\n"
+"$ git pull origin\n"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:21
+msgid ""
+"The `vtk_common.cmake` script contains setup instructions in its top "
+"comments."
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:24
+msgid ""
+"Update the `dashboard` branch to get the latest version of this script by "
+"simply running:"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:27
+msgid "$ git pull\n"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:29
+msgid "Here is a link to the script as it appears today: [vtk_common.cmake][]."
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:33
+msgid "Changing the Dashboard Scripts"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:36
+msgid ""
+"If you find bugs in the hooks themselves or would like to add new features, "
+"the can be edited in the usual Git manner:"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:39
+msgid "$ git checkout -b my-topic-branch\n"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:41
+msgid ""
+"Make your edits, test it, and commit the result.  Create a patch file with:"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:43
+msgid "$ git format-patch origin/dashboard\n"
+msgstr ""
+
+#: ../../../developers_guide/git/dashboard.md:45
+msgid ""
+"And post the results in the [Development][] category in the [VTK Discourse]"
+"[] forum."
+msgstr ""
