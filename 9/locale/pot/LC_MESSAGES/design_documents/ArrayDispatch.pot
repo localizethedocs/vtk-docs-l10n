@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK 9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:26+0000\n"
+"POT-Creation-Date: 2026-11-09 18:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,20 +76,20 @@ msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:26
 msgid ""
-"`vtkAOSDataArrayTemplate<float>` has an ArrayTypeTag of `std::"
-"integral_constant<int, vtkArrayTypes::VTK_AOS_DATA_ARRAY>`,"
+"`vtkAOSDataArrayTemplate<float>` has an ArrayTypeTag of "
+"`std::integral_constant<int, vtkArrayTypes::VTK_AOS_DATA_ARRAY>`,"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:28
 msgid ""
-"`vtkSOADataArrayTemplate<vtkTypeInt64>` has an ArrayTypeTag of `std::"
-"integral_constant<int, vtkArrayTypes::VTK_SOA_DATA_ARRAY>`,"
+"`vtkSOADataArrayTemplate<vtkTypeInt64>` has an ArrayTypeTag of "
+"`std::integral_constant<int, vtkArrayTypes::VTK_SOA_DATA_ARRAY>`,"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:30
 msgid ""
-"`vtkConstantArray<vtkTypeInt8>` has an ArrayTypeTag of `std::"
-"integral_constant<int, vtkArrayTypes::VTK_CONSTANT_ARRAY>`,"
+"`vtkConstantArray<vtkTypeInt8>` has an ArrayTypeTag of "
+"`std::integral_constant<int, vtkArrayTypes::VTK_CONSTANT_ARRAY>`,"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:32
@@ -117,20 +118,20 @@ msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:41
 msgid ""
-"`vtkAOSDataArrayTemplate<float>` has a DataTypeTag of `std::"
-"integral_constant<int, VTK_FLOAT>`,"
+"`vtkAOSDataArrayTemplate<float>` has a DataTypeTag of "
+"`std::integral_constant<int, VTK_FLOAT>`,"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:42
 msgid ""
-"`vtkSOADataArrayTemplate<vtkTypeInt64>` has a DataTypeTag of `std::"
-"integral_constant<int, VTK_TYPE_INT64>`,"
+"`vtkSOADataArrayTemplate<vtkTypeInt64>` has a DataTypeTag of "
+"`std::integral_constant<int, VTK_TYPE_INT64>`,"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:43
 msgid ""
-"`vtkConstantArray<vtkTypeInt8>` has a DataTypeTag of `std::"
-"integral_constant<int, VTK_TYPE_INT8>`,"
+"`vtkConstantArray<vtkTypeInt8>` has a DataTypeTag of "
+"`std::integral_constant<int, VTK_TYPE_INT8>`,"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:44
@@ -744,11 +745,11 @@ msgstr ""
 #: ../../../design_documents/ArrayDispatch.md:462
 msgid ""
 "There's not much to know about type lists as a user, other than how to "
-"create them. As seen above, there is a set of macros named `vtkTypeList::"
-"Create<...>`, where X is the number of types in the created list, and the "
-"arguments are the types to place in the list. In the example above, the new "
-"type list is typically bound to a friendlier name using a local `typedef`, "
-"which is a common practice."
+"create them. As seen above, there is a set of macros named "
+"`vtkTypeList::Create<...>`, where X is the number of types in the created "
+"list, and the arguments are the types to place in the list. In the example "
+"above, the new type list is typically bound to a friendlier name using a "
+"local `typedef`, which is a common practice."
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:469
@@ -1045,9 +1046,9 @@ msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:639
 msgid ""
-"There's a problem, though. Recall that only the arrays in `vtkArrayDispatch::"
-"Arrays` are tested for dispatching. What happens if the array passed into "
-"someFunction wasn't on that list?"
+"There's a problem, though. Recall that only the arrays in "
+"`vtkArrayDispatch::Arrays` are tested for dispatching. What happens if the "
+"array passed into someFunction wasn't on that list?"
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:643
@@ -1849,8 +1850,8 @@ msgid ""
 "using ValidValueTypes = vtkTypeList::Create<float, double, int, vtkIdType>;\n"
 "\n"
 "// Typedef the dispatch to a more manageable name:\n"
-"using Dispatcher = vtkArrayDispatch::"
-"Dispatch2BySameValueType<ValidValueTypes>;\n"
+"using Dispatcher = "
+"vtkArrayDispatch::Dispatch2BySameValueType<ValidValueTypes>;\n"
 "\n"
 "// Execute the dispatch:\n"
 "Dispatcher::Execute(array1, array2, someWorker);\n"
@@ -2160,8 +2161,9 @@ msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:1387
 msgid ""
-"If two `vtkAbstractArray`s need to be compared, use `vtkTestUtilities::"
-"CompareAbstractArray()` instead of `GetVoidPointer()` and `std::equal()`."
+"If two `vtkAbstractArray`s need to be compared, use "
+"`vtkTestUtilities::CompareAbstractArray()` instead of `GetVoidPointer()` and "
+"`std::equal()`."
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:1389
@@ -2198,8 +2200,8 @@ msgid ""
 "If array is `vtkDataArray`, but using `HasStandardMemoryLayout`, it has been "
 "verified that it actually is `vtkAOSDataArrayTemplate`, then "
 "`GetVoidPointer()` is _safe_ to use. This usually happens when the array was "
-"created using `vtkAbstractArray::CreateArray()` or `vtkDataArray::"
-"CreateDataArray()` by passing a standard VTK data type."
+"created using `vtkAbstractArray::CreateArray()` or "
+"`vtkDataArray::CreateDataArray()` by passing a standard VTK data type."
 msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:1403
@@ -2212,10 +2214,10 @@ msgstr ""
 
 #: ../../../design_documents/ArrayDispatch.md:1407
 msgid ""
-"Finally, `vtkAbstractArray::GetVoidPointer()` and `vtkDataArray::"
-"GetVoidPointer()` have been marked as an _unsafe_ function using `clang-"
-"tidy`, and its usage will be warned as such, unless explicitly marked as "
-"_safe_ using the `(bugprone-unsafe-functions)` lint, upon guaranteeing that "
-"it is indeed safe to use, if and only if, it satisfies one of the two "
-"conditions mentioned above."
+"Finally, `vtkAbstractArray::GetVoidPointer()` and "
+"`vtkDataArray::GetVoidPointer()` have been marked as an _unsafe_ function "
+"using `clang-tidy`, and its usage will be warned as such, unless explicitly "
+"marked as _safe_ using the `(bugprone-unsafe-functions)` lint, upon "
+"guaranteeing that it is indeed safe to use, if and only if, it satisfies one "
+"of the two conditions mentioned above."
 msgstr ""
