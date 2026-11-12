@@ -1,0 +1,480 @@
+# {py:mod}`vtkmodules.util.selection`
+
+```{py:module} vtkmodules.util.selection
+```
+
+```{autodoc2-docstring} vtkmodules.util.selection
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_SelectionNodeMixin <vtkmodules.util.selection._SelectionNodeMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin
+    :summary:
+    ```
+* - {py:obj}`_SelectionMixin <vtkmodules.util.selection._SelectionMixin>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin
+    :summary:
+    ```
+* - {py:obj}`SelectionNode <vtkmodules.util.selection.SelectionNode>`
+  -
+* - {py:obj}`Selection <vtkmodules.util.selection.Selection>`
+  -
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_resolve_content_type <vtkmodules.util.selection._resolve_content_type>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._resolve_content_type
+    :summary:
+    ```
+* - {py:obj}`_resolve_field_type <vtkmodules.util.selection._resolve_field_type>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._resolve_field_type
+    :summary:
+    ```
+* - {py:obj}`_set_qualifiers <vtkmodules.util.selection._set_qualifiers>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._set_qualifiers
+    :summary:
+    ```
+* - {py:obj}`_to_vtk_array <vtkmodules.util.selection._to_vtk_array>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._to_vtk_array
+    :summary:
+    ```
+* - {py:obj}`_next_label <vtkmodules.util.selection._next_label>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._next_label
+    :summary:
+    ```
+* - {py:obj}`_remap_expr <vtkmodules.util.selection._remap_expr>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._remap_expr
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_CONTENT_TYPE_MAP <vtkmodules.util.selection._CONTENT_TYPE_MAP>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._CONTENT_TYPE_MAP
+    :summary:
+    ```
+* - {py:obj}`_CONTENT_TYPE_REVERSE <vtkmodules.util.selection._CONTENT_TYPE_REVERSE>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._CONTENT_TYPE_REVERSE
+    :summary:
+    ```
+* - {py:obj}`_FIELD_TYPE_MAP <vtkmodules.util.selection._FIELD_TYPE_MAP>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._FIELD_TYPE_MAP
+    :summary:
+    ```
+* - {py:obj}`_FIELD_TYPE_REVERSE <vtkmodules.util.selection._FIELD_TYPE_REVERSE>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._FIELD_TYPE_REVERSE
+    :summary:
+    ```
+* - {py:obj}`_INT_QUALIFIER_KEYS <vtkmodules.util.selection._INT_QUALIFIER_KEYS>`
+  - ```{autodoc2-docstring} vtkmodules.util.selection._INT_QUALIFIER_KEYS
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} _CONTENT_TYPE_MAP
+:canonical: vtkmodules.util.selection._CONTENT_TYPE_MAP
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.selection._CONTENT_TYPE_MAP
+```
+
+````
+
+````{py:data} _CONTENT_TYPE_REVERSE
+:canonical: vtkmodules.util.selection._CONTENT_TYPE_REVERSE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.selection._CONTENT_TYPE_REVERSE
+```
+
+````
+
+````{py:data} _FIELD_TYPE_MAP
+:canonical: vtkmodules.util.selection._FIELD_TYPE_MAP
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.selection._FIELD_TYPE_MAP
+```
+
+````
+
+````{py:data} _FIELD_TYPE_REVERSE
+:canonical: vtkmodules.util.selection._FIELD_TYPE_REVERSE
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.selection._FIELD_TYPE_REVERSE
+```
+
+````
+
+````{py:data} _INT_QUALIFIER_KEYS
+:canonical: vtkmodules.util.selection._INT_QUALIFIER_KEYS
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.selection._INT_QUALIFIER_KEYS
+```
+
+````
+
+````{py:function} _resolve_content_type(value)
+:canonical: vtkmodules.util.selection._resolve_content_type
+
+```{autodoc2-docstring} vtkmodules.util.selection._resolve_content_type
+```
+````
+
+````{py:function} _resolve_field_type(value)
+:canonical: vtkmodules.util.selection._resolve_field_type
+
+```{autodoc2-docstring} vtkmodules.util.selection._resolve_field_type
+```
+````
+
+````{py:function} _set_qualifiers(node, qualifiers)
+:canonical: vtkmodules.util.selection._set_qualifiers
+
+```{autodoc2-docstring} vtkmodules.util.selection._set_qualifiers
+```
+````
+
+````{py:function} _to_vtk_array(values, array_type=None, num_components=1, name=None)
+:canonical: vtkmodules.util.selection._to_vtk_array
+
+```{autodoc2-docstring} vtkmodules.util.selection._to_vtk_array
+```
+````
+
+`````{py:class} _SelectionNodeMixin
+:canonical: vtkmodules.util.selection._SelectionNodeMixin
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin
+```
+
+````{py:property} content_type
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.content_type
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.content_type
+```
+
+````
+
+````{py:property} field_type
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.field_type
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.field_type
+```
+
+````
+
+````{py:property} selection_list
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.selection_list
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.selection_list
+```
+
+````
+
+````{py:property} inverse
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.inverse
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.inverse
+```
+
+````
+
+````{py:property} containing_cells
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.containing_cells
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.containing_cells
+```
+
+````
+
+````{py:property} connected_layers
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.connected_layers
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.connected_layers
+```
+
+````
+
+````{py:property} composite_index
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.composite_index
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.composite_index
+```
+
+````
+
+````{py:property} component_number
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.component_number
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.component_number
+```
+
+````
+
+````{py:property} epsilon
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.epsilon
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.epsilon
+```
+
+````
+
+````{py:property} assembly_name
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.assembly_name
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionNodeMixin.assembly_name
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.selection._SelectionNodeMixin.__repr__
+
+````
+
+`````
+
+````{py:function} _next_label(labels_used)
+:canonical: vtkmodules.util.selection._next_label
+
+```{autodoc2-docstring} vtkmodules.util.selection._next_label
+```
+````
+
+````{py:function} _remap_expr(expr, name_map)
+:canonical: vtkmodules.util.selection._remap_expr
+
+```{autodoc2-docstring} vtkmodules.util.selection._remap_expr
+```
+````
+
+`````{py:class} _SelectionMixin(*args, content_type=None, field_type=None, selection_list=None, **kwargs)
+:canonical: vtkmodules.util.selection._SelectionMixin
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__init__
+```
+
+````{py:attribute} _expr_label
+:canonical: vtkmodules.util.selection._SelectionMixin._expr_label
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin._expr_label
+```
+
+````
+
+````{py:method} _build_node(content_type, field_type=None, selection_list=None, qualifiers=None)
+:canonical: vtkmodules.util.selection._SelectionMixin._build_node
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin._build_node
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.selection._SelectionMixin.__len__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__len__
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.selection._SelectionMixin.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__getitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.selection._SelectionMixin.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__iter__
+```
+
+````
+
+````{py:method} append(node)
+:canonical: vtkmodules.util.selection._SelectionMixin.append
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.append
+```
+
+````
+
+````{py:method} clear()
+:canonical: vtkmodules.util.selection._SelectionMixin.clear
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.clear
+```
+
+````
+
+````{py:property} expression
+:canonical: vtkmodules.util.selection._SelectionMixin.expression
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.expression
+```
+
+````
+
+````{py:property} node_names
+:canonical: vtkmodules.util.selection._SelectionMixin.node_names
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.node_names
+```
+
+````
+
+````{py:method} _get_expr_label()
+:canonical: vtkmodules.util.selection._SelectionMixin._get_expr_label
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin._get_expr_label
+```
+
+````
+
+````{py:method} _combine(other, op_str)
+:canonical: vtkmodules.util.selection._SelectionMixin._combine
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin._combine
+```
+
+````
+
+````{py:method} __and__(other)
+:canonical: vtkmodules.util.selection._SelectionMixin.__and__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__and__
+```
+
+````
+
+````{py:method} __or__(other)
+:canonical: vtkmodules.util.selection._SelectionMixin.__or__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__or__
+```
+
+````
+
+````{py:method} __xor__(other)
+:canonical: vtkmodules.util.selection._SelectionMixin.__xor__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__xor__
+```
+
+````
+
+````{py:method} __invert__()
+:canonical: vtkmodules.util.selection._SelectionMixin.__invert__
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.__invert__
+```
+
+````
+
+````{py:method} from_thresholds(array_name, ranges, field_type='CELL', **qualifiers)
+:canonical: vtkmodules.util.selection._SelectionMixin.from_thresholds
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.from_thresholds
+```
+
+````
+
+````{py:method} from_values(array_name, values, field_type='CELL', component=-1, **qualifiers)
+:canonical: vtkmodules.util.selection._SelectionMixin.from_values
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.from_values
+```
+
+````
+
+````{py:method} from_locations(points, field_type='POINT', epsilon=None, **qualifiers)
+:canonical: vtkmodules.util.selection._SelectionMixin.from_locations
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.from_locations
+```
+
+````
+
+````{py:method} from_frustum(corners, field_type='CELL', **qualifiers)
+:canonical: vtkmodules.util.selection._SelectionMixin.from_frustum
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.from_frustum
+```
+
+````
+
+````{py:method} from_blocks(block_indices, **qualifiers)
+:canonical: vtkmodules.util.selection._SelectionMixin.from_blocks
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.from_blocks
+```
+
+````
+
+````{py:method} from_block_selectors(selectors, assembly_name=None, **qualifiers)
+:canonical: vtkmodules.util.selection._SelectionMixin.from_block_selectors
+
+```{autodoc2-docstring} vtkmodules.util.selection._SelectionMixin.from_block_selectors
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.selection._SelectionMixin.__repr__
+
+````
+
+`````
+
+```{py:class} SelectionNode
+:canonical: vtkmodules.util.selection.SelectionNode
+
+Bases: {py:obj}`vtkmodules.util.selection._SelectionNodeMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkSelectionNode`
+
+```
+
+```{py:class} Selection(*args, content_type=None, field_type=None, selection_list=None, **kwargs)
+:canonical: vtkmodules.util.selection.Selection
+
+Bases: {py:obj}`vtkmodules.util.selection._SelectionMixin`, {py:obj}`vtkmodules.vtkCommonDataModel.vtkSelection`
+
+```

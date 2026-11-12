@@ -1,0 +1,232 @@
+# {py:mod}`vtkmodules.util.xarray_support`
+
+```{py:module} vtkmodules.util.xarray_support
+```
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`VtkAccessor <vtkmodules.util.xarray_support.VtkAccessor>`
+  - ```{autodoc2-docstring} vtkmodules.util.xarray_support.VtkAccessor
+    :summary:
+    ```
+* - {py:obj}`vtkXArrayCFReader <vtkmodules.util.xarray_support.vtkXArrayCFReader>`
+  - ```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} VtkAccessor(dsxr)
+:canonical: vtkmodules.util.xarray_support.VtkAccessor
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.VtkAccessor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.VtkAccessor.__init__
+```
+
+````{py:method} create_reader()
+:canonical: vtkmodules.util.xarray_support.VtkAccessor.create_reader
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.VtkAccessor.create_reader
+```
+
+````
+
+`````
+
+`````{py:class} vtkXArrayCFReader()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader
+
+Bases: {py:obj}`vtkmodules.util.vtkAlgorithm.VTKPythonAlgorithmBase`
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.__init__
+```
+
+````{py:attribute} _FORWARD_GET
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._FORWARD_GET
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._FORWARD_GET
+```
+
+````
+
+````{py:attribute} _FORWARD_SET
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._FORWARD_SET
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._FORWARD_SET
+```
+
+````
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.__getattr__
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.__getattr__
+```
+
+````
+
+````{py:method} SetFileName(name)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.SetFileName
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.SetFileName
+```
+
+````
+
+````{py:method} GetFileName()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.GetFileName
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.GetFileName
+```
+
+````
+
+````{py:method} CanReadFile(filepath)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.CanReadFile
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.CanReadFile
+```
+
+````
+
+````{py:method} SetNode(node)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.SetNode
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.SetNode
+```
+
+````
+
+````{py:method} GetNode()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.GetNode
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.GetNode
+```
+
+````
+
+````{py:method} SetXArray(dsxr)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.SetXArray
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.SetXArray
+```
+
+````
+
+````{py:method} GetXArray()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.GetXArray
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.GetXArray
+```
+
+````
+
+````{py:method} RequestDataObject(request, inInfo, outInfo)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestDataObject
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestDataObject
+```
+
+````
+
+````{py:method} RequestInformation(request, inInfo, outInfo)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestInformation
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestInformation
+```
+
+````
+
+````{py:method} RequestUpdateExtent(request, inInfo, outInfo)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestUpdateExtent
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestUpdateExtent
+```
+
+````
+
+````{py:method} RequestData(request, inInfo, outInfo)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestData
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader.RequestData
+```
+
+````
+
+````{py:method} _get_nc_type(numpy_array_type)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._get_nc_type
+:staticmethod:
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._get_nc_type
+```
+
+````
+
+````{py:method} _update_accessor()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._update_accessor
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._update_accessor
+```
+
+````
+
+````{py:method} _get_accessor()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._get_accessor
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._get_accessor
+```
+
+````
+
+````{py:method} _set_data_vars(accessor, dsxr)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._set_data_vars
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._set_data_vars
+```
+
+````
+
+````{py:method} _get_coords_bounds()
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._get_coords_bounds
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._get_coords_bounds
+```
+
+````
+
+````{py:method} _cftime_toordinal(o)
+:canonical: vtkmodules.util.xarray_support.vtkXArrayCFReader._cftime_toordinal
+:staticmethod:
+
+```{autodoc2-docstring} vtkmodules.util.xarray_support.vtkXArrayCFReader._cftime_toordinal
+```
+
+````
+
+`````
