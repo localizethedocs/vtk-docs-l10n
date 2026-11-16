@@ -1,0 +1,347 @@
+# {py:mod}`vtkmodules.qt.QVTKRenderWindowInteractor`
+
+```{py:module} vtkmodules.qt.QVTKRenderWindowInteractor
+```
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`QVTKRenderWindowInteractor <vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_get_event_pos <vtkmodules.qt.QVTKRenderWindowInteractor._get_event_pos>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor._get_event_pos
+    :summary:
+    ```
+* - {py:obj}`QVTKRenderWidgetConeExample <vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWidgetConeExample>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWidgetConeExample
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`QVTKRWIBase <vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBase>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBase
+    :summary:
+    ```
+* - {py:obj}`_keysyms_for_ascii <vtkmodules.qt.QVTKRenderWindowInteractor._keysyms_for_ascii>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor._keysyms_for_ascii
+    :summary:
+    ```
+* - {py:obj}`_keysyms <vtkmodules.qt.QVTKRenderWindowInteractor._keysyms>`
+  - ```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor._keysyms
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} QVTKRWIBase
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBase
+:value: >
+   'QWidget'
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBase
+```
+
+````
+
+````{py:function} _get_event_pos(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor._get_event_pos
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor._get_event_pos
+```
+````
+
+`````{py:class} QVTKRenderWindowInteractor(parent=None, **kw)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor
+
+Bases: {py:obj}`vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRWIBaseClass`
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.__init__
+```
+
+````{py:attribute} _CURSOR_MAP
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._CURSOR_MAP
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._CURSOR_MAP
+```
+
+````
+
+````{py:method} __getattr__(attr)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.__getattr__
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.__getattr__
+```
+
+````
+
+````{py:method} Finalize()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.Finalize
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.Finalize
+```
+
+````
+
+````{py:method} CreateTimer(obj, evt)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.CreateTimer
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.CreateTimer
+```
+
+````
+
+````{py:method} DestroyTimer(obj, evt)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.DestroyTimer
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.DestroyTimer
+```
+
+````
+
+````{py:method} TimerEvent()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.TimerEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.TimerEvent
+```
+
+````
+
+````{py:method} CursorChangedEvent(obj, evt)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.CursorChangedEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.CursorChangedEvent
+```
+
+````
+
+````{py:method} HideCursor()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.HideCursor
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.HideCursor
+```
+
+````
+
+````{py:method} ShowCursor()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.ShowCursor
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.ShowCursor
+```
+
+````
+
+````{py:method} closeEvent(evt)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.closeEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.closeEvent
+```
+
+````
+
+````{py:method} sizeHint()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.sizeHint
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.sizeHint
+```
+
+````
+
+````{py:method} paintEngine()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.paintEngine
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.paintEngine
+```
+
+````
+
+````{py:method} paintEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.paintEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.paintEvent
+```
+
+````
+
+````{py:method} resizeEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.resizeEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.resizeEvent
+```
+
+````
+
+````{py:method} _GetKeyCharAndKeySym(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._GetKeyCharAndKeySym
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._GetKeyCharAndKeySym
+```
+
+````
+
+````{py:method} _GetCtrlShift(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._GetCtrlShift
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._GetCtrlShift
+```
+
+````
+
+````{py:method} _getPixelRatio()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._getPixelRatio
+:staticmethod:
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._getPixelRatio
+```
+
+````
+
+````{py:method} _setEventInformation(x, y, ctrl, shift, key, repeat=0, keysum=None)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._setEventInformation
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor._setEventInformation
+```
+
+````
+
+````{py:method} enterEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.enterEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.enterEvent
+```
+
+````
+
+````{py:method} leaveEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.leaveEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.leaveEvent
+```
+
+````
+
+````{py:method} mousePressEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.mousePressEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.mousePressEvent
+```
+
+````
+
+````{py:method} mouseReleaseEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.mouseReleaseEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.mouseReleaseEvent
+```
+
+````
+
+````{py:method} mouseMoveEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.mouseMoveEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.mouseMoveEvent
+```
+
+````
+
+````{py:method} keyPressEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.keyPressEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.keyPressEvent
+```
+
+````
+
+````{py:method} keyReleaseEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.keyReleaseEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.keyReleaseEvent
+```
+
+````
+
+````{py:method} wheelEvent(ev)
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.wheelEvent
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.wheelEvent
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.GetRenderWindow
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.Render
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWindowInteractor.Render
+```
+
+````
+
+`````
+
+````{py:function} QVTKRenderWidgetConeExample()
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWidgetConeExample
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor.QVTKRenderWidgetConeExample
+```
+````
+
+````{py:data} _keysyms_for_ascii
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor._keysyms_for_ascii
+:value: >
+   (None, None, None, None, None, None, None, None, None, 'Tab', None, None, None, None, None, None, No...
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor._keysyms_for_ascii
+```
+
+````
+
+````{py:data} _keysyms
+:canonical: vtkmodules.qt.QVTKRenderWindowInteractor._keysyms
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.qt.QVTKRenderWindowInteractor._keysyms
+```
+
+````

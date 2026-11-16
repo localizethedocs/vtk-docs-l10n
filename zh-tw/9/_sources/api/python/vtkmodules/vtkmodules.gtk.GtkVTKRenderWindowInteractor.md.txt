@@ -1,0 +1,219 @@
+# {py:mod}`vtkmodules.gtk.GtkVTKRenderWindowInteractor`
+
+```{py:module} vtkmodules.gtk.GtkVTKRenderWindowInteractor
+```
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`GtkVTKRenderWindowInteractor <vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor>`
+  - ```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`main <vtkmodules.gtk.GtkVTKRenderWindowInteractor.main>`
+  - ```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.main
+    :summary:
+    ```
+````
+
+### API
+
+`````{py:class} GtkVTKRenderWindowInteractor(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor
+
+Bases: {py:obj}`gtkgl.GtkGLArea`
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.__init__
+```
+
+````{py:method} set_usize(w, h)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.set_usize
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.set_usize
+```
+
+````
+
+````{py:method} ConnectSignals()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.ConnectSignals
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.ConnectSignals
+```
+
+````
+
+````{py:method} __getattr__(attr)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.__getattr__
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.__getattr__
+```
+
+````
+
+````{py:method} CreateTimer(obj, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.CreateTimer
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.CreateTimer
+```
+
+````
+
+````{py:method} DestroyTimer(obj, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.DestroyTimer
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.DestroyTimer
+```
+
+````
+
+````{py:method} GetRenderWindow()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.GetRenderWindow
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.GetRenderWindow
+```
+
+````
+
+````{py:method} Render()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.Render
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.Render
+```
+
+````
+
+````{py:method} OnRealize(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnRealize
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnRealize
+```
+
+````
+
+````{py:method} OnConfigure(wid, event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnConfigure
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnConfigure
+```
+
+````
+
+````{py:method} OnExpose(*args)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnExpose
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnExpose
+```
+
+````
+
+````{py:method} OnDestroy(event=None)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnDestroy
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnDestroy
+```
+
+````
+
+````{py:method} _GetCtrlShift(event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor._GetCtrlShift
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor._GetCtrlShift
+```
+
+````
+
+````{py:method} OnButtonDown(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnButtonDown
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnButtonDown
+```
+
+````
+
+````{py:method} OnButtonUp(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnButtonUp
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnButtonUp
+```
+
+````
+
+````{py:method} OnMouseMove(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnMouseMove
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnMouseMove
+```
+
+````
+
+````{py:method} OnEnter(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnEnter
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnEnter
+```
+
+````
+
+````{py:method} OnLeave(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnLeave
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnLeave
+```
+
+````
+
+````{py:method} OnKeyPress(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnKeyPress
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnKeyPress
+```
+
+````
+
+````{py:method} OnKeyRelease(wid, event)
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnKeyRelease
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.OnKeyRelease
+```
+
+````
+
+````{py:method} Initialize()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.Initialize
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.GtkVTKRenderWindowInteractor.Initialize
+```
+
+````
+
+`````
+
+````{py:function} main()
+:canonical: vtkmodules.gtk.GtkVTKRenderWindowInteractor.main
+
+```{autodoc2-docstring} vtkmodules.gtk.GtkVTKRenderWindowInteractor.main
+```
+````
