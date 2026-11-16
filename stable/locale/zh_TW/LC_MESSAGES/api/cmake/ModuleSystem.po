@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:7
 msgid "Terminology"
-msgstr ""
+msgstr "術語"
 
 #: ../../../api/cmake/ModuleSystem.md:9
 msgid ""
@@ -587,16 +587,19 @@ msgstr ""
 msgid ""
 "[`CMAKE_ARCHIVE_OUTPUT_DIRECTORY`][cmake-CMAKE_ARCHIVE_OUTPUT_DIRECTORY]"
 msgstr ""
+"[`CMAKE_ARCHIVE_OUTPUT_DIRECTORY`][cmake-CMAKE_ARCHIVE_OUTPUT_DIRECTORY]"
 
 #: ../../../api/cmake/ModuleSystem.md:321
 msgid ""
 "[`CMAKE_LIBRARY_OUTPUT_DIRECTORY`][cmake-CMAKE_LIBRARY_OUTPUT_DIRECTORY]"
 msgstr ""
+"[`CMAKE_LIBRARY_OUTPUT_DIRECTORY`][cmake-CMAKE_LIBRARY_OUTPUT_DIRECTORY]"
 
 #: ../../../api/cmake/ModuleSystem.md:322
 msgid ""
 "[`CMAKE_RUNTIME_OUTPUT_DIRECTORY`][cmake-CMAKE_RUNTIME_OUTPUT_DIRECTORY]"
 msgstr ""
+"[`CMAKE_RUNTIME_OUTPUT_DIRECTORY`][cmake-CMAKE_RUNTIME_OUTPUT_DIRECTORY]"
 
 #: ../../../api/cmake/ModuleSystem.md:324
 msgid ""
@@ -795,11 +798,11 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:429
 msgid "{cmake:command}`vtk_module_add_module`"
-msgstr ""
+msgstr "{cmake:command}`vtk_module_add_module`"
 
 #: ../../../api/cmake/ModuleSystem.md:430
 msgid "{cmake:command}`vtk_module_add_executable`"
-msgstr ""
+msgstr "{cmake:command}`vtk_module_add_executable`"
 
 #: ../../../api/cmake/ModuleSystem.md:432
 msgid ""
@@ -813,7 +816,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:438
 msgid "Libraries"
-msgstr ""
+msgstr "程式庫"
 
 #: ../../../api/cmake/ModuleSystem.md:440
 msgid ""
@@ -953,7 +956,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:517
 msgid "Executables"
-msgstr ""
+msgstr "執行檔"
 
 #: ../../../api/cmake/ModuleSystem.md:519
 msgid ""
@@ -1000,48 +1003,64 @@ msgid ""
 "[set_target_properties][cmake-set_target_properties] becomes {cmake:command}"
 "`vtk_module_set_properties`"
 msgstr ""
+"[set_target_properties][cmake-set_target_properties] 變成 {cmake:command}"
+"`vtk_module_set_properties`"
 
 #: ../../../api/cmake/ModuleSystem.md:546
 msgid ""
 "[set_property(TARGET)][cmake-set_property] becomes {cmake:command}"
 "`vtk_module_set_property`"
 msgstr ""
+"[set_property(TARGET)][cmake-set_property] 變成 {cmake:command}"
+"`vtk_module_set_property`"
 
 #: ../../../api/cmake/ModuleSystem.md:548
 msgid ""
 "[get_property(TARGET)][cmake-get_property] becomes {cmake:command}"
 "`vtk_module_get_property`"
 msgstr ""
+"[get_property(TARGET)][cmake-get_property] 變成 {cmake:command}"
+"`vtk_module_get_property`"
 
 #: ../../../api/cmake/ModuleSystem.md:550
 msgid ""
 "[add_dependencies][cmake-add_dependencies] becomes {cmake:command}"
 "`vtk_module_depend`"
 msgstr ""
+"[add_dependencies][cmake-add_dependencies] 變成 {cmake:command}"
+"`vtk_module_depend`"
 
 #: ../../../api/cmake/ModuleSystem.md:551
 msgid ""
 "[target_include_directories][cmake-target_include_directories] becomes "
 "{cmake:command}`vtk_module_include`"
 msgstr ""
+"[target_include_directories][cmake-target_include_directories] 變成 "
+"{cmake:command}`vtk_module_include`"
 
 #: ../../../api/cmake/ModuleSystem.md:553
 msgid ""
 "[target_compile_definitions][cmake-target_compile_definitions] becomes "
 "{cmake:command}`vtk_module_definitions`"
 msgstr ""
+"[target_compile_definitions][cmake-target_compile_definitions] 變成 "
+"{cmake:command}`vtk_module_definitions`"
 
 #: ../../../api/cmake/ModuleSystem.md:555
 msgid ""
 "[target_compile_options][cmake-target_compile_options] becomes "
 "{cmake:command}`vtk_module_compile_options`"
 msgstr ""
+"[target_compile_options][cmake-target_compile_options] 變成 {cmake:command}"
+"`vtk_module_compile_options`"
 
 #: ../../../api/cmake/ModuleSystem.md:557
 msgid ""
 "[target_compile_features][cmake-target_compile_features] becomes "
 "{cmake:command}`vtk_module_compile_features`"
 msgstr ""
+"[target_compile_features][cmake-target_compile_features] 變成 {cmake:command}"
+"`vtk_module_compile_features`"
 
 #: ../../../api/cmake/ModuleSystem.md:559
 msgid ""
@@ -1056,6 +1075,8 @@ msgid ""
 "[target_link_options][cmake-target_link_options] becomes {cmake:command}"
 "`vtk_module_link_options`"
 msgstr ""
+"[target_link_options][cmake-target_link_options] 變成 {cmake:command}"
+"`vtk_module_link_options`"
 
 #: ../../../api/cmake/ModuleSystem.md:577
 msgid "Packaging support"
@@ -1341,7 +1362,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:741
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: ../../../api/cmake/ModuleSystem.md:743
 msgid ""
@@ -1421,7 +1442,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:790
 msgid "Third party"
-msgstr ""
+msgstr "第三方"
 
 #: ../../../api/cmake/ModuleSystem.md:792
 msgid ""
@@ -1594,7 +1615,7 @@ msgstr ""
 
 #: ../../../api/cmake/ModuleSystem.md:892
 msgid "Debugging"
-msgstr ""
+msgstr "除錯"
 
 #: ../../../api/cmake/ModuleSystem.md:894
 msgid ""
