@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-11-16 17:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,8 +113,9 @@ msgstr ""
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:39
 msgid ""
 "[vtkCellGridSidesQuery](https://vtk.org/doc/nightly/html/"
-"classvtkCellGridSidesQuery.html) – Create a new vtkCellGrid holding sides (i."
-"e., boundaries of some lower dimension) of the cells in another vtkCellGrid."
+"classvtkCellGridSidesQuery.html) – Create a new vtkCellGrid holding sides "
+"(i.e., boundaries of some lower dimension) of the cells in another "
+"vtkCellGrid."
 msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:42
@@ -221,10 +222,10 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:100
 msgid ""
-"Note that you can query a cell-attribute for a `vtkCellAttribute::"
-"CellTypeInfo` object given any cell type-name. This allows each cell type to "
-"use different methods to interpolate values for the same attribute. The "
-"`CellTypeInfo` object stores the following"
+"Note that you can query a cell-attribute for a "
+"`vtkCellAttribute::CellTypeInfo` object given any cell type-name. This "
+"allows each cell type to use different methods to interpolate values for the "
+"same attribute. The `CellTypeInfo` object stores the following"
 msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:105
@@ -428,27 +429,30 @@ msgstr ""
 
 #: ../../../modules/vtk-modules/Filters/CellGrid/README.md:220
 msgid ""
+"The pyramid takes a single order, like the simplicial shapes. Its tensor-"
+"product structure degenerates at the apex, and a conforming space must "
+"contain *rational* functions for the traces on its faces to stay polynomial, "
+"so both of its arbitrary-order bases are rational in the reference "
+"coordinates. With a = (r + w)/(2w), b = (s + w)/(2w), c = t and w = 1 - t, "
+"they span the rational pyramid space of Bergot, Cohen and Duruflé (J. Sci. "
+"Comput. 42:345-381, 2010), of dimension (n+1)(n+2)(2n+3)/6. The `Bezier` "
+"basis is that of Chan and Warburton (arXiv:1508.05609), which stays non-"
+"negative and sums to one. Note that the hand-written pyramid bases (e.g. the "
+"19-function `F2`) are not contained in this space, so converting them to an "
+"arbitrary-order basis is inexact."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Filters/CellGrid/README.md:231
+msgid ""
 "A vertex has an empty parameter space and one degree of freedom at every "
 "order."
 msgstr ""
 
-#: ../../../modules/vtk-modules/Filters/CellGrid/README.md:223
+#: ../../../modules/vtk-modules/Filters/CellGrid/README.md:234
 msgid ""
 "The `Bezier` function space is registered the same way and for the same "
 "shapes, and shares the degree-of-freedom counts above, since the two bases "
 "span the same polynomials, so they have the same number of degrees of "
 "freedom. It differs in having no hand-written low-order operators, so every "
 "order reaches its arbitrary-order kernels."
-msgstr ""
-
-#: ../../../modules/vtk-modules/Filters/CellGrid/README.md:228
-msgid ""
-"No arbitrary-order basis is registered for the pyramid, so only its hand-"
-"written orders 0 through 2 are available. Its tensor-product structure "
-"degenerates at the apex, and a conforming space of higher order must contain "
-"*rational* functions for the traces on its faces to stay polynomial, so no "
-"polynomial basis of arbitrary order exists for it. Rational ones do, "
-"including a Bernstein-Bézier basis retaining the non-negativity and "
-"partition-of-unity properties, so this is a gap in what is implemented "
-"rather than in what is possible."
 msgstr ""
