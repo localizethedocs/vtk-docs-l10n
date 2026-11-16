@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../../../advanced/runtime_settings.md:16
 msgid "vtkObjectFactory::SetPreferences(\"keyA=valueA1,valueA2;keyB=valueB1,valueB2\");\n"
-msgstr ""
+msgstr "vtkObjectFactory::SetPreferences(\"keyA=valueA1,valueA2;keyB=valueB1,valueB2\");\n"
 
 #: ../../../advanced/runtime_settings.md:19
 msgid ""
@@ -80,6 +80,11 @@ msgid ""
 "  // ...\n"
 "}\n"
 msgstr ""
+"int main(int argc, char* argv[])\n"
+"{\n"
+"  vtkObjectFactory::InitializePreferencesFromCommandLineArgs(argc, argv);\n"
+"  // ...\n"
+"}\n"
 
 #: ../../../advanced/runtime_settings.md:29
 msgid ""
