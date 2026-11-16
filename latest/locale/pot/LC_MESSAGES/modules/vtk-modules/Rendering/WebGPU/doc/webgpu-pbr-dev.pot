@@ -1,0 +1,238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-16 17:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:1
+msgid "WebGPU physically based rendering - Developer guide"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:3
+msgid ""
+"This document describes how `vtkWebGPUPolyDataMapper` shades actors whose "
+"property uses `SetInterpolationToPBR()`: where the material and environment "
+"data live on the GPU, how the fragment shader is assembled, and the tools "
+"available to debug it. The shading model is the one of the OpenGL backend, "
+"so that both backends render a scene the same way and share test baselines."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:8
+msgid "Data flow"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "Data"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "Producer"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "GPU resource"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "Bound at"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:17
+msgid "Material parameters"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "`vtkWebGPUActor::CacheActorShadeOptions`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "actor storage buffer, `ActorColorOptions`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "group 1, binding 0"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:25
+msgid "Material textures"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "`vtkProperty::SetBaseColorTexture` and friends"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "property textures uploaded by `vtkWebGPUActor`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "group 1, after the actor texture"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "Punctual lights"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "`vtkWebGPURenderer::UpdateLights`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "`SceneLights` storage buffer"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "group 0, binding 1"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:32
+msgid "Image based lighting"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "`vtkWebGPUEnvironmentMap`"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid ""
+"sampler, prefilter and irradiance cubes, BRDF table, parameters, spherical "
+"harmonics"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:0
+msgid "group 0, bindings 2 to 7"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:19
+msgid ""
+"`ActorColorOptions` in `wgsl/ActorColorOptions.wgsl` mirrors "
+"`vtkWebGPUActorInternals::ActorBlock::ColorOptions`. The C++ structure is "
+"checked against the WGSL layout with `static_assert`s: vec3 members are 16 "
+"byte aligned in WGSL, so every vec3 is followed by a scalar or explicit "
+"padding in C++. When adding a field, keep both declarations in the same "
+"order and update the size assertion."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:27
+msgid ""
+"`vtkWebGPUActorInternals::GetPBRTextures()` returns the property textures "
+"sampled by the shading, in a fixed order (base color, ORM, emissive, normal, "
+"anisotropy, coat normal). Both the actor bind group and the WGSL "
+"declarations of the mapper are built from it, so they cannot disagree. "
+"Textures with `UseSRGBColorSpaceOn()` use an sRGB format and are decoded by "
+"the hardware."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:34
+msgid ""
+"`vtkWebGPURenderer::UpdateEnvironmentMap()` uploads the environment texture "
+"and calls `vtkWebGPUEnvironmentMap::Update()`, which regenerates the "
+"textures only when the environment changed. The compute shaders live in "
+"`wgsl/IBL*.wgsl`:"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:38
+msgid ""
+"`IBLEnvironmentCube.wgsl` converts the source, a cube map or an "
+"equirectangular image, into a RGBA16Float cube map and fills its mip chain. "
+"Cube map sources are remapped with the environment basis (right, up, right x "
+"up) like `vtkPBRPrefilterTexture` does."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:41
+msgid ""
+"`IBLPrefilter.wgsl` prefilters the cube with GGX importance sampling. Level "
+"`i` holds roughness `i / levels`, and the shading samples it at `roughness * "
+"(levels - 1)`, as the OpenGL backend."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:43
+msgid ""
+"`IBLIrradiance.wgsl` and `IBLSphericalHarmonics.wgsl` compute the diffuse "
+"irradiance as a cube map and as nine spherical harmonics coefficients "
+"premultiplied for a Lambertian lobe."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:45
+msgid "`IBLBRDFLookupTable.wgsl` computes the split-sum lookup table."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:47
+msgid ""
+"The environment is looked up in world space with `environment_rotation * "
+"transpose(mat3(scene_transform.view))`, where `environment_rotation` holds "
+"the transpose of `vtkRenderer::GetEnvironmentRotationMatrix()`."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:51
+msgid "Shader assembly"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:53
+msgid ""
+"The WGSL functions shared by every PBR pipeline are in `wgsl/"
+"PBRFunctions.wgsl`. They take two structures, `PBRSurface` (normal, view "
+"vector and tangent frame) and `PBRMaterial` (albedo, metallic, roughness, "
+"Fresnel terms, anisotropy and clear coat). Keeping the BRDF behind these "
+"structures is what allows replacing them with Slang interfaces later without "
+"touching the mapper."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:58
+msgid ""
+"`vtkWebGPUPolyDataMapper::ReplaceFragmentShaderLights` builds the body of "
+"the fragment shader with `BuildPBRLightingSource()`. What changes the "
+"bindings is specialized at compile time: image based lighting, tangents and "
+"each material texture. What only changes values is a run time branch on the "
+"actor uniforms, because a mapper builds one pipeline shared by all the "
+"actors that render it: clear coat and anisotropy are enabled when their "
+"strength is not zero. `GetShadingFeatures()` packs the compile time choices "
+"into a key, and the pipelines are rebuilt when the key of an actor changes."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:65
+msgid "Debugging"
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:67
+msgid ""
+"`VTK_WEBGPU_PBR_DUMP_DIR=<directory>` writes the generated lookup table, the "
+"irradiance and prefilter cube faces as PFM images and the spherical "
+"harmonics coefficients as text, every time the environment textures are "
+"regenerated."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:70
+msgid ""
+"`vtkWebGPURenderer::SetPBRDebugView()` displays one input or term of the "
+"shading instead of the shaded color: albedo, normal, roughness, metallic, "
+"ambient occlusion, emissive, F0, N.V, direct lighting, diffuse or specular "
+"image based lighting."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:73
+msgid ""
+"WGSL compilation errors and warnings are logged with the offending line and "
+"its neighbors."
+msgstr ""
+
+#: ../../../modules/vtk-modules/Rendering/WebGPU/doc/webgpu-pbr-dev.md:74
+msgid ""
+"Every compute and render pass of the environment generation has a label, "
+"visible in GPU capture tools such as RenderDoc or the Xcode frame debugger."
+msgstr ""
