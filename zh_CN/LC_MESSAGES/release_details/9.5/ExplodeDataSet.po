@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:1
+msgid "Introduce vtkExplodeDataSet filter"
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:3
+msgid ""
+"vtkExplodeDataSet creates a vtkPartitionedDataSetCollection from any input "
+"dataset according to a cell scalar isovalue criteria. Each partition of the "
+"output contains cells that share the same value for the given cell array."
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:6
+msgid ""
+"It is similar to a vtkMultiThreshold, configured to extract every single "
+"value of the input array."
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:9
+msgid ""
+"It comes in replacement of vtkSplitByCellScalarFilter to use "
+"vtkPartitionedDataSetCollection instead of vtkMultiBlockDataSet as output. "
+"Also it relies on the threaded vtkExtractCells filter."
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:13
+msgid ""
+"This is useful to create composite data from structured array. Examples of "
+"usage include:"
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:15
+msgid "splitting mesh from materials (as with OBJ groups)"
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:16
+msgid "creating blocks from Connectivity array or (FeatureEdges)RegionIds"
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:18
+msgid "![Blocks from FeatureEdges Region Ids](../imgs/9.5/ExplodeDataSet.png)"
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:18
+msgid "Blocks from FeatureEdges Region Ids"
+msgstr ""
+
+#: ../../../release_details/9.5/ExplodeDataSet.md:20
+msgid "Using vtkExplodeDataSet after a vtkGenerateRegionIds"
+msgstr ""
