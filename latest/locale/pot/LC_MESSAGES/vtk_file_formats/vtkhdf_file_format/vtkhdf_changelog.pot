@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-11-23 19:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,108 +22,119 @@ msgid "Changelog"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:3
-msgid "VTKHDF - 2.8"
+msgid "VTKHDF - 2.9"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:5
-msgid "add specification for `Table`"
+msgid ""
+"a polyhedron can use a face in reverse: `PolyhedronToFaces` lists face `n` "
+"as `-(n+1)` to traverse it the other way, so that two polyhedra can share "
+"one face"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:7
-msgid "VTKHDF - 2.7"
+msgid "VTKHDF - 2.8"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:9
-msgid "add specification for `RectilinearGrid` and `StructuredGrid`"
+msgid "add specification for `Table`"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:11
-msgid "VTKHDF - 2.6"
+msgid "VTKHDF - 2.7"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:13
-msgid "add specification for dataset attributes"
+msgid "add specification for `RectilinearGrid` and `StructuredGrid`"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:15
-msgid "VTKHDF - 2.5"
+msgid "VTKHDF - 2.6"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:17
-msgid "add specification for Unstructured Grid polyhedrons"
+msgid "add specification for dataset attributes"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:19
-msgid "VTKHDF - 2.4"
+msgid "VTKHDF - 2.5"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:21
-msgid "add specification for `HyperTreeGrid`"
+msgid "add specification for Unstructured Grid polyhedrons"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:23
-msgid "VTKHDF - 2.3"
+msgid "VTKHDF - 2.4"
 msgstr ""
 
 #: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:25
+msgid "add specification for `HyperTreeGrid`"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:27
+msgid "VTKHDF - 2.3"
+msgstr ""
+
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:29
 msgid ""
 "fix array names which miss the `s` to be consistent with other temporal "
 "dataset in case of the temporal `OverlappingAMR`. It concerns these data "
 "names: `NumberOfBox`, `AMRBoxOffset`, `Point/Cell/FieldDataOffset`."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:27
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:31
 msgid "VTKHDF - 2.2"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:29
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:33
 msgid "add support for temporal `OverlappingAMR`"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:30
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:34
 msgid "add official support for ignored data outside of `VTKHDF`"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:32
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:36
 msgid "VTKHDF - 2.1"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:34
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:38
 msgid ""
 "add specification in the format for `PartitionedDataSetCollection` and "
 "`MultiBlockDataSet`"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:36
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:40
 msgid "VTKHDF - 2.0"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:38
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:42
 msgid "extends the specification for `PolyData`."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:40
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:44
 msgid ""
 "add support for `Temporal` dataset for `PolyData`, `ImageData` and "
 "`UnstructuredGrid`."
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:42
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:46
 msgid "VTKHDF - 1.0"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:44
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:48
 msgid "add specification for these vtk data types:"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:45
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:49
 msgid "`UnstructuredGrid`"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:46
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:50
 msgid "`ImageData`"
 msgstr ""
 
-#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:47
+#: ../../../vtk_file_formats/vtkhdf_file_format/vtkhdf_changelog.md:51
 msgid "`Overlapping AMR`"
 msgstr ""

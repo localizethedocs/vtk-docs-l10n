@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-12 17:12+0000\n"
+"POT-Creation-Date: 2026-11-23 19:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,9 +246,10 @@ msgstr ""
 #: ../../../modules/index.md:213 ../../../modules/index.md:214
 #: ../../../modules/index.md:216 ../../../modules/index.md:233
 #: ../../../modules/index.md:234 ../../../modules/index.md:235
-#: ../../../modules/index.md:243 ../../../modules/index.md:249
-#: ../../../modules/index.md:271 ../../../modules/index.md:272
-#: ../../../modules/index.md:287 ../../../modules/index.md:324
+#: ../../../modules/index.md:244 ../../../modules/index.md:249
+#: ../../../modules/index.md:251 ../../../modules/index.md:273
+#: ../../../modules/index.md:274 ../../../modules/index.md:289
+#: ../../../modules/index.md:326
 msgid ""
 "<svg version=\"4.0.0.63c5cb3\" width=\"2.0em\" height=\"2.0em\" class=\"sd-"
 "material-icon sd-material-icon-menu_book\" viewBox=\"0 0 24 24\" aria-"
@@ -652,8 +653,8 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid ""
-"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/ADIOS2/README."
-"md)"
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/ADIOS2/"
+"README.md)"
 msgstr ""
 
 #: ../../../modules/index.md:3
@@ -1001,8 +1002,8 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid ""
-"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/Xdmf2/README."
-"md)"
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/IO/Xdmf2/"
+"README.md)"
 msgstr ""
 
 #: ../../../modules/index.md:3
@@ -1266,6 +1267,14 @@ msgid "{bdg-primary-line}`VTK::RenderingSceneGraph`"
 msgstr ""
 
 #: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingSlang`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "Slang shader compilation through SlangKit"
+msgstr ""
+
+#: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::RenderingTk`"
 msgstr ""
 
@@ -1297,6 +1306,16 @@ msgstr ""
 
 #: ../../../modules/index.md:3
 msgid "{bdg-primary-line}`VTK::RenderingVolumeOpenGL2`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid "{bdg-primary-line}`VTK::RenderingVolumeWebGPU`"
+msgstr ""
+
+#: ../../../modules/index.md:3
+msgid ""
+"[{material-regular}`menu_book;2em`](../modules/vtk-modules/Rendering/"
+"VolumeWebGPU/README.md)"
 msgstr ""
 
 #: ../../../modules/index.md:3
