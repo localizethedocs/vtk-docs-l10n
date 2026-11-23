@@ -1,0 +1,584 @@
+# {py:mod}`vtkmodules.util.views_scivis`
+
+```{py:module} vtkmodules.util.views_scivis
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis
+:allowtitles:
+```
+
+## Module Contents
+
+### Classes
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_Delegating <vtkmodules.util.views_scivis._Delegating>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis._Delegating
+    :summary:
+    ```
+* - {py:obj}`SurfaceRepresentation <vtkmodules.util.views_scivis.SurfaceRepresentation>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.SurfaceRepresentation
+    :summary:
+    ```
+* - {py:obj}`ScalarBars <vtkmodules.util.views_scivis.ScalarBars>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.ScalarBars
+    :summary:
+    ```
+* - {py:obj}`LookupTableManager <vtkmodules.util.views_scivis.LookupTableManager>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager
+    :summary:
+    ```
+* - {py:obj}`_Block <vtkmodules.util.views_scivis._Block>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis._Block
+    :summary:
+    ```
+* - {py:obj}`BlockProperties <vtkmodules.util.views_scivis.BlockProperties>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.BlockProperties
+    :summary:
+    ```
+* - {py:obj}`GridAxesRepresentation <vtkmodules.util.views_scivis.GridAxesRepresentation>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.GridAxesRepresentation
+    :summary:
+    ```
+* - {py:obj}`TextOverlayRepresentation <vtkmodules.util.views_scivis.TextOverlayRepresentation>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.TextOverlayRepresentation
+    :summary:
+    ```
+* - {py:obj}`ScivisView <vtkmodules.util.views_scivis.ScivisView>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView
+    :summary:
+    ```
+* - {py:obj}`VolumeRepresentation <vtkmodules.util.views_scivis.VolumeRepresentation>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.VolumeRepresentation
+    :summary:
+    ```
+````
+
+### Functions
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`_make_representation <vtkmodules.util.views_scivis._make_representation>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis._make_representation
+    :summary:
+    ```
+* - {py:obj}`_resolve_color <vtkmodules.util.views_scivis._resolve_color>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis._resolve_color
+    :summary:
+    ```
+* - {py:obj}`_wrapped_base <vtkmodules.util.views_scivis._wrapped_base>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis._wrapped_base
+    :summary:
+    ```
+* - {py:obj}`_check_property <vtkmodules.util.views_scivis._check_property>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis._check_property
+    :summary:
+    ```
+````
+
+### Data
+
+````{list-table}
+:class: autosummary longtable
+:align: left
+
+* - {py:obj}`REPRESENTATION_TYPES <vtkmodules.util.views_scivis.REPRESENTATION_TYPES>`
+  - ```{autodoc2-docstring} vtkmodules.util.views_scivis.REPRESENTATION_TYPES
+    :summary:
+    ```
+````
+
+### API
+
+````{py:data} REPRESENTATION_TYPES
+:canonical: vtkmodules.util.views_scivis.REPRESENTATION_TYPES
+:value: >
+   None
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.REPRESENTATION_TYPES
+```
+
+````
+
+````{py:function} _make_representation(representation_type)
+:canonical: vtkmodules.util.views_scivis._make_representation
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._make_representation
+```
+````
+
+````{py:function} _resolve_color(color)
+:canonical: vtkmodules.util.views_scivis._resolve_color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._resolve_color
+```
+````
+
+````{py:function} _wrapped_base(cls)
+:canonical: vtkmodules.util.views_scivis._wrapped_base
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._wrapped_base
+```
+````
+
+````{py:function} _check_property(obj, name)
+:canonical: vtkmodules.util.views_scivis._check_property
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._check_property
+```
+````
+
+`````{py:class} _Delegating(**kwargs)
+:canonical: vtkmodules.util.views_scivis._Delegating
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Delegating
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Delegating.__init__
+```
+
+````{py:attribute} _delegates
+:canonical: vtkmodules.util.views_scivis._Delegating._delegates
+:value: >
+   ()
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Delegating._delegates
+```
+
+````
+
+````{py:method} _delegate_owning(name)
+:canonical: vtkmodules.util.views_scivis._Delegating._delegate_owning
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Delegating._delegate_owning
+```
+
+````
+
+````{py:method} __getattr__(name)
+:canonical: vtkmodules.util.views_scivis._Delegating.__getattr__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Delegating.__getattr__
+```
+
+````
+
+````{py:method} __setattr__(name, value)
+:canonical: vtkmodules.util.views_scivis._Delegating.__setattr__
+
+````
+
+`````
+
+`````{py:class} SurfaceRepresentation(**kwargs)
+:canonical: vtkmodules.util.views_scivis.SurfaceRepresentation
+
+Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}`vtkmodules.vtkViewsScivis.vtkSurfaceRepresentation`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.SurfaceRepresentation
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.SurfaceRepresentation.__init__
+```
+
+````{py:attribute} _delegates
+:canonical: vtkmodules.util.views_scivis.SurfaceRepresentation._delegates
+:value: >
+   ('GetProperty', 'GetGeometryFilter', 'GetActor')
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.SurfaceRepresentation._delegates
+```
+
+````
+
+````{py:property} color
+:canonical: vtkmodules.util.views_scivis.SurfaceRepresentation.color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.SurfaceRepresentation.color
+```
+
+````
+
+````{py:property} edge_color
+:canonical: vtkmodules.util.views_scivis.SurfaceRepresentation.edge_color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.SurfaceRepresentation.edge_color
+```
+
+````
+
+`````
+
+`````{py:class} ScalarBars
+:canonical: vtkmodules.util.views_scivis.ScalarBars
+
+Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkScivisScalarBars`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScalarBars
+```
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.views_scivis.ScalarBars.__len__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScalarBars.__len__
+```
+
+````
+
+````{py:method} __getitem__(key)
+:canonical: vtkmodules.util.views_scivis.ScalarBars.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScalarBars.__getitem__
+```
+
+````
+
+````{py:method} __contains__(key)
+:canonical: vtkmodules.util.views_scivis.ScalarBars.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScalarBars.__contains__
+```
+
+````
+
+`````
+
+`````{py:class} LookupTableManager
+:canonical: vtkmodules.util.views_scivis.LookupTableManager
+
+Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkLookupTableManager`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager
+```
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.views_scivis.LookupTableManager.__len__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager.__len__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.views_scivis.LookupTableManager.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager.__iter__
+```
+
+````
+
+````{py:method} __contains__(name)
+:canonical: vtkmodules.util.views_scivis.LookupTableManager.__contains__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager.__contains__
+```
+
+````
+
+````{py:method} __getitem__(name)
+:canonical: vtkmodules.util.views_scivis.LookupTableManager.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager.__getitem__
+```
+
+````
+
+````{py:method} __setitem__(name, lookup_table)
+:canonical: vtkmodules.util.views_scivis.LookupTableManager.__setitem__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager.__setitem__
+```
+
+````
+
+````{py:method} __delitem__(name)
+:canonical: vtkmodules.util.views_scivis.LookupTableManager.__delitem__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.LookupTableManager.__delitem__
+```
+
+````
+
+`````
+
+`````{py:class} _Block(blocks, index)
+:canonical: vtkmodules.util.views_scivis._Block
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Block
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Block.__init__
+```
+
+````{py:attribute} __slots__
+:canonical: vtkmodules.util.views_scivis._Block.__slots__
+:value: >
+   ('_blocks', '_index')
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Block.__slots__
+```
+
+````
+
+````{py:property} visibility
+:canonical: vtkmodules.util.views_scivis._Block.visibility
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Block.visibility
+```
+
+````
+
+````{py:property} color
+:canonical: vtkmodules.util.views_scivis._Block.color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Block.color
+```
+
+````
+
+````{py:property} opacity
+:canonical: vtkmodules.util.views_scivis._Block.opacity
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis._Block.opacity
+```
+
+````
+
+````{py:method} __repr__()
+:canonical: vtkmodules.util.views_scivis._Block.__repr__
+
+````
+
+`````
+
+`````{py:class} BlockProperties
+:canonical: vtkmodules.util.views_scivis.BlockProperties
+
+Bases: {py:obj}`vtkmodules.vtkViewsScivis.vtkBlockProperties`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.BlockProperties
+```
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.util.views_scivis.BlockProperties.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.BlockProperties.__getitem__
+```
+
+````
+
+````{py:method} __iter__()
+:canonical: vtkmodules.util.views_scivis.BlockProperties.__iter__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.BlockProperties.__iter__
+```
+
+````
+
+`````
+
+`````{py:class} GridAxesRepresentation(**kwargs)
+:canonical: vtkmodules.util.views_scivis.GridAxesRepresentation
+
+Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}`vtkmodules.vtkViewsScivis.vtkGridAxesRepresentation`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.GridAxesRepresentation
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.GridAxesRepresentation.__init__
+```
+
+````{py:attribute} _delegates
+:canonical: vtkmodules.util.views_scivis.GridAxesRepresentation._delegates
+:value: >
+   ('GetGridAxesActor',)
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.GridAxesRepresentation._delegates
+```
+
+````
+
+````{py:property} label_color
+:canonical: vtkmodules.util.views_scivis.GridAxesRepresentation.label_color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.GridAxesRepresentation.label_color
+```
+
+````
+
+````{py:property} title_color
+:canonical: vtkmodules.util.views_scivis.GridAxesRepresentation.title_color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.GridAxesRepresentation.title_color
+```
+
+````
+
+`````
+
+`````{py:class} TextOverlayRepresentation(**kwargs)
+:canonical: vtkmodules.util.views_scivis.TextOverlayRepresentation
+
+Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}`vtkmodules.vtkViewsScivis.vtkTextOverlayRepresentation`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.TextOverlayRepresentation
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.TextOverlayRepresentation.__init__
+```
+
+````{py:attribute} _delegates
+:canonical: vtkmodules.util.views_scivis.TextOverlayRepresentation._delegates
+:value: >
+   ('GetTextProperty', 'GetTextActor')
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.TextOverlayRepresentation._delegates
+```
+
+````
+
+````{py:property} color
+:canonical: vtkmodules.util.views_scivis.TextOverlayRepresentation.color
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.TextOverlayRepresentation.color
+```
+
+````
+
+`````
+
+`````{py:class} ScivisView(**kwargs)
+:canonical: vtkmodules.util.views_scivis.ScivisView
+
+Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}`vtkmodules.vtkViewsScivis.vtkScivisView`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.__init__
+```
+
+````{py:attribute} _delegates
+:canonical: vtkmodules.util.views_scivis.ScivisView._delegates
+:value: >
+   ('GetLightKit', 'GetOrientationMarkerWidget', 'GetRenderer')
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView._delegates
+```
+
+````
+
+````{py:property} background
+:canonical: vtkmodules.util.views_scivis.ScivisView.background
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.background
+```
+
+````
+
+````{py:property} background2
+:canonical: vtkmodules.util.views_scivis.ScivisView.background2
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.background2
+```
+
+````
+
+````{py:property} size
+:canonical: vtkmodules.util.views_scivis.ScivisView.size
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.size
+```
+
+````
+
+````{py:method} __len__()
+:canonical: vtkmodules.util.views_scivis.ScivisView.__len__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.__len__
+```
+
+````
+
+````{py:method} __getitem__(index)
+:canonical: vtkmodules.util.views_scivis.ScivisView.__getitem__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.__getitem__
+```
+
+````
+
+````{py:method} __iadd__(representation)
+:canonical: vtkmodules.util.views_scivis.ScivisView.__iadd__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.__iadd__
+```
+
+````
+
+````{py:method} __isub__(representation)
+:canonical: vtkmodules.util.views_scivis.ScivisView.__isub__
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.__isub__
+```
+
+````
+
+````{py:method} show(input, representation_type=None, **properties)
+:canonical: vtkmodules.util.views_scivis.ScivisView.show
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.ScivisView.show
+```
+
+````
+
+`````
+
+`````{py:class} VolumeRepresentation(**kwargs)
+:canonical: vtkmodules.util.views_scivis.VolumeRepresentation
+
+Bases: {py:obj}`vtkmodules.util.views_scivis._Delegating`, {py:obj}`vtkmodules.vtkViewsScivis.vtkVolumeRepresentation`
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.VolumeRepresentation
+```
+
+```{rubric} Initialization
+```
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.VolumeRepresentation.__init__
+```
+
+````{py:attribute} _delegates
+:canonical: vtkmodules.util.views_scivis.VolumeRepresentation._delegates
+:value: >
+   ('GetVolumeProperty', 'GetVolumeMapper', 'GetVolume')
+
+```{autodoc2-docstring} vtkmodules.util.views_scivis.VolumeRepresentation._delegates
+```
+
+````
+
+`````
