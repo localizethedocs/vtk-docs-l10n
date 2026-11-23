@@ -1,0 +1,626 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, VTK Developers
+# This file is distributed under the same license as the VTK package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VTK latest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:1
+msgid "Arrays have been added and deprecated"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:3
+msgid "The following arrays have been deprecated."
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:5
+msgid "`vtkAffineArray`'s concrete specializations:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:6
+msgid "`vtkAffineCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:7
+msgid "`vtkAffineDoubleArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:8
+msgid "`vtkAffineFloatArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:9
+msgid "`vtkAffineIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:10
+msgid "`vtkAffineLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:11
+msgid "`vtkAffineLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:12
+msgid "`vtkAffineShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:13
+msgid "`vtkAffineSignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:14
+msgid "`vtkAffineUnsignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:15
+msgid "`vtkAffineUnsignedIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:16
+msgid "`vtkAffineUnsignedLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:17
+msgid "`vtkAffineUnsignedLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:18
+msgid "`vtkAffineUnsignedShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:19
+msgid "`vtkAffineIdTypeArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:20
+msgid "`vtkCompositeArray`'s concrete specializations:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:21
+msgid "`vtkCompositeCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:22
+msgid "`vtkCompositeDoubleArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:23
+msgid "`vtkCompositeFloatArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:24
+msgid "`vtkCompositeIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:25
+msgid "`vtkCompositeLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:26
+msgid "`vtkCompositeLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:27
+msgid "`vtkCompositeShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:28
+msgid "`vtkCompositeSignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:29
+msgid "`vtkCompositeUnsignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:30
+msgid "`vtkCompositeUnsignedIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:31
+msgid "`vtkCompositeUnsignedLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:32
+msgid "`vtkCompositeUnsignedLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:33
+msgid "`vtkCompositeUnsignedShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:34
+msgid "`vtkCompositeIdTypeArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:35
+msgid "`vtkConstantArray`s concrete specializations:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:36
+msgid "`vtkConstantCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:37
+msgid "`vtkConstantDoubleArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:38
+msgid "`vtkConstantFloatArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:39
+msgid "`vtkConstantIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:40
+msgid "`vtkConstantLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:41
+msgid "`vtkConstantLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:42
+msgid "`vtkConstantShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:43
+msgid "`vtkConstantSignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:44
+msgid "`vtkConstantUnsignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:45
+msgid "`vtkConstantUnsignedIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:46
+msgid "`vtkConstantUnsignedLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:47
+msgid "`vtkConstantUnsignedLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:48
+msgid "`vtkConstantUnsignedShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:49
+msgid "`vtkConstantIdTypeArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:50
+msgid "`vtkIndexedArray`'s concrete specializations:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:51
+msgid "`vtkIndexedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:52
+msgid "`vtkIndexedDoubleArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:53
+msgid "`vtkIndexedFloatArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:54
+msgid "`vtkIndexedIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:55
+msgid "`vtkIndexedLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:56
+msgid "`vtkIndexedLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:57
+msgid "`vtkIndexedShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:58
+msgid "`vtkIndexedSignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:59
+msgid "`vtkIndexedUnsignedCharArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:60
+msgid "`vtkIndexedUnsignedIntArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:61
+msgid "`vtkIndexedUnsignedLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:62
+msgid "`vtkIndexedUnsignedLongLongArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:63
+msgid "`vtkIndexedUnsignedShortArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:64
+msgid "`vtkIndexedIdTypeArray`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:66
+msgid "The following fixed size arrays have been added as replacements."
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:68
+msgid "`vtkAffineArray`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:69
+msgid "`vtkAffineTypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:70
+msgid "`vtkAffineTypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:71
+msgid "`vtkAffineTypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:72
+msgid "`vtkAffineTypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:73
+msgid "`vtkAffineTypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:74
+msgid "`vtkAffineTypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:75
+msgid "`vtkAffineTypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:76
+msgid "`vtkAffineTypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:77
+msgid "`vtkAffineTypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:78
+msgid "`vtkAffineTypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:79
+msgid "`vtkCompositeArray`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:80
+msgid "`vtkCompositeTypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:81
+msgid "`vtkCompositeTypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:82
+msgid "`vtkCompositeTypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:83
+msgid "`vtkCompositeTypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:84
+msgid "`vtkCompositeTypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:85
+msgid "`vtkCompositeTypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:86
+msgid "`vtkCompositeTypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:87
+msgid "`vtkCompositeTypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:88
+msgid "`vtkCompositeTypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:89
+msgid "`vtkCompositeTypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:90
+msgid "`vtkConstantArray`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:91
+msgid "`vtkConstantTypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:92
+msgid "`vtkConstantTypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:93
+msgid "`vtkConstantTypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:94
+msgid "`vtkConstantTypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:95
+msgid "`vtkConstantTypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:96
+msgid "`vtkConstantTypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:97
+msgid "`vtkConstantTypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:98
+msgid "`vtkConstantTypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:99
+msgid "`vtkConstantTypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:100
+msgid "`vtkConstantTypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:101
+msgid "`vtkIndexedArray`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:102
+msgid "`vtkIndexedTypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:103
+msgid "`vtkIndexedTypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:104
+msgid "`vtkIndexedTypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:105
+msgid "`vtkIndexedTypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:106
+msgid "`vtkIndexedTypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:107
+msgid "`vtkIndexedTypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:108
+msgid "`vtkIndexedTypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:109
+msgid "`vtkIndexedTypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:110
+msgid "`vtkIndexedTypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:111
+msgid "`vtkIndexedTypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:113
+msgid "Additionally, the following concrete fixed size arrays have been added:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:115
+msgid "`vtkScaledSOADataArrayTemplate`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:116
+msgid "`vtkScaledSOATypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:117
+msgid "`vtkScaledSOATypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:118
+msgid "`vtkScaledSOATypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:119
+msgid "`vtkScaledSOATypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:120
+msgid "`vtkScaledSOATypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:121
+msgid "`vtkScaledSOATypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:122
+msgid "`vtkScaledSOATypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:123
+msgid "`vtkScaledSOATypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:124
+msgid "`vtkScaledSOATypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:125
+msgid "`vtkScaledSOATypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:126
+msgid "`vtkSOADataDataArrayTemplate`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:127
+msgid "`vtkSOATypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:128
+msgid "`vtkSOATypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:129
+msgid "`vtkSOATypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:130
+msgid "`vtkSOATypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:131
+msgid "`vtkSOATypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:132
+msgid "`vtkSOATypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:133
+msgid "`vtkSOATypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:134
+msgid "`vtkSOATypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:135
+msgid "`vtkSOATypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:136
+msgid "`vtkSOATypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:137
+msgid "`vtkStdFunctionArray`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:138
+msgid "`vtkStdFunctionTypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:139
+msgid "`vtkStdFunctionTypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:140
+msgid "`vtkStdFunctionTypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:141
+msgid "`vtkStdFunctionTypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:142
+msgid "`vtkStdFunctionTypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:143
+msgid "`vtkStdFunctionTypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:144
+msgid "`vtkStdFunctionTypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:145
+msgid "`vtkStdFunctionTypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:146
+msgid "`vtkStdFunctionTypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:147
+msgid "`vtkStdFunctionTypeUInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:148
+msgid "`vtkStridedArray`'s fixed size specialization:"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:149
+msgid "`vtkStridedTypeFloat32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:150
+msgid "`vtkStridedTypeFloat64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:151
+msgid "`vtkStridedTypeInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:152
+msgid "`vtkStridedTypeInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:153
+msgid "`vtkStridedTypeInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:154
+msgid "`vtkStridedTypeInt64Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:155
+msgid "`vtkStridedTypeUInt8Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:156
+msgid "`vtkStridedTypeUInt16Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:157
+msgid "`vtkStridedTypeUInt32Array`"
+msgstr ""
+
+#: ../../../release_details/9.6/add-arrays-deprecate-arrays.md:158
+msgid "`vtkStridedTypeUInt64Array`"
+msgstr ""
