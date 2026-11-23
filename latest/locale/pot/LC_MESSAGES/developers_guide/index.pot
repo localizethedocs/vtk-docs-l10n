@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VTK latest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-16 08:49+0000\n"
+"POT-Creation-Date: 2026-11-23 19:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,18 +90,28 @@ msgid ""
 msgstr ""
 
 #: ../../../developers_guide/develop_quickstart.md:36
-msgid "Development"
+msgid "AI Policy"
 msgstr ""
 
 #: ../../../developers_guide/develop_quickstart.md:38
+msgid ""
+"VTK has a dedicated [AI policy] in order to ensure the quality of "
+"contributions and communications, please follow its guidelines."
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:43
+msgid "Development"
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:45
 msgid "Create a local branch for your changes:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:40
+#: ../../../developers_guide/develop_quickstart.md:47
 msgid "git checkout -b your_branch\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:44
+#: ../../../developers_guide/develop_quickstart.md:51
 msgid ""
 "Make the needed changes in VTK and use git locally to create logically "
 "separated commits. There is no strict requirements regarding git commit "
@@ -110,19 +120,19 @@ msgid ""
 "system like build or CI."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:49
+#: ../../../developers_guide/develop_quickstart.md:56
 msgid ""
 "git commit -m \"General domain: Short yet informative reason for the "
 "change\"\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:53
+#: ../../../developers_guide/develop_quickstart.md:60
 msgid ""
 "Build VTK following the [guide][] and fix any build warnings or issues that "
 "arise and seems related to your changes."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:56
+#: ../../../developers_guide/develop_quickstart.md:63
 msgid ""
 "Add/Improve tests in order to ensure your changes are tested. Take a look in "
 "the `Testing` directory of the module you are making changes in to see how "
@@ -130,31 +140,31 @@ msgid ""
 "test locally from your build directory and check that they pass:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:60
+#: ../../../developers_guide/develop_quickstart.md:67
 msgid ""
 "cmake . && cmake --build .\n"
 "ctest -VV -R yourTest\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:65
+#: ../../../developers_guide/develop_quickstart.md:72
 msgid "Upload"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:67
+#: ../../../developers_guide/develop_quickstart.md:74
 msgid ""
 "Push your changes to the GitLab fork that you created in the [initial setup]"
 "(#initial-setup) stage:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:69
+#: ../../../developers_guide/develop_quickstart.md:76
 msgid "git push gitlab\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:73
+#: ../../../developers_guide/develop_quickstart.md:80
 msgid "Data"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:75
+#: ../../../developers_guide/develop_quickstart.md:82
 msgid ""
 "If your test uses new data or baselines, you will need to add it to your "
 "fork. For data, add the file names to the list in your module `yourModule/"
@@ -163,63 +173,62 @@ msgid ""
 "the following commands from your build directory:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:79
+#: ../../../developers_guide/develop_quickstart.md:86
 msgid "cmake . && cmake --build .\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:83
+#: ../../../developers_guide/develop_quickstart.md:90
 msgid ""
 "This will transform your files into .sha512 files. Check your test is "
 "passing by running from your build directory:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:85
+#: ../../../developers_guide/develop_quickstart.md:92
 msgid "ctest -VV -R yourTest\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:89
+#: ../../../developers_guide/develop_quickstart.md:96
 msgid "If it passes, add these .sha512 files and commit them, then push with:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:91
+#: ../../../developers_guide/develop_quickstart.md:98
 msgid "git gitlab-push\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:95
+#: ../../../developers_guide/develop_quickstart.md:102
 msgid "Create a Merge Request"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:97
+#: ../../../developers_guide/develop_quickstart.md:104
 msgid ""
 "Once you are happy with the state of your development on your fork, the next "
 "step is to create a merge request back into the main VTK repository."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:99
+#: ../../../developers_guide/develop_quickstart.md:106
 msgid ""
 "Open [](https://gitlab.kitware.com/username/vtk/-/merge_requests/new) in a "
 "browser, select your branch in the list and create a Merge Request against "
 "master."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:101
+#: ../../../developers_guide/develop_quickstart.md:108
 msgid ""
-"In the description, write an informative explanation of your added features "
-"or bugfix. If there is an associated issue, link it with the `#number` in "
-"the description."
+"In the description, use the template to write an informative explanation of "
+"your added features or bugfix, link issue and disclose AI usage."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:103
+#: ../../../developers_guide/develop_quickstart.md:110
 msgid ""
 "Tag some VTK maintainers in the description to ensure someone will see it, "
 "see here for the complete [list](./git/develop.md#review-a-merge-request)."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:105
+#: ../../../developers_guide/develop_quickstart.md:112
 msgid "Robot Checks"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:107
+#: ../../../developers_guide/develop_quickstart.md:114
 msgid ""
 "Once the MR is created, our GitLab robot will check multiple things and make "
 "automated suggestions. Please read them and try to follow the instructions. "
@@ -227,27 +236,27 @@ msgid ""
 "markdown changelog."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:110
+#: ../../../developers_guide/develop_quickstart.md:117
 msgid "To fix the formatting, just add a comment containing:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:112
+#: ../../../developers_guide/develop_quickstart.md:119
 msgid "Do: reformat\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:116
+#: ../../../developers_guide/develop_quickstart.md:123
 msgid ""
 "Then, once the robot has fixed the formatting, fetch the changes locally "
 "(this will remove any local changes to your branch)"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:118
+#: ../../../developers_guide/develop_quickstart.md:125
 msgid ""
 "git fetch gitlab\n"
 "git reset --hard gitlab/your_branch\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:123
+#: ../../../developers_guide/develop_quickstart.md:130
 msgid ""
 "To fix the changelog warning, create, add, commit and push a markdown (.md) "
 "file in `Documentation/release/dev` folder. In this file, write a small "
@@ -255,7 +264,7 @@ msgid ""
 "folder for examples. It may look like this:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:127
+#: ../../../developers_guide/develop_quickstart.md:134
 msgid ""
 "## Development title\n"
 "\n"
@@ -263,18 +272,18 @@ msgid ""
 "This specific issue has been fixed in this particular way.\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:134
+#: ../../../developers_guide/develop_quickstart.md:141
 msgid ""
 "Suggestions and best practices on writing the changelog can be found in the "
 "`Documentation/release/dev/0-sample-topic.md` file. This is an optional step "
 "but recommended to do for any new feature and user facing issues."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:137
+#: ../../../developers_guide/develop_quickstart.md:144
 msgid "Reviews"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:139
+#: ../../../developers_guide/develop_quickstart.md:146
 msgid ""
 "VTK maintainers and developers will review your MR by leaving comments on "
 "it. Try to follow their instructions and be patient. It can take a while to "
@@ -282,14 +291,14 @@ msgid ""
 "normal to get change requests."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:142
+#: ../../../developers_guide/develop_quickstart.md:149
 msgid ""
 "Review comments can be resolved, please resolve a comment once you've taken "
 "it into account and pushed related changes or once you've reached an "
 "agreement with the commenter that nothing should be changed."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:145
+#: ../../../developers_guide/develop_quickstart.md:152
 msgid ""
 "Once a reviewer is happy with your changes, they will add a `+X` comment. "
 "You need at least one `+2` or higher to consider merging the MR. Two `+1`s "
@@ -297,69 +306,69 @@ msgid ""
 "them to understand what is the issue and how it could be fixed."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:148
+#: ../../../developers_guide/develop_quickstart.md:155
 msgid ""
 "Once you have pushed new changes, please tag reviewers again so that they "
 "can take a look. If you do not tag reviewers, they may not know to revisit "
 "your changes. _Do not hesitate to tag them and ask for help_."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:151
+#: ../../../developers_guide/develop_quickstart.md:158
 msgid "Continuous Integration"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:153
+#: ../../../developers_guide/develop_quickstart.md:160
 msgid ""
 "Before merging a MR, the VTK continuous integration (CI) needs to run and be "
 "green. For CI to be functional, please read and follow this [guide](https://"
-"discourse.vtk.org/t/the-ultimate-how-to-make-ci-work-with-my-fork-"
-"guide/7581)."
-msgstr ""
-
-#: ../../../developers_guide/develop_quickstart.md:156
-msgid "To run the CI:"
-msgstr ""
-
-#: ../../../developers_guide/develop_quickstart.md:157
-msgid "Click on the Pipelines Tab"
-msgstr ""
-
-#: ../../../developers_guide/develop_quickstart.md:158
-msgid "Click on the last pipeline status badge"
-msgstr ""
-
-#: ../../../developers_guide/develop_quickstart.md:159
-msgid "Press the `Play all manual` arrows on top of the Build and Test stages"
-msgstr ""
-
-#: ../../../developers_guide/develop_quickstart.md:161
-msgid "Do not hesitate to tag a VTK developer for help if needed."
+"discourse.vtk.org/t/the-ultimate-how-to-make-ci-work-with-my-fork-guide/"
+"7581)."
 msgstr ""
 
 #: ../../../developers_guide/develop_quickstart.md:163
+msgid "To run the CI:"
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:164
+msgid "Click on the Pipelines Tab"
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:165
+msgid "Click on the last pipeline status badge"
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:166
+msgid "Press the `Play all manual` arrows on top of the Build and Test stages"
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:168
+msgid "Do not hesitate to tag a VTK developer for help if needed."
+msgstr ""
+
+#: ../../../developers_guide/develop_quickstart.md:170
 msgid ""
 "You then need to wait for CI to run, it can take a while, up to a full day."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:165
+#: ../../../developers_guide/develop_quickstart.md:172
 msgid ""
 "A successful CI should be fully green. If that is so, then your MR is ready !"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:167
+#: ../../../developers_guide/develop_quickstart.md:174
 msgid ""
 "If not, you need to analyse the issues and fix them. Recover the failure "
 "information this way:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:169
+#: ../../../developers_guide/develop_quickstart.md:176
 msgid ""
 "Click on the pipelines tab, then on the last status badge, then on the "
 "`cdash-commit` job. It will take you to the related CDash report where you "
 "will find all information."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:172
+#: ../../../developers_guide/develop_quickstart.md:179
 msgid ""
 "Everything in the CDash report should be green except the `NotRun` and "
 "`Time` column. Take a look into each issue and fix them locally. If there "
@@ -369,61 +378,61 @@ msgid ""
 "pipeline."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:176
+#: ../../../developers_guide/develop_quickstart.md:183
 msgid ""
 "Once you have fixed some issues locally, commit and push them to gitlab, run "
 "the CI again and tag reviewers again for follow-up reviews."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:178
+#: ../../../developers_guide/develop_quickstart.md:185
 msgid "Merging"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:180
+#: ../../../developers_guide/develop_quickstart.md:187
 msgid ""
 "Once the MR has green CI and you have at least one `+2`, you can ask for a "
 "merge. Before that please make sure that:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:181
+#: ../../../developers_guide/develop_quickstart.md:188
 msgid ""
 "Your commit history is logical (or squashed into a single commit) and "
 "cleaned up with good commit messages"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:182
+#: ../../../developers_guide/develop_quickstart.md:189
 msgid "You are rebased on a fairly recent version of master"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:184
+#: ../../../developers_guide/develop_quickstart.md:191
 msgid ""
 "If that is not the case, please rebase on master using the following "
 "commands:"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:186
+#: ../../../developers_guide/develop_quickstart.md:193
 msgid ""
 "git fetch origin\n"
 "git rebase -i origin/master\n"
 "git push gitlab -f\n"
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:192
+#: ../../../developers_guide/develop_quickstart.md:199
 msgid ""
 "The interactive rebase will let you squash commits, reorganize commits and "
 "edit commit messages."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:194
+#: ../../../developers_guide/develop_quickstart.md:201
 msgid "After the force push, make sure to run CI again."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:196
+#: ../../../developers_guide/develop_quickstart.md:203
 msgid ""
 "Once all is done, tag a VTK developer so that they can perform the merge "
 "command."
 msgstr ""
 
-#: ../../../developers_guide/develop_quickstart.md:198
+#: ../../../developers_guide/develop_quickstart.md:205
 msgid "__Congratulations ! You just contributed to VTK !__"
 msgstr ""
